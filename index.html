@@ -2,2777 +2,549 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#080808">
-<meta name="description" content="AHMED ABU OMAR — Premium Digital Store">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#080D16">
 <title>AHMED ABU OMAR | Premium Digital Store</title>
-
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-:root {
-  --bg: #080808;
-  --surface: #111111;
-  --surface-2: #171717;
-  --gold: #D6B56A;
-  --gold-light: #F1D99B;
-  --text: #F7F4ED;
-  --muted: #A5A5A5;
-  --border: rgba(214,181,106,.22);
-  --radius: 20px;
-  --container: 1180px;
-  --shadow: 0 18px 55px rgba(0,0,0,.32);
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 90px;
-}
-
-body {
-  background: var(--bg);
-  color: var(--text);
-  font-family: Tahoma, Arial, sans-serif;
-  line-height: 1.8;
-  overflow-x: hidden;
-  -webkit-font-smoothing: antialiased;
-}
-
-body.light {
-  --bg: #F7F5F0;
-  --surface: #FFFFFF;
-  --surface-2: #F0EDE5;
-  --text: #171717;
-  --muted: #666666;
-  --border: rgba(145,109,37,.25);
-  --shadow: 0 18px 55px rgba(0,0,0,.08);
-}
-
-button, input, select {
-  font: inherit;
-}
-
-button, a {
-  -webkit-tap-highlight-color: transparent;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-button {
-  cursor: pointer;
-}
-
-img {
-  max-width: 100%;
-  display: block;
-}
-
-.container {
-  width: min(var(--container), calc(100% - 40px));
-  margin-inline: auto;
-}
-
-.gold {
-  color: var(--gold);
-}
-
-.section {
-  padding: 85px 0;
-}
-
-.section-heading {
-  text-align: center;
-  margin-bottom: 42px;
-}
-
-.section-heading .eyebrow {
-  color: var(--gold);
-  font-size: 12px;
-  letter-spacing: 2px;
-  margin-bottom: 9px;
-}
-
-.section-heading h2 {
-  font-size: clamp(25px, 4vw, 39px);
-  line-height: 1.4;
-  margin-bottom: 10px;
-}
-
-.section-heading p {
-  color: var(--muted);
-  font-size: 14px;
-}
-
-/* شريط الإعلان */
-
-.announcement {
-  background: linear-gradient(90deg, #18130A, #30230D, #18130A);
-  color: var(--gold-light);
-  text-align: center;
-  padding: 8px 12px;
-  font-size: 12px;
-  border-bottom: 1px solid var(--border);
-}
-
-/* الهيدر */
-
-.header {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background: rgba(8,8,8,.94);
-  backdrop-filter: blur(18px);
-  border-bottom: 1px solid var(--border);
-}
-
-body.light .header {
-  background: rgba(255,255,255,.94);
-}
-
-.navbar {
-  min-height: 76px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-}
-
-.logo {
-  font-size: 17px;
-  font-weight: 900;
-  white-space: nowrap;
-  letter-spacing: -.4px;
-}
-
-.logo span {
-  color: var(--gold);
-}
-
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 23px;
-  font-size: 12px;
-  color: var(--muted);
-}
-
-.nav-links a {
-  transition: color .25s;
-}
-
-.nav-links a:hover {
-  color: var(--gold);
-}
-
-.nav-actions {
-  display: flex;
-  align-items: center;
-  gap: 9px;
-}
-
-.icon-btn {
-  width: 39px;
-  height: 39px;
-  display: grid;
-  place-items: center;
-  background: var(--surface);
-  color: var(--text);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  font-size: 15px;
-}
-
-.cart-btn {
-  position: relative;
-}
-
-.cart-count {
-  position: absolute;
-  top: -6px;
-  right: -6px;
-  min-width: 19px;
-  height: 19px;
-  display: grid;
-  place-items: center;
-  background: var(--gold);
-  color: #080808;
-  font-size: 10px;
-  font-weight: bold;
-  border-radius: 50%;
-}
-
-.mobile-menu-btn {
-  display: none;
-}
-
-/* الأزرار */
-
-.btn {
-  min-height: 48px;
-  padding: 12px 23px;
-  border-radius: 12px;
-  border: 1px solid transparent;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 9px;
-  text-align: center;
-  font-weight: 800;
-  font-size: 13px;
-  transition: transform .25s, background .25s, border-color .25s;
-}
-
-.btn:hover {
-  transform: translateY(-2px);
-}
-
-.btn-primary {
-  background: linear-gradient(135deg, #F1D99B, #C6A253);
-  color: #17120A;
-  box-shadow: 0 7px 25px rgba(214,181,106,.12);
-}
-
-.btn-primary:hover {
-  background: linear-gradient(135deg, #FFE8B0, #D6B56A);
-}
-
-.btn-outline {
-  background: transparent;
-  color: var(--text);
-  border-color: var(--border);
-}
-
-.btn-outline:hover {
-  border-color: var(--gold);
-  background: rgba(214,181,106,.06);
-}
-
-/* الواجهة الرئيسية */
-
-.hero {
-  position: relative;
-  padding: 76px 0 75px;
-  overflow: hidden;
-}
-
-.hero::before {
-  content: "";
-  position: absolute;
-  width: 520px;
-  height: 520px;
-  border-radius: 50%;
-  background: rgba(214,181,106,.075);
-  filter: blur(110px);
-  top: -210px;
-  right: -180px;
-  pointer-events: none;
-}
-
-.hero::after {
-  content: "";
-  position: absolute;
-  width: 350px;
-  height: 350px;
-  border-radius: 50%;
-  background: rgba(38,65,105,.12);
-  filter: blur(100px);
-  bottom: -130px;
-  left: -130px;
-  pointer-events: none;
-}
-
-.hero-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  gap: 45px;
-  position: relative;
-  z-index: 1;
-}
-
-.hero-copy {
-  min-width: 0;
-}
-
-.hero-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 9px;
-  border: 1px solid var(--border);
-  background: rgba(214,181,106,.055);
-  color: var(--gold-light);
-  padding: 7px 13px;
-  border-radius: 50px;
-  font-size: 11px;
-  margin-bottom: 22px;
-}
-
-.hero-badge::before {
-  content: "✦";
-  color: var(--gold);
-}
-
-.hero h1 {
-  font-size: clamp(32px, 4.5vw, 55px);
-  line-height: 1.45;
-  letter-spacing: -.8px;
-  margin-bottom: 18px;
-}
-
-.hero h1 span {
-  display: block;
-  color: var(--gold);
-}
-
-.hero-description {
-  max-width: 520px;
-  color: var(--muted);
-  font-size: 14px;
-  line-height: 2.1;
-  margin-bottom: 25px;
-}
-
-.hero-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-bottom: 28px;
-}
-
-.hero-features {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 18px;
-  color: var(--muted);
-  font-size: 11px;
-}
-
-.hero-features span::before {
-  content: "✦";
-  color: var(--gold);
-  margin-left: 6px;
-}
-
-/* معاينة تصميم الموقع */
-
-.hero-visual {
-  min-width: 0;
-  position: relative;
-  perspective: 1000px;
-}
-
-.browser-window {
-  background: linear-gradient(145deg, #171717, #0D0D0D);
-  border: 1px solid rgba(214,181,106,.35);
-  border-radius: 19px;
-  overflow: hidden;
-  box-shadow: 0 30px 85px rgba(0,0,0,.48);
-  transform: rotateY(-5deg) rotateX(2deg);
-}
-
-.browser-top {
-  min-height: 43px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 15px;
-  border-bottom: 1px solid rgba(255,255,255,.07);
-  color: #9B9B9B;
-  font-size: 10px;
-  gap: 10px;
-}
-
-.browser-dots {
-  display: flex;
-  gap: 5px;
-}
-
-.browser-dots i {
-  width: 7px;
-  height: 7px;
-  display: block;
-  border-radius: 50%;
-  background: #B99B59;
-}
-
-.browser-content {
-  padding: 25px 23px;
-  min-height: 295px;
-  background:
-    radial-gradient(ellipse at 85% 15%, rgba(214,181,106,.12), transparent 45%),
-    #101010;
-}
-
-.demo-nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px;
-  font-size: 9px;
-  color: #B5B5B5;
-  margin-bottom: 35px;
-}
-
-.demo-brand {
-  color: var(--gold-light);
-  font-size: 13px;
-  font-weight: 900;
-}
-
-.demo-hero-title {
-  font-family: Georgia, serif;
-  font-size: clamp(22px, 3vw, 35px);
-  line-height: 1.3;
-  max-width: 290px;
-  margin-bottom: 13px;
-}
-
-.demo-hero-title span {
-  color: var(--gold);
-}
-
-.demo-text {
-  color: #A9A9A9;
-  font-size: 10px;
-  max-width: 270px;
-  line-height: 1.9;
-  margin-bottom: 18px;
-}
-
-.demo-cta {
-  display: inline-block;
-  background: var(--gold);
-  color: #17120A;
-  border-radius: 5px;
-  padding: 8px 15px;
-  font-size: 9px;
-  font-weight: 900;
-}
-
-.demo-bottom {
-  display: flex;
-  align-items: end;
-  justify-content: space-between;
-  gap: 10px;
-  margin-top: 20px;
-}
-
-.demo-stat {
-  color: #C7C7C7;
-  font-size: 9px;
-}
-
-.demo-stat strong {
-  display: block;
-  color: var(--gold-light);
-  font-size: 19px;
-}
-
-.floating-card {
-  position: absolute;
-  bottom: -20px;
-  left: -12px;
-  width: 145px;
-  padding: 13px;
-  border: 1px solid rgba(214,181,106,.38);
-  border-radius: 13px;
-  background: rgba(20,20,20,.94);
-  box-shadow: var(--shadow);
-  z-index: 3;
-}
-
-.floating-card small {
-  display: block;
-  color: var(--muted);
-  font-size: 9px;
-}
-
-.floating-card strong {
-  display: block;
-  color: var(--gold-light);
-  font-size: 14px;
-  margin-top: 4px;
-}
-
-.floating-lines {
-  display: grid;
-  gap: 5px;
-  margin-top: 10px;
-}
-
-.floating-lines i {
-  height: 4px;
-  display: block;
-  border-radius: 4px;
-  background: linear-gradient(90deg, var(--gold), #51401E);
-}
-
-.floating-lines i:nth-child(2) {
-  width: 75%;
-}
-
-.floating-lines i:nth-child(3) {
-  width: 52%;
-}
-
-/* شريط المميزات */
-
-.trust-strip {
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-  background: var(--surface);
-}
-
-.trust-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-}
-
-.trust-item {
-  padding: 23px 12px;
-  text-align: center;
-  border-left: 1px solid var(--border);
-}
-
-.trust-item:last-child {
-  border-left: 0;
-}
-
-.trust-item strong {
-  display: block;
-  color: var(--gold);
-  font-size: 21px;
-  line-height: 1.5;
-}
-
-.trust-item span {
-  color: var(--muted);
-  font-size: 11px;
-}
-
-/* نهاية الجزء الأول */
-  /* ================================
-   PRODUCTS SECTION
-================================ */
-
-.products-toolbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 15px;
-  flex-wrap: wrap;
-  margin-bottom: 25px;
-}
-
-.search-box {
-  flex: 1;
-  min-width: 180px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 0 14px;
-  min-height: 48px;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-}
-
-.search-box span {
-  color: var(--gold);
-}
-
-.search-box input {
-  width: 100%;
-  min-width: 0;
-  border: 0;
-  outline: 0;
-  background: transparent;
-  color: var(--text);
-  font-size: 13px;
-}
-
-.search-box input::placeholder {
-  color: var(--muted);
-}
-
-.products-toolbar select {
-  min-height: 48px;
-  padding: 0 13px;
-  background: var(--surface);
-  color: var(--text);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  outline: 0;
-  font-size: 12px;
-  max-width: 100%;
-}
-
-.filter-list {
-  display: flex;
-  gap: 9px;
-  flex-wrap: wrap;
-  margin-bottom: 28px;
-}
-
-.filter-btn {
-  padding: 9px 16px;
-  background: var(--surface);
-  color: var(--muted);
-  border: 1px solid var(--border);
-  border-radius: 30px;
-  font-size: 12px;
-  transition: .25s;
-}
-
-.filter-btn:hover,
-.filter-btn.active {
-  color: #17120A;
-  background: var(--gold);
-  border-color: var(--gold);
-}
-
-.products-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 22px;
-}
-
-.product-card {
-  min-width: 0;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  overflow: hidden;
-  transition: transform .3s, border-color .3s, box-shadow .3s;
-}
-
-.product-card:hover {
-  transform: translateY(-5px);
-  border-color: rgba(214,181,106,.65);
-  box-shadow: var(--shadow);
-}
-
-.product-preview {
-  min-height: 220px;
-  position: relative;
-  overflow: hidden;
-  padding: 15px;
-  background:
-    radial-gradient(ellipse at 50% 100%, rgba(214,181,106,.13), transparent 60%),
-    #101010;
-}
-
-.product-label {
-  position: absolute;
-  top: 13px;
-  right: 13px;
-  z-index: 3;
-  background: rgba(8,8,8,.88);
-  color: var(--gold-light);
-  border: 1px solid var(--border);
-  padding: 5px 9px;
-  border-radius: 20px;
-  font-size: 9px;
-}
-
-.product-favorite {
-  position: absolute;
-  top: 12px;
-  left: 12px;
-  width: 32px;
-  height: 32px;
-  display: grid;
-  place-items: center;
-  color: var(--gold);
-  background: rgba(8,8,8,.85);
-  border: 1px solid var(--border);
-  border-radius: 50%;
-  z-index: 3;
-}
-
-.mock-browser {
-  width: 100%;
-  max-width: 310px;
-  margin: 27px auto 0;
-  border: 1px solid rgba(214,181,106,.35);
-  border-radius: 9px;
-  background: #171717;
-  overflow: hidden;
-  box-shadow: 0 15px 35px rgba(0,0,0,.4);
-  transform: rotate(-2deg);
-  transition: transform .3s;
-}
-
-.product-card:hover .mock-browser {
-  transform: rotate(0) scale(1.025);
-}
-
-.mock-browser-top {
-  height: 20px;
-  background: #202020;
-  border-bottom: 1px solid #333;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 8px;
-}
-
-.mock-browser-top span {
-  font-size: 7px;
-  color: #999;
-}
-
-.mock-browser-dots {
-  display: flex;
-  gap: 3px;
-}
-
-.mock-browser-dots i {
-  display: block;
-  width: 4px;
-  height: 4px;
-  border-radius: 50%;
-  background: var(--gold);
-}
-
-.mock-site {
-  min-height: 135px;
-  padding: 15px 12px;
-  position: relative;
-  overflow: hidden;
-}
-
-.mock-site.law {
-  background:
-    linear-gradient(100deg, rgba(0,0,0,.86), rgba(0,0,0,.3)),
-    linear-gradient(135deg, #6F6250, #211E19);
-}
-
-.mock-site.restaurant {
-  background:
-    linear-gradient(100deg, rgba(0,0,0,.72), rgba(0,0,0,.15)),
-    linear-gradient(135deg, #72503A, #252018);
-}
-
-.mock-site.business {
-  background:
-    linear-gradient(100deg, rgba(0,0,0,.8), rgba(0,0,0,.2)),
-    linear-gradient(135deg, #32465A, #131A23);
-}
-
-.mock-site.realestate {
-  background:
-    linear-gradient(100deg, rgba(0,0,0,.6), rgba(0,0,0,.12)),
-    linear-gradient(135deg, #746653, #29261F);
-}
-
-.mock-site.portfolio {
-  background:
-    linear-gradient(100deg, rgba(0,0,0,.8), rgba(0,0,0,.2)),
-    linear-gradient(135deg, #51443C, #181818);
-}
-
-.mock-site.cv {
-  background: linear-gradient(135deg, #E6E0D5, #B8B0A0);
-  color: #242424;
-}
-
-.mock-site .mock-brand {
-  font-size: 8px;
-  font-weight: 900;
-  color: var(--gold-light);
-  margin-bottom: 19px;
-  letter-spacing: 1px;
-}
-
-.mock-site.cv .mock-brand {
-  color: #4B4439;
-}
-
-.mock-site h4 {
-  font-size: 17px;
-  line-height: 1.4;
-  max-width: 190px;
-  font-family: Georgia, serif;
-  margin-bottom: 7px;
-}
-
-.mock-site p {
-  font-size: 8px;
-  opacity: .8;
-  max-width: 180px;
-  line-height: 1.7;
-}
-
-.mock-site .mock-button {
-  display: inline-block;
-  margin-top: 11px;
-  padding: 5px 10px;
-  background: var(--gold);
-  color: #17120A;
-  font-size: 7px;
-  font-weight: 900;
-  border-radius: 3px;
-}
-
-.mock-site.cv .mock-button {
-  background: #4B4439;
-  color: white;
-}
-
-.mock-decor {
-  position: absolute;
-  width: 80px;
-  height: 100px;
-  right: auto;
-  left: -15px;
-  bottom: -35px;
-  border: 1px solid rgba(214,181,106,.35);
-  transform: rotate(25deg);
-}
-
-.product-info {
-  padding: 19px;
-}
-
-.product-category {
-  color: var(--gold);
-  font-size: 10px;
-  margin-bottom: 5px;
-}
-
-.product-info h3 {
-  font-size: 17px;
-  margin-bottom: 7px;
-  line-height: 1.6;
-}
-
-.product-description {
-  color: var(--muted);
-  font-size: 12px;
-  line-height: 1.9;
-  min-height: 45px;
-}
-
-.product-bottom {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px;
-  margin-top: 17px;
-  padding-top: 15px;
-  border-top: 1px solid var(--border);
-}
-
-.product-price {
-  font-size: 22px;
-  font-weight: 900;
-  color: var(--gold);
-  direction: ltr;
-  white-space: nowrap;
-}
-
-.product-price small {
-  font-size: 10px;
-  color: var(--muted);
-  font-weight: 400;
-}
-
-.add-cart-btn {
-  padding: 10px 13px;
-  background: var(--gold);
-  color: #17120A;
-  border: 0;
-  border-radius: 10px;
-  font-size: 11px;
-  font-weight: 900;
-  white-space: nowrap;
-}
-
-.add-cart-btn:hover {
-  background: var(--gold-light);
-}
-
-.empty-products {
-  grid-column: 1 / -1;
-  padding: 40px 15px;
-  text-align: center;
-  color: var(--muted);
-  border: 1px dashed var(--border);
-  border-radius: var(--radius);
-}
-
-/* ================================
-   WHY CHOOSE US
-================================ */
-
-.why-section {
-  background:
-    radial-gradient(ellipse at 50% 0%, rgba(214,181,106,.06), transparent 60%),
-    var(--surface);
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-}
-
-.why-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 18px;
-}
-
-.why-card {
-  padding: 27px 22px;
-  background: var(--bg);
-  border: 1px solid var(--border);
-  border-radius: 17px;
-  transition: transform .25s, border-color .25s;
-}
-
-.why-card:hover {
-  transform: translateY(-4px);
-  border-color: var(--gold);
-}
-
-.why-icon {
-  width: 48px;
-  height: 48px;
-  display: grid;
-  place-items: center;
-  color: var(--gold);
-  background: rgba(214,181,106,.08);
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  font-size: 22px;
-  margin-bottom: 17px;
-}
-
-.why-card h3 {
-  font-size: 16px;
-  margin-bottom: 9px;
-}
-
-.why-card p {
-  font-size: 12px;
-  line-height: 2;
-  color: var(--muted);
-}
-
-/* ================================
-   SPECIAL OFFER
-================================ */
-
-.offer-box {
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 25px;
-  padding: 38px;
-  border: 1px solid rgba(214,181,106,.45);
-  border-radius: 24px;
-  background:
-    radial-gradient(ellipse at 90% 0%, rgba(214,181,106,.15), transparent 55%),
-    linear-gradient(135deg, #17140F, #0D0D0D);
-}
-
-.offer-copy {
-  position: relative;
-  z-index: 1;
-}
-
-.offer-tag {
-  display: inline-block;
-  color: var(--gold-light);
-  border: 1px solid var(--border);
-  padding: 5px 11px;
-  border-radius: 30px;
-  font-size: 10px;
-  margin-bottom: 13px;
-}
-
-.offer-box h2 {
-  font-size: clamp(24px, 4vw, 36px);
-  line-height: 1.5;
-  margin-bottom: 10px;
-}
-
-.offer-box p {
-  font-size: 13px;
-  color: #B9B9B9;
-  margin-bottom: 20px;
-}
-
-.offer-symbol {
-  color: rgba(214,181,106,.2);
-  font-size: 110px;
-  line-height: 1;
-  font-family: Georgia, serif;
-  flex-shrink: 0;
-}
-
-/* ================================
-   HOW IT WORKS
-================================ */
-
-.steps-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 20px;
-}
-
-.step-card {
-  padding: 25px;
-  border: 1px solid var(--border);
-  border-radius: 17px;
-  background: var(--surface);
-}
-
-.step-number {
-  color: var(--gold);
-  font-size: 28px;
-  font-weight: 900;
-  margin-bottom: 10px;
-}
-
-.step-card h3 {
-  font-size: 16px;
-  margin-bottom: 8px;
-}
-
-.step-card p {
-  color: var(--muted);
-  font-size: 12px;
-  line-height: 2;
-}
-
-/* ================================
-   SOCIAL MEDIA
-================================ */
-
-.social-section {
-  padding-top: 25px;
-}
-
-.social-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 13px;
-}
-
-.social-link {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  padding: 17px 10px;
-  border: 1px solid var(--border);
-  border-radius: 13px;
-  background: var(--surface);
-  font-size: 12px;
-  transition: .25s;
-}
-
-.social-link:hover {
-  border-color: var(--gold);
-  color: var(--gold);
-  transform: translateY(-3px);
-}
-
-.social-link span {
-  font-size: 18px;
-}
-
-/* ================================
-   FAQ
-================================ */
-
-.faq-list {
-  max-width: 780px;
-  margin: auto;
-  display: grid;
-  gap: 12px;
-}
-
-.faq-item {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  overflow: hidden;
-}
-
-.faq-question {
-  width: 100%;
-  background: transparent;
-  color: var(--text);
-  border: 0;
-  padding: 18px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 15px;
-  text-align: right;
-  font-weight: 800;
-  font-size: 13px;
-}
-
-.faq-question span {
-  color: var(--gold);
-  font-size: 20px;
-}
-
-.faq-answer {
-  display: none;
-  padding: 0 18px 18px;
-  color: var(--muted);
-  font-size: 12px;
-  line-height: 2;
-}
-
-.faq-item.open .faq-answer {
-  display: block;
-}
-
-.faq-item.open .faq-question span {
-  transform: rotate(45deg);
-}
-
-/* ================================
-   FOOTER
-================================ */
-
-.footer {
-  border-top: 1px solid var(--border);
-  background: #050505;
-  padding: 50px 0 20px;
-}
-
-body.light .footer {
-  background: #EDEAE3;
-}
-
-.footer-grid {
-  display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr;
-  gap: 35px;
-  padding-bottom: 35px;
-}
-
-.footer-brand p {
-  max-width: 330px;
-  margin-top: 13px;
-  color: #999;
-  font-size: 12px;
-  line-height: 2.1;
-}
-
-.footer h3 {
-  color: var(--gold);
-  font-size: 13px;
-  margin-bottom: 13px;
-}
-
-.footer-links {
-  display: grid;
-  gap: 9px;
-  color: #999;
-  font-size: 12px;
-}
-
-.footer-links a:hover {
-  color: var(--gold);
-}
-
-.footer-bottom {
-  border-top: 1px solid rgba(214,181,106,.15);
-  padding-top: 17px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 12px;
-  color: #888;
-  font-size: 10px;
-}
-
-/* ================================
-   CART DRAWER
-================================ */
-
-.cart-overlay {
-  position: fixed;
-  inset: 0;
-  z-index: 2000;
-  background: rgba(0,0,0,.65);
-  opacity: 0;
-  visibility: hidden;
-  transition: .3s;
-}
-
-.cart-overlay.active {
-  opacity: 1;
-  visibility: visible;
-}
-
-.cart-drawer {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 2001;
-  width: min(420px, 92vw);
-  display: flex;
-  flex-direction: column;
-  background: var(--bg);
-  border-right: 1px solid var(--border);
-  transform: translateX(-105%);
-  transition: transform .3s;
-}
-
-.cart-drawer.active {
-  transform: translateX(0);
-}
-
-.cart-header {
-  padding: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-bottom: 1px solid var(--border);
-}
-
-.cart-header h2 {
-  font-size: 19px;
-}
-
-.cart-close {
-  width: 38px;
-  height: 38px;
-  border-radius: 10px;
-  border: 1px solid var(--border);
-  background: var(--surface);
-  color: var(--text);
-  font-size: 20px;
-}
-
-.cart-items {
-  flex: 1;
-  overflow-y: auto;
-  padding: 15px;
-}
-
-.cart-empty {
-  padding: 45px 10px;
-  text-align: center;
-  color: var(--muted);
-  font-size: 13px;
-}
-
-.cart-item {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 13px 0;
-  border-bottom: 1px solid var(--border);
-}
-
-.cart-item-info {
-  flex: 1;
-  min-width: 0;
-}
-
-.cart-item-info h4 {
-  font-size: 12px;
-  line-height: 1.7;
-}
-
-.cart-item-info p {
-  color: var(--gold);
-  font-size: 12px;
-  margin-top: 4px;
-  direction: ltr;
-  text-align: right;
-}
-
-.cart-quantity {
-  display: flex;
-  align-items: center;
-  gap: 9px;
-  margin-top: 7px;
-}
-
-.cart-quantity button {
-  width: 27px;
-  height: 27px;
-  background: var(--surface);
-  color: var(--text);
-  border: 1px solid var(--border);
-  border-radius: 7px;
-}
-
-.remove-item {
-  background: transparent;
-  color: #D67B7B;
-  border: 0;
-  font-size: 17px;
-}
-
-.cart-footer {
-  padding: 20px;
-  border-top: 1px solid var(--border);
-}
-
-.cart-total {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 15px;
-  font-weight: 800;
-}
-
-.cart-total strong {
-  color: var(--gold);
-  font-size: 21px;
-  direction: ltr;
-}
-
-.checkout-btn {
-  width: 100%;
-}
-
-/* زر واتساب العائم */
-
-.whatsapp-float {
-  position: fixed;
-  right: 18px;
-  bottom: 20px;
-  z-index: 900;
-  width: 55px;
-  height: 55px;
-  display: grid;
-  place-items: center;
-  border-radius: 50%;
-  background: #20C878;
-  color: white;
-  font-size: 27px;
-  box-shadow: 0 7px 25px rgba(32,200,120,.3);
-  transition: transform .25s;
-}
-
-.whatsapp-float:hover {
-  transform: scale(1.07);
-}
-
-/* إشعار الإضافة للسلة */
-
-.toast {
-  position: fixed;
-  bottom: 88px;
-  left: 50%;
-  transform: translate(-50%, 15px);
-  z-index: 3000;
-  max-width: calc(100% - 30px);
-  background: var(--gold);
-  color: #17120A;
-  border-radius: 10px;
-  padding: 11px 17px;
-  font-size: 12px;
-  font-weight: 900;
-  opacity: 0;
-  visibility: hidden;
-  transition: .25s;
-  text-align: center;
-}
-
-.toast.show {
-  opacity: 1;
-  visibility: visible;
-  transform: translate(-50%, 0);
-}
-
-/* ================================
-   RESPONSIVE DESIGN
-================================ */
-
-@media (min-width: 1400px) {
-  .hero {
-    padding-top: 100px;
-    padding-bottom: 100px;
-  }
-}
-
-@media (max-width: 950px) {
-  .nav-links {
-    gap: 13px;
-    font-size: 11px;
-  }
-
-  .hero-grid {
-    gap: 25px;
-  }
-
-  .products-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .why-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-@media (max-width: 700px) {
-  .container {
-    width: calc(100% - 30px);
-  }
-
-  .section {
-    padding: 60px 0;
-  }
-
-  .navbar {
-    min-height: 66px;
-    gap: 10px;
-  }
-
-  .logo {
-    font-size: 14px;
-  }
-
-  .mobile-menu-btn {
-    display: grid;
-  }
-
-  .nav-links {
-    position: absolute;
-    top: calc(100% + 1px);
-    right: 0;
-    left: 0;
-    padding: 12px 18px 18px;
-    display: none;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0;
-    background: var(--bg);
-    border-bottom: 1px solid var(--border);
-    box-shadow: var(--shadow);
-  }
-
-  .nav-links.open {
-    display: flex;
-  }
-
-  .nav-links a {
-    padding: 12px 5px;
-    border-bottom: 1px solid var(--border);
-    font-size: 13px;
-  }
-
-  .nav-actions {
-    gap: 6px;
-  }
-
-  .icon-btn {
-    width: 35px;
-    height: 35px;
-    border-radius: 10px;
-  }
-
-  .hero {
-    padding: 48px 0 58px;
-  }
-
-  .hero-grid {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 38px;
-  }
-
-  .hero-copy {
-    text-align: center;
-  }
-
-  .hero h1 {
-    font-size: clamp(30px, 8vw, 42px);
-    line-height: 1.5;
-    letter-spacing: 0;
-  }
-
-  .hero-description {
-    font-size: 13px;
-    margin-inline: auto;
-  }
-
-  .hero-buttons {
-    justify-content: center;
-  }
-
-  .hero-features {
-    justify-content: center;
-    gap: 10px 15px;
-  }
-
-  .hero-visual {
-    width: 100%;
-    max-width: 520px;
-    margin-inline: auto;
-  }
-
-  .browser-window {
-    transform: none;
-  }
-
-  .browser-content {
-    min-height: 260px;
-    padding: 20px 17px;
-  }
-
-  .demo-nav {
-    margin-bottom: 25px;
-  }
-
-  .demo-hero-title {
-    font-size: clamp(23px, 6vw, 30px);
-  }
-
-  .floating-card {
-    width: 125px;
-    left: -4px;
-    bottom: -18px;
-    padding: 10px;
-  }
-
-  .trust-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .trust-item {
-    padding: 17px 8px;
-  }
-
-  .trust-item:nth-child(2) {
-    border-left: 0;
-  }
-
-  .trust-item:nth-child(-n+2) {
-    border-bottom: 1px solid var(--border);
-  }
-
-  .trust-item strong {
-    font-size: 19px;
-  }
-
-  .products-grid {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 18px;
-  }
-
-  .product-preview {
-    min-height: 220px;
-  }
-
-  .mock-browser {
-    max-width: 330px;
-  }
-
-  .product-info {
-    padding: 17px;
-  }
-
-  .product-description {
-    min-height: 0;
-  }
-
-  .why-grid {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
-  .why-card {
-    padding: 22px;
-  }
-
-  .offer-box {
-    padding: 26px 20px;
-    gap: 8px;
-  }
-
-  .offer-box h2 {
-    font-size: 25px;
-  }
-
-  .offer-box p {
-    font-size: 12px;
-  }
-
-  .offer-symbol {
-    font-size: 60px;
-  }
-
-  .steps-grid {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
-  .social-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .footer-grid {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 28px;
-  }
-
-  .footer-bottom {
-    flex-direction: column;
-    text-align: center;
-  }
-}
-
-@media (max-width: 380px) {
-  .container {
-    width: calc(100% - 24px);
-  }
-
-  .logo {
-    font-size: 12px;
-  }
-
-  .nav-actions {
-    gap: 4px;
-  }
-
-  .icon-btn {
-    width: 32px;
-    height: 32px;
-  }
-
-  .hero h1 {
-    font-size: 29px;
-  }
-
-  .hero-buttons .btn {
-    width: 100%;
-  }
-
-  .browser-content {
-    padding: 16px 13px;
-  }
-
-  .demo-hero-title {
-    font-size: 23px;
-  }
-
-  .floating-card {
-    width: 110px;
-  }
-
-  .products-toolbar {
-    align-items: stretch;
-  }
-
-  .products-toolbar select {
-    width: 100%;
-  }
-
-  .product-bottom {
-    align-items: center;
-  }
-
-  .add-cart-btn {
-    padding: 10px;
-  }
-
-  .offer-symbol {
-    display: none;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    scroll-behavior: auto !important;
-    animation-duration: .01ms !important;
-    transition-duration: .01ms !important;
-  }
-  }
-  </style>
+:root{--bg:#080D16;--surface:#101925;--surface2:#141E2B;--gold:#D6B56A;--gold2:#E8CC8A;--text:#F5F3EE;--muted:#A2ADBC;--line:rgba(255,255,255,.09)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{margin:0;background:var(--bg);color:var(--text);font-family:"Cairo",sans-serif;line-height:1.8}
+body.en{font-family:"Manrope",sans-serif}
+button,input,select{font:inherit}
+a{color:inherit;text-decoration:none}
+button{cursor:pointer;color:inherit}
+.container{width:min(1160px,calc(100% - 36px));margin:auto}
+.gold{color:var(--gold)}
+.muted{color:var(--muted)}
+.topline{text-align:center;padding:5px 12px;background:#101823;color:#d5dbe4;font-size:11px;border-bottom:1px solid #252b33}
+.topline b{color:var(--gold)}
+header{position:sticky;top:0;z-index:50;background:rgba(8,13,22,.94);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.logo{height:42px;width:42px;border:1px solid #9e8550;color:var(--gold);display:grid;place-items:center;border-radius:11px;font-family:Manrope,sans-serif;font-weight:800}
+.brand strong{font:800 12px Manrope,sans-serif;letter-spacing:.8px}
+.brand small{display:block;color:var(--muted);font-size:9px;letter-spacing:1.5px}
+.links{display:flex;gap:21px}
+.links a{font-size:12px;color:var(--muted)}
+.links a:hover{color:var(--gold)}
+.actions{display:flex;gap:7px}
+.icon{width:39px;height:39px;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
+.btn{padding:11px 19px;border:1px solid transparent;border-radius:10px;display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:700;font-size:12px;transition:.2s}
+.btn:hover{transform:translateY(-2px)}
+.primary{background:var(--gold);color:#101114}
+.primary:hover{background:var(--gold2)}
+.outline{border-color:var(--line);background:transparent}
+.outline:hover{border-color:var(--gold);color:var(--gold)}
+.menu{display:none}
+.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+.hero:before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 72% 42%,rgba(214,181,106,.1),transparent 35%),radial-gradient(ellipse at 8% 90%,rgba(55,87,128,.1),transparent 42%);pointer-events:none}
+.hero-grid{position:relative;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:65px;padding:76px 0 83px}
+.eyebrow{color:var(--gold);font-size:10px;font-weight:800;letter-spacing:2px}
+.eyebrow:before{content:"";display:inline-block;width:23px;height:1px;background:var(--gold);vertical-align:middle;margin-inline-end:9px}
+h1{font-size:clamp(40px,5.2vw,67px);line-height:1.25;letter-spacing:-1.4px;margin:18px 0}
+h1 span{display:block}
+.hero p{color:var(--muted);font-size:14px;line-height:2.2;max-width:510px}
+.hero-actions{display:flex;gap:11px;flex-wrap:wrap;margin-top:24px}
+.hero-note{display:flex;align-items:center;gap:9px;color:var(--muted);font-size:10px;margin-top:27px}
+.dot{height:7px;width:7px;border-radius:50%;background:var(--gold)}
+.preview{padding:12px;border:1px solid rgba(214,181,106,.27);border-radius:20px;background:#ffffff04;box-shadow:0 30px 80px #0005;transform:rotate(-1deg)}
+.browser{border:1px solid #ffffff17;border-radius:12px;overflow:hidden;background:#0c1420}
+.browser-top{height:37px;background:#121c29;display:flex;align-items:center;justify-content:space-between;padding:0 13px}
+.dots{display:flex;gap:5px}.dots i{height:5px;width:5px;border-radius:50%;background:#68717d}
+.browser-brand{font:9px Manrope,sans-serif;color:#bdc4ce;letter-spacing:1px}
+.mock{padding:25px 22px;background:linear-gradient(145deg,#121d2a,#0b111a);min-height:330px}
+.mock-nav{display:flex;justify-content:space-between;font:800 10px Manrope,sans-serif;color:var(--gold)}
+.mock-lines{display:flex;gap:7px}.mock-lines i{width:20px;height:3px;background:#384452;border-radius:4px}
+.mock-main{margin-top:43px}
+.mock-kicker{font:9px Manrope,sans-serif;letter-spacing:2px;color:var(--gold)}
+.mock h2{font:700 clamp(25px,3vw,36px)/1.3 Manrope,sans-serif;margin:14px 0}
+.line{height:4px;width:75%;background:#364351;border-radius:4px;margin:8px 0}
+.line.short{width:48%}
+.mock-button{height:29px;width:100px;background:var(--gold);border-radius:4px;margin-top:22px}
+.mock-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:28px}
+.mock-cards i{height:51px;border:1px solid #ffffff13;border-radius:5px;background:linear-gradient(135deg,#1d2a38,#111924)}
+.floating{position:absolute;bottom:24px;left:-12px;padding:12px 15px;background:var(--surface);border:1px solid #d6b56a50;border-radius:11px;box-shadow:0 15px 40px #0005;font-size:11px}
+.floating span{color:var(--muted);font-size:10px}
+.trust{border-bottom:1px solid var(--line);background:#0c121c}
+.trust-grid{display:grid;grid-template-columns:repeat(3,1fr)}
+.trust-item{padding:22px 12px;display:flex;justify-content:center;align-items:center;gap:12px}
+.trust-item+.trust-item{border-inline-start:1px solid var(--line)}
+.trust-icon{font-size:22px;color:var(--gold)}
+.trust-item strong{font-size:11px;display:block}
+.trust-item small{font-size:10px;color:var(--muted)}
+section{scroll-margin-top:95px}
+.section{padding:78px 0}
+.heading{display:flex;align-items:end;justify-content:space-between;gap:25px;margin-bottom:30px}
+.heading h2{font-size:clamp(27px,4vw,40px);line-height:1.4;margin:9px 0}
+.heading p{max-width:470px;color:var(--muted);font-size:12px;line-height:2;margin:0}
+.offer{padding:26px 29px;border:1px solid #d6b56a45;border-radius:18px;background:linear-gradient(110deg,#d6b56a12,transparent 70%),var(--surface);display:flex;align-items:center;justify-content:space-between;gap:20px}
+.offer h3{font-size:20px;margin:6px 0}.offer p{font-size:12px;color:var(--muted);margin:0}
+.badge{height:88px;width:88px;flex-shrink:0;border:1px solid #d6b56a70;border-radius:50%;display:grid;place-content:center;text-align:center;color:var(--gold);font:800 25px Manrope,sans-serif}
+.badge small{font:10px Cairo,sans-serif}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px}
+.search{position:relative;flex:1;min-width:190px}
+.search input,select{height:45px;width:100%;border:1px solid var(--line);border-radius:10px;background:var(--surface);color:var(--text);padding:0 13px;outline:none;font-size:12px}
+select{width:auto;min-width:150px}
+.search input:focus,select:focus{border-color:var(--gold)}
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
+.tab{padding:8px 14px;border:1px solid var(--line);border-radius:9px;background:transparent;color:var(--muted);font-size:11px}
+.tab.active,.tab:hover{border-color:var(--gold);color:var(--gold);background:#d6b56a0c}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.card{overflow:hidden;border:1px solid var(--line);border-radius:16px;background:var(--surface);transition:.25s}
+.card:hover{border-color:#d6b56a66;transform:translateY(-3px)}
+.art{height:180px;padding:14px;position:relative;background:linear-gradient(145deg,#1b2939,#0a111a);border-bottom:1px solid var(--line)}
+.art:before{content:"";position:absolute;width:170px;height:170px;border:1px solid #d6b56a20;border-radius:50%;top:-80px;left:-30px}
+.art-window{position:relative;height:100%;background:#101925;border:1px solid #ffffff19;border-radius:6px;overflow:hidden}
+.art-top{height:15px;background:#1b2736;border-bottom:1px solid #ffffff0d}
+.art-content{height:calc(100% - 15px);padding:13px;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.art-copy{display:flex;flex-direction:column;justify-content:center;gap:7px}
+.art-line{height:4px;width:90%;border-radius:3px;background:#647080}
+.art-line.goldline{width:56%;background:var(--gold)}
+.art-image{border-radius:3px;background:linear-gradient(135deg,#59666b,#202934)}
+.law .art-image{background:linear-gradient(135deg,#554b3a,#1b222b)}
+.food .art-image{background:linear-gradient(135deg,#72543a,#23251f)}
+.real .art-image{background:linear-gradient(135deg,#4b696b,#182530)}
+.cv .art-image{background:linear-gradient(135deg,#d6d0c1,#9d9b91)}
+.art-badge{position:absolute;top:10px;left:10px;background:#080d16df;color:var(--gold);border:1px solid #d6b56a44;border-radius:5px;padding:3px 8px;font:10px Manrope,sans-serif}
+.info{padding:16px}
+.type{color:var(--gold);font-size:10px;font-weight:800}
+.info h3{font-size:15px;line-height:1.6;margin:6px 0}
+.desc{font-size:11px;color:var(--muted);line-height:1.9;min-height:42px}
+.product-bottom{display:flex;justify-content:space-between;align-items:center;gap:8px;border-top:1px solid var(--line);padding-top:13px;margin-top:13px}
+.price{font:800 23px Manrope,sans-serif;white-space:nowrap}
+.price small{font-size:10px;color:var(--muted);font-weight:400}
+.card-actions{display:flex;gap:6px}
+.card-actions .btn{font-size:10px;padding:8px 10px}
+.empty{grid-column:1/-1;padding:40px;text-align:center;color:var(--muted);border:1px dashed var(--line);border-radius:12px}
+.pricing{background:#0c121c;border-block:1px solid var(--line)}
+.price-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.price-card{padding:25px;border:1px solid var(--line);border-radius:16px;background:var(--surface)}
+.price-card h3{font-size:19px;margin:9px 0}
+.price-number{font:800 42px Manrope,sans-serif;color:var(--gold);margin:12px 0 3px}
+.price-card p,.price-list{font-size:12px;color:var(--muted)}
+.price-list{padding:0;list-style:none;margin-top:20px}
+.price-list li{padding:9px 0;border-top:1px solid var(--line)}
+.price-list li:before{content:"✓";color:var(--gold);margin-inline-end:9px}
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.why-card{padding:22px;border:1px solid var(--line);border-radius:14px;background:var(--surface)}
+.why-icon{height:41px;width:41px;border-radius:11px;background:#d6b56a12;color:var(--gold);display:grid;place-items:center;font-size:20px}
+.why-card h3{font-size:14px;margin:14px 0 5px}
+.why-card p{font-size:11px;color:var(--muted);line-height:2;margin:0}
+.steps{background:#0c121c;border-block:1px solid var(--line)}
+.step-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.step{padding:20px;border:1px solid var(--line);border-radius:14px;background:var(--surface)}
+.step-num{font:800 29px Manrope,sans-serif;color:var(--gold)}
+.step h3{font-size:14px;margin:8px 0}
+.step p{font-size:11px;color:var(--muted);margin:0}
+.faq{max-width:800px;margin:auto}
+details{border-bottom:1px solid var(--line);padding:17px 0}
+summary{cursor:pointer;font-size:13px;font-weight:700;list-style:none;display:flex;justify-content:space-between;gap:20px}
+summary:after{content:"+";font:20px Manrope,sans-serif;color:var(--gold)}
+details[open] summary:after{content:"−"}
+details p{font-size:12px;color:var(--muted);line-height:2}
+.contact{padding:30px;border:1px solid #d6b56a44;border-radius:18px;background:linear-gradient(120deg,#d6b56a0d,transparent 75%),var(--surface);display:flex;justify-content:space-between;align-items:center;gap:25px}
+.contact h2{font-size:clamp(25px,4vw,36px);margin:8px 0}
+.contact p{font-size:12px;color:var(--muted)}
+.socials{display:flex;flex-wrap:wrap;gap:8px;margin-top:17px}
+.social{padding:8px 12px;border:1px solid var(--line);border-radius:9px;font-size:10px;color:var(--muted)}
+.social:hover{border-color:var(--gold);color:var(--gold)}
+footer{padding:36px 0 20px;background:#0c121c;border-top:1px solid var(--line)}
+.footer-top{display:flex;justify-content:space-between;gap:25px;padding-bottom:25px}
+.footer-desc{font-size:11px;color:var(--muted);max-width:340px}
+.footer-links{display:flex;gap:20px;flex-wrap:wrap}
+.footer-links a{font-size:11px;color:var(--muted)}
+.footer-bottom{padding-top:15px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:10px;color:var(--muted)}
+.whatsapp{position:fixed;bottom:20px;left:20px;z-index:60;width:51px;height:51px;border-radius:50%;display:grid;place-items:center;background:#209e66;color:white;font-size:22px;box-shadow:0 8px 30px #0006}
+.overlay{position:fixed;inset:0;background:#0009;z-index:90;opacity:0;pointer-events:none;transition:.2s}
+.overlay.open{opacity:1;pointer-events:auto}
+.drawer{position:fixed;z-index:100;top:0;bottom:0;right:0;width:min(420px,100%);background:var(--bg);border-left:1px solid var(--line);transform:translateX(105%);transition:.3s;display:flex;flex-direction:column}
+html[dir=ltr] .drawer{right:auto;left:0;transform:translateX(-105%);border-left:0;border-right:1px solid var(--line)}
+.drawer.open{transform:translateX(0)}
+.drawer-head{padding:20px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between}
+.drawer-head h3{margin:0;font-size:17px}
+.cart-items{flex:1;overflow:auto;padding:12px 20px}
+.cart-row{display:flex;gap:12px;align-items:center;padding:13px 0;border-bottom:1px solid var(--line)}
+.cart-icon{height:48px;width:48px;border-radius:9px;background:#172332;display:grid;place-items:center;color:var(--gold);font-size:19px}
+.cart-main{flex:1;min-width:0}
+.cart-name{font-size:11px;font-weight:700}
+.cart-price{font:700 13px Manrope,sans-serif;color:var(--gold)}
+.qty{display:flex;align-items:center;gap:8px;margin-top:5px}
+.qty button{width:24px;height:24px;border:1px solid var(--line);background:var(--surface);border-radius:5px}
+.remove{border:0;background:transparent;color:var(--muted);font-size:18px}
+.cart-empty{text-align:center;padding:50px 10px;color:var(--muted);font-size:12px}
+.drawer-foot{padding:18px 20px;border-top:1px solid var(--line)}
+.total{display:flex;justify-content:space-between;align-items:center;margin-bottom:13px;font-size:12px}
+.total strong{font:800 23px Manrope,sans-serif;color:var(--gold)}
+.drawer-foot .btn{width:100%;margin-bottom:8px}
+.note{font-size:10px;color:var(--muted);line-height:1.8}
+.toast{position:fixed;z-index:120;bottom:22px;left:50%;transform:translate(-50%,20px);opacity:0;pointer-events:none;background:var(--surface2);border:1px solid var(--line);padding:11px 18px;border-radius:10px;font-size:11px;transition:.25s;max-width:90%}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+.mobile-nav{display:none}
+body.light{--bg:#f5f3ee;--surface:#fff;--surface2:#f0ece3;--text:#18202b;--muted:#626d7b;--line:rgba(20,30,40,.12)}
+body.light header{background:#f5f3eeeF}
+body.light .trust,body.light .pricing,body.light .steps,body.light footer{background:#ebe8df}
+body.light .topline{background:#eae4d6;color:#2b3038}
+@media(max-width:950px){.links{gap:12px}.links a{font-size:11px}.hero-grid{gap:35px}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:720px){
+ .container{width:calc(100% - 28px)}
+ .nav{height:67px}.brand strong{font-size:10px}.brand{gap:7px}.logo{width:38px;height:38px}
+ .links{display:none;position:absolute;top:100%;right:0;left:0;padding:12px 18px;background:var(--bg);border-bottom:1px solid var(--line);flex-direction:column;gap:0}
+ html[dir=ltr] .links{right:0;left:0}
+ .links.open{display:flex}.links a{padding:10px;font-size:13px}
+ .menu{display:block}
+ .actions{gap:4px}.icon{height:36px;width:36px}
+ .hero-grid{grid-template-columns:1fr;gap:35px;padding:48px 0}
+ h1{font-size:clamp(38px,10vw,55px)}
+ .hero p{font-size:12px}
+ .preview{max-width:480px;width:100%;margin:auto}
+ .mock{min-height:290px}.mock-main{margin-top:32px}
+ .floating{left:-5px;bottom:12px}
+ .trust-item{padding:17px 5px;gap:6px}.trust-icon{font-size:17px}.trust-item strong{font-size:9px}.trust-item small{font-size:8px}
+ .section{padding:58px 0}
+ .heading{display:block}.heading h2{font-size:29px}.heading p{margin-top:8px}
+ .offer{padding:19px;gap:12px}.offer h3{font-size:16px}.offer p{font-size:10px}.badge{height:70px;width:70px;font-size:21px}
+ .art{height:140px;padding:9px}.art-content{padding:9px;gap:6px}
+ .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+ .info{padding:11px}.info h3{font-size:13px}.desc{font-size:10px;min-height:58px}
+ .product-bottom{align-items:flex-start;flex-direction:column}.card-actions{width:100%}.card-actions .btn{flex:1;padding:8px 4px;font-size:9px}
+ .price{font-size:21px}.price-grid{grid-template-columns:1fr}
+ .why-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.why-card{padding:15px}.why-card h3{font-size:12px}
+ .step-grid{grid-template-columns:1fr;gap:10px}
+ .contact{display:block;padding:22px}.contact h2{font-size:27px}.contact .btn{margin-top:10px}
+ .footer-top{display:block}.footer-links{margin-top:20px;gap:14px}
+ .whatsapp{bottom:78px;left:13px;width:47px;height:47px}
+ .mobile-nav{position:fixed;bottom:0;left:0;right:0;z-index:70;display:grid;grid-template-columns:repeat(4,1fr);padding:8px 8px calc(8px + env(safe-area-inset-bottom));background:#080d16f5;border-top:1px solid var(--line)}
+ .mobile-nav a,.mobile-nav button{display:flex;flex-direction:column;align-items:center;gap:1px;border:0;background:none;color:#a2adbc;font-size:9px}
+ .mobile-nav span:first-child{color:var(--gold);font-size:16px}
+ body{padding-bottom:57px}
+ .toast{bottom:75px}
+}
+@media(max-width:365px){.container{width:calc(100% - 22px)}.card-actions .btn{font-size:8px}.info{padding:9px}.info h3{font-size:12px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important}}
+</style>
 </head>
-
 <body>
 
-<div class="announcement">
-  ✦ منتجات رقمية مميزة بأسعار تبدأ من 1 دولار — عرض لفترة محدودة ✦
-</div>
+<div class="topline"><b data-t="announcement">✦ مجموعة مميزة</b> · <span data-t="announcement2">قوالب رقمية بأسعار واضحة</span></div>
 
-<header class="header">
-  <div class="container navbar">
-
-    <a class="logo" href="#home">
-      AHMED <span>ABU OMAR</span>
-    </a>
-
-    <nav class="nav-links" id="navLinks">
-      <a href="#home" data-ar="الرئيسية" data-en="Home">الرئيسية</a>
-      <a href="#products" data-ar="المنتجات" data-en="Products">المنتجات</a>
-      <a href="#why" data-ar="لماذا تختارنا؟" data-en="Why Us?">لماذا تختارنا؟</a>
-      <a href="#offer" data-ar="العروض" data-en="Offers">العروض</a>
-      <a href="#social" data-ar="تواصل معنا" data-en="Contact">تواصل معنا</a>
-    </nav>
-
-    <div class="nav-actions">
-      <button class="icon-btn" id="languageBtn" aria-label="تغيير اللغة">EN</button>
-      <button class="icon-btn" id="themeBtn" aria-label="تغيير المظهر">☀</button>
-      <button class="icon-btn cart-btn" id="openCart" aria-label="سلة المشتريات">
-        🛒
-        <span class="cart-count" id="cartCount">0</span>
-      </button>
-      <button class="icon-btn mobile-menu-btn" id="mobileMenuBtn" aria-label="القائمة">☰</button>
-    </div>
-
+<header>
+ <div class="container nav">
+  <a class="brand" href="#home">
+   <span class="logo">AO</span>
+   <span><strong>AHMED ABU OMAR</strong><small>DIGITAL EXPERIENCES</small></span>
+  </a>
+  <nav class="links" id="links">
+   <a href="#home" data-t="home">الرئيسية</a>
+   <a href="#products" data-t="products">القوالب</a>
+   <a href="#pricing" data-t="pricing">الأسعار</a>
+   <a href="#why" data-t="why">لماذا نحن؟</a>
+   <a href="#faq" data-t="faq">الأسئلة</a>
+   <a href="#contact" data-t="contact">تواصل معنا</a>
+  </nav>
+  <div class="actions">
+   <button class="icon" id="language">EN</button>
+   <button class="icon" id="theme" aria-label="Toggle theme">☼</button>
+   <button class="icon" id="openCart">♧ <span id="count">0</span></button>
+   <button class="icon menu" id="menu">☰</button>
   </div>
+ </div>
 </header>
 
 <main>
-
-<!-- الواجهة الرئيسية -->
-
 <section class="hero" id="home">
-  <div class="container hero-grid">
-
-    <div class="hero-copy">
-
-      <div class="hero-badge" data-ar="وجهتك للمنتجات الرقمية الاحترافية" data-en="Your destination for premium digital products">
-        وجهتك للمنتجات الرقمية الاحترافية
-      </div>
-
-      <h1>
-        <span data-ar="أفكارك تستحق" data-en="YOUR VISION">أفكارك تستحق</span>
-        <span data-ar="حضورًا استثنائيًا." data-en="DESERVES TO SHINE.">حضورًا استثنائيًا.</span>
-      </h1>
-
-      <p class="hero-description"
-         data-ar="اكتشف قوالب مواقع إلكترونية وتصميمات سير ذاتية احترافية، تجمع بين الأناقة والجودة وسهولة الاستخدام، وتساعدك على تقديم نفسك ومشروعك بصورة مميزة."
-         data-en="Discover premium website templates and professional CV designs crafted to help you present your business and personal brand with confidence.">
-        اكتشف قوالب مواقع إلكترونية وتصميمات سير ذاتية احترافية، تجمع بين الأناقة والجودة وسهولة الاستخدام، وتساعدك على تقديم نفسك ومشروعك بصورة مميزة.
-      </p>
-
-      <div class="hero-buttons">
-        <a class="btn btn-primary" href="#products"
-           data-ar="اكتشف المنتجات ←" data-en="Explore Products →">
-          اكتشف المنتجات ←
-        </a>
-
-        <a class="btn btn-outline" href="https://wa.me/201206443652" target="_blank" rel="noopener"
-           data-ar="تواصل معنا" data-en="Contact Us">
-          تواصل معنا
-        </a>
-      </div>
-
-      <div class="hero-features">
-        <span data-ar="تصميمات احترافية" data-en="Professional Designs">تصميمات احترافية</span>
-        <span data-ar="أسعار مناسبة" data-en="Affordable Prices">أسعار مناسبة</span>
-        <span data-ar="سهولة الاستخدام" data-en="Easy to Use">سهولة الاستخدام</span>
-      </div>
-
-    </div>
-
-    <div class="hero-visual">
-
-      <div class="browser-window">
-        <div class="browser-top">
-          <div class="browser-dots"><i></i><i></i><i></i></div>
-          <span>ahmedabuomar.design</span>
-          <span>✦ PREMIUM</span>
-        </div>
-
-        <div class="browser-content">
-
-          <div class="demo-nav">
-            <span class="demo-brand">ATELIER.</span>
-            <span>HOME　 ABOUT　 SERVICES</span>
-          </div>
-
-          <div class="demo-hero-title">
-            Crafting<br>
-            <span>Digital Excellence.</span>
-          </div>
-
-          <p class="demo-text">
-            Exceptional digital experiences for ambitious brands.
-          </p>
-
-          <span class="demo-cta">DISCOVER MORE ↗</span>
-
-          <div class="demo-bottom">
-            <div class="demo-stat">
-              <strong>01</strong>
-              DESIGN
-            </div>
-            <div class="demo-stat">
-              <strong>02</strong>
-              QUALITY
-            </div>
-            <div class="demo-stat">
-              <strong>03</strong>
-              IMPACT
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <div class="floating-card">
-        <small data-ar="منتجات رقمية مميزة" data-en="Premium Digital Products">منتجات رقمية مميزة</small>
-        <strong>DESIGN. BUILD. GROW.</strong>
-        <div class="floating-lines"><i></i><i></i><i></i></div>
-      </div>
-
-    </div>
-
+ <div class="container hero-grid">
+  <div>
+   <span class="eyebrow" data-t="eyebrow">PREMIUM DIGITAL STORE</span>
+   <h1><span data-t="hero1">ارتقِ بأفكارك</span><span class="gold" data-t="hero2">إلى مستوى جديد.</span></h1>
+   <p data-t="heroDesc">اكتشف قوالب مواقع احترافية وتصميمات CV أنيقة، صُممت لتمنح مشروعك حضورًا مميزًا وتجربة رقمية متكاملة.</p>
+   <div class="hero-actions">
+    <a href="#products" class="btn primary" data-t="explore">استكشف القوالب ↙</a>
+    <a href="#pricing" class="btn outline" data-t="viewPrices">اكتشف الأسعار</a>
+   </div>
+   <div class="hero-note"><span class="dot"></span><span data-t="heroNote">تصميم احترافي · أسعار واضحة · شراء عبر Payhip</span></div>
   </div>
+  <div class="preview">
+   <div class="browser">
+    <div class="browser-top"><span class="dots"><i></i><i></i><i></i></span><span class="browser-brand">AHMED ABU OMAR</span><span class="gold">✦</span></div>
+    <div class="mock">
+     <div class="mock-nav"><span>PREMIUM STUDIO</span><span class="mock-lines"><i></i><i></i><i></i></span></div>
+     <div class="mock-main">
+      <div class="mock-kicker">DESIGNED WITH PURPOSE</div>
+      <h2>Ideas into<br>Digital Experiences.</h2>
+      <div class="line"></div><div class="line short"></div><div class="mock-button"></div>
+     </div>
+     <div class="mock-cards"><i></i><i></i><i></i></div>
+    </div>
+   </div>
+   <div class="floating">✧ <b data-t="floating">تصميمات مختارة بعناية</b><br><span data-t="floatingSub">تفاصيل بسيطة. حضور قوي.</span></div>
+  </div>
+ </div>
 </section>
 
-<!-- المميزات السريعة -->
-
-<section class="trust-strip">
-  <div class="container trust-grid">
-
-    <div class="trust-item">
-      <strong>01</strong>
-      <span data-ar="قوالب مواقع" data-en="Website Templates">قوالب مواقع</span>
-    </div>
-
-    <div class="trust-item">
-      <strong>02</strong>
-      <span data-ar="تصميمات CV" data-en="CV Designs">تصميمات CV</span>
-    </div>
-
-    <div class="trust-item">
-      <strong>$1+</strong>
-      <span data-ar="أسعار مناسبة" data-en="Affordable Pricing">أسعار مناسبة</span>
-    </div>
-
-    <div class="trust-item">
-      <strong>24/7</strong>
-      <span data-ar="تواصل عبر واتساب" data-en="WhatsApp Contact">تواصل عبر واتساب</span>
-    </div>
-
-  </div>
-</section>
-
-<!-- المنتجات -->
-
-<section class="section" id="products">
-  <div class="container">
-
-    <div class="section-heading">
-      <div class="eyebrow">THE COLLECTION</div>
-      <h2 data-ar="اكتشف مجموعتنا المميزة" data-en="Explore Our Collection">اكتشف مجموعتنا المميزة</h2>
-      <p data-ar="حلول رقمية احترافية تساعدك على الظهور بصورة أفضل." data-en="Professional digital solutions to elevate your presence.">
-        حلول رقمية احترافية تساعدك على الظهور بصورة أفضل.
-      </p>
-    </div>
-
-    <div class="products-toolbar">
-
-      <label class="search-box">
-        <span>⌕</span>
-        <input id="searchInput" type="search"
-               placeholder="ابحث عن منتج..."
-               data-placeholder-ar="ابحث عن منتج..."
-               data-placeholder-en="Search products..."
-               aria-label="البحث عن المنتجات">
-      </label>
-
-      <select id="sortSelect" aria-label="ترتيب المنتجات">
-        <option value="default" data-ar="الترتيب الافتراضي" data-en="Default sorting">الترتيب الافتراضي</option>
-        <option value="low" data-ar="السعر: من الأقل للأعلى" data-en="Price: low to high">السعر: من الأقل للأعلى</option>
-        <option value="high" data-ar="السعر: من الأعلى للأقل" data-en="Price: high to low">السعر: من الأعلى للأقل</option>
-        <option value="name" data-ar="الاسم" data-en="Name">الاسم</option>
-      </select>
-
-    </div>
-
-    <div class="filter-list" id="filterList">
-      <button class="filter-btn active" data-filter="all" data-ar="كل المنتجات" data-en="All Products">كل المنتجات</button>
-      <button class="filter-btn" data-filter="website" data-ar="قوالب المواقع" data-en="Website Templates">قوالب المواقع</button>
-      <button class="filter-btn" data-filter="cv" data-ar="تصميمات CV" data-en="CV Designs">تصميمات CV</button>
-      <button class="filter-btn" data-filter="business" data-ar="أعمال وشركات" data-en="Business">أعمال وشركات</button>
-    </div>
-
-    <div class="products-grid" id="productsGrid"></div>
-
-  </div>
-</section>
-
-<!-- لماذا تختارنا -->
-
-<section class="section why-section" id="why">
-  <div class="container">
-
-    <div class="section-heading">
-      <div class="eyebrow">WHY AHMED ABU OMAR</div>
-      <h2 data-ar="لماذا تختارنا؟" data-en="Why Choose Us?">لماذا تختارنا؟</h2>
-      <p data-ar="نهتم بالتفاصيل التي تجعل تجربتك الرقمية أفضل." data-en="We care about the details that make your digital experience better.">
-        نهتم بالتفاصيل التي تجعل تجربتك الرقمية أفضل.
-      </p>
-    </div>
-
-    <div class="why-grid">
-
-      <article class="why-card">
-        <div class="why-icon">✦</div>
-        <h3 data-ar="تصميم احترافي" data-en="Professional Design">تصميم احترافي</h3>
-        <p data-ar="تصميمات أنيقة ومنظمة تساعدك على تقديم علامتك التجارية بصورة مميزة."
-           data-en="Elegant, organized designs that help present your brand professionally.">
-          تصميمات أنيقة ومنظمة تساعدك على تقديم علامتك التجارية بصورة مميزة.
-        </p>
-      </article>
-
-      <article class="why-card">
-        <div class="why-icon">◇</div>
-        <h3 data-ar="أسعار مناسبة" data-en="Affordable Pricing">أسعار مناسبة</h3>
-        <p data-ar="خيارات رقمية بأسعار مناسبة لتبدأ مشروعك أو تطور حضورك الشخصي."
-           data-en="Affordable digital options to help you launch or improve your online presence.">
-          خيارات رقمية بأسعار مناسبة لتبدأ مشروعك أو تطور حضورك الشخصي.
-        </p>
-      </article>
-
-      <article class="why-card">
-        <div class="why-icon">⌘</div>
-        <h3 data-ar="سهولة الاستخدام" data-en="Easy to Use">سهولة الاستخدام</h3>
-        <p data-ar="نهتم بتقديم منتجات واضحة ومنظمة لتسهيل التعامل معها وتخصيصها."
-           data-en="Clear, organized products designed to be easier to use and customize.">
-          نهتم بتقديم منتجات واضحة ومنظمة لتسهيل التعامل معها وتخصيصها.
-        </p>
-      </article>
-
-      <article class="why-card">
-        <div class="why-icon">◎</div>
-        <h3 data-ar="تنوع الاختيارات" data-en="Variety of Choices">تنوع الاختيارات</h3>
-        <p data-ar="قوالب متعددة تناسب الشركات والمشروعات والمطاعم والمحامين والمزيد."
-           data-en="Different templates for businesses, restaurants, law firms, and more.">
-          قوالب متعددة تناسب الشركات والمشروعات والمطاعم والمحامين والمزيد.
-        </p>
-      </article>
-
-      <article class="why-card">
-        <div class="why-icon">↗</div>
-        <h3 data-ar="تجربة مرنة" data-en="Flexible Experience">تجربة مرنة</h3>
-        <p data-ar="اختر المنتج المناسب لك واستفسر عن تفاصيله قبل إتمام طلبك."
-           data-en="Choose what suits you and ask for details before placing your order.">
-          اختر المنتج المناسب لك واستفسر عن تفاصيله قبل إتمام طلبك.
-        </p>
-      </article>
-
-      <article class="why-card">
-        <div class="why-icon">✉</div>
-        <h3 data-ar="تواصل مباشر" data-en="Direct Contact">تواصل مباشر</h3>
-        <p data-ar="يمكنك التواصل معنا عبر واتساب للاستفسار عن المنتجات وطلب المساعدة."
-           data-en="Contact us on WhatsApp for product questions and assistance.">
-          يمكنك التواصل معنا عبر واتساب للاستفسار عن المنتجات وطلب المساعدة.
-        </p>
-      </article>
-
-    </div>
-  </div>
-</section>
-
-<!-- العرض -->
-
-<section class="section" id="offer">
-  <div class="container">
-
-    <div class="offer-box">
-
-      <div class="offer-copy">
-        <span class="offer-tag" data-ar="عرض لفترة محدودة" data-en="Limited-Time Offer">عرض لفترة محدودة</span>
-
-        <h2 data-ar="ارتقِ بحضورك الرقمي." data-en="Elevate Your Digital Presence.">
-          ارتقِ بحضورك الرقمي.
-        </h2>
-
-        <p data-ar="اكتشف المنتجات المتاحة واختر التصميم الذي يناسب احتياجاتك."
-           data-en="Explore available products and choose the design that fits your needs.">
-          اكتشف المنتجات المتاحة واختر التصميم الذي يناسب احتياجاتك.
-        </p>
-
-        <a href="#products" class="btn btn-primary"
-           data-ar="تسوق الآن ←" data-en="Shop Now →">
-          تسوق الآن ←
-        </a>
-      </div>
-
-      <div class="offer-symbol">✦</div>
-
-    </div>
-
-  </div>
-</section>
-
-<!-- خطوات الطلب -->
+<div class="trust"><div class="container trust-grid">
+ <div class="trust-item"><span class="trust-icon">◇</span><span><strong data-t="trust1">تصميمات احترافية</strong><small data-t="trust1s">مظهر أنيق ومنظم</small></span></div>
+ <div class="trust-item"><span class="trust-icon">◎</span><span><strong data-t="trust2">أسعار واضحة</strong><small data-t="trust2s">بدون خصومات وهمية</small></span></div>
+ <div class="trust-item"><span class="trust-icon">↗</span><span><strong data-t="trust3">شراء مباشر</strong><small data-t="trust3s">عبر صفحات Payhip</small></span></div>
+</div></div>
 
 <section class="section">
-  <div class="container">
-
-    <div class="section-heading">
-      <div class="eyebrow">HOW IT WORKS</div>
-      <h2 data-ar="كيف تطلب منتجك؟" data-en="How to Order">كيف تطلب منتجك؟</h2>
-      <p data-ar="ثلاث خطوات بسيطة للبدء." data-en="Three simple steps to get started.">ثلاث خطوات بسيطة للبدء.</p>
-    </div>
-
-    <div class="steps-grid">
-
-      <article class="step-card">
-        <div class="step-number">01</div>
-        <h3 data-ar="اختر المنتج" data-en="Choose a Product">اختر المنتج</h3>
-        <p data-ar="تصفح القوالب والتصميمات واختر ما يناسب احتياجاتك."
-           data-en="Browse the templates and choose the product that suits your needs.">
-          تصفح القوالب والتصميمات واختر ما يناسب احتياجاتك.
-        </p>
-      </article>
-
-      <article class="step-card">
-        <div class="step-number">02</div>
-        <h3 data-ar="أضف إلى السلة" data-en="Add to Cart">أضف إلى السلة</h3>
-        <p data-ar="اجمع المنتجات التي تريدها وراجع إجمالي طلبك."
-           data-en="Add your selected products and review your order total.">
-          اجمع المنتجات التي تريدها وراجع إجمالي طلبك.
-        </p>
-      </article>
-
-      <article class="step-card">
-        <div class="step-number">03</div>
-        <h3 data-ar="أرسل طلبك" data-en="Send Your Order">أرسل طلبك</h3>
-        <p data-ar="أرسل تفاصيل المنتجات عبر واتساب لتأكيد الطلب ومناقشة طريقة الدفع والتسليم."
-           data-en="Send your order via WhatsApp to confirm the order, payment, and delivery details.">
-          أرسل تفاصيل المنتجات عبر واتساب لتأكيد الطلب ومناقشة طريقة الدفع والتسليم.
-        </p>
-      </article>
-
-    </div>
+ <div class="container">
+  <div class="offer">
+   <div><span class="eyebrow" data-t="offerLabel">A SPECIAL COLLECTION</span><h3 data-t="offerTitle">ابدأ مشروعك بتصميم يستحقه.</h3><p data-t="offerDesc">تصفّح المجموعة واختر القالب الأنسب لاحتياجاتك.</p></div>
+   <div class="badge">PRO<small data-t="collection">COLLECTION</small></div>
   </div>
+ </div>
 </section>
 
-<!-- الأسئلة الشائعة -->
+<section class="section" id="products" style="padding-top:15px">
+ <div class="container">
+  <div class="heading"><div><span class="eyebrow" data-t="collectionLabel">THE COLLECTION</span><h2 data-t="productsTitle">اكتشف القوالب</h2></div><p data-t="productsDesc">مجموعة مختارة للمواقع المهنية والسير الذاتية. ابحث عن المنتج المناسب أو صفِّ المنتجات حسب النوع.</p></div>
+  <div class="toolbar">
+   <div class="search"><input id="search" type="search" placeholder="ابحث عن قالب..." data-placeholder="searchPH"></div>
+   <select id="sort"><option value="featured" data-t="sortDefault">الترتيب الافتراضي</option><option value="low" data-t="sortLow">السعر: الأقل أولًا</option><option value="high" data-t="sortHigh">السعر: الأعلى أولًا</option><option value="az" data-t="sortAZ">الاسم</option></select>
+  </div>
+  <div class="tabs" id="tabs">
+   <button class="tab active" data-cat="all" data-t="all">جميع المنتجات</button>
+   <button class="tab" data-cat="website" data-t="web">قوالب المواقع</button>
+   <button class="tab" data-cat="cv" data-t="cv">قوالب CV</button>
+   <button class="tab" data-cat="business" data-t="business">أعمال وشركات</button>
+   <button class="tab" data-cat="creative" data-t="creative">إبداعية</button>
+  </div>
+  <div class="grid" id="grid"></div>
+ </div>
+</section>
+
+<section class="section pricing" id="pricing">
+ <div class="container">
+  <div class="heading"><div><span class="eyebrow" data-t="pricingLabel">SIMPLE PRICING</span><h2 data-t="pricingTitle">أسعار القوالب</h2></div><p data-t="pricingDesc">أسعار مباشرة وبسيطة تساعدك على اختيار ما يناسب ميزانيتك.</p></div>
+  <div class="price-grid">
+   <div class="price-card"><span class="eyebrow">WEBSITE TEMPLATES</span><h3 data-t="websiteTemplates">قوالب المواقع الإلكترونية</h3><div class="price-number">$2 <small style="font:12px Cairo;color:var(--muted)" data-t="perTemplate">/ للقالب</small></div><p data-t="webPriceDesc">قوالب للأعمال والمطاعم والعقارات والمحاماة.</p><ul class="price-list"><li data-t="webFeature1">قوالب لمجالات متنوعة</li><li data-t="webFeature2">معاينة معلومات المنتج قبل الشراء</li><li data-t="webFeature3">الشراء من خلال Payhip</li></ul><a href="#products" class="btn primary" data-t="browseWeb">تصفّح قوالب المواقع</a></div>
+   <div class="price-card"><span class="eyebrow">CV TEMPLATES</span><h3 data-t="cvTemplates">قوالب السيرة الذاتية</h3><div class="price-number">$1 <small style="font:12px Cairo;color:var(--muted)" data-t="perTemplate">/ للقالب</small></div><p data-t="cvPriceDesc">تصميمات لتقديم خبراتك ومهاراتك بصورة منظمة.</p><ul class="price-list"><li data-t="cvFeature1">اختيارات احترافية وإبداعية</li><li data-t="cvFeature2">عرض معلومات المنتج قبل الشراء</li><li data-t="cvFeature3">رابط الشراء عبر Payhip</li></ul><a href="#products" class="btn outline" data-t="browseCV">تصفّح قوالب CV</a></div>
+  </div>
+ </div>
+</section>
+
+<section class="section" id="why">
+ <div class="container">
+  <div class="heading"><div><span class="eyebrow">WHY CHOOSE US</span><h2 data-t="whyTitle">لماذا تختارنا؟</h2></div><p data-t="whyDesc">تجربة شراء واضحة، وتفاصيل منظمة، وتصميم هادئ يجعل الوصول إلى المنتج المناسب أسهل.</p></div>
+  <div class="why-grid">
+   <article class="why-card"><div class="why-icon">✧</div><h3 data-t="why1">تصميم يهتم بالتفاصيل</h3><p data-t="why1d">واجهة مرتبة ومساحات مريحة للعين وهوية بصرية تجمع الكحلي والذهبي.</p></article>
+   <article class="why-card"><div class="why-icon">◇</div><h3 data-t="why2">أسعار واضحة</h3><p data-t="why2d">قوالب المواقع بسعر دولارين وقوالب CV بسعر دولار واحد لكل قالب.</p></article>
+   <article class="why-card"><div class="why-icon">↗</div><h3 data-t="why3">روابط شراء مباشرة</h3><p data-t="why3d">الانتقال إلى صفحة المنتج على Payhip لإتمام عملية الشراء.</p></article>
+   <article class="why-card"><div class="why-icon">⌕</div><h3 data-t="why4">بحث وفلاتر سهلة</h3><p data-t="why4d">ابحث وصنّف المنتجات ورتّبها حسب السعر.</p></article>
+   <article class="why-card"><div class="why-icon">▣</div><h3 data-t="why5">متوافق مع الشاشات</h3><p data-t="why5d">واجهة متجاوبة للموبايل والتابلت والكمبيوتر.</p></article>
+   <article class="why-card"><div class="why-icon">☼</div><h3 data-t="why6">تجربة مرنة</h3><p data-t="why6d">التبديل بين العربية والإنجليزية والمظهر الداكن والفاتح.</p></article>
+  </div>
+ </div>
+</section>
+
+<section class="section steps">
+ <div class="container">
+  <div class="heading"><div><span class="eyebrow">HOW IT WORKS</span><h2 data-t="stepsTitle">كيف تشتري قالبك؟</h2></div><p data-t="stepsDesc">ثلاث خطوات بسيطة للانتقال من التصفح إلى صفحة الشراء.</p></div>
+  <div class="step-grid">
+   <article class="step"><div class="step-num">01</div><h3 data-t="step1">اختر القالب</h3><p data-t="step1d">تصفّح المنتجات واستخدم البحث للوصول إلى التصميم المناسب.</p></article>
+   <article class="step"><div class="step-num">02</div><h3 data-t="step2">راجع التفاصيل</h3><p data-t="step2d">تحقق من السعر والوصف ثم افتح رابط المنتج.</p></article>
+   <article class="step"><div class="step-num">03</div><h3 data-t="step3">أكمل الشراء</h3><p data-t="step3d">أكمل الدفع عبر Payhip واتبع تعليمات المنتج.</p></article>
+  </div>
+ </div>
+</section>
 
 <section class="section" id="faq">
-  <div class="container">
-
-    <div class="section-heading">
-      <div class="eyebrow">FAQ</div>
-      <h2 data-ar="الأسئلة الشائعة" data-en="Frequently Asked Questions">الأسئلة الشائعة</h2>
-    </div>
-
-    <div class="faq-list">
-
-      <div class="faq-item">
-        <button class="faq-question">
-          <span data-ar="ما أسعار المنتجات؟" data-en="What are the product prices?">ما أسعار المنتجات؟</span>
-          <span>+</span>
-        </button>
-        <div class="faq-answer"
-             data-ar="تبدأ أسعار قوالب المواقع من 2 دولار، وتصميمات السيرة الذاتية من 1 دولار. راجع السعر الموضح لكل منتج قبل الطلب."
-             data-en="Website templates start at $2 and CV designs start at $1. Check each product's listed price before ordering.">
-          تبدأ أسعار قوالب المواقع من 2 دولار، وتصميمات السيرة الذاتية من 1 دولار. راجع السعر الموضح لكل منتج قبل الطلب.
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-question">
-          <span data-ar="كيف أطلب منتجًا؟" data-en="How do I order?">كيف أطلب منتجًا؟</span>
-          <span>+</span>
-        </button>
-        <div class="faq-answer"
-             data-ar="أضف المنتجات إلى السلة واضغط على زر إتمام الطلب عبر واتساب، ثم أرسل الرسالة لمناقشة تفاصيل طلبك."
-             data-en="Add products to your cart and select WhatsApp checkout to discuss your order details.">
-          أضف المنتجات إلى السلة واضغط على زر إتمام الطلب عبر واتساب، ثم أرسل الرسالة لمناقشة تفاصيل طلبك.
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-question">
-          <span data-ar="هل يمكنني الاستفسار قبل الشراء؟" data-en="Can I ask questions before buying?">هل يمكنني الاستفسار قبل الشراء؟</span>
-          <span>+</span>
-        </button>
-        <div class="faq-answer"
-             data-ar="نعم، يمكنك التواصل معنا عبر واتساب للاستفسار عن المنتج ومدى ملاءمته لاحتياجاتك."
-             data-en="Yes, you can contact us on WhatsApp to ask about a product before ordering.">
-          نعم، يمكنك التواصل معنا عبر واتساب للاستفسار عن المنتج ومدى ملاءمته لاحتياجاتك.
-        </div>
-      </div>
-
-    </div>
+ <div class="container">
+  <div class="heading"><div><span class="eyebrow">HELP CENTER</span><h2 data-t="faqTitle">الأسئلة الشائعة</h2></div><p data-t="faqDesc">معلومات أساسية لمساعدتك قبل اختيار المنتج.</p></div>
+  <div class="faq">
+   <details><summary data-t="q1">ما أسعار المنتجات؟</summary><p data-t="a1">قوالب المواقع بسعر دولارين للقالب، وقوالب السيرة الذاتية بسعر دولار واحد للقالب.</p></details>
+   <details><summary data-t="q2">كيف أشتري المنتج؟</summary><p data-t="a2">اضغط على زر الشراء في بطاقة المنتج لفتح صفحة Payhip، ثم اتبع تعليمات الشراء.</p></details>
+   <details><summary data-t="q3">هل يمكنني التواصل قبل الشراء؟</summary><p data-t="a3">نعم، يمكنك مراسلتنا عبر واتساب.</p></details>
+   <details><summary data-t="q4">هل يمكن استخدام الموقع بالإنجليزية؟</summary><p data-t="a4">نعم، استخدم زر EN أو AR أعلى الموقع.</p></details>
+   <details><summary data-t="q5">هل يمكن استرجاع المنتجات الرقمية؟</summary><p data-t="a5">راجع سياسة الاسترجاع وشروط المنتج على Payhip قبل الشراء.</p></details>
   </div>
+ </div>
 </section>
 
-<!-- السوشيال ميديا -->
-
-<section class="section social-section" id="social">
-  <div class="container">
-
-    <div class="section-heading">
-      <div class="eyebrow">CONNECT WITH US</div>
-      <h2 data-ar="تابعنا على منصات التواصل" data-en="Connect With Us">تابعنا على منصات التواصل</h2>
-      <p data-ar="تابع أحدث التصميمات والمنتجات والأعمال." data-en="Follow our latest designs, products, and work.">
-        تابع أحدث التصميمات والمنتجات والأعمال.
-      </p>
+<section class="section" id="contact">
+ <div class="container">
+  <div class="contact">
+   <div><span class="eyebrow">LET'S CONNECT</span><h2 data-t="contactTitle">هل تحتاج إلى مساعدة؟</h2><p data-t="contactDesc">تواصل معنا للاستفسارات المتعلقة بالقوالب والمنتجات الرقمية.</p>
+    <div class="socials">
+     <a class="social" href="https://www.facebook.com/AhmedAbuOmarOfficial?mibextid=ZbWKw" target="_blank" rel="noopener">Facebook ↗</a>
+     <a class="social" href="https://www.instagram.com/ahmedabuomar.design?cplk=OXI4aTc1aXc0bTU2" target="_blank" rel="noopener">Instagram ↗</a>
+     <a class="social" href="https://www.linkedin.com/in/ahmedwebtemplates?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener">LinkedIn ↗</a>
+     <a class="social" href="https://pin.it/4ybW3iCMi" target="_blank" rel="noopener">Pinterest ↗</a>
     </div>
-
-    <div class="social-grid">
-
-      <a class="social-link" href="https://www.facebook.com/AhmedAbuOmarOfficial" target="_blank" rel="noopener">
-        <span>f</span> Facebook
-      </a>
-
-      <a class="social-link" href="https://www.instagram.com/ahmedabuomar.design/" target="_blank" rel="noopener">
-        <span>◎</span> Instagram
-      </a>
-
-      <a class="social-link" href="https://www.linkedin.com/in/ahmedwebtemplates/" target="_blank" rel="noopener">
-        <span>in</span> LinkedIn
-      </a>
-
-      <a class="social-link" href="https://pin.it/4ybW3iCMi" target="_blank" rel="noopener">
-        <span>℗</span> Pinterest
-      </a>
-
-    </div>
+   </div>
+   <div><a class="btn primary" href="https://wa.me/201206443652" target="_blank" rel="noopener" data-t="whatsapp">تواصل عبر واتساب ↗</a><br><br><a class="btn outline" href="https://payhip.com/ahmedabuomar" target="_blank" rel="noopener" data-t="visitStore">زيارة متجر Payhip ↗</a></div>
   </div>
+ </div>
 </section>
-
 </main>
 
-<!-- الفوتر -->
+<footer><div class="container">
+ <div class="footer-top">
+  <div><a class="brand" href="#home"><span class="logo">AO</span><span><strong>AHMED ABU OMAR</strong><small>DIGITAL EXPERIENCES</small></span></a><p class="footer-desc" data-t="footerDesc">وجهتك للقوالب الرقمية الاحترافية وتصميمات المواقع والسير الذاتية.</p></div>
+  <div class="footer-links"><a href="#home" data-t="home">الرئيسية</a><a href="#products" data-t="products">القوالب</a><a href="#pricing" data-t="pricing">الأسعار</a><a href="#why" data-t="why">لماذا نحن؟</a><a href="#faq" data-t="faq">الأسئلة</a><a href="https://payhip.com/ahmedabuomar" target="_blank" rel="noopener">Payhip ↗</a></div>
+ </div>
+ <div class="footer-bottom"><span>© <span data-t="copyright">AHMED ABU OMAR. جميع الحقوق محفوظة.</span></span><span data-t="footerNote">هوية رقمية بالكحلي والذهبي.</span></div>
+</div></footer>
 
-<footer class="footer">
-  <div class="container">
+<a class="whatsapp" href="https://wa.me/201206443652" target="_blank" rel="noopener" aria-label="WhatsApp">◉</a>
 
-    <div class="footer-grid">
+<nav class="mobile-nav">
+ <a href="#home"><span>⌂</span><span data-t="home">الرئيسية</span></a>
+ <a href="#products"><span>▦</span><span data-t="products">القوالب</span></a>
+ <button id="mobileCart"><span>♧</span><span data-t="cart">السلة</span></button>
+ <a href="#contact"><span>✉</span><span data-t="contact">تواصل</span></a>
+</nav>
 
-      <div class="footer-brand">
-        <a class="logo" href="#home">AHMED <span>ABU OMAR</span></a>
-        <p data-ar="وجهتك للمنتجات الرقمية والتصميمات الاحترافية. نساعدك على تقديم مشروعك وهويتك بصورة أفضل."
-           data-en="Your destination for premium digital products and professional designs.">
-          وجهتك للمنتجات الرقمية والتصميمات الاحترافية. نساعدك على تقديم مشروعك وهويتك بصورة أفضل.
-        </p>
-      </div>
-
-      <div>
-        <h3 data-ar="روابط سريعة" data-en="Quick Links">روابط سريعة</h3>
-        <div class="footer-links">
-          <a href="#home" data-ar="الرئيسية" data-en="Home">الرئيسية</a>
-          <a href="#products" data-ar="المنتجات" data-en="Products">المنتجات</a>
-          <a href="#why" data-ar="لماذا تختارنا؟" data-en="Why Us?">لماذا تختارنا؟</a>
-          <a href="#faq" data-ar="الأسئلة الشائعة" data-en="FAQ">الأسئلة الشائعة</a>
-        </div>
-      </div>
-
-      <div>
-        <h3 data-ar="تواصل معنا" data-en="Contact Us">تواصل معنا</h3>
-        <div class="footer-links">
-          <a href="https://wa.me/201206443652" target="_blank" rel="noopener">WhatsApp</a>
-          <a href="https://www.facebook.com/AhmedAbuOmarOfficial" target="_blank" rel="noopener">Facebook</a>
-          <a href="https://www.instagram.com/ahmedabuomar.design/" target="_blank" rel="noopener">Instagram</a>
-          <a href="https://www.linkedin.com/in/ahmedwebtemplates/" target="_blank" rel="noopener">LinkedIn</a>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="footer-bottom">
-      <span>© <span id="currentYear"></span> AHMED ABU OMAR</span>
-      <span data-ar="صُنع باهتمام بالتفاصيل ✦" data-en="Crafted with attention to detail ✦">صُنع باهتمام بالتفاصيل ✦</span>
-    </div>
-
-  </div>
-</footer>
-
-<!-- سلة المشتريات -->
-
-<div class="cart-overlay" id="cartOverlay"></div>
-
-<aside class="cart-drawer" id="cartDrawer" aria-label="سلة المشتريات">
-
-  <div class="cart-header">
-    <h2 data-ar="سلة المشتريات" data-en="Shopping Cart">سلة المشتريات</h2>
-    <button class="cart-close" id="closeCart" aria-label="إغلاق">×</button>
-  </div>
-
-  <div class="cart-items" id="cartItems"></div>
-
-  <div class="cart-footer">
-    <div class="cart-total">
-      <span data-ar="الإجمالي" data-en="Total">الإجمالي</span>
-      <strong id="cartTotal">$0.00</strong>
-    </div>
-
-    <button class="btn btn-primary checkout-btn" id="checkoutBtn"
-            data-ar="إتمام الطلب عبر واتساب" data-en="Checkout via WhatsApp">
-      إتمام الطلب عبر واتساب
-    </button>
-  </div>
-
+<div class="overlay" id="overlay"></div>
+<aside class="drawer" id="drawer">
+ <div class="drawer-head"><h3 data-t="cartTitle">سلة المشتريات</h3><button class="icon" id="closeCart">×</button></div>
+ <div class="cart-items" id="cartItems"></div>
+ <div class="drawer-foot">
+  <div class="total"><span data-t="total">الإجمالي التقديري</span><strong id="total">$0.00</strong></div>
+  <button class="btn primary" style="width:100%;margin-bottom:8px" id="checkout" data-t="checkout">متابعة الشراء</button>
+  <button class="btn outline" style="width:100%;margin-bottom:8px" id="orderWA" data-t="orderWA">إرسال الطلب عبر واتساب</button>
+  <div class="note" data-t="cartNote">السلة تحفظ اختياراتك على هذا الجهاز. الدفع النهائي يتم عبر صفحات المنتجات على Payhip، وليس من خلال عملية دفع مجمعة داخل الموقع.</div>
+ </div>
 </aside>
-
-<a class="whatsapp-float"
-   href="https://wa.me/201206443652"
-   target="_blank"
-   rel="noopener"
-   aria-label="تواصل عبر واتساب">✆</a>
-
 <div class="toast" id="toast" role="status"></div>
 
-<!-- JAVASCRIPT -->
-
 <script>
-"use strict";
+const STORE={
+ whatsapp:"https://wa.me/201206443652",
+ payhip:"https://payhip.com/ahmedabuomar"
+};
 
-/* رقم واتساب بصيغة دولية */
-const WHATSAPP_NUMBER = "201206443652";
-
-/* المنتجات */
-const products = [
-  {
-    id: 1,
-    nameAr: "قالب موقع مكتب محاماة",
-    nameEn: "Law Firm Website",
-    category: "website",
-    price: 2,
-    descAr: "تصميم احترافي للمحامين والمكاتب القانونية.",
-    descEn: "A professional website template for law firms.",
-    preview: "law",
-    brand: "LEGAL PARTNERS",
-    titleAr: "العدالة تبدأ هنا",
-    titleEn: "Justice Begins Here"
-  },
-  {
-    id: 2,
-    nameAr: "قالب موقع مطعم",
-    nameEn: "Restaurant Website",
-    category: "website",
-    price: 2,
-    descAr: "واجهة أنيقة للمطاعم والمقاهي.",
-    descEn: "An elegant website template for restaurants and cafes.",
-    preview: "restaurant",
-    brand: "THE SIGNATURE",
-    titleAr: "تجربة مذاق استثنائية",
-    titleEn: "A Taste Beyond"
-  },
-  {
-    id: 3,
-    nameAr: "قالب موقع شركة",
-    nameEn: "Business Website",
-    category: "business",
-    price: 2,
-    descAr: "موقع عصري لعرض خدمات الشركات والمشروعات.",
-    descEn: "A modern template for businesses and services.",
-    preview: "business",
-    brand: "NEXORA",
-    titleAr: "أعمالك إلى المستوى التالي",
-    titleEn: "Business Beyond Limits"
-  },
-  {
-    id: 4,
-    nameAr: "قالب موقع عقارات",
-    nameEn: "Real Estate Website",
-    category: "website",
-    price: 2,
-    descAr: "تصميم مميز لشركات العقارات وعرض الوحدات.",
-    descEn: "A polished template for real estate listings.",
-    preview: "realestate",
-    brand: "PRESTIGE ESTATES",
-    titleAr: "اكتشف منزلك القادم",
-    titleEn: "Find Your Next Home"
-  },
-  {
-    id: 5,
-    nameAr: "قالب معرض أعمال",
-    nameEn: "Creative Portfolio",
-    category: "business",
-    price: 2,
-    descAr: "واجهة أنيقة للمصممين والمبدعين.",
-    descEn: "A stylish portfolio template for creative professionals.",
-    preview: "portfolio",
-    brand: "STUDIO NOIR",
-    titleAr: "أفكار تصنع الفرق",
-    titleEn: "Ideas That Inspire"
-  },
-  {
-    id: 6,
-    nameAr: "تصميم سيرة ذاتية احترافي",
-    nameEn: "Professional CV Design",
-    category: "cv",
-    price: 1,
-    descAr: "سيرة ذاتية منظمة لعرض خبراتك ومهاراتك.",
-    descEn: "A clean CV design to present your skills and experience.",
-    preview: "cv",
-    brand: "PROFESSIONAL PROFILE",
-    titleAr: "مسيرتك تستحق التميز",
-    titleEn: "Your Career, Elevated"
-  }
+const products=[
+{id:"nova",cat:"website",style:"real",price:2,url:"https://payhip.com/b/7N0IC",name:{ar:"NOVA — قالب موقع عقارات",en:"NOVA — Real Estate Website"},desc:{ar:"تصميم عقاري احترافي لعرض العقارات والمشروعات.",en:"A professional layout for showcasing properties and developments."},tags:"nova real estate عقارات عقاري"},
+{id:"restaurant",cat:"website",style:"food",price:2,url:"https://payhip.com/b/SnpTh",name:{ar:"قالب موقع مطعم",en:"Restaurant Website Template"},desc:{ar:"واجهة للمطاعم وعرض القوائم والخدمات بصورة منظمة.",en:"A polished restaurant layout for presenting menus and services."},tags:"restaurant food مطعم مطاعم طعام"},
+{id:"lawyer",cat:"website",style:"law",price:2,url:"https://payhip.com/b/V7sGk",name:{ar:"قالب موقع محاماة احترافي",en:"Premium Lawyer Website"},desc:{ar:"واجهة مهنية لمكاتب المحاماة والخدمات القانونية.",en:"A professional website for law firms and legal services."},tags:"law lawyer legal محاماة محامي قانون"},
+{id:"business",cat:"business",style:"business",price:2,url:"https://payhip.com/ahmedabuomar",name:{ar:"قالب موقع أعمال وشركات",en:"Business Website Template"},desc:{ar:"تصميم أنيق للشركات والمشروعات والخدمات المهنية.",en:"A clean layout for businesses and professional services."},tags:"business company أعمال شركات شركة"},
+{id:"cv-pro",cat:"cv",style:"cv",price:1,url:"https://payhip.com/b/Dy2bz",name:{ar:"قالب CV احترافي",en:"Professional CV Template"},desc:{ar:"تصميم سيرة ذاتية منظم لإبراز المهارات والخبرات.",en:"A structured CV design to present skills and experience."},tags:"cv resume سيرة ذاتية وظيفة"},
+{id:"cv-creative",cat:"creative",style:"cv",price:1,url:"https://payhip.com/b/Dy2bz",name:{ar:"قالب CV إبداعي",en:"Creative CV Template"},desc:{ar:"قالب إبداعي للسيرة الذاتية. تحقق من محتويات المنتج على Payhip.",en:"A creative CV option. Verify the product contents on Payhip."},tags:"cv creative إبداعي سيرة ذاتية"}
 ];
 
-let cart = [];
-let currentFilter = "all";
-let currentLanguage = "ar";
-let currentSearch = "";
-let currentSort = "default";
+const words={
+ar:{
+announcement:"✦ مجموعة مميزة",announcement2:"قوالب رقمية بأسعار واضحة",home:"الرئيسية",products:"القوالب",pricing:"الأسعار",why:"لماذا نحن؟",faq:"الأسئلة",contact:"تواصل معنا",
+eyebrow:"متجر رقمي احترافي",hero1:"ارتقِ بأفكارك",hero2:"إلى مستوى جديد.",heroDesc:"اكتشف قوالب مواقع احترافية وتصميمات CV أنيقة، صُممت لتمنح مشروعك حضورًا مميزًا وتجربة رقمية متكاملة.",explore:"استكشف القوالب ↙",viewPrices:"اكتشف الأسعار",heroNote:"تصميم احترافي · أسعار واضحة · شراء عبر Payhip",floating:"تصميمات مختارة بعناية",floatingSub:"تفاصيل بسيطة. حضور قوي.",
+trust1:"تصميمات احترافية",trust1s:"مظهر أنيق ومنظم",trust2:"أسعار واضحة",trust2s:"بدون خصومات وهمية",trust3:"شراء مباشر",trust3s:"عبر صفحات Payhip",
+offerLabel:"مجموعة مميزة",offerTitle:"ابدأ مشروعك بتصميم يستحقه.",offerDesc:"تصفّح المجموعة واختر القالب الأنسب لاحتياجاتك.",collection:"المجموعة",
+collectionLabel:"مجموعة القوالب",productsTitle:"اكتشف القوالب",productsDesc:"مجموعة مختارة للمواقع المهنية والسير الذاتية. ابحث عن المنتج المناسب أو صفِّ المنتجات حسب النوع.",
+searchPH:"ابحث عن قالب...",sortDefault:"الترتيب الافتراضي",sortLow:"السعر: الأقل أولًا",sortHigh:"السعر: الأعلى أولًا",sortAZ:"الاسم",
+all:"جميع المنتجات",web:"قوالب المواقع",cv:"قوالب CV",business:"أعمال وشركات",creative:"إبداعية",add:"أضف للسلة",buy:"شراء",noResults:"لا توجد منتجات تطابق بحثك.",
+pricingLabel:"أسعار واضحة",pricingTitle:"أسعار القوالب",pricingDesc:"أسعار مباشرة وبسيطة تساعدك على اختيار ما يناسب ميزانيتك.",websiteTemplates:"قوالب المواقع الإلكترونية",perTemplate:"/ للقالب",webPriceDesc:"قوالب للأعمال والمطاعم والعقارات والمحاماة.",webFeature1:"قوالب لمجالات متنوعة",webFeature2:"معاينة معلومات المنتج قبل الشراء",webFeature3:"الشراء من خلال Payhip",browseWeb:"تصفّح قوالب المواقع",cvTemplates:"قوالب السيرة الذاتية",cvPriceDesc:"تصميمات لتقديم خبراتك ومهاراتك بصورة منظمة.",cvFeature1:"اختيارات احترافية وإبداعية",cvFeature2:"عرض معلومات المنتج قبل الشراء",cvFeature3:"رابط الشراء عبر Payhip",browseCV:"تصفّح قوالب CV",
+whyTitle:"لماذا تختارنا؟",whyDesc:"تجربة شراء واضحة، وتفاصيل منظمة، وتصميم هادئ يجعل الوصول إلى المنتج المناسب أسهل.",why1:"تصميم يهتم بالتفاصيل",why1d:"واجهة مرتبة ومساحات مريحة للعين وهوية بصرية تجمع الكحلي والذهبي.",why2:"أسعار واضحة",why2d:"قوالب المواقع بسعر دولارين وقوالب CV بسعر دولار واحد لكل قالب.",why3:"روابط شراء مباشرة",why3d:"الانتقال إلى صفحة المنتج على Payhip لإتمام عملية الشراء.",why4:"بحث وفلاتر سهلة",why4d:"ابحث وصنّف المنتجات ورتّبها حسب السعر.",why5:"متوافق مع الشاشات",why5d:"واجهة متجاوبة للموبايل والتابلت والكمبيوتر.",why6:"تجربة مرنة",why6d:"التبديل بين العربية والإنجليزية والمظهر الداكن والفاتح.",
+stepsTitle:"كيف تشتري قالبك؟",stepsDesc:"ثلاث خطوات بسيطة للانتقال من التصفح إلى صفحة الشراء.",step1:"اختر القالب",step1d:"تصفّح المنتجات واستخدم البحث للوصول إلى التصميم المناسب.",step2:"راجع التفاصيل",step2d:"تحقق من السعر والوصف ثم افتح رابط المنتج.",step3:"أكمل الشراء",step3d:"أكمل الدفع عبر Payhip واتبع تعليمات المنتج.",
+faqTitle:"الأسئلة الشائعة",faqDesc:"معلومات أساسية لمساعدتك قبل اختيار المنتج.",q1:"ما أسعار المنتجات؟",a1:"قوالب المواقع بسعر دولارين للقالب، وقوالب السيرة الذاتية بسعر دولار واحد للقالب.",q2:"كيف أشتري المنتج؟",a2:"اضغط على زر الشراء في بطاقة المنتج لفتح صفحة Payhip، ثم اتبع تعليمات الشراء.",q3:"هل يمكنني التواصل قبل الشراء؟",a3:"نعم، يمكنك مراسلتنا عبر واتساب.",q4:"هل يمكن استخدام الموقع بالإنجليزية؟",a4:"نعم، استخدم زر EN أو AR أعلى الموقع.",q5:"هل يمكن استرجاع المنتجات الرقمية؟",a5:"راجع سياسة الاسترجاع وشروط المنتج على Payhip قبل الشراء.",
+contactTitle:"هل تحتاج إلى مساعدة؟",contactDesc:"تواصل معنا للاستفسارات المتعلقة بالقوالب والمنتجات الرقمية.",whatsapp:"تواصل عبر واتساب ↗",visitStore:"زيارة متجر Payhip ↗",footerDesc:"وجهتك للقوالب الرقمية الاحترافية وتصميمات المواقع والسير الذاتية.",copyright:"AHMED ABU OMAR. جميع الحقوق محفوظة.",footerNote:"هوية رقمية بالكحلي والذهبي.",
+cart:"السلة",cartTitle:"سلة المشتريات",total:"الإجمالي التقديري",checkout:"متابعة الشراء",orderWA:"إرسال الطلب عبر واتساب",cartNote:"السلة تحفظ اختياراتك على هذا الجهاز. الدفع النهائي يتم عبر صفحات المنتجات على Payhip، وليس من خلال عملية دفع مجمعة داخل الموقع.",emptyCart:"سلتك فارغة حاليًا.",added:"تمت إضافة المنتج إلى السلة.",removed:"تم حذف المنتج.",checkoutMsg:"سيتم فتح صفحات المنتجات على Payhip لإتمام الشراء.",waIntro:"مرحبًا، أريد الاستفسار عن المنتجات التالية:",waTotal:"الإجمالي التقديري",emptyWarn:"أضف منتجات إلى السلة أولًا."
+},
+en:{
+announcement:"✦ Featured Collection",announcement2:"Digital templates with clear pricing",home:"Home",products:"Templates",pricing:"Pricing",why:"Why Us",faq:"FAQ",contact:"Contact",
+eyebrow:"PREMIUM DIGITAL STORE",hero1:"Elevate your ideas",hero2:"to a new level.",heroDesc:"Discover professional website templates and refined CV designs created to give your project a distinctive presence and polished digital experience.",explore:"Explore Templates ↙",viewPrices:"View Pricing",heroNote:"Professional design · Clear pricing · Payhip checkout",floating:"Carefully selected designs",floatingSub:"Simple details. Strong presence.",
+trust1:"Professional Design",trust1s:"Clean, refined layouts",trust2:"Clear Pricing",trust2s:"No misleading discounts",trust3:"Direct Purchase",trust3s:"Through Payhip pages",
+offerLabel:"FEATURED COLLECTION",offerTitle:"Give your project the design it deserves.",offerDesc:"Explore the collection and choose a template for your needs.",collection:"COLLECTION",
+collectionLabel:"THE COLLECTION",productsTitle:"Explore the Templates",productsDesc:"A curated collection of website and CV designs. Search or filter products by category.",
+searchPH:"Search templates...",sortDefault:"Featured order",sortLow:"Price: Low to High",sortHigh:"Price: High to Low",sortAZ:"Name",
+all:"All Products",web:"Website Templates",cv:"CV Templates",business:"Business",creative:"Creative",add:"Add to Cart",buy:"Buy Now",noResults:"No products match your search.",
+pricingLabel:"SIMPLE PRICING",pricingTitle:"Template Pricing",pricingDesc:"Straightforward pricing to help you choose what fits your budget.",websiteTemplates:"Website Templates",perTemplate:"/ template",webPriceDesc:"Templates for businesses, restaurants, real estate and law firms.",webFeature1:"Templates for different industries",webFeature2:"Review product information before purchase",webFeature3:"Purchase through Payhip",browseWeb:"Browse Website Templates",cvTemplates:"CV Templates",cvPriceDesc:"Designs to present skills and experience in an organized way.",cvFeature1:"Professional and creative options",cvFeature2:"Review product information before purchase",cvFeature3:"Purchase through Payhip",browseCV:"Browse CV Templates",
+whyTitle:"Why Choose Us?",whyDesc:"A clear shopping experience, organized information and a calm design that makes it easier to find the right product.",why1:"Detail-Focused Design",why1d:"A clean interface, comfortable spacing and a refined navy-and-gold identity.",why2:"Clear Pricing",why2d:"Website templates are $2 each and CV templates are $1 each.",why3:"Direct Purchase Links",why3d:"Continue to the product page on Payhip to complete your purchase.",why4:"Easy Search and Filters",why4d:"Search, categorize and sort products by price.",why5:"Responsive Layout",why5d:"Designed for phones, tablets and desktop screens.",why6:"A Flexible Experience",why6d:"Switch languages and choose dark or light mode.",
+stepsTitle:"How to Buy a Template",stepsDesc:"Three simple steps from browsing to the product page.",step1:"Choose a Template",step1d:"Browse products and search for a suitable design.",step2:"Review the Details",step2d:"Check the price and description, then open the product link.",step3:"Complete Your Purchase",step3d:"Complete checkout through Payhip and follow product instructions.",
+faqTitle:"Frequently Asked Questions",faqDesc:"Helpful information before you choose a product.",q1:"How much do products cost?",a1:"Website templates are $2 each and CV templates are $1 each.",q2:"How do I purchase a product?",a2:"Select Buy Now to open the Payhip product page and follow its instructions.",q3:"Can I contact you before purchasing?",a3:"Yes, contact us through WhatsApp.",q4:"Can I use the site in English?",a4:"Yes, use the EN or AR button at the top.",q5:"Can digital products be refunded?",a5:"Review the refund policy and product terms on Payhip before purchasing.",
+contactTitle:"Need Assistance?",contactDesc:"Contact us with questions about templates and digital products.",whatsapp:"Contact on WhatsApp ↗",visitStore:"Visit Payhip Store ↗",footerDesc:"Your destination for professional digital templates, website designs and CV layouts.",copyright:"AHMED ABU OMAR. All rights reserved.",footerNote:"A digital identity in navy and gold.",
+cart:"Cart",cartTitle:"Shopping Cart",total:"Estimated Total",checkout:"Continue to Purchase",orderWA:"Send Order via WhatsApp",cartNote:"Your cart is saved on this device. Final payment takes place on Payhip product pages; there is no combined checkout here.",emptyCart:"Your cart is currently empty.",added:"Product added to cart.",removed:"Product removed.",checkoutMsg:"Opening Payhip product pages for checkout.",waIntro:"Hello, I would like to ask about these products:",waTotal:"Estimated total",emptyWarn:"Add products to the cart first."
+}
+};
 
-/* عناصر الصفحة */
-const productsGrid = document.getElementById("productsGrid");
-const cartDrawer = document.getElementById("cartDrawer");
-const cartOverlay = document.getElementById("cartOverlay");
-const cartItems = document.getElementById("cartItems");
-const cartCount = document.getElementById("cartCount");
-const cartTotal = document.getElementById("cartTotal");
-const toast = document.getElementById("toast");
+let lang=localStorage.getItem("ao-lang")||"ar";
+let theme=localStorage.getItem("ao-theme")||"dark";
+let category="all";
+let cart=[];
+try{const saved=JSON.parse(localStorage.getItem("ao-cart")||"[]");if(Array.isArray(saved))cart=saved.filter(i=>products.some(p=>p.id===i.id)&&Number.isInteger(i.qty)&&i.qty>0)}catch(e){cart=[]}
 
-/* النص حسب اللغة */
-function productName(product) {
-  return currentLanguage === "ar" ? product.nameAr : product.nameEn;
+function tr(key){return words[lang][key]||words.ar[key]||key}
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+function pname(p){return p.name[lang]||p.name.ar}
+function pdesc(p){return p.desc[lang]||p.desc.ar}
+function money(n){return "$"+Number(n).toFixed(2)}
+
+function setLang(next){
+ lang=next;localStorage.setItem("ao-lang",lang);
+ document.documentElement.lang=lang;document.documentElement.dir=lang==="ar"?"rtl":"ltr";
+ document.body.classList.toggle("en",lang==="en");
+ document.querySelectorAll("[data-t]").forEach(el=>{const k=el.dataset.t;if(words[lang][k]!==undefined)el.textContent=words[lang][k]});
+ document.querySelectorAll("[data-placeholder]").forEach(el=>el.placeholder=tr(el.dataset.placeholder));
+ document.getElementById("language").textContent=lang==="ar"?"EN":"AR";
+ render();renderCart();
+}
+function setTheme(next){
+ theme=next;localStorage.setItem("ao-theme",theme);
+ document.body.classList.toggle("light",theme==="light");
+ document.getElementById("theme").textContent=theme==="dark"?"☼":"☾";
+}
+function art(p){return `<div class="art ${esc(p.style)}"><span class="art-badge">$${p.price}</span><div class="art-window"><div class="art-top"></div><div class="art-content"><div class="art-copy"><i class="art-line goldline"></i><i class="art-line"></i><i class="art-line"></i><i class="art-line" style="width:52%"></i></div><div class="art-image"></div></div></div></div>`}
+function render(){
+ const q=document.getElementById("search").value.trim().toLowerCase(),sort=document.getElementById("sort").value;
+ let list=products.filter(p=>(category==="all"||p.cat===category||(category==="website"&&p.cat==="website"))&&(!q||(pname(p)+" "+pdesc(p)+" "+p.tags).toLowerCase().includes(q)));
+ if(sort==="low")list.sort((a,b)=>a.price-b.price);
+ if(sort==="high")list.sort((a,b)=>b.price-a.price);
+ if(sort==="az")list.sort((a,b)=>pname(a).localeCompare(pname(b),lang));
+ document.getElementById("grid").innerHTML=list.length?list.map(p=>`<article class="card">${art(p)}<div class="info"><span class="type">${esc(tr(p.cat==="website"?"web":p.cat==="cv"?"cv":p.cat==="business"?"business":"creative"))}</span><h3>${esc(pname(p))}</h3><div class="desc">${esc(pdesc(p))}</div><div class="product-bottom"><div class="price">$${p.price.toFixed(2)} <small>USD</small></div><div class="card-actions"><button class="btn outline" data-add="${p.id}">${esc(tr("add"))}</button><a class="btn primary" href="${esc(p.url)}" target="_blank" rel="noopener noreferrer">${esc(tr("buy"))} ↗</a></div></div></div></article>`).join(""):`<div class="empty">${esc(tr("noResults"))}</div>`;
+ document.querySelectorAll("[data-add]").forEach(b=>b.addEventListener("click",()=>add(b.dataset.add)));
+}
+function save(){localStorage.setItem("ao-cart",JSON.stringify(cart))}
+function toast(msg){const el=document.getElementById("toast");el.textContent=msg;el.classList.add("show");clearTimeout(window.toastTimer);window.toastTimer=setTimeout(()=>el.classList.remove("show"),2300)}
+function add(id){const item=cart.find(x=>x.id===id);if(item)item.qty++;else cart.push({id,qty:1});save();renderCart();toast(tr("added"))}
+function change(id,d){const item=cart.find(x=>x.id===id);if(!item)return;item.qty+=d;if(item.qty<1)cart=cart.filter(x=>x.id!==id);save();renderCart()}
+function remove(id){cart=cart.filter(x=>x.id!==id);save();renderCart();toast(tr("removed"))}
+function total(){return cart.reduce((s,i)=>s+(products.find(p=>p.id===i.id)?.price||0)*i.qty,0)}
+function renderCart(){
+ document.getElementById("count").textContent=cart.reduce((s,i)=>s+i.qty,0);
+ document.getElementById("total").textContent=money(total());
+ const el=document.getElementById("cartItems");
+ if(!cart.length){el.innerHTML=`<div class="cart-empty">${esc(tr("emptyCart"))}</div>`;return}
+ el.innerHTML=cart.map(i=>{const p=products.find(x=>x.id===i.id);return `<div class="cart-row"><div class="cart-icon">✧</div><div class="cart-main"><div class="cart-name">${esc(pname(p))}</div><div class="cart-price">${money(p.price*i.qty)}</div><div class="qty"><button data-minus="${p.id}">−</button><span>${i.qty}</span><button data-plus="${p.id}">+</button></div></div><button class="remove" data-remove="${p.id}">×</button></div>`}).join("");
+ el.querySelectorAll("[data-minus]").forEach(b=>b.onclick=()=>change(b.dataset.minus,-1));
+ el.querySelectorAll("[data-plus]").forEach(b=>b.onclick=()=>change(b.dataset.plus,1));
+ el.querySelectorAll("[data-remove]").forEach(b=>b.onclick=()=>remove(b.dataset.remove));
+}
+function openCart(){document.getElementById("drawer").classList.add("open");document.getElementById("overlay").classList.add("open");document.body.style.overflow="hidden"}
+function closeCart(){document.getElementById("drawer").classList.remove("open");document.getElementById("overlay").classList.remove("open");document.body.style.overflow=""}
+function checkout(){
+ if(!cart.length){toast(tr("emptyWarn"));return}
+ const urls=[...new Set(cart.map(i=>products.find(p=>p.id===i.id)?.url).filter(Boolean))];
+ closeCart();toast(tr("checkoutMsg"));
+ urls.forEach((url,i)=>setTimeout(()=>window.open(url,"_blank","noopener,noreferrer"),i*300));
+}
+function sendWA(){
+ if(!cart.length){toast(tr("emptyWarn"));return}
+ const lines=cart.map(i=>{const p=products.find(x=>x.id===i.id);return `${pname(p)} x${i.qty} — ${money(p.price*i.qty)}\n${p.url}`});
+ const msg=tr("waIntro")+"\n\n"+lines.join("\n\n")+"\n\n"+tr("waTotal")+": "+money(total())+"\nAHMED ABU OMAR";
+ window.open(STORE.whatsapp+"?text="+encodeURIComponent(msg),"_blank","noopener,noreferrer");
 }
 
-function productDescription(product) {
-  return currentLanguage === "ar" ? product.descAr : product.descEn;
-}
-
-function isEnglish() {
-  return currentLanguage === "en";
-}
-
-/* إنشاء معاينة المنتج */
-function makePreview(product) {
-  const title = isEnglish() ? product.titleEn : product.titleAr;
-  const brand = product.brand;
-  const text = isEnglish()
-    ? "A premium design made for modern brands."
-    : "تصميم احترافي يجمع بين الأناقة وسهولة الاستخدام.";
-
-  return `
-    <div class="mock-browser">
-      <div class="mock-browser-top">
-        <div class="mock-browser-dots"><i></i><i></i><i></i></div>
-        <span>${brand.toLowerCase().replaceAll(" ", "")}.com</span>
-      </div>
-      <div class="mock-site ${product.preview}">
-        <div class="mock-brand">${brand}</div>
-        <h4>${title}</h4>
-        <p>${text}</p>
-        <span class="mock-button">${isEnglish() ? "DISCOVER MORE" : "اكتشف المزيد"}</span>
-        <div class="mock-decor"></div>
-      </div>
-    </div>
-  `;
-}
-
-/* عرض المنتجات */
-function renderProducts() {
-  let list = products.filter(product => {
-    const matchesFilter =
-      currentFilter === "all" ||
-      product.category === currentFilter;
-
-    const searchText = (
-      product.nameAr + " " +
-      product.nameEn + " " +
-      product.descAr + " " +
-      product.descEn
-    ).toLowerCase();
-
-    const matchesSearch = searchText.includes(currentSearch.toLowerCase());
-
-    return matchesFilter && matchesSearch;
-  });
-
-  if (currentSort === "low") {
-    list.sort((a, b) => a.price - b.price);
-  } else if (currentSort === "high") {
-    list.sort((a, b) => b.price - a.price);
-  } else if (currentSort === "name") {
-    list.sort((a, b) => productName(a).localeCompare(productName(b)));
-  }
-
-  if (!list.length) {
-    productsGrid.innerHTML = `
-      <div class="empty-products">
-        ${isEnglish() ? "No products match your search." : "لا توجد منتجات مطابقة لبحثك."}
-      </div>
-    `;
-    return;
-  }
-
-  productsGrid.innerHTML = list.map(product => `
-    <article class="product-card">
-
-      <div class="product-preview">
-        <span class="product-label">
-          ${product.category === "cv"
-            ? (isEnglish() ? "CV DESIGN" : "تصميم CV")
-            : (isEnglish() ? "PREMIUM TEMPLATE" : "قالب احترافي")}
-        </span>
-
-        <button class="product-favorite"
-                type="button"
-                aria-label="${isEnglish() ? "Product design" : "تصميم المنتج"}">✦</button>
-
-        ${makePreview(product)}
-      </div>
-
-      <div class="product-info">
-
-        <div class="product-category">
-          ${product.category === "cv"
-            ? (isEnglish() ? "RESUME DESIGN" : "تصميم سيرة ذاتية")
-            : product.category === "business"
-              ? (isEnglish() ? "BUSINESS" : "أعمال وشركات")
-              : (isEnglish() ? "WEBSITE TEMPLATE" : "قالب موقع إلكتروني")}
-        </div>
-
-        <h3>${productName(product)}</h3>
-        <p class="product-description">${productDescription(product)}</p>
-
-        <div class="product-bottom">
-          <div class="product-price">
-            $${product.price.toFixed(2)}
-            <small>USD</small>
-          </div>
-
-          <button class="add-cart-btn" type="button" data-add="${product.id}">
-            ${isEnglish() ? "+ Add to Cart" : "+ أضف للسلة"}
-          </button>
-        </div>
-
-      </div>
-    </article>
-  `).join("");
-}
-
-/* إشعارات صغيرة */
-let toastTimer;
-
-function showToast(message) {
-  toast.textContent = message;
-  toast.classList.add("show");
-
-  clearTimeout(toastTimer);
-
-  toastTimer = setTimeout(() => {
-    toast.classList.remove("show");
-  }, 2200);
-}
-
-/* إضافة للسلة */
-productsGrid.addEventListener("click", event => {
-  const button = event.target.closest("[data-add]");
-  if (!button) return;
-
-  const id = Number(button.dataset.add);
-  const existing = cart.find(item => item.id === id);
-
-  if (existing) {
-    existing.quantity += 1;
-  } else {
-    cart.push({ id, quantity: 1 });
-  }
-
-  saveCart();
-  renderCart();
-
-  showToast(
-    isEnglish()
-      ? "Product added to your cart."
-      : "تمت إضافة المنتج إلى السلة بنجاح."
-  );
+document.getElementById("language").onclick=()=>setLang(lang==="ar"?"en":"ar");
+document.getElementById("theme").onclick=()=>setTheme(theme==="dark"?"light":"dark");
+document.getElementById("openCart").onclick=openCart;
+document.getElementById("mobileCart").onclick=openCart;
+document.getElementById("closeCart").onclick=closeCart;
+document.getElementById("overlay").onclick=closeCart;
+document.getElementById("checkout").onclick=checkout;
+document.getElementById("orderWA").onclick=sendWA;
+document.getElementById("menu").onclick=()=>document.getElementById("links").classList.toggle("open");
+document.querySelectorAll("#links a").forEach(a=>a.onclick=()=>document.getElementById("links").classList.remove("open"));
+document.getElementById("search").addEventListener("input",render);
+document.getElementById("sort").addEventListener("change",render);
+document.querySelectorAll("[data-cat]").forEach(b=>b.onclick=()=>{
+ category=b.dataset.cat;
+ document.querySelectorAll("[data-cat]").forEach(x=>x.classList.toggle("active",x===b));
+ render();
 });
-
-/* حفظ السلة */
-function saveCart() {
-  try {
-    localStorage.setItem("ahmedStoreCart", JSON.stringify(cart));
-  } catch (error) {
-    /* استمرار عمل السلة حتى لو كان التخزين غير متاح */
-  }
-}
-
-/* استعادة السلة */
-function loadCart() {
-  try {
-    const saved = JSON.parse(localStorage.getItem("ahmedStoreCart") || "[]");
-
-    if (Array.isArray(saved)) {
-      cart = saved.filter(item =>
-        products.some(product => product.id === item.id) &&
-        Number.isInteger(item.quantity) &&
-        item.quantity > 0
-      );
-    }
-  } catch (error) {
-    cart = [];
-  }
-}
-
-/* حساب الإجمالي */
-function getCartTotal() {
-  return cart.reduce((total, item) => {
-    const product = products.find(product => product.id === item.id);
-    return total + (product ? product.price * item.quantity : 0);
-  }, 0);
-}
-
-/* عرض السلة */
-function renderCart() {
-  const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-
-  cartCount.textContent = totalItems;
-  cartTotal.textContent = "$" + getCartTotal().toFixed(2);
-
-  if (!cart.length) {
-    cartItems.innerHTML = `
-      <div class="cart-empty">
-        ${isEnglish() ? "Your cart is empty." : "سلة المشتريات فارغة حاليًا."}
-      </div>
-    `;
-    return;
-  }
-
-  cartItems.innerHTML = cart.map(item => {
-    const product = products.find(product => product.id === item.id);
-    if (!product) return "";
-
-    return `
-      <div class="cart-item">
-
-        <div class="cart-item-info">
-          <h4>${productName(product)}</h4>
-          <p>$${(product.price * item.quantity).toFixed(2)}</p>
-
-          <div class="cart-quantity">
-            <button type="button" data-increase="${product.id}" aria-label="+">+</button>
-            <span>${item.quantity}</span>
-            <button type="button" data-decrease="${product.id}" aria-label="-">−</button>
-          </div>
-        </div>
-
-        <button class="remove-item"
-                type="button"
-                data-remove="${product.id}"
-                aria-label="${isEnglish() ? "Remove product" : "حذف المنتج"}">×</button>
-
-      </div>
-    `;
-  }).join("");
-}
-
-/* التحكم في كميات المنتجات */
-cartItems.addEventListener("click", event => {
-  const increase = event.target.closest("[data-increase]");
-  const decrease = event.target.closest("[data-decrease]");
-  const remove = event.target.closest("[data-remove]");
-
-  if (increase) {
-    const item = cart.find(item => item.id === Number(increase.dataset.increase));
-    if (item) item.quantity += 1;
-  }
-
-  if (decrease) {
-    const id = Number(decrease.dataset.decrease);
-    const item = cart.find(item => item.id === id);
-
-    if (item) {
-      item.quantity -= 1;
-      if (item.quantity <= 0) {
-        cart = cart.filter(cartItem => cartItem.id !== id);
-      }
-    }
-  }
-
-  if (remove) {
-    const id = Number(remove.dataset.remove);
-    cart = cart.filter(item => item.id !== id);
-  }
-
-  saveCart();
-  renderCart();
-});
-
-/* فتح وإغلاق السلة */
-function openCart() {
-  cartDrawer.classList.add("active");
-  cartOverlay.classList.add("active");
-  document.body.style.overflow = "hidden";
-}
-
-function closeCart() {
-  cartDrawer.classList.remove("active");
-  cartOverlay.classList.remove("active");
-  document.body.style.overflow = "";
-}
-
-document.getElementById("openCart").addEventListener("click", openCart);
-document.getElementById("closeCart").addEventListener("click", closeCart);
-cartOverlay.addEventListener("click", closeCart);
-
-/* إتمام الطلب عبر واتساب */
-document.getElementById("checkoutBtn").addEventListener("click", () => {
-  if (!cart.length) {
-    showToast(
-      isEnglish()
-        ? "Please add a product first."
-        : "أضف منتجًا إلى السلة أولًا."
-    );
-    return;
-  }
-
-  const lines = cart.map(item => {
-    const product = products.find(product => product.id === item.id);
-
-    return `${productName(product)} × ${item.quantity} — $${(product.price * item.quantity).toFixed(2)}`;
-  });
-
-  const message = [
-    isEnglish() ? "Hello, I would like to order:" : "مرحبًا، أرغب في طلب المنتجات التالية:",
-    "",
-    ...lines,
-    "",
-    `${isEnglish() ? "Total" : "الإجمالي"}: $${getCartTotal().toFixed(2)}`,
-    "",
-    isEnglish() ? "Please confirm the order and delivery details." : "من فضلك أكد الطلب وتفاصيل التسليم."
-  ].join("\n");
-
-  const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
-
-  window.open(url, "_blank", "noopener");
-});
-
-/* البحث */
-document.getElementById("searchInput").addEventListener("input", event => {
-  currentSearch = event.target.value.trim();
-  renderProducts();
-});
-
-/* الترتيب */
-document.getElementById("sortSelect").addEventListener("change", event => {
-  currentSort = event.target.value;
-  renderProducts();
-});
-
-/* الفلاتر */
-document.getElementById("filterList").addEventListener("click", event => {
-  const button = event.target.closest("[data-filter]");
-  if (!button) return;
-
-  currentFilter = button.dataset.filter;
-
-  document.querySelectorAll(".filter-btn").forEach(btn => {
-    btn.classList.toggle("active", btn === button);
-  });
-
-  renderProducts();
-});
-
-/* تغيير اللغة */
-function setLanguage(language) {
-  currentLanguage = language;
-
-  document.documentElement.lang = language;
-  document.documentElement.dir = language === "ar" ? "rtl" : "ltr";
-
-  document.getElementById("languageBtn").textContent =
-    language === "ar" ? "EN" : "عربي";
-
-  document.querySelectorAll("[data-ar][data-en]").forEach(element => {
-    const value = element.dataset[language];
-
-    if (value !== undefined) {
-      element.textContent = value;
-    }
-  });
-
-  document.querySelectorAll("[data-placeholder-ar][data-placeholder-en]").forEach(element => {
-    element.placeholder = language === "ar"
-      ? element.dataset.placeholderAr
-      : element.dataset.placeholderEn;
-  });
-
-  renderProducts();
-  renderCart();
-
-  try {
-    localStorage.setItem("ahmedStoreLanguage", language);
-  } catch (error) {}
-}
-
-document.getElementById("languageBtn").addEventListener("click", () => {
-  setLanguage(currentLanguage === "ar" ? "en" : "ar");
-});
-
-/* الوضع الفاتح والداكن */
-function setTheme(theme) {
-  document.body.classList.toggle("light", theme === "light");
-
-  document.getElementById("themeBtn").textContent =
-    theme === "light" ? "☾" : "☀";
-
-  try {
-    localStorage.setItem("ahmedStoreTheme", theme);
-  } catch (error) {}
-}
-
-document.getElementById("themeBtn").addEventListener("click", () => {
-  const nextTheme = document.body.classList.contains("light") ? "dark" : "light";
-  setTheme(nextTheme);
-});
-
-/* القائمة على الموبايل */
-const mobileMenuBtn = document.getElementById("mobileMenuBtn");
-const navLinks = document.getElementById("navLinks");
-
-mobileMenuBtn.addEventListener("click", () => {
-  const opened = navLinks.classList.toggle("open");
-  mobileMenuBtn.textContent = opened ? "×" : "☰";
-});
-
-navLinks.querySelectorAll("a").forEach(link => {
-  link.addEventListener("click", () => {
-    navLinks.classList.remove("open");
-    mobileMenuBtn.textContent = "☰";
-  });
-});
-
-/* الأسئلة الشائعة */
-document.querySelectorAll(".faq-question").forEach(button => {
-  button.addEventListener("click", () => {
-    const item = button.closest(".faq-item");
-    item.classList.toggle("open");
-  });
-});
-
-/* السنة الحالية */
-document.getElementById("currentYear").textContent = new Date().getFullYear();
-
-/* تشغيل الموقع */
-try {
-  const savedLanguage = localStorage.getItem("ahmedStoreLanguage");
-  const savedTheme = localStorage.getItem("ahmedStoreTheme");
-
-  if (savedLanguage === "en" || savedLanguage === "ar") {
-    currentLanguage = savedLanguage;
-  }
-
-  if (savedTheme === "light" || savedTheme === "dark") {
-    setTheme(savedTheme);
-  }
-} catch (error) {}
-
-loadCart();
-setLanguage(currentLanguage);
-renderProducts();
-renderCart();
+document.addEventListener("keydown",e=>{if(e.key==="Escape"){closeCart();document.getElementById("links").classList.remove("open")}});
+setTheme(theme);setLang(lang);renderCart();
 </script>
-
 </body>
 </html>
