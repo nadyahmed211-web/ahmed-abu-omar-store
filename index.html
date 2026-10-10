@@ -1,1559 +1,583 @@
-<!DOCTYPE html><html lang="ar" dir="rtl">
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#090909">
-<meta name="description" content="Ahmed Abu Omar — Premium website templates, professional CV templates, and digital products.">
-<meta name="author" content="Ahmed Abu Omar">
-<title>Ahmed Abu Omar | Premium Digital Store</title><style>
-:root {
-  --bg: #080808;
-  --bg2: #111111;
-  --card: #141414;
-  --text: #f5f2ea;
-  --muted: #b9b3a6;
-  --gold: #d8b568;
-  --gold2: #f4dc9a;
-  --border: rgba(216,181,104,.25);
-  --shadow: 0 15px 45px rgba(0,0,0,.3);
-}
+<meta name="theme-color" content="#080808">
+<meta name="description" content="Ahmed Abu Omar — Premium website templates, professional CV templates and digital products.">
+<title>Ahmed Abu Omar | Digital Studio</title>
 
-body.light {
-  --bg: #efede7;
-  --bg2: #e5e1d8;
-  --card: #f8f6f0;
-  --text: #25231f;
-  --muted: #625d52;
-  --gold: #96712b;
-  --gold2: #b38a3b;
-  --border: rgba(150,113,43,.28);
-  --shadow: 0 12px 32px rgba(50,40,20,.09);
+<style>
+:root{
+  --bg:#080808;
+  --surface:#111111;
+  --surface2:#171717;
+  --text:#f7f4ed;
+  --muted:#aaa69c;
+  --gold:#d7b56d;
+  --gold2:#f7dfa0;
+  --line:rgba(215,181,109,.22);
+  --shadow:0 20px 70px rgba(0,0,0,.35);
 }
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+body.light{
+  --bg:#f5f1e8;
+  --surface:#fffdf8;
+  --surface2:#eee7d8;
+  --text:#201b12;
+  --muted:#706858;
+  --gold:#9b7025;
+  --gold2:#bd913e;
+  --line:rgba(155,112,37,.25);
+  --shadow:0 18px 55px rgba(70,48,10,.10);
 }
-
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 100px;
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:100px}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:Tahoma,Arial,sans-serif;
+  line-height:1.8;
+  overflow-x:hidden;
+  transition:background .35s,color .35s;
 }
+a{color:inherit;text-decoration:none}
+button{font:inherit}
+button,a{-webkit-tap-highlight-color:transparent}
+.gold{color:var(--gold)}
+.container{width:min(1160px,92%);margin:auto}
 
-body {
-  background: var(--bg);
-  color: var(--text);
-  font-family: Tahoma, Arial, sans-serif;
-  line-height: 1.8;
-  overflow-x: hidden;
-  transition: background .25s, color .25s;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-button {
-  font: inherit;
-}
-
-.container {
-  width: min(1120px, 92%);
-  margin: auto;
-}
-
-.gold {
-  color: var(--gold);
-}
-
-/* Cinematic background */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: -2;
-  pointer-events: none;
+/* خلفية سينمائية أصلية مصنوعة بالكود */
+.ambient{
+  position:fixed;inset:0;z-index:-3;pointer-events:none;overflow:hidden;
   background:
-    radial-gradient(ellipse at 15% 15%, rgba(216,181,104,.12), transparent 35%),
-    radial-gradient(ellipse at 85% 35%, rgba(110,90,50,.13), transparent 40%),
-    radial-gradient(ellipse at 50% 100%, rgba(216,181,104,.07), transparent 45%),
-    linear-gradient(135deg, var(--bg), var(--bg2), var(--bg));
+    radial-gradient(ellipse at 80% 12%,rgba(168,117,36,.17),transparent 34%),
+    radial-gradient(ellipse at 10% 48%,rgba(94,68,25,.12),transparent 38%),
+    linear-gradient(145deg,var(--bg),#0b0a08 55%,var(--bg));
 }
+body.light .ambient{
+  background:
+    radial-gradient(ellipse at 80% 12%,rgba(190,145,62,.18),transparent 35%),
+    radial-gradient(ellipse at 10% 48%,rgba(190,145,62,.10),transparent 38%),
+    linear-gradient(145deg,#f7f2e8,#fffdf8 55%,#eee5d5);
+}
+.ambient:before,.ambient:after{
+  content:"";position:absolute;width:55vw;height:55vw;max-width:650px;max-height:650px;
+  border:1px solid rgba(215,181,109,.10);border-radius:50%;
+  animation:orbit 28s linear infinite;
+}
+.ambient:before{top:8%;right:-20%;box-shadow:0 0 100px rgba(215,181,109,.035),inset 0 0 100px rgba(215,181,109,.025)}
+.ambient:after{bottom:-30%;left:-20%;width:65vw;height:65vw;animation-direction:reverse}
+@keyframes orbit{to{transform:rotate(360deg)}}
+.grain{
+  position:fixed;inset:0;z-index:-2;pointer-events:none;opacity:.12;
+  background-image:repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(255,255,255,.025) 4px);
+}
+.gold-line{
+  height:1px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);
+  opacity:.65;
+}
+.announcement{
+  padding:8px 12px;text-align:center;font-size:12px;
+  background:linear-gradient(90deg,#16120b,#30230f,#16120b);
+  color:#f7dfa0;letter-spacing:.2px;
+}
+body.light .announcement{background:#e9dfca;color:#594018}
 
-body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  opacity: .16;
-  background-image:
-    linear-gradient(rgba(216,181,104,.07) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(216,181,104,.07) 1px, transparent 1px);
-  background-size: 55px 55px;
-  mask-image: linear-gradient(to bottom, black, transparent 85%);
+/* رأس الموقع */
+header{
+  position:relative;z-index:20;
+  background:color-mix(in srgb,var(--bg) 86%,transparent);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid var(--line);
 }
+.header-inner{
+  min-height:94px;display:flex;align-items:center;justify-content:space-between;
+  gap:18px;padding:14px 0;
+}
+.brand{display:flex;align-items:center;gap:13px;min-width:0}
+.logo{
+  width:58px;height:58px;flex-shrink:0;border:1px solid var(--gold);
+  border-radius:16px;display:grid;place-items:center;
+  color:var(--gold2);font-family:Georgia,serif;font-size:25px;font-weight:bold;
+  background:linear-gradient(145deg,rgba(215,181,109,.15),rgba(0,0,0,.2));
+  box-shadow:0 0 28px rgba(215,181,109,.08),inset 0 0 18px rgba(215,181,109,.06);
+}
+.brand h1{font-size:clamp(16px,3vw,22px);margin:0;line-height:1.4}
+.brand p{font-size:11px;color:var(--muted);margin:4px 0 0}
+.header-actions{display:flex;gap:8px;align-items:center}
+.icon-btn{
+  width:42px;height:42px;border:1px solid var(--line);border-radius:50%;
+  background:var(--surface);color:var(--text);cursor:pointer;
+  transition:.25s;
+}
+.icon-btn:hover{border-color:var(--gold);transform:translateY(-2px)}
+.nav-wrap{border-top:1px solid var(--line)}
+nav{
+  min-height:48px;display:flex;align-items:center;justify-content:center;
+  gap:clamp(14px,3vw,34px);overflow-x:auto;white-space:nowrap;
+  scrollbar-width:none;
+}
+nav::-webkit-scrollbar{display:none}
+nav a{font-size:13px;color:var(--muted);transition:.25s}
+nav a:hover{color:var(--gold)}
 
-/* Welcome banner */
-.welcome {
-  text-align: center;
-  padding: 10px 12px;
-  font-size: 13px;
-  color: var(--gold2);
-  background: rgba(216,181,104,.08);
-  border-bottom: 1px solid var(--border);
+/* الأزرار */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  border:1px solid var(--gold);border-radius:9px;padding:12px 19px;
+  color:#171107;background:linear-gradient(135deg,var(--gold2),var(--gold));
+  font-weight:bold;font-size:13px;cursor:pointer;transition:transform .25s,box-shadow .25s;
 }
+.btn:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(215,181,109,.2)}
+.btn-outline{background:transparent;color:var(--gold)}
+.btn-outline:hover{background:rgba(215,181,109,.08)}
+.btn-small{padding:9px 13px;font-size:12px}
 
-/* Brand header */
-.brand-header {
-  text-align: center;
-  padding: 30px 15px 22px;
+/* الواجهة الرئيسية */
+.hero{position:relative;padding:86px 0 76px;min-height:540px;display:flex;align-items:center}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:55px;align-items:center}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:9px;
+  border:1px solid var(--line);border-radius:30px;padding:7px 13px;
+  color:var(--gold);font-size:12px;background:rgba(215,181,109,.045);
 }
+.pulse{width:7px;height:7px;background:var(--gold);border-radius:50%;box-shadow:0 0 13px var(--gold);animation:pulse 2s infinite}
+@keyframes pulse{50%{opacity:.35;box-shadow:0 0 2px var(--gold)}}
+.hero h2{font-size:clamp(35px,5.2vw,65px);line-height:1.25;letter-spacing:-1.5px;margin:23px 0 18px}
+.hero h2 .gold{display:inline-block}
+.hero-copy{color:var(--muted);max-width:580px;font-size:15px;line-height:2.1}
+.hero-buttons{display:flex;flex-wrap:wrap;gap:12px;margin-top:27px}
+.hero-stats{display:flex;gap:28px;margin-top:36px;flex-wrap:wrap}
+.stat strong{display:block;font-size:20px;color:var(--gold)}
+.stat span{font-size:11px;color:var(--muted)}
+.hero-art{min-height:360px;position:relative;display:grid;place-items:center}
+.art-glow{
+  position:absolute;width:300px;height:300px;border-radius:50%;
+  background:radial-gradient(circle,rgba(215,181,109,.17),transparent 68%);
+  filter:blur(10px);animation:breathe 5s ease-in-out infinite;
+}
+@keyframes breathe{50%{transform:scale(1.15);opacity:.65}}
+.art-frame{
+  position:relative;width:min(100%,390px);min-height:300px;
+  border:1px solid rgba(215,181,109,.4);border-radius:22px;
+  padding:17px;background:linear-gradient(145deg,rgba(215,181,109,.10),rgba(255,255,255,.015));
+  box-shadow:var(--shadow);transform:rotate(-2deg);animation:float 6s ease-in-out infinite;
+}
+@keyframes float{50%{transform:translateY(-9px) rotate(0deg)}}
+.frame-top{display:flex;gap:6px;align-items:center;padding:2px 0 14px;border-bottom:1px solid var(--line)}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--gold);opacity:.7}
+.frame-label{margin-right:auto;margin-left:auto;font-size:10px;color:var(--muted);letter-spacing:2px}
+.frame-content{padding:25px 8px}
+.frame-content small{color:var(--gold);letter-spacing:3px}
+.frame-content h3{font-family:Georgia,serif;font-size:35px;line-height:1.2;margin:12px 0}
+.frame-content p{font-size:12px;color:var(--muted)}
+.mock-lines{display:grid;gap:8px;margin-top:24px}
+.mock-lines span{height:4px;border-radius:5px;background:linear-gradient(90deg,var(--gold),rgba(215,181,109,.05))}
+.mock-lines span:nth-child(2){width:75%}
+.mock-lines span:nth-child(3){width:50%}
+.floating-chip{
+  position:absolute;background:var(--surface);border:1px solid var(--line);
+  padding:11px 14px;border-radius:12px;font-size:11px;box-shadow:var(--shadow);
+}
+.chip-one{top:30px;right:-4px}
+.chip-two{bottom:30px;left:-8px}
+.floating-chip b{color:var(--gold)}
 
-.logo {
-  width: 82px;
-  height: 82px;
-  margin: 0 auto 13px;
-  border: 1px solid var(--gold);
-  border-radius: 23px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: Georgia, serif;
-  font-size: 32px;
-  font-weight: bold;
-  color: var(--gold2);
-  background: linear-gradient(145deg, #202020, #090909);
-  box-shadow: 0 0 35px rgba(216,181,104,.13);
-  transform: rotate(-3deg);
+/* الأقسام */
+section.content-section{padding:76px 0}
+.section-heading{text-align:center;max-width:680px;margin:0 auto 38px}
+.section-heading .eyebrow{margin-bottom:12px}
+.section-heading h2{font-size:clamp(25px,4vw,38px);margin:10px 0}
+.section-heading p{font-size:13px;color:var(--muted);margin:0}
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
+.feature{
+  padding:24px;border:1px solid var(--line);border-radius:15px;
+  background:linear-gradient(145deg,var(--surface),color-mix(in srgb,var(--surface) 65%,transparent));
+  transition:transform .3s,border-color .3s;
 }
+.feature:hover{transform:translateY(-5px);border-color:var(--gold)}
+.feature-icon{font-size:25px;margin-bottom:12px}
+.feature h3{font-size:16px;margin:0 0 8px}
+.feature p{font-size:12px;color:var(--muted);margin:0}
+.product-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.product-card{
+  position:relative;overflow:hidden;border:1px solid var(--line);
+  border-radius:17px;background:var(--surface);transition:transform .3s,border-color .3s;
+}
+.product-card:hover{transform:translateY(-6px);border-color:var(--gold)}
+.product-cover{
+  min-height:190px;padding:24px;display:flex;flex-direction:column;justify-content:space-between;
+  background:
+   radial-gradient(ellipse at 75% 20%,rgba(215,181,109,.24),transparent 50%),
+   linear-gradient(135deg,#1c1912,#090909);
+  border-bottom:1px solid var(--line);
+  position:relative;overflow:hidden;
+}
+.product-cover:after{
+  content:"";position:absolute;inset:15px;border:1px solid rgba(215,181,109,.2);
+  pointer-events:none;
+}
+.cover-kicker{font-size:10px;letter-spacing:3px;color:var(--gold2)}
+.cover-title{font-family:Georgia,serif;font-size:clamp(22px,3vw,32px);line-height:1.2;color:#f4e6c4;position:relative;z-index:1}
+.cover-sub{font-size:10px;letter-spacing:2px;color:#b9a77d}
+.product-info{padding:20px}
+.product-info h3{font-size:16px;margin:0 0 8px}
+.product-info p{font-size:12px;color:var(--muted);min-height:43px;margin:0 0 16px}
+.product-bottom{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.price{font-size:23px;font-weight:bold;color:var(--gold)}
+.price small{font-size:11px;font-weight:normal;color:var(--muted)}
+.tag{
+  position:absolute;top:13px;left:13px;z-index:2;padding:5px 9px;
+  border-radius:20px;background:var(--gold);color:#171107;font-size:10px;font-weight:bold;
+}
+.cv-feature{
+  display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center;
+  padding:30px;border:1px solid var(--line);border-radius:18px;
+  background:linear-gradient(120deg,var(--surface),rgba(215,181,109,.07));
+}
+.cv-feature h3{font-size:23px;margin:0 0 8px}
+.cv-feature p{font-size:13px;color:var(--muted);margin:0}
+.cv-price{font-size:34px;color:var(--gold);font-weight:bold}
+.cv-price small{font-size:12px;color:var(--muted);font-weight:normal}
 
-.logo span {
-  transform: rotate(3deg);
+/* نبذة وتواصل */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.about-panel{
+  border:1px solid var(--line);border-radius:18px;padding:30px;
+  background:linear-gradient(145deg,var(--surface),rgba(215,181,109,.04));
 }
+.about-panel h3{font-size:24px;margin-top:0}
+.about-panel p,.about-text{color:var(--muted);font-size:13px;line-height:2.1}
+.check-list{list-style:none;padding:0;display:grid;gap:10px;font-size:13px}
+.check-list li:before{content:"✦";color:var(--gold);margin-left:10px}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.contact-card{padding:25px;border:1px solid var(--line);border-radius:15px;background:var(--surface)}
+.contact-card h3{margin:0 0 8px}
+.contact-card p{font-size:13px;color:var(--muted)}
+.socials{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.socials a{border:1px solid var(--line);border-radius:8px;padding:9px 13px;font-size:12px;transition:.25s}
+.socials a:hover{color:var(--gold);border-color:var(--gold)}
+.thanks{
+  margin:55px 0 0;text-align:center;padding:45px 20px;
+  border:1px solid var(--line);border-radius:18px;
+  background:radial-gradient(ellipse at center,rgba(215,181,109,.10),transparent 70%);
+}
+.thanks h2{font-size:clamp(25px,4vw,37px);margin:0 0 10px}
+.thanks p{font-size:13px;color:var(--muted);margin:0 0 22px}
+footer{padding:26px 0 35px;text-align:center;border-top:1px solid var(--line)}
+footer strong{font-size:16px}
+footer p{font-size:11px;color:var(--muted);margin:5px 0}
+footer .rights{font-size:10px;margin-top:13px}
+.whatsapp{
+  position:fixed;z-index:50;bottom:20px;left:18px;width:55px;height:55px;
+  border-radius:50%;display:grid;place-items:center;background:#20c76b;color:#fff;
+  box-shadow:0 8px 28px rgba(32,199,107,.28);transition:transform .25s;
+}
+.whatsapp:hover{transform:scale(1.08)}
+.whatsapp svg{width:27px;height:27px;fill:currentColor}
+.reveal{animation:reveal .8s both}
+@keyframes reveal{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;scroll-behavior:auto!important;transition:none!important}}
+@media(max-width:800px){
+  .hero{padding:55px 0}
+  .hero-grid{grid-template-columns:1fr;gap:20px}
+  .hero-art{min-height:320px;max-width:480px;width:100%;margin:auto}
+  .features{grid-template-columns:1fr 1fr}
+  .product-grid{grid-template-columns:1fr 1fr}
+  .about-grid{grid-template-columns:1fr;gap:20px}
+  .header-inner{min-height:78px}
+  .logo{width:49px;height:49px}
+}
+@media(max-width:520px){
+  .container{width:91%}
+  .announcement{font-size:10px}
+  .header-inner{gap:8px}
+  .brand{gap:9px}
+  .brand p{font-size:9px}
+  .logo{width:43px;height:43px;font-size:20px;border-radius:12px}
+  .header-actions{gap:5px}
+  .icon-btn{width:36px;height:36px}
+  nav{justify-content:flex-start;gap:22px}
+  nav a{font-size:12px}
+  .hero{padding:45px 0 35px}
+  .hero h2{font-size:37px}
+  .hero-copy{font-size:13px}
+  .hero-stats{gap:20px}
+  .hero-art{min-height:285px}
+  .art-frame{min-height:250px}
+  .frame-content h3{font-size:29px}
+  .chip-one{right:0;top:15px}
+  .chip-two{left:0;bottom:13px}
+  section.content-section{padding:54px 0}
+  .features,.product-grid{grid-template-columns:1fr}
+  .feature{padding:20px}
+  .product-cover{min-height:180px}
+  .product-info p{min-height:0}
+  .cv-feature{grid-template-columns:1fr;padding:23px}
+  .cv-price{font-size:28px}
+  .contact-grid{grid-template-columns:1fr}
+  .about-panel{padding:22px}
+  .thanks{padding:35px 17px}
+}
+</style>
+</head>
 
-.brand-header h1 {
-  font-size: clamp(25px, 5vw, 40px);
-  letter-spacing: .4px;
-  line-height: 1.4;
-}
+<body>
+<div class="ambient"></div>
+<div class="grain"></div>
 
-.brand-header p {
-  color: var(--muted);
-  margin-top: 7px;
-  font-size: 14px;
-}
-
-/* Top navigation */
-.top-nav {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background: var(--bg);
-  background: color-mix(in srgb, var(--bg) 94%, transparent);
-  backdrop-filter: blur(15px);
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-}
-
-.nav-inner {
-  width: min(1150px, 96%);
-  margin: auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 5px;
-  padding: 9px 0;
-  flex-wrap: wrap;
-}
-
-.nav-inner a,
-.nav-action {
-  color: var(--muted);
-  background: transparent;
-  border: 1px solid transparent;
-  padding: 7px 12px;
-  border-radius: 9px;
-  font-size: 13px;
-  cursor: pointer;
-  transition: .2s;
-  white-space: nowrap;
-}
-
-.nav-inner a:hover,
-.nav-action:hover {
-  color: var(--gold2);
-  border-color: var(--border);
-  background: rgba(216,181,104,.07);
-}
-
-.nav-tools {
-  display: flex;
-  gap: 5px;
-}
-
-/* Common buttons */
-.btn {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-  padding: 12px 19px;
-  border-radius: 10px;
-  font-weight: bold;
-  font-size: 14px;
-  border: 1px solid var(--gold);
-  cursor: pointer;
-  transition: transform .2s, background .2s;
-}
-
-.btn:hover {
-  transform: translateY(-3px);
-}
-
-.btn-gold {
-  background: linear-gradient(135deg, var(--gold2), var(--gold));
-  color: #17130a;
-}
-
-.btn-outline {
-  color: var(--gold2);
-  background: transparent;
-}
-
-.btn-outline:hover {
-  background: rgba(216,181,104,.1);
-}
-</style></head><body><div class="welcome" id="welcomeBanner">
-  أهلًا بك في عالم أحمد أبو عمر للقوالب الرقمية والتصميم الاحترافي
-</div><header class="brand-header">
-  <div class="logo" aria-label="Ahmed Abu Omar logo">
-    <span>AO</span>
-  </div>
-  <h1>Ahmed <span class="gold">Abu Omar</span></h1>
-  <p>تصميم وتطوير المواقع والمنتجات الرقمية</p>
-</header><nav class="top-nav">
-  <div class="nav-inner">
-    <a href="#home" data-ar="الرئيسية" data-en="Home">الرئيسية</a>
-    <a href="#websites" data-ar="قوالب المواقع" data-en="Website Templates">قوالب المواقع</a>
-    <a href="#cv" data-ar="السيرة الذاتية" data-en="CV Templates">السيرة الذاتية</a>
-    <a href="#about" data-ar="من نحن" data-en="About">من نحن</a>
-    <a href="#contact" data-ar="تواصل معنا" data-en="Contact">تواصل معنا</a>
-    <a href="https://payhip.com/ahmedabuomar" target="_blank" rel="noopener" data-ar="المتجر" data-en="Store">المتجر</a><div class="nav-tools">
-  <button class="nav-action" id="themeToggle" type="button" aria-label="تغيير المظهر">◐</button>
-  <button class="nav-action" id="languageToggle" type="button">EN</button>
+<div class="announcement" data-ar="مرحبًا بك في عالم أحمد أبو عمر — قوالب رقمية بتصميم احترافي" data-en="Welcome to Ahmed Abu Omar — Professional Digital Templates">
+  مرحبًا بك في عالم أحمد أبو عمر — قوالب رقمية بتصميم احترافي
 </div>
 
+<header>
+  <div class="container header-inner">
+    <a href="#home" class="brand" aria-label="Ahmed Abu Omar Home">
+      <div class="logo">AO</div>
+      <div>
+        <h1>Ahmed <span class="gold">Abu Omar</span></h1>
+        <p data-ar="تصميم وتطوير المواقع والمنتجات الرقمية" data-en="Website Design, Development & Digital Products">تصميم وتطوير المواقع والمنتجات الرقمية</p>
+      </div>
+    </a>
+    <div class="header-actions">
+      <button class="icon-btn" id="languageToggle" aria-label="Change language">EN</button>
+      <button class="icon-btn" id="themeToggle" aria-label="Change theme">☼</button>
+    </div>
   </div>
-</nav>
-<!-- HERO SECTION --><style>
-/* Hero */
-.hero {
-  position: relative;
-  padding: 85px 0 75px;
-  text-align: center;
-  overflow: hidden;
-}
+  <div class="nav-wrap">
+    <nav class="container">
+      <a href="#home" data-ar="الرئيسية" data-en="Home">الرئيسية</a>
+      <a href="#features" data-ar="مميزاتنا" data-en="Features">مميزاتنا</a>
+      <a href="#websites" data-ar="قوالب المواقع" data-en="Website Templates">قوالب المواقع</a>
+      <a href="#cv" data-ar="السيرة الذاتية" data-en="CV Templates">السيرة الذاتية</a>
+      <a href="#about" data-ar="من نحن" data-en="About">من نحن</a>
+      <a href="#contact" data-ar="تواصل معنا" data-en="Contact">تواصل معنا</a>
+    </nav>
+  </div>
+</header>
 
-.hero::before {
-  content: "";
-  position: absolute;
-  width: 320px;
-  height: 320px;
-  border: 1px solid var(--border);
-  border-radius: 50%;
-  top: 5px;
-  left: 50%;
-  transform: translateX(-50%);
-  box-shadow:
-    0 0 0 35px rgba(216,181,104,.025),
-    0 0 0 70px rgba(216,181,104,.02);
-  pointer-events: none;
-}
-
-.hero-content {
-  position: relative;
-  z-index: 1;
-}
-
-.eyebrow {
-  display: inline-block;
-  color: var(--gold2);
-  border: 1px solid var(--border);
-  background: rgba(216,181,104,.06);
-  padding: 6px 15px;
-  border-radius: 30px;
-  font-size: 12px;
-  margin-bottom: 20px;
-}
-
-.hero h2 {
-  max-width: 850px;
-  margin: auto;
-  font-size: clamp(30px, 6vw, 57px);
-  line-height: 1.35;
-  letter-spacing: -.7px;
-}
-
-.hero h2 span {
-  display: block;
-  color: var(--gold2);
-}
-
-.hero-description {
-  color: var(--muted);
-  max-width: 650px;
-  margin: 22px auto 27px;
-  font-size: 16px;
-}
-
-.hero-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-
-.hero-note {
-  margin-top: 26px;
-  color: var(--muted);
-  font-size: 12px;
-}
-
-/* Section headings */
-.section {
-  padding: 65px 0;
-}
-
-.section-heading {
-  text-align: center;
-  margin-bottom: 35px;
-}
-
-.section-heading .eyebrow {
-  margin-bottom: 12px;
-}
-
-.section-heading h2 {
-  font-size: clamp(25px, 4vw, 36px);
-  line-height: 1.45;
-}
-
-.section-heading p {
-  color: var(--muted);
-  max-width: 650px;
-  margin: 10px auto 0;
-  font-size: 14px;
-}
-
-/* Feature cards */
-.features-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
-}
-
-.feature-card {
-  padding: 24px;
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  box-shadow: var(--shadow);
-  transition: transform .25s, border-color .25s;
-}
-
-.feature-card:hover {
-  transform: translateY(-5px);
-  border-color: var(--gold);
-}
-
-.feature-icon {
-  width: 48px;
-  height: 48px;
-  display: grid;
-  place-items: center;
-  border-radius: 13px;
-  background: rgba(216,181,104,.09);
-  border: 1px solid var(--border);
-  font-size: 23px;
-  margin-bottom: 15px;
-}
-
-.feature-card h3 {
-  font-size: 17px;
-  margin-bottom: 8px;
-}
-
-.feature-card p {
-  color: var(--muted);
-  font-size: 13px;
-}
-
-/* Product grid */
-.products-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 20px;
-}
-
-.product-card {
-  display: flex;
-  flex-direction: column;
-  min-width: 0;
-  overflow: hidden;
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 17px;
-  box-shadow: var(--shadow);
-  transition: transform .25s, border-color .25s;
-}
-
-.product-card:hover {
-  transform: translateY(-5px);
-  border-color: var(--gold);
-}
-
-.product-art {
-  min-height: 165px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 20px;
-  text-align: center;
-  background:
-    radial-gradient(circle at 50% 35%, rgba(216,181,104,.2), transparent 60%),
-    linear-gradient(145deg, #202019, #0b0b0a);
-  border-bottom: 1px solid var(--border);
-  color: #f1d99b;
-}
-
-.product-art .art-icon {
-  font-size: 38px;
-  line-height: 1.3;
-}
-
-.product-art strong {
-  font-size: 17px;
-  letter-spacing: 1px;
-}
-
-.product-art small {
-  font-size: 11px;
-  color: #c8b985;
-}
-
-.product-body {
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-}
-
-.product-category {
-  align-self: flex-start;
-  color: var(--gold2);
-  background: rgba(216,181,104,.08);
-  border: 1px solid var(--border);
-  padding: 3px 9px;
-  border-radius: 20px;
-  font-size: 11px;
-  margin-bottom: 10px;
-}
-
-.product-body h3 {
-  font-size: 17px;
-  line-height: 1.55;
-  margin-bottom: 9px;
-}
-
-.product-body p {
-  color: var(--muted);
-  font-size: 13px;
-  margin-bottom: 17px;
-  flex: 1;
-}
-
-.product-bottom {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 10px;
-  flex-wrap: wrap;
-  margin-top: auto;
-}
-
-.price {
-  color: var(--gold2);
-  font-size: 23px;
-  font-weight: bold;
-}
-
-.price small {
-  font-size: 12px;
-  font-weight: normal;
-}
-
-.product-bottom .btn {
-  padding: 9px 13px;
-  font-size: 12px;
-}
-
-.section-cta {
-  text-align: center;
-  margin-top: 30px;
-}
-
-/* Promo banner */
-.promo-banner {
-  margin-top: 35px;
-  padding: 27px;
-  text-align: center;
-  background:
-    radial-gradient(ellipse at top, rgba(216,181,104,.13), transparent 70%),
-    var(--card);
-  border: 1px solid var(--border);
-  border-radius: 17px;
-}
-
-.promo-banner h3 {
-  font-size: 22px;
-  margin-bottom: 8px;
-}
-
-.promo-banner p {
-  color: var(--muted);
-  font-size: 14px;
-  margin-bottom: 17px;
-}
-
-/* Responsive */
-@media (max-width: 850px) {
-  .features-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .products-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .nav-inner {
-    gap: 2px;
-  }
-
-  .nav-inner a,
-  .nav-action {
-    padding: 7px 9px;
-    font-size: 12px;
-  }
-}
-
-@media (max-width: 520px) {
-  .hero {
-    padding: 65px 0 50px;
-  }
-
-  .hero-description {
-    font-size: 14px;
-  }
-
-  .section {
-    padding: 48px 0;
-  }
-
-  .features-grid,
-  .products-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .feature-card {
-    padding: 20px;
-  }
-
-  .product-art {
-    min-height: 145px;
-  }
-
-  .nav-inner {
-    width: 100%;
-    padding: 8px 5px;
-  }
-
-  .nav-inner a,
-  .nav-action {
-    padding: 6px 7px;
-    font-size: 11px;
-  }
-
-  .nav-tools {
-    gap: 2px;
-  }
-
-  .brand-header {
-    padding-top: 24px;
-  }
-
-  .hero-buttons .btn {
-    width: 100%;
-    max-width: 290px;
-  }
-}
-</style><!-- MAIN HERO --><main>
+<main>
 <section class="hero" id="home">
-  <div class="container hero-content">
-    <span class="eyebrow"
-      data-ar="متجر رقمي بتصميم احترافي"
-      data-en="Premium Digital Store">
-      متجر رقمي بتصميم احترافي
-    </span><h2
-  data-ar="ارتقِ بمشروعك إلى مستوى جديد"
-  data-en="Elevate Your Business to a New Level">
-  ارتقِ بمشروعك إلى مستوى جديد
-  <span
-    data-ar="بتصميم يترك انطباعًا"
-    data-en="With Designs That Make an Impression">
-    بتصميم يترك انطباعًا
-  </span>
-</h2>
-
-<p class="hero-description"
-  data-ar="اكتشف قوالب مواقع عصرية وسيرًا ذاتية احترافية تساعدك على تقديم أعمالك بصورة أنيقة، مع تصميمات متجاوبة وتجربة استخدام سهلة."
-  data-en="Discover modern website templates and professional CV designs that present your work elegantly, with responsive layouts and an easy user experience.">
-  اكتشف قوالب مواقع عصرية وسيرًا ذاتية احترافية تساعدك على تقديم أعمالك بصورة أنيقة، مع تصميمات متجاوبة وتجربة استخدام سهلة.
-</p>
-
-<div class="hero-buttons">
-  <a class="btn btn-gold" href="#websites"
-    data-ar="استكشف قوالب المواقع ←"
-    data-en="Explore Website Templates →">
-    استكشف قوالب المواقع ←
-  </a>
-
-  <a class="btn btn-outline" href="#cv"
-    data-ar="اكتشف قوالب السيرة الذاتية"
-    data-en="Explore CV Templates">
-    اكتشف قوالب السيرة الذاتية
-  </a>
-</div>
-
-<p class="hero-note"
-  data-ar="تصميمات رقمية • تجربة متجاوبة • ملفات سهلة الاستخدام"
-  data-en="Digital Designs • Responsive Experience • Easy-to-Use Files">
-  تصميمات رقمية • تجربة متجاوبة • ملفات سهلة الاستخدام
-</p>
-
-  </div>
-</section><!-- FEATURES --><section class="section" id="features">
-  <div class="container">
-    <div class="section-heading">
-      <span class="eyebrow"
-        data-ar="لماذا متجرنا؟"
-        data-en="Why Choose Us?">لماذا متجرنا؟</span>  <h2
-    data-ar="تصميم عملي بمظهر <span class='gold'>احترافي</span>"
-    data-en="Practical Designs with a <span class='gold'>Professional</span> Look">
-    تصميم عملي بمظهر <span class="gold">احترافي</span>
-  </h2>
-
-  <p
-    data-ar="حلول رقمية مصممة لتمنحك بداية منظمة وواضحة."
-    data-en="Digital solutions designed to give you a clear and organized start.">
-    حلول رقمية مصممة لتمنحك بداية منظمة وواضحة.
-  </p>
-</div>
-
-<div class="features-grid">
-  <article class="feature-card">
-    <div class="feature-icon">✦</div>
-    <h3 data-ar="تصميم أنيق" data-en="Elegant Design">تصميم أنيق</h3>
-    <p
-      data-ar="تفاصيل مرتبة وألوان متناسقة تمنح مشروعك حضورًا مميزًا."
-      data-en="Clean details and balanced colors give your project a distinctive presence.">
-      تفاصيل مرتبة وألوان متناسقة تمنح مشروعك حضورًا مميزًا.
-    </p>
-  </article>
-
-  <article class="feature-card">
-    <div class="feature-icon">▣</div>
-    <h3 data-ar="متوافق مع الهاتف" data-en="Mobile Friendly">متوافق مع الهاتف</h3>
-    <p
-      data-ar="تصميمات تستجيب لمختلف أحجام الشاشات لتجربة استخدام مريحة."
-      data-en="Responsive layouts adapt to different screen sizes for a comfortable experience.">
-      تصميمات تستجيب لمختلف أحجام الشاشات لتجربة استخدام مريحة.
-    </p>
-  </article>
-
-  <article class="feature-card">
-    <div class="feature-icon">⌘</div>
-    <h3 data-ar="ملفات منظمة" data-en="Organized Files">ملفات منظمة</h3>
-    <p
-      data-ar="هيكل ملفات واضح يساعدك على فهم القالب وتعديله حسب احتياجاتك."
-      data-en="A clear file structure helps you understand and customize your template.">
-      هيكل ملفات واضح يساعدك على فهم القالب وتعديله حسب احتياجاتك.
-    </p>
-  </article>
-
-  <article class="feature-card">
-    <div class="feature-icon">◎</div>
-    <h3 data-ar="سهولة التخصيص" data-en="Easy Customization">سهولة التخصيص</h3>
-    <p
-      data-ar="إمكانية تعديل النصوص والألوان والمحتوى بما يناسب هويتك."
-      data-en="Customize text, colors, and content to match your identity.">
-      إمكانية تعديل النصوص والألوان والمحتوى بما يناسب هويتك.
-    </p>
-  </article>
-
-  <article class="feature-card">
-    <div class="feature-icon">⇄</div>
-    <h3 data-ar="العربية والإنجليزية" data-en="Arabic and English">العربية والإنجليزية</h3>
-    <p
-      data-ar="قوالب تدعم اللغتين واتجاهي الكتابة حسب إمكانات كل منتج."
-      data-en="Templates support both languages and text directions where included.">
-      قوالب تدعم اللغتين واتجاهي الكتابة حسب إمكانات كل منتج.
-    </p>
-  </article>
-
-  <article class="feature-card">
-    <div class="feature-icon">◇</div>
-    <h3 data-ar="قيمة مقابل السعر" data-en="Value for Money">قيمة مقابل السعر</h3>
-    <p
-      data-ar="منتجات رقمية بأسعار واضحة لتبدأ تطوير حضورك الرقمي."
-      data-en="Clearly priced digital products to help you build your online presence.">
-      منتجات رقمية بأسعار واضحة لتبدأ تطوير حضورك الرقمي.
-    </p>
-  </article>
-</div>
-
-  </div>
-</section><!-- WEBSITE TEMPLATES --><section class="section" id="websites">
-  <div class="container">
-    <div class="section-heading">
-      <span class="eyebrow"
-        data-ar="قوالب المواقع"
-        data-en="Website Templates">قوالب المواقع</span>  <h2
-    data-ar="اختر القالب المناسب <span class='gold'>لمشروعك</span>"
-    data-en="Choose the Right Template for <span class='gold'>Your Business</span>">
-    اختر القالب المناسب <span class="gold">لمشروعك</span>
-  </h2>
-
-  <p
-    data-ar="قوالب لمجالات مختلفة تساعدك على الانطلاق بمظهر رقمي احترافي."
-    data-en="Templates for different industries to help you launch with a professional online presence.">
-    قوالب لمجالات مختلفة تساعدك على الانطلاق بمظهر رقمي احترافي.
-  </p>
-</div>
-
-<div class="products-grid">
-
-  <!-- NOVA -->
-  <article class="product-card">
-    <div class="product-art">
-      <div class="art-icon">⌂</div>
-      <strong>NOVA</strong>
-      <small>REAL ESTATE EXPERIENCE</small>
-    </div>
-
-    <div class="product-body">
-      <span class="product-category"
-        data-ar="العقارات"
-        data-en="Real Estate">العقارات</span>
-
-      <h3
-        data-ar="NOVA – قالب موقع عقاري فاخر"
-        data-en="NOVA – Premium Real Estate Website">
-        NOVA – قالب موقع عقاري فاخر
-      </h3>
-
-      <p
-        data-ar="واجهة أنيقة لمشروعات العقارات والتطوير السكني."
-        data-en="An elegant website concept for property and residential development projects.">
-        واجهة أنيقة لمشروعات العقارات والتطوير السكني.
+  <div class="container hero-grid">
+    <div class="reveal">
+      <div class="eyebrow"><span class="pulse"></span><span data-ar="استوديو التصميم الرقمي" data-en="Digital Design Studio">استوديو التصميم الرقمي</span></div>
+      <h2 data-ar="نصنع حضورك الرقمي <span class='gold'>بأسلوب استثنائي</span>" data-en="We Build Your Digital Presence <span class='gold'>With Distinction</span>">نصنع حضورك الرقمي <span class="gold">بأسلوب استثنائي</span></h2>
+      <p class="hero-copy" data-ar="اكتشف قوالب مواقع احترافية ومنتجات رقمية مصممة بعناية لتمنح مشروعك مظهرًا مميزًا وتجربة استخدام سلسة على جميع الأجهزة." data-en="Discover professional website templates and carefully crafted digital products designed to give your business a distinctive look and a seamless experience on every device.">
+        اكتشف قوالب مواقع احترافية ومنتجات رقمية مصممة بعناية لتمنح مشروعك مظهرًا مميزًا وتجربة استخدام سلسة على جميع الأجهزة.
       </p>
-
-      <div class="product-bottom">
-        <div class="price">$2 <small>USD</small></div>
-        <a class="btn btn-gold" href="https://payhip.com/b/7N0IC"
-          target="_blank" rel="noopener"
-          data-ar="عرض القالب"
-          data-en="View Template">عرض القالب</a>
+      <div class="hero-buttons">
+        <a href="#websites" class="btn" data-ar="اكتشف القوالب ↙" data-en="Explore Templates ↙">اكتشف القوالب ↙</a>
+        <a href="#about" class="btn btn-outline" data-ar="اكتشف عالمنا" data-en="Discover Our Studio">اكتشف عالمنا</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><strong>HTML / CSS</strong><span data-ar="كود واضح وقابل للتعديل" data-en="Clean, editable code">كود واضح وقابل للتعديل</span></div>
+        <div class="stat"><strong>RTL / LTR</strong><span data-ar="دعم العربية والإنجليزية" data-en="Arabic & English support">دعم العربية والإنجليزية</span></div>
+        <div class="stat"><strong>Responsive</strong><span data-ar="تجربة مناسبة للموبايل" data-en="Mobile-friendly experience">تجربة مناسبة للموبايل</span></div>
       </div>
     </div>
-  </article>
-
-  <!-- BUSINESS -->
-  <article class="product-card">
-    <div class="product-art">
-      <div class="art-icon">◈</div>
-      <strong>BUSINESS</strong>
-      <small>MODERN BUSINESS WEBSITE</small>
-    </div>
-
-    <div class="product-body">
-      <span class="product-category"
-        data-ar="الأعمال"
-        data-en="Business">الأعمال</span>
-
-      <h3
-        data-ar="قالب موقع أعمال احترافي"
-        data-en="Premium Business Website Template">
-        قالب موقع أعمال احترافي
-      </h3>
-
-      <p
-        data-ar="تصميم مناسب للشركات والخدمات والمشروعات الصغيرة."
-        data-en="A suitable design for companies, service providers, and small businesses.">
-        تصميم مناسب للشركات والخدمات والمشروعات الصغيرة.
-      </p>
-
-      <div class="product-bottom">
-        <div class="price">$2 <small>USD</small></div>
-        <a class="btn btn-gold"
-          href="https://payhip.com/ahmedabuomar"
-          target="_blank" rel="noopener"
-          data-ar="عرض المنتج"
-          data-en="View Product">عرض المنتج</a>
+    <div class="hero-art" aria-label="Digital design showcase">
+      <div class="art-glow"></div>
+      <div class="art-frame">
+        <div class="frame-top"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="frame-label">AHMED DIGITAL STUDIO</span></div>
+        <div class="frame-content">
+          <small>DESIGN / BUILD / CREATE</small>
+          <h3>Digital<br><span class="gold">Excellence.</span></h3>
+          <p data-ar="أفكار رقمية تتحول إلى تجارب أنيقة." data-en="Digital ideas transformed into elegant experiences.">أفكار رقمية تتحول إلى تجارب أنيقة.</p>
+          <div class="mock-lines"><span></span><span></span><span></span></div>
+        </div>
       </div>
+      <div class="floating-chip chip-one">✦ <b>Premium</b> Design</div>
+      <div class="floating-chip chip-two">◈ <b>Clean</b> Code</div>
     </div>
-  </article>
-
-  <!-- RESTAURANT -->
-  <article class="product-card">
-    <div class="product-art">
-      <div class="art-icon">♨</div>
-      <strong>RESTAURANT</strong>
-      <small>ARABIC &amp; ENGLISH</small>
-    </div>
-
-    <div class="product-body">
-      <span class="product-category"
-        data-ar="المطاعم"
-        data-en="Restaurant">المطاعم</span>
-
-      <h3
-        data-ar="قالب موقع مطعم عربي وإنجليزي"
-        data-en="Arabic &amp; English Restaurant Website">
-        قالب موقع مطعم عربي وإنجليزي
-      </h3>
-
-      <p
-        data-ar="واجهة للمطاعم مع دعم اتجاهي الكتابة RTL وLTR."
-        data-en="A restaurant website concept supporting RTL and LTR text directions.">
-        واجهة للمطاعم مع دعم اتجاهي الكتابة RTL وLTR.
-      </p>
-
-      <div class="product-bottom">
-        <div class="price">$2 <small>USD</small></div>
-        <a class="btn btn-gold" href="https://payhip.com/b/SnpTh"
-          target="_blank" rel="noopener"
-          data-ar="عرض القالب"
-          data-en="View Template">عرض القالب</a>
-      </div>
-    </div>
-  </article>
-
-  <!-- LAWYER -->
-  <article class="product-card">
-    <div class="product-art">
-      <div class="art-icon">⚖</div>
-      <strong>LEGAL</strong>
-      <small>PROFESSIONAL LAW FIRM</small>
-    </div>
-
-    <div class="product-body">
-      <span class="product-category"
-        data-ar="المحاماة"
-        data-en="Legal">المحاماة</span>
-
-      <h3
-        data-ar="قالب موقع محاماة احترافي"
-        data-en="Premium Lawyer Website Template">
-        قالب موقع محاماة احترافي
-      </h3>
-
-      <p
-        data-ar="تصميم رسمي للمحامين والمكاتب القانونية والخدمات الاستشارية."
-        data-en="A formal design for lawyers, law firms, and legal consultancy services.">
-        تصميم رسمي للمحامين والمكاتب القانونية والخدمات الاستشارية.
-      </p>
-
-      <div class="product-bottom">
-        <div class="price">$2 <small>USD</small></div>
-        <a class="btn btn-gold" href="https://payhip.com/b/V7sGk"
-          target="_blank" rel="noopener"
-          data-ar="عرض القالب"
-          data-en="View Template">عرض القالب</a>
-      </div>
-    </div>
-  </article>
-
-</div>
-
-<div class="section-cta">
-  <a class="btn btn-outline"
-    href="https://payhip.com/ahmedabuomar"
-    target="_blank" rel="noopener"
-    data-ar="استكشف المتجر بالكامل"
-    data-en="Explore the Full Store">
-    استكشف المتجر بالكامل
-  </a>
-</div>
-
-  </div>
-</section><!-- CV TEMPLATES --><section class="section" id="cv">
-  <div class="container">
-    <div class="section-heading">
-      <span class="eyebrow"
-        data-ar="السيرة الذاتية"
-        data-en="CV & Resume">السيرة الذاتية</span>  <h2
-    data-ar="قدّم خبراتك بصورة <span class='gold'>احترافية</span>"
-    data-en="Present Your Experience <span class='gold'>Professionally</span>">
-    قدّم خبراتك بصورة <span class="gold">احترافية</span>
-  </h2>
-
-  <p
-    data-ar="قوالب سيرة ذاتية تساعدك على تنظيم خبراتك ومهاراتك بصورة واضحة."
-    data-en="Resume templates to help you present your experience and skills clearly.">
-    قوالب سيرة ذاتية تساعدك على تنظيم خبراتك ومهاراتك بصورة واضحة.
-  </p>
-</div>
-
-<div class="products-grid">
-  <article class="product-card">
-    <div class="product-art">
-      <div class="art-icon">▤</div>
-      <strong>PREMIUM CV BUNDLE</strong>
-      <small>7 PROFESSIONAL CV TEMPLATES</small>
-    </div>
-
-    <div class="product-body">
-      <span class="product-category"
-        data-ar="حزمة السير الذاتية"
-        data-en="CV Bundle">حزمة السير الذاتية</span>
-
-      <h3
-        data-ar="حزمة 7 قوالب سيرة ذاتية احترافية"
-        data-en="Bundle of 7 Professional CV Templates">
-        حزمة 7 قوالب سيرة ذاتية احترافية
-      </h3>
-
-      <p
-        data-ar="حزمة متنوعة تساعدك على تجهيز سيرتك الذاتية بتصميم منظم وأنيق."
-        data-en="A versatile bundle to help you prepare your resume with a clean, professional design.">
-        حزمة متنوعة تساعدك على تجهيز سيرتك الذاتية بتصميم منظم وأنيق.
-      </p>
-
-      <div class="product-bottom">
-        <div class="price">$1 <small>USD</small></div>
-        <a class="btn btn-gold" href="https://payhip.com/b/Dy2bz"
-          target="_blank" rel="noopener"
-          data-ar="عرض الحزمة"
-          data-en="View Bundle">عرض الحزمة</a>
-      </div>
-    </div>
-  </article>
-</div>
-
-<div class="promo-banner">
-  <h3
-    data-ar="طوّر حضورك الرقمي بتكلفة بسيطة"
-    data-en="Upgrade Your Digital Presence Affordably">
-    طوّر حضورك الرقمي بتكلفة بسيطة
-  </h3>
-
-  <p
-    data-ar="قوالب المواقع بسعر 2 دولار، وحزمة السيرة الذاتية بسعر 1 دولار. تحقق من السعر النهائي داخل المتجر قبل الشراء."
-    data-en="Website templates are listed here at $2 and the CV bundle at $1. Confirm the final price in the store before purchase.">
-    قوالب المواقع بسعر 2 دولار، وحزمة السيرة الذاتية بسعر 1 دولار. تحقق من السعر النهائي داخل المتجر قبل الشراء.
-  </p>
-
-  <a class="btn btn-gold"
-    href="https://payhip.com/ahmedabuomar"
-    target="_blank" rel="noopener"
-    data-ar="تسوق الآن"
-    data-en="Shop Now">تسوق الآن</a>
-</div>
-
   </div>
 </section>
-  </main>
-  <!-- ABOUT SECTION --><style>
-.about-panel {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 25px;
-  align-items: center;
-  padding: 30px;
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 18px;
-  box-shadow: var(--shadow);
-}
 
-.about-visual {
-  min-height: 270px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  overflow: hidden;
-  border-radius: 14px;
-  border: 1px solid var(--border);
-  background:
-    radial-gradient(circle at center, rgba(216,181,104,.22), transparent 45%),
-    linear-gradient(145deg, #202019, #080808);
-}
+<div class="gold-line"></div>
 
-.about-visual::before,
-.about-visual::after {
-  content: "";
-  position: absolute;
-  width: 180px;
-  height: 180px;
-  border: 1px solid rgba(216,181,104,.35);
-  border-radius: 50%;
-}
-
-.about-visual::after {
-  width: 235px;
-  height: 235px;
-  border-color: rgba(216,181,104,.15);
-}
-
-.about-monogram {
-  z-index: 1;
-  color: #f4dc9a;
-  font-family: Georgia, serif;
-  font-size: 65px;
-  font-weight: bold;
-  text-shadow: 0 0 30px rgba(216,181,104,.3);
-}
-
-.about-content h3 {
-  font-size: 25px;
-  line-height: 1.5;
-  margin-bottom: 14px;
-}
-
-.about-content p {
-  color: var(--muted);
-  font-size: 14px;
-  margin-bottom: 13px;
-}
-
-.about-points {
-  display: grid;
-  gap: 10px;
-  margin-top: 18px;
-}
-
-.about-point {
-  display: flex;
-  gap: 10px;
-  align-items: flex-start;
-  font-size: 13px;
-}
-
-.about-point span {
-  color: var(--gold2);
-  font-weight: bold;
-}
-
-/* Contact */
-.contact-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 18px;
-}
-
-.contact-card {
-  padding: 24px;
-  text-align: center;
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  transition: transform .2s, border-color .2s;
-}
-
-.contact-card:hover {
-  transform: translateY(-4px);
-  border-color: var(--gold);
-}
-
-.contact-icon {
-  font-size: 29px;
-  margin-bottom: 8px;
-}
-
-.contact-card h3 {
-  font-size: 17px;
-  margin-bottom: 6px;
-}
-
-.contact-card p {
-  color: var(--muted);
-  font-size: 13px;
-  margin-bottom: 15px;
-}
-
-/* Social links */
-.social-area {
-  margin-top: 35px;
-  padding: 25px;
-  text-align: center;
-  background: rgba(216,181,104,.045);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-}
-
-.social-area h3 {
-  font-size: 21px;
-  margin-bottom: 8px;
-}
-
-.social-area p {
-  color: var(--muted);
-  font-size: 13px;
-  margin-bottom: 17px;
-}
-
-.social-links {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.social-link {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  padding: 9px 15px;
-  border: 1px solid var(--border);
-  border-radius: 9px;
-  color: var(--gold2);
-  background: var(--card);
-  font-size: 13px;
-  transition: .2s;
-}
-
-.social-link:hover {
-  border-color: var(--gold);
-  background: rgba(216,181,104,.1);
-}
-
-/* Thank-you banner */
-.thank-you {
-  margin: 35px 0 55px;
-  padding: 35px 20px;
-  text-align: center;
-  border: 1px solid var(--border);
-  border-radius: 18px;
-  background:
-    radial-gradient(ellipse at center, rgba(216,181,104,.13), transparent 72%),
-    var(--card);
-}
-
-.thank-you .heart {
-  color: var(--gold2);
-  font-size: 31px;
-}
-
-.thank-you h2 {
-  font-size: clamp(22px, 4vw, 31px);
-  margin: 8px 0;
-}
-
-.thank-you p {
-  color: var(--muted);
-  max-width: 620px;
-  margin: 0 auto 18px;
-  font-size: 14px;
-}
-
-/* Footer without bottom navigation */
-.site-footer {
-  border-top: 1px solid var(--border);
-  padding: 30px 15px;
-  text-align: center;
-  background: var(--bg2);
-}
-
-.footer-brand {
-  color: var(--gold2);
-  font-size: 22px;
-  font-weight: bold;
-}
-
-.site-footer p {
-  color: var(--muted);
-  font-size: 13px;
-  margin-top: 5px;
-}
-
-.copyright {
-  margin-top: 15px !important;
-  font-size: 12px !important;
-}
-
-/* Floating WhatsApp */
-.whatsapp-float {
-  position: fixed;
-  z-index: 200;
-  bottom: 20px;
-  right: 18px;
-  width: 55px;
-  height: 55px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  background: #168b55;
-  box-shadow: 0 8px 25px rgba(0,0,0,.25);
-  font-size: 26px;
-  border: 2px solid rgba(255,255,255,.25);
-  transition: transform .2s;
-}
-
-.whatsapp-float:hover {
-  transform: scale(1.08);
-}
-
-@media (max-width: 650px) {
-  .about-panel {
-    grid-template-columns: 1fr;
-    padding: 18px;
-  }
-
-  .about-visual {
-    min-height: 210px;
-  }
-
-  .about-content h3 {
-    font-size: 22px;
-  }
-
-  .contact-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .social-area {
-    padding: 20px 14px;
-  }
-
-  .thank-you {
-    margin-bottom: 35px;
-  }
-}
-</style><!-- ABOUT --><section class="section" id="about">
+<section class="content-section" id="features">
   <div class="container">
     <div class="section-heading">
-      <span class="eyebrow"
-        data-ar="من نحن"
-        data-en="About Us">من نحن</span>  <h2
-    data-ar="أهلًا بك في <span class='gold'>Ahmed Abu Omar</span>"
-    data-en="Welcome to <span class='gold'>Ahmed Abu Omar</span>">
-    أهلًا بك في <span class="gold">Ahmed Abu Omar</span>
-  </h2>
-
-  <p
-    data-ar="وجهتك لاكتشاف قوالب رقمية تجمع بين الأناقة وسهولة الاستخدام."
-    data-en="Your destination for digital templates combining elegance and ease of use.">
-    وجهتك لاكتشاف قوالب رقمية تجمع بين الأناقة وسهولة الاستخدام.
-  </p>
-</div>
-
-<div class="about-panel">
-  <div class="about-visual" aria-label="Ahmed Abu Omar brand design">
-    <div class="about-monogram">AO</div>
+      <div class="eyebrow" data-ar="لماذا تختارنا؟" data-en="Why Choose Us?">لماذا تختارنا؟</div>
+      <h2 data-ar="تفاصيل تصنع <span class='gold'>الفرق</span>" data-en="Details That Make <span class='gold'>The Difference</span>">تفاصيل تصنع <span class="gold">الفرق</span></h2>
+      <p data-ar="نركز على الجودة والبساطة وتجربة الاستخدام، لنقدم منتجات رقمية عملية وأنيقة." data-en="We focus on quality, simplicity, and user experience to deliver practical, elegant digital products.">نركز على الجودة والبساطة وتجربة الاستخدام، لنقدم منتجات رقمية عملية وأنيقة.</p>
+    </div>
+    <div class="features">
+      <article class="feature"><div class="feature-icon">✧</div><h3 data-ar="تصميم أنيق" data-en="Elegant Design">تصميم أنيق</h3><p data-ar="تناسق بصري واهتمام بالتفاصيل يمنح مشروعك حضورًا مميزًا." data-en="Visual harmony and attention to detail that help your project stand out.">تناسق بصري واهتمام بالتفاصيل يمنح مشروعك حضورًا مميزًا.</p></article>
+      <article class="feature"><div class="feature-icon">⌘</div><h3 data-ar="سهولة التعديل" data-en="Easy Customization">سهولة التعديل</h3><p data-ar="ملفات واضحة تساعدك على تخصيص النصوص والألوان والمحتوى." data-en="Clear files that help you customize text, colors, and content.">ملفات واضحة تساعدك على تخصيص النصوص والألوان والمحتوى.</p></article>
+      <article class="feature"><div class="feature-icon">◉</div><h3 data-ar="متوافق مع الأجهزة" data-en="Responsive Layout">متوافق مع الأجهزة</h3><p data-ar="تخطيطات مرنة لتجربة أفضل على الهاتف والكمبيوتر." data-en="Flexible layouts for a better experience on phones and computers.">تخطيطات مرنة لتجربة أفضل على الهاتف والكمبيوتر.</p></article>
+    </div>
   </div>
+</section>
 
-  <div class="about-content">
-    <h3
-      data-ar="نحو حضور رقمي أكثر تميزًا"
-      data-en="Toward a More Distinctive Digital Presence">
-      نحو حضور رقمي أكثر تميزًا
-    </h3>
+<div class="gold-line"></div>
 
-    <p
-      data-ar="أنا أحمد أبو عمر، أعمل على تقديم قوالب مواقع ومنتجات رقمية تساعد الأفراد وأصحاب الأعمال على بناء حضور رقمي منظم وأنيق."
-      data-en="I am Ahmed Abu Omar, creating website templates and digital products that help individuals and businesses build an organized, elegant online presence.">
-      أنا أحمد أبو عمر، أعمل على تقديم قوالب مواقع ومنتجات رقمية تساعد الأفراد وأصحاب الأعمال على بناء حضور رقمي منظم وأنيق.
-    </p>
+<section class="content-section" id="websites">
+  <div class="container">
+    <div class="section-heading">
+      <div class="eyebrow" data-ar="مجموعة المواقع" data-en="Website Collection">مجموعة المواقع</div>
+      <h2 data-ar="قوالب مواقع <span class='gold'>احترافية</span>" data-en="Professional Website <span class='gold'>Templates</span>">قوالب مواقع <span class="gold">احترافية</span></h2>
+      <p data-ar="اختر القالب المناسب لنشاطك وابدأ في بناء حضورك على الإنترنت." data-en="Choose the right template for your business and start building your online presence.">اختر القالب المناسب لنشاطك وابدأ في بناء حضورك على الإنترنت.</p>
+    </div>
 
-    <p
-      data-ar="أهتم بالتفاصيل، ووضوح المحتوى، وتجربة الاستخدام على الهاتف والكمبيوتر، مع توفير تصميمات قابلة للتخصيص حسب احتياجات المشروع."
-      data-en="I focus on detail, content clarity, and usability across mobile and desktop, with customizable designs for different project needs.">
-      أهتم بالتفاصيل، ووضوح المحتوى، وتجربة الاستخدام على الهاتف والكمبيوتر، مع توفير تصميمات قابلة للتخصيص حسب احتياجات المشروع.
-    </p>
+    <div class="product-grid">
+      <article class="product-card">
+        <span class="tag" data-ar="اختيار مميز" data-en="Featured">اختيار مميز</span>
+        <div class="product-cover"><span class="cover-kicker">NOVA / REAL ESTATE</span><div class="cover-title">NOVA<br>Developments</div><span class="cover-sub">PROPERTY • LUXURY • LIFESTYLE</span></div>
+        <div class="product-info">
+          <h3 data-ar="قالب عقارات NOVA" data-en="NOVA Real Estate Template">قالب عقارات NOVA</h3>
+          <p data-ar="واجهة عقارية فاخرة مناسبة للمطورين العقاريين ومشروعات الإسكان." data-en="A luxury real estate interface for property developers and housing projects.">واجهة عقارية فاخرة مناسبة للمطورين العقاريين ومشروعات الإسكان.</p>
+          <div class="product-bottom"><div class="price">$2 <small>USD</small></div><a class="btn btn-small" href="https://payhip.com/b/7N0IC" target="_blank" rel="noopener" data-ar="عرض القالب" data-en="View Template">عرض القالب</a></div>
+        </div>
+      </article>
 
-    <div class="about-points">
-      <div class="about-point">
-        <span>✦</span>
-        <span
-          data-ar="قوالب مواقع لمجالات متنوعة"
-          data-en="Website templates for various industries">
-          قوالب مواقع لمجالات متنوعة
-        </span>
+      <article class="product-card">
+        <div class="product-cover"><span class="cover-kicker">RESTAURANT / DINING</span><div class="cover-title">Taste<br>Experience</div><span class="cover-sub">MENU • RESERVATIONS • BRAND</span></div>
+        <div class="product-info">
+          <h3 data-ar="قالب المطعم الاحترافي" data-en="Premium Restaurant Template">قالب المطعم الاحترافي</h3>
+          <p data-ar="قالب للمطاعم يدعم العربية والإنجليزية واتجاهي الكتابة." data-en="A restaurant website template supporting Arabic, English, RTL, and LTR.">قالب للمطاعم يدعم العربية والإنجليزية واتجاهي الكتابة.</p>
+          <div class="product-bottom"><div class="price">$2 <small>USD</small></div><a class="btn btn-small" href="https://payhip.com/b/SnpTh" target="_blank" rel="noopener" data-ar="عرض القالب" data-en="View Template">عرض القالب</a></div>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-cover"><span class="cover-kicker">LEGAL / PROFESSIONAL</span><div class="cover-title">Legal<br>Elegance</div><span class="cover-sub">TRUST • CLARITY • PROFESSIONAL</span></div>
+        <div class="product-info">
+          <h3 data-ar="قالب مكتب المحاماة" data-en="Premium Lawyer Template">قالب مكتب المحاماة</h3>
+          <p data-ar="تصميم رسمي لمكاتب المحاماة والخدمات القانونية باللغة العربية والإنجليزية." data-en="A professional design for law firms and legal services in Arabic and English.">تصميم رسمي لمكاتب المحاماة والخدمات القانونية باللغة العربية والإنجليزية.</p>
+          <div class="product-bottom"><div class="price">$2 <small>USD</small></div><a class="btn btn-small" href="https://payhip.com/b/V7sGk" target="_blank" rel="noopener" data-ar="عرض القالب" data-en="View Template">عرض القالب</a></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<div class="gold-line"></div>
+
+<section class="content-section" id="cv">
+  <div class="container">
+    <div class="section-heading">
+      <div class="eyebrow" data-ar="مسارك المهني يبدأ هنا" data-en="Your Career Starts Here">مسارك المهني يبدأ هنا</div>
+      <h2 data-ar="قوالب <span class='gold'>السيرة الذاتية</span>" data-en="<span class='gold'>CV & Resume</span> Templates">قوالب <span class="gold">السيرة الذاتية</span></h2>
+      <p data-ar="تصميمات عملية تساعدك على تقديم خبراتك ومهاراتك بشكل منظم واحترافي." data-en="Practical designs to present your experience and skills in a clear, professional format.">تصميمات عملية تساعدك على تقديم خبراتك ومهاراتك بشكل منظم واحترافي.</p>
+    </div>
+    <div class="cv-feature">
+      <div>
+        <h3 data-ar="حزمة قوالب السيرة الذاتية الاحترافية" data-en="Premium CV & Resume Bundle">حزمة قوالب السيرة الذاتية الاحترافية</h3>
+        <p data-ar="مجموعة من 7 تصميمات للسيرة الذاتية تناسب مجالات مهنية مختلفة." data-en="A collection of 7 resume designs suitable for different professional fields.">مجموعة من 7 تصميمات للسيرة الذاتية تناسب مجالات مهنية مختلفة.</p>
       </div>
-
-      <div class="about-point">
-        <span>✦</span>
-        <span
-          data-ar="قوالب السيرة الذاتية والملفات المهنية"
-          data-en="CV templates and professional documents">
-          قوالب السيرة الذاتية والملفات المهنية
-        </span>
-      </div>
-
-      <div class="about-point">
-        <span>✦</span>
-        <span
-          data-ar="اهتمام بالتصميم المتجاوب وسهولة التخصيص"
-          data-en="Focus on responsive design and easy customization">
-          اهتمام بالتصميم المتجاوب وسهولة التخصيص
-        </span>
+      <div>
+        <div class="cv-price">$1 <small>USD</small></div>
+        <a class="btn" href="https://payhip.com/b/Dy2bz" target="_blank" rel="noopener" data-ar="احصل على الحزمة" data-en="Get the Bundle">احصل على الحزمة</a>
       </div>
     </div>
   </div>
-</div>
+</section>
 
+<div class="gold-line"></div>
+
+<section class="content-section" id="about">
+  <div class="container about-grid">
+    <div>
+      <div class="eyebrow" data-ar="تعرف علينا" data-en="About the Studio">تعرف علينا</div>
+      <h2 style="font-size:clamp(28px,4vw,40px);line-height:1.4" data-ar="نحوّل الأفكار إلى <span class='gold'>تجارب رقمية</span>" data-en="Turning Ideas Into <span class='gold'>Digital Experiences</span>">نحوّل الأفكار إلى <span class="gold">تجارب رقمية</span></h2>
+      <p class="about-text" data-ar="أحمد أبو عمر، مهتم بتصميم وتطوير المواقع وصناعة المنتجات الرقمية. نعمل على تقديم قوالب عملية تجمع بين المظهر الاحترافي وسهولة الاستخدام، لتساعد الأفراد وأصحاب المشروعات على الانطلاق بثقة." data-en="Ahmed Abu Omar focuses on website design, development, and digital products. We create practical templates that combine a professional appearance with ease of use, helping individuals and businesses launch with confidence.">أحمد أبو عمر، مهتم بتصميم وتطوير المواقع وصناعة المنتجات الرقمية. نعمل على تقديم قوالب عملية تجمع بين المظهر الاحترافي وسهولة الاستخدام، لتساعد الأفراد وأصحاب المشروعات على الانطلاق بثقة.</p>
+    </div>
+    <div class="about-panel">
+      <h3 data-ar="ما الذي نقدمه؟" data-en="What We Offer">ما الذي نقدمه؟</h3>
+      <ul class="check-list">
+        <li data-ar="قوالب مواقع للأعمال والمشروعات" data-en="Website templates for businesses and projects">قوالب مواقع للأعمال والمشروعات</li>
+        <li data-ar="قوالب السيرة الذاتية والتوظيف" data-en="CV and resume templates">قوالب السيرة الذاتية والتوظيف</li>
+        <li data-ar="تصميمات رقمية قابلة للتخصيص" data-en="Customizable digital designs">تصميمات رقمية قابلة للتخصيص</li>
+        <li data-ar="دعم العربية والإنجليزية حسب القالب" data-en="Arabic and English support where included">دعم العربية والإنجليزية حسب القالب</li>
+      </ul>
+      <a href="#websites" class="btn btn-outline" data-ar="تصفح المنتجات" data-en="Browse Products">تصفح المنتجات</a>
+    </div>
   </div>
-</section><!-- CONTACT --><section class="section" id="contact">
+</section>
+
+<div class="gold-line"></div>
+
+<section class="content-section" id="contact">
   <div class="container">
     <div class="section-heading">
-      <span class="eyebrow"
-        data-ar="تواصل معنا"
-        data-en="Get in Touch">تواصل معنا</span>  <h2
-    data-ar="هل لديك سؤال أو مشروع؟"
-    data-en="Have a Question or a Project?">
-    هل لديك سؤال أو مشروع؟
-  </h2>
+      <div class="eyebrow" data-ar="نحن هنا لمساعدتك" data-en="We're Here to Help">نحن هنا لمساعدتك</div>
+      <h2 data-ar="تواصل <span class='gold'>معنا</span>" data-en="Get in <span class='gold'>Touch</span>">تواصل <span class="gold">معنا</span></h2>
+      <p data-ar="للاستفسارات حول المنتجات الرقمية أو المساعدة في الاختيار، يسعدنا التواصل معك." data-en="For questions about our digital products or help choosing a template, we'd be happy to hear from you.">للاستفسارات حول المنتجات الرقمية أو المساعدة في الاختيار، يسعدنا التواصل معك.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <h3 data-ar="تحدث معنا عبر واتساب" data-en="Chat With Us on WhatsApp">تحدث معنا عبر واتساب</h3>
+        <p data-ar="أرسل استفسارك وسنساعدك في معرفة تفاصيل المنتجات." data-en="Send your question and we'll help you learn more about our products.">أرسل استفسارك وسنساعدك في معرفة تفاصيل المنتجات.</p>
+        <a class="btn" href="https://wa.me/201206443652" target="_blank" rel="noopener" data-ar="ابدأ المحادثة" data-en="Start a Chat">ابدأ المحادثة</a>
+      </div>
+      <div class="contact-card">
+        <h3 data-ar="تابع أعمالنا" data-en="Follow Our Work">تابع أعمالنا</h3>
+        <p data-ar="تابع صفحاتنا للتعرف على المنتجات والتصميمات الجديدة." data-en="Follow our pages for products, designs, and updates.">تابع صفحاتنا للتعرف على المنتجات والتصميمات الجديدة.</p>
+        <div class="socials">
+          <a href="https://www.facebook.com/AhmedAbuOmarOfficial" target="_blank" rel="noopener">Facebook</a>
+          <a href="https://www.instagram.com/ahmedabuomar.design" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://www.linkedin.com/in/ahmedwebtemplates" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+    </div>
 
-  <p
-    data-ar="يسعدني التواصل معك بخصوص القوالب الرقمية أو الاستفسارات المتعلقة بالمنتجات."
-    data-en="Feel free to contact me about digital templates or product-related questions.">
-    يسعدني التواصل معك بخصوص القوالب الرقمية أو الاستفسارات المتعلقة بالمنتجات.
-  </p>
-</div>
-
-<div class="contact-grid">
-  <article class="contact-card">
-    <div class="contact-icon">✆</div>
-    <h3 data-ar="واتساب" data-en="WhatsApp">واتساب</h3>
-    <p
-      data-ar="تواصل مباشرة للاستفسارات والأسئلة."
-      data-en="Message directly for questions and inquiries.">
-      تواصل مباشرة للاستفسارات والأسئلة.
-    </p>
-    <a class="btn btn-gold"
-      href="https://wa.me/201206443652"
-      target="_blank" rel="noopener"
-      data-ar="ابدأ المحادثة"
-      data-en="Start Chat">
-      ابدأ المحادثة
-    </a>
-  </article>
-
-  <article class="contact-card">
-    <div class="contact-icon">◇</div>
-    <h3 data-ar="المتجر الرقمي" data-en="Digital Store">المتجر الرقمي</h3>
-    <p
-      data-ar="تصفح المنتجات الرقمية المتاحة عبر المتجر."
-      data-en="Browse available digital products in the store.">
-      تصفح المنتجات الرقمية المتاحة عبر المتجر.
-    </p>
-    <a class="btn btn-outline"
-      href="https://payhip.com/ahmedabuomar"
-      target="_blank" rel="noopener"
-      data-ar="زيارة المتجر"
-      data-en="Visit Store">
-      زيارة المتجر
-    </a>
-  </article>
-</div>
-
-<!-- SOCIAL LINKS -->
-<div class="social-area">
-  <h3
-    data-ar="تابع Ahmed Abu Omar"
-    data-en="Follow Ahmed Abu Omar">
-    تابع Ahmed Abu Omar
-  </h3>
-
-  <p
-    data-ar="تابع أحدث الأعمال والتصميمات والمنتجات الرقمية."
-    data-en="Follow the latest work, designs, and digital products.">
-    تابع أحدث الأعمال والتصميمات والمنتجات الرقمية.
-  </p>
-
-  <div class="social-links">
-    <a class="social-link"
-      href="https://www.facebook.com/AhmedAbuOmarOfficial"
-      target="_blank" rel="noopener"
-      data-ar="فيسبوك"
-      data-en="Facebook">فيسبوك</a>
-
-    <a class="social-link"
-      href="https://www.instagram.com/ahmedabuomar.design"
-      target="_blank" rel="noopener"
-      data-ar="إنستجرام"
-      data-en="Instagram">إنستجرام</a>
-
-    <a class="social-link"
-      href="https://www.linkedin.com/in/ahmedwebtemplates"
-      target="_blank" rel="noopener"
-      data-ar="لينكدإن"
-      data-en="LinkedIn">لينكدإن</a>
+    <div class="thanks">
+      <h2 data-ar="شكرًا لزيارتك <span class='gold'>عالمنا الرقمي</span>" data-en="Thank You for Visiting <span class='gold'>Our Digital World</span>">شكرًا لزيارتك <span class="gold">عالمنا الرقمي</span></h2>
+      <p data-ar="دعمك ومتابعتك يصنعان فرقًا. تابعنا لاكتشاف المزيد من المنتجات الرقمية." data-en="Your support means a lot. Follow us to discover more digital products.">دعمك ومتابعتك يصنعان فرقًا. تابعنا لاكتشاف المزيد من المنتجات الرقمية.</p>
+      <a href="https://payhip.com/ahmedabuomar" target="_blank" rel="noopener" class="btn" data-ar="زيارة المتجر" data-en="Visit the Store">زيارة المتجر</a>
+    </div>
   </div>
-</div>
+</section>
+</main>
 
+<footer>
+  <div class="container">
+    <strong>Ahmed <span class="gold">Abu Omar</span></strong>
+    <p data-ar="تصميم وتطوير المواقع والمنتجات الرقمية" data-en="Website Design, Development & Digital Products">تصميم وتطوير المواقع والمنتجات الرقمية</p>
+    <p class="rights" data-ar="© جميع حقوق الملكية الفكرية محفوظة لأحمد أبو عمر." data-en="© All intellectual property rights reserved to Ahmed Abu Omar.">© جميع حقوق الملكية الفكرية محفوظة لأحمد أبو عمر.</p>
   </div>
-</section><!-- THANK YOU BANNER --><section class="container">
-  <div class="thank-you">
-    <div class="heart">✦</div><h2
-  data-ar="شكرًا لزيارتك متجرنا"
-  data-en="Thank You for Visiting Our Store">
-  شكرًا لزيارتك متجرنا
-</h2>
+</footer>
 
-<p
-  data-ar="دعمك واهتمامك يعنيان الكثير. نتمنى أن تجد القالب الرقمي المناسب لك، ونتطلع إلى رؤيتك مرة أخرى."
-  data-en="Your support and interest mean a lot. We hope you find the right digital template and look forward to seeing you again.">
-  دعمك واهتمامك يعنيان الكثير. نتمنى أن تجد القالب الرقمي المناسب لك، ونتطلع إلى رؤيتك مرة أخرى.
-</p>
-
-<div class="social-links">
-  <a class="social-link"
-    href="https://payhip.com/ahmedabuomar"
-    target="_blank" rel="noopener"
-    data-ar="تسوق من المتجر"
-    data-en="Shop the Store">
-    تسوق من المتجر
-  </a>
-
-  <a class="social-link"
-    href="https://wa.me/201206443652"
-    target="_blank" rel="noopener"
-    data-ar="تواصل معنا"
-    data-en="Contact Us">
-    تواصل معنا
-  </a>
-</div>
-
-  </div>
-</section><!-- FOOTER: NO BOTTOM NAVIGATION --><footer class="site-footer">
-  <div class="footer-brand">Ahmed Abu Omar</div>  <p data-ar="تصميم وتطوير المواقع والمنتجات الرقمية"
-     data-en="Website Design, Development & Digital Products">
-    تصميم وتطوير المواقع والمنتجات الرقمية
-  </p>  <p class="copyright"
-     data-ar="جميع حقوق الملكية الفكرية محفوظة لأحمد أبو عمر. لا يجوز نسخ أو إعادة بيع المحتوى دون إذن."
-     data-en="All intellectual property rights are reserved by Ahmed Abu Omar. Copying or reselling content without permission is prohibited.">
-    جميع حقوق الملكية الفكرية محفوظة لأحمد أبو عمر. لا يجوز نسخ أو إعادة بيع المحتوى دون إذن.
-  </p>
-</footer><!-- FLOATING WHATSAPP BUTTON --><a class="whatsapp-float"
-href="https://wa.me/201206443652"
-target="_blank"
-rel="noopener"
-aria-label="تواصل معنا عبر واتساب"
-title="WhatsApp">
-☎
+<a class="whatsapp" href="https://wa.me/201206443652" target="_blank" rel="noopener" aria-label="Contact us on WhatsApp">
+  <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 .8A15.1 15.1 0 0 0 3.1 23.8L1 31l7.4-1.9A15.1 15.1 0 1 0 16 .8zm0 27.5a12.4 12.4 0 0 1-6.3-1.7l-.5-.3-4.4 1.1 1.2-4.3-.3-.5A12.4 12.4 0 1 1 16 28.3zm6.8-9.3c-.4-.2-2.2-1.1-2.6-1.2-.3-.1-.6-.2-.8.2-.3.4-1 1.2-1.2 1.5-.2.2-.4.3-.8.1-.4-.2-1.6-.6-3.1-2-1.1-1-1.8-2.2-2-2.6-.2-.4 0-.6.2-.8l.6-.7c.2-.2.3-.4.4-.7.1-.2 0-.5 0-.7-.1-.2-.8-2-1.1-2.7-.3-.7-.6-.6-.8-.6h-.7c-.2 0-.7.1-1 .5-.4.4-1.3 1.3-1.3 3.1s1.3 3.5 1.5 3.7c.2.3 2.6 4 6.3 5.6.9.4 1.6.6 2.1.7.9.3 1.7.2 2.3.1.7-.1 2.2-.9 2.5-1.8.3-.9.3-1.6.2-1.8-.1-.1-.4-.3-.8-.5z"/></svg>
 </a>
-<!-- JAVASCRIPT: THEME AND LANGUAGE CONTROLS --><script>
-(function () {
-  "use strict";
 
-  const body = document.body;
-  const themeButton = document.getElementById("themeToggle");
-  const languageButton = document.getElementById("languageToggle");
+<script>
+(function(){
+  const body=document.body;
+  const themeBtn=document.getElementById('themeToggle');
+  const langBtn=document.getElementById('languageToggle');
 
-  let currentLanguage = "ar";
-
-  // Theme toggle
-  if (themeButton) {
-    themeButton.addEventListener("click", function () {
-      body.classList.toggle("light");
-
-      const isLight = body.classList.contains("light");
-
-      themeButton.textContent = isLight ? "☼" : "◐";
-      themeButton.setAttribute(
-        "aria-label",
-        isLight ? "تفعيل الوضع الداكن" : "تفعيل الوضع الفاتح"
-      );
-
-      try {
-        localStorage.setItem(
-          "ahmed-store-theme",
-          isLight ? "light" : "dark"
-        );
-      } catch (error) {}
-    });
+  function setTheme(theme){
+    body.classList.toggle('light',theme==='light');
+    themeBtn.textContent=theme==='light'?'☾':'☼';
+    try{localStorage.setItem('ahmed-theme',theme)}catch(e){}
   }
+  let savedTheme='dark';
+  try{savedTheme=localStorage.getItem('ahmed-theme')||'dark'}catch(e){}
+  setTheme(savedTheme);
+  themeBtn.addEventListener('click',function(){
+    setTheme(body.classList.contains('light')?'dark':'light');
+  });
 
-  // Restore saved theme
-  try {
-    if (localStorage.getItem("ahmed-store-theme") === "light") {
-      body.classList.add("light");
-
-      if (themeButton) {
-        themeButton.textContent = "☼";
-      }
-    }
-  } catch (error) {}
-
-  // Language toggle
-  function setLanguage(language) {
-    currentLanguage = language;
-
-    document.documentElement.lang = language;
-    document.documentElement.dir = language === "ar" ? "rtl" : "ltr";
-
-    document.querySelectorAll("[data-ar][data-en]").forEach(function (element) {
-      const translation = element.getAttribute("data-" + language);
-
-      if (translation === null) return;
-
-      if (element.tagName === "H2") {
-        element.innerHTML = translation;
-      } else {
-        element.textContent = translation;
-      }
+  function setLanguage(lang){
+    document.documentElement.lang=lang;
+    document.documentElement.dir=lang==='ar'?'rtl':'ltr';
+    langBtn.textContent=lang==='ar'?'EN':'عربي';
+    document.querySelectorAll('[data-ar][data-en]').forEach(function(el){
+      el.innerHTML=el.getAttribute(lang==='ar'?'data-ar':'data-en');
     });
-
-    const welcome = document.getElementById("welcomeBanner");
-
-    if (welcome) {
-      welcome.textContent = language === "ar"
-        ? "أهلًا بك في عالم أحمد أبو عمر للقوالب الرقمية والتصميم الاحترافي"
-        : "Welcome to Ahmed Abu Omar — Premium Digital Templates and Design";
-    }
-
-    if (languageButton) {
-      languageButton.textContent = language === "ar" ? "EN" : "عربي";
-    }
-
-    try {
-      localStorage.setItem("ahmed-store-language", language);
-    } catch (error) {}
+    try{localStorage.setItem('ahmed-language',lang)}catch(e){}
   }
-
-  if (languageButton) {
-    languageButton.addEventListener("click", function () {
-      setLanguage(currentLanguage === "ar" ? "en" : "ar");
-    });
-  }
-
-  // Restore language
-  try {
-    if (localStorage.getItem("ahmed-store-language") === "en") {
-      setLanguage("en");
-    }
-  } catch (error) {}
-
+  let savedLang='ar';
+  try{savedLang=localStorage.getItem('ahmed-language')||'ar'}catch(e){}
+  setLanguage(savedLang);
+  langBtn.addEventListener('click',function(){
+    setLanguage(document.documentElement.lang==='ar'?'en':'ar');
+  });
 })();
-</script></body>
+</script>
+</body>
 </html>
