@@ -570,6 +570,7 @@
       box-shadow: var(--shadow-cinematic);
     }
 
+    /* حاوية الصور الهندسية البديلة التعبيرية */
     .product-geo-banner {
       width: 100%;
       height: 220px;
@@ -818,7 +819,7 @@
             <i class="fa-solid fa-crown"></i>
             <span data-i18n="hero-badge">استوديو التصميم الرقمي الاحترافي</span>
           </div>
-          <h2 data-i18n="hero-title">نبني هويتك الرقمية <span>برؤية استثنائية</span></h2>
+          <h2 data-i18n="hero-title">نصنع حضورك الرقمي <span>بهندسة استثنائية</span></h2>
           <p data-i18n="hero-desc">من نحن؟ استوديو رقمي فاخر متخصص في تطوير وتصميم المواقع الإلكترونية للشركات، المكاتب، العقارات والمطاعم، وتقديم قوالب جاهزة وسير ذاتية باحترافية عصرية.</p>
 
           <div class="studio-goals-panel">
@@ -1065,8 +1066,7 @@
           «شكراً لزيارتك ودعمك لـ Ahmed Abu Omar. نقدر وقتك وثقتك، ونتمنى أن تجد في مجموعتنا ما يلهمك.»
         </div>
         <div class="social-buttons">
-          <!-- تحديث رابط الفيسبوك المباشر هنا -->
-          <a href="https://www.facebook.com/AhmedAbuOmarOfficial?mibextid=ZbWKwL" target="_blank" class="social-btn"><i class="fa-brands fa-facebook-f"></i> Facebook</a>
+          <a href="https://www.facebook.com/AhmedAbuOmarOfficial" target="_blank" class="social-btn"><i class="fa-brands fa-facebook-f"></i> Facebook</a>
           <a href="https://www.instagram.com/ahmedabuomar.design/" target="_blank" class="social-btn"><i class="fa-brands fa-instagram"></i> Instagram</a>
         </div>
       </footer>
@@ -1112,7 +1112,7 @@
         "nav-offers": "العروض",
         "nav-contact": "التواصل",
         "hero-badge": "استوديو التصميم الرقمي الاحترافي",
-        "hero-title": "نبني هويتك الرقمية بمعايير فاخرة",
+        "hero-title": "نصنع حضورك الرقمي بهندسة استثنائية",
         "hero-desc": "من نحن؟ استوديو رقمي فاخر متخصص في تطوير وتصميم المواقع الإلكترونية للشركات، المكاتب، العقارات والمطاعم، وتقديم قوالب جاهزة وسير ذاتية باحترافية عصرية.",
         "goal-1": "تصميم وتطوير المواقع",
         "goal-2": "قوالب شركات وعقارات",
@@ -1175,7 +1175,7 @@
         "nav-offers": "Offers",
         "nav-contact": "Contact",
         "hero-badge": "Professional Digital Design Studio",
-        "hero-title": "Building Your Digital Identity Exceptionally",
+        "hero-title": "Crafting Your Digital Presence Exceptionally",
         "hero-desc": "Who are we? A premier digital studio specialized in web design and development for business, real estate, law, and dining, plus ready-to-use digital templates.",
         "goal-1": "Web Design & Development",
         "goal-2": "Corporate & Real Estate Templates",
@@ -1235,7 +1235,7 @@
     const mobileNavButtons = document.querySelectorAll('.mobile-nav-btn');
     const tabSections = document.querySelectorAll('.tab-section');
 
-    function switchTab(tabId, updateHistory = true) {
+    function switchTab(tabId) {
       desktopNavButtons.forEach(btn => {
         if(btn.getAttribute('data-tab') === tabId) btn.classList.add('active');
         else btn.classList.remove('active');
@@ -1250,29 +1250,7 @@
         if(section.id === tabId) section.classList.add('active-tab');
         else section.classList.remove('active-tab');
       });
-
-      if (updateHistory) {
-        window.location.hash = tabId;
-      }
     }
-
-    window.addEventListener('hashchange', () => {
-      const currentHash = window.location.hash.replace('#', '');
-      if (currentHash && document.getElementById(currentHash)) {
-        switchTab(currentHash, false);
-      } else {
-        switchTab('tab-hero', false);
-      }
-    });
-
-    window.addEventListener('DOMContentLoaded', () => {
-      const initialHash = window.location.hash.replace('#', '');
-      if (initialHash && document.getElementById(initialHash)) {
-        switchTab(initialHash, false);
-      } else {
-        switchTab('tab-hero', false);
-      }
-    });
 
     desktopNavButtons.forEach(btn => {
       btn.addEventListener('click', () => switchTab(btn.getAttribute('data-tab')));
@@ -1334,4 +1312,4 @@
     });
   </script>
 </body>
-    </html>
+  </html>
