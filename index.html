@@ -1,1314 +1,228 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl" data-theme="dark">
+<html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ahmed Abu Omar | Premium Digital Studio</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <style>
-    :root {
-      --bg-main: #05070c;
-      --bg-surface: #0a0e1a;
-      --bg-card: rgba(15, 21, 35, 0.9);
-      --bg-glass: rgba(10, 14, 26, 0.9);
-      --text-main: #f8fafc;
-      --text-muted: #94a3b8;
-      --accent-gold: #d4af37;
-      --accent-gold-light: #fef08a;
-      --gold-gradient: linear-gradient(135deg, #fff2a8 0%, #d4af37 50%, #997300 100%);
-      --gold-glow: rgba(212, 175, 55, 0.25);
-      --border-color: rgba(212, 175, 55, 0.2);
-      --border-hover: rgba(212, 175, 55, 0.6);
-      --shadow-cinematic: 0 25px 50px -12px rgba(0, 0, 0, 0.9);
-      --radius-lg: 24px;
-      --radius-md: 14px;
-      --font-family: 'Cairo', 'Plus Jakarta Sans', sans-serif;
-      --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    [data-theme="light"] {
-      --bg-main: #f8fafc;
-      --bg-surface: #f1f5f9;
-      --bg-card: rgba(255, 255, 255, 0.95);
-      --bg-glass: rgba(248, 250, 252, 0.9);
-      --text-main: #0f172a;
-      --text-muted: #64748b;
-      --accent-gold: #b8860b;
-      --accent-gold-light: #d4af37;
-      --gold-gradient: linear-gradient(135deg, #d4af37 0%, #b8860b 50%, #8b6508 100%);
-      --gold-glow: rgba(184, 134, 11, 0.15);
-      --border-color: rgba(184, 134, 11, 0.22);
-      --border-hover: rgba(184, 134, 11, 0.6);
-      --shadow-cinematic: 0 20px 40px -15px rgba(0, 0, 0, 0.12);
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: var(--font-family);
-    }
-
-    html, body {
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-    }
-
-    body {
-      background-color: var(--bg-main);
-      color: var(--text-main);
-      transition: background-color 0.5s ease, color 0.5s ease;
-      position: relative;
-    }
-
-    a { text-decoration: none; color: inherit; }
-    ul { list-style: none; }
-
-    .cinematic-bg {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      z-index: -2;
-      pointer-events: none;
-      background: radial-gradient(circle at 10% 20%, rgba(212, 175, 55, 0.12) 0%, transparent 40%),
-                  radial-gradient(circle at 90% 80%, rgba(212, 175, 55, 0.08) 0%, transparent 45%),
-                  var(--bg-main);
-    }
-
-    .grid-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      z-index: -1;
-      pointer-events: none;
-      background-image: linear-gradient(to right, var(--border-color) 1px, transparent 1px),
-                        linear-gradient(to bottom, var(--border-color) 1px, transparent 1px);
-      background-size: 60px 60px;
-      opacity: 0.15;
-    }
-
-    header {
-      position: fixed;
-      top: 12px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 96%;
-      max-width: 1320px;
-      background: var(--bg-glass);
-      backdrop-filter: blur(25px);
-      -webkit-backdrop-filter: blur(25px);
-      border: 1px solid var(--border-color);
-      border-radius: 20px;
-      padding: 10px 16px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      z-index: 1000;
-      box-shadow: var(--shadow-cinematic);
-    }
-
-    .brand-container {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .brand-logo-box {
-      width: 38px;
-      height: 38px;
-      background: var(--gold-gradient);
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #05070c;
-      font-weight: 900;
-      font-size: 1.2rem;
-      box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
-      flex-shrink: 0;
-    }
-
-    .brand-text h1 {
-      font-size: 0.95rem;
-      font-weight: 900;
-      background: var(--gold-gradient);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      white-space: nowrap;
-    }
-
-    .brand-text span {
-      font-size: 0.65rem;
-      color: var(--text-muted);
-      font-weight: 700;
-      display: block;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 6px;
-      background: rgba(255, 255, 255, 0.03);
-      padding: 4px;
-      border-radius: 100px;
-      border: 1px solid rgba(255, 255, 255, 0.05);
-    }
-
-    .nav-link-btn {
-      background: transparent;
-      border: none;
-      color: var(--text-muted);
-      padding: 6px 14px;
-      border-radius: 100px;
-      font-weight: 700;
-      font-size: 0.8rem;
-      cursor: pointer;
-      transition: var(--transition);
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      white-space: nowrap;
-    }
-
-    .nav-link-btn:hover {
-      color: var(--text-main);
-      background: rgba(255, 255, 255, 0.05);
-    }
-
-    .nav-link-btn.active {
-      color: #05070c;
-      background: var(--gold-gradient);
-      font-weight: 800;
-      box-shadow: 0 4px 12px rgba(212, 175, 55, 0.35);
-    }
-
-    .nav-controls {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .ctrl-btn-group {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      background: rgba(255, 255, 255, 0.03);
-      padding: 3px;
-      border-radius: 100px;
-      border: 1px solid var(--border-color);
-    }
-
-    .ctrl-btn {
-      background: transparent;
-      border: none;
-      color: var(--text-main);
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      transition: var(--transition);
-      font-size: 0.8rem;
-      font-weight: 800;
-    }
-
-    .ctrl-btn:hover {
-      background: var(--gold-glow);
-      color: var(--accent-gold);
-    }
-
-    .app-viewport {
-      position: absolute;
-      top: 80px;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      width: 100%;
-      max-width: 1300px;
-      margin: 0 auto;
-      padding: 10px 16px 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .tab-section {
-      position: absolute;
-      width: 100%;
-      max-height: 100%;
-      opacity: 0;
-      visibility: hidden;
-      transform: translateY(25px) scale(0.96);
-      transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-      overflow-y: auto;
-      padding: 10px 5px 30px;
-    }
-
-    .tab-section::-webkit-scrollbar { display: none; }
-    .tab-section { -ms-overflow-style: none; scrollbar-width: none; }
-
-    .tab-section.active-tab {
-      opacity: 1;
-      visibility: visible;
-      transform: translateY(0) scale(1);
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 30px;
-      align-items: center;
-    }
-
-    .hero-content .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 5px 14px;
-      border-radius: 100px;
-      background: var(--gold-glow);
-      border: 1px solid var(--border-hover);
-      color: var(--accent-gold-light);
-      font-size: 0.8rem;
-      font-weight: 800;
-      margin-bottom: 14px;
-    }
-
-    .hero-content h2 {
-      font-size: 2.5rem;
-      font-weight: 900;
-      line-height: 1.2;
-      margin-bottom: 14px;
-    }
-
-    .hero-content h2 span {
-      background: var(--gold-gradient);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .hero-content p {
-      font-size: 1rem;
-      color: var(--text-muted);
-      margin-bottom: 20px;
-    }
-
-    .studio-goals-panel {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 10px;
-      margin-bottom: 20px;
-    }
-
-    .goal-item {
-      background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-md);
-      padding: 10px 14px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      backdrop-filter: blur(10px);
-    }
-
-    .goal-item i { color: var(--accent-gold); font-size: 1rem; }
-    .goal-item span { font-size: 0.82rem; font-weight: 700; }
-
-    .hero-welcome-msg {
-      background: var(--bg-card);
-      border-right: 4px solid var(--accent-gold);
-      padding: 12px 16px;
-      border-radius: 10px;
-      margin-bottom: 20px;
-      font-size: 0.88rem;
-      backdrop-filter: blur(10px);
-    }
-
-    [dir="ltr"] .hero-welcome-msg {
-      border-right: none;
-      border-left: 4px solid var(--accent-gold);
-    }
-
-    .btn-gold {
-      background: var(--gold-gradient);
-      color: #05070c;
-      font-weight: 800;
-      padding: 12px 26px;
-      border-radius: 100px;
-      border: none;
-      cursor: pointer;
-      box-shadow: 0 8px 20px rgba(212, 175, 55, 0.35);
-      transition: var(--transition);
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 0.92rem;
-    }
-
-    .btn-gold:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 12px 28px rgba(212, 175, 55, 0.45);
-    }
-
-    .btn-outline {
-      background: rgba(212, 175, 55, 0.04);
-      color: var(--text-main);
-      border: 1px solid var(--border-color);
-      font-weight: 700;
-      padding: 12px 26px;
-      border-radius: 100px;
-      cursor: pointer;
-      transition: var(--transition);
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 0.92rem;
-    }
-
-    .btn-outline:hover {
-      border-color: var(--accent-gold);
-      background: var(--gold-glow);
-    }
-
-    .hero-visual {
-      position: relative;
-      width: 100%;
-      height: 380px;
-      background: var(--bg-card);
-      border: 1px solid var(--border-hover);
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: var(--shadow-cinematic);
-    }
-
-    .studio-mockup {
-      width: 90%;
-      height: 85%;
-      background: var(--bg-main);
-      border-radius: 16px;
-      border: 1px solid var(--border-color);
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      position: relative;
-    }
-
-    .mockup-header {
-      height: 34px;
-      background: var(--bg-surface);
-      border-bottom: 1px solid var(--border-color);
-      display: flex;
-      align-items: center;
-      padding: 0 12px;
-      gap: 6px;
-    }
-
-    .dot { width: 7px; height: 7px; border-radius: 50%; }
-    .dot-r { background: #ef4444; }
-    .dot-y { background: #f59e0b; }
-    .dot-g { background: #10b981; }
-
-    .mockup-body {
-      padding: 20px;
-      flex-grow: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      position: relative;
-    }
-
-    .mockup-icon {
-      font-size: 3rem;
-      background: var(--gold-gradient);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      margin-bottom: 10px;
-      animation: floatIcon 3.5s ease-in-out infinite alternate;
-    }
-
-    @keyframes floatIcon {
-      0% { transform: translateY(0); }
-      100% { transform: translateY(-10px); }
-    }
-
-    .mockup-title { font-size: 1.15rem; font-weight: 800; }
-    .mockup-sub { font-size: 0.78rem; color: var(--text-muted); }
-
-    .section-header {
-      text-align: center;
-      max-width: 650px;
-      margin: 0 auto 30px;
-    }
-
-    .section-header h2 {
-      font-size: 2rem;
-      font-weight: 900;
-      margin-bottom: 8px;
-    }
-
-    .section-header h2 span {
-      background: var(--gold-gradient);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .section-header p {
-      color: var(--text-muted);
-      font-size: 0.92rem;
-    }
-
-    .brand-about-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 16px;
-    }
-
-    .about-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-lg);
-      padding: 24px;
-      backdrop-filter: blur(15px);
-      transition: var(--transition);
-      display: flex;
-      flex-direction: column;
-    }
-
-    .about-card:hover {
-      transform: translateY(-5px);
-      border-color: var(--border-hover);
-    }
-
-    .about-card-icon {
-      width: 48px;
-      height: 48px;
-      border-radius: var(--radius-md);
-      background: var(--gold-glow);
-      border: 1px solid var(--border-hover);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.3rem;
-      color: var(--accent-gold);
-      margin-bottom: 14px;
-    }
-
-    .about-card h3 { font-size: 1.1rem; font-weight: 800; margin-bottom: 8px; }
-    .about-card p { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 16px; flex-grow: 1; }
-
-    .about-card-btn {
-      align-self: flex-start;
-      background: #25d366;
-      color: #fff;
-      font-weight: 700;
-      padding: 6px 16px;
-      border-radius: 100px;
-      font-size: 0.8rem;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .filter-buttons {
-      display: flex;
-      justify-content: center;
-      gap: 8px;
-      margin-bottom: 25px;
-    }
-
-    .filter-btn {
-      background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      color: var(--text-muted);
-      padding: 6px 18px;
-      border-radius: 100px;
-      font-weight: 700;
-      font-size: 0.85rem;
-      cursor: pointer;
-      transition: var(--transition);
-    }
-
-    .filter-btn.active, .filter-btn:hover {
-      background: var(--gold-gradient);
-      color: #05070c;
-      border-color: transparent;
-    }
-
-    .products-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
-      gap: 20px;
-    }
-
-    .product-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      transition: var(--transition);
-    }
-
-    .product-card:hover {
-      transform: translateY(-6px);
-      border-color: var(--border-hover);
-      box-shadow: var(--shadow-cinematic);
-    }
-
-    .product-image-frame {
-      width: 100%;
-      height: 240px;
-      position: relative;
-      overflow: hidden;
-      background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-      border-bottom: 1px solid var(--border-color);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .product-image-frame img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: top center;
-      transition: transform 0.5s ease;
-    }
-
-    .product-card:hover .product-image-frame img {
-      transform: scale(1.05);
-    }
-
-    .product-badge-cat {
-      position: absolute;
-      top: 12px;
-      right: 12px;
-      background: rgba(5, 7, 12, 0.85);
-      border: 1px solid var(--border-hover);
-      color: var(--accent-gold);
-      padding: 4px 12px;
-      border-radius: 100px;
-      font-size: 0.75rem;
-      font-weight: 700;
-      backdrop-filter: blur(8px);
-      z-index: 2;
-    }
-
-    [dir="ltr"] .product-badge-cat { right: auto; left: 12px; }
-
-    .product-body {
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      flex-grow: 1;
-    }
-
-    .product-title { font-size: 1.1rem; font-weight: 800; margin-bottom: 6px; }
-    .product-desc { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 16px; flex-grow: 1; }
-
-    .product-footer {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      border-top: 1px solid var(--border-color);
-      padding-top: 14px;
-    }
-
-    .product-price { font-size: 1.15rem; font-weight: 900; color: var(--accent-gold); }
-
-    .btn-product-link {
-      background: var(--gold-glow);
-      border: 1px solid var(--border-hover);
-      color: var(--text-main);
-      padding: 6px 16px;
-      border-radius: 100px;
-      font-weight: 700;
-      font-size: 0.8rem;
-      transition: var(--transition);
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .btn-product-link:hover {
-      background: var(--gold-gradient);
-      color: #05070c;
-      border-color: transparent;
-    }
-
-    .offers-banner {
-      background: var(--bg-card);
-      border: 1px solid var(--border-hover);
-      border-radius: var(--radius-lg);
-      padding: 35px;
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 25px;
-      align-items: center;
-    }
-
-    .offers-info h3 { font-size: 1.7rem; font-weight: 900; margin-bottom: 10px; }
-    .offers-info h3 span { background: var(--gold-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-    .offers-info p { color: var(--text-muted); font-size: 0.92rem; margin-bottom: 18px; }
-
-    .contact-box {
-      background: var(--bg-card);
-      border: 1px solid var(--border-hover);
-      border-radius: var(--radius-lg);
-      padding: 35px;
-      text-align: center;
-      max-width: 720px;
-      margin: 0 auto;
-    }
-
-    .contact-box i.main-icon { font-size: 2.8rem; color: #25d366; margin-bottom: 14px; }
-    .contact-box h3 { font-size: 1.7rem; font-weight: 900; margin-bottom: 8px; }
-    .contact-box p { color: var(--text-muted); font-size: 0.92rem; margin-bottom: 20px; }
-
-    .btn-whatsapp {
-      background: #25d366;
-      color: #ffffff;
-      font-weight: 800;
-      padding: 12px 30px;
-      border-radius: 100px;
-      border: none;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 1rem;
-    }
-
-    .float-whatsapp {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      width: 52px;
-      height: 52px;
-      background: #25d366;
-      color: #fff;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.5rem;
-      box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
-      z-index: 999;
-    }
-
-    [dir="ltr"] .float-whatsapp { right: auto; left: 20px; }
-
-    footer {
-      border-top: 1px solid var(--border-color);
-      padding-top: 25px;
-      margin-top: 25px;
-      text-align: center;
-    }
-
-    .footer-brand {
-      font-size: 1.25rem;
-      font-weight: 900;
-      background: var(--gold-gradient);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      margin-bottom: 6px;
-    }
-
-    .footer-rights { color: var(--text-muted); font-size: 0.8rem; margin-bottom: 16px; }
-    .footer-thanks { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 16px; margin-bottom: 16px; font-size: 0.88rem; }
-
-    .social-buttons { display: flex; justify-content: center; gap: 10px; }
-    .social-btn { display: inline-flex; align-items: center; gap: 6px; padding: 8px 20px; border-radius: 100px; border: 1px solid var(--border-color); background: var(--bg-card); font-weight: 700; font-size: 0.82rem; }
-
-    @media (max-width: 968px) {
-      .hero-grid, .offers-banner { grid-template-columns: 1fr; text-align: center; }
-      .studio-goals-panel { justify-content: center; }
-      .nav-links { display: none; }
-      header { width: 92%; padding: 8px 12px; }
-      .brand-text h1 { font-size: 0.85rem; }
-      .brand-text span { font-size: 0.6rem; }
-      .brand-logo-box { width: 34px; height: 34px; font-size: 1rem; }
-      
-      .mobile-bottom-nav {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        background: var(--bg-glass);
-        backdrop-filter: blur(20px);
-        border-top: 1px solid var(--border-color);
-        display: flex;
-        justify-content: space-around;
-        padding: 10px 5px;
-        z-index: 998;
-      }
-      .mobile-nav-btn {
-        background: transparent;
-        border: none;
-        color: var(--text-muted);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 3px;
-        font-size: 0.68rem;
-        font-weight: 700;
-        cursor: pointer;
-      }
-      .mobile-nav-btn i { font-size: 1.1rem; }
-      .mobile-nav-btn.active { color: var(--accent-gold); }
-      .app-viewport { bottom: 65px; top: 70px; }
-    }
-
-    @media (min-width: 969px) {
-      .mobile-bottom-nav { display: none; }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>قائمتنا الاحترافية - منتجات رقمية مميزة</title>
+    <!-- استيراد خط عربي أنيق (Cairo) -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Cairo', sans-serif;
+        }
+
+        body {
+            background-color: #f8fafc;
+            color: #1e293b;
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            color: #0f172a;
+            margin-bottom: 10px;
+            font-weight: 800;
+        }
+
+        header p {
+            color: #64748b;
+            font-size: 1.1rem;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background: #ffffff;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* حاوية الصور الهندسية المعبرة */
+        .geo-image-container {
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .geo-image-container svg {
+            width: 80px;
+            height: 80px;
+            fill: #ffffff;
+            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
+        }
+
+        /* ألوان وتدرجات هندسية لكل منتج حسب هدفه */
+        .bg-cv { background: linear-gradient(135deg, #3b82f6, #1d4ed8); }
+        .bg-realestate-1 { background: linear-gradient(135deg, #10b981, #047857); }
+        .bg-realestate-2 { background: linear-gradient(135deg, #06b6d4, #0e7490); }
+        .bg-business { background: linear-gradient(135deg, #6366f1, #4338ca); }
+        .bg-restaurant { background: linear-gradient(135deg, #f59e0b, #b45309); }
+        .bg-lawyer { background: linear-gradient(135deg, #8b5cf6, #6d28d9); }
+
+        .product-content {
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .product-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 12px;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .product-title:hover {
+            color: #2563eb;
+        }
+
+        .product-description {
+            color: #64748b;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .product-btn {
+            display: inline-block;
+            text-align: center;
+            background-color: #0f172a;
+            color: #ffffff;
+            padding: 12px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.2s;
+        }
+
+        .product-btn:hover {
+            background-color: #2563eb;
+        }
+    </style>
 </head>
 <body>
 
-  <div class="cinematic-bg"></div>
-  <div class="grid-overlay"></div>
+    <div class="container">
+        <header>
+            <h1>قوالبنا الرقمية الاحترافية</h1>
+            <p>اختر القالب المناسب لمشروعك واضغط عليه للانتقال لصفحة المتجر مباشرة</p>
+        </header>
 
-  <header>
-    <div class="brand-container">
-      <div class="brand-logo-box">A</div>
-      <div class="brand-text">
-        <h1 data-i18n="brand-name">Ahmed Abu Omar</h1>
-        <span data-i18n="brand-sub">Premium Digital Studio</span>
-      </div>
+        <div class="products-grid">
+
+            <!-- 1. Premium CV Bundle -->
+            <div class="product-card">
+                <div class="geo-image-container bg-cv">
+                    <!-- أيقونة هندسية تعبر عن السير الذاتية / المستندات -->
+                    <svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
+                </div>
+                <div class="product-content">
+                    <a href="https://payhip.com/b/Dy2bz" target="_blank" class="product-title">Premium CV Bundle (7 Resume Templates)</a>
+                    <p class="product-description">حزمة متكاملة تضم 7 نماذج سير ذاتية احترافية بتصميم عصري وجذاب لزيادة فرص قبولك الوظيفي.</p>
+                    <a href="https://payhip.com/b/Dy2bz" target="_blank" class="product-btn">عرض القالب</a>
+                </div>
+            </div>
+
+            <!-- 2. NOVA Real Estate Template -->
+            <div class="product-card">
+                <div class="geo-image-container bg-realestate-1">
+                    <!-- أيقونة هندسية تعبر عن العقارات / المنازل -->
+                    <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+                </div>
+                <div class="product-content">
+                    <a href="https://payhip.com/b/7N0IC" target="_blank" class="product-title">NOVA – Premium Real Estate Website Template</a>
+                    <p class="product-description">قالب إلكتروني احترافي مخصص لشركات ومواقع العقارات بتصميم راقي وسريع الاستجابة.</p>
+                    <a href="https://payhip.com/b/7N0IC" target="_blank" class="product-btn">عرض القالب</a>
+                </div>
+            </div>
+
+            <!-- 3. Premium Real Estate Website Template -->
+            <div class="product-card">
+                <div class="geo-image-container bg-realestate-2">
+                    <!-- أيقونة هندسية تعبر عن المباني الفاخرة والاستثمار -->
+                    <svg viewBox="0 0 24 24"><path d="M12 7V3H2v18h20V7H12zM6 19H4v-2h2v2zm0-4H4v-2h2v2zm0-4H4V9h2v2zm0-4H4V5h2v2zm4 12H8v-2h2v2zm0-4H8v-2h2v2zm0-4H8V9h2v2zm0-4H8V5h2v2zm10 12h-8v-2h2v-2h-2v-2h2v-2h-2V9h8v10zm-2-8h-2v2h2v-2zm0 4h-2v2h2v-2z"/></svg>
+                </div>
+                <div class="product-content">
+                    <a href="https://payhip.com/b/TKrM8" target="_blank" class="product-title">Premium Real Estate Website Template 🏠</a>
+                    <p class="product-description">قالب عقاري متطور آخر مزود بواجهات مميزة تعرض العقارات والوحدات السكنية باحترافية عالية.</p>
+                    <a href="https://payhip.com/b/TKrM8" target="_blank" class="product-btn">عرض القالب</a>
+                </div>
+            </div>
+
+            <!-- 4. Premium Business Website Template -->
+            <div class="product-card">
+                <div class="geo-image-container bg-business">
+                    <!-- أيقونة هندسية تعبر عن الأعمال والشركات -->
+                    <svg viewBox="0 0 24 24"><path d="M12 7V3H2v18h20V7H12zM2 19v-2h20v2H2zm0-4h20v-2H2v2zm0-4h20V5H2v6z"/></svg>
+                </div>
+                <div class="product-content">
+                    <a href="https://payhip.com/b/yizhn" target="_blank" class="product-title">Premium Business Website Template</a>
+                    <p class="product-description">قالب أعمال تجارية مثالي للشركات الناشئة والمؤسسات لتعزيز التواجد الرقمي وعرض الخدمات.</p>
+                    <a href="https://payhip.com/b/yizhn" target="_blank" class="product-btn">عرض القالب</a>
+                </div>
+            </div>
+
+            <!-- 5. Premium Restaurant Website Template -->
+            <div class="product-card">
+                <div class="geo-image-container bg-restaurant">
+                    <!-- أيقونة هندسية تعبر عن المطاعم والأغذية -->
+                    <svg viewBox="0 0 24 24"><path d="M11 9H9V2H7v7H5V2H3v7c0 2.21 1.79 4 4 4v9h2v-9c2.21 0 4-1.79 4-4V2h-2v7zm3-3v2h2v11h2V2h-4z"/></svg>
+                </div>
+                <div class="product-content">
+                    <a href="https://payhip.com/b/SnpTh" target="_blank" class="product-title">Premium Restaurant Website Template | Arabic & English</a>
+                    <p class="product-description">قالب مطعم احترافي يدعم اللغتين العربية والإنجليزية، مع قوائم طعام ونظام طلبات مميز.</p>
+                    <a href="https://payhip.com/b/SnpTh" target="_blank" class="product-btn">عرض القالب</a>
+                </div>
+            </div>
+
+            <!-- 6. Premium Lawyer Website Template -->
+            <div class="product-card">
+                <div class="geo-image-container bg-lawyer">
+                    <!-- أيقونة هندسية تعبر عن المحاماة والعدالة -->
+                    <svg viewBox="0 0 24 24"><path d="M10 16v-1.5h4V16h-4zm5-4.5c0-.83-.67-1.5-1.5-1.5h-3c-.83 0-1.5.67-1.5 1.5V13h6v-1.5zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>
+                </div>
+                <div class="product-content">
+                    <a href="https://payhip.com/b/V7sGk" target="_blank" class="product-title">Premium Lawyer Website Template – Arabic & English</a>
+                    <p class="product-description">قالب قانوني مخصص للمحامين والمستشارين القانونيين بثنائية اللغة (عربي/إنجليزي) وبتصميم رسمي.</p>
+                    <a href="https://payhip.com/b/V7sGk" target="_blank" class="product-btn">عرض القالب</a>
+                </div>
+            </div>
+
+        </div>
     </div>
 
-    <ul class="nav-links">
-      <li><button class="nav-link-btn active" data-tab="tab-hero"><i class="fa-solid fa-house"></i> <span data-i18n="nav-home">الرئيسية</span></button></li>
-      <li><button class="nav-link-btn" data-tab="tab-about"><i class="fa-solid fa-code"></i> <span data-i18n="nav-about">خدماتنا</span></button></li>
-      <li><button class="nav-link-btn" data-tab="tab-products"><i class="fa-solid fa-layer-group"></i> <span data-i18n="nav-products">المنتجات والقوالب</span></button></li>
-      <li><button class="nav-link-btn" data-tab="tab-offers"><i class="fa-solid fa-tag"></i> <span data-i18n="nav-offers">العروض</span></button></li>
-      <li><button class="nav-link-btn" data-tab="tab-contact"><i class="fa-solid fa-envelope"></i> <span data-i18n="nav-contact">التواصل</span></button></li>
-    </ul>
-
-    <div class="nav-controls">
-      <div class="ctrl-btn-group">
-        <button class="ctrl-btn" id="lang-toggle">EN</button>
-        <button class="ctrl-btn" id="theme-toggle"><i class="fa-solid fa-moon"></i></button>
-      </div>
-    </div>
-  </header>
-
-  <div class="app-viewport">
-
-    <section class="tab-section active-tab" id="tab-hero">
-      <div class="hero-grid">
-        <div class="hero-content">
-          <div class="badge">
-            <i class="fa-solid fa-crown"></i>
-            <span data-i18n="hero-badge">استوديو التصميم الرقمي الاحترافي</span>
-          </div>
-          <h2 data-i18n="hero-title">نصنع حضورك الرقمي <span>بهندسة استثنائية</span></h2>
-          <p data-i18n="hero-desc">من نحن؟ استوديو رقمي فاخر متخصص في تطوير وتصميم المواقع الإلكترونية للشركات، المكاتب، العقارات والمطاعم، وتقديم قوالب جاهزة وسير ذاتية باحترافية عصرية.</p>
-
-          <div class="studio-goals-panel">
-            <div class="goal-item"><i class="fa-solid fa-code"></i> <span data-i18n="goal-1">تصميم وتطوير المواقع</span></div>
-            <div class="goal-item"><i class="fa-solid fa-building"></i> <span data-i18n="goal-2">قوالب شركات وعقارات</span></div>
-            <div class="goal-item"><i class="fa-solid fa-utensils"></i> <span data-i18n="goal-3">قوالب مطاعم ومكاتب</span></div>
-            <div class="goal-item"><i class="fa-solid fa-file-pdf"></i> <span data-i18n="goal-4">حزم سير ذاتية احترافية</span></div>
-          </div>
-
-          <div class="hero-welcome-msg" data-i18n="hero-welcome">
-            «أهلاً بك في Ahmed Abu Omar، وجهتك للقوالب الرقمية الاحترافية والتصميمات العصرية. اكتشف مجموعتنا واختر ما يناسب أفكارك ومشروعاتك.»
-          </div>
-
-          <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-            <button class="btn-gold nav-trigger" data-target="tab-products">
-              <span data-i18n="btn-explore">استكشف المنتجات</span>
-              <i class="fa-solid fa-arrow-left"></i>
-            </button>
-            <a href="https://wa.me/201206443652" target="_blank" class="btn-outline" style="border-color: #25d366; color: #25d366;">
-              <i class="fa-brands fa-whatsapp"></i>
-              <span data-i18n="btn-whatsapp-hero">تواصل واتساب</span>
-            </a>
-          </div>
-        </div>
-
-        <div class="hero-visual">
-          <div class="studio-mockup">
-            <div class="mockup-header">
-              <div class="dot dot-r"></div>
-              <div class="dot dot-y"></div>
-              <div class="dot dot-g"></div>
-            </div>
-            <div class="mockup-body">
-              <i class="fa-solid fa-laptop-code mockup-icon"></i>
-              <div class="mockup-title" data-i18n="mockup-title">Ahmed Abu Omar Studio</div>
-              <div class="mockup-sub" data-i18n="mockup-sub">Web Development & Premium Digital Templates</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="tab-section" id="tab-about">
-      <div class="section-header">
-        <h2 data-i18n="about-header-title">خدماتنا <span>الرقمية المتكاملة</span></h2>
-        <p data-i18n="about-header-desc">نقدم خدمات حلول الويب والتصميم لمساعدتك على إطلاق وتطوير علامتك التجارية بأعلى مستويات الجودة.</p>
-      </div>
-
-      <div class="brand-about-grid">
-        <div class="about-card" style="border-color: var(--border-hover);">
-          <div class="about-card-icon"><i class="fa-solid fa-code"></i></div>
-          <h3 data-i18n="srv1-title">تصميم وتطوير المواقع</h3>
-          <p data-i18n="srv1-desc">تطوير مواقع إلكترونية مخصصة بالكامل لشركتك من الصفر بأحدث التقنيات وأعلى درجات السرعة والأمان.</p>
-          <a href="https://wa.me/201206443652" target="_blank" class="about-card-btn">
-            <i class="fa-brands fa-whatsapp"></i> <span data-i18n="srv-wa">طلب الخدمة عبر واتساب</span>
-          </a>
-        </div>
-
-        <div class="about-card">
-          <div class="about-card-icon"><i class="fa-solid fa-laptop-code"></i></div>
-          <h3 data-i18n="ab1-title">قوالب مواقع قابلة للتعديل</h3>
-          <p data-i18n="ab1-desc">حلول ويب متكاملة مصممة بأعلى معايير الجودة البرمجية والتصميمية لتسهيل إطلاق موقعك فوراً.</p>
-          <a href="https://wa.me/201206443652" target="_blank" class="about-card-btn">
-            <i class="fa-brands fa-whatsapp"></i> <span data-i18n="srv-wa">استفسار عبر واتساب</span>
-          </a>
-        </div>
-
-        <div class="about-card">
-          <div class="about-card-icon"><i class="fa-solid fa-building-shield"></i></div>
-          <h3 data-i18n="ab2-title">شركات وعقارات ومطاعم</h3>
-          <p data-i18n="ab2-desc">قوالب مخصصة تلبي احتياجات الشركات، الوكالات العقارية، المطاعم الفاخرة، والمكاتب القانونية.</p>
-          <a href="https://wa.me/201206443652" target="_blank" class="about-card-btn">
-            <i class="fa-brands fa-whatsapp"></i> <span data-i18n="srv-wa">استفسار عبر واتساب</span>
-          </a>
-        </div>
-
-        <div class="about-card">
-          <div class="about-card-icon"><i class="fa-solid fa-file-lines"></i></div>
-          <h3 data-i18n="ab3-title">قوالب السيرة الذاتية</h3>
-          <p data-i18n="ab3-desc">تصاميم سيرة ذاتية احترافية تبرز مهاراتك وخبراتك بأناقة تترك انطباعاً قوياً لدى أصحاب العمل.</p>
-          <a href="https://wa.me/201206443652" target="_blank" class="about-card-btn">
-            <i class="fa-brands fa-whatsapp"></i> <span data-i18n="srv-wa">استفسار عبر واتساب</span>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <section class="tab-section" id="tab-products">
-      <div class="section-header">
-        <h2 data-i18n="prod-header-title">معرض <span>المنتجات والقوالب</span></h2>
-        <p data-i18n="prod-header-desc">عرض حقيقي وبصري مباشر لكل قالب مع الصورة الأصلية المخصصة له</p>
-      </div>
-
-      <div class="filter-buttons">
-        <button class="filter-btn active" data-filter="all" data-i18n="filter-all">جميع المنتجات</button>
-        <button class="filter-btn" data-filter="web" data-i18n="filter-web">قوالب المواقع</button>
-        <button class="filter-btn" data-filter="cv" data-i18n="filter-cv">قوالب السيرة الذاتية</button>
-      </div>
-
-      <div class="products-grid">
-        
-        <!-- 1. NOVA Real Estate -->
-        <div class="product-card" data-category="web">
-          <div class="product-image-frame">
-            <img src="/storage/emulated/0/Pictures/Screenshots/Screenshot_20261010_172640_com.foxdebug.acodefree_BrowserActivity_edit_79522108866017.jpg" alt="NOVA Real Estate Template" loading="lazy">
-            <div class="product-badge-cat" data-i18n="cat-realestate">عقارات مصر</div>
-          </div>
-          <div class="product-body">
-            <h3 class="product-title" data-i18n="p1-title">NOVA – Premium Real Estate Template</h3>
-            <p class="product-desc" data-i18n="p1-desc">اكتشف منازل استثنائية ومصايف فاخرة وفرصاً استثمارية بأرقى واجهة عقارية.</p>
-            <div class="product-footer">
-              <span class="product-price">$2.00</span>
-              <a href="https://payhip.com/b/7N0IC" target="_blank" class="btn-product-link">
-                <span data-i18n="btn-view">فتح المنتج</span> <i class="fa-solid fa-arrow-left"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- 2. Business Website -->
-        <div class="product-card" data-category="web">
-          <div class="product-image-frame">
-            <img src="/storage/emulated/0/Pictures/Screenshots/Screenshot_20261010_172659_com.foxdebug.acodefree_BrowserActivity_edit_79539845867521.jpg" alt="ORION Business Template" loading="lazy">
-            <div class="product-badge-cat" data-i18n="cat-business">أعمال رقمية</div>
-          </div>
-          <div class="product-body">
-            <h3 class="product-title" data-i18n="p2-title">Premium Business Website Template</h3>
-            <p class="product-desc" data-i18n="p2-desc">قالب أعمال فاخر مصمم للشركات والوكالات والمستشارين لبناء حضور قوي واستثنائي.</p>
-            <div class="product-footer">
-              <span class="product-price">$2.00</span>
-              <a href="https://payhip.com/ahmedabuomar" target="_blank" class="btn-product-link">
-                <span data-i18n="btn-view">فتح المنتج</span> <i class="fa-solid fa-arrow-left"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- 3. NOIR Restaurant -->
-        <div class="product-card" data-category="web">
-          <div class="product-image-frame">
-            <img src="/storage/emulated/0/Pictures/Screenshots/Screenshot_20261010_172725_com.foxdebug.acodefree_BrowserActivity_edit_79555964701525.jpg" alt="NOIR Restaurant Template" loading="lazy">
-            <div class="product-badge-cat" data-i18n="cat-restaurant">مطاعم وفنادق</div>
-          </div>
-          <div class="product-body">
-            <h3 class="product-title" data-i18n="p3-title">Premium Restaurant Website Template</h3>
-            <p class="product-desc" data-i18n="p3-desc">تجربة تتجاوز المألوف تلتقي فيها النكهات الراقية بالأجواء الاستثنائية مع دعم RTL وLTR.</p>
-            <div class="product-footer">
-              <span class="product-price">$2.00</span>
-              <a href="https://payhip.com/b/SnpTh" target="_blank" class="btn-product-link">
-                <span data-i18n="btn-view">فتح المنتج</span> <i class="fa-solid fa-arrow-left"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- 4. Ahmed Law Firm -->
-        <div class="product-card" data-category="web">
-          <div class="product-image-frame">
-            <img src="/storage/emulated/0/Pictures/Screenshots/Screenshot_20261010_172812_com.foxdebug.acodefree_BrowserActivity_edit_79571369605634.jpg" alt="Law Firm Template" loading="lazy">
-            <div class="product-badge-cat" data-i18n="cat-legal">مكاتب قانونية</div>
-          </div>
-          <div class="product-body">
-            <h3 class="product-title" data-i18n="p4-title">Premium Lawyer Website Template</h3>
-            <p class="product-desc" data-i18n="p4-desc">قالب احترافي فاخر لمكاتب المحاماة والاستشارات لعرض الخدمات وبناء الثقة.</p>
-            <div class="product-footer">
-              <span class="product-price">$2.00</span>
-              <a href="https://payhip.com/ahmedabuomar" target="_blank" class="btn-product-link">
-                <span data-i18n="btn-view">فتح المنتج</span> <i class="fa-solid fa-arrow-left"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- 5. EstateLux Real Estate -->
-        <div class="product-card" data-category="web">
-          <div class="product-image-frame">
-            <img src="/storage/emulated/0/Pictures/Screenshots/Screenshot_20261010_172834_com.foxdebug.acodefree_BrowserActivity_edit_79588433713909.jpg" alt="EstateLux Template" loading="lazy">
-            <div class="product-badge-cat" data-i18n="cat-realestate">عقارات فاخرة</div>
-          </div>
-          <div class="product-body">
-            <h3 class="product-title" data-i18n="p5-title">EstateLux Real Estate Template</h3>
-            <p class="product-desc" data-i18n="p5-desc">تجربة عقارية مختلفة تجمع بين التصميم الراقي والعقارات المميزة واستشارات العملاء.</p>
-            <div class="product-footer">
-              <span class="product-price">$2.00</span>
-              <a href="https://payhip.com/ahmedabuomar" target="_blank" class="btn-product-link">
-                <span data-i18n="btn-view">فتح المنتج</span> <i class="fa-solid fa-arrow-left"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- 6. CV Bundle -->
-        <div class="product-card" data-category="cv">
-          <div class="product-image-frame" style="background: radial-gradient(circle, rgba(212,175,55,0.25) 0%, rgba(10,14,26,0.9) 100%); display:flex; align-items:center; justify-content:center;">
-            <i class="fa-solid fa-file-invoice" style="font-size: 3.8rem; color: var(--accent-gold);"></i>
-            <div class="product-badge-cat" data-i18n="cat-cv">سيرة ذاتية</div>
-          </div>
-          <div class="product-body">
-            <h3 class="product-title" data-i18n="p6-title">Premium CV Bundle – 7 Templates</h3>
-            <p class="product-desc" data-i18n="p6-desc">حزمة تضم 7 قوالب سيرة ذاتية احترافية بتصميم أنيق باللون الكريمي والكحلي والذهبي.</p>
-            <div class="product-footer">
-              <span class="product-price">$1.00</span>
-              <a href="https://payhip.com/b/Dy2bz" target="_blank" class="btn-product-link">
-                <span data-i18n="btn-view">فتح المنتج</span> <i class="fa-solid fa-arrow-left"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <section class="tab-section" id="tab-offers">
-      <div class="offers-banner">
-        <div class="offers-info">
-          <h3 data-i18n="offer-title">عروض استثنائية على <span>القوالب الرقمية</span></h3>
-          <p data-i18n="offer-desc">احصل على قوالب المواقع الاحترافية بسعر مستهدف 2 دولار، وحزمة السيرة الذاتية المتكاملة بسعر دولار واحد فقط.</p>
-        </div>
-        <div style="text-align: center;">
-          <button class="btn-gold nav-trigger" data-target="tab-products" style="padding: 12px 28px;">
-            <span data-i18n="offer-btn">تصفح المنتجات الآن</span> <i class="fa-solid fa-arrow-left"></i>
-          </button>
-        </div>
-      </div>
-    </section>
-
-    <section class="tab-section" id="tab-contact">
-      <div class="contact-box">
-        <i class="fa-brands fa-whatsapp main-icon"></i>
-        <h3 data-i18n="contact-title">تواصل معنا عبر واتساب</h3>
-        <p data-i18n="contact-desc">يسعدنا الإجابة على استفساراتكم ومساعدتكم في اختيار القالب المناسب أو تصميم موقعك الخاص بكل فاعلية واحترافية.</p>
-        <a href="https://wa.me/201206443652" target="_blank" class="btn-whatsapp">
-          <i class="fa-brands fa-whatsapp" style="font-size: 1.2rem;"></i>
-          <span data-i18n="contact-btn">مراسلة عبر واتساب (+20 1206443652)</span>
-        </a>
-      </div>
-
-      <footer>
-        <div class="footer-brand">Ahmed Abu Omar</div>
-        <div class="footer-rights" data-i18n="footer-rights">
-          جميع حقوق الملكية الفكرية والتصميم والمحتوى والعلامة التجارية محفوظة لأصحابها. يُمنع نسخ أو إعادة توزيع المحتوى دون إذن.
-        </div>
-        <div class="footer-thanks" data-i18n="footer-thanks">
-          «شكراً لزيارتك ودعمك لـ Ahmed Abu Omar. نقدر وقتك وثقتك، ونتمنى أن تجد في مجموعتنا ما يلهمك.»
-        </div>
-        <div class="social-buttons">
-          <a href="https://www.facebook.com/AhmedAbuOmarOfficial" target="_blank" class="social-btn"><i class="fa-brands fa-facebook-f"></i> Facebook</a>
-          <a href="https://www.instagram.com/ahmedabuomar.design/" target="_blank" class="social-btn"><i class="fa-brands fa-instagram"></i> Instagram</a>
-        </div>
-      </footer>
-    </section>
-
-  </div>
-
-  <nav class="mobile-bottom-nav">
-    <button class="mobile-nav-btn active" data-tab="tab-hero">
-      <i class="fa-solid fa-house"></i>
-      <span data-i18n="nav-home">الرئيسية</span>
-    </button>
-    <button class="mobile-nav-btn" data-tab="tab-about">
-      <i class="fa-solid fa-code"></i>
-      <span data-i18n="nav-about">خدماتنا</span>
-    </button>
-    <button class="mobile-nav-btn" data-tab="tab-products">
-      <i class="fa-solid fa-layer-group"></i>
-      <span data-i18n="nav-products">القوالب</span>
-    </button>
-    <button class="mobile-nav-btn" data-tab="tab-offers">
-      <i class="fa-solid fa-tag"></i>
-      <span data-i18n="nav-offers">العروض</span>
-    </button>
-    <button class="mobile-nav-btn" data-tab="tab-contact">
-      <i class="fa-solid fa-envelope"></i>
-      <span data-i18n="nav-contact">التواصل</span>
-    </button>
-  </nav>
-
-  <a href="https://wa.me/201206443652" class="float-whatsapp" target="_blank" aria-label="WhatsApp Chat">
-    <i class="fa-brands fa-whatsapp"></i>
-  </a>
-
-  <script>
-    const translations = {
-      ar: {
-        "brand-name": "Ahmed Abu Omar",
-        "brand-sub": "Premium Digital Studio",
-        "nav-home": "الرئيسية",
-        "nav-about": "خدماتنا",
-        "nav-products": "المنتجات",
-        "nav-offers": "العروض",
-        "nav-contact": "التواصل",
-        "hero-badge": "استوديو التصميم الرقمي الاحترافي",
-        "hero-title": "نصنع حضورك الرقمي بهندسة استثنائية",
-        "hero-desc": "من نحن؟ استوديو رقمي فاخر متخصص في تطوير وتصميم المواقع الإلكترونية للشركات، المكاتب، العقارات والمطاعم، وتقديم قوالب جاهزة وسير ذاتية باحترافية عصرية.",
-        "goal-1": "تصميم وتطوير المواقع",
-        "goal-2": "قوالب شركات وعقارات",
-        "goal-3": "قوالب مطاعم ومكاتب",
-        "goal-4": "حزم سير ذاتية احترافية",
-        "hero-welcome": "«أهلاً بك في Ahmed Abu Omar، وجهتك للقوالب الرقمية الاحترافية والتصميمات العصرية. اكتشف مجموعتنا واختر ما يناسب أفكارك ومشروعاتك.»",
-        "btn-explore": "استكشف المنتجات",
-        "btn-whatsapp-hero": "تواصل واتساب",
-        "mockup-title": "Ahmed Abu Omar Studio",
-        "mockup-sub": "Web Development & Premium Digital Templates",
-        "about-header-title": "خدماتنا الرقمية المتكاملة",
-        "about-header-desc": "نقدم خدمات حلول الويب والتصميم لمساعدتك على إطلاق وتطوير علامتك التجارية بأعلى مستويات الجودة.",
-        "srv1-title": "تصميم وتطوير المواقع",
-        "srv1-desc": "تطوير مواقع إلكترونية مخصصة بالكامل لشركتك من الصفر بأحدث التقنيات وأعلى درجات السرعة والأمان.",
-        "srv-wa": "تواصل عبر واتساب",
-        "ab1-title": "قوالب مواقع قابلة للتعديل",
-        "ab1-desc": "حلول ويب متكاملة مصممة بأعلى معايير الجودة البرمجية والتصميمية لتسهيل إطلاق موقعك فوراً.",
-        "ab2-title": "شركات وعقارات ومطاعم",
-        "ab2-desc": "قوالب مخصصة تلبي احتياجات الشركات، الوكالات العقارية، المطاعم الفاخرة، والمكاتب القانونية.",
-        "ab3-title": "قوالب السيرة الذاتية",
-        "ab3-desc": "تصاميم سيرة ذاتية احترافية تبرز مهاراتك وخبراتك بأناقة تترك انطباعاً قوياً لدى أصحاب العمل.",
-        "prod-header-title": "معرض المنتجات والقوالب",
-        "prod-header-desc": "عرض حقيقي وبصري مباشر لكل قالب مع الصورة الأصلية المخصصة له",
-        "filter-all": "جميع المنتجات",
-        "filter-web": "قوالب المواقع",
-        "filter-cv": "قوالب السيرة الذاتية",
-        "cat-realestate": "عقارات",
-        "cat-business": "أعمال رقمية",
-        "cat-restaurant": "مطاعم وفنادق",
-        "cat-legal": "مكاتب قانونية",
-        "cat-cv": "سيرة ذاتية",
-        "p1-title": "NOVA – Premium Real Estate Template",
-        "p1-desc": "اكتشف منازل استثنائية ومصايف فاخرة وفرصاً استثمارية بأرقى واجهة عقارية.",
-        "p2-title": "Premium Business Website Template",
-        "p2-desc": "قالب أعمال فاخر مصمم للشركات والوكالات والمستشارين لبناء حضور قوي واستثنائي.",
-        "p3-title": "Premium Restaurant Website Template",
-        "p3-desc": "تجربة تتجاوز المألوف تلتقي فيها النكهات الراقية بالأجواء الاستثنائية مع دعم RTL وLTR.",
-        "p4-title": "Premium Lawyer Website Template",
-        "p4-desc": "قالب احترافي فاخر لمكاتب المحاماة والاستشارات لعرض الخدمات وبناء الثقة.",
-        "p5-title": "EstateLux Real Estate Template",
-        "p5-desc": "تجربة عقارية مختلفة تجمع بين التصميم الراقي والعقارات المميزة واستشارات العملاء.",
-        "p6-title": "Premium CV Bundle – 7 Templates",
-        "p6-desc": "حزمة تضم 7 قوالب سيرة ذاتية احترافية بتصميم أنيق باللون الكريمي والكحلي والذهبي.",
-        "btn-view": "فتح المنتج",
-        "offer-title": "عروض استثنائية على القوالب الرقمية",
-        "offer-desc": "احصل على قوالب المواقع الاحترافية بسعر مستهدف 2 دولار، وحزمة السيرة الذاتية المتكاملة بسعر دولار واحد فقط.",
-        "offer-btn": "تصفح المنتجات الآن",
-        "contact-title": "تواصل معنا عبر واتساب",
-        "contact-desc": "يسعدنا الإجابة على استفساراتكم ومساعدتكم في اختيار القالب المناسب أو تصميم موقعك الخاص بكل فاعلية واحترافية.",
-        "contact-btn": "مراسلة عبر واتساب (+20 1206443652)",
-        "footer-rights": "جميع حقوق الملكية الفكرية والتصميم والمحتوى والعلامة التجارية محفوظة لأصحابها. يُمنع نسخ أو إعادة توزيع المحتوى دون إذن.",
-        "footer-thanks": "«شكراً لزيارتك ودعمك لـ Ahmed Abu Omar. نقدر وقتك وثقتك، ونتمنى أن تجد في مجموعتنا ما يلهمك.»"
-      },
-      en: {
-        "brand-name": "Ahmed Abu Omar",
-        "brand-sub": "Premium Digital Studio",
-        "nav-home": "Home",
-        "nav-about": "Services",
-        "nav-products": "Products",
-        "nav-offers": "Offers",
-        "nav-contact": "Contact",
-        "hero-badge": "Professional Digital Design Studio",
-        "hero-title": "Crafting Your Digital Presence Exceptionally",
-        "hero-desc": "Who are we? A premier digital studio specialized in web design and development for business, real estate, law, and dining, plus ready-to-use digital templates.",
-        "goal-1": "Web Design & Development",
-        "goal-2": "Corporate & Real Estate Templates",
-        "goal-3": "Restaurant & Legal Templates",
-        "goal-4": "Professional CV Bundles",
-        "hero-welcome": "“Welcome to Ahmed Abu Omar, your destination for professional digital templates and modern designs. Explore our collection and choose what fits your ideas.”",
-        "btn-explore": "Explore Products",
-        "btn-whatsapp-hero": "WhatsApp Us",
-        "mockup-title": "Ahmed Abu Omar Studio",
-        "mockup-sub": "Web Development & Premium Digital Templates",
-        "about-header-title": "Our Digital Services",
-        "about-header-desc": "We deliver comprehensive web solutions to launch and scale your brand with excellence.",
-        "srv1-title": "Web Design & Development",
-        "srv1-desc": "Custom web development built from scratch for your business with high speed and top security.",
-        "srv-wa": "Contact via WhatsApp",
-        "ab1-title": "Editable Website Templates",
-        "ab1-desc": "Complete web solutions crafted with top software standards for immediate launch.",
-        "ab2-title": "Business, Real Estate & Dining",
-        "ab2-desc": "Custom templates tailored for corporations, real estate agencies, dining, and legal firms.",
-        "ab3-title": "Professional CV Templates",
-        "ab3-desc": "Polished resume designs that highlight your skills and experience with impactful style.",
-        "prod-header-title": "Templates Showcase",
-        "prod-header-desc": "Direct visual showcase featuring original screenshots for each template",
-        "filter-all": "All Products",
-        "filter-web": "Website Templates",
-        "filter-cv": "CV Templates",
-        "cat-realestate": "Real Estate",
-        "cat-business": "Business",
-        "cat-restaurant": "Hospitality",
-        "cat-legal": "Legal",
-        "cat-cv": "Resume",
-        "p1-title": "NOVA – Premium Real Estate Template",
-        "p1-desc": "Discover exceptional homes, luxury resorts, and investment opportunities with a top-tier real estate interface.",
-        "p2-title": "Premium Business Website Template",
-        "p2-desc": "A luxury corporate template crafted for firms, agencies, and advisors seeking a commanding digital presence.",
-        "p3-title": "Premium Restaurant Website Template",
-        "p3-desc": "An extraordinary fine dining experience where exquisite flavors meet exceptional ambiance with RTL & LTR support.",
-        "p4-title": "Premium Lawyer Website Template",
-        "p4-desc": "Prestigious professional template for law firms and attorneys to showcase legal services and build trust.",
-        "p5-title": "EstateLux Real Estate Template",
-        "p5-desc": "A distinct real estate experience blending refined design, elite properties, and advisory services.",
-        "p6-title": "Premium CV Bundle – 7 Templates",
-        "p6-desc": "A bundle of 7 professional CV templates featuring elegant cream, navy, and gold styling.",
-        "btn-view": "Open Product",
-        "offer-title": "Exceptional Offers on Digital Templates",
-        "offer-desc": "Get professional website templates at a target price of $2, and the complete CV bundle for just $1.",
-        "offer-btn": "Browse Products Now",
-        "contact-title": "Contact Us via WhatsApp",
-        "contact-desc": "We are delighted to answer your inquiries and help you choose the right template or develop your custom website.",
-        "contact-btn": "WhatsApp Chat (+20 1206443652)",
-        "footer-rights": "All intellectual property rights, designs, content, and brand assets are reserved.",
-        "footer-thanks": "“Thank you for visiting and supporting Ahmed Abu Omar. We appreciate your time and trust.”"
-      }
-    };
-
-    const desktopNavButtons = document.querySelectorAll('.nav-link-btn');
-    const mobileNavButtons = document.querySelectorAll('.mobile-nav-btn');
-    const tabSections = document.querySelectorAll('.tab-section');
-
-    function switchTab(tabId) {
-      desktopNavButtons.forEach(btn => {
-        if(btn.getAttribute('data-tab') === tabId) btn.classList.add('active');
-        else btn.classList.remove('active');
-      });
-
-      mobileNavButtons.forEach(btn => {
-        if(btn.getAttribute('data-tab') === tabId) btn.classList.add('active');
-        else btn.classList.remove('active');
-      });
-
-      tabSections.forEach(section => {
-        if(section.id === tabId) section.classList.add('active-tab');
-        else section.classList.remove('active-tab');
-      });
-    }
-
-    desktopNavButtons.forEach(btn => {
-      btn.addEventListener('click', () => switchTab(btn.getAttribute('data-tab')));
-    });
-
-    mobileNavButtons.forEach(btn => {
-      btn.addEventListener('click', () => switchTab(btn.getAttribute('data-tab')));
-    });
-
-    document.querySelectorAll('.nav-trigger').forEach(btn => {
-      btn.addEventListener('click', () => switchTab(btn.getAttribute('data-target')));
-    });
-
-    const themeToggleBtn = document.getElementById('theme-toggle');
-    const htmlEl = document.documentElement;
-
-    themeToggleBtn.addEventListener('click', () => {
-      const currentTheme = htmlEl.getAttribute('data-theme');
-      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-      htmlEl.setAttribute('data-theme', newTheme);
-      themeToggleBtn.innerHTML = newTheme === 'dark' ? '<i class="fa-solid fa-moon"></i>' : '<i class="fa-solid fa-sun"></i>';
-    });
-
-    const langToggleBtn = document.getElementById('lang-toggle');
-    let currentLang = 'ar';
-
-    langToggleBtn.addEventListener('click', () => {
-      currentLang = currentLang === 'ar' ? 'en' : 'ar';
-      htmlEl.setAttribute('lang', currentLang);
-      htmlEl.setAttribute('dir', currentLang === 'ar' ? 'rtl' : 'ltr');
-      langToggleBtn.textContent = currentLang === 'ar' ? 'EN' : 'AR';
-
-      document.querySelectorAll('[data-i18n]').forEach(el => {
-        const key = el.getAttribute('data-i18n');
-        if (translations[currentLang][key]) {
-          el.textContent = translations[currentLang][key];
-        }
-      });
-    });
-
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    const productCards = document.querySelectorAll('.product-card');
-
-    filterButtons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        filterButtons.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-
-        const filterValue = btn.getAttribute('data-filter');
-
-        productCards.forEach(card => {
-          if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
-            card.style.display = 'flex';
-          } else {
-            card.style.display = 'none';
-          }
-        });
-      });
-    });
-  </script>
 </body>
-  </html>
+</html>
