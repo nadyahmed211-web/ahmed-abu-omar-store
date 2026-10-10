@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>قائمتنا الاحترافية - منتجات رقمية مميزة</title>
-    <!-- استيراد خط عربي أنيق (Cairo) -->
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <title>معرض القوالب الاحترافية</title>
+    <!-- استيراد خط Cairo من Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         * {
             box-sizing: border-box;
@@ -15,121 +15,160 @@
         }
 
         body {
-            background-color: #f8fafc;
-            color: #1e293b;
-            line-height: 1.6;
-            padding: 40px 20px;
+            background-color: #0f172a;
+            color: #f8fafc;
+            min-height: 100vh;
+            padding: 50px 20px;
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1250px;
             margin: 0 auto;
         }
 
         header {
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 60px;
         }
 
         header h1 {
-            font-size: 2.5rem;
-            color: #0f172a;
-            margin-bottom: 10px;
-            font-weight: 800;
+            font-size: 2.8rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #38bdf8, #818cf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
         }
 
         header p {
-            color: #64748b;
-            font-size: 1.1rem;
+            color: #94a3b8;
+            font-size: 1.2rem;
         }
 
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 35px;
         }
 
         .product-card {
-            background: #ffffff;
-            border-radius: 16px;
+            background: #1e293b;
+            border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #334155;
+            transition: all 0.3s ease;
             display: flex;
             flex-direction: column;
         }
 
         .product-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+            transform: translateY(-8px);
+            border-color: #38bdf8;
+            box-shadow: 0 20px 30px -10px rgba(56, 189, 248, 0.2);
         }
 
-        /* حاوية الصور الهندسية المعبرة */
-        .geo-image-container {
-            height: 200px;
+        /* التصاميم الهندسية لكل منتج */
+        .geo-header {
+            height: 220px;
+            position: relative;
             display: flex;
             align-items: center;
             justify-content: center;
-            position: relative;
             overflow: hidden;
         }
 
-        .geo-image-container svg {
-            width: 80px;
-            height: 80px;
-            fill: #ffffff;
-            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
+        /* خلفيات هندسية ملونة */
+        .geo-cv {
+            background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+            background-image: radial-gradient(circle at 20% 20%, rgba(255,255,255,0.15) 0%, transparent 40%),
+                              radial-gradient(circle at 80% 80%, rgba(0,0,0,0.2) 0%, transparent 40%);
         }
 
-        /* ألوان وتدرجات هندسية لكل منتج حسب هدفه */
-        .bg-cv { background: linear-gradient(135deg, #3b82f6, #1d4ed8); }
-        .bg-realestate-1 { background: linear-gradient(135deg, #10b981, #047857); }
-        .bg-realestate-2 { background: linear-gradient(135deg, #06b6d4, #0e7490); }
-        .bg-business { background: linear-gradient(135deg, #6366f1, #4338ca); }
-        .bg-restaurant { background: linear-gradient(135deg, #f59e0b, #b45309); }
-        .bg-lawyer { background: linear-gradient(135deg, #8b5cf6, #6d28d9); }
+        .geo-realestate-1 {
+            background: linear-gradient(135deg, #064e3b, #10b981);
+            background-image: linear-gradient(45deg, rgba(255,255,255,0.08) 25%, transparent 25%, transparent 50%, rgba(255,255,255,0.08) 50%, rgba(255,255,255,0.08) 75%, transparent 75%, transparent);
+            background-size: 40px 40px;
+        }
 
-        .product-content {
-            padding: 24px;
+        .geo-realestate-2 {
+            background: linear-gradient(135deg, #164e63, #06b6d4);
+            background-image: radial-gradient(rgba(255, 255, 255, 0.15) 2px, transparent 2px);
+            background-size: 20px 20px;
+        }
+
+        .geo-business {
+            background: linear-gradient(135deg, #312e81, #6366f1);
+            background-image: linear-gradient(135deg, rgba(255,255,255,0.1) 25%, transparent 25%), 
+                              linear-gradient(225deg, rgba(255,255,255,0.1) 25%, transparent 25%);
+            background-size: 30px 30px;
+        }
+
+        .geo-restaurant {
+            background: linear-gradient(135deg, #78350f, #f59e0b);
+            background-image: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.2) 0%, transparent 60%);
+        }
+
+        .geo-lawyer {
+            background: linear-gradient(135deg, #4c1d95, #8b5cf6);
+            background-image: linear-gradient(0deg, rgba(255,255,255,0.05) 50%, transparent 50%);
+            background-size: 100% 20px;
+        }
+
+        .geo-header svg {
+            width: 85px;
+            height: 85px;
+            fill: #ffffff;
+            filter: drop-shadow(0 10px 15px rgba(0,0,0,0.3));
+            z-index: 2;
+        }
+
+        .product-body {
+            padding: 30px;
             display: flex;
             flex-direction: column;
             flex-grow: 1;
         }
 
         .product-title {
-            font-size: 1.25rem;
+            font-size: 1.35rem;
             font-weight: 700;
-            color: #0f172a;
-            margin-bottom: 12px;
+            color: #ffffff;
             text-decoration: none;
-            transition: color 0.2s;
+            margin-bottom: 12px;
+            transition: color 0.2s ease;
+            display: block;
         }
 
         .product-title:hover {
-            color: #2563eb;
+            color: #38bdf8;
         }
 
-        .product-description {
-            color: #64748b;
+        .product-desc {
+            color: #94a3b8;
             font-size: 0.95rem;
-            margin-bottom: 20px;
+            line-height: 1.7;
+            margin-bottom: 25px;
             flex-grow: 1;
         }
 
         .product-btn {
-            display: inline-block;
+            display: block;
             text-align: center;
-            background-color: #0f172a;
+            background: linear-gradient(135deg, #38bdf8, #2563eb);
             color: #ffffff;
-            padding: 12px 20px;
-            border-radius: 8px;
             text-decoration: none;
-            font-weight: 600;
-            transition: background-color 0.2s;
+            padding: 14px;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
         }
 
         .product-btn:hover {
-            background-color: #2563eb;
+            background: linear-gradient(135deg, #0284c7, #1d4ed8);
+            box-shadow: 0 6px 18px rgba(37, 99, 235, 0.5);
+            transform: translateY(-2px);
         }
     </style>
 </head>
@@ -137,87 +176,81 @@
 
     <div class="container">
         <header>
-            <h1>قوالبنا الرقمية الاحترافية</h1>
-            <p>اختر القالب المناسب لمشروعك واضغط عليه للانتقال لصفحة المتجر مباشرة</p>
+            <h1>المتجر الرقمي للقوالب الاحترافية</h1>
+            <p>اضغط على أي قالب أو زر للانتقال لصفحة الشراء والمعاينة مباشرة</p>
         </header>
 
         <div class="products-grid">
 
             <!-- 1. Premium CV Bundle -->
             <div class="product-card">
-                <div class="geo-image-container bg-cv">
-                    <!-- أيقونة هندسية تعبر عن السير الذاتية / المستندات -->
+                <div class="geo-header geo-cv">
                     <svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
                 </div>
-                <div class="product-content">
+                <div class="product-body">
                     <a href="https://payhip.com/b/Dy2bz" target="_blank" class="product-title">Premium CV Bundle (7 Resume Templates)</a>
-                    <p class="product-description">حزمة متكاملة تضم 7 نماذج سير ذاتية احترافية بتصميم عصري وجذاب لزيادة فرص قبولك الوظيفي.</p>
-                    <a href="https://payhip.com/b/Dy2bz" target="_blank" class="product-btn">عرض القالب</a>
+                    <p class="product-desc">حزمة شاملة تحتوي على 7 تصاميم سير ذاتية احترافية ومودرن لمساعدتك في الحصول على وظيفتك الأحلام.</p>
+                    <a href="https://payhip.com/b/Dy2bz" target="_blank" class="product-btn">انتقل للقالب الآن</a>
                 </div>
             </div>
 
-            <!-- 2. NOVA Real Estate Template -->
+            <!-- 2. NOVA Real Estate -->
             <div class="product-card">
-                <div class="geo-image-container bg-realestate-1">
-                    <!-- أيقونة هندسية تعبر عن العقارات / المنازل -->
+                <div class="geo-header geo-realestate-1">
                     <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
                 </div>
-                <div class="product-content">
+                <div class="product-body">
                     <a href="https://payhip.com/b/7N0IC" target="_blank" class="product-title">NOVA – Premium Real Estate Website Template</a>
-                    <p class="product-description">قالب إلكتروني احترافي مخصص لشركات ومواقع العقارات بتصميم راقي وسريع الاستجابة.</p>
-                    <a href="https://payhip.com/b/7N0IC" target="_blank" class="product-btn">عرض القالب</a>
+                    <p class="product-desc">قالب موقع عقارات متكامل وفاخر يتيح عرض العقارات والشركات العقارية بأعلى معايير التصميم.</p>
+                    <a href="https://payhip.com/b/7N0IC" target="_blank" class="product-btn">انتقل للقالب الآن</a>
                 </div>
             </div>
 
-            <!-- 3. Premium Real Estate Website Template -->
+            <!-- 3. Premium Real Estate -->
             <div class="product-card">
-                <div class="geo-image-container bg-realestate-2">
-                    <!-- أيقونة هندسية تعبر عن المباني الفاخرة والاستثمار -->
+                <div class="geo-header geo-realestate-2">
                     <svg viewBox="0 0 24 24"><path d="M12 7V3H2v18h20V7H12zM6 19H4v-2h2v2zm0-4H4v-2h2v2zm0-4H4V9h2v2zm0-4H4V5h2v2zm4 12H8v-2h2v2zm0-4H8v-2h2v2zm0-4H8V9h2v2zm0-4H8V5h2v2zm10 12h-8v-2h2v-2h-2v-2h2v-2h-2V9h8v10zm-2-8h-2v2h2v-2zm0 4h-2v2h2v-2z"/></svg>
                 </div>
-                <div class="product-content">
+                <div class="product-body">
                     <a href="https://payhip.com/b/TKrM8" target="_blank" class="product-title">Premium Real Estate Website Template 🏠</a>
-                    <p class="product-description">قالب عقاري متطور آخر مزود بواجهات مميزة تعرض العقارات والوحدات السكنية باحترافية عالية.</p>
-                    <a href="https://payhip.com/b/TKrM8" target="_blank" class="product-btn">عرض القالب</a>
+                    <p class="product-desc">قالب عقاري مخصص للمكاتب والمستثمرين للترويج للوحدات والشركات بطريقة متطورة وسريعة.</p>
+                    <a href="https://payhip.com/b/TKrM8" target="_blank" class="product-btn">انتقل للقالب الآن</a>
                 </div>
             </div>
 
-            <!-- 4. Premium Business Website Template -->
+            <!-- 4. Premium Business -->
             <div class="product-card">
-                <div class="geo-image-container bg-business">
-                    <!-- أيقونة هندسية تعبر عن الأعمال والشركات -->
+                <div class="geo-header geo-business">
                     <svg viewBox="0 0 24 24"><path d="M12 7V3H2v18h20V7H12zM2 19v-2h20v2H2zm0-4h20v-2H2v2zm0-4h20V5H2v6z"/></svg>
                 </div>
-                <div class="product-content">
+                <div class="product-body">
                     <a href="https://payhip.com/b/yizhn" target="_blank" class="product-title">Premium Business Website Template</a>
-                    <p class="product-description">قالب أعمال تجارية مثالي للشركات الناشئة والمؤسسات لتعزيز التواجد الرقمي وعرض الخدمات.</p>
-                    <a href="https://payhip.com/b/yizhn" target="_blank" class="product-btn">عرض القالب</a>
+                    <p class="product-desc">تصميم موقع شركات وأعمال احترافي يناسب جميع المجالات والمؤسسات لزيادة المبيعات والانتشار.</p>
+                    <a href="https://payhip.com/b/yizhn" target="_blank" class="product-btn">انتقل للقالب الآن</a>
                 </div>
             </div>
 
-            <!-- 5. Premium Restaurant Website Template -->
+            <!-- 5. Premium Restaurant -->
             <div class="product-card">
-                <div class="geo-image-container bg-restaurant">
-                    <!-- أيقونة هندسية تعبر عن المطاعم والأغذية -->
+                <div class="geo-header geo-restaurant">
                     <svg viewBox="0 0 24 24"><path d="M11 9H9V2H7v7H5V2H3v7c0 2.21 1.79 4 4 4v9h2v-9c2.21 0 4-1.79 4-4V2h-2v7zm3-3v2h2v11h2V2h-4z"/></svg>
                 </div>
-                <div class="product-content">
+                <div class="product-body">
                     <a href="https://payhip.com/b/SnpTh" target="_blank" class="product-title">Premium Restaurant Website Template | Arabic & English</a>
-                    <p class="product-description">قالب مطعم احترافي يدعم اللغتين العربية والإنجليزية، مع قوائم طعام ونظام طلبات مميز.</p>
-                    <a href="https://payhip.com/b/SnpTh" target="_blank" class="product-btn">عرض القالب</a>
+                    <p class="product-desc">قالب موقع مطاعم وكافيهات مميز يدعم اللغتين العربية والإنجليزية لإبراز الوجبات وقوائم الطعام.</p>
+                    <a href="https://payhip.com/b/SnpTh" target="_blank" class="product-btn">انتقل للقالب الآن</a>
                 </div>
             </div>
 
-            <!-- 6. Premium Lawyer Website Template -->
+            <!-- 6. Premium Lawyer -->
             <div class="product-card">
-                <div class="geo-image-container bg-lawyer">
-                    <!-- أيقونة هندسية تعبر عن المحاماة والعدالة -->
-                    <svg viewBox="0 0 24 24"><path d="M10 16v-1.5h4V16h-4zm5-4.5c0-.83-.67-1.5-1.5-1.5h-3c-.83 0-1.5.67-1.5 1.5V13h6v-1.5zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>
+                <div class="geo-header geo-lawyer">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/></svg>
                 </div>
-                <div class="product-content">
+                <div class="product-body">
                     <a href="https://payhip.com/b/V7sGk" target="_blank" class="product-title">Premium Lawyer Website Template – Arabic & English</a>
-                    <p class="product-description">قالب قانوني مخصص للمحامين والمستشارين القانونيين بثنائية اللغة (عربي/إنجليزي) وبتصميم رسمي.</p>
-                    <a href="https://payhip.com/b/V7sGk" target="_blank" class="product-btn">عرض القالب</a>
+                    <p class="product-desc">قالب محاماة واستشارات قانونية عصري يدعم اللغة العربية والإنجليزية ويعرض الخدمات والمكاتب باحترافية.</p>
+                    <a href="https://payhip.com/b/V7sGk" target="_blank" class="product-btn">انتقل للقالب الآن</a>
                 </div>
             </div>
 
