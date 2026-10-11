@@ -706,7 +706,8 @@
     <ul class="nav-links">
       <li><button class="nav-link-btn active" data-tab="tab-hero"><i class="fa-solid fa-house"></i> <span data-i18n="nav_home">الرئيسية</span></button></li>
       <li><button class="nav-link-btn" data-tab="tab-about"><i class="fa-solid fa-code"></i> <span data-i18n="nav_services">خدماتنا</span></button></li>
-      <li><button class="nav-link-btn" data-tab="tab-products"><i class="fa-solid fa-layer-group"></i> <span data-i18n="nav_templates">القوالب والمنتجات</span></button></li>
+      <!-- تم التعديل إلى المنتجات الرقمية بناءً على طلبك -->
+      <li><button class="nav-link-btn" data-tab="tab-products"><i class="fa-solid fa-layer-group"></i> <span data-i18n="nav_templates">المنتجات الرقمية</span></button></li>
       <li><button class="nav-link-btn" data-tab="tab-offers"><i class="fa-solid fa-tag"></i> <span data-i18n="nav_offers">العروض والخصومات</span></button></li>
       <li><button class="nav-link-btn" data-tab="tab-faq"><i class="fa-solid fa-circle-question"></i> <span data-i18n="nav_faq">أسئلة وشروحات</span></button></li>
       <li><button class="nav-link-btn" data-tab="tab-contact"><i class="fa-solid fa-envelope"></i> <span data-i18n="nav_contact">التواصل</span></button></li>
@@ -731,12 +732,13 @@
             <i class="fa-solid fa-crown"></i>
             <span data-i18n="hero_badge">استوديو التصميم الرقمي الاحترافي</span>
           </div>
-          <h2 data-i18n="hero_title">نصنع حضورك الرقمي <span>بهندسة استثنائية</span></h2>
-          <p data-i18n="hero_desc">وجهتك الأولى لاقتناء أقوى قوالب المواقع والسير الذاتية الاحترافية المصممة خصيصاً لتناسب طموحاتك وتعزز نجاحك التجاري والشخصي بأعلى معايير البريميوم.</p>
+          <!-- تم تعديل نص الوصف ليتوافق مع بناء المنتجات الرقمية والـ Micro-SaaS -->
+          <h2 data-i18n="hero_title">نبتكر ونبني <span>منتجات رقمية استثنائية</span></h2>
+          <p data-i18n="hero_desc">وجهتك الأولى لاقتناء أقوى المنتجات الرقمية، أدوات الويب المصغرة (Micro-SaaS)، قوالب المواقع، والسير الذاتية المصممة خصيصاً لتعزيز نجاحك بأعلى معايير البريميوم.</p>
 
           <div class="hero-buttons">
             <button class="btn-gold" onclick="switchTab('tab-products')">
-              <span data-i18n="btn_explore">استكشف المتجر والقوالب</span>
+              <span data-i18n="btn_explore">استكشف متجر المنتجات الرقمية</span>
               <i class="fa-solid fa-arrow-left icon-dir"></i>
             </button>
             <a href="https://wa.me/201206443652" target="_blank" class="btn-whatsapp-main">
@@ -804,11 +806,21 @@
     <section class="tab-section" id="tab-about">
       <div class="section-header">
         <h2 data-i18n="services_header">خدماتنا <span>الرقمية المتكاملة</span></h2>
-        <p data-i18n="services_sub">نقدم حلولاً احترافية مصممة خصيصاً لترتقي بمشروعك ومظهرك المهني لأعلى المستويات.</p>
+        <p data-i18n="services_sub">نحن لا نقدم مجرد قوالب تقليدية، بل نبتكر ونبني منتجات رقمية مستقلة وأدوات ذكية (Micro-SaaS) تعمل بضغطة زر وتلبي احتياجات السوق العصري.</p>
       </div>
 
       <div class="services-grid">
+        <!-- الخدمة الأولى الجديدة المضافة بناءً على طلبك -->
         <div class="service-card" style="border-color: var(--border-hover);">
+          <div class="service-icon"><i class="fa-solid fa-rocket"></i></div>
+          <h3 data-i18n="srv_new_title">تطوير المنتجات الرقمية & Micro-SaaS</h3>
+          <p data-i18n="srv_new_desc">بناء وتطوير أدوات ويب مصغرة ومنتجات رقمية مستقلة عالية الجودة ومخصصة لتوليد دخل إضافي وحل مشاكل حقيقية بدون اشتراكات شهرية معقدة.</p>
+          <a href="https://wa.me/201206443652" target="_blank" class="service-btn">
+            <i class="fa-brands fa-whatsapp"></i> <span data-i18n="btn_contact_wa">تواصل عبر الواتساب</span>
+          </a>
+        </div>
+
+        <div class="service-card">
           <div class="service-icon"><i class="fa-solid fa-code"></i></div>
           <h3 data-i18n="srv1_title">تصميم وتطوير المواقع</h3>
           <p data-i18n="srv1_desc">بناء وتطوير مواقع إلكترونية متكاملة لشركتك أو نشاطك التجاري من الصفر بأعلى معايير السرعة، الأمان، والتصميم العصري.</p>
@@ -819,17 +831,8 @@
 
         <div class="service-card">
           <div class="service-icon"><i class="fa-solid fa-laptop-code"></i></div>
-          <h3 data-i18n="srv2_title">قوالب المواقع قابلة للتعديل</h3>
-          <p data-i18n="srv2_desc">مجموعة قوالب ويب احترافية وجاهزة مع التصميمات المبتكرة التي عملنا عليها لتسهيل إطلاق موقعك بضغطة زر واحدة.</p>
-          <a href="https://wa.me/201206443652" target="_blank" class="service-btn">
-            <i class="fa-brands fa-whatsapp"></i> <span data-i18n="btn_contact_wa">تواصل عبر الواتساب</span>
-          </a>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon"><i class="fa-solid fa-file-lines"></i></div>
-          <h3 data-i18n="srv3_title">سيرة ذاتية مخصصة</h3>
-          <p data-i18n="srv3_desc">خدمة تصميم سيرة ذاتية مخصصة واحترافية تلفت انتباه مسؤولي التوظيف وتعكس خبراتك بأناقة تامة. تواصل معنا مباشرة عبر الواتساب.</p>
+          <h3 data-i18n="srv2_title">قوالب الويب الاحترافية</h3>
+          <p data-i18n="srv2_desc">مجموعة قوالب ويب جاهزة مع التصميمات المبتكرة لتسهيل إطلاق موقعك بضغطة زر واحدة.</p>
           <a href="https://wa.me/201206443652" target="_blank" class="service-btn">
             <i class="fa-brands fa-whatsapp"></i> <span data-i18n="btn_contact_wa">تواصل عبر الواتساب</span>
           </a>
@@ -837,20 +840,34 @@
       </div>
     </section>
 
-    <!-- Tab 3: Products (معرض القوالب والمنتجات) -->
+    <!-- Tab 3: Products (معرض المنتجات الرقمية والقوالب) -->
     <section class="tab-section" id="tab-products">
       <div class="section-header">
-        <h2 data-i18n="products_header">معرض <span>المنتجات والقوالب</span></h2>
-        <p data-i18n="products_sub">اختر من بين 15 قالب موقع احترافي وحزم السيرة الذاتية المميزة</p>
+        <h2 data-i18n="products_header">متجر <span>المنتجات الرقمية</span></h2>
+        <p data-i18n="products_sub">اختر من بين أدوات الويب الذكية، 15 قالب موقع احترافي، وحزم السيرة الذاتية المميزة</p>
       </div>
 
       <div class="filter-buttons">
         <button class="filter-btn active" data-filter="all" data-i18n="filter_all">جميع المنتجات</button>
+        <button class="filter-btn" data-filter="saas" data-i18n="filter_saas">أدوات Micro-SaaS</button>
         <button class="filter-btn" data-filter="web" data-i18n="filter_web">قوالب المواقع (15)</button>
         <button class="filter-btn" data-filter="cv" data-i18n="filter_cv">قوالب وحزم السيرة الذاتية</button>
       </div>
 
       <div class="products-grid">
+        <!-- إضافة المنتج الجديد الخاص بك هنا في قمة المنتجات الرقمية -->
+        <div class="product-card" data-category="saas" style="border: 2px solid var(--accent-gold);">
+          <div class="product-banner" style="background: linear-gradient(135deg, #059669, #0f172a);"><i class="fa-solid fa-wand-magic-sparkles"></i><span class="product-badge-tag" data-i18n="tag_saas_pro">أداة Micro-SaaS</span></div>
+          <div class="product-body">
+            <h3 class="product-title">AI Social Post Generator Pro 🚀</h3>
+            <p class="product-desc" data-i18n="p_saas_desc">أداة ويب ذكية مصغرة لتوليد منشورات احترافية لـ LinkedIn و X و Facebook مع الهاشتاجات الذكية بضغطة زر.</p>
+            <div class="product-footer">
+              <span class="product-price">$9.00</span>
+              <a href="https://payhip.com/b/cS1eq" target="_blank" class="btn-product-link"><span data-i18n="btn_open_product">شراء المنتج</span> <i class="fa-solid fa-arrow-left icon-dir"></i></a>
+            </div>
+          </div>
+        </div>
+
         <div class="product-card" data-category="web">
           <div class="product-banner"><i class="fa-solid fa-building"></i><span class="product-badge-tag" data-i18n="tag_realestate">عقارات</span></div>
           <div class="product-body">
@@ -1071,7 +1088,7 @@
       </div>
     </section>
 
-    <!-- Tab 4: Offers (العروض والخصومات المحدثة بمناسبة الافتتاح) -->
+    <!-- Tab 4: Offers (العروض والخصومات) -->
     <section class="tab-section" id="tab-offers">
       <div class="promo-banner-box">
         <div class="promo-badge">
@@ -1079,13 +1096,12 @@
           <span data-i18n="promo_badge">خصم 60% لمدة أسبوع واحد فقط! 🔥</span>
         </div>
         
-        <h3 data-i18n="promo_title">احتفالاً بإنشاء الموقع الإلكتروني لبرند <span>Ahmed Abu Omar</span></h3>
+        <h3 data-i18n="promo_title">احتفالاً بإنشاء متجر المنتجات الرقمية لبرند <span>Ahmed Abu Omar</span></h3>
         
         <p class="promo-lead-desc" data-i18n="promo_desc">
-          فرصة استثنائية لمدة <strong>7 أيام فقط</strong> بمناسبة الانطلاق! احصل على خصم <strong>60%</strong> فوراً على جميع القوالب وحزم السيرة الذاتية واصنع حضورك الرقمي الفاخر اليوم بأفضل سعر.
+          فرصة استثنائية لمدة <strong>7 أيام فقط</strong> بمناسبة الانطلاق! احصل على خصم <strong>60%</strong> فوراً على جميع أدوات الـ Micro-SaaS والقوالب الرقمية.
         </p>
         
-        <!-- كارت الكود المزود بزر النسخ التفاعلي -->
         <div class="coupon-card-wrapper">
           <div class="coupon-box">
             <span class="coupon-label" data-i18n="coupon_label">كود الخصم (60% Off):</span>
@@ -1097,7 +1113,7 @@
         </div>
 
         <div class="urgent-cta-msg" data-i18n="urgent_msg">
-          <i class="fa-solid fa-clock-rotate-left"></i> سارع بالاستفادة من العرض قبل انتهائه وتطبيق الخصم عند الدفع!
+          <i class="fa-solid fa-clock-rotate-left"></i> سارع بالاستفادة من العرض وتطبيق الخصم عند الدفع في المتجر!
         </div>
 
         <div>
@@ -1113,37 +1129,37 @@
     <section class="tab-section" id="tab-faq">
       <div class="section-header">
         <h2 data-i18n="faq_header">الأسئلة الشائعة <span>وشروحات الاستخدام</span></h2>
-        <p data-i18n="faq_sub">إليك كل ما تحتاج معرفته عن طريقة الشراء، استلام القوالب، وطرق الدفع المتاحة</p>
+        <p data-i18n="faq_sub">إليك كل ما تحتاج معرفته عن طريقة الشراء، استلام المنتجات الرقمية، وطرق الدفع</p>
       </div>
 
       <div class="faq-container">
         <div class="faq-card">
           <div class="faq-question">
-            <span data-i18n="q1_title">1. كيف يمكنني شراء القالب أو الحزمة من المتجر؟</span>
+            <span data-i18n="q1_title">1. كيف يمكنني شراء المنتج الرقمي أو القالب من المتجر؟</span>
             <i class="fa-solid fa-circle-chevron-down"></i>
           </div>
           <div class="faq-answer" data-i18n="q1_ans">
-            تصفح القوالب من قسم <strong>"القوالب والمنتجات"</strong>، اضغط على زر <strong>"فتح المنتج"</strong> أو <strong>"شراء الحزمة"</strong> وسوف ينتقل بك الموقع مباشرة إلى صفحة الشراء الآمنة عبر منصة Payhip. قم بإدخال بريدك الإلكتروني والدفع إلكترونياً.
+            تصفح المنتجات من قسم <strong>"المنتجات الرقمية"</strong>، اضغط على زر <strong>"شراء المنتج"</strong> أو <strong>"فتح المنتج"</strong> وسوف ينتقل بك الموقع مباشرة إلى صفحة الشراء الآمنة عبر منصة Payhip.
           </div>
         </div>
 
         <div class="faq-card">
           <div class="faq-question">
-            <span data-i18n="q2_title">2. كيف أستلم القالب وكيف أقوم بتشغيله وتعديله؟</span>
+            <span data-i18n="q2_title">2. كيف أستلم الأداة أو القالب وكيف أقوم بتشغيله؟</span>
             <i class="fa-solid fa-circle-chevron-down"></i>
           </div>
           <div class="faq-answer" data-i18n="q2_ans">
-            بمجرد إتمام عملية الشراء، سيصلك رابط التحميل فوراً في صفحة التأكيد وعلى بريدك الإلكتروني. ستحصل على الملفات المباشرة (HTML/CSS/JS) أو نماذج السيرة الذاتية القابلة للتعديل. يمكنك فتحها وتعديل النصوص والألوان بسهولة تامة.
+            بمجرد إتمام الشراء، سيصلك رابط التحميل فوراً (ملف ZIP يحتوي على الكود بالكامل) في صفحة التأكيد وعلى بريدك الإلكتروني لتعمل الأداة معك مباشرة دون اشتراكات شهرية.
           </div>
         </div>
 
         <div class="faq-card" style="border-color: var(--border-hover);">
           <div class="faq-question">
-            <span style="color: var(--accent-gold-light);" data-i18n="q3_title">3. لا أملك بطاقة بنكية إلكترونية، هل يمكنني الدفع والشراء عبر الواتساب؟</span>
+            <span style="color: var(--accent-gold-light);" data-i18n="q3_title">3. لا أملك بطاقة بنكية إلكترونية، هل يمكنني الدفع عبر الواتساب؟</span>
             <i class="fa-solid fa-circle-chevron-down"></i>
           </div>
           <div class="faq-answer" data-i18n="q3_ans">
-            <strong>نعم بالـتأكيد!</strong> إذا لم تكن لديك بطاقة بنكية أو فيزا للدفـع الإلكتروني، يمكنك التواصل معنا مباشرة عن طريق <strong>الواتساب</strong>، وتنسيق الدفع عبر وسائل الدفع المحلية المتاحة (مثل فودافون كاش Vodafone Cash، إنستاباي InstaPay، أو التحويلات المحلية)، وسنرسل لك القالب المباشر فوراً على الواتساب!
+            <strong>نعم بالتأكيد!</strong> يمكنك التواصل معنا مباشرة عن طريق <strong>الواتساب</strong> لتنسيق الدفع عبر وسائل الدفع المحلية المتاحة (مثل فودافون كاش، إنستاباي، وغيرها)، وسنرسل لك ملف المنتج فوراً.
           </div>
         </div>
 
@@ -1153,7 +1169,7 @@
             <i class="fa-solid fa-circle-chevron-down"></i>
           </div>
           <div class="faq-answer" data-i18n="q4_ans">
-            بالطبع! نحن معك خطوة بخطوة. إذا واجهت أي صعوبة في تعديل القالب أو تشغيله، يمكنك مراسلتنا في أي وقت عبر الواتساب وسنساعدك فوراً.
+            بالطبع! نحن معك خطوة بخطوة عبر الواتساب لأي استفسار أو مساعدة في تشغيل منتجك الرقمي.
           </div>
         </div>
       </div>
@@ -1164,7 +1180,7 @@
       <div class="contact-box">
         <i class="fa-brands fa-whatsapp main-icon"></i>
         <h3 data-i18n="contact_header">تواصل معنا عبر الواتساب</h3>
-        <p data-i18n="contact_sub">هل تحتاج إلى سيرة ذاتية مخصصة أو استفسار خاص؟ فريقنا جاهز للرد عليك ومساعدتك فوراً بكل احترافية.</p>
+        <p data-i18n="contact_sub">هل تحتاج إلى استفسار حول منتج رقمي مخصص؟ فريقنا جاهز للرد ومساعدتك فوراً بكل احترافية.</p>
         <a href="https://wa.me/201206443652" target="_blank" class="btn-whatsapp-main" style="font-size: 1.1rem; padding: 16px 35px;">
           <i class="fa-brands fa-whatsapp" style="font-size: 1.4rem;"></i>
           <span data-i18n="btn_direct_wa">مراسلة مباشرة عبر الواتساب</span>
@@ -1174,10 +1190,10 @@
       <footer>
         <div class="footer-brand">Ahmed Abu Omar</div>
         <div class="footer-rights" data-i18n="footer_rights">
-          جميع حقوق الملكية الفكرية والتصميم والمحتوى والعلامة التجارية محفوظة لأصحابها. يُمنع نسخ أو إعادة توزيع المحتوى دون إذن مسبق.
+          جميع حقوق الملكية الفكرية والمنتجات الرقمية والعلامة التجارية محفوظة. يُمنع إعادة توزيع المنتجات دون إذن مسبق.
         </div>
         <div class="footer-thanks" data-i18n="footer_thanks">
-          «شكراً لزيارتك ودعمك لـ Ahmed Abu Omar. نقدر وقتك وثقتك الغالية، ونتمنى لك تجربة تسوق استثنائية.»
+          «شكراً لثقتك ودعمك لمتجر Ahmed Abu Omar للمنتجات الرقمية وأدوات الويب.»
         </div>
         <div class="social-buttons">
           <a href="https://www.facebook.com/AhmedAbuOmarOfficial" target="_blank" class="social-btn"><i class="fa-brands fa-facebook-f"></i> Facebook</a>
@@ -1199,9 +1215,10 @@
       <i class="fa-solid fa-code"></i>
       <span data-i18n="nav_services">خدماتنا</span>
     </button>
+    <!-- تم تعديل زر الجوال إلى المنتجات الرقمية -->
     <button class="mobile-nav-btn" data-tab="tab-products">
       <i class="fa-solid fa-layer-group"></i>
-      <span data-i18n="nav_templates">القوالب</span>
+      <span data-i18n="nav_templates">المنتجات</span>
     </button>
     <button class="mobile-nav-btn" data-tab="tab-offers">
       <i class="fa-solid fa-tag"></i>
@@ -1229,34 +1246,37 @@
         brand_subtitle: "Premium Digital Studio",
         nav_home: "الرئيسية",
         nav_services: "خدماتنا",
-        nav_templates: "القوالب والمنتجات",
+        nav_templates: "المنتجات الرقمية",
         nav_offers: "العروض والخصومات",
         nav_faq: "أسئلة وشروحات",
         nav_faq_mobile: "الشرح",
         nav_contact: "التواصل",
         hero_badge: "استوديو التصميم الرقمي الاحترافي",
-        hero_title: 'نصنع حضورك الرقمي <span>بهندسة استثنائية</span>',
-        hero_desc: "وجهتك الأولى لاقتناء أقوى قوالب المواقع والسير الذاتية الاحترافية المصممة خصيصاً لتناسب طموحاتك وتعزز نجاحك التجاري والشخصي بأعلى معايير البريميوم.",
-        btn_explore: "استكشف المتجر والقوالب",
+        hero_title: 'نبتكر ونبني <span>منتجات رقمية استثنائية</span>',
+        hero_desc: "وجهتك الأولى لاقتناء أقوى المنتجات الرقمية، أدوات الويب المصغرة (Micro-SaaS)، قوالب المواقع، والسير الذاتية المصممة خصيصاً لتعزيز نجاحك بأعلى معايير البريميوم.",
+        btn_explore: "استكشف متجر المنتجات الرقمية",
         btn_whatsapp: "تواصل عبر الواتساب",
         box_welcome: "أهلاً بك في عالمنا الإبداعي! 🔥",
         box_subcall: "تابعنا يصلك كل جديد",
         btn_follow: "متابعة",
         box_footer: "انضم إلى قناتنا للاستفادة من أحدث الشروحات والعروض",
         services_header: 'خدماتنا <span>الرقمية المتكاملة</span>',
-        services_sub: "نقدم حلولاً احترافية مصممة خصيصاً لترتقي بمشروعك ومظهرك المهني لأعلى المستويات.",
+        services_sub: "نحن لا نقدم مجرد قوالب تقليدية، بل نبتكر ونبني منتجات رقمية مستقلة وأدوات ذكية (Micro-SaaS) تعمل بضغطة زر وتلبي احتياجات السوق العصري.",
+        srv_new_title: "تطوير المنتجات الرقمية & Micro-SaaS",
+        srv_new_desc: "بناء وتطوير أدوات ويب مصغرة ومنتجات رقمية مستقلة عالية الجودة ومخصصة لتوليد دخل إضافي وحل مشاكل حقيقية بدون اشتراكات شهرية معقدة.",
         srv1_title: "تصميم وتطوير المواقع",
         srv1_desc: "بناء وتطوير مواقع إلكترونية متكاملة لشركتك أو نشاطك التجاري من الصفر بأعلى معايير السرعة، الأمان، والتصميم العصري.",
-        srv2_title: "قوالب المواقع قابلة للتعديل",
-        srv2_desc: "مجموعة قوالب ويب احترافية وجاهزة مع التصميمات المبتكرة التي عملنا عليها لتسهيل إطلاق موقعك بضغطة زر واحدة.",
-        srv3_title: "سيرة ذاتية مخصصة",
-        srv3_desc: "خدمة تصميم سيرة ذاتية مخصصة واحترافية تلفت انتباه مسؤولي التوظيف وتعكس خبراتك بأناقة تامة. تواصل معنا مباشرة عبر الواتساب.",
+        srv2_title: "قوالب الويب الاحترافية",
+        srv2_desc: "مجموعة قوالب ويب جاهزة مع التصميمات المبتكرة لتسهيل إطلاق موقعك بضغطة زر واحدة.",
         btn_contact_wa: "تواصل عبر الواتساب",
-        products_header: 'معرض <span>المنتجات والقوالب</span>',
-        products_sub: "اختر من بين 15 قالب موقع احترافي وحزم السيرة الذاتية المميزة",
+        products_header: 'متجر <span>المنتجات الرقمية</span>',
+        products_sub: "اختر من بين أدوات الويب الذكية، 15 قالب موقع احترافي، وحزم السيرة الذاتية المميزة",
         filter_all: "جميع المنتجات",
+        filter_saas: "أدوات Micro-SaaS",
         filter_web: "قوالب المواقع (15)",
         filter_cv: "قوالب وحزم السيرة الذاتية",
+        tag_saas_pro: "أداة Micro-SaaS",
+        p_saas_desc: "أداة ويب ذكية مصغرة لتوليد منشورات احترافية لـ LinkedIn و X و Facebook مع الهاشتاجات الذكية بضغطة زر.",
         tag_realestate: "عقارات",
         tag_business: "أعمال رقمية",
         tag_restaurant: "مطاعم وفنادق",
@@ -1272,7 +1292,7 @@
         tag_creative: "إبداعي وفن",
         tag_saas: "SaaS وناشئة",
         tag_lawyer_pro: "خدمات قانونية",
-        btn_open_product: "فتح المنتج",
+        btn_open_product: "شراء المنتج",
         p1_desc: "اكتشف منازل استثنائية ومصايف فاخرة وفرصاً استثمارية بأرقى واجهة عقارية.",
         p2_desc: "قالب أعمال فاخر مصمم للشركات والوكالات والمستشارين لبناء حضور قوي واستثنائي.",
         p3_desc: "تجربة تتجاوز المألوف تلتقي فيها النكهات الراقية بالأجواء الاستثنائية مع دعم RTL وLTR.",
@@ -1299,60 +1319,63 @@
         btn_order_wa: "طلب عبر الواتساب",
         price_contact: "تواصل للمزيد",
         promo_badge: "خصم 60% لمدة أسبوع واحد فقط! 🔥",
-        promo_title: 'احتفالاً بإنشاء الموقع الإلكتروني لبرند <span>Ahmed Abu Omar</span>',
-        promo_desc: "فرصة استثنائية لمدة <strong>7 أيام فقط</strong> بمناسبة الانطلاق! احصل على خصم <strong>60%</strong> فوراً على جميع القوالب وحزم السيرة الذاتية واصنع حضورك الرقمي الفاخر اليوم بأفضل سعر.",
+        promo_title: 'احتفالاً بإنشاء متجر المنتجات الرقمية لبرند <span>Ahmed Abu Omar</span>',
+        promo_desc: "فرصة استثنائية لمدة <strong>7 أيام فقط</strong> بمناسبة الانطلاق! احصل على خصم <strong>60%</strong> فوراً على جميع أدوات الـ Micro-SaaS والقوالب الرقمية.",
         coupon_label: "كود الخصم (60% Off):",
         btn_copy: "نسخ الكود",
-        urgent_msg: "سارع بالاستفادة من العرض قبل انتهائه وتطبيق الخصم عند الدفع!",
+        urgent_msg: "سارع بالاستفادة من العرض وتطبيق الخصم عند الدفع في المتجر!",
         btn_apply_discount: "تصفح المنتجات وتطبيق الخصم",
         faq_header: 'الأسئلة الشائعة <span>وشروحات الاستخدام</span>',
-        faq_sub: "إليك كل ما تحتاج معرفته عن طريقة الشراء، استلام القوالب، وطرق الدفع المتاحة",
-        q1_title: "1. كيف يمكنني شراء القالب أو الحزمة من المتجر؟",
-        q1_ans: 'تصفح القوالب من قسم <strong>"القوالب والمنتجات"</strong>، اضغط على زر <strong>"فتح المنتج"</strong> أو <strong>"شراء الحزمة"</strong> وسوف ينتقل بك الموقع مباشرة إلى صفحة الشراء الآمنة عبر منصة Payhip. قم بإدخال بريدك الإلكتروني والدفع إلكترونياً.',
-        q2_title: "2. كيف أستلم القالب وكيف أقوم بتشغيله وتعديله؟",
-        q2_ans: 'بمجرد إتمام عملية الشراء، سيصلك رابط التحميل فوراً في صفحة التأكيد وعلى بريدك الإلكتروني. ستحصل على الملفات المباشرة (HTML/CSS/JS) أو نماذج السيرة الذاتية القابلة للتعديل. يمكنك فتحها وتعديل النصوص والألوان بسهولة تامة.',
-        q3_title: "3. لا أملك بطاقة بنكية إلكترونية، هل يمكنني الدفع والشراء عبر الواتساب؟",
-        q3_ans: '<strong>نعم بالـتأكيد!</strong> إذا لم تكن لديك بطاقة بنكية أو فيزا للدفـع الإلكتروني، يمكنك التواصل معنا مباشرة عن طريق <strong>الواتساب</strong>، وتنسيق الدفع عبر وسائل الدفع المحلية المتاحة (مثل فودافون كاش Vodafone Cash، إنستاباي InstaPay، أو التحويلات المحلية)، وسنرسل لك القالب المباشر فوراً على الواتساب!',
+        faq_sub: "إليك كل ما تحتاج معرفته عن طريقة الشراء، استلام المنتجات الرقمية، وطرق الدفع",
+        q1_title: "1. كيف يمكنني شراء المنتج الرقمي أو القالب من المتجر؟",
+        q1_ans: 'تصفح المنتجات من قسم <strong>"المنتجات الرقمية"</strong>، اضغط على زر <strong>"شراء المنتج"</strong> أو <strong>"فتح المنتج"</strong> وسوف ينتقل بك الموقع مباشرة إلى صفحة الشراء الآمنة عبر منصة Payhip.',
+        q2_title: "2. كيف أستلم الأداة أو القالب وكيف أقوم بتشغيله؟",
+        q2_ans: 'بمجرد إتمام الشراء، سيصلك رابط التحميل فوراً (ملف ZIP يحتوي على الكود بالكامل) في صفحة التأكيد وعلى بريدك الإلكتروني لتعمل الأداة معك مباشرة دون اشتراكات شهرية.',
+        q3_title: "3. لا أملك بطاقة بنكية إلكترونية، هل يمكنني الدفع عبر الواتساب؟",
+        q3_ans: '<strong>نعم بالتأكيد!</strong> يمكنك التواصل معنا مباشرة عن طريق <strong>الواتساب</strong> لتنسيق الدفع عبر وسائل الدفع المحلية المتاحة (مثل فودافون كاش، إنستاباي، وغيرها)، وسنرسل لك ملف المنتج فوراً.',
         q4_title: "4. هل تتوفر خدمة الدعم الفني بعد الشراء؟",
-        q4_ans: 'بالطبع! نحن معك خطوة بخطوة. إذا واجهت أي صعوبة في تعديل القالب أو تشغيله، يمكنك مراسلتنا في أي وقت عبر الواتساب وسنساعدك فوراً.',
+        q4_ans: 'بالطبع! نحن معك خطوة بخطوة عبر الواتساب لأي استفسار أو مساعدة في تشغيل منتجك الرقمي.',
         contact_header: "تواصل معنا عبر الواتساب",
-        contact_sub: "هل تحتاج إلى سيرة ذاتية مخصصة أو استفسار خاص؟ فريقنا جاهز للرد عليك ومساعدتك فوراً بكل احترافية.",
+        contact_sub: "هل تحتاج إلى استفسار حول منتج رقمي مخصص؟ فريقنا جاهز للرد ومساعدتك فوراً بكل احترافية.",
         btn_direct_wa: "مراسلة مباشرة عبر الواتساب",
-        footer_rights: "جميع حقوق الملكية الفكرية والتصميم والمحتوى والعلامة التجارية محفوظة لأصحابها. يُمنع نسخ أو إعادة توزيع المحتوى دون إذن مسبق.",
-        footer_thanks: "«شكراً لزيارتك ودعمك لـ Ahmed Abu Omar. نقدر وقتك وثقتك الغالية، ونتمنى لك تجربة تسوق استثنائية.»"
+        footer_rights: "جميع حقوق الملكية الفكرية والمنتجات الرقمية والعلامة التجارية محفوظة. يُمنع إعادة توزيع المنتجات دون إذن مسبق.",
+        footer_thanks: "«شكراً لثقتك ودعمك لمتجر Ahmed Abu Omar للمنتجات الرقمية وأدوات الويب.»"
       },
       en: {
         brand_subtitle: "Premium Digital Studio",
         nav_home: "Home",
         nav_services: "Services",
-        nav_templates: "Templates & Store",
+        nav_templates: "Digital Products",
         nav_offers: "Offers & Discounts",
         nav_faq: "FAQ & Guide",
         nav_faq_mobile: "Guide",
         nav_contact: "Contact Us",
         hero_badge: "Professional Digital Design Studio",
-        hero_title: 'Engineering Your <span>Digital Presence</span>',
-        hero_desc: "Your primary destination for acquiring powerful website templates and professional ATS resumes tailored to elevate your business and personal success.",
-        btn_explore: "Explore Store & Templates",
+        hero_title: 'Building & Innovating <span>Exceptional Digital Products</span>',
+        hero_desc: "Your primary destination for high-end digital products, Micro-SaaS tools, web templates, and ATS resumes tailored to your success.",
+        btn_explore: "Explore Digital Store",
         btn_whatsapp: "Chat on WhatsApp",
         box_welcome: "Welcome to Our Creative World! 🔥",
         box_subcall: "Follow us for latest updates",
         btn_follow: "Follow",
         box_footer: "Join our channels for exclusive updates & offers",
         services_header: 'Integrated <span>Digital Services</span>',
-        services_sub: "Delivering professional solutions designed to elevate your project and career to the highest standards.",
+        services_sub: "We don't just provide standard templates; we build independent digital products and smart Micro-SaaS tools.",
+        srv_new_title: "Digital Products & Micro-SaaS Dev",
+        srv_new_desc: "Building lightweight, high-performance web tools and standalone digital products to generate extra revenue without monthly subscription fees.",
         srv1_title: "Website Design & Development",
-        srv1_desc: "Building custom, high-speed, and secure responsive websites for your company or business brand from scratch.",
-        srv2_title: "Customizable Web Templates",
-        srv2_desc: "Ready-to-use premium web templates crafted to help you launch your online presence with a single click.",
-        srv3_title: "Custom Resume Design",
-        srv3_desc: "Professional ATS-friendly resume tailoring service designed to grab recruiter attention. Contact us directly on WhatsApp.",
+        srv1_desc: "Building custom, high-speed, and secure responsive websites for your brand from scratch.",
+        srv2_title: "Professional Web Templates",
+        srv2_desc: "Ready-to-use web templates crafted to help you launch your online presence with a single click.",
         btn_contact_wa: "Contact on WhatsApp",
-        products_header: 'Products & <span>Templates Gallery</span>',
-        products_sub: "Choose from 15 professional web templates and premium CV bundles.",
+        products_header: 'Digital Products <span>Store</span>',
+        products_sub: "Choose from smart web tools, 15 professional web templates, and premium CV bundles",
         filter_all: "All Products",
+        filter_saas: "Micro-SaaS Tools",
         filter_web: "Web Templates (15)",
         filter_cv: "CV Bundles & Services",
+        tag_saas_pro: "Micro-SaaS Tool",
+        p_saas_desc: "A smart mini web tool to generate professional social posts for LinkedIn, X, and Facebook with smart hashtags instantly.",
         tag_realestate: "Real Estate",
         tag_business: "Digital Business",
         tag_restaurant: "Restaurant & Hotel",
@@ -1368,7 +1391,7 @@
         tag_creative: "Creative Agency",
         tag_saas: "Tech Startup & SaaS",
         tag_lawyer_pro: "Legal Services",
-        btn_open_product: "View Template",
+        btn_open_product: "Buy Product",
         p1_desc: "Explore luxury homes, coastal resorts, and investment opportunities with an elite real estate layout.",
         p2_desc: "A luxury corporate layout crafted for companies, agencies, and consultants.",
         p3_desc: "An exceptional culinary layout supporting both RTL and LTR for fine dining restaurants.",
@@ -1395,27 +1418,27 @@
         btn_order_wa: "Order via WhatsApp",
         price_contact: "Contact for Pricing",
         promo_badge: "60% Off For 1 Week Only! 🔥",
-        promo_title: 'Celebrating the Launch of <span>Ahmed Abu Omar Brand</span>',
-        promo_desc: "An exclusive <strong>7-day launch offer</strong>! Claim your <strong>60% discount</strong> instantly on all templates & CV bundles and elevate your online presence today.",
+        promo_title: 'Celebrating the Launch of <span>Ahmed Abu Omar Digital Store</span>',
+        promo_desc: "An exclusive <strong>7-day launch offer</strong>! Claim your <strong>60% discount</strong> instantly on all Micro-SaaS tools and digital templates.",
         coupon_label: "Coupon Code (60% Off):",
         btn_copy: "Copy Code",
         urgent_msg: "Act fast before this exclusive offer ends and apply your coupon at checkout!",
         btn_apply_discount: "Browse Store & Apply Code",
         faq_header: 'Frequently Asked <span>Questions & Guide</span>',
-        faq_sub: "Everything you need to know about purchasing, receiving templates, and payment options.",
-        q1_title: "1. How do I purchase a template or bundle?",
-        q1_ans: 'Browse through <strong>"Templates & Store"</strong>, click on <strong>"View Template"</strong> or <strong>"Buy Bundle"</strong>, and you will be redirected to the secure Payhip checkout page. Simply enter your email and complete payment.',
-        q2_title: "2. How do I receive and edit my template?",
-        q2_ans: 'Upon successful checkout, your download link will be provided immediately on the confirmation page and sent to your email. You will get the source files (HTML/CSS/JS) or editable CV files ready for instant customization.',
-        q3_title: "3. I don't have a credit/debit card, can I pay via WhatsApp?",
-        q3_ans: '<strong>Yes, absolutely!</strong> If you do not have an international credit card, contact us directly on <strong>WhatsApp</strong>. We accept local transfers (such as Vodafone Cash, InstaPay, or local bank transfers) and will send your template files directly on WhatsApp!',
+        faq_sub: "Everything you need to know about purchasing, receiving digital products, and payment options.",
+        q1_title: "1. How do I purchase a digital product or template?",
+        q1_ans: 'Browse through <strong>"Digital Products"</strong>, click on <strong>"Buy Product"</strong> or <strong>"View Template"</strong>, and you will be redirected to the secure Payhip checkout page.',
+        q2_title: "2. How do I receive my tool or template?",
+        q2_ans: 'Upon successful checkout, your download link (ZIP file with full source code) will be provided immediately on the confirmation page and sent to your email.',
+        q3_title: "3. I don't have a credit card, can I pay via WhatsApp?",
+        q3_ans: '<strong>Yes, absolutely!</strong> Contact us directly on <strong>WhatsApp</strong> to arrange local payments (such as Vodafone Cash or InstaPay), and we will send your files immediately.',
         q4_title: "4. Is technical support included after purchase?",
-        q4_ans: "Of course! We support you step-by-step. If you run into any issues editing or deploying your template, reach out via WhatsApp anytime for immediate assistance.",
+        q4_ans: "Of course! We support you step-by-step via WhatsApp for any assistance regarding your digital product.",
         contact_header: "Contact Us via WhatsApp",
-        contact_sub: "Need a custom resume or have a custom project inquiry? Our team is ready to assist you right away.",
+        contact_sub: "Need a custom digital product inquiry? Our team is ready to assist you right away.",
         btn_direct_wa: "Direct WhatsApp Chat",
-        footer_rights: "All rights reserved. Intellectual property, designs, and content belong to their respective owners.",
-        footer_thanks: "«Thank you for visiting Ahmed Abu Omar. We appreciate your trust and wish you an exceptional experience.»"
+        footer_rights: "All rights reserved. Intellectual property, digital products, and content belong to their respective owners.",
+        footer_thanks: "«Thank you for trusting Ahmed Abu Omar Digital Store.»"
       }
     };
 
@@ -1519,11 +1542,14 @@
         const filterValue = btn.getAttribute('data-filter');
 
         productCards.forEach(card => {
+          const category = card.getAttribute('data-category');
           if (filterValue === 'all') {
             card.style.display = 'flex';
-          } else if (filterValue === 'web' && card.getAttribute('data-category') === 'web') {
+          } else if (filterValue === 'saas' && category === 'saas') {
             card.style.display = 'flex';
-          } else if (filterValue === 'cv' && card.getAttribute('data-category') === 'cv') {
+          } else if (filterValue === 'web' && category === 'web') {
+            card.style.display = 'flex';
+          } else if (filterValue === 'cv' && category === 'cv') {
             card.style.display = 'flex';
           } else {
             card.style.display = 'none';
@@ -1533,4 +1559,4 @@
     });
   </script>
 </body>
-  </html>
+</html>
