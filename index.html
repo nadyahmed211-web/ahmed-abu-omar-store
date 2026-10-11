@@ -500,77 +500,174 @@
     .product-footer {
       display: flex; align-items: center; justify-content: space-between;
       border-top: 1px solid var(--border-color); padding-top: 16px;
+      gap: 8px; flex-wrap: wrap;
     }
 
-    .product-price { font-size: 1.25rem; font-weight: 900; color: var(--accent-gold); }
+    .product-price { font-size: 1.25rem; font-weight: 900; color: var(--accent-gold); width: 100%; margin-bottom: 4px; }
+
+    .product-actions-group {
+      display: flex; gap: 8px; width: 100%; align-items: center; justify-content: space-between;
+    }
 
     .btn-product-link {
       background: var(--gold-glow); border: 1px solid var(--border-hover);
-      color: var(--text-main); padding: 8px 18px; border-radius: 100px;
-      font-weight: 700; font-size: 0.85rem; transition: var(--transition);
-      display: inline-flex; align-items: center; gap: 6px;
+      color: var(--text-main); padding: 8px 14px; border-radius: 100px;
+      font-weight: 700; font-size: 0.8rem; transition: var(--transition);
+      display: inline-flex; align-items: center; gap: 5px; flex: 1; justify-content: center; text-align: center;
     }
 
     .btn-product-link:hover {
       background: var(--gold-gradient); color: #05070c; border-color: transparent;
     }
 
-    .promo-banner-box {
-      background: linear-gradient(135deg, rgba(212, 175, 55, 0.12) 0%, rgba(10, 14, 26, 0.98) 100%);
-      border: 2px solid var(--border-hover);
+    .btn-product-wa {
+      background: rgba(37, 211, 102, 0.15); border: 1px solid rgba(37, 211, 102, 0.4);
+      color: #25d366; padding: 8px 14px; border-radius: 100px;
+      font-weight: 700; font-size: 0.8rem; transition: var(--transition);
+      display: inline-flex; align-items: center; gap: 5px; justify-content: center; text-align: center;
+    }
+
+    .btn-product-wa:hover {
+      background: #25d366; color: #fff;
+    }
+
+    /* Clean Modern Offers Section Styles */
+    .offers-clean-container {
+      max-width: 850px;
+      margin: 0 auto;
+      background: linear-gradient(145deg, rgba(15, 21, 35, 0.95), rgba(5, 7, 12, 0.98));
+      border: 1.5px solid var(--accent-gold);
       border-radius: var(--radius-lg);
-      padding: 45px 30px; text-align: center;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.7), 0 0 30px rgba(212, 175, 55, 0.1);
-      margin-bottom: 30px; position: relative; overflow: hidden;
+      padding: 40px 25px;
+      text-align: center;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.8), 0 0 30px rgba(212, 175, 55, 0.15);
+      position: relative;
+      overflow: hidden;
     }
 
-    .promo-banner-box::before {
-      content: ''; position: absolute; top: -60px; right: -60px;
-      width: 180px; height: 180px; background: var(--gold-glow);
-      border-radius: 50%; filter: blur(50px); pointer-events: none;
+    .offers-clean-container::before {
+      content: '';
+      position: absolute;
+      top: -80px;
+      right: -80px;
+      width: 200px;
+      height: 200px;
+      background: var(--gold-glow);
+      border-radius: 50%;
+      filter: blur(60px);
+      pointer-events: none;
     }
 
-    .promo-badge {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: var(--gold-gradient); color: #05070c;
-      font-weight: 900; padding: 8px 24px; border-radius: 100px; font-size: 0.9rem;
-      margin-bottom: 20px; box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
-      letter-spacing: 0.5px;
+    .offer-header-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--gold-gradient);
+      color: #05070c;
+      font-weight: 900;
+      padding: 6px 20px;
+      border-radius: 100px;
+      font-size: 0.85rem;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
     }
 
-    .promo-banner-box h3 { font-size: 2.3rem; font-weight: 900; margin-bottom: 16px; line-height: 1.3; }
-    .promo-banner-box h3 span { background: var(--gold-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-    .promo-banner-box p.promo-lead-desc { color: var(--text-muted); font-size: 1.05rem; max-width: 750px; margin: 0 auto 28px; line-height: 1.7; font-weight: 600; }
-
-    .coupon-card-wrapper {
-      display: flex; flex-direction: column; align-items: center; gap: 12px; margin-bottom: 28px;
+    .offer-title-main {
+      font-size: 2.2rem;
+      font-weight: 900;
+      margin-bottom: 12px;
+      line-height: 1.3;
     }
 
-    .coupon-box {
-      background: var(--bg-card); border: 2px dashed var(--accent-gold);
-      display: inline-flex; align-items: center; gap: 16px;
-      padding: 12px 28px; border-radius: 16px; box-shadow: 0 8px 25px rgba(0,0,0,0.4);
-      position: relative; transition: var(--transition);
+    .offer-title-main span {
+      background: var(--gold-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
-    .coupon-box:hover { border-color: var(--accent-gold-light); transform: scale(1.02); }
+    .offer-simple-desc {
+      color: var(--text-muted);
+      font-size: 1rem;
+      max-width: 650px;
+      margin: 0 auto 28px;
+      line-height: 1.6;
+    }
 
-    .coupon-code { font-size: 1.5rem; font-weight: 900; color: var(--accent-gold-light); letter-spacing: 3px; font-family: 'Plus Jakarta Sans', monospace; }
-    .coupon-label { font-size: 0.9rem; color: var(--text-muted); font-weight: 800; }
+    .timer-week-box {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 28px;
+    }
 
-    .btn-copy-code {
-      background: var(--gold-gradient); color: #05070c; font-weight: 800;
-      padding: 8px 16px; border-radius: 100px; border: none; cursor: pointer;
-      font-size: 0.8rem; display: inline-flex; align-items: center; gap: 6px;
+    .time-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border-color);
+      padding: 10px 16px;
+      border-radius: var(--radius-md);
+      min-width: 75px;
+    }
+
+    .time-card .num {
+      font-size: 1.6rem;
+      font-weight: 900;
+      color: var(--accent-gold-light);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      line-height: 1;
+    }
+
+    .time-card .txt {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      font-weight: 700;
+      margin-top: 4px;
+    }
+
+    .coupon-compact-box {
+      background: rgba(0, 0, 0, 0.5);
+      border: 2px dashed var(--accent-gold);
+      border-radius: 16px;
+      padding: 16px 24px;
+      display: inline-flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 30px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+    }
+
+    .coupon-val {
+      font-size: 1.5rem;
+      font-weight: 900;
+      color: var(--accent-gold-light);
+      letter-spacing: 2px;
+      font-family: 'Plus Jakarta Sans', monospace;
+    }
+
+    .btn-copy-simple {
+      background: var(--gold-gradient);
+      color: #05070c;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 100px;
+      font-weight: 800;
+      font-size: 0.82rem;
+      cursor: pointer;
       transition: var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 6px;
     }
 
-    .btn-copy-code:hover { opacity: 0.9; transform: translateY(-2px); }
+    .btn-copy-simple:hover {
+      opacity: 0.9;
+      transform: translateY(-2px);
+    }
 
-    .urgent-cta-msg {
-      font-size: 0.95rem; font-weight: 800; color: var(--accent-gold);
-      display: flex; align-items: center; justify-content: center; gap: 8px;
-      margin-bottom: 25px;
+    .cta-action-area {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
     }
 
     .contact-box {
@@ -642,8 +739,6 @@
       .hero-content p { font-size: 0.95rem; }
       
       .hero-visual { height: 380px; }
-      .promo-banner-box { padding: 25px 15px; }
-      .promo-banner-box h3 { font-size: 1.6rem; }
       .contact-box { padding: 25px 15px; }
 
       .mobile-bottom-nav {
@@ -665,6 +760,14 @@
       .app-viewport { margin-top: 85px; margin-bottom: 80px; padding: 0 15px; }
       .float-whatsapp { bottom: 75px; right: 15px; width: 48px; height: 48px; font-size: 1.4rem; }
       [dir="ltr"] .float-whatsapp { right: auto; left: 15px; }
+    }
+
+    @media (max-width: 600px) {
+      .offer-title-main { font-size: 1.6rem; }
+      .coupon-compact-box { flex-direction: column; gap: 10px; width: 100%; }
+      .timer-week-box { gap: 6px; }
+      .time-card { min-width: 60px; padding: 8px; }
+      .time-card .num { font-size: 1.2rem; }
     }
 
     @media (max-width: 400px) {
@@ -725,7 +828,7 @@
               <span data-i18n="btn_explore">استكشف متجر المنتجات الرقمية</span>
               <i class="fa-solid fa-arrow-left icon-dir"></i>
             </button>
-            <a href="https://wa.me/201206443652" target="_blank" class="btn-whatsapp-main">
+            <a href="https://wa.me/201206443652?text=مرحباً، أرغب في الاستفسار عن المنتجات الرقمية والخدمات" target="_blank" class="btn-whatsapp-main">
               <i class="fa-brands fa-whatsapp" style="font-size: 1.2rem;"></i>
               <span data-i18n="btn_whatsapp">تواصل عبر الواتساب</span>
             </a>
@@ -790,15 +893,25 @@
     <section class="tab-section" id="tab-about">
       <div class="section-header">
         <h2 data-i18n="services_header">خدماتنا <span>الرقمية المتكاملة</span></h2>
-        <p data-i18n="services_sub">نحن لا نقدم مجرد قوالب تقليدية، بل نبتكر ونبني منتجات رقمية مستقلة وأدوات ذكية (Micro-SaaS) تعمل بضغطة زر وتلبي احتياجات السوق العصري.</p>
+        <p data-i18n="services_sub">نحن لا نقدم مجرد قوالب تقليدية، بل نبتكر ونبني منتجات رقمية مستقلة وأدوات ذكية (Micro-SaaS) وتصميمات مخصصة تلبي احتياجات السوق العصري.</p>
       </div>
 
       <div class="services-grid">
-        <div class="service-card" style="border-color: var(--border-hover);">
+        <!-- خدمة السيرة الذاتية المخصصة -->
+        <div class="service-card" style="border: 2px solid var(--accent-gold);">
+          <div class="service-icon"><i class="fa-solid fa-file-shield"></i></div>
+          <h3 data-i18n="srv_cv_title">خدمة السيرة الذاتية المخصصة (ATS)</h3>
+          <p data-i18n="srv_cv_desc">تصميم وتعديل سيرة ذاتية احترافية باللغتين العربية والإنجليزية، متوافقة تماماً مع أنظمة الفرز الآلي (ATS) لزيادة فرص قبولك في كبرى الشركات.</p>
+          <a href="https://wa.me/201206443652?text=مرحباً، أرغب في طلب خدمة تصميم سيرة ذاتية مخصصة (ATS)" target="_blank" class="service-btn">
+            <i class="fa-brands fa-whatsapp"></i> <span data-i18n="btn_contact_wa">تواصل عبر الواتساب</span>
+          </a>
+        </div>
+
+        <div class="service-card">
           <div class="service-icon"><i class="fa-solid fa-rocket"></i></div>
           <h3 data-i18n="srv_new_title">تطوير المنتجات الرقمية & Micro-SaaS</h3>
           <p data-i18n="srv_new_desc">بناء وتطوير أدوات ويب مصغرة ومنتجات رقمية مستقلة عالية الجودة ومخصصة لتوليد دخل إضافي وحل مشاكل حقيقية بدون اشتراكات شهرية معقدة.</p>
-          <a href="https://wa.me/201206443652" target="_blank" class="service-btn">
+          <a href="https://wa.me/201206443652?text=مرحباً، أرغب في الاستفسار عن تطوير منتج Micro-SaaS خاص" target="_blank" class="service-btn">
             <i class="fa-brands fa-whatsapp"></i> <span data-i18n="btn_contact_wa">تواصل عبر الواتساب</span>
           </a>
         </div>
@@ -807,16 +920,7 @@
           <div class="service-icon"><i class="fa-solid fa-code"></i></div>
           <h3 data-i18n="srv1_title">تصميم وتطوير المواقع</h3>
           <p data-i18n="srv1_desc">بناء وتطوير مواقع إلكترونية متكاملة لشركتك أو نشاطك التجاري من الصفر بأعلى معايير السرعة، الأمان، والتصميم العصري.</p>
-          <a href="https://wa.me/201206443652" target="_blank" class="service-btn">
-            <i class="fa-brands fa-whatsapp"></i> <span data-i18n="btn_contact_wa">تواصل عبر الواتساب</span>
-          </a>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon"><i class="fa-solid fa-laptop-code"></i></div>
-          <h3 data-i18n="srv2_title">قوالب الويب الاحترافية</h3>
-          <p data-i18n="srv2_desc">مجموعة قوالب ويب جاهزة مع التصميمات المبتكرة لتسهيل إطلاق موقعك بضغطة زر واحدة.</p>
-          <a href="https://wa.me/201206443652" target="_blank" class="service-btn">
+          <a href="https://wa.me/201206443652?text=مرحباً، أرغب في استشارة حول تصميم موقع إلكتروني" target="_blank" class="service-btn">
             <i class="fa-brands fa-whatsapp"></i> <span data-i18n="btn_contact_wa">تواصل عبر الواتساب</span>
           </a>
         </div>
@@ -827,7 +931,7 @@
     <section class="tab-section" id="tab-products">
       <div class="section-header">
         <h2 data-i18n="products_header">متجر <span>المنتجات الرقمية</span></h2>
-        <p data-i18n="products_sub">اختر من بين أدوات الويب الذكية، قوالب المواقع الاحترافية، وحزم السيرة الذاتية المميزة</p>
+        <p data-i18n="products_sub">اختر من بين أدوات الويب الذكية، قوالب المواقع الاحترافية، وحزم السيرة الذاتية المميزة بأسعار تنافسية وخيارات دفع متعددة</p>
       </div>
 
       <div class="filter-buttons">
@@ -839,8 +943,31 @@
 
       <div class="products-grid">
         
-        <!-- 1. المنتج رقم 19 الجديد: أداة ضغط الصور Image Compressor Pro -->
+        <!-- 1. SaaS Pricing & ROI Calculator Pro -->
         <div class="product-card" data-category="saas" style="border: 2px solid var(--accent-gold);">
+          <div class="product-banner" style="background: linear-gradient(135deg, #10b981, #047857);">
+            <i class="fa-solid fa-calculator"></i>
+            <span class="product-badge-tag">جديد | Micro-SaaS Pro</span>
+          </div>
+          <div class="product-body">
+            <h3 class="product-title">SaaS Pricing & ROI Calculator Pro</h3>
+            <p class="product-desc">أداة مالية احترافية متقدمة لحساب العائد على الاستثمار (ROI) وتسعير خدمات الـ SaaS والمقاييس المالية بدقة لتعظيم أرباح مشروعك الرقمي.</p>
+            <div class="product-footer">
+              <span class="product-price">$9.00</span>
+              <div class="product-actions-group">
+                <a href="https://payhip.com/b/MJFx5" target="_blank" class="btn-product-link">
+                  <span data-i18n="btn_open_product">شراء من المتجر</span> <i class="fa-solid fa-arrow-left icon-dir"></i>
+                </a>
+                <a href="https://wa.me/201206443652?text=مرحباً، أرغب بشراء منتج (SaaS Pricing & ROI Calculator Pro) عبر وسائل الدفع المحلي" target="_blank" class="btn-product-wa">
+                  <i class="fa-brands fa-whatsapp"></i> واتساب
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Image Compressor Pro -->
+        <div class="product-card" data-category="saas">
           <div class="product-banner" style="background: linear-gradient(135deg, #2563eb, #0284c7);">
             <i class="fa-solid fa-file-image"></i>
             <span class="product-badge-tag">Micro-SaaS Pro</span>
@@ -850,14 +977,19 @@
             <p class="product-desc" data-i18n="img_compressor_desc">أداة ويب احترافية لضغط وتصغير حجم الصور (PNG / JPG / WebP) بتقنيات عصرية وسريعة لرفع سرعة موقعك وتحسين SEO بدون فقدان الجودة.</p>
             <div class="product-footer">
               <span class="product-price">$6.00</span>
-              <a href="https://payhip.com/b/MWBli" target="_blank" class="btn-product-link">
-                <span data-i18n="btn_open_product">شراء المنتج</span> <i class="fa-solid fa-arrow-left icon-dir"></i>
-              </a>
+              <div class="product-actions-group">
+                <a href="https://payhip.com/b/MWBli" target="_blank" class="btn-product-link">
+                  <span data-i18n="btn_open_product">شراء من المتجر</span> <i class="fa-solid fa-arrow-left icon-dir"></i>
+                </a>
+                <a href="https://wa.me/201206443652?text=مرحباً، أرغب بشراء منتج (Image Compressor Pro) عبر وسائل الدفع المحلي" target="_blank" class="btn-product-wa">
+                  <i class="fa-brands fa-whatsapp"></i> واتساب
+                </a>
+              </div>
             </div>
           </div>
         </div>
 
-        <!-- 2. أداة الـ SEO: SEO Meta & Schema Generator Pro -->
+        <!-- 3. SEO Meta & Schema Generator Pro -->
         <div class="product-card" data-category="saas">
           <div class="product-banner" style="background: linear-gradient(135deg, #0284c7, #0369a1);">
             <i class="fa-solid fa-wand-magic-sparkles"></i>
@@ -868,14 +1000,19 @@
             <p class="product-desc">أداة احترافية خفيفة لتوليد أوسمة الـ SEO، وMeta Tags، وأكواد JSON-LD Schema المعيّرة باللغتين العربية والإنجليزية لرفع ترتيب موقعك وتصدر نتائج البحث.</p>
             <div class="product-footer">
               <span class="product-price">$7.00</span>
-              <a href="https://payhip.com/b/1tfs7" target="_blank" class="btn-product-link">
-                <span data-i18n="btn_open_product">شراء المنتج</span> <i class="fa-solid fa-arrow-left icon-dir"></i>
-              </a>
+              <div class="product-actions-group">
+                <a href="https://payhip.com/b/1tfs7" target="_blank" class="btn-product-link">
+                  <span data-i18n="btn_open_product">شراء من المتجر</span> <i class="fa-solid fa-arrow-left icon-dir"></i>
+                </a>
+                <a href="https://wa.me/201206443652?text=مرحباً، أرغب بشراء منتج (SEO Meta & Schema Generator Pro) عبر وسائل الدفع المحلي" target="_blank" class="btn-product-wa">
+                  <i class="fa-brands fa-whatsapp"></i> واتساب
+                </a>
+              </div>
             </div>
           </div>
         </div>
 
-        <!-- 3. أداة توليد بوستات السوشيال ميديا -->
+        <!-- 4. AI Social Post Generator Pro -->
         <div class="product-card" data-category="saas">
           <div class="product-banner" style="background: linear-gradient(135deg, #059669, #0f172a);">
             <i class="fa-solid fa-share-nodes"></i>
@@ -886,14 +1023,19 @@
             <p class="product-desc">أداة ويب ذكية مصغرة لتوليد منشورات احترافية لـ LinkedIn و X و Facebook مع الهاشتاجات الذكية بضغطة زر.</p>
             <div class="product-footer">
               <span class="product-price">$9.00</span>
-              <a href="https://payhip.com/b/cS1eq" target="_blank" class="btn-product-link">
-                <span data-i18n="btn_open_product">شراء المنتج</span> <i class="fa-solid fa-arrow-left icon-dir"></i>
-              </a>
+              <div class="product-actions-group">
+                <a href="https://payhip.com/b/cS1eq" target="_blank" class="btn-product-link">
+                  <span data-i18n="btn_open_product">شراء من المتجر</span> <i class="fa-solid fa-arrow-left icon-dir"></i>
+                </a>
+                <a href="https://wa.me/201206443652?text=مرحباً، أرغب بشراء منتج (AI Social Post Generator Pro) عبر وسائل الدفع المحلي" target="_blank" class="btn-product-wa">
+                  <i class="fa-brands fa-whatsapp"></i> واتساب
+                </a>
+              </div>
             </div>
           </div>
         </div>
 
-        <!-- 4. قالب NOVA العقاري -->
+        <!-- 5. قالب NOVA العقاري -->
         <div class="product-card" data-category="web">
           <div class="product-banner"><i class="fa-solid fa-building"></i><span class="product-badge-tag">عقارات</span></div>
           <div class="product-body">
@@ -901,12 +1043,15 @@
             <p class="product-desc">اكتشف منازل استثنائية ومصايف فاخرة وفرصاً استثمارية بأرقى واجهة عقارية.</p>
             <div class="product-footer">
               <span class="product-price">$8.00</span>
-              <a href="https://payhip.com/b/7N0IC" target="_blank" class="btn-product-link"><span data-i18n="btn_open_product">فتح المنتج</span> <i class="fa-solid fa-arrow-left icon-dir"></i></a>
+              <div class="product-actions-group">
+                <a href="https://payhip.com/b/7N0IC" target="_blank" class="btn-product-link"><span data-i18n="btn_open_product">شراء من المتجر</span> <i class="fa-solid fa-arrow-left icon-dir"></i></a>
+                <a href="https://wa.me/201206443652?text=مرحباً، أرغب بشراء قالب (NOVA Real Estate) عبر وسائل الدفع المحلي" target="_blank" class="btn-product-wa"><i class="fa-brands fa-whatsapp"></i> واتساب</a>
+              </div>
             </div>
           </div>
         </div>
 
-        <!-- 5. قالب الأعمال الفاخر -->
+        <!-- 6. قالب الأعمال الفاخر -->
         <div class="product-card" data-category="web">
           <div class="product-banner"><i class="fa-solid fa-briefcase"></i><span class="product-badge-tag">أعمال رقمية</span></div>
           <div class="product-body">
@@ -914,12 +1059,15 @@
             <p class="product-desc">قالب أعمال فاخر مصمم للشركات والوكالات والمستشارين لبناء حضور قوي واستثنائي.</p>
             <div class="product-footer">
               <span class="product-price">$8.00</span>
-              <a href="https://payhip.com/b/yizhn" target="_blank" class="btn-product-link"><span data-i18n="btn_open_product">فتح المنتج</span> <i class="fa-solid fa-arrow-left icon-dir"></i></a>
+              <div class="product-actions-group">
+                <a href="https://payhip.com/b/yizhn" target="_blank" class="btn-product-link"><span data-i18n="btn_open_product">شراء من المتجر</span> <i class="fa-solid fa-arrow-left icon-dir"></i></a>
+                <a href="https://wa.me/201206443652?text=مرحباً، أرغب بشراء قالب (Business Website Template) عبر وسائل الدفع المحلي" target="_blank" class="btn-product-wa"><i class="fa-brands fa-whatsapp"></i> واتساب</a>
+              </div>
             </div>
           </div>
         </div>
 
-        <!-- 6. حزمة السير الذاتية الذهبية -->
+        <!-- 7. حزمة السير الذاتية الذهبية -->
         <div class="product-card" data-category="cv">
           <div class="product-banner" style="background: linear-gradient(135deg, #065f46, #059669);"><i class="fa-solid fa-file-invoice"></i><span class="product-badge-tag">الحزمة الذهبية (10)</span></div>
           <div class="product-body">
@@ -927,7 +1075,10 @@
             <p class="product-desc">حزمة احترافية متكاملة تحتوي على 10 نماذج سيرة ذاتية باللغتين العربية والإنجليزية مصممة خصيصاً لاجتياز أنظمة ATS بأناقة استثنائية.</p>
             <div class="product-footer">
               <span class="product-price">$3.00</span>
-              <a href="https://payhip.com/b/JGOSj" target="_blank" class="btn-product-link"><span data-i18n="btn_buy_bundle">شراء الحزمة الآن</span> <i class="fa-solid fa-arrow-left icon-dir"></i></a>
+              <div class="product-actions-group">
+                <a href="https://payhip.com/b/JGOSj" target="_blank" class="btn-product-link"><span data-i18n="btn_buy_bundle">شراء الحزمة الآن</span> <i class="fa-solid fa-arrow-left icon-dir"></i></a>
+                <a href="https://wa.me/201206443652?text=مرحباً، أرغب بشراء حزمة (10 CV Templates Bundle) عبر وسائل الدفع المحلي" target="_blank" class="btn-product-wa"><i class="fa-brands fa-whatsapp"></i> واتساب</a>
+              </div>
             </div>
           </div>
         </div>
@@ -935,37 +1086,54 @@
       </div>
     </section>
 
-    <!-- Tab 4: Offers (العروض والخصومات) -->
+    <!-- Tab 4: Offers (العروض والخصومات - يبدأ رسمياً من يوم 12 ولمدة أسبوع) -->
     <section class="tab-section" id="tab-offers">
-      <div class="promo-banner-box">
-        <div class="promo-badge">
+      <div class="offers-clean-container">
+        <div class="offer-header-badge">
           <i class="fa-solid fa-bolt"></i>
-          <span>خصم 60% لمدة أسبوع واحد فقط! 🔥</span>
+          <span>يبدأ العرض من يوم 12 ولمدة أسبوع فقط! 🔥</span>
         </div>
+
+        <h2 class="offer-title-main">أسعار تنافسية + خصم <span>60% OFF</span></h2>
         
-        <h3>احتفالاً بإنشاء متجر المنتجات الرقمية لبرند <span>Ahmed Abu Omar</span></h3>
-        
-        <p class="promo-lead-desc">
-          فرصة استثنائية لمدة <strong>7 أيام فقط</strong> بمناسبة الانطلاق! احصل على خصم <strong>60%</strong> فوراً على جميع أدوات الـ Micro-SaaS والقوالب الرقمية.
+        <p class="offer-simple-desc">
+          استعد لاقتناء أقوى المنتجات الرقمية وأدوات الـ Micro-SaaS بأسعار استثنائية! ينطلق العرض رسمياً غداً (من يوم 12) ويسري لمدة 7 أيام كاملة.
         </p>
-        
-        <div class="coupon-card-wrapper">
-          <div class="coupon-box">
-            <span class="coupon-label">كود الخصم (60% Off):</span>
-            <span class="coupon-code" id="discount-code">AHMED2026</span>
-            <button class="btn-copy-code" onclick="copyCouponCode()">
-              <i class="fa-solid fa-copy"></i> <span id="copy-text">نسخ الكود</span>
-            </button>
+
+        <!-- العداد التنازلي الدقيق ليبدأ من منتصف الليل -->
+        <div class="timer-week-box">
+          <div class="time-card">
+            <div class="num" id="w-days">07</div>
+            <div class="txt">أيام</div>
+          </div>
+          <div class="time-card">
+            <div class="num" id="w-hours">00</div>
+            <div class="txt">ساعات</div>
+          </div>
+          <div class="time-card">
+            <div class="num" id="w-mins">00</div>
+            <div class="txt">دقائق</div>
+          </div>
+          <div class="time-card">
+            <div class="num" id="w-secs">00</div>
+            <div class="txt">ثواني</div>
           </div>
         </div>
 
-        <div class="urgent-cta-msg">
-          <i class="fa-solid fa-clock-rotate-left"></i> سارع بالاستفادة من العرض وتطبيق الخصم عند الدفع في المتجر!
+        <!-- كود الخصم -->
+        <div class="coupon-compact-box">
+          <span style="font-size: 0.88rem; color: var(--text-muted); font-weight: 700;">كود الخصم الحصري:</span>
+          <span class="coupon-val" id="code-val-txt">omar 60</span>
+          <button class="btn-copy-simple" onclick="copySimpleCode()">
+            <i class="fa-solid fa-copy"></i>
+            <span id="copy-btn-txt">نسخ الكود</span>
+          </button>
         </div>
 
-        <div>
+        <!-- أزرار التفاعل -->
+        <div class="cta-action-area">
           <button class="btn-gold" onclick="switchTab('tab-products')">
-            <span>تصفح المنتجات وتطبيق الخصم</span>
+            <span>تصفح وشراء المنتجات الآن</span>
             <i class="fa-solid fa-arrow-left icon-dir"></i>
           </button>
         </div>
@@ -976,37 +1144,47 @@
     <section class="tab-section" id="tab-faq">
       <div class="section-header">
         <h2>الأسئلة الشائعة <span>وشروحات الاستخدام</span></h2>
-        <p>إليك كل ما تحتاج معرفته عن طريقة الشراء، استلام المنتجات الرقمية، وطرق الدفع</p>
+        <p>إليك كافة الإجابات الشاملة حول جميع المنتجات الرقمية، طريقة استلام الملفات، وطرق الدفع</p>
       </div>
 
       <div class="faq-container">
         <div class="faq-card">
           <div class="faq-question">
-            <span>1. كيف يمكنني شراء المنتج الرقمي أو القالب من المتجر؟</span>
+            <span>1. ما هي المنتجات الرقمية التي يقدمها المتجر وكيف تعمل؟</span>
             <i class="fa-solid fa-circle-chevron-down"></i>
           </div>
           <div class="faq-answer">
-            تصفح المنتجات من قسم <strong>"المنتجات الرقمية"</strong>، اضغط على زر <strong>"شراء المنتج"</strong> أو <strong>"فتح المنتج"</strong> وسوف ينتقل بك الموقع مباشرة إلى صفحة الشراء الآمنة عبر منصة Payhip.
+            نقدم مجموعة متكاملة من <strong>أدوات الويب المصغرة (Micro-SaaS)</strong>، قوالب المواقع الاحترافية، وحزم السيرة الذاتية (ATS). الأدوات مصممة لتعمل مباشرة عبر المتصفح أو كأكواد برمجية جاهزة بدون الحاجة لااشتراكات شهرية معقدة.
           </div>
         </div>
 
         <div class="faq-card">
           <div class="faq-question">
-            <span>2. كيف أستلم الأداة أو القالب وكيف أقوم بتشغيله؟</span>
+            <span>2. كيف يتم استلام المنتجات والملفات بعد عملية الشراء؟</span>
             <i class="fa-solid fa-circle-chevron-down"></i>
           </div>
           <div class="faq-answer">
-            بمجرد إتمام الشراء، سيصلك رابط التحميل فوراً (ملف ZIP يحتوي على الكود بالكامل) في صفحة التأكيد وعلى بريدك الإلكتروني لتعمل الأداة معك مباشرة دون اشتراكات شهرية.
+            بمجرد إتمام الدفع عبر منصة Payhip، سيظهر لك <strong>رابط تحميل مباشر (ملف ZIP يحتوي على الكود الكامل والشرح)</strong>، ويصلك نفس الرابط فوراً على بريدك الإلكتروني المسجل.
+          </div>
+        </div>
+
+        <div class="faq-card">
+          <div class="faq-question">
+            <span>3. ماذا لو لم أمتلك بطاقة بنكية إلكترونية للشراء من المتجر؟</span>
+            <i class="fa-solid fa-circle-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <strong>لا داعي للقلق أبداً!</strong> يمكنك الضغط على زر <strong>"واتساب"</strong> الموجود بجانب أي منتج، وتواصل معنا لتنسيق الدفع عبر وسائل الدفع المحلية المتاحة (فودافون كاش، إنستاباي، تحويل بنكي، وغيرها)، وسنرسل لك ملفات المنتج فوراً عبر الواتساب.
           </div>
         </div>
 
         <div class="faq-card" style="border-color: var(--border-hover);">
           <div class="faq-question">
-            <span style="color: var(--accent-gold-light);">3. لا أملك بطاقة بنكية إلكترونية، هل يمكنني الدفع عبر الواتساب؟</span>
+            <span style="color: var(--accent-gold-light);">4. هل توجد اشتراكات شهرية أو رسوم خفية بعد شراء المنتج؟</span>
             <i class="fa-solid fa-circle-chevron-down"></i>
           </div>
           <div class="faq-answer">
-            <strong>نعم بالتأكيد!</strong> يمكنك التواصل معنا مباشرة عن طريق <strong>الواتساب</strong> لتنسيق الدفع عبر وسائل الدفع المحلية المتاحة (مثل فودافون كاش، إنستاباي، وغيرها)، وسنرسل لك ملف المنتج فوراً.
+            <strong>أبداً!</strong> جميع أدوات الـ Micro-SaaS والقوالب تملكها مدى الحياة بمدفوعة واحدة فقط، ولا توجد أي اشتراكات شهرية أو رسوم إضافية.
           </div>
         </div>
       </div>
@@ -1017,8 +1195,8 @@
       <div class="contact-box">
         <i class="fa-brands fa-whatsapp main-icon"></i>
         <h3>تواصل معنا عبر الواتساب</h3>
-        <p>هل تحتاج إلى استفسار حول منتج رقمي مخصص؟ فريقنا جاهز للرد ومساعدتك فوراً بكل احترافية.</p>
-        <a href="https://wa.me/201206443652" target="_blank" class="btn-whatsapp-main" style="font-size: 1.1rem; padding: 16px 35px;">
+        <p>هل تحتاج إلى استفسار حول منتج رقمي مخصص، أو ترغب في الدفع عبر وسائل الدفع المحلية؟ فريقنا جاهز لمساعدتك فوراً بكل احترافية.</p>
+        <a href="https://wa.me/201206443652?text=مرحباً، أرغب في الاستفسار عن منتج معين أو الدفع محلياً" target="_blank" class="btn-whatsapp-main" style="font-size: 1.1rem; padding: 16px 35px;">
           <i class="fa-brands fa-whatsapp" style="font-size: 1.4rem;"></i>
           <span>مراسلة مباشرة عبر الواتساب</span>
         </a>
@@ -1030,7 +1208,7 @@
           جميع حقوق الملكية الفكرية والمنتجات الرقمية والعلامة التجارية محفوظة. يُمنع إعادة توزيع المنتجات دون إذن مسبق.
         </div>
         <div class="footer-thanks">
-          «شكراً لثقتك ودعمك لمتجر Ahmed Abu Omar للمنتجات الرقمية وأدوات الويب.»
+          «شكراً لثقتك ودعمك المستمر لمتجر Ahmed Abu Omar للمنتجات الرقمية وأدوات الويب.»
         </div>
         <div class="social-buttons">
           <a href="https://www.facebook.com/AhmedAbuOmarOfficial" target="_blank" class="social-btn"><i class="fa-brands fa-facebook-f"></i> Facebook</a>
@@ -1071,7 +1249,7 @@
   </nav>
 
   <!-- Floating WhatsApp -->
-  <a href="https://wa.me/201206443652" class="float-whatsapp" target="_blank" aria-label="WhatsApp Chat">
+  <a href="https://wa.me/201206443652?text=مرحباً، أرغب في الاستفسار السريع" class="float-whatsapp" target="_blank" aria-label="WhatsApp Chat">
     <i class="fa-brands fa-whatsapp"></i>
   </a>
 
@@ -1097,23 +1275,23 @@
         btn_follow: "متابعة",
         box_footer: "انضم إلى قناتنا للاستفادة من أحدث الشروحات والعروض",
         services_header: 'خدماتنا <span>الرقمية المتكاملة</span>',
-        services_sub: "نحن لا نقدم مجرد قوالب تقليدية، بل نبتكر ونبني منتجات رقمية مستقلة وأدوات ذكية (Micro-SaaS) تعمل بضغطة زر وتلبي احتياجات السوق العصري.",
+        services_sub: "نحن لا نقدم مجرد قوالب تقليدية، بل نبتكر ونبني منتجات رقمية مستقلة وأدوات ذكية (Micro-SaaS) وتصميمات مخصصة تلبي احتياجات السوق العصري.",
+        srv_cv_title: "خدمة السيرة الذاتية المخصصة (ATS)",
+        srv_cv_desc: "تصميم وتعديل سيرة ذاتية احترافية باللغتين العربية والإنجليزية، متوافقة تماماً مع أنظمة الفرز الآلي (ATS) لزيادة فرص قبولك في كبرى الشركات.",
         srv_new_title: "تطوير المنتجات الرقمية & Micro-SaaS",
         srv_new_desc: "بناء وتطوير أدوات ويب مصغرة ومنتجات رقمية مستقلة عالية الجودة ومخصصة لتوليد دخل إضافي وحل مشاكل حقيقية بدون اشتراكات شهرية معقدة.",
         srv1_title: "تصميم وتطوير المواقع",
         srv1_desc: "بناء وتطوير مواقع إلكترونية متكاملة لشركتك أو نشاطك التجاري من الصفر بأعلى معايير السرعة، الأمان، والتصميم العصري.",
-        srv2_title: "قوالب الويب الاحترافية",
-        srv2_desc: "مجموعة قوالب ويب جاهزة مع التصميمات المبتكرة لتسهيل إطلاق موقعك بضغطة زر واحدة.",
         btn_contact_wa: "تواصل عبر الواتساب",
         products_header: 'متجر <span>المنتجات الرقمية</span>',
-        products_sub: "اختر من بين أدوات الويب الذكية، قوالب المواقع الاحترافية، وحزم السيرة الذاتية المميزة",
+        products_sub: "اختر من بين أدوات الويب الذكية، قوالب المواقع الاحترافية، وحزم السيرة الذاتية المميزة بأسعار تنافسية وخيارات دفع متعددة",
         filter_all: "جميع المنتجات",
         filter_saas: "أدوات Micro-SaaS",
         filter_web: "قوالب المواقع",
         filter_cv: "قوالب وحزم السيرة الذاتية",
         img_compressor_title: "Image Compressor Pro",
         img_compressor_desc: "أداة ويب احترافية لضغط وتصغير حجم الصور (PNG / JPG / WebP) بتقنيات عصرية وسريعة لرفع سرعة موقعك وتحسين SEO بدون فقدان الجودة.",
-        btn_open_product: "شراء المنتج",
+        btn_open_product: "شراء من المتجر",
         btn_buy_bundle: "شراء الحزمة الآن"
       },
       en: {
@@ -1136,12 +1314,12 @@
         box_footer: "Join our channels for exclusive updates & offers",
         services_header: 'Integrated <span>Digital Services</span>',
         services_sub: "We build independent digital products and smart tools.",
+        srv_cv_title: "Custom ATS Resume Service",
+        srv_cv_desc: "Professional ATS-friendly resume design and optimization in Arabic & English.",
         srv_new_title: "Digital Products & Micro-SaaS Development",
         srv_new_desc: "Building high-quality lightweight web utilities and independent tools.",
         srv1_title: "Web Design & Development",
         srv1_desc: "Full business websites built with top performance and modern UI.",
-        srv2_title: "Professional Web Templates",
-        srv2_desc: "Ready-to-use templates to launch your site instantly.",
         btn_contact_wa: "Chat on WhatsApp",
         products_header: 'Digital Products <span>Store</span>',
         products_sub: "Choose from smart web tools, professional website templates, and resume bundles.",
@@ -1151,7 +1329,7 @@
         filter_cv: "Resume Bundles",
         img_compressor_title: "Image Compressor Pro",
         img_compressor_desc: "Professional Micro-SaaS tool to compress PNG, JPG, and WebP images up to 80% directly in browser with zero quality loss.",
-        btn_open_product: "Buy Product",
+        btn_open_product: "Buy from Store",
         btn_buy_bundle: "Buy Bundle Now"
       }
     };
@@ -1214,13 +1392,46 @@
       });
     });
 
-    function copyCouponCode() {
-      const code = document.getElementById('discount-code').textContent;
+    // العداد التنازلي الدقيق ليبدأ من يوم 12 تماماً (منتصف الليل القادم) ولمدة 7 أيام
+    function initTomorrowWeekTimer() {
+      const now = new Date();
+      // حساب موعد منتصف الليل القادم (بداية يوم 12)
+      const tomorrowMidnight = new Date(now.getFullYear(), now.getMonth(), now.getDate(), now.getHours() >= 0 ? now.getDate() : now.getDate(), 0, 0, 0).getTime() + (4.5 * 3600 * 1000); // مبني بدقة على توقيت انطلاقك بعد ساعات قليلة
+      
+      // بديل مباشر لحساب موعد بداية يوم 12 القادم بالضبط:
+      const targetStart = new Date();
+      targetStart.setDate(targetStart.getDate() + 1);
+      targetStart.setHours(0, 0, 0, 0); // منتصف الليل بالضبط
+
+      const endDate = targetStart.getTime() + (7 * 24 * 60 * 60 * 1000);
+
+      setInterval(() => {
+        const currentTime = new Date().getTime();
+        const diff = endDate - currentTime;
+
+        if (diff > 0) {
+          const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+          const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+          const s = Math.floor((diff % (1000 * 60)) / 1000);
+
+          if(document.getElementById('w-days')) document.getElementById('w-days').innerText = d < 10 ? '0' + d : d;
+          if(document.getElementById('w-hours')) document.getElementById('w-hours').innerText = h < 10 ? '0' + h : h;
+          if(document.getElementById('w-mins')) document.getElementById('w-mins').innerText = m < 10 ? '0' + m : m;
+          if(document.getElementById('w-secs')) document.getElementById('w-secs').innerText = s < 10 ? '0' + s : s;
+        }
+      }, 1000);
+    }
+    initTomorrowWeekTimer();
+
+    // نسخ الكود
+    function copySimpleCode() {
+      const code = document.getElementById('code-val-txt').textContent;
       navigator.clipboard.writeText(code).then(() => {
-        const copyText = document.getElementById('copy-text');
-        copyText.textContent = currentLang === 'ar' ? 'تم النسخ!' : 'Copied!';
-        setTimeout(() => {
-          copyText.textContent = currentLang === 'ar' ? 'نسخ الكود' : 'Copy Code';
+        const btnTxt = document.getElementById('copy-btn-txt');
+        btnTxt.textContent = currentLang === 'ar' ? 'تم النسخ!' : 'Copied!';
+        setTimeout(() => { 
+          btnTxt.textContent = currentLang === 'ar' ? 'نسخ الكود' : 'Copy Code'; 
         }, 2000);
       });
     }
