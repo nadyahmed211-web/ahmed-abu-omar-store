@@ -174,7 +174,6 @@
 
     .ctrl-btn:hover { background: var(--gold-glow); color: var(--accent-gold); }
 
-    /* App Viewport & Tabs */
     .app-viewport {
       max-width: 1280px;
       margin: 110px auto 60px;
@@ -196,7 +195,6 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /* Hero Section */
     .hero-grid {
       display: grid;
       grid-template-columns: 1.2fr 0.8fr;
@@ -249,7 +247,6 @@
 
     .btn-whatsapp-main:hover { transform: translateY(-3px); background: #22bf5b; }
 
-    /* المربع الهندسي المتحرك */
     .hero-visual {
       position: relative; width: 100%; height: 440px;
       display: flex; align-items: center; justify-content: center;
@@ -361,7 +358,6 @@
       border-top: 1px solid var(--border-color); padding-top: 8px; z-index: 2;
     }
 
-    /* FAQ Section Styles */
     .faq-container {
       max-width: 850px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px;
     }
@@ -388,7 +384,6 @@
 
     .faq-answer strong { color: var(--accent-gold-light); }
 
-    /* General Section Headers */
     .section-header {
       text-align: center; max-width: 700px; margin: 0 auto 40px;
     }
@@ -404,7 +399,6 @@
 
     .section-header p { color: var(--text-muted); font-size: 1rem; line-height: 1.5; }
 
-    /* Services Grid */
     .services-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -443,7 +437,6 @@
     }
     .service-btn:hover { background: #22bf5b; }
 
-    /* Products Grid */
     .filter-buttons {
       display: flex; justify-content: center; gap: 10px; margin-bottom: 30px; flex-wrap: wrap;
     }
@@ -523,7 +516,6 @@
       background: var(--gold-gradient); color: #05070c; border-color: transparent;
     }
 
-    /* قسم الخصم الاحترافي والمطور (Offers Pro Section) */
     .promo-banner-box {
       background: linear-gradient(135deg, rgba(212, 175, 55, 0.12) 0%, rgba(10, 14, 26, 0.98) 100%);
       border: 2px solid var(--border-hover);
@@ -582,7 +574,6 @@
       margin-bottom: 25px;
     }
 
-    /* Contact Box */
     .contact-box {
       background: var(--bg-card); border: 1px solid var(--border-hover);
       border-radius: var(--radius-lg); padding: 45px; text-align: center;
@@ -593,7 +584,6 @@
     .contact-box h3 { font-size: 2rem; font-weight: 900; margin-bottom: 10px; }
     .contact-box p { color: var(--text-muted); font-size: 1rem; margin-bottom: 25px; line-height: 1.6; }
 
-    /* Footer */
     footer {
       border-top: 1px solid var(--border-color);
       padding: 30px 0; margin-top: 40px; text-align: center;
@@ -620,7 +610,6 @@
     }
     .social-btn:hover { border-color: var(--accent-gold); background: var(--gold-glow); }
 
-    /* Floating WhatsApp */
     .float-whatsapp {
       position: fixed; bottom: 25px; right: 25px; width: 56px; height: 56px;
       background: #25d366; color: #fff; border-radius: 50%;
@@ -631,10 +620,8 @@
     .float-whatsapp:hover { transform: scale(1.1); }
     [dir="ltr"] .float-whatsapp { right: auto; left: 25px; }
 
-    /* Mobile Bottom Navigation */
     .mobile-bottom-nav { display: none; }
 
-    /* Media Queries */
     @media (min-width: 1400px) {
       .app-viewport { max-width: 1400px; }
       .hero-content h2 { font-size: 3.2rem; }
@@ -706,7 +693,6 @@
     <ul class="nav-links">
       <li><button class="nav-link-btn active" data-tab="tab-hero"><i class="fa-solid fa-house"></i> <span data-i18n="nav_home">الرئيسية</span></button></li>
       <li><button class="nav-link-btn" data-tab="tab-about"><i class="fa-solid fa-code"></i> <span data-i18n="nav_services">خدماتنا</span></button></li>
-      <!-- تم التعديل إلى المنتجات الرقمية بناءً على طلبك -->
       <li><button class="nav-link-btn" data-tab="tab-products"><i class="fa-solid fa-layer-group"></i> <span data-i18n="nav_templates">المنتجات الرقمية</span></button></li>
       <li><button class="nav-link-btn" data-tab="tab-offers"><i class="fa-solid fa-tag"></i> <span data-i18n="nav_offers">العروض والخصومات</span></button></li>
       <li><button class="nav-link-btn" data-tab="tab-faq"><i class="fa-solid fa-circle-question"></i> <span data-i18n="nav_faq">أسئلة وشروحات</span></button></li>
@@ -732,7 +718,6 @@
             <i class="fa-solid fa-crown"></i>
             <span data-i18n="hero_badge">استوديو التصميم الرقمي الاحترافي</span>
           </div>
-          <!-- تم تعديل نص الوصف ليتوافق مع بناء المنتجات الرقمية والـ Micro-SaaS -->
           <h2 data-i18n="hero_title">نبتكر ونبني <span>منتجات رقمية استثنائية</span></h2>
           <p data-i18n="hero_desc">وجهتك الأولى لاقتناء أقوى المنتجات الرقمية، أدوات الويب المصغرة (Micro-SaaS)، قوالب المواقع، والسير الذاتية المصممة خصيصاً لتعزيز نجاحك بأعلى معايير البريميوم.</p>
 
@@ -810,7 +795,6 @@
       </div>
 
       <div class="services-grid">
-        <!-- الخدمة الأولى الجديدة المضافة بناءً على طلبك -->
         <div class="service-card" style="border-color: var(--border-hover);">
           <div class="service-icon"><i class="fa-solid fa-rocket"></i></div>
           <h3 data-i18n="srv_new_title">تطوير المنتجات الرقمية & Micro-SaaS</h3>
@@ -840,13 +824,14 @@
       </div>
     </section>
 
-    <!-- Tab 3: Products (معرض المنتجات الرقمية والقوالب) -->
+    <!-- Tab 3: Products (معرض المنتجات الرقمية) -->
     <section class="tab-section" id="tab-products">
       <div class="section-header">
         <h2 data-i18n="products_header">متجر <span>المنتجات الرقمية</span></h2>
         <p data-i18n="products_sub">اختر من بين أدوات الويب الذكية، 15 قالب موقع احترافي، وحزم السيرة الذاتية المميزة</p>
       </div>
 
+      <!-- القوائم وأزرار الفلترة حسب طلبك -->
       <div class="filter-buttons">
         <button class="filter-btn active" data-filter="all" data-i18n="filter_all">جميع المنتجات</button>
         <button class="filter-btn" data-filter="saas" data-i18n="filter_saas">أدوات Micro-SaaS</button>
@@ -855,8 +840,21 @@
       </div>
 
       <div class="products-grid">
-        <!-- إضافة المنتج الجديد الخاص بك هنا في قمة المنتجات الرقمية -->
+        
+        <!-- المنتجات الرقمية (Micro-SaaS) -->
         <div class="product-card" data-category="saas" style="border: 2px solid var(--accent-gold);">
+          <div class="product-banner" style="background: linear-gradient(135deg, #1d4ed8, #0f172a);"><i class="fa-solid fa-paper-plane"></i><span class="product-badge-tag" data-i18n="tag_saas_email">أداة ثنائية اللغة (AR/EN)</span></div>
+          <div class="product-body">
+            <h3 class="product-title">AI Cold Email & Outreach Generator Pro 📧</h3>
+            <p class="product-desc" data-i18n="p_saas_email_desc">أداة ذكية مصغرة لتوليد إيميلات المبيعات والاستقطاب المخصصة باللغتين العربية والإنجليزية لزيادة معدل الردود والتحويلات.</p>
+            <div class="product-footer">
+              <span class="product-price">$7.00</span>
+              <a href="https://payhip.com/b/y2Q5N" target="_blank" class="btn-product-link"><span data-i18n="btn_open_product">شراء المنتج</span> <i class="fa-solid fa-arrow-left icon-dir"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="saas">
           <div class="product-banner" style="background: linear-gradient(135deg, #059669, #0f172a);"><i class="fa-solid fa-wand-magic-sparkles"></i><span class="product-badge-tag" data-i18n="tag_saas_pro">أداة Micro-SaaS</span></div>
           <div class="product-body">
             <h3 class="product-title">AI Social Post Generator Pro 🚀</h3>
@@ -868,6 +866,7 @@
           </div>
         </div>
 
+        <!-- قائمة قوالب المواقع (15) -->
         <div class="product-card" data-category="web">
           <div class="product-banner"><i class="fa-solid fa-building"></i><span class="product-badge-tag" data-i18n="tag_realestate">عقارات</span></div>
           <div class="product-body">
@@ -1048,7 +1047,7 @@
           </div>
         </div>
 
-        <!-- قسم السيرة الذاتية -->
+        <!-- قائمة السيرة الذاتية -->
         <div class="product-card" data-category="cv">
           <div class="product-banner" style="background: linear-gradient(135deg, #065f46, #059669);"><i class="fa-solid fa-file-invoice"></i><span class="product-badge-tag" data-i18n="tag_cv_gold">الحزمة الذهبية (10)</span></div>
           <div class="product-body">
@@ -1205,7 +1204,6 @@
 
   </main>
 
-  <!-- Mobile Bottom Navigation -->
   <nav class="mobile-bottom-nav">
     <button class="mobile-nav-btn active" data-tab="tab-hero">
       <i class="fa-solid fa-house"></i>
@@ -1215,7 +1213,6 @@
       <i class="fa-solid fa-code"></i>
       <span data-i18n="nav_services">خدماتنا</span>
     </button>
-    <!-- تم تعديل زر الجوال إلى المنتجات الرقمية -->
     <button class="mobile-nav-btn" data-tab="tab-products">
       <i class="fa-solid fa-layer-group"></i>
       <span data-i18n="nav_templates">المنتجات</span>
@@ -1234,12 +1231,10 @@
     </button>
   </nav>
 
-  <!-- Floating WhatsApp Button -->
   <a href="https://wa.me/201206443652" class="float-whatsapp" target="_blank" aria-label="WhatsApp Chat">
     <i class="fa-brands fa-whatsapp"></i>
   </a>
 
-  <!-- JavaScript Engine -->
   <script>
     const translations = {
       ar: {
@@ -1275,6 +1270,8 @@
         filter_saas: "أدوات Micro-SaaS",
         filter_web: "قوالب المواقع (15)",
         filter_cv: "قوالب وحزم السيرة الذاتية",
+        tag_saas_email: "أداة ثنائية اللغة (AR/EN)",
+        p_saas_email_desc: "أداة ذكية مصغرة لتوليد إيميلات المبيعات والاستقطاب المخصصة باللغتين العربية والإنجليزية لزيادة معدل الردود والتحويلات.",
         tag_saas_pro: "أداة Micro-SaaS",
         p_saas_desc: "أداة ويب ذكية مصغرة لتوليد منشورات احترافية لـ LinkedIn و X و Facebook مع الهاشتاجات الذكية بضغطة زر.",
         tag_realestate: "عقارات",
@@ -1374,6 +1371,8 @@
         filter_saas: "Micro-SaaS Tools",
         filter_web: "Web Templates (15)",
         filter_cv: "CV Bundles & Services",
+        tag_saas_email: "Bilingual Tool (AR/EN)",
+        p_saas_email_desc: "A smart mini tool to generate tailored sales & outreach emails in Arabic & English to boost response rates.",
         tag_saas_pro: "Micro-SaaS Tool",
         p_saas_desc: "A smart mini web tool to generate professional social posts for LinkedIn, X, and Facebook with smart hashtags instantly.",
         tag_realestate: "Real Estate",
@@ -1473,7 +1472,6 @@
       btn.addEventListener('click', () => switchTab(btn.getAttribute('data-tab')));
     });
 
-    // Theme & Language Controls
     const themeToggleBtn = document.getElementById('theme-toggle');
     const htmlEl = document.documentElement;
 
@@ -1517,7 +1515,6 @@
       updateLanguage(newLang);
     });
 
-    // Copy Coupon Code Logic
     function copyCouponCode() {
       const codeText = document.getElementById("discount-code").innerText;
       navigator.clipboard.writeText(codeText).then(() => {
@@ -1530,7 +1527,6 @@
       });
     }
 
-    // Filter Buttons logic
     const filterButtons = document.querySelectorAll('.filter-btn');
     const productCards = document.querySelectorAll('.product-card');
 
