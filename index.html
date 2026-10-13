@@ -790,24 +790,40 @@
       .hero-visual { height: 380px; }
       .contact-box { padding: 25px 15px; }
 
+      /* ==================== تصميم شريط التنقل السفلي المطور ==================== */
       .mobile-bottom-nav {
         position: fixed; bottom: 0; left: 0; width: 100%;
-        background: var(--bg-glass); backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
+        background: var(--bg-glass); backdrop-filter: blur(25px);
+        -webkit-backdrop-filter: blur(25px);
         border-top: 1px solid var(--border-color);
-        display: flex; justify-around; padding: 10px 5px;
-        z-index: 998; box-shadow: 0 -10px 25px rgba(0,0,0,0.5);
+        display: flex; justify-content: space-around; align-items: center;
+        padding: 8px 6px;
+        z-index: 998; box-shadow: 0 -10px 30px rgba(0,0,0,0.6);
       }
       .mobile-nav-btn {
         background: transparent; border: none; color: var(--text-muted);
-        display: flex; flex-direction: column; align-items: center; gap: 4px;
+        display: flex; flex-direction: column; align-items: center; gap: 3px;
         font-size: 0.65rem; font-weight: 700; cursor: pointer;
+        padding: 6px 10px; border-radius: 12px; transition: var(--transition);
+        flex: 1;
       }
-      .mobile-nav-btn i { font-size: 1.1rem; }
-      .mobile-nav-btn.active { color: var(--accent-gold); }
+      .mobile-nav-btn i { font-size: 1.15rem; transition: var(--transition); }
+      .mobile-nav-btn span { white-space: nowrap; }
+      .mobile-nav-btn:hover { color: var(--accent-gold); }
+      .mobile-nav-btn.active {
+        color: #05070c;
+        background: var(--gold-gradient);
+        font-weight: 900;
+        box-shadow: 0 4px 15px rgba(212, 175, 55, 0.35);
+        transform: translateY(-3px);
+      }
+      .mobile-nav-btn.active i {
+        color: #05070c;
+      }
+      /* ==================== نهاية تعديل الشريط السفلي ==================== */
 
-      .app-viewport { margin-top: 85px; margin-bottom: 80px; padding: 0 15px; }
-      .float-whatsapp { bottom: 75px; right: 15px; width: 48px; height: 48px; font-size: 1.4rem; }
+      .app-viewport { margin-top: 85px; margin-bottom: 85px; padding: 0 15px; }
+      .float-whatsapp { bottom: 80px; right: 15px; width: 48px; height: 48px; font-size: 1.4rem; }
       [dir="ltr"] .float-whatsapp { right: auto; left: 15px; }
     }
 
@@ -1296,7 +1312,7 @@
 
   </main>
 
-  <!-- Mobile Bottom Navigation -->
+  <!-- Mobile Bottom Navigation (المحدث) -->
   <nav class="mobile-bottom-nav">
     <button class="mobile-nav-btn active" data-tab="tab-hero">
       <i class="fa-solid fa-house"></i>
@@ -1518,4 +1534,4 @@
     });
   </script>
 </body>
-  </html>
+</html>
