@@ -767,6 +767,42 @@
 
     .mobile-bottom-nav { display: none; }
 
+    /* ==================== AI CHAT WIDGET STYLES ==================== */
+    .ai-launcher-btn {
+      position: fixed; bottom: 95px; right: 25px;
+      background: linear-gradient(135deg, #0d6efd, #0dcaf0);
+      color: #fff; border: none; padding: 12px 20px; border-radius: 50px;
+      cursor: pointer; box-shadow: 0 6px 20px rgba(13, 110, 253, 0.35);
+      display: flex; align-items: center; gap: 8px; font-weight: 700; font-size: 0.9rem;
+      z-index: 9999; transition: var(--transition);
+    }
+    .ai-launcher-btn:hover { transform: translateY(-3px) scale(1.03); }
+    .chat-container {
+      position: fixed; bottom: 160px; right: 25px; width: 360px; max-width: calc(100vw - 30px);
+      height: 520px; max-height: calc(100vh - 180px); background: var(--bg-card);
+      border: 1px solid var(--border-hover); border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-cinematic); display: flex; flex-direction: column;
+      z-index: 9999; overflow: hidden; transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .chat-container.hidden { opacity: 0; pointer-events: none; transform: translateY(20px) scale(0.95); }
+    .chat-header { background: var(--bg-surface); color: var(--text-main); padding: 14px 16px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-color); }
+    .chat-messages { flex: 1; padding: 14px; overflow-y: auto; background: var(--bg-main); display: flex; flex-direction: column; gap: 10px; }
+    .message { max-width: 85%; display: flex; flex-direction: column; }
+    .bot-message { align-self: flex-start; }
+    .user-message { align-self: flex-end; }
+    .message-content { padding: 10px 14px; border-radius: 12px; font-size: 0.88rem; line-height: 1.5; }
+    .bot-message .message-content { background: var(--bg-card); color: var(--text-main); border: 1px solid var(--border-color); border-bottom-right-radius: 2px; }
+    .user-message .message-content { background: var(--accent-gold); color: #05070c; font-weight: 700; border-bottom-left-radius: 2px; }
+    .message-time { font-size: 9px; color: var(--text-muted); margin-top: 3px; align-self: flex-end; }
+    .quick-chips { padding: 8px 12px; background: var(--bg-card); display: flex; gap: 6px; overflow-x: auto; border-top: 1px solid var(--border-color); }
+    .quick-chips button { background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); padding: 5px 10px; border-radius: 20px; font-size: 0.78rem; color: var(--text-main); cursor: pointer; white-space: nowrap; font-family: inherit; }
+    .chat-footer { padding: 10px; background: var(--bg-card); border-top: 1px solid var(--border-color); }
+    .input-wrapper { display: flex; align-items: center; gap: 6px; background: rgba(255,255,255,0.03); border: 1px solid var(--border-color); padding: 4px 6px 4px 12px; border-radius: 30px; }
+    .input-wrapper input { flex: 1; border: none; background: transparent; padding: 6px; font-family: inherit; font-size: 0.88rem; color: var(--text-main); outline: none; }
+    .input-wrapper button { background: var(--accent-gold); color: #05070c; border: none; width: 34px; height: 34px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+    [dir="ltr"] .chat-container, [dir="ltr"] .ai-launcher-btn { right: auto; left: 25px; }
+    /* ==================== END AI CHAT STYLES ==================== */
+
     @media (min-width: 1400px) {
       .app-viewport { max-width: 1400px; }
       .hero-content h2 { font-size: 3.2rem; }
@@ -1345,6 +1381,40 @@
     <i class="fa-brands fa-whatsapp"></i>
   </a>
 
+  <!-- ==================== AI CHAT WIDGET HTML ==================== -->
+  <button id="ai-launcher" class="ai-launcher-btn" onclick="toggleChat()">
+    <i class="fa-solid fa-robot"></i>
+    <span>المساعد الذكي</span>
+  </button>
+
+  <div id="ai-chat-container" class="chat-container hidden">
+    <div class="chat-header">
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <i class="fa-solid fa-brain" style="color: var(--accent-gold);"></i>
+        <span style="font-weight: 800; font-size: 0.9rem;">مساعد Ahmed Abu Omar</span>
+      </div>
+      <button onclick="toggleChat()" style="background:none; border:none; color:var(--text-main); cursor:pointer; font-size:1.1rem;"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div id="chat-messages" class="chat-messages">
+      <div class="message bot-message">
+        <div class="message-content">مرحباً بك! 👋 كيف يمكنني مساعدتك اليوم في اختيار الأدوات الرقمية أو خدماتنا؟</div>
+        <span class="message-time">الآن</span>
+      </div>
+    </div>
+    <div class="quick-chips">
+      <button onclick="sendQuickMessage('ما هي الأدوات المتاحة؟')">🛠️ الأدوات</button>
+      <button onclick="sendQuickMessage('عايز أسأل عن تصميم موقع')">💻 تصميم موقع</button>
+      <button onclick="sendQuickMessage('رقم الواتساب للتواصل')">💬 الواتساب</button>
+    </div>
+    <div class="chat-footer">
+      <div class="input-wrapper">
+        <input type="text" id="chat-input" placeholder="اكتب استفسارك هنا..." onkeypress="if(event.key==='Enter') sendMessage()">
+        <button onclick="sendMessage()"><i class="fa-solid fa-paper-plane"></i></button>
+      </div>
+    </div>
+  </div>
+  <!-- ==================== END AI CHAT WIDGET ==================== -->
+
   <!-- JavaScript Engine -->
   <script>
     const translations = {
@@ -1532,6 +1602,72 @@
         answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
       });
     });
+
+    // ==================== AI CHAT ENGINE LOGIC ==================== //
+    const CONFIG = {
+      GEMINI_API_KEY: "AQ.Ab8RN6KDVr9owRBr-_TQuz0eCu4PEY8iCbpYQD51T6zqrJvvdw",
+      SYSTEM_PROMPT: `أنت المساعد الذكي الرسمي لمتجر Ahmed Abu Omar – Premium Digital Studio. ساعد الزوار بإجابات دقيقة واحترافية حول منتجات الـ Micro-SaaS، أدوات الويب، قوالب المواقع، وخدمات السيرة الذاتية ATS. كود الخصم الحالي هو omar 60 بخصم 60% مع منتج مجاني جديد كل أسبوع. رابط الواتساب للتواصل: https://wa.me/201206443652 ورابط المتجر: https://nadyahmed211-web.github.io/ahmed-abu-omar-store/`
+    };
+
+    function toggleChat() {
+      document.getElementById('ai-chat-container').classList.toggle('hidden');
+    }
+
+    function sendQuickMessage(text) {
+      document.getElementById('chat-input').value = text;
+      sendMessage();
+    }
+
+    async function sendMessage() {
+      const input = document.getElementById('chat-input');
+      const userText = input.value.trim();
+      if (!userText) return;
+
+      appendMessage(userText, 'user');
+      input.value = '';
+
+      const typingId = 'typing-' + Date.now();
+      appendCustomMessage("جاري التفكير والتوليد... 🤖", 'bot', typingId);
+
+      try {
+        const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${CONFIG.GEMINI_API_KEY}`;
+        const response = await fetch(url, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            contents: [{ role: 'user', parts: [{ text: `${CONFIG.SYSTEM_PROMPT}\n\nسؤال المستخدم: ${userText}` }] }]
+          })
+        });
+        const data = await response.json();
+        const aiResponse = data.candidates[0].content.parts[0].text;
+        
+        document.getElementById(typingId).remove();
+        appendMessage(aiResponse, 'bot');
+      } catch (error) {
+        document.getElementById(typingId).remove();
+        appendMessage("عذراً، حدث خطأ. يمكنك مراسلتنا مباشرة عبر الواتساب: https://wa.me/201206443652", 'bot');
+      }
+    }
+
+    function appendMessage(text, sender) {
+      const container = document.getElementById('chat-messages');
+      const div = document.createElement('div');
+      div.className = `message ${sender}-message`;
+      const formatted = text.replace(/(https?:\/\/[^\s]+)/g, '<a href="$1" target="_blank" style="color:var(--accent-gold); text-decoration:underline;">$1</a>');
+      div.innerHTML = `<div class="message-content">${formatted}</div><span class="message-time">${new Date().toLocaleTimeString('ar-EG', {hour:'2-digit', minute:'2-digit'})}</span>`;
+      container.appendChild(div);
+      container.scrollTop = container.scrollHeight;
+    }
+
+    function appendCustomMessage(text, sender, id) {
+      const container = document.getElementById('chat-messages');
+      const div = document.createElement('div');
+      if(id) div.id = id;
+      div.className = `message ${sender}-message`;
+      div.innerHTML = `<div class="message-content" style="font-style:italic;">${text}</div>`;
+      container.appendChild(div);
+      container.scrollTop = container.scrollHeight;
+    }
   </script>
 </body>
 </html>
