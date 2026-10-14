@@ -46,7 +46,7 @@
       "priceCurrency": "USD",
       "lowPrice": "0.00",
       "highPrice": "9.00",
-      "offerCount": "8"
+      "offerCount": "9"
     }
   }
   </script>
@@ -1013,8 +1013,18 @@
       </div>
 
       <div class="services-grid">
-        <!-- 1. خدمة السيرة الذاتية المخصصة (ATS) -->
+        <!-- الخدمة الجديدة: استشارات وتطوير حلول المساعد الذكي -->
         <div class="service-card" style="border: 2px solid var(--accent-gold);">
+          <div class="service-icon"><i class="fa-solid fa-headset"></i></div>
+          <h3>خدمة المساعد الذكي وشات بوت المواقع</h3>
+          <p>دمج وبرمجة مساعد شخصي ذكي واحترافي لموقعك الإلكتروني أو متجرك، للرد على استفسارات العملاء تلقائياً 24/7 وزيادة معدل المبيعات وثقة الزوار.</p>
+          <a href="https://wa.me/201206443652?text=مرحباً، أرغب في طلب خدمة دمج المساعد الذكي وشات بوت لموقعي الإلكتروني" target="_blank" class="service-btn">
+            <i class="fa-brands fa-whatsapp"></i> <span>تواصل عبر الواتساب</span>
+          </a>
+        </div>
+
+        <!-- 1. خدمة السيرة الذاتية المخصصة (ATS) -->
+        <div class="service-card">
           <div class="service-icon"><i class="fa-solid fa-file-shield"></i></div>
           <h3 data-i18n="srv_cv_title">خدمة السيرة الذاتية المخصصة (ATS)</h3>
           <p data-i18n="srv_cv_desc">تصميم وتعديل سيرة ذاتية احترافية باللغتين العربية والإنجليزية، متوافقة تماماً مع أنظمة الفرز الآلي (ATS) لزيادة فرص قبولك في كبرى الشركات العالمية والمحلية.</p>
@@ -1056,9 +1066,9 @@
       <div class="filter-buttons">
         <button class="filter-btn active" data-filter="all" data-i18n="filter_all">جميع المنتجات</button>
         <button class="filter-btn" data-filter="free" data-i18n="filter_free">🎁 منتجات مجانية</button>
-        <button class="filter-btn" data-filter="saas" data-i18n="filter_saas">أدوات Micro-SaaS</button>
-        <button class="filter-btn" data-filter="web" data-i18n="filter_web">قوالب المواقع</button>
-        <button class="filter-btn" data-filter="cv" data-i18n="filter_cv">قوالب وحزم السيرة الذاتية</button>
+        <button class="filter-btn" data-filter="saas">أدوات Micro-SaaS</button>
+        <button class="filter-btn" data-filter="web">قوالب المواقع</button>
+        <button class="filter-btn" data-filter="cv">قوالب وحزم السيرة الذاتية</button>
       </div>
 
       <div class="products-grid">
@@ -1648,6 +1658,12 @@
     function getSmartResponse(question) {
       const q = question.toLowerCase();
       const inEnglish = isEnglishText(q) || currentLang === 'en';
+
+      if (q.includes('مساعد') || q.includes('شات بوت') || q.includes('chatbot') || q.includes('assistant')) {
+        return inEnglish ?
+          `🤖 **AI Assistant Service:**\n\nWe provide professional website chatbot integration services to engage your visitors 24/7 and boost your conversions.\n\n👉 **Order or inquire via WhatsApp:**\n${WA_LINK}?text=Hello,%20I'm%20interested%20in%20the%20AI%20Assistant%20service` :
+          `🤖 **خدمة المساعد الذكي (Chatbot):**\n\nنقدم خدمة دمج وتطوير مساعد ذكي لموقعك أو متجرك لخدمة عملائك على مدار الساعة والرد على استفساراتهم باحترافية تامة.\n\n👉 **اطلب الخدمة وتواصل معنا عبر الواتساب:**\n${WA_LINK}?text=مرحباً،%20أرغب%20في%20طلب%20خدمة%20المساعد%20الذكي%20لموقعي`;
+      }
 
       if (q.includes('أدوات') || q.includes('ادوات') || q.includes('saas') || q.includes('tool') || q.includes('product')) {
         return inEnglish ?
