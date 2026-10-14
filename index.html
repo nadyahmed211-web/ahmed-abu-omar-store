@@ -134,26 +134,20 @@
     .hero-visual { position: relative; width: 100%; height: 440px; display: flex; align-items: center; justify-content: center; perspective: 1000px; }
     .geometric-box { width: 100%; height: 100%; background: linear-gradient(135deg, rgba(15, 21, 35, 0.95), rgba(5, 7, 12, 0.98)); border: 2px solid transparent; border-image: var(--gold-gradient) 1; border-radius: var(--radius-lg); padding: 24px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 30px rgba(212, 175, 55, 0.15); position: relative; overflow: hidden; animation: floatGeometric 6s ease-in-out infinite alternate; backdrop-filter: blur(20px); }
     @keyframes floatGeometric { 0% { transform: translateY(0px) rotateX(0deg) rotateY(0deg); } 50% { transform: translateY(-8px) rotateX(2deg) rotateY(-2deg); } 100% { transform: translateY(4px) rotateX(-2deg) rotateY(2deg); } }
-    .geometric-bg-shapes { position: absolute; top: -50px; right: -50px; width: 160px; height: 160px; background: var(--gold-glow); filter: blur(60px); border-radius: 50%; pointer-events: none; }
     .brand-box-header { display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--border-color); padding-bottom: 12px; z-index: 2; }
     .brand-title-badge { font-size: 1rem; font-weight: 900; background: var(--gold-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: flex; align-items: center; gap: 8px; }
     .welcome-text-box { text-align: center; margin: 8px 0 2px; z-index: 2; }
     .welcome-main-msg { font-size: 1.1rem; font-weight: 900; color: var(--accent-gold-light); margin-bottom: 4px; }
-    .sub-callout { font-size: 0.88rem; font-weight: 800; color: var(--text-muted); display: flex; align-items: center; justify-content: center; gap: 6px; animation: pulseText 2s ease-in-out infinite alternate; }
-    @keyframes pulseText { 0% { opacity: 0.8; transform: scale(0.98); } 100% { opacity: 1; transform: scale(1.02); } }
+    .sub-callout { font-size: 0.88rem; font-weight: 800; color: var(--text-muted); display: flex; align-items: center; justify-content: center; gap: 6px; }
 
     .slider-viewport { width: 100%; overflow: hidden; position: relative; margin: 8px 0; z-index: 2; }
-    .slider-track { display: flex; flex-direction: column; gap: 10px; animation: slideLoop 10s cubic-bezier(0.4, 0, 0.2, 1) infinite alternate; }
-    @keyframes slideLoop { 0% { transform: translateY(0); } 50% { transform: translateY(-25px); } 100% { transform: translateY(0); } }
-    .slider-track:hover { animation-play-state: paused; }
-
+    .slider-track { display: flex; flex-direction: column; gap: 10px; }
     .social-moving-btn { background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 10px 16px; display: flex; align-items: center; justify-content: space-between; transition: var(--transition); }
-    .social-moving-btn:hover { background: var(--gold-glow); border-color: var(--accent-gold); transform: translateX(-6px); }
-    [dir="ltr"] .social-moving-btn:hover { transform: translateX(6px); }
+    .social-moving-btn:hover { background: var(--gold-glow); border-color: var(--accent-gold); }
     .btn-left-info { display: flex; align-items: center; gap: 10px; }
     .btn-left-info i { font-size: 1.2rem; color: var(--accent-gold); }
     .btn-left-info span { font-weight: 800; font-size: 0.88rem; }
-    .btn-right-action { font-size: 0.72rem; font-weight: 800; color: #05070c; background: var(--gold-gradient); padding: 5px 12px; border-radius: 100px; display: inline-flex; align-items: center; gap: 5px; }
+    .btn-right-action { font-size: 0.72rem; font-weight: 800; color: #05070c; background: var(--gold-gradient); padding: 5px 12px; border-radius: 100px; }
     .geometric-box-footer { font-size: 0.72rem; color: var(--text-muted); text-align: center; border-top: 1px solid var(--border-color); padding-top: 8px; z-index: 2; }
 
     .faq-container { max-width: 850px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px; }
@@ -162,7 +156,6 @@
     .faq-question { padding: 20px 24px; font-weight: 800; font-size: 1.05rem; cursor: pointer; display: flex; justify-content: space-between; align-items: center; color: var(--text-main); background: rgba(255, 255, 255, 0.01); }
     .faq-question i { color: var(--accent-gold); transition: var(--transition); }
     .faq-answer { padding: 0 24px 20px; color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; border-top: 1px solid rgba(212, 175, 55, 0.1); display: block; }
-    .faq-answer strong { color: var(--accent-gold-light); }
 
     .section-header { text-align: center; max-width: 700px; margin: 0 auto 40px; }
     .section-header h2 { font-size: 2.3rem; font-weight: 900; margin-bottom: 10px; }
@@ -175,20 +168,13 @@
     .service-icon { width: 56px; height: 56px; border-radius: var(--radius-md); background: var(--gold-glow); border: 1px solid var(--border-hover); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: var(--accent-gold); margin-bottom: 20px; }
     .service-card h3 { font-size: 1.2rem; font-weight: 800; margin-bottom: 10px; }
     .service-card p { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 20px; flex-grow: 1; line-height: 1.5; }
-    .service-btn { align-self: flex-start; background: #25d366; color: #fff; font-weight: 700; padding: 8px 18px; border-radius: 100px; font-size: 0.85rem; display: inline-flex; align-items: center; gap: 6px; transition: var(--transition); }
-    .service-btn:hover { background: #22bf5b; }
-
-    .filter-buttons { display: flex; justify-content: center; gap: 10px; margin-bottom: 30px; flex-wrap: wrap; }
-    .filter-btn { background: var(--bg-card); border: 1px solid var(--border-color); color: var(--text-muted); padding: 8px 20px; border-radius: 100px; font-weight: 700; font-size: 0.88rem; cursor: pointer; transition: var(--transition); }
-    .filter-btn.active, .filter-btn:hover { background: var(--gold-gradient); color: #05070c; border-color: transparent; }
 
     .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
     .product-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); overflow: hidden; display: flex; flex-direction: column; transition: var(--transition); }
     .product-card:hover { transform: translateY(-6px); border-color: var(--border-hover); box-shadow: var(--shadow-cinematic); }
     .product-banner { width: 100%; height: 180px; position: relative; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #0f172a, #1e293b); }
-    .product-banner i { font-size: 3rem; color: var(--accent-gold); filter: drop-shadow(0 4px 10px rgba(0,0,0,0.3)); }
+    .product-banner i { font-size: 3rem; color: var(--accent-gold); }
     .product-badge-tag { position: absolute; top: 12px; right: 12px; background: rgba(5, 7, 12, 0.85); border: 1px solid var(--border-hover); color: var(--accent-gold); padding: 4px 12px; border-radius: 100px; font-size: 0.75rem; font-weight: 700; backdrop-filter: blur(5px); }
-    [dir="ltr"] .product-badge-tag { right: auto; left: 12px; }
     .product-body { padding: 24px; display: flex; flex-direction: column; flex-grow: 1; }
     .product-title { font-size: 1.15rem; font-weight: 800; margin-bottom: 8px; }
     .product-desc { color: var(--text-muted); font-size: 0.88rem; margin-bottom: 20px; flex-grow: 1; line-height: 1.5; }
@@ -201,60 +187,63 @@
     .btn-product-wa:hover { background: #25d366; color: #fff; }
 
     .offers-clean-container { max-width: 850px; margin: 0 auto; background: linear-gradient(145deg, rgba(15, 21, 35, 0.95), rgba(5, 7, 12, 0.98)); border: 1.5px solid var(--accent-gold); border-radius: var(--radius-lg); padding: 40px 25px; text-align: center; box-shadow: 0 20px 50px rgba(0,0,0,0.8), 0 0 30px rgba(212, 175, 55, 0.15); position: relative; overflow: hidden; }
-    .offers-clean-container::before { content: ''; position: absolute; top: -80px; right: -80px; width: 200px; height: 200px; background: var(--gold-glow); border-radius: 50%; filter: blur(60px); pointer-events: none; }
-    .offer-header-badge { display: inline-flex; align-items: center; gap: 8px; background: var(--gold-gradient); color: #05070c; font-weight: 900; padding: 6px 20px; border-radius: 100px; font-size: 0.85rem; margin-bottom: 20px; box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3); }
     .offer-title-main { font-size: 2.2rem; font-weight: 900; margin-bottom: 12px; line-height: 1.3; }
     .offer-title-main span { background: var(--gold-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-    .offer-simple-desc { color: var(--text-muted); font-size: 1rem; max-width: 650px; margin: 0 auto 28px; line-height: 1.6; }
-    .timer-week-box { display: flex; justify-content: center; gap: 12px; margin-bottom: 28px; }
-    .time-card { background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-color); padding: 10px 16px; border-radius: var(--radius-md); min-width: 75px; }
-    .time-card .num { font-size: 1.6rem; font-weight: 900; color: var(--accent-gold-light); font-family: 'Plus Jakarta Sans', sans-serif; line-height: 1; }
-    .time-card .txt { font-size: 0.7rem; color: var(--text-muted); font-weight: 700; margin-top: 4px; }
-    .coupon-compact-box { background: rgba(0, 0, 0, 0.5); border: 2px dashed var(--accent-gold); border-radius: 16px; padding: 16px 24px; display: inline-flex; align-items: center; gap: 16px; margin-bottom: 30px; box-shadow: 0 8px 25px rgba(0,0,0,0.5); }
-    .coupon-val { font-size: 1.5rem; font-weight: 900; color: var(--accent-gold-light); letter-spacing: 2px; font-family: 'Plus Jakarta Sans', monospace; }
-    .btn-copy-simple { background: var(--gold-gradient); color: #05070c; border: none; padding: 8px 16px; border-radius: 100px; font-weight: 800; font-size: 0.82rem; cursor: pointer; transition: var(--transition); display: flex; align-items: center; gap: 6px; }
-    .btn-copy-simple:hover { opacity: 0.9; transform: translateY(-2px); }
-    .cta-action-area { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+    .coupon-compact-box { background: rgba(0, 0, 0, 0.5); border: 2px dashed var(--accent-gold); border-radius: 16px; padding: 16px 24px; display: inline-flex; align-items: center; gap: 16px; margin-bottom: 30px; }
 
     .contact-box { background: var(--bg-card); border: 1px solid var(--border-hover); border-radius: var(--radius-lg); padding: 45px; text-align: center; max-width: 750px; margin: 0 auto; box-shadow: var(--shadow-cinematic); }
-    .contact-box i.main-icon { font-size: 3.2rem; color: #25d366; margin-bottom: 16px; }
-    .contact-box h3 { font-size: 2rem; font-weight: 900; margin-bottom: 10px; }
-    .contact-box p { color: var(--text-muted); font-size: 1rem; margin-bottom: 25px; line-height: 1.6; }
 
     footer { border-top: 1px solid var(--border-color); padding: 30px 0; margin-top: 40px; text-align: center; }
     .footer-brand { font-size: 1.35rem; font-weight: 900; background: var(--gold-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 8px; }
-    .footer-rights { color: var(--text-muted); font-size: 0.82rem; margin-bottom: 16px; max-width: 800px; margin-left: auto; margin-right: auto; line-height: 1.5; }
-    .footer-thanks { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 16px; margin: 0 auto 20px; max-width: 650px; font-size: 0.9rem; color: var(--accent-gold-light); }
-    .social-buttons { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
-    .social-btn { display: inline-flex; align-items: center; gap: 8px; padding: 8px 22px; border-radius: 100px; border: 1px solid var(--border-color); background: var(--bg-card); font-weight: 700; font-size: 0.85rem; transition: var(--transition); }
-    .social-btn:hover { border-color: var(--accent-gold); background: var(--gold-glow); }
+    .footer-rights { color: var(--text-muted); font-size: 0.82rem; margin-bottom: 16px; line-height: 1.5; }
 
-    .float-whatsapp { position: fixed; bottom: 25px; right: 25px; width: 56px; height: 56px; background: #25d366; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.7rem; box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4); z-index: 999; transition: var(--transition); }
-    .float-whatsapp:hover { transform: scale(1.1); }
-    [dir="ltr"] .float-whatsapp { right: auto; left: 25px; }
-
-    .mobile-bottom-nav { display: none; }
-
-    /* AI CHAT WIDGET STYLES */
-    .ai-launcher-btn { position: fixed; bottom: 95px; right: 25px; background: linear-gradient(135deg, #0d6efd, #0dcaf0); color: #fff; border: none; padding: 12px 20px; border-radius: 50px; cursor: pointer; box-shadow: 0 6px 20px rgba(13, 110, 253, 0.35); display: flex; align-items: center; gap: 8px; font-weight: 700; font-size: 0.9rem; z-index: 9999; transition: var(--transition); }
-    .ai-launcher-btn:hover { transform: translateY(-3px) scale(1.03); }
-    .chat-container { position: fixed; bottom: 160px; right: 25px; width: 360px; max-width: calc(100vw - 30px); height: 520px; max-height: calc(100vh - 180px); background: var(--bg-card); border: 1px solid var(--border-hover); border-radius: var(--radius-lg); box-shadow: var(--shadow-cinematic); display: flex; flex-direction: column; z-index: 9999; overflow: hidden; transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); }
+    /* ==================== TRANSPARENT AI FLOATING BUTTON (UPDATED) ==================== */
+    .ai-launcher-btn {
+      position: fixed; 
+      bottom: 25px; 
+      right: 25px; 
+      width: 54px; 
+      height: 54px; 
+      border-radius: 50%; 
+      background: var(--gold-gradient); 
+      color: #05070c; 
+      border: 1px solid rgba(212, 175, 55, 0.5); 
+      cursor: pointer; 
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4); 
+      display: flex; 
+      align-items: center; 
+      justify-content: center; 
+      font-size: 1.4rem; 
+      z-index: 9999; 
+      opacity: 0.65; /* الأيقونة شفافة كي لا تعيق تصميم الصفحة */
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .ai-launcher-btn:hover { 
+      opacity: 1; /* إبراز كامل للأيقونة فور تمرير الماوس أو اللمس */
+      transform: scale(1.1); 
+      box-shadow: 0 8px 25px rgba(212, 175, 55, 0.6);
+      border-color: rgba(255, 255, 255, 0.9);
+    }
+    
+    .chat-container { position: fixed; bottom: 90px; right: 25px; width: 370px; max-width: calc(100vw - 30px); height: 530px; max-height: calc(100vh - 120px); background: var(--bg-card); border: 1px solid var(--border-hover); border-radius: var(--radius-lg); box-shadow: var(--shadow-cinematic); display: flex; flex-direction: column; z-index: 9999; overflow: hidden; transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); }
     .chat-container.hidden { opacity: 0; pointer-events: none; transform: translateY(20px) scale(0.95); }
     .chat-header { background: var(--bg-surface); color: var(--text-main); padding: 14px 16px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-color); }
-    .chat-messages { flex: 1; padding: 14px; overflow-y: auto; background: var(--bg-main); display: flex; flex-direction: column; gap: 10px; }
-    .message { max-width: 85%; display: flex; flex-direction: column; }
+    .chat-messages { flex: 1; padding: 14px; overflow-y: auto; background: var(--bg-main); display: flex; flex-direction: column; gap: 12px; }
+    .message { max-width: 88%; display: flex; flex-direction: column; }
     .bot-message { align-self: flex-start; }
     .user-message { align-self: flex-end; }
-    .message-content { padding: 10px 14px; border-radius: 12px; font-size: 0.88rem; line-height: 1.5; }
+    .message-content { padding: 12px 16px; border-radius: 14px; font-size: 0.9rem; line-height: 1.6; }
     .bot-message .message-content { background: var(--bg-card); color: var(--text-main); border: 1px solid var(--border-color); border-bottom-right-radius: 2px; }
     .user-message .message-content { background: var(--accent-gold); color: #05070c; font-weight: 700; border-bottom-left-radius: 2px; }
-    .message-time { font-size: 9px; color: var(--text-muted); margin-top: 3px; align-self: flex-end; }
-    .quick-chips { padding: 8px 12px; background: var(--bg-card); display: flex; gap: 6px; overflow-x: auto; border-top: 1px solid var(--border-color); }
-    .quick-chips button { background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); padding: 5px 10px; border-radius: 20px; font-size: 0.78rem; color: var(--text-main); cursor: pointer; white-space: nowrap; font-family: inherit; }
-    .chat-footer { padding: 10px; background: var(--bg-card); border-top: 1px solid var(--border-color); }
+    .quick-chips { padding: 10px 12px; background: var(--bg-card); display: flex; gap: 8px; overflow-x: auto; border-top: 1px solid var(--border-color); }
+    .quick-chips button { background: rgba(255,255,255,0.06); border: 1px solid var(--border-color); padding: 6px 12px; border-radius: 20px; font-size: 0.8rem; color: var(--text-main); cursor: pointer; white-space: nowrap; font-family: inherit; font-weight: 700; transition: var(--transition); }
+    .quick-chips button:hover { background: var(--gold-gradient); color: #05070c; }
+    .chat-footer { padding: 12px; background: var(--bg-card); border-top: 1px solid var(--border-color); }
     .input-wrapper { display: flex; align-items: center; gap: 6px; background: rgba(255,255,255,0.03); border: 1px solid var(--border-color); padding: 4px 6px 4px 12px; border-radius: 30px; }
-    .input-wrapper input { flex: 1; border: none; background: transparent; padding: 6px; font-family: inherit; font-size: 0.88rem; color: var(--text-main); outline: none; }
-    .input-wrapper button { background: var(--accent-gold); color: #05070c; border: none; width: 34px; height: 34px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+    .input-wrapper input { flex: 1; border: none; background: transparent; padding: 8px; font-family: inherit; font-size: 0.9rem; color: var(--text-main); outline: none; }
+    .input-wrapper button { background: var(--accent-gold); color: #05070c; border: none; width: 36px; height: 36px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; }
     [dir="ltr"] .chat-container, [dir="ltr"] .ai-launcher-btn { right: auto; left: 25px; }
 
     @media (max-width: 768px) {
@@ -263,14 +252,9 @@
       .hero-grid { grid-template-columns: 1fr; text-align: center; }
       .hero-buttons { justify-content: center; }
       .hero-visual { height: 380px; }
-      .mobile-bottom-nav { position: fixed; bottom: 0; left: 0; width: 100%; background: var(--bg-glass); backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px); border-top: 1px solid var(--border-color); display: flex; justify-content: space-around; align-items: center; padding: 8px 6px; z-index: 998; box-shadow: 0 -10px 30px rgba(0,0,0,0.6); }
-      .mobile-nav-btn { background: transparent; border: none; color: var(--text-muted); display: flex; flex-direction: column; align-items: center; gap: 3px; font-size: 0.65rem; font-weight: 700; cursor: pointer; padding: 6px 10px; border-radius: 12px; transition: var(--transition); flex: 1; }
-      .mobile-nav-btn i { font-size: 1.15rem; }
-      .mobile-nav-btn.active { color: #05070c; background: var(--gold-gradient); font-weight: 900; }
-      .mobile-nav-btn.active i { color: #05070c; }
       .app-viewport { margin-top: 85px; margin-bottom: 85px; padding: 0 15px; }
-      .float-whatsapp { bottom: 80px; right: 15px; width: 48px; height: 48px; font-size: 1.4rem; }
-      [dir="ltr"] .float-whatsapp { right: auto; left: 15px; }
+      .ai-launcher-btn { bottom: 20px; right: 20px; width: 48px; height: 48px; font-size: 1.2rem; }
+      .chat-container { bottom: 80px; right: 15px; }
     }
   </style>
 </head>
@@ -279,22 +263,23 @@
   <div class="cinematic-bg"></div>
   <div class="grid-overlay"></div>
 
+  <!-- HEADER NAV -->
   <header>
     <div class="brand-container">
       <div class="brand-logo-box">A</div>
       <div class="brand-text">
         <h1>Ahmed Abu Omar</h1>
-        <span data-i18n="brand_subtitle">Premium Digital Studio</span>
+        <span>Premium Digital Studio</span>
       </div>
     </div>
 
     <ul class="nav-links">
-      <li><button class="nav-link-btn active" data-tab="tab-hero"><i class="fa-solid fa-house"></i> <span data-i18n="nav_home">الرئيسية</span></button></li>
-      <li><button class="nav-link-btn" data-tab="tab-about"><i class="fa-solid fa-code"></i> <span data-i18n="nav_services">خدماتنا</span></button></li>
-      <li><button class="nav-link-btn" data-tab="tab-products"><i class="fa-solid fa-layer-group"></i> <span data-i18n="nav_templates">المنتجات الرقمية</span></button></li>
-      <li><button class="nav-link-btn" data-tab="tab-offers"><i class="fa-solid fa-tag"></i> <span data-i18n="nav_offers">العروض والخصومات</span></button></li>
-      <li><button class="nav-link-btn" data-tab="tab-faq"><i class="fa-solid fa-circle-question"></i> <span data-i18n="nav_faq">أسئلة وشروحات</span></button></li>
-      <li><button class="nav-link-btn" data-tab="tab-contact"><i class="fa-solid fa-envelope"></i> <span data-i18n="nav_contact">التواصل</span></button></li>
+      <li><button class="nav-link-btn active" onclick="switchTab('tab-hero')"><i class="fa-solid fa-house"></i> <span>الرئيسية</span></button></li>
+      <li><button class="nav-link-btn" onclick="switchTab('tab-about')"><i class="fa-solid fa-code"></i> <span>خدماتنا</span></button></li>
+      <li><button class="nav-link-btn" onclick="switchTab('tab-products')"><i class="fa-solid fa-layer-group"></i> <span>المنتجات الرقمية</span></button></li>
+      <li><button class="nav-link-btn" onclick="switchTab('tab-offers')"><i class="fa-solid fa-tag"></i> <span>العروض والخصومات</span></button></li>
+      <li><button class="nav-link-btn" onclick="switchTab('tab-faq')"><i class="fa-solid fa-circle-question"></i> <span>أسئلة وشروحات</span></button></li>
+      <li><button class="nav-link-btn" onclick="switchTab('tab-contact')"><i class="fa-solid fa-envelope"></i> <span>التواصل</span></button></li>
     </ul>
 
     <div class="nav-controls">
@@ -306,6 +291,8 @@
   </header>
 
   <main class="app-viewport">
+    
+    <!-- 1. HERO SECTION -->
     <section class="tab-section active-tab" id="tab-hero">
       <div class="hero-grid">
         <div class="hero-content">
@@ -339,7 +326,32 @@
       </div>
     </section>
 
-    <!-- باقي أقسام الموقع المباشرة -->
+    <!-- 2. SERVICES SECTION -->
+    <section class="tab-section" id="tab-about">
+      <div class="section-header">
+        <h2>خدماتنا <span>الاحترافية</span></h2>
+        <p>نقدم حلولاً برمجة وتصميمية متطورة لتنمية أعمالك وتسهيل طلباتك بأسرع وقت.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-file-user"></i></div>
+          <h3>تصميم السيرة الذاتية (ATS)</h3>
+          <p>نماذج وتصاميم بريميوم متوافقة مع أنظمة الفرز الآلي (ATS) باللغتين العربية والإنجليزية لضمان قبولك بالوظائف.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-laptop-code"></i></div>
+          <h3>تطوير أدوات Micro-SaaS</h3>
+          <p>أدوات ويب تفاعلية خفيفة توفر حلولاً فورية وبسرعة عالية للعملاء والشركات الناشئة.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-compass-drafting"></i></div>
+          <h3>تصميم وتطوير قوالب الويب</h3>
+          <p>قوالب sites حديثة ومستجيبة بالكامل لكافة القطاعات التجارية والمتاجر الإلكترونية.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. PRODUCTS STORE -->
     <section class="tab-section" id="tab-products">
       <div class="section-header"><h2>متجر <span>المنتجات الرقمية</span></h2></div>
       <div class="products-grid">
@@ -359,28 +371,81 @@
         </div>
       </div>
     </section>
+
+    <!-- 4. OFFERS & DISCOUNTS -->
+    <section class="tab-section" id="tab-offers">
+      <div class="offers-clean-container">
+        <h2 class="offer-title-main">خصم خاص <span>60% لفترة محدودة</span></h2>
+        <p style="color: var(--text-muted); margin-bottom: 20px;">استخدم كوبون الخصم للحصول على خصم فوري على جميع منتجاتنا البرمجية وقوالب المواقع.</p>
+        <div class="coupon-compact-box">
+          <span style="color: var(--accent-gold); font-weight: bold;">الكوبون:</span>
+          <span style="font-size: 1.4rem; font-weight: 900; color: var(--accent-gold-light);">omar 60</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. FAQ SECTION -->
+    <section class="tab-section" id="tab-faq">
+      <div class="section-header"><h2>أسئلة <span>شائعة وشروحات</span></h2></div>
+      <div class="faq-container">
+        <div class="faq-card">
+          <div class="faq-question"><span>كيف يتم تسليم المنتجات الرقمية بعد الشراء؟</span> <i class="fa-solid fa-chevron-down"></i></div>
+          <div class="faq-answer">بعد الشراء المباشر من منصة Payhip أو عبر الواتساب، يتم توفير رابط تحميل فوري ومباشر مع ملف التعليمات المرفق.</div>
+        </div>
+        <div class="faq-card">
+          <div class="faq-question"><span>هل القوالب والأدوات متوافقة مع الأجهزة الذكية؟</span> <i class="fa-solid fa-chevron-down"></i></div>
+          <div class="faq-answer">نعم، جميع تصاميمنا وأدواتنا مصممة لتكون مستجيبة بالكامل (100% Responsive) لجميع الهواتف والشاشات.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. CONTACT SECTION -->
+    <section class="tab-section" id="tab-contact">
+      <div class="contact-box">
+        <i class="fa-brands fa-whatsapp" style="font-size: 3rem; color: #25d366; margin-bottom: 15px;"></i>
+        <h3>تواصل معنا مباشرة</h3>
+        <p>هل لديك استفسار خاص أو طلب تصميم مخصص؟ تواصل معنا عبر الواتساب وسنرد عليك فوراً.</p>
+        <a href="https://wa.me/201206443652" target="_blank" class="btn-whatsapp-main"><i class="fa-brands fa-whatsapp"></i> <span>مراسلة عبر الواتساب</span></a>
+      </div>
+    </section>
+
   </main>
 
-  <!-- AI CHAT WIDGET -->
-  <button id="ai-launcher" class="ai-launcher-btn" onclick="toggleChat()"><i class="fa-solid fa-robot"></i> <span>المساعد الذكي</span></button>
+  <footer>
+    <div class="footer-brand">Ahmed Abu Omar Studio</div>
+    <p class="footer-rights">جميع الحقوق محفوظة © 2026 - Ahmed Abu Omar Premium Digital Studio</p>
+  </footer>
+
+  <!-- TRANSPARENT AI ASSISTANT FLOATING BUTTON -->
+  <button id="ai-launcher" class="ai-launcher-btn" onclick="toggleChat()" aria-label="المساعد الشخصي">
+    <i class="fa-solid fa-headset"></i>
+  </button>
 
   <div id="ai-chat-container" class="chat-container hidden">
     <div class="chat-header">
-      <div style="display: flex; align-items: center; gap: 8px;"><i class="fa-solid fa-brain" style="color: var(--accent-gold);"></i><span style="font-weight: 800; font-size: 0.9rem;">مساعد Ahmed Abu Omar</span></div>
-      <button onclick="toggleChat()" style="background:none; border:none; color:var(--text-main); cursor:pointer;"><i class="fa-solid fa-xmark"></i></button>
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <i class="fa-solid fa-robot" style="color: var(--accent-gold);"></i>
+        <span style="font-weight: 800; font-size: 0.92rem;">مساعد Ahmed Abu Omar الذكي</span>
+      </div>
+      <button onclick="toggleChat()" style="background:none; border:none; color:var(--text-main); cursor:pointer; font-size:1.1rem;"><i class="fa-solid fa-xmark"></i></button>
     </div>
     <div id="chat-messages" class="chat-messages">
       <div class="message bot-message">
-        <div class="message-content">مرحباً بك! 👋 كيف يمكنني مساعدتك اليوم في اختيار الأدوات الرقمية أو خدماتنا؟</div>
+        <div class="message-content">أهلاً بك 👋 أنا المساعد الشخصي لـ **Ahmed Abu Omar Studio**. كيف يمكنني مساعدتك اليوم في الاستفسار عن أدواتنا، خيارات الشراء، أو خدماتنا الاحترافية؟</div>
       </div>
     </div>
+    
+    <!-- QUICK CHIPS -->
     <div class="quick-chips">
-      <button onclick="sendQuickMessage('ما هي الأدوات المتاحة؟')">🛠️ الأدوات</button>
-      <button onclick="sendQuickMessage('رقم الواتساب للتواصل')">💬 الواتساب</button>
+      <button onclick="handleUserAsk('🛠️ الأدوات المتاحة')">🛠️ الأدوات</button>
+      <button onclick="handleUserAsk('📄 تصميم السيرة الذاتية')">📄 السيرة الذاتية</button>
+      <button onclick="handleUserAsk('💳 كيفية الشراء والدفع')">💳 طريقة الشراء</button>
+      <button onclick="handleUserAsk('💬 التواصل عبر الواتساب')">💬 الواتساب</button>
     </div>
+
     <div class="chat-footer">
       <div class="input-wrapper">
-        <input type="text" id="chat-input" placeholder="اكتب استفسارك هنا..." onkeypress="if(event.key==='Enter') sendMessage()">
+        <input type="text" id="chat-input" placeholder="اسألني عن أي شيء..." onkeypress="if(event.key==='Enter') sendMessage()">
         <button onclick="sendMessage()"><i class="fa-solid fa-paper-plane"></i></button>
       </div>
     </div>
@@ -389,19 +454,44 @@
   <script>
     function switchTab(tabId) {
       document.querySelectorAll('.tab-section').forEach(s => s.classList.remove('active-tab'));
-      document.getElementById(tabId).classList.add('active-tab');
+      const activeSec = document.getElementById(tabId);
+      if(activeSec) activeSec.classList.add('active-tab');
     }
 
-    const CONFIG = {
-      // قم بوضع مفتاح Gemini API الصالح هنا (يبدأ بـ AIzaSy...)
-      GEMINI_API_KEY: "", 
-      SYSTEM_PROMPT: `أنت المساعد الذكي الرسمي لمتجر Ahmed Abu Omar – Premium Digital Studio. ساعد الزوار بإجابات دقيقة واحترافية. رابط الواتساب: https://wa.me/201206443652`
-    };
+    function toggleChat() { 
+      document.getElementById('ai-chat-container').classList.toggle('hidden'); 
+    }
 
-    function toggleChat() { document.getElementById('ai-chat-container').classList.toggle('hidden'); }
-    function sendQuickMessage(txt) { document.getElementById('chat-input').value = txt; sendMessage(); }
+    const WA_LINK = "https://wa.me/201206443652";
 
-    async function sendMessage() {
+    function getSmartResponse(question) {
+      const q = question.toLowerCase();
+
+      if (q.includes('أدوات') || q.includes('ادوات') || q.includes('saas') || q.includes('منتجات')) {
+        return `🛠️ **المنتجات والأدوات البرمجية المتاحة:**\n\n1. **Gemini AI Chat Assistant Widget** ($9.00): سكريبت ودجة مساعد ذكي متكامل للمواقع.\n2. **Student Hub Pro**: منصة لإدارة المهام الطلابية بأدوات ذكية.\n3. **Image Compressor Pro**: أداة ضغط الصور بسرعة وبدون فقدان الجودة.\n\n👉 **للشراء المباشر أو الاستفسار تواصل معنا عبر الواتساب:**\n${WA_LINK}`;
+      }
+      
+      if (q.includes('سيرة') || q.includes('cv') || q.includes('ats')) {
+        return `📄 **خدمات وتصاميم السيرة الذاتية (ATS):**\n\nنقدم باقة **Ahmed Abu Omar Premium CV Bundle** والتي تضم 10 قوالب احترافية متوافقة تماماً مع أنظمة الفرز الآلي (ATS) باللغتين العربية والإنجليزية.\n\n👉 **اطلب باقتك الخاصة فوراً عبر الواتساب:**\n${WA_LINK}`;
+      }
+
+      if (q.includes('شراء') || q.includes('دفع') || q.includes('سعر') || q.includes('كيفية')) {
+        return `💳 **طرق الشراء والدفع المتاحة:**\n\n- يمكنك الشراء الفوري إلكترونياً من متجرنا على **Payhip** بواسطة البطاقات البنكية و PayPal.\n- أو الدفع المباشر والتفعيل السريع عبر **المحافظ الإلكترونية أو تحويل InstaPay** بالتواصل المباشر معنا.\n\n👉 **لتنفيذ عملية الشراء فوراً اضغط على الرابط:**\n${WA_LINK}`;
+      }
+
+      if (q.includes('واتساب') || q.includes('تواصل') || q.includes('رقم')) {
+        return `💬 **تواصل معنا مباشرة عبر الواتساب:**\n\nنحن متواجدون لخدمتك فوراً للإجابة على جميع استفساراتك وتلبية طلباتك الخاصة.\n\n📲 **اضغط هنا للمراسلة:**\n${WA_LINK}`;
+      }
+
+      return `مرحباً بك! أنا هنا لمساعدتك في كل ما يتعلق باستوديو **Ahmed Abu Omar** (قوالب المواقع، أدوات Micro-SaaS، تصاميم ATS، وخدمات الويب).\n\nل للحصول على تفاصيل مخصصة أو طلب خدمة فورية، يسعدنا تواصلك المباشر معنا عبر الواتساب:\n📲 ${WA_LINK}`;
+    }
+
+    function handleUserAsk(text) {
+      document.getElementById('chat-input').value = text;
+      sendMessage();
+    }
+
+    function sendMessage() {
       const input = document.getElementById('chat-input');
       const userText = input.value.trim();
       if (!userText) return;
@@ -409,36 +499,26 @@
       appendMessage(userText, 'user');
       input.value = '';
 
-      if (!CONFIG.GEMINI_API_KEY || CONFIG.GEMINI_API_KEY === "") {
-        appendMessage("مرحباً بك! المساعد الذكي شغال حالياً في الوضع المباشر، للتواصل السريع اضغط على رابط الواتساب: https://wa.me/201206443652", 'bot');
-        return;
-      }
-
       const typingId = 'typing-' + Date.now();
-      appendCustomMessage("جاري التفكير والتوليد... 🤖", 'bot', typingId);
+      appendCustomMessage("جاري إعداد الرد الفوري... 🤖", 'bot', typingId);
 
-      try {
-        const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${CONFIG.GEMINI_API_KEY}`;
-        const response = await fetch(url, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ contents: [{ role: 'user', parts: [{ text: `${CONFIG.SYSTEM_PROMPT}\n\nسؤال المستخدم: ${userText}` }] }] })
-        });
-        const data = await response.json();
-        const aiResponse = data.candidates[0].content.parts[0].text;
-        document.getElementById(typingId).remove();
-        appendMessage(aiResponse, 'bot');
-      } catch (error) {
-        document.getElementById(typingId).remove();
-        appendMessage("يمكنك مراسلتنا مباشرة عبر الواتساب: https://wa.me/201206443652", 'bot');
-      }
+      setTimeout(() => {
+        const botId = document.getElementById(typingId);
+        if(botId) botId.remove();
+        
+        const answer = getSmartResponse(userText);
+        appendMessage(answer, 'bot');
+      }, 400);
     }
 
     function appendMessage(text, sender) {
       const container = document.getElementById('chat-messages');
       const div = document.createElement('div');
       div.className = `message ${sender}-message`;
-      div.innerHTML = `<div class="message-content">${text}</div>`;
+      
+      const formattedText = text.replace(/(https:\/\/wa\.me\/[^\s]+)/g, '<a href="$1" target="_blank" style="color:var(--accent-gold-light); font-weight:bold; text-decoration:underline;">$1</a>').replace(/\n/g, '<br>');
+      
+      div.innerHTML = `<div class="message-content">${formattedText}</div>`;
       container.appendChild(div);
       container.scrollTop = container.scrollHeight;
     }
