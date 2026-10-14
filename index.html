@@ -412,32 +412,6 @@
       border-top: 1px solid var(--border-color); padding-top: 8px; z-index: 2;
     }
 
-    .faq-container {
-      max-width: 850px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px;
-    }
-
-    .faq-card {
-      background: var(--bg-card); border: 1px solid var(--border-color);
-      border-radius: var(--radius-md); overflow: hidden; transition: var(--transition);
-    }
-
-    .faq-card:hover { border-color: var(--border-hover); }
-
-    .faq-question {
-      padding: 20px 24px; font-weight: 800; font-size: 1.05rem; cursor: pointer;
-      display: flex; justify-content: space-between; align-items: center;
-      color: var(--text-main); background: rgba(255, 255, 255, 0.01);
-    }
-
-    .faq-question i { color: var(--accent-gold); transition: var(--transition); }
-
-    .faq-answer {
-      padding: 0 24px 20px; color: var(--text-muted); font-size: 0.95rem;
-      line-height: 1.7; border-top: 1px solid rgba(212, 175, 55, 0.1); display: block;
-    }
-
-    .faq-answer strong { color: var(--accent-gold-light); }
-
     .section-header {
       text-align: center; max-width: 700px; margin: 0 auto 40px;
     }
@@ -913,7 +887,6 @@
       <li><button class="nav-link-btn" data-tab="tab-about"><i class="fa-solid fa-code"></i> <span data-i18n="nav_services">خدماتنا</span></button></li>
       <li><button class="nav-link-btn" data-tab="tab-products"><i class="fa-solid fa-layer-group"></i> <span data-i18n="nav_templates">المنتجات الرقمية</span></button></li>
       <li><button class="nav-link-btn" data-tab="tab-offers"><i class="fa-solid fa-tag"></i> <span data-i18n="nav_offers">العروض والخصومات</span></button></li>
-      <li><button class="nav-link-btn" data-tab="tab-faq"><i class="fa-solid fa-circle-question"></i> <span data-i18n="nav_faq">أسئلة وشروحات</span></button></li>
       <li><button class="nav-link-btn" data-tab="tab-contact"><i class="fa-solid fa-envelope"></i> <span data-i18n="nav_contact">التواصل</span></button></li>
     </ul>
 
@@ -1013,7 +986,7 @@
       </div>
 
       <div class="services-grid">
-        <!-- الخدمة المضافة: خدمة المساعد الذكي -->
+        <!-- خدمة المساعد الذكي -->
         <div class="service-card" style="border: 2px solid var(--accent-gold);">
           <div class="service-icon"><i class="fa-solid fa-headset"></i></div>
           <h3>خدمة المساعد الذكي وشات بوت المواقع</h3>
@@ -1293,57 +1266,7 @@
       </div>
     </section>
 
-    <!-- Tab 5: FAQ (أسئلة وشروحات) -->
-    <section class="tab-section" id="tab-faq">
-      <div class="section-header">
-        <h2>الأسئلة الشائعة <span>وشروحات الاستخدام</span></h2>
-        <p>إليك كافة الإجابات الشاملة حول جميع المنتجات الرقمية، طريقة استلام الملفات، وطرق الدفع</p>
-      </div>
-
-      <div class="faq-container">
-        <div class="faq-card">
-          <div class="faq-question">
-            <span>1. ما هي المنتجات الرقمية التي يقدمها المتجر وكيف تعمل؟</span>
-            <i class="fa-solid fa-circle-chevron-down"></i>
-          </div>
-          <div class="faq-answer">
-            نقدم مجموعة متكاملة من <strong>أدوات الويب المصغرة (Micro-SaaS)</strong>، قوالب المواقع الاحترافية، وحزم السيرة الذاتية (ATS). الأدوات مصممة لتعمل مباشرة عبر المتصفح أو كأكواد برمجية جاهزة بدون الحاجة لااشتراكات شهرية معقدة.
-          </div>
-        </div>
-
-        <div class="faq-card">
-          <div class="faq-question">
-            <span>2. كيف يتم استلام المنتجات والملفات بعد عملية الشراء؟</span>
-            <i class="fa-solid fa-circle-chevron-down"></i>
-          </div>
-          <div class="faq-answer">
-            بمجرد إتمام الدفع عبر منصة Payhip، سيظهر لك <strong>رابط تحميل مباشر (ملف ZIP يحتوي على الكود الكامل والشرح)</strong>، ويصلك نفس الرابط فوراً على بريدك الإلكتروني المسجل.
-          </div>
-        </div>
-
-        <div class="faq-card">
-          <div class="faq-question">
-            <span>3. ماذا لو لم أمتلك بطاقة بنكية إلكترونية للشراء من المتجر؟</span>
-            <i class="fa-solid fa-circle-chevron-down"></i>
-          </div>
-          <div class="faq-answer">
-            <strong>لا داعي للقلق أبداً!</strong> يمكنك الضغط على زر <strong>"واتساب"</strong> الموجود بجانب أي منتج، وتواصل معنا لتنسيق الدفع عبر وسائل الدفع المحلية المتاحة (فودافون كاش، إنستاباي، تحويل بنكي، وغيرها)، وسنرسل لك ملفات المنتج فوراً عبر الواتساب.
-          </div>
-        </div>
-
-        <div class="faq-card" style="border-color: var(--border-hover);">
-          <div class="faq-question">
-            <span style="color: var(--accent-gold-light);">4. هل توجد اشتراكات شهرية أو رسوم خفية بعد شراء المنتج؟</span>
-            <i class="fa-solid fa-circle-chevron-down"></i>
-          </div>
-          <div class="faq-answer">
-            <strong>أبداً!</strong> جميع أدوات الـ Micro-SaaS والقوالب تملكها مدى الحياة بمدفوعة واحدة فقط، ولا توجد أي اشتراكات شهرية أو رسوم إضافية.
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Tab 6: Contact (التواصل) -->
+    <!-- Tab 5: Contact (التواصل) -->
     <section class="tab-section" id="tab-contact">
       <div class="contact-box">
         <i class="fa-brands fa-whatsapp main-icon"></i>
@@ -1391,10 +1314,6 @@
       <i class="fa-solid fa-tag"></i>
       <span>العروض</span>
     </button>
-    <button class="mobile-nav-btn" data-tab="tab-faq">
-      <i class="fa-solid fa-circle-question"></i>
-      <span>الشرح</span>
-    </button>
     <button class="mobile-nav-btn" data-tab="tab-contact">
       <i class="fa-solid fa-envelope"></i>
       <span>التواصل</span>
@@ -1423,7 +1342,7 @@
     <!-- BILINGUAL QUICK CHIPS -->
     <div class="quick-chips" id="quick-chips-container">
       <button onclick="handleUserAsk(currentLang === 'ar' ? '🤖 خدمة المساعد الذكي' : '🤖 AI Assistant Service')">🤖 <span data-i18n="chip_bot">المساعد الذكي</span></button>
-      <button onclick="handleUserAsk(currentLang === 'ar' ? '🛠️ الأدوات المتاحة' : '🛠️ Available Tools')">🛠️ <span data-i18n="chip_tools">الأدوات</span></button>
+      <button onclick="handleUserAsk(currentLang === 'ar' ? '🛠️ الأدوات والمتاجر' : '🛠️ Tools & Products')">🛠️ <span data-i18n="chip_tools">الأدوات</span></button>
       <button onclick="handleUserAsk(currentLang === 'ar' ? '📄 تصميم السيرة الذاتية' : '📄 ATS Resume Service')">📄 <span data-i18n="chip_cv">السيرة الذاتية</span></button>
       <button onclick="handleUserAsk(currentLang === 'ar' ? '💳 كيفية الشراء والدفع' : '💳 How to Buy')">💳 <span data-i18n="chip_buy">طريقة الشراء</span></button>
       <button onclick="handleUserAsk(currentLang === 'ar' ? '💬 التواصل عبر الواتساب' : '💬 WhatsApp Contact')">💬 <span data-i18n="chip_wa">الواتساب</span></button>
@@ -1446,8 +1365,6 @@
         nav_services: "خدماتنا",
         nav_templates: "المنتجات الرقمية",
         nav_offers: "العروض والخصومات",
-        nav_faq: "أسئلة وشروحات",
-        nav_faq_mobile: "الشرح",
         nav_contact: "التواصل",
         hero_badge: "استوديو التصميم الرقمي الاحترافي",
         hero_title: 'نبتكر ونبني <span>منتجات رقمية استثنائية</span>',
@@ -1498,8 +1415,6 @@
         nav_services: "Services",
         nav_templates: "Digital Products",
         nav_offers: "Offers & Discounts",
-        nav_faq: "FAQ & Guide",
-        nav_faq_mobile: "Guide",
         nav_contact: "Contact Us",
         hero_badge: "Professional Digital Design Studio",
         hero_title: 'Building & Innovating <span>Exceptional Digital Products</span>',
@@ -1641,13 +1556,6 @@
       });
     }
 
-    document.querySelectorAll('.faq-question').forEach(q => {
-      q.addEventListener('click', () => {
-        const answer = q.nextElementSibling;
-        answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
-      });
-    });
-
     function toggleChat() { 
       document.getElementById('ai-chat-container').classList.toggle('hidden'); 
     }
@@ -1668,22 +1576,22 @@
           `🤖 **خدمة المساعد الذكي (Chatbot):**\n\nنقدم خدمة دمج وتطوير مساعد ذكي لموقعك أو متجرك لخدمة عملائك على مدار الساعة والرد على استفساراتهم باحترافية تامة.\n\n👉 **اطلب الخدمة وتواصل معنا عبر الواتساب:**\n${WA_LINK}?text=مرحباً،%20أرغب%20في%20طلب%20خدمة%20المساعد%20الذكي%20لموقعي`;
       }
 
-      if (q.includes('أدوات') || q.includes('ادوات') || q.includes('saas') || q.includes('tool') || q.includes('product')) {
+      if (q.includes('أدوات') || q.includes('ادوات') || q.includes('saas') || q.includes('tool') || q.includes('product') || q.includes('منتجات')) {
         return inEnglish ?
-          `🛠️ **Available Products & Tools:**\n\n1. **SaaS Pricing & ROI Calculator Pro** ($9.00)\n2. **Image Compressor Pro** ($6.00)\n3. **SEO Meta & Schema Generator Pro** ($7.00)\n4. **AI Social Post Generator Pro** ($9.00)\n5. **Student Hub Pro** (Free)\n\n👉 **For direct purchase or inquiry, chat on WhatsApp:**\n${WA_LINK}` :
-          `🛠️ **المنتجات والأدوات البرمجية المتاحة:**\n\n1. **SaaS Pricing & ROI Calculator Pro** ($9.00)\n2. **Image Compressor Pro** ($6.00)\n3. **SEO Meta & Schema Generator Pro** ($7.00)\n4. **AI Social Post Generator Pro** ($9.00)\n5. **Student Hub Pro** (مجاناً)\n\n👉 **للشراء المباشر أو الاستفسار تواصل معنا عبر الواتساب:**\n${WA_LINK}`;
+          `🛠️ **Available Products & Tools:**\n\n1. **AI Assistant Service** (New)\n2. **SaaS Pricing & ROI Calculator Pro** ($9.00)\n3. **Image Compressor Pro** ($6.00)\n4. **SEO Meta & Schema Generator Pro** ($7.00)\n5. **AI Social Post Generator Pro** ($9.00)\n6. **Student Hub Pro** (Free)\n7. **NOVA Real Estate Template** ($8.00)\n8. **Business Website Template** ($8.00)\n\n👉 **For direct purchase or inquiry, chat on WhatsApp:**\n${WA_LINK}` :
+          `🛠️ **المنتجات والأدوات والأقسام المتاحة:**\n\n1. **خدمة المساعد الذكي والشات بوت للمواقع** (جديد)\n2. **SaaS Pricing & ROI Calculator Pro** ($9.00)\n3. **Image Compressor Pro** ($6.00)\n4. **SEO Meta & Schema Generator Pro** ($7.00)\n5. **AI Social Post Generator Pro** ($9.00)\n6. **Student Hub Pro** (منصة الطالب المجانية)\n7. **قوالب المواقع (عقارات وأعمال)** ($8.00)\n\n👉 **للشراء المباشر أو الاستفسار تواصل معنا عبر الواتساب:**\n${WA_LINK}`;
       }
       
       if (q.includes('سيرة') || q.includes('cv') || q.includes('ats') || q.includes('resume')) {
         return inEnglish ?
-          `📄 **ATS Resume Services & Bundles:**\n\nWe offer the **Ahmed Abu Omar Premium CV Bundle** (10 English & Arabic templates) for only $3.00, plus custom resume writing & design services.\n\n👉 **Request your custom ATS resume via WhatsApp:**\n${WA_LINK}` :
-          `📄 **خدمات وتصاميم السيرة الذاتية (ATS):**\n\nنقدم حزمة **Ahmed Abu Omar Premium CV Bundle** (10 قوالب عربية وإنجليزية) بـ $3.00 فقط، بالإضافة لخدمة التصميم والتعديل المخصص.\n\n👉 **اطلب باقتك الخاصة فوراً عبر الواتساب:**\n${WA_LINK}`;
+          `📄 **ATS Resume Services & Bundles:**\n\nWe offer the **Ahmed Abu Omar Premium CV Bundle** (10 English & Arabic templates) for only $3.00, plus custom resume writing & design services compatible with ATS systems.\n\n👉 **Request your custom ATS resume via WhatsApp:**\n${WA_LINK}` :
+          `📄 **خدمات وتصاميم السيرة الذاتية (ATS):**\n\nنقدم حزمة **Ahmed Abu Omar Premium CV Bundle** (10 قوالب عربية وإنجليزية) متوافقة مع أنظمة الفرز الآلي ATS بـ $3.00 فقط، بالإضافة لخدمة التصميم والتعديل المخصص.\n\n👉 **اطلب باقتك الخاصة فوراً عبر الواتساب:**\n${WA_LINK}`;
       }
 
-      if (q.includes('شراء') || q.includes('دفع') || q.includes('سعر') || q.includes('buy') || q.includes('pay') || q.includes('price')) {
+      if (q.includes('شراء') || q.includes('دفع') || q.includes('سعر') || q.includes('buy') || q.includes('pay') || q.includes('price') || q.includes('توصيل') || q.includes('استلام')) {
         return inEnglish ?
-          `💳 **Purchasing & Payment Options:**\n\n- Buy directly online via our **Payhip** store using Credit Cards & PayPal.\n- Or contact us directly for instant local payment options (e-wallets, InstaPay, direct bank transfer).\n\n👉 **Click here to order directly on WhatsApp:**\n${WA_LINK}` :
-          `💳 **طرق الشراء والدفع المتاحة:**\n\n- الشراء الفوري إلكترونياً من متجرنا على **Payhip** بالبطاقات البنكية و PayPal.\n- أو الدفع المباشر والتفعيل السريع عبر **المحافظ الإلكترونية أو تحويل InstaPay** بالتواصل المباشر معنا.\n\n👉 **لتنفيذ عملية الشراء فوراً اضغط على الرابط:**\n${WA_LINK}`;
+          `💳 **Purchasing & Delivery Guide:**\n\n- Buy directly online via our **Payhip** store using Credit Cards & PayPal for instant ZIP file download.\n- Or contact us directly for instant local payment options (e-wallets, InstaPay, direct bank transfer) where we send files via WhatsApp instantly.\n\n👉 **Click here to order directly on WhatsApp:**\n${WA_LINK}` :
+          `💳 **طريقة الشراء والاستلام والدفع:**\n\n- الشراء الفوري إلكترونياً من متجرنا على **Payhip** بالبطاقات البنكية و PayPal (يظهر رابط التحميل الفوري لملف ZIP الشامل للكود والشرح).\n- الدفع المحلي المباشر والتفعيل السريع عبر **المحافظ الإلكترونية أو تحويل InstaPay** بالتواصل المباشر معنا عبر الواتساب.\n- **لا توجد اشتراكات شهرية:** المنتجات تملكها مدى الحياة بمدفوعة واحدة.\n\n👉 **لتنفيذ عملية الشراء أو الاستفسار اضغط هنا:**\n${WA_LINK}`;
       }
 
       if (q.includes('واتساب') || q.includes('تواصل') || q.includes('رقم') || q.includes('whatsapp') || q.includes('contact')) {
@@ -1693,8 +1601,8 @@
       }
 
       return inEnglish ?
-        `Hello! I am the AI assistant for **Ahmed Abu Omar Studio**. You can ask about Micro-SaaS tools, web templates, ATS resumes, or payment methods.\n\nFor custom orders, chat with us directly on WhatsApp:\n📲 ${WA_LINK}` :
-        `مرحباً بك! أنا المساعد الذكي لـ **Ahmed Abu Omar Studio**. يمكنك السؤال عن الأدوات، قوالب المواقع، السير الذاتية ATS، أو طرق الدفع.\n\nللحصول على تفاصيل مخصصة، تواصل معنا عبر الواتساب:\n📲 ${WA_LINK}`;
+        `Hello! I am the AI assistant for **Ahmed Abu Omar Studio**. You can ask about our tools, templates, ATS resumes, AI chatbot service, or payment methods.\n\nFor custom orders, chat with us directly on WhatsApp:\n📲 ${WA_LINK}` :
+        `مرحباً بك! أنا المساعد الذكي لـ **Ahmed Abu Omar Studio**. يمكنك السؤال عن أدوات الـ Micro-SaaS، قوالب المواقع، السير الذاتية ATS، خدمة المساعد الذكي، أو طرق الدفع والشراء.\n\nللحصول على تفاصيل مخصصة، تواصل معنا عبر الواتساب:\n📲 ${WA_LINK}`;
     }
 
     function handleUserAsk(text) {
