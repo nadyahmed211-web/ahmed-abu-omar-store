@@ -50,6 +50,7 @@
     }
   }
   </script>
+  <!-- ==================== END SEO META TAGS ==================== -->
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -93,111 +94,668 @@
       --shadow-cinematic: 0 20px 40px -15px rgba(0, 0, 0, 0.12);
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; font-family: var(--font-family); -webkit-tap-highlight-color: transparent; }
-    body { background-color: var(--bg-main); color: var(--text-main); transition: background-color 0.4s ease, color 0.4s ease; min-height: 100vh; overflow-x: hidden; position: relative; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: var(--font-family);
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      transition: background-color 0.4s ease, color 0.4s ease;
+      min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
+    }
+
     a { text-decoration: none; color: inherit; }
     ul { list-style: none; }
 
-    .cinematic-bg { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -2; pointer-events: none; background: radial-gradient(circle at 10% 20%, rgba(212, 175, 55, 0.1) 0%, transparent 40%), radial-gradient(circle at 90% 80%, rgba(212, 175, 55, 0.06) 0%, transparent 45%), var(--bg-main); }
-    .grid-overlay { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -1; pointer-events: none; background-image: linear-gradient(to right, var(--border-color) 1px, transparent 1px), linear-gradient(to bottom, var(--border-color) 1px, transparent 1px); background-size: 50px 50px; opacity: 0.1; }
+    .cinematic-bg {
+      position: fixed;
+      top: 0; left: 0; width: 100vw; height: 100vh;
+      z-index: -2; pointer-events: none;
+      background: radial-gradient(circle at 10% 20%, rgba(212, 175, 55, 0.1) 0%, transparent 40%),
+                  radial-gradient(circle at 90% 80%, rgba(212, 175, 55, 0.06) 0%, transparent 45%),
+                  var(--bg-main);
+    }
 
-    header { position: fixed; top: 15px; left: 50%; transform: translateX(-50%); width: 94%; max-width: 1280px; background: var(--bg-glass); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 12px 20px; display: flex; justify-content: space-between; align-items: center; z-index: 1000; box-shadow: var(--shadow-cinematic); }
-    .brand-container { display: flex; align-items: center; gap: 12px; }
-    .brand-logo-box { width: 40px; height: 40px; background: var(--gold-gradient); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: #05070c; font-weight: 900; font-size: 1.25rem; box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3); flex-shrink: 0; }
-    .brand-text h1 { font-size: 1rem; font-weight: 900; background: var(--gold-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; white-space: nowrap; }
-    .brand-text span { font-size: 0.65rem; color: var(--text-muted); font-weight: 700; display: block; }
-    .nav-links { display: flex; gap: 4px; background: rgba(255, 255, 255, 0.03); padding: 4px; border-radius: 100px; border: 1px solid rgba(255, 255, 255, 0.05); }
-    .nav-link-btn { background: transparent; border: none; color: var(--text-muted); padding: 6px 16px; border-radius: 100px; font-weight: 700; font-size: 0.82rem; cursor: pointer; transition: var(--transition); display: flex; align-items: center; gap: 6px; white-space: nowrap; }
-    .nav-link-btn:hover { color: var(--text-main); background: rgba(255, 255, 255, 0.05); }
-    .nav-link-btn.active { color: #05070c; background: var(--gold-gradient); font-weight: 800; box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3); }
-    .nav-controls { display: flex; align-items: center; gap: 8px; }
-    .ctrl-btn-group { display: flex; align-items: center; gap: 4px; background: rgba(255, 255, 255, 0.03); padding: 3px; border-radius: 100px; border: 1px solid var(--border-color); }
-    .ctrl-btn { background: transparent; border: none; color: var(--text-main); width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: var(--transition); font-size: 0.8rem; font-weight: 800; }
+    .grid-overlay {
+      position: fixed;
+      top: 0; left: 0; width: 100vw; height: 100vh;
+      z-index: -1; pointer-events: none;
+      background-image: linear-gradient(to right, var(--border-color) 1px, transparent 1px),
+                        linear-gradient(to bottom, var(--border-color) 1px, transparent 1px);
+      background-size: 50px 50px;
+      opacity: 0.1;
+    }
+
+    header {
+      position: fixed;
+      top: 15px; left: 50%;
+      transform: translateX(-50%);
+      width: 94%; max-width: 1280px;
+      background: var(--bg-glass);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 12px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      box-shadow: var(--shadow-cinematic);
+    }
+
+    .brand-container {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-logo-box {
+      width: 40px; height: 40px;
+      background: var(--gold-gradient);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      color: #05070c; font-weight: 900; font-size: 1.25rem;
+      box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+      flex-shrink: 0;
+    }
+
+    .brand-text h1 {
+      font-size: 1rem; font-weight: 900;
+      background: var(--gold-gradient);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      white-space: nowrap;
+    }
+
+    .brand-text span {
+      font-size: 0.65rem; color: var(--text-muted); font-weight: 700; display: block;
+    }
+
+    .nav-links {
+      display: flex; gap: 4px;
+      background: rgba(255, 255, 255, 0.03);
+      padding: 4px; border-radius: 100px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .nav-link-btn {
+      background: transparent; border: none;
+      color: var(--text-muted); padding: 6px 16px;
+      border-radius: 100px; font-weight: 700; font-size: 0.82rem;
+      cursor: pointer; transition: var(--transition);
+      display: flex; align-items: center; gap: 6px; white-space: nowrap;
+    }
+
+    .nav-link-btn:hover {
+      color: var(--text-main); background: rgba(255, 255, 255, 0.05);
+    }
+
+    .nav-link-btn.active {
+      color: #05070c; background: var(--gold-gradient);
+      font-weight: 800; box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+    }
+
+    .nav-controls {
+      display: flex; align-items: center; gap: 8px;
+    }
+
+    .ctrl-btn-group {
+      display: flex; align-items: center; gap: 4px;
+      background: rgba(255, 255, 255, 0.03);
+      padding: 3px; border-radius: 100px;
+      border: 1px solid var(--border-color);
+    }
+
+    .ctrl-btn {
+      background: transparent; border: none;
+      color: var(--text-main); width: 32px; height: 32px;
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      cursor: pointer; transition: var(--transition); font-size: 0.8rem; font-weight: 800;
+    }
+
     .ctrl-btn:hover { background: var(--gold-glow); color: var(--accent-gold); }
 
-    .app-viewport { max-width: 1280px; margin: 110px auto 60px; padding: 0 20px; min-height: calc(100vh - 180px); }
-    .tab-section { display: none; animation: fadeInContent 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
-    .tab-section.active-tab { display: block; }
-    @keyframes fadeInContent { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
+    .app-viewport {
+      max-width: 1280px;
+      margin: 110px auto 60px;
+      padding: 0 20px;
+      min-height: calc(100vh - 180px);
+    }
 
-    .hero-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 40px; align-items: center; padding: 20px 0; }
-    .hero-content .badge { display: inline-flex; align-items: center; gap: 8px; padding: 6px 16px; border-radius: 100px; background: var(--gold-glow); border: 1px solid var(--border-hover); color: var(--accent-gold-light); font-size: 0.82rem; font-weight: 800; margin-bottom: 18px; }
-    .hero-content h2 { font-size: 2.8rem; font-weight: 900; line-height: 1.25; margin-bottom: 16px; }
-    .hero-content h2 span { background: var(--gold-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-    .hero-content p { font-size: 1.05rem; color: var(--text-muted); margin-bottom: 24px; line-height: 1.6; }
-    .hero-buttons { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 10px; }
-    .btn-gold { background: var(--gold-gradient); color: #05070c; font-weight: 800; padding: 14px 30px; border-radius: 100px; border: none; cursor: pointer; box-shadow: 0 8px 25px rgba(212, 175, 55, 0.35); transition: var(--transition); display: inline-flex; align-items: center; gap: 8px; font-size: 0.95rem; }
+    .tab-section {
+      display: none;
+      animation: fadeInContent 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    .tab-section.active-tab {
+      display: block;
+    }
+
+    @keyframes fadeInContent {
+      from { opacity: 0; transform: translateY(15px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 40px;
+      align-items: center;
+      padding: 20px 0;
+    }
+
+    .hero-content .badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 6px 16px; border-radius: 100px;
+      background: var(--gold-glow); border: 1px solid var(--border-hover);
+      color: var(--accent-gold-light); font-size: 0.82rem; font-weight: 800;
+      margin-bottom: 18px;
+    }
+
+    .hero-content h2 {
+      font-size: 2.8rem; font-weight: 900; line-height: 1.25;
+      margin-bottom: 16px;
+    }
+
+    .hero-content h2 span {
+      background: var(--gold-gradient);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+
+    .hero-content p {
+      font-size: 1.05rem; color: var(--text-muted); margin-bottom: 24px; line-height: 1.6;
+    }
+
+    .hero-buttons {
+      display: flex; gap: 12px; flex-wrap: wrap; margin-top: 10px;
+    }
+
+    .btn-gold {
+      background: var(--gold-gradient); color: #05070c; font-weight: 800;
+      padding: 14px 30px; border-radius: 100px; border: none; cursor: pointer;
+      box-shadow: 0 8px 25px rgba(212, 175, 55, 0.35); transition: var(--transition);
+      display: inline-flex; align-items: center; gap: 8px; font-size: 0.95rem;
+    }
+
     .btn-gold:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(212, 175, 55, 0.45); }
-    .btn-whatsapp-main { background: #25d366; color: #fff; font-weight: 800; padding: 14px 30px; border-radius: 100px; border: none; cursor: pointer; box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3); transition: var(--transition); display: inline-flex; align-items: center; gap: 8px; font-size: 0.95rem; }
+
+    .btn-whatsapp-main {
+      background: #25d366; color: #fff; font-weight: 800;
+      padding: 14px 30px; border-radius: 100px; border: none; cursor: pointer;
+      box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3); transition: var(--transition);
+      display: inline-flex; align-items: center; gap: 8px; font-size: 0.95rem;
+    }
+
     .btn-whatsapp-main:hover { transform: translateY(-3px); background: #22bf5b; }
 
-    .hero-visual { position: relative; width: 100%; height: 440px; display: flex; align-items: center; justify-content: center; perspective: 1000px; }
-    .geometric-box { width: 100%; height: 100%; background: linear-gradient(135deg, rgba(15, 21, 35, 0.95), rgba(5, 7, 12, 0.98)); border: 2px solid transparent; border-image: var(--gold-gradient) 1; border-radius: var(--radius-lg); padding: 24px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 30px rgba(212, 175, 55, 0.15); position: relative; overflow: hidden; animation: floatGeometric 6s ease-in-out infinite alternate; backdrop-filter: blur(20px); }
-    @keyframes floatGeometric { 0% { transform: translateY(0px) rotateX(0deg) rotateY(0deg); } 50% { transform: translateY(-8px) rotateX(2deg) rotateY(-2deg); } 100% { transform: translateY(4px) rotateX(-2deg) rotateY(2deg); } }
-    .brand-box-header { display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--border-color); padding-bottom: 12px; z-index: 2; }
-    .brand-title-badge { font-size: 1rem; font-weight: 900; background: var(--gold-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: flex; align-items: center; gap: 8px; }
-    .welcome-text-box { text-align: center; margin: 8px 0 2px; z-index: 2; }
-    .welcome-main-msg { font-size: 1.1rem; font-weight: 900; color: var(--accent-gold-light); margin-bottom: 4px; }
-    .sub-callout { font-size: 0.88rem; font-weight: 800; color: var(--text-muted); display: flex; align-items: center; justify-content: center; gap: 6px; }
+    .hero-visual {
+      position: relative; width: 100%; height: 440px;
+      display: flex; align-items: center; justify-content: center;
+      perspective: 1000px;
+    }
 
-    .slider-viewport { width: 100%; overflow: hidden; position: relative; margin: 8px 0; z-index: 2; }
-    .slider-track { display: flex; flex-direction: column; gap: 10px; }
-    .social-moving-btn { background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 10px 16px; display: flex; align-items: center; justify-content: space-between; transition: var(--transition); }
-    .social-moving-btn:hover { background: var(--gold-glow); border-color: var(--accent-gold); }
+    .geometric-box {
+      width: 100%; height: 100%;
+      background: linear-gradient(135deg, rgba(15, 21, 35, 0.95), rgba(5, 7, 12, 0.98));
+      border: 2px solid transparent;
+      border-image: var(--gold-gradient) 1;
+      border-radius: var(--radius-lg);
+      padding: 24px; display: flex; flex-direction: column; justify-content: space-between;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 30px rgba(212, 175, 55, 0.15);
+      position: relative; overflow: hidden;
+      animation: floatGeometric 6s ease-in-out infinite alternate;
+      backdrop-filter: blur(20px);
+    }
+
+    @keyframes floatGeometric {
+      0% { transform: translateY(0px) rotateX(0deg) rotateY(0deg); }
+      50% { transform: translateY(-8px) rotateX(2deg) rotateY(-2deg); }
+      100% { transform: translateY(4px) rotateX(-2deg) rotateY(2deg); }
+    }
+
+    .geometric-bg-shapes {
+      position: absolute; top: -50px; right: -50px;
+      width: 160px; height: 160px;
+      background: var(--gold-glow);
+      filter: blur(60px); border-radius: 50%; pointer-events: none;
+    }
+
+    .brand-box-header {
+      display: flex; align-items: center; justify-content: space-between;
+      border-bottom: 1px solid var(--border-color); padding-bottom: 12px;
+      z-index: 2;
+    }
+
+    .brand-title-badge {
+      font-size: 1rem; font-weight: 900;
+      background: var(--gold-gradient);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      display: flex; align-items: center; gap: 8px;
+    }
+
+    .welcome-text-box {
+      text-align: center; margin: 8px 0 2px;
+      z-index: 2;
+    }
+
+    .welcome-main-msg {
+      font-size: 1.1rem; font-weight: 900;
+      color: var(--accent-gold-light); margin-bottom: 4px;
+    }
+
+    .sub-callout {
+      font-size: 0.88rem; font-weight: 800; color: var(--text-muted);
+      display: flex; align-items: center; justify-content: center; gap: 6px;
+      animation: pulseText 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes pulseText {
+      0% { opacity: 0.8; transform: scale(0.98); }
+      100% { opacity: 1; transform: scale(1.02); }
+    }
+
+    .slider-viewport {
+      width: 100%; overflow: hidden; position: relative; margin: 8px 0; z-index: 2;
+    }
+
+    .slider-track {
+      display: flex; flex-direction: column; gap: 10px;
+      animation: slideLoop 10s cubic-bezier(0.4, 0, 0.2, 1) infinite alternate;
+    }
+
+    @keyframes slideLoop {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-25px); }
+      100% { transform: translateY(0); }
+    }
+
+    .slider-track:hover { animation-play-state: paused; }
+
+    .social-moving-btn {
+      background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-color);
+      border-radius: var(--radius-md); padding: 10px 16px;
+      display: flex; align-items: center; justify-content: space-between;
+      transition: var(--transition);
+    }
+
+    .social-moving-btn:hover {
+      background: var(--gold-glow); border-color: var(--accent-gold);
+      transform: translateX(-6px);
+    }
+
+    [dir="ltr"] .social-moving-btn:hover { transform: translateX(6px); }
+
     .btn-left-info { display: flex; align-items: center; gap: 10px; }
     .btn-left-info i { font-size: 1.2rem; color: var(--accent-gold); }
     .btn-left-info span { font-weight: 800; font-size: 0.88rem; }
-    .btn-right-action { font-size: 0.72rem; font-weight: 800; color: #05070c; background: var(--gold-gradient); padding: 5px 12px; border-radius: 100px; }
-    .geometric-box-footer { font-size: 0.72rem; color: var(--text-muted); text-align: center; border-top: 1px solid var(--border-color); padding-top: 8px; z-index: 2; }
 
-    .faq-container { max-width: 850px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px; }
-    .faq-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-md); overflow: hidden; transition: var(--transition); }
+    .btn-right-action {
+      font-size: 0.72rem; font-weight: 800; color: #05070c; background: var(--gold-gradient);
+      padding: 5px 12px; border-radius: 100px; display: inline-flex; align-items: center; gap: 5px;
+    }
+
+    .geometric-box-footer {
+      font-size: 0.72rem; color: var(--text-muted); text-align: center;
+      border-top: 1px solid var(--border-color); padding-top: 8px; z-index: 2;
+    }
+
+    .faq-container {
+      max-width: 850px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px;
+    }
+
+    .faq-card {
+      background: var(--bg-card); border: 1px solid var(--border-color);
+      border-radius: var(--radius-md); overflow: hidden; transition: var(--transition);
+    }
+
     .faq-card:hover { border-color: var(--border-hover); }
-    .faq-question { padding: 20px 24px; font-weight: 800; font-size: 1.05rem; cursor: pointer; display: flex; justify-content: space-between; align-items: center; color: var(--text-main); background: rgba(255, 255, 255, 0.01); }
-    .faq-question i { color: var(--accent-gold); transition: var(--transition); }
-    .faq-answer { padding: 0 24px 20px; color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; border-top: 1px solid rgba(212, 175, 55, 0.1); display: block; }
 
-    .section-header { text-align: center; max-width: 700px; margin: 0 auto 40px; }
-    .section-header h2 { font-size: 2.3rem; font-weight: 900; margin-bottom: 10px; }
-    .section-header h2 span { background: var(--gold-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .faq-question {
+      padding: 20px 24px; font-weight: 800; font-size: 1.05rem; cursor: pointer;
+      display: flex; justify-content: space-between; align-items: center;
+      color: var(--text-main); background: rgba(255, 255, 255, 0.01);
+    }
+
+    .faq-question i { color: var(--accent-gold); transition: var(--transition); }
+
+    .faq-answer {
+      padding: 0 24px 20px; color: var(--text-muted); font-size: 0.95rem;
+      line-height: 1.7; border-top: 1px solid rgba(212, 175, 55, 0.1); display: block;
+    }
+
+    .faq-answer strong { color: var(--accent-gold-light); }
+
+    .section-header {
+      text-align: center; max-width: 700px; margin: 0 auto 40px;
+    }
+
+    .section-header h2 {
+      font-size: 2.3rem; font-weight: 900; margin-bottom: 10px;
+    }
+
+    .section-header h2 span {
+      background: var(--gold-gradient);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+
     .section-header p { color: var(--text-muted); font-size: 1rem; line-height: 1.5; }
 
-    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-    .service-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 30px; backdrop-filter: blur(10px); transition: var(--transition); display: flex; flex-direction: column; }
-    .service-card:hover { transform: translateY(-6px); border-color: var(--border-hover); box-shadow: var(--shadow-cinematic); }
-    .service-icon { width: 56px; height: 56px; border-radius: var(--radius-md); background: var(--gold-glow); border: 1px solid var(--border-hover); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: var(--accent-gold); margin-bottom: 20px; }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .service-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 30px; backdrop-filter: blur(10px);
+      transition: var(--transition); display: flex; flex-direction: column;
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--border-hover);
+      box-shadow: var(--shadow-cinematic);
+    }
+
+    .service-icon {
+      width: 56px; height: 56px; border-radius: var(--radius-md);
+      background: var(--gold-glow); border: 1px solid var(--border-hover);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem; color: var(--accent-gold); margin-bottom: 20px;
+    }
+
     .service-card h3 { font-size: 1.2rem; font-weight: 800; margin-bottom: 10px; }
     .service-card p { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 20px; flex-grow: 1; line-height: 1.5; }
 
-    .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
-    .product-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); overflow: hidden; display: flex; flex-direction: column; transition: var(--transition); }
-    .product-card:hover { transform: translateY(-6px); border-color: var(--border-hover); box-shadow: var(--shadow-cinematic); }
-    .product-banner { width: 100%; height: 180px; position: relative; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #0f172a, #1e293b); }
-    .product-banner i { font-size: 3rem; color: var(--accent-gold); }
-    .product-badge-tag { position: absolute; top: 12px; right: 12px; background: rgba(5, 7, 12, 0.85); border: 1px solid var(--border-hover); color: var(--accent-gold); padding: 4px 12px; border-radius: 100px; font-size: 0.75rem; font-weight: 700; backdrop-filter: blur(5px); }
-    .product-body { padding: 24px; display: flex; flex-direction: column; flex-grow: 1; }
+    .service-btn {
+      align-self: flex-start; background: #25d366; color: #fff;
+      font-weight: 700; padding: 8px 18px; border-radius: 100px;
+      font-size: 0.85rem; display: inline-flex; align-items: center; gap: 6px;
+      transition: var(--transition);
+    }
+    .service-btn:hover { background: #22bf5b; }
+
+    .filter-buttons {
+      display: flex; justify-content: center; gap: 10px; margin-bottom: 30px; flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      background: var(--bg-card); border: 1px solid var(--border-color);
+      color: var(--text-muted); padding: 8px 20px; border-radius: 100px;
+      font-weight: 700; font-size: 0.88rem; cursor: pointer; transition: var(--transition);
+    }
+
+    .filter-btn.active, .filter-btn:hover {
+      background: var(--gold-gradient); color: #05070c; border-color: transparent;
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+    }
+
+    .product-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      overflow: hidden; display: flex; flex-direction: column;
+      transition: var(--transition);
+    }
+
+    .product-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--border-hover);
+      box-shadow: var(--shadow-cinematic);
+    }
+
+    .product-banner {
+      width: 100%; height: 180px; position: relative;
+      display: flex; align-items: center; justify-content: center;
+      background: linear-gradient(135deg, #0f172a, #1e293b);
+    }
+
+    .product-banner i {
+      font-size: 3rem; color: var(--accent-gold);
+      filter: drop-shadow(0 4px 10px rgba(0,0,0,0.3));
+    }
+
+    .product-badge-tag {
+      position: absolute; top: 12px; right: 12px;
+      background: rgba(5, 7, 12, 0.85); border: 1px solid var(--border-hover);
+      color: var(--accent-gold); padding: 4px 12px; border-radius: 100px;
+      font-size: 0.75rem; font-weight: 700; backdrop-filter: blur(5px);
+    }
+
+    [dir="ltr"] .product-badge-tag { right: auto; left: 12px; }
+
+    .product-body {
+      padding: 24px; display: flex; flex-direction: column; flex-grow: 1;
+    }
+
     .product-title { font-size: 1.15rem; font-weight: 800; margin-bottom: 8px; }
     .product-desc { color: var(--text-muted); font-size: 0.88rem; margin-bottom: 20px; flex-grow: 1; line-height: 1.5; }
-    .product-footer { display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--border-color); padding-top: 16px; gap: 8px; flex-wrap: wrap; }
+
+    .product-footer {
+      display: flex; align-items: center; justify-content: space-between;
+      border-top: 1px solid var(--border-color); padding-top: 16px;
+      gap: 8px; flex-wrap: wrap;
+    }
+
     .product-price { font-size: 1.25rem; font-weight: 900; color: var(--accent-gold); width: 100%; margin-bottom: 4px; }
-    .product-actions-group { display: flex; gap: 8px; width: 100%; align-items: center; justify-content: space-between; }
-    .btn-product-link { background: var(--gold-glow); border: 1px solid var(--border-hover); color: var(--text-main); padding: 8px 14px; border-radius: 100px; font-weight: 700; font-size: 0.8rem; transition: var(--transition); display: inline-flex; align-items: center; gap: 5px; flex: 1; justify-content: center; text-align: center; }
-    .btn-product-link:hover { background: var(--gold-gradient); color: #05070c; border-color: transparent; }
-    .btn-product-wa { background: rgba(37, 211, 102, 0.15); border: 1px solid rgba(37, 211, 102, 0.4); color: #25d366; padding: 8px 14px; border-radius: 100px; font-weight: 700; font-size: 0.8rem; transition: var(--transition); display: inline-flex; align-items: center; gap: 5px; justify-content: center; text-align: center; }
-    .btn-product-wa:hover { background: #25d366; color: #fff; }
 
-    .offers-clean-container { max-width: 850px; margin: 0 auto; background: linear-gradient(145deg, rgba(15, 21, 35, 0.95), rgba(5, 7, 12, 0.98)); border: 1.5px solid var(--accent-gold); border-radius: var(--radius-lg); padding: 40px 25px; text-align: center; box-shadow: 0 20px 50px rgba(0,0,0,0.8), 0 0 30px rgba(212, 175, 55, 0.15); position: relative; overflow: hidden; }
-    .offer-title-main { font-size: 2.2rem; font-weight: 900; margin-bottom: 12px; line-height: 1.3; }
-    .offer-title-main span { background: var(--gold-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-    .coupon-compact-box { background: rgba(0, 0, 0, 0.5); border: 2px dashed var(--accent-gold); border-radius: 16px; padding: 16px 24px; display: inline-flex; align-items: center; gap: 16px; margin-bottom: 30px; }
+    .product-actions-group {
+      display: flex; gap: 8px; width: 100%; align-items: center; justify-content: space-between;
+    }
 
-    .contact-box { background: var(--bg-card); border: 1px solid var(--border-hover); border-radius: var(--radius-lg); padding: 45px; text-align: center; max-width: 750px; margin: 0 auto; box-shadow: var(--shadow-cinematic); }
+    .btn-product-link {
+      background: var(--gold-glow); border: 1px solid var(--border-hover);
+      color: var(--text-main); padding: 8px 14px; border-radius: 100px;
+      font-weight: 700; font-size: 0.8rem; transition: var(--transition);
+      display: inline-flex; align-items: center; gap: 5px; flex: 1; justify-content: center; text-align: center;
+    }
 
-    footer { border-top: 1px solid var(--border-color); padding: 30px 0; margin-top: 40px; text-align: center; }
-    .footer-brand { font-size: 1.35rem; font-weight: 900; background: var(--gold-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 8px; }
-    .footer-rights { color: var(--text-muted); font-size: 0.82rem; margin-bottom: 16px; line-height: 1.5; }
+    .btn-product-link:hover {
+      background: var(--gold-gradient); color: #05070c; border-color: transparent;
+    }
 
-    /* ==================== TRANSPARENT AI FLOATING BUTTON (UPDATED) ==================== */
+    .btn-product-wa {
+      background: rgba(37, 211, 102, 0.15); border: 1px solid rgba(37, 211, 102, 0.4);
+      color: #25d366; padding: 8px 14px; border-radius: 100px;
+      font-weight: 700; font-size: 0.8rem; transition: var(--transition);
+      display: inline-flex; align-items: center; gap: 5px; justify-content: center; text-align: center;
+    }
+
+    .btn-product-wa:hover {
+      background: #25d366; color: #fff;
+    }
+
+    /* Offers Section Styles */
+    .offers-clean-container {
+      max-width: 850px;
+      margin: 0 auto;
+      background: linear-gradient(145deg, rgba(15, 21, 35, 0.95), rgba(5, 7, 12, 0.98));
+      border: 1.5px solid var(--accent-gold);
+      border-radius: var(--radius-lg);
+      padding: 40px 25px;
+      text-align: center;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.8), 0 0 30px rgba(212, 175, 55, 0.15);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .offers-clean-container::before {
+      content: '';
+      position: absolute;
+      top: -80px;
+      right: -80px;
+      width: 200px;
+      height: 200px;
+      background: var(--gold-glow);
+      border-radius: 50%;
+      filter: blur(60px);
+      pointer-events: none;
+    }
+
+    .offer-header-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--gold-gradient);
+      color: #05070c;
+      font-weight: 900;
+      padding: 6px 20px;
+      border-radius: 100px;
+      font-size: 0.85rem;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+    }
+
+    .offer-title-main {
+      font-size: 2.2rem;
+      font-weight: 900;
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
+
+    .offer-title-main span {
+      background: var(--gold-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .offer-simple-desc {
+      color: var(--text-muted);
+      font-size: 1rem;
+      max-width: 650px;
+      margin: 0 auto 28px;
+      line-height: 1.6;
+    }
+
+    .timer-week-box {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+
+    .time-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border-color);
+      padding: 10px 16px;
+      border-radius: var(--radius-md);
+      min-width: 75px;
+    }
+
+    .time-card .num {
+      font-size: 1.6rem;
+      font-weight: 900;
+      color: var(--accent-gold-light);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      line-height: 1;
+    }
+
+    .time-card .txt {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      font-weight: 700;
+      margin-top: 4px;
+    }
+
+    .coupon-compact-box {
+      background: rgba(0, 0, 0, 0.5);
+      border: 2px dashed var(--accent-gold);
+      border-radius: 16px;
+      padding: 16px 24px;
+      display: inline-flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 30px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+    }
+
+    .coupon-val {
+      font-size: 1.5rem;
+      font-weight: 900;
+      color: var(--accent-gold-light);
+      letter-spacing: 2px;
+      font-family: 'Plus Jakarta Sans', monospace;
+    }
+
+    .btn-copy-simple {
+      background: var(--gold-gradient);
+      color: #05070c;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 100px;
+      font-weight: 800;
+      font-size: 0.82rem;
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .btn-copy-simple:hover {
+      opacity: 0.9;
+      transform: translateY(-2px);
+    }
+
+    .cta-action-area {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .contact-box {
+      background: var(--bg-card); border: 1px solid var(--border-hover);
+      border-radius: var(--radius-lg); padding: 45px; text-align: center;
+      max-width: 750px; margin: 0 auto; box-shadow: var(--shadow-cinematic);
+    }
+
+    .contact-box i.main-icon { font-size: 3.2rem; color: #25d366; margin-bottom: 16px; }
+    .contact-box h3 { font-size: 2rem; font-weight: 900; margin-bottom: 10px; }
+    .contact-box p { color: var(--text-muted); font-size: 1rem; margin-bottom: 25px; line-height: 1.6; }
+
+    footer {
+      border-top: 1px solid var(--border-color);
+      padding: 30px 0; margin-top: 40px; text-align: center;
+    }
+
+    .footer-brand {
+      font-size: 1.35rem; font-weight: 900;
+      background: var(--gold-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      margin-bottom: 8px;
+    }
+
+    .footer-rights { color: var(--text-muted); font-size: 0.82rem; margin-bottom: 16px; max-width: 800px; margin-left: auto; margin-right: auto; line-height: 1.5; }
+    .footer-thanks {
+      background: var(--bg-card); border: 1px solid var(--border-color);
+      border-radius: var(--radius-md); padding: 16px; margin: 0 auto 20px; max-width: 650px;
+      font-size: 0.9rem; color: var(--accent-gold-light);
+    }
+
+    .social-buttons { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+    .social-btn {
+      display: inline-flex; align-items: center; gap: 8px; padding: 8px 22px;
+      border-radius: 100px; border: 1px solid var(--border-color); background: var(--bg-card);
+      font-weight: 700; font-size: 0.85rem; transition: var(--transition);
+    }
+    .social-btn:hover { border-color: var(--accent-gold); background: var(--gold-glow); }
+
+    /* ==================== TRANSPARENT AI FLOATING ASSISTANT BUTTON ==================== */
     .ai-launcher-btn {
       position: fixed; 
       bottom: 25px; 
@@ -215,19 +773,36 @@
       justify-content: center; 
       font-size: 1.4rem; 
       z-index: 9999; 
-      opacity: 0.65; /* الأيقونة شفافة كي لا تعيق تصميم الصفحة */
+      opacity: 0.65;
       backdrop-filter: blur(8px);
       -webkit-backdrop-filter: blur(8px);
       transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
     .ai-launcher-btn:hover { 
-      opacity: 1; /* إبراز كامل للأيقونة فور تمرير الماوس أو اللمس */
+      opacity: 1;
       transform: scale(1.1); 
       box-shadow: 0 8px 25px rgba(212, 175, 55, 0.6);
       border-color: rgba(255, 255, 255, 0.9);
     }
-    
-    .chat-container { position: fixed; bottom: 90px; right: 25px; width: 370px; max-width: calc(100vw - 30px); height: 530px; max-height: calc(100vh - 120px); background: var(--bg-card); border: 1px solid var(--border-hover); border-radius: var(--radius-lg); box-shadow: var(--shadow-cinematic); display: flex; flex-direction: column; z-index: 9999; overflow: hidden; transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); }
+
+    .chat-container { 
+      position: fixed; 
+      bottom: 90px; 
+      right: 25px; 
+      width: 370px; 
+      max-width: calc(100vw - 30px); 
+      height: 530px; 
+      max-height: calc(100vh - 120px); 
+      background: var(--bg-card); 
+      border: 1px solid var(--border-hover); 
+      border-radius: var(--radius-lg); 
+      box-shadow: var(--shadow-cinematic); 
+      display: flex; 
+      flex-direction: column; 
+      z-index: 9999; 
+      overflow: hidden; 
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); 
+    }
     .chat-container.hidden { opacity: 0; pointer-events: none; transform: translateY(20px) scale(0.95); }
     .chat-header { background: var(--bg-surface); color: var(--text-main); padding: 14px 16px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-color); }
     .chat-messages { flex: 1; padding: 14px; overflow-y: auto; background: var(--bg-main); display: flex; flex-direction: column; gap: 12px; }
@@ -246,15 +821,65 @@
     .input-wrapper button { background: var(--accent-gold); color: #05070c; border: none; width: 36px; height: 36px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; }
     [dir="ltr"] .chat-container, [dir="ltr"] .ai-launcher-btn { right: auto; left: 25px; }
 
+    .mobile-bottom-nav { display: none; }
+
+    @media (min-width: 1400px) {
+      .app-viewport { max-width: 1400px; }
+      .hero-content h2 { font-size: 3.2rem; }
+      .hero-visual { height: 480px; }
+    }
+
+    @media (max-width: 1024px) {
+      .hero-grid { grid-template-columns: 1fr; gap: 30px; text-align: center; }
+      .hero-buttons { justify-content: center; }
+      .hero-visual { height: 400px; max-width: 550px; margin: 0 auto; }
+      .products-grid { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+    }
+
     @media (max-width: 768px) {
       header { width: 92%; padding: 10px 14px; top: 10px; }
       .nav-links { display: none; }
-      .hero-grid { grid-template-columns: 1fr; text-align: center; }
-      .hero-buttons { justify-content: center; }
+      .brand-text h1 { font-size: 0.9rem; }
+      .hero-content h2 { font-size: 2rem; }
+      .hero-content p { font-size: 0.95rem; }
+      
       .hero-visual { height: 380px; }
-      .app-viewport { margin-top: 85px; margin-bottom: 85px; padding: 0 15px; }
-      .ai-launcher-btn { bottom: 20px; right: 20px; width: 48px; height: 48px; font-size: 1.2rem; }
-      .chat-container { bottom: 80px; right: 15px; }
+      .contact-box { padding: 25px 15px; }
+
+      .mobile-bottom-nav {
+        position: fixed; bottom: 0; left: 0; width: 100%;
+        background: var(--bg-glass); backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border-top: 1px solid var(--border-color);
+        display: flex; justify-around; padding: 10px 5px;
+        z-index: 998; box-shadow: 0 -10px 25px rgba(0,0,0,0.5);
+      }
+      .mobile-nav-btn {
+        background: transparent; border: none; color: var(--text-muted);
+        display: flex; flex-direction: column; align-items: center; gap: 4px;
+        font-size: 0.65rem; font-weight: 700; cursor: pointer;
+      }
+      .mobile-nav-btn i { font-size: 1.1rem; }
+      .mobile-nav-btn.active { color: var(--accent-gold); }
+
+      .app-viewport { margin-top: 85px; margin-bottom: 80px; padding: 0 15px; }
+      .ai-launcher-btn { bottom: 80px; right: 15px; width: 48px; height: 48px; font-size: 1.2rem; }
+      .chat-container { bottom: 135px; right: 15px; }
+      [dir="ltr"] .ai-launcher-btn { right: auto; left: 15px; }
+    }
+
+    @media (max-width: 600px) {
+      .offer-title-main { font-size: 1.6rem; }
+      .coupon-compact-box { flex-direction: column; gap: 10px; width: 100%; }
+      .timer-week-box { gap: 6px; }
+      .time-card { min-width: 60px; padding: 8px; }
+      .time-card .num { font-size: 1.2rem; }
+    }
+
+    @media (max-width: 400px) {
+      .hero-content h2 { font-size: 1.7rem; }
+      .btn-gold, .btn-whatsapp-main { width: 100%; justify-content: center; padding: 12px 20px; }
+      .products-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -263,23 +888,23 @@
   <div class="cinematic-bg"></div>
   <div class="grid-overlay"></div>
 
-  <!-- HEADER NAV -->
+  <!-- Header -->
   <header>
     <div class="brand-container">
       <div class="brand-logo-box">A</div>
       <div class="brand-text">
         <h1>Ahmed Abu Omar</h1>
-        <span>Premium Digital Studio</span>
+        <span data-i18n="brand_subtitle">Premium Digital Studio</span>
       </div>
     </div>
 
     <ul class="nav-links">
-      <li><button class="nav-link-btn active" onclick="switchTab('tab-hero')"><i class="fa-solid fa-house"></i> <span>الرئيسية</span></button></li>
-      <li><button class="nav-link-btn" onclick="switchTab('tab-about')"><i class="fa-solid fa-code"></i> <span>خدماتنا</span></button></li>
-      <li><button class="nav-link-btn" onclick="switchTab('tab-products')"><i class="fa-solid fa-layer-group"></i> <span>المنتجات الرقمية</span></button></li>
-      <li><button class="nav-link-btn" onclick="switchTab('tab-offers')"><i class="fa-solid fa-tag"></i> <span>العروض والخصومات</span></button></li>
-      <li><button class="nav-link-btn" onclick="switchTab('tab-faq')"><i class="fa-solid fa-circle-question"></i> <span>أسئلة وشروحات</span></button></li>
-      <li><button class="nav-link-btn" onclick="switchTab('tab-contact')"><i class="fa-solid fa-envelope"></i> <span>التواصل</span></button></li>
+      <li><button class="nav-link-btn active" data-tab="tab-hero"><i class="fa-solid fa-house"></i> <span data-i18n="nav_home">الرئيسية</span></button></li>
+      <li><button class="nav-link-btn" data-tab="tab-about"><i class="fa-solid fa-code"></i> <span data-i18n="nav_services">خدماتنا</span></button></li>
+      <li><button class="nav-link-btn" data-tab="tab-products"><i class="fa-solid fa-layer-group"></i> <span data-i18n="nav_templates">المنتجات الرقمية</span></button></li>
+      <li><button class="nav-link-btn" data-tab="tab-offers"><i class="fa-solid fa-tag"></i> <span data-i18n="nav_offers">العروض والخصومات</span></button></li>
+      <li><button class="nav-link-btn" data-tab="tab-faq"><i class="fa-solid fa-circle-question"></i> <span data-i18n="nav_faq">أسئلة وشروحات</span></button></li>
+      <li><button class="nav-link-btn" data-tab="tab-contact"><i class="fa-solid fa-envelope"></i> <span data-i18n="nav_contact">التواصل</span></button></li>
     </ul>
 
     <div class="nav-controls">
@@ -290,131 +915,471 @@
     </div>
   </header>
 
+  <!-- Main Viewport -->
   <main class="app-viewport">
-    
-    <!-- 1. HERO SECTION -->
+
+    <!-- Tab 1: Hero (الرئيسية) -->
     <section class="tab-section active-tab" id="tab-hero">
       <div class="hero-grid">
         <div class="hero-content">
-          <div class="badge"><i class="fa-solid fa-crown"></i> <span>استوديو التصميم الرقمي الاحترافي</span></div>
-          <h2>نبتكر ونبني <span>منتجات رقمية استثنائية</span></h2>
-          <p>وجهتك الأولى لاقتناء أقوى المنتجات الرقمية، أدوات الويب المصغرة (Micro-SaaS)، قوالب المواقع، والسير الذاتية المصممة خصيصاً لتعزيز نجاحك بأعلى معايير البريميوم.</p>
+          <div class="badge">
+            <i class="fa-solid fa-crown"></i>
+            <span data-i18n="hero_badge">استوديو التصميم الرقمي الاحترافي</span>
+          </div>
+          <h2 data-i18n="hero_title">نبتكر ونبني <span>منتجات رقمية استثنائية</span></h2>
+          <p data-i18n="hero_desc">وجهتك الأولى لاقتناء أقوى المنتجات الرقمية، أدوات الويب المصغرة (Micro-SaaS)، قوالب المواقع، والسير الذاتية المصممة خصيصاً لتعزيز نجاحك بأعلى معايير البريميوم.</p>
+
           <div class="hero-buttons">
-            <button class="btn-gold" onclick="switchTab('tab-products')"><span>استكشف متجر المنتجات الرقمية</span> <i class="fa-solid fa-arrow-left"></i></button>
-            <a href="https://wa.me/201206443652?text=مرحباً، أرغب في الاستفسار عن المنتجات الرقمية" target="_blank" class="btn-whatsapp-main"><i class="fa-brands fa-whatsapp"></i> <span>تواصل عبر الواتساب</span></a>
+            <button class="btn-gold" onclick="switchTab('tab-products')">
+              <span data-i18n="btn_explore">استكشف متجر المنتجات الرقمية</span>
+              <i class="fa-solid fa-arrow-left icon-dir"></i>
+            </button>
+            <a href="https://wa.me/201206443652?text=مرحباً، أرغب في الاستفسار عن المنتجات الرقمية والخدمات" target="_blank" class="btn-whatsapp-main">
+              <i class="fa-brands fa-whatsapp" style="font-size: 1.2rem;"></i>
+              <span data-i18n="btn_whatsapp">تواصل عبر الواتساب</span>
+            </a>
           </div>
         </div>
+
         <div class="hero-visual">
           <div class="geometric-box">
+            <div class="geometric-bg-shapes"></div>
+
             <div class="brand-box-header">
-              <div class="brand-title-badge"><i class="fa-solid fa-gem"></i> Ahmed Abu Omar Brand</div>
+              <div class="brand-title-badge">
+                <i class="fa-solid fa-gem"></i> Ahmed Abu Omar Brand
+              </div>
               <span style="font-size: 0.68rem; background: var(--gold-gradient); color: #05070c; font-weight: 900; padding: 3px 10px; border-radius: 100px;">PRO STUDIO</span>
             </div>
+
             <div class="welcome-text-box">
-              <div class="welcome-main-msg">أهلاً بك في عالمنا الإبداعي! 🔥</div>
-              <div class="sub-callout"><i class="fa-solid fa-fire"></i> <span>تابعنا يصلك كل جديد</span></div>
-            </div>
-            <div class="slider-viewport">
-              <div class="slider-track">
-                <a href="https://www.instagram.com/ahmedabuomar.design/" target="_blank" class="social-moving-btn"><div class="btn-left-info"><i class="fa-brands fa-instagram"></i><span>Instagram</span></div><span class="btn-right-action">متابعة</span></a>
-                <a href="https://www.facebook.com/AhmedAbuOmarOfficial" target="_blank" class="social-moving-btn"><div class="btn-left-info"><i class="fa-brands fa-facebook-f"></i><span>Facebook</span></div><span class="btn-right-action">متابعة</span></a>
+              <div class="welcome-main-msg" data-i18n="box_welcome">أهلاً بك في عالمنا الإبداعي! 🔥</div>
+              <div class="sub-callout">
+                <i class="fa-solid fa-fire"></i> <span data-i18n="box_subcall">تابعنا يصلك كل جديد</span>
               </div>
             </div>
-            <div class="geometric-box-footer">انضم إلى قناتنا للاستفادة من أحدث الشروحات والعروض</div>
+
+            <div class="slider-viewport">
+              <div class="slider-track">
+                <a href="https://www.instagram.com/ahmedabuomar.design/" target="_blank" class="social-moving-btn">
+                  <div class="btn-left-info">
+                    <i class="fa-brands fa-instagram"></i>
+                    <span>Instagram Official</span>
+                  </div>
+                  <span class="btn-right-action"><span data-i18n="btn_follow">متابعة</span> <i class="fa-solid fa-arrow-left icon-dir"></i></span>
+                </a>
+
+                <a href="https://www.facebook.com/AhmedAbuOmarOfficial" target="_blank" class="social-moving-btn">
+                  <div class="btn-left-info">
+                    <i class="fa-brands fa-facebook-f"></i>
+                    <span>Facebook Page</span>
+                  </div>
+                  <span class="btn-right-action"><span data-i18n="btn_follow">متابعة</span> <i class="fa-solid fa-arrow-left icon-dir"></i></span>
+                </a>
+
+                <a href="https://x.com/ahmed_mido38622" target="_blank" class="social-moving-btn">
+                  <div class="btn-left-info">
+                    <i class="fa-brands fa-x-twitter"></i>
+                    <span>X (Twitter) Channel</span>
+                  </div>
+                  <span class="btn-right-action"><span data-i18n="btn_follow">متابعة</span> <i class="fa-solid fa-arrow-left icon-dir"></i></span>
+                </a>
+              </div>
+            </div>
+
+            <div class="geometric-box-footer" data-i18n="box_footer">
+              انضم إلى قناتنا للاستفادة من أحدث الشروحات والعروض
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 2. SERVICES SECTION -->
+    <!-- Tab 2: Services (خدماتنا المطورة) -->
     <section class="tab-section" id="tab-about">
       <div class="section-header">
-        <h2>خدماتنا <span>الاحترافية</span></h2>
-        <p>نقدم حلولاً برمجة وتصميمية متطورة لتنمية أعمالك وتسهيل طلباتك بأسرع وقت.</p>
+        <h2 data-i18n="services_header">خدماتنا <span>الرقمية المتكاملة</span></h2>
+        <p data-i18n="services_sub">نحن نبتكر ونبني منتجات رقمية مستقلة، أدوات ذكية (Micro-SaaS)، وتصميمات مخصصة تلبي احتياجات السوق الاحترافي بأعلى المعايير.</p>
       </div>
+
       <div class="services-grid">
-        <div class="service-card">
-          <div class="service-icon"><i class="fa-solid fa-file-user"></i></div>
-          <h3>تصميم السيرة الذاتية (ATS)</h3>
-          <p>نماذج وتصاميم بريميوم متوافقة مع أنظمة الفرز الآلي (ATS) باللغتين العربية والإنجليزية لضمان قبولك بالوظائف.</p>
+        <!-- 1. خدمة السيرة الذاتية المخصصة (ATS) -->
+        <div class="service-card" style="border: 2px solid var(--accent-gold);">
+          <div class="service-icon"><i class="fa-solid fa-file-shield"></i></div>
+          <h3 data-i18n="srv_cv_title">خدمة السيرة الذاتية المخصصة (ATS)</h3>
+          <p data-i18n="srv_cv_desc">تصميم وتعديل سيرة ذاتية احترافية باللغتين العربية والإنجليزية، متوافقة تماماً مع أنظمة الفرز الآلي (ATS) لزيادة فرص قبولك في كبرى الشركات العالمية والمحلية.</p>
+          <a href="https://wa.me/201206443652?text=مرحباً، أرغب في طلب خدمة تصميم وتعديل سيرة ذاتية مخصصة (ATS)" target="_blank" class="service-btn">
+            <i class="fa-brands fa-whatsapp"></i> <span data-i18n="btn_contact_wa">تواصل عبر الواتساب</span>
+          </a>
         </div>
+
+        <!-- 2. تطوير المنتجات الرقمية & Micro-SaaS -->
         <div class="service-card">
-          <div class="service-icon"><i class="fa-solid fa-laptop-code"></i></div>
-          <h3>تطوير أدوات Micro-SaaS</h3>
-          <p>أدوات ويب تفاعلية خفيفة توفر حلولاً فورية وبسرعة عالية للعملاء والشركات الناشئة.</p>
+          <div class="service-icon"><i class="fa-solid fa-rocket"></i></div>
+          <h3 data-i18n="srv_new_title">تطوير المنتجات الرقمية & Micro-SaaS</h3>
+          <p data-i18n="srv_new_desc">بناء وتطوير أدوات ويب مصغرة ومنتجات رقمية مستقلة عالية الجودة ومخصصة لتوليد دخل إضافي وحل مشاكل حقيقية بدون اشتراكات شهرية معقدة.</p>
+          <a href="https://wa.me/201206443652?text=مرحباً، أرغب في الاستفسار عن تطوير منتج Micro-SaaS خاص" target="_blank" class="service-btn">
+            <i class="fa-brands fa-whatsapp"></i> <span data-i18n="btn_contact_wa">تواصل عبر الواتساب</span>
+          </a>
         </div>
+
+        <!-- 3. تصميم وتطوير المواقع وتطبيقات PWA -->
         <div class="service-card">
-          <div class="service-icon"><i class="fa-solid fa-compass-drafting"></i></div>
-          <h3>تصميم وتطوير قوالب الويب</h3>
-          <p>قوالب sites حديثة ومستجيبة بالكامل لكافة القطاعات التجارية والمتاجر الإلكترونية.</p>
+          <div class="service-icon"><i class="fa-solid fa-code"></i></div>
+          <h3 data-i18n="srv1_title">تصميم وتطوير المواقع وتطبيقات PWA</h3>
+          <p data-i18n="srv1_desc">بناء وتطوير مواقع إلكترونية متكاملة وتطبيقات ويب حديثة (Progressive Web Apps) لشركتك أو نشاطك من الصفر بأعلى معايير السرعة، الأمان، والتصميم العصري.</p>
+          <a href="https://wa.me/201206443652?text=مرحباً، أرغب في استشارة حول تصميم موقع إلكتروني أو تطبيق PWA" target="_blank" class="service-btn">
+            <i class="fa-brands fa-whatsapp"></i> <span data-i18n="btn_contact_wa">تواصل عبر الواتساب</span>
+          </a>
         </div>
       </div>
     </section>
 
-    <!-- 3. PRODUCTS STORE -->
+    <!-- Tab 3: Products (معرض المنتجات الرقمية والقوالب) -->
     <section class="tab-section" id="tab-products">
-      <div class="section-header"><h2>متجر <span>المنتجات الرقمية</span></h2></div>
+      <div class="section-header">
+        <h2 data-i18n="products_header">متجر <span>المنتجات الرقمية</span></h2>
+        <p data-i18n="products_sub">اختر من بين أدوات الويب الذكية، قوالب المواقع الاحترافية، وحزم السيرة الذاتية المميزة بأسعار تنافسية وخيارات دفع متعددة</p>
+      </div>
+
+      <!-- قائمة الفلترة -->
+      <div class="filter-buttons">
+        <button class="filter-btn active" data-filter="all" data-i18n="filter_all">جميع المنتجات</button>
+        <button class="filter-btn" data-filter="free" data-i18n="filter_free">🎁 منتجات مجانية</button>
+        <button class="filter-btn" data-filter="saas" data-i18n="filter_saas">أدوات Micro-SaaS</button>
+        <button class="filter-btn" data-filter="web" data-i18n="filter_web">قوالب المواقع</button>
+        <button class="filter-btn" data-filter="cv" data-i18n="filter_cv">قوالب وحزم السيرة الذاتية</button>
+      </div>
+
       <div class="products-grid">
-        <div class="product-card">
-          <div class="product-banner" style="background: linear-gradient(135deg, #059669, #10b981);"><i class="fa-solid fa-robot"></i><span class="product-badge-tag">جديد | Micro-SaaS</span></div>
+        
+        <!-- المنتج المجاني: منصة الطالب Student Hub Pro -->
+        <div class="product-card" data-category="free">
+          <div class="product-banner" style="background: linear-gradient(135deg, #059669, #10b981);">
+            <i class="fa-solid fa-graduation-cap"></i>
+            <span class="product-badge-tag">🎁 منتج مجاني</span>
+          </div>
           <div class="product-body">
-            <h3 class="product-title">Gemini AI Chat Assistant Widget</h3>
-            <p class="product-desc">ودجة مساعد ذكي متكامل للمواقع لتوفير خدمة عملاء وتقديم إجابات تلقائية بذكاء اصطناعي بدون تعقيد.</p>
+            <h3 class="product-title" data-i18n="student_hub_title">Student Hub Pro – منصة الطالب الشاملة</h3>
+            <p class="product-desc" data-i18n="student_hub_desc">تطبيق ويب متكامل مصمم خصيصاً للطلاب (KG، إعدادي، ثانوي، وجامعي) يتضمن مؤقت Pomodoro، حاسبة المعدل التجمعي GPA، ودفتر ملاحظات أونلاين مجاناً.</p>
+            <div class="product-footer">
+              <span class="product-price" style="color: #10b981;">مجاناً / Free</span>
+              <div class="product-actions-group">
+                <a href="https://nadyahmed211-web.github.io/student-hub-pro/" target="_blank" class="btn-product-link">
+                  <span data-i18n="btn_open_free">دخول المنصة مجاناً</span> <i class="fa-solid fa-arrow-left icon-dir"></i>
+                </a>
+                <a href="https://wa.me/201206443652?text=مرحباً، أرغب بالاستفسار عن منصة Student Hub Pro المجانية" target="_blank" class="btn-product-wa">
+                  <i class="fa-brands fa-whatsapp"></i> واتساب
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 1. SaaS Pricing & ROI Calculator Pro -->
+        <div class="product-card" data-category="saas" style="border: 2px solid var(--accent-gold);">
+          <div class="product-banner" style="background: linear-gradient(135deg, #10b981, #047857);">
+            <i class="fa-solid fa-calculator"></i>
+            <span class="product-badge-tag">جديد | Micro-SaaS Pro</span>
+          </div>
+          <div class="product-body">
+            <h3 class="product-title">SaaS Pricing & ROI Calculator Pro</h3>
+            <p class="product-desc">أداة مالية احترافية متقدمة لحساب العائد على الاستثمار (ROI) وتسعير خدمات الـ SaaS والمقاييس المالية بدقة لتعظيم أرباح مشروعك الرقمي.</p>
             <div class="product-footer">
               <span class="product-price">$9.00</span>
               <div class="product-actions-group">
-                <a href="https://payhip.com/b/MJFx5" target="_blank" class="btn-product-link">شراء من المتجر</a>
-                <a href="https://wa.me/201206443652" target="_blank" class="btn-product-wa"><i class="fa-brands fa-whatsapp"></i> واتساب</a>
+                <a href="https://payhip.com/b/MJFx5" target="_blank" class="btn-product-link">
+                  <span data-i18n="btn_open_product">شراء من المتجر</span> <i class="fa-solid fa-arrow-left icon-dir"></i>
+                </a>
+                <a href="https://wa.me/201206443652?text=مرحباً، أرغب بشراء منتج (SaaS Pricing & ROI Calculator Pro) عبر وسائل الدفع المحلي" target="_blank" class="btn-product-wa">
+                  <i class="fa-brands fa-whatsapp"></i> واتساب
+                </a>
               </div>
             </div>
+          </div>
+        </div>
+
+        <!-- 2. Image Compressor Pro -->
+        <div class="product-card" data-category="saas">
+          <div class="product-banner" style="background: linear-gradient(135deg, #2563eb, #0284c7);">
+            <i class="fa-solid fa-file-image"></i>
+            <span class="product-badge-tag">Micro-SaaS Pro</span>
+          </div>
+          <div class="product-body">
+            <h3 class="product-title" data-i18n="img_compressor_title">Image Compressor Pro</h3>
+            <p class="product-desc" data-i18n="img_compressor_desc">أداة ويب احترافية لضغط وتصغير حجم الصور (PNG / JPG / WebP) بتقنيات عصرية وسريعة لرفع سرعة موقعك وتحسين SEO بدون فقدان الجودة.</p>
+            <div class="product-footer">
+              <span class="product-price">$6.00</span>
+              <div class="product-actions-group">
+                <a href="https://payhip.com/b/MWBli" target="_blank" class="btn-product-link">
+                  <span data-i18n="btn_open_product">شراء من المتجر</span> <i class="fa-solid fa-arrow-left icon-dir"></i>
+                </a>
+                <a href="https://wa.me/201206443652?text=مرحباً، أرغب بشراء منتج (Image Compressor Pro) عبر وسائل الدفع المحلي" target="_blank" class="btn-product-wa">
+                  <i class="fa-brands fa-whatsapp"></i> واتساب
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. SEO Meta & Schema Generator Pro -->
+        <div class="product-card" data-category="saas">
+          <div class="product-banner" style="background: linear-gradient(135deg, #0284c7, #0369a1);">
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
+            <span class="product-badge-tag">Micro-SaaS</span>
+          </div>
+          <div class="product-body">
+            <h3 class="product-title">SEO Meta & Schema Generator Pro</h3>
+            <p class="product-desc">أداة احترافية خفيفة لتوليد أوسمة الـ SEO، وMeta Tags، وأكواد JSON-LD Schema المعيّرة باللغتين العربية والإنجليزية لرفع ترتيب موقعك وتصدر نتائج البحث.</p>
+            <div class="product-footer">
+              <span class="product-price">$7.00</span>
+              <div class="product-actions-group">
+                <a href="https://payhip.com/b/1tfs7" target="_blank" class="btn-product-link">
+                  <span data-i18n="btn_open_product">شراء من المتجر</span> <i class="fa-solid fa-arrow-left icon-dir"></i>
+                </a>
+                <a href="https://wa.me/201206443652?text=مرحباً، أرغب بشراء منتج (SEO Meta & Schema Generator Pro) عبر وسائل الدفع المحلي" target="_blank" class="btn-product-wa">
+                  <i class="fa-brands fa-whatsapp"></i> واتساب
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. AI Social Post Generator Pro -->
+        <div class="product-card" data-category="saas">
+          <div class="product-banner" style="background: linear-gradient(135deg, #059669, #0f172a);">
+            <i class="fa-solid fa-share-nodes"></i>
+            <span class="product-badge-tag">أداة Micro-SaaS</span>
+          </div>
+          <div class="product-body">
+            <h3 class="product-title">AI Social Post Generator Pro 🚀</h3>
+            <p class="product-desc">أداة ويب ذكية مصغرة لتوليد منشورات احترافية لـ LinkedIn و X و Facebook مع الهاشتاجات الذكية بضغطة زر.</p>
+            <div class="product-footer">
+              <span class="product-price">$9.00</span>
+              <div class="product-actions-group">
+                <a href="https://payhip.com/b/cS1eq" target="_blank" class="btn-product-link">
+                  <span data-i18n="btn_open_product">شراء من المتجر</span> <i class="fa-solid fa-arrow-left icon-dir"></i>
+                </a>
+                <a href="https://wa.me/201206443652?text=مرحباً، أرغب بشراء منتج (AI Social Post Generator Pro) عبر وسائل الدفع المحلي" target="_blank" class="btn-product-wa">
+                  <i class="fa-brands fa-whatsapp"></i> واتساب
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. قالب NOVA العقاري -->
+        <div class="product-card" data-category="web">
+          <div class="product-banner"><i class="fa-solid fa-building"></i><span class="product-badge-tag">عقارات</span></div>
+          <div class="product-body">
+            <h3 class="product-title">NOVA – Premium Real Estate Template</h3>
+            <p class="product-desc">اكتشف منازل استثنائية ومصايف فاخرة وفرصاً استثمارية بأرقى واجهة عقارية.</p>
+            <div class="product-footer">
+              <span class="product-price">$8.00</span>
+              <div class="product-actions-group">
+                <a href="https://payhip.com/b/7N0IC" target="_blank" class="btn-product-link"><span data-i18n="btn_open_product">شراء من المتجر</span> <i class="fa-solid fa-arrow-left icon-dir"></i></a>
+                <a href="https://wa.me/201206443652?text=مرحباً، أرغب بشراء قالب (NOVA Real Estate) عبر وسائل الدفع المحلي" target="_blank" class="btn-product-wa"><i class="fa-brands fa-whatsapp"></i> واتساب</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. قالب الأعمال الفاخر -->
+        <div class="product-card" data-category="web">
+          <div class="product-banner"><i class="fa-solid fa-briefcase"></i><span class="product-badge-tag">أعمال رقمية</span></div>
+          <div class="product-body">
+            <h3 class="product-title">Premium Business Website Template</h3>
+            <p class="product-desc">قالب أعمال فاخر مصمم للشركات والوكالات والمستشارين لبناء حضور قوي واستثنائي.</p>
+            <div class="product-footer">
+              <span class="product-price">$8.00</span>
+              <div class="product-actions-group">
+                <a href="https://payhip.com/b/yizhn" target="_blank" class="btn-product-link"><span data-i18n="btn_open_product">شراء من المتجر</span> <i class="fa-solid fa-arrow-left icon-dir"></i></a>
+                <a href="https://wa.me/201206443652?text=مرحباً، أرغب بشراء قالب (Business Website Template) عبر وسائل الدفع المحلي" target="_blank" class="btn-product-wa"><i class="fa-brands fa-whatsapp"></i> واتساب</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 7. حزمة السير الذاتية الذهبية -->
+        <div class="product-card" data-category="cv">
+          <div class="product-banner" style="background: linear-gradient(135deg, #065f46, #059669);"><i class="fa-solid fa-file-invoice"></i><span class="product-badge-tag">الحزمة الذهبية (10)</span></div>
+          <div class="product-body">
+            <h3 class="product-title">Ahmed Abu Omar – Premium CV Bundle | 10 Arabic & English Templates</h3>
+            <p class="product-desc">حزمة احترافية متكاملة تحتوي على 10 نماذج سيرة ذاتية باللغتين العربية والإنجليزية مصممة خصيصاً لاجتياز أنظمة ATS بأناقة استثنائية.</p>
+            <div class="product-footer">
+              <span class="product-price">$3.00</span>
+              <div class="product-actions-group">
+                <a href="https://payhip.com/b/JGOSj" target="_blank" class="btn-product-link"><span data-i18n="btn_buy_bundle">شراء الحزمة الآن</span> <i class="fa-solid fa-arrow-left icon-dir"></i></a>
+                <a href="https://wa.me/201206443652?text=مرحباً، أرغب بشراء حزمة (10 CV Templates Bundle) عبر وسائل الدفع المحلي" target="_blank" class="btn-product-wa"><i class="fa-brands fa-whatsapp"></i> واتساب</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Tab 4: Offers (العروض والخصومات الفاخرة والمختصرة) -->
+    <section class="tab-section" id="tab-offers">
+      <div class="offers-clean-container">
+        <div class="offer-header-badge">
+          <i class="fa-solid fa-bolt"></i>
+          <span>عرض خاص لمدة أسبوع واحد فقط! 🔥</span>
+        </div>
+
+        <h2 class="offer-title-main">أسعار تنافسية + خصم <span>60% OFF</span></h2>
+        
+        <p class="offer-simple-desc">
+          احصل على أفضل المنتجات الرقمية وأدوات الـ Micro-SaaS بأقل تكلفة ممكنة لخدمة مشروعك. العرض ينتهي بانتهاء الأسبوع!
+        </p>
+
+        <!-- عداد الأسبوع التنازلي -->
+        <div class="timer-week-box">
+          <div class="time-card">
+            <div class="num" id="w-days">07</div>
+            <div class="txt">أيام</div>
+          </div>
+          <div class="time-card">
+            <div class="num" id="w-hours">00</div>
+            <div class="txt">ساعات</div>
+          </div>
+          <div class="time-card">
+            <div class="num" id="w-mins">00</div>
+            <div class="txt">دقائق</div>
+          </div>
+          <div class="time-card">
+            <div class="num" id="w-secs">00</div>
+            <div class="txt">ثواني</div>
+          </div>
+        </div>
+
+        <!-- كود الخصم -->
+        <div class="coupon-compact-box">
+          <span style="font-size: 0.88rem; color: var(--text-muted); font-weight: 700;">كود الخصم:</span>
+          <span class="coupon-val" id="code-val-txt">omar 60</span>
+          <button class="btn-copy-simple" onclick="copySimpleCode()">
+            <i class="fa-solid fa-copy"></i>
+            <span id="copy-btn-txt">نسخ الكود</span>
+          </button>
+        </div>
+
+        <!-- أزرار التفاعل -->
+        <div class="cta-action-area">
+          <button class="btn-gold" onclick="switchTab('tab-products')">
+            <span>تصفح وشراء المنتجات الآن</span>
+            <i class="fa-solid fa-arrow-left icon-dir"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tab 5: FAQ (أسئلة وشروحات) -->
+    <section class="tab-section" id="tab-faq">
+      <div class="section-header">
+        <h2>الأسئلة الشائعة <span>وشروحات الاستخدام</span></h2>
+        <p>إليك كافة الإجابات الشاملة حول جميع المنتجات الرقمية، طريقة استلام الملفات، وطرق الدفع</p>
+      </div>
+
+      <div class="faq-container">
+        <div class="faq-card">
+          <div class="faq-question">
+            <span>1. ما هي المنتجات الرقمية التي يقدمها المتجر وكيف تعمل؟</span>
+            <i class="fa-solid fa-circle-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            نقدم مجموعة متكاملة من <strong>أدوات الويب المصغرة (Micro-SaaS)</strong>، قوالب المواقع الاحترافية، وحزم السيرة الذاتية (ATS). الأدوات مصممة لتعمل مباشرة عبر المتصفح أو كأكواد برمجية جاهزة بدون الحاجة لااشتراكات شهرية معقدة.
+          </div>
+        </div>
+
+        <div class="faq-card">
+          <div class="faq-question">
+            <span>2. كيف يتم استلام المنتجات والملفات بعد عملية الشراء؟</span>
+            <i class="fa-solid fa-circle-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            بمجرد إتمام الدفع عبر منصة Payhip، سيظهر لك <strong>رابط تحميل مباشر (ملف ZIP يحتوي على الكود الكامل والشرح)</strong>، ويصلك نفس الرابط فوراً على بريدك الإلكتروني المسجل.
+          </div>
+        </div>
+
+        <div class="faq-card">
+          <div class="faq-question">
+            <span>3. ماذا لو لم أمتلك بطاقة بنكية إلكترونية للشراء من المتجر؟</span>
+            <i class="fa-solid fa-circle-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <strong>لا داعي للقلق أبداً!</strong> يمكنك الضغط على زر <strong>"واتساب"</strong> الموجود بجانب أي منتج، وتواصل معنا لتنسيق الدفع عبر وسائل الدفع المحلية المتاحة (فودافون كاش، إنستاباي، تحويل بنكي، وغيرها)، وسنرسل لك ملفات المنتج فوراً عبر الواتساب.
+          </div>
+        </div>
+
+        <div class="faq-card" style="border-color: var(--border-hover);">
+          <div class="faq-question">
+            <span style="color: var(--accent-gold-light);">4. هل توجد اشتراكات شهرية أو رسوم خفية بعد شراء المنتج؟</span>
+            <i class="fa-solid fa-circle-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <strong>أبداً!</strong> جميع أدوات الـ Micro-SaaS والقوالب تملكها مدى الحياة بمدفوعة واحدة فقط، ولا توجد أي اشتراكات شهرية أو رسوم إضافية.
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 4. OFFERS & DISCOUNTS -->
-    <section class="tab-section" id="tab-offers">
-      <div class="offers-clean-container">
-        <h2 class="offer-title-main">خصم خاص <span>60% لفترة محدودة</span></h2>
-        <p style="color: var(--text-muted); margin-bottom: 20px;">استخدم كوبون الخصم للحصول على خصم فوري على جميع منتجاتنا البرمجية وقوالب المواقع.</p>
-        <div class="coupon-compact-box">
-          <span style="color: var(--accent-gold); font-weight: bold;">الكوبون:</span>
-          <span style="font-size: 1.4rem; font-weight: 900; color: var(--accent-gold-light);">omar 60</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- 5. FAQ SECTION -->
-    <section class="tab-section" id="tab-faq">
-      <div class="section-header"><h2>أسئلة <span>شائعة وشروحات</span></h2></div>
-      <div class="faq-container">
-        <div class="faq-card">
-          <div class="faq-question"><span>كيف يتم تسليم المنتجات الرقمية بعد الشراء؟</span> <i class="fa-solid fa-chevron-down"></i></div>
-          <div class="faq-answer">بعد الشراء المباشر من منصة Payhip أو عبر الواتساب، يتم توفير رابط تحميل فوري ومباشر مع ملف التعليمات المرفق.</div>
-        </div>
-        <div class="faq-card">
-          <div class="faq-question"><span>هل القوالب والأدوات متوافقة مع الأجهزة الذكية؟</span> <i class="fa-solid fa-chevron-down"></i></div>
-          <div class="faq-answer">نعم، جميع تصاميمنا وأدواتنا مصممة لتكون مستجيبة بالكامل (100% Responsive) لجميع الهواتف والشاشات.</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 6. CONTACT SECTION -->
+    <!-- Tab 6: Contact (التواصل) -->
     <section class="tab-section" id="tab-contact">
       <div class="contact-box">
-        <i class="fa-brands fa-whatsapp" style="font-size: 3rem; color: #25d366; margin-bottom: 15px;"></i>
-        <h3>تواصل معنا مباشرة</h3>
-        <p>هل لديك استفسار خاص أو طلب تصميم مخصص؟ تواصل معنا عبر الواتساب وسنرد عليك فوراً.</p>
-        <a href="https://wa.me/201206443652" target="_blank" class="btn-whatsapp-main"><i class="fa-brands fa-whatsapp"></i> <span>مراسلة عبر الواتساب</span></a>
+        <i class="fa-brands fa-whatsapp main-icon"></i>
+        <h3>تواصل معنا عبر الواتساب</h3>
+        <p>هل تحتاج إلى استفسار حول منتج رقمي مخصص، أو ترغب في الدفع عبر وسائل الدفع المحلية؟ فريقنا جاهز لمساعدتك فوراً بكل احترافية.</p>
+        <a href="https://wa.me/201206443652?text=مرحباً، أرغب في الاستفسار عن منتج معين أو الدفع محلياً" target="_blank" class="btn-whatsapp-main" style="font-size: 1.1rem; padding: 16px 35px;">
+          <i class="fa-brands fa-whatsapp" style="font-size: 1.4rem;"></i>
+          <span>مراسلة مباشرة عبر الواتساب</span>
+        </a>
       </div>
+
+      <footer>
+        <div class="footer-brand">Ahmed Abu Omar</div>
+        <div class="footer-rights">
+          جميع حقوق الملكية الفكرية والمنتجات الرقمية والعلامة التجارية محفوظة. يُمنع إعادة توزيع المنتجات دون إذن مسبق.
+        </div>
+        <div class="footer-thanks">
+          «شكراً لثقتك ودعمك المستمر لمتجر Ahmed Abu Omar للمنتجات الرقمية وأدوات الويب.»
+        </div>
+        <div class="social-buttons">
+          <a href="https://www.facebook.com/AhmedAbuOmarOfficial" target="_blank" class="social-btn"><i class="fa-brands fa-facebook-f"></i> Facebook</a>
+          <a href="https://www.instagram.com/ahmedabuomar.design/" target="_blank" class="social-btn"><i class="fa-brands fa-instagram"></i> Instagram</a>
+          <a href="https://x.com/ahmed_mido38622" target="_blank" class="social-btn"><i class="fa-brands fa-x-twitter"></i> X (Twitter)</a>
+        </div>
+      </footer>
     </section>
 
   </main>
 
-  <footer>
-    <div class="footer-brand">Ahmed Abu Omar Studio</div>
-    <p class="footer-rights">جميع الحقوق محفوظة © 2026 - Ahmed Abu Omar Premium Digital Studio</p>
-  </footer>
+  <!-- Mobile Bottom Navigation -->
+  <nav class="mobile-bottom-nav">
+    <button class="mobile-nav-btn active" data-tab="tab-hero">
+      <i class="fa-solid fa-house"></i>
+      <span>الرئيسية</span>
+    </button>
+    <button class="mobile-nav-btn" data-tab="tab-about">
+      <i class="fa-solid fa-code"></i>
+      <span>خدماتنا</span>
+    </button>
+    <button class="mobile-nav-btn" data-tab="tab-products">
+      <i class="fa-solid fa-layer-group"></i>
+      <span>المنتجات</span>
+    </button>
+    <button class="mobile-nav-btn" data-tab="tab-offers">
+      <i class="fa-solid fa-tag"></i>
+      <span>العروض</span>
+    </button>
+    <button class="mobile-nav-btn" data-tab="tab-faq">
+      <i class="fa-solid fa-circle-question"></i>
+      <span>الشرح</span>
+    </button>
+    <button class="mobile-nav-btn" data-tab="tab-contact">
+      <i class="fa-solid fa-envelope"></i>
+      <span>التواصل</span>
+    </button>
+  </nav>
 
   <!-- TRANSPARENT AI ASSISTANT FLOATING BUTTON -->
   <button id="ai-launcher" class="ai-launcher-btn" onclick="toggleChat()" aria-label="المساعد الشخصي">
@@ -425,22 +1390,22 @@
     <div class="chat-header">
       <div style="display: flex; align-items: center; gap: 8px;">
         <i class="fa-solid fa-robot" style="color: var(--accent-gold);"></i>
-        <span style="font-weight: 800; font-size: 0.92rem;">مساعد Ahmed Abu Omar الذكي</span>
+        <span id="chat-title-text" style="font-weight: 800; font-size: 0.92rem;">مساعد Ahmed Abu Omar الذكي</span>
       </div>
       <button onclick="toggleChat()" style="background:none; border:none; color:var(--text-main); cursor:pointer; font-size:1.1rem;"><i class="fa-solid fa-xmark"></i></button>
     </div>
     <div id="chat-messages" class="chat-messages">
       <div class="message bot-message">
-        <div class="message-content">أهلاً بك 👋 أنا المساعد الشخصي لـ **Ahmed Abu Omar Studio**. كيف يمكنني مساعدتك اليوم في الاستفسار عن أدواتنا، خيارات الشراء، أو خدماتنا الاحترافية؟</div>
+        <div class="message-content" id="chat-welcome-msg">أهلاً بك 👋 أنا المساعد الشخصي لـ **Ahmed Abu Omar Studio**. كيف يمكنني مساعدتك اليوم في الاستفسار عن أدواتنا، خيارات الشراء، أو خدماتنا الاحترافية؟</div>
       </div>
     </div>
     
-    <!-- QUICK CHIPS -->
-    <div class="quick-chips">
-      <button onclick="handleUserAsk('🛠️ الأدوات المتاحة')">🛠️ الأدوات</button>
-      <button onclick="handleUserAsk('📄 تصميم السيرة الذاتية')">📄 السيرة الذاتية</button>
-      <button onclick="handleUserAsk('💳 كيفية الشراء والدفع')">💳 طريقة الشراء</button>
-      <button onclick="handleUserAsk('💬 التواصل عبر الواتساب')">💬 الواتساب</button>
+    <!-- BILINGUAL QUICK CHIPS -->
+    <div class="quick-chips" id="quick-chips-container">
+      <button onclick="handleUserAsk(currentLang === 'ar' ? '🛠️ الأدوات المتاحة' : '🛠️ Available Tools')">🛠️ <span data-i18n="chip_tools">الأدوات</span></button>
+      <button onclick="handleUserAsk(currentLang === 'ar' ? '📄 تصميم السيرة الذاتية' : '📄 ATS Resume Service')">📄 <span data-i18n="chip_cv">السيرة الذاتية</span></button>
+      <button onclick="handleUserAsk(currentLang === 'ar' ? '💳 كيفية الشراء والدفع' : '💳 How to Buy')">💳 <span data-i18n="chip_buy">طريقة الشراء</span></button>
+      <button onclick="handleUserAsk(currentLang === 'ar' ? '💬 التواصل عبر الواتساب' : '💬 WhatsApp Contact')">💬 <span data-i18n="chip_wa">الواتساب</span></button>
     </div>
 
     <div class="chat-footer">
@@ -451,39 +1416,262 @@
     </div>
   </div>
 
+  <!-- JavaScript Engine -->
   <script>
+    const translations = {
+      ar: {
+        brand_subtitle: "Premium Digital Studio",
+        nav_home: "الرئيسية",
+        nav_services: "خدماتنا",
+        nav_templates: "المنتجات الرقمية",
+        nav_offers: "العروض والخصومات",
+        nav_faq: "أسئلة وشروحات",
+        nav_faq_mobile: "الشرح",
+        nav_contact: "التواصل",
+        hero_badge: "استوديو التصميم الرقمي الاحترافي",
+        hero_title: 'نبتكر ونبني <span>منتجات رقمية استثنائية</span>',
+        hero_desc: "وجهتك الأولى لاقتناء أقوى المنتجات الرقمية، أدوات الويب المصغرة (Micro-SaaS)، قوالب المواقع، والسير الذاتية المصممة خصيصاً لتعزيز نجاحك بأعلى معايير البريميوم.",
+        btn_explore: "استكشف متجر المنتجات الرقمية",
+        btn_whatsapp: "تواصل عبر الواتساب",
+        box_welcome: "أهلاً بك في عالمنا الإبداعي! 🔥",
+        box_subcall: "تابعنا يصلك كل جديد",
+        btn_follow: "متابعة",
+        box_footer: "انضم إلى قناتنا للاستفادة من أحدث الشروحات والعروض",
+        services_header: 'خدماتنا <span>الرقمية المتكاملة</span>',
+        services_sub: "نحن نبتكر ونبني منتجات رقمية مستقلة، أدوات ذكية (Micro-SaaS)، وتصميمات مخصصة تلبي احتياجات السوق الاحترافي بأعلى المعايير.",
+        srv_cv_title: "خدمة السيرة الذاتية المخصصة (ATS)",
+        srv_cv_desc: "تصميم وتعديل سيرة ذاتية احترافية باللغتين العربية والإنجليزية، متوافقة تماماً مع أنظمة الفرز الآلي (ATS) لزيادة فرص قبولك في كبرى الشركات العالمية والمحلية.",
+        srv_new_title: "تطوير المنتجات الرقمية & Micro-SaaS",
+        srv_new_desc: "بناء وتطوير أدوات ويب مصغرة ومنتجات رقمية مستقلة عالية الجودة ومخصصة لتوليد دخل إضافي وحل مشاكل حقيقية بدون اشتراكات شهرية معقدة.",
+        srv1_title: "تصميم وتطوير المواقع وتطبيقات PWA",
+        srv1_desc: "بناء وتطوير مواقع إلكترونية متكاملة وتطبيقات ويب حديثة (Progressive Web Apps) لشركتك أو نشاطك من الصفر بأعلى معايير السرعة، الأمان، والتصميم العصري.",
+        btn_contact_wa: "تواصل عبر الواتساب",
+        products_header: 'متجر <span>المنتجات الرقمية</span>',
+        products_sub: "اختر من بين أدوات الويب الذكية، قوالب المواقع الاحترافية، وحزم السيرة الذاتية المميزة بأسعار تنافسية وخيارات دفع متعددة",
+        filter_all: "جميع المنتجات",
+        filter_free: "🎁 منتجات مجانية",
+        filter_saas: "أدوات Micro-SaaS",
+        filter_web: "قوالب المواقع",
+        filter_cv: "قوالب وحزم السيرة الذاتية",
+        student_hub_title: "Student Hub Pro – منصة الطالب الشاملة",
+        student_hub_desc: "تطبيق ويب متكامل مصمم خصيصاً للطلاب (KG، إعدادي، ثانوي، وجامعي) يتضمن مؤقت Pomodoro، حاسبة المعدل التجمعي GPA، ودفتر ملاحظات أونلاين مجاناً.",
+        btn_open_free: "دخول المنصة مجاناً",
+        img_compressor_title: "Image Compressor Pro",
+        img_compressor_desc: "أداة ويب احترافية لضغط وتصغير حجم الصور (PNG / JPG / WebP) بتقنيات عصرية وسريعة لرفع سرعة موقعك وتحسين SEO بدون فقدان الجودة.",
+        btn_open_product: "شراء من المتجر",
+        btn_buy_bundle: "شراء الحزمة الآن",
+        
+        // AI Assistant translations
+        ai_title: "مساعد Ahmed Abu Omar الذكي",
+        ai_welcome: "أهلاً بك 👋 أنا المساعد الشخصي لـ **Ahmed Abu Omar Studio**. كيف يمكنني مساعدتك اليوم في الاستفسار عن أدواتنا، خيارات الشراء، أو خدماتنا الاحترافية؟",
+        ai_placeholder: "اسألني عن أي شيء...",
+        ai_typing: "جاري إعداد الرد الفوري... 🤖",
+        chip_tools: "الأدوات",
+        chip_cv: "السيرة الذاتية",
+        chip_buy: "طريقة الشراء",
+        chip_wa: "الواتساب"
+      },
+      en: {
+        brand_subtitle: "Premium Digital Studio",
+        nav_home: "Home",
+        nav_services: "Services",
+        nav_templates: "Digital Products",
+        nav_offers: "Offers & Discounts",
+        nav_faq: "FAQ & Guide",
+        nav_faq_mobile: "Guide",
+        nav_contact: "Contact Us",
+        hero_badge: "Professional Digital Design Studio",
+        hero_title: 'Building & Innovating <span>Exceptional Digital Products</span>',
+        hero_desc: "Your primary destination for high-end digital products, Micro-SaaS tools, web templates, and ATS resumes tailored to your success.",
+        btn_explore: "Explore Digital Store",
+        btn_whatsapp: "Chat on WhatsApp",
+        box_welcome: "Welcome to Our Creative World! 🔥",
+        box_subcall: "Follow us for latest updates",
+        btn_follow: "Follow",
+        box_footer: "Join our channels for exclusive updates & offers",
+        services_header: 'Integrated <span>Digital Services</span>',
+        services_sub: "We build independent digital products, smart Micro-SaaS tools, and custom designs.",
+        srv_cv_title: "Custom ATS Resume Service",
+        srv_cv_desc: "Professional ATS-friendly resume design and optimization in Arabic & English to boost your career acceptance.",
+        srv_new_title: "Digital Products & Micro-SaaS Development",
+        srv_new_desc: "Building high-quality lightweight web utilities and independent tools to solve real problems.",
+        srv1_title: "Web Design, Development & PWA Apps",
+        srv1_desc: "Full business websites and Progressive Web Apps built with top performance and modern UI.",
+        btn_contact_wa: "Chat on WhatsApp",
+        products_header: 'Digital Products <span>Store</span>',
+        products_sub: "Choose from smart web tools, professional website templates, and resume bundles.",
+        filter_all: "All Products",
+        filter_free: "🎁 Free Products",
+        filter_saas: "Micro-SaaS Tools",
+        filter_web: "Website Templates",
+        filter_cv: "Resume Bundles",
+        student_hub_title: "Student Hub Pro – Student Platform",
+        student_hub_desc: "All-in-one web app for students featuring Pomodoro timer, GPA calculator, and online notes for free.",
+        btn_open_free: "Access Platform Free",
+        img_compressor_title: "Image Compressor Pro",
+        img_compressor_desc: "Professional Micro-SaaS tool to compress PNG, JPG, and WebP images up to 80% directly in browser with zero quality loss.",
+        btn_open_product: "Buy from Store",
+        btn_buy_bundle: "Buy Bundle Now",
+
+        // AI Assistant translations
+        ai_title: "Ahmed Abu Omar AI Assistant",
+        ai_welcome: "Welcome 👋 I am the personal AI Assistant for **Ahmed Abu Omar Studio**. How can I assist you today regarding our tools, purchasing options, or services?",
+        ai_placeholder: "Ask me anything...",
+        ai_typing: "Preparing instant response... 🤖",
+        chip_tools: "Tools",
+        chip_cv: "ATS Resume",
+        chip_buy: "How to Buy",
+        chip_wa: "WhatsApp"
+      }
+    };
+
+    let currentLang = 'ar';
+    let currentTheme = 'dark';
+
     function switchTab(tabId) {
-      document.querySelectorAll('.tab-section').forEach(s => s.classList.remove('active-tab'));
-      const activeSec = document.getElementById(tabId);
-      if(activeSec) activeSec.classList.add('active-tab');
+      document.querySelectorAll('.tab-section').forEach(sec => sec.classList.remove('active-tab'));
+      document.querySelectorAll('.nav-link-btn, .mobile-nav-btn').forEach(btn => btn.classList.remove('active'));
+
+      const targetSec = document.getElementById(tabId);
+      if(targetSec) targetSec.classList.add('active-tab');
+      document.querySelectorAll(`[data-tab="${tabId}"]`).forEach(btn => btn.classList.add('active'));
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
+    document.querySelectorAll('.nav-link-btn, .mobile-nav-btn').forEach(button => {
+      button.addEventListener('click', () => {
+        const targetTab = button.getAttribute('data-tab');
+        if (targetTab) switchTab(targetTab);
+      });
+    });
+
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const productCards = document.querySelectorAll('.product-card');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filterVal = btn.getAttribute('data-filter');
+
+        productCards.forEach(card => {
+          if (filterVal === 'all' || card.getAttribute('data-category') === filterVal) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    document.getElementById('theme-toggle').addEventListener('click', () => {
+      currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', currentTheme);
+      document.getElementById('theme-toggle').innerHTML = currentTheme === 'dark' ? '<i class="fa-solid fa-moon"></i>' : '<i class="fa-solid fa-sun"></i>';
+    });
+
+    document.getElementById('lang-toggle').addEventListener('click', () => {
+      currentLang = currentLang === 'ar' ? 'en' : 'ar';
+      document.documentElement.setAttribute('lang', currentLang);
+      document.documentElement.setAttribute('dir', currentLang === 'ar' ? 'rtl' : 'ltr');
+      document.getElementById('lang-toggle').textContent = currentLang === 'ar' ? 'EN' : 'AR';
+      
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[currentLang][key]) {
+          el.innerHTML = translations[currentLang][key];
+        }
+      });
+
+      // Update AI Assistant elements
+      document.getElementById('chat-title-text').innerText = translations[currentLang].ai_title;
+      document.getElementById('chat-welcome-msg').innerText = translations[currentLang].ai_welcome;
+      document.getElementById('chat-input').placeholder = translations[currentLang].ai_placeholder;
+    });
+
+    // العداد التنازلي لمدة 7 أيام
+    function initWeekTimer() {
+      const endDate = new Date().getTime() + (7 * 24 * 60 * 60 * 1000);
+      setInterval(() => {
+        const now = new Date().getTime();
+        const diff = endDate - now;
+
+        if (diff > 0) {
+          const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+          const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+          const s = Math.floor((diff % (1000 * 60)) / 1000);
+
+          if(document.getElementById('w-days')) document.getElementById('w-days').innerText = d < 10 ? '0' + d : d;
+          if(document.getElementById('w-hours')) document.getElementById('w-hours').innerText = h < 10 ? '0' + h : h;
+          if(document.getElementById('w-mins')) document.getElementById('w-mins').innerText = m < 10 ? '0' + m : m;
+          if(document.getElementById('w-secs')) document.getElementById('w-secs').innerText = s < 10 ? '0' + s : s;
+        }
+      }, 1000);
+    }
+    initWeekTimer();
+
+    // نسخ الكود
+    function copySimpleCode() {
+      const code = document.getElementById('code-val-txt').textContent;
+      navigator.clipboard.writeText(code).then(() => {
+        const btnTxt = document.getElementById('copy-btn-txt');
+        btnTxt.textContent = currentLang === 'ar' ? 'تم النسخ!' : 'Copied!';
+        setTimeout(() => { 
+          btnTxt.textContent = currentLang === 'ar' ? 'نسخ الكود' : 'Copy Code'; 
+        }, 2000);
+      });
+    }
+
+    document.querySelectorAll('.faq-question').forEach(q => {
+      q.addEventListener('click', () => {
+        const answer = q.nextElementSibling;
+        answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+      });
+    });
+
+    // ==================== BILINGUAL SMART AI ASSISTANT ====================
     function toggleChat() { 
       document.getElementById('ai-chat-container').classList.toggle('hidden'); 
     }
 
     const WA_LINK = "https://wa.me/201206443652";
 
+    function isEnglishText(text) {
+      return /[a-zA-Z]/.test(text);
+    }
+
     function getSmartResponse(question) {
       const q = question.toLowerCase();
+      const inEnglish = isEnglishText(q) || currentLang === 'en';
 
-      if (q.includes('أدوات') || q.includes('ادوات') || q.includes('saas') || q.includes('منتجات')) {
-        return `🛠️ **المنتجات والأدوات البرمجية المتاحة:**\n\n1. **Gemini AI Chat Assistant Widget** ($9.00): سكريبت ودجة مساعد ذكي متكامل للمواقع.\n2. **Student Hub Pro**: منصة لإدارة المهام الطلابية بأدوات ذكية.\n3. **Image Compressor Pro**: أداة ضغط الصور بسرعة وبدون فقدان الجودة.\n\n👉 **للشراء المباشر أو الاستفسار تواصل معنا عبر الواتساب:**\n${WA_LINK}`;
+      if (q.includes('أدوات') || q.includes('ادوات') || q.includes('saas') || q.includes('tool') || q.includes('product')) {
+        return inEnglish ?
+          `🛠️ **Available Products & Tools:**\n\n1. **SaaS Pricing & ROI Calculator Pro** ($9.00)\n2. **Image Compressor Pro** ($6.00)\n3. **SEO Meta & Schema Generator Pro** ($7.00)\n4. **AI Social Post Generator Pro** ($9.00)\n5. **Student Hub Pro** (Free)\n\n👉 **For direct purchase or inquiry, chat on WhatsApp:**\n${WA_LINK}` :
+          `🛠️ **المنتجات والأدوات البرمجية المتاحة:**\n\n1. **SaaS Pricing & ROI Calculator Pro** ($9.00)\n2. **Image Compressor Pro** ($6.00)\n3. **SEO Meta & Schema Generator Pro** ($7.00)\n4. **AI Social Post Generator Pro** ($9.00)\n5. **Student Hub Pro** (مجاناً)\n\n👉 **للشراء المباشر أو الاستفسار تواصل معنا عبر الواتساب:**\n${WA_LINK}`;
       }
       
-      if (q.includes('سيرة') || q.includes('cv') || q.includes('ats')) {
-        return `📄 **خدمات وتصاميم السيرة الذاتية (ATS):**\n\nنقدم باقة **Ahmed Abu Omar Premium CV Bundle** والتي تضم 10 قوالب احترافية متوافقة تماماً مع أنظمة الفرز الآلي (ATS) باللغتين العربية والإنجليزية.\n\n👉 **اطلب باقتك الخاصة فوراً عبر الواتساب:**\n${WA_LINK}`;
+      if (q.includes('سيرة') || q.includes('cv') || q.includes('ats') || q.includes('resume')) {
+        return inEnglish ?
+          `📄 **ATS Resume Services & Bundles:**\n\nWe offer the **Ahmed Abu Omar Premium CV Bundle** (10 English & Arabic templates) for only $3.00, plus custom resume writing & design services.\n\n👉 **Request your custom ATS resume via WhatsApp:**\n${WA_LINK}` :
+          `📄 **خدمات وتصاميم السيرة الذاتية (ATS):**\n\nنقدم حزمة **Ahmed Abu Omar Premium CV Bundle** (10 قوالب عربية وإنجليزية) بـ $3.00 فقط، بالإضافة لخدمة التصميم والتعديل المخصص.\n\n👉 **اطلب باقتك الخاصة فوراً عبر الواتساب:**\n${WA_LINK}`;
       }
 
-      if (q.includes('شراء') || q.includes('دفع') || q.includes('سعر') || q.includes('كيفية')) {
-        return `💳 **طرق الشراء والدفع المتاحة:**\n\n- يمكنك الشراء الفوري إلكترونياً من متجرنا على **Payhip** بواسطة البطاقات البنكية و PayPal.\n- أو الدفع المباشر والتفعيل السريع عبر **المحافظ الإلكترونية أو تحويل InstaPay** بالتواصل المباشر معنا.\n\n👉 **لتنفيذ عملية الشراء فوراً اضغط على الرابط:**\n${WA_LINK}`;
+      if (q.includes('شراء') || q.includes('دفع') || q.includes('سعر') || q.includes('buy') || q.includes('pay') || q.includes('price')) {
+        return inEnglish ?
+          `💳 **Purchasing & Payment Options:**\n\n- Buy directly online via our **Payhip** store using Credit Cards & PayPal.\n- Or contact us directly for instant local payment options (e-wallets, InstaPay, direct bank transfer).\n\n👉 **Click here to order directly on WhatsApp:**\n${WA_LINK}` :
+          `💳 **طرق الشراء والدفع المتاحة:**\n\n- الشراء الفوري إلكترونياً من متجرنا على **Payhip** بالبطاقات البنكية و PayPal.\n- أو الدفع المباشر والتفعيل السريع عبر **المحافظ الإلكترونية أو تحويل InstaPay** بالتواصل المباشر معنا.\n\n👉 **لتنفيذ عملية الشراء فوراً اضغط على الرابط:**\n${WA_LINK}`;
       }
 
-      if (q.includes('واتساب') || q.includes('تواصل') || q.includes('رقم')) {
-        return `💬 **تواصل معنا مباشرة عبر الواتساب:**\n\nنحن متواجدون لخدمتك فوراً للإجابة على جميع استفساراتك وتلبية طلباتك الخاصة.\n\n📲 **اضغط هنا للمراسلة:**\n${WA_LINK}`;
+      if (q.includes('واتساب') || q.includes('تواصل') || q.includes('رقم') || q.includes('whatsapp') || q.includes('contact')) {
+        return inEnglish ?
+          `💬 **Contact Us Directly on WhatsApp:**\n\nWe are available to answer your questions and assist you with custom requests instantly.\n\n📲 **Click here to start chat:**\n${WA_LINK}` :
+          `💬 **تواصل معنا مباشرة عبر الواتساب:**\n\nنحن متواجدون لخدمتك فوراً للإجابة على جميع استفساراتك.\n\n📲 **اضغط هنا للمراسلة:**\n${WA_LINK}`;
       }
 
-      return `مرحباً بك! أنا هنا لمساعدتك في كل ما يتعلق باستوديو **Ahmed Abu Omar** (قوالب المواقع، أدوات Micro-SaaS، تصاميم ATS، وخدمات الويب).\n\nل للحصول على تفاصيل مخصصة أو طلب خدمة فورية، يسعدنا تواصلك المباشر معنا عبر الواتساب:\n📲 ${WA_LINK}`;
+      return inEnglish ?
+        `Hello! I am the AI assistant for **Ahmed Abu Omar Studio**. You can ask about Micro-SaaS tools, web templates, ATS resumes, or payment methods.\n\nFor custom orders, chat with us directly on WhatsApp:\n📲 ${WA_LINK}` :
+        `مرحباً بك! أنا المساعد الذكي لـ **Ahmed Abu Omar Studio**. يمكنك السؤال عن الأدوات، قوالب المواقع، السير الذاتية ATS، أو طرق الدفع.\n\nللحصول على تفاصيل مخصصة، تواصل معنا عبر الواتساب:\n📲 ${WA_LINK}`;
     }
 
     function handleUserAsk(text) {
@@ -500,7 +1688,8 @@
       input.value = '';
 
       const typingId = 'typing-' + Date.now();
-      appendCustomMessage("جاري إعداد الرد الفوري... 🤖", 'bot', typingId);
+      const typingText = translations[currentLang].ai_typing;
+      appendCustomMessage(typingText, 'bot', typingId);
 
       setTimeout(() => {
         const botId = document.getElementById(typingId);
