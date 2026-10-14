@@ -133,7 +133,6 @@
       opacity: 0.1;
     }
 
-    /* تعديل الهيدر ليصبح مرتباً وغير متداخل على الجوال */
     header {
       position: fixed;
       top: 10px; left: 50%;
@@ -765,7 +764,7 @@
     /* ==================== TRANSPARENT AI FLOATING ASSISTANT BUTTON (FIXED POSITION) ==================== */
     .ai-launcher-btn {
       position: fixed; 
-      bottom: 85px; /* تم رفع الزر ليكون فوق شريط التنقل السفلي للجوال ولا يغطي المحتوى */
+      bottom: 85px; 
       right: 20px; 
       width: 48px; 
       height: 48px; 
@@ -779,7 +778,7 @@
       align-items: center; 
       justify-content: center; 
       font-size: 1.25rem; 
-      z-index: 997; /* أسفل شريط التنقل السفلي والنافذة بقليل لضمان عدم التداخل */
+      z-index: 997; 
       opacity: 0.65;
       backdrop-filter: blur(8px);
       -webkit-backdrop-filter: blur(8px);
@@ -1700,7 +1699,7 @@
         const botId = document.getElementById(typingId);
         if(botId) botId.remove();
         
-        .answer = getSmartResponse(userText);
+        const answer = getSmartResponse(userText);
         appendMessage(answer, 'bot');
       }, 400);
     }
