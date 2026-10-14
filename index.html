@@ -46,7 +46,7 @@
       "priceCurrency": "USD",
       "lowPrice": "0.00",
       "highPrice": "9.00",
-      "offerCount": "9"
+      "offerCount": "10"
     }
   }
   </script>
@@ -986,16 +986,6 @@
       </div>
 
       <div class="services-grid">
-        <!-- خدمة المساعد الذكي -->
-        <div class="service-card" style="border: 2px solid var(--accent-gold);">
-          <div class="service-icon"><i class="fa-solid fa-headset"></i></div>
-          <h3>خدمة المساعد الذكي وشات بوت المواقع</h3>
-          <p>دمج وبرمجة مساعد شخصي ذكي واحترافي لموقعك الإلكتروني أو متجرك، للرد على استفسارات العملاء تلقائياً 24/7 وزيادة معدل المبيعات وثقة الزوار.</p>
-          <a href="https://wa.me/201206443652?text=مرحباً، أرغب في طلب خدمة دمج المساعد الذكي وشات بوت لموقعي الإلكتروني" target="_blank" class="service-btn">
-            <i class="fa-brands fa-whatsapp"></i> <span>تواصل عبر الواتساب</span>
-          </a>
-        </div>
-
         <!-- 1. خدمة السيرة الذاتية المخصصة (ATS) -->
         <div class="service-card">
           <div class="service-icon"><i class="fa-solid fa-file-shield"></i></div>
@@ -1045,6 +1035,29 @@
       </div>
 
       <div class="products-grid">
+
+        <!-- 0. منتج المساعد الذكي الجديد (AI Assistant Service) -->
+        <div class="product-card" data-category="saas" style="border: 2px solid var(--accent-gold);">
+          <div class="product-banner" style="background: linear-gradient(135deg, #1e293b, #0f172a);">
+            <i class="fa-solid fa-robot"></i>
+            <span class="product-badge-tag">جديد | AI Chatbot Pro</span>
+          </div>
+          <div class="product-body">
+            <h3 class="product-title">Ultimate AI Website Assistant & Chatbot Integration Service</h3>
+            <p class="product-desc">مساعد ذكي ثنائي اللغة (عربي/إنجليزي) لموقعك لزيادة المبيعات والرد على العملاء 24/7. تصميم متجاوب، سهل التركيب، وبربط مباشر للواتساب.</p>
+            <div class="product-footer">
+              <span class="product-price">$5.00</span>
+              <div class="product-actions-group">
+                <a href="https://payhip.com/b/DXmGs" target="_blank" class="btn-product-link">
+                  <span data-i18n="btn_open_product">شراء من المتجر</span> <i class="fa-solid fa-arrow-left icon-dir"></i>
+                </a>
+                <a href="https://wa.me/201206443652?text=مرحباً، أرغب بشراء منتج (AI Assistant & Chatbot Service) عبر وسائل الدفع المحلي" target="_blank" class="btn-product-wa">
+                  <i class="fa-brands fa-whatsapp"></i> واتساب
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
         
         <!-- المنتج المجاني: منصة الطالب Student Hub Pro -->
         <div class="product-card" data-category="free">
@@ -1070,10 +1083,10 @@
         </div>
 
         <!-- 1. SaaS Pricing & ROI Calculator Pro -->
-        <div class="product-card" data-category="saas" style="border: 2px solid var(--accent-gold);">
+        <div class="product-card" data-category="saas">
           <div class="product-banner" style="background: linear-gradient(135deg, #10b981, #047857);">
             <i class="fa-solid fa-calculator"></i>
-            <span class="product-badge-tag">جديد | Micro-SaaS Pro</span>
+            <span class="product-badge-tag">Micro-SaaS Pro</span>
           </div>
           <div class="product-body">
             <h3 class="product-title">SaaS Pricing & ROI Calculator Pro</h3>
@@ -1572,14 +1585,14 @@
 
       if (q.includes('مساعد') || q.includes('شات بوت') || q.includes('chatbot') || q.includes('assistant')) {
         return inEnglish ?
-          `🤖 **AI Assistant Service:**\n\nWe provide professional website chatbot integration services to engage your visitors 24/7 and boost your conversions.\n\n👉 **Order or inquire via WhatsApp:**\n${WA_LINK}?text=Hello,%20I'm%20interested%20in%20the%20AI%20Assistant%20service` :
-          `🤖 **خدمة المساعد الذكي (Chatbot):**\n\nنقدم خدمة دمج وتطوير مساعد ذكي لموقعك أو متجرك لخدمة عملائك على مدار الساعة والرد على استفساراتهم باحترافية تامة.\n\n👉 **اطلب الخدمة وتواصل معنا عبر الواتساب:**\n${WA_LINK}?text=مرحباً،%20أرغب%20في%20طلب%20خدمة%20المساعد%20الذكي%20لموقعي`;
+          `🤖 **AI Assistant Service:**\n\nWe provide professional website chatbot integration services to engage your visitors 24/7 and boost your conversions ($5.00).\n\n👉 **Order or inquire via WhatsApp:**\n${WA_LINK}?text=Hello,%20I'm%20interested%20in%20the%20AI%20Assistant%20service` :
+          `🤖 **خدمة المساعد الذكي (Chatbot):**\n\nنقدم خدمة دمج وتطوير مساعد ذكي لموقعك أو متجرك بـ $5 فقط لخدمة عملائك على مدار الساعة والرد على استفساراتهم باحترافية تامة.\n\n👉 **اطلب الخدمة وتواصل معنا عبر الواتساب:**\n${WA_LINK}?text=مرحباً،%20أرغب%20في%20طلب%20خدمة%20المساعد%20الذكي%20لموقعي`;
       }
 
       if (q.includes('أدوات') || q.includes('ادوات') || q.includes('saas') || q.includes('tool') || q.includes('product') || q.includes('منتجات')) {
         return inEnglish ?
-          `🛠️ **Available Products & Tools:**\n\n1. **AI Assistant Service** (New)\n2. **SaaS Pricing & ROI Calculator Pro** ($9.00)\n3. **Image Compressor Pro** ($6.00)\n4. **SEO Meta & Schema Generator Pro** ($7.00)\n5. **AI Social Post Generator Pro** ($9.00)\n6. **Student Hub Pro** (Free)\n7. **NOVA Real Estate Template** ($8.00)\n8. **Business Website Template** ($8.00)\n\n👉 **For direct purchase or inquiry, chat on WhatsApp:**\n${WA_LINK}` :
-          `🛠️ **المنتجات والأدوات والأقسام المتاحة:**\n\n1. **خدمة المساعد الذكي والشات بوت للمواقع** (جديد)\n2. **SaaS Pricing & ROI Calculator Pro** ($9.00)\n3. **Image Compressor Pro** ($6.00)\n4. **SEO Meta & Schema Generator Pro** ($7.00)\n5. **AI Social Post Generator Pro** ($9.00)\n6. **Student Hub Pro** (منصة الطالب المجانية)\n7. **قوالب المواقع (عقارات وأعمال)** ($8.00)\n\n👉 **للشراء المباشر أو الاستفسار تواصل معنا عبر الواتساب:**\n${WA_LINK}`;
+          `🛠️ **Available Products & Tools:**\n\n1. **AI Assistant Service** ($5.00)\n2. **SaaS Pricing & ROI Calculator Pro** ($9.00)\n3. **Image Compressor Pro** ($6.00)\n4. **SEO Meta & Schema Generator Pro** ($7.00)\n5. **AI Social Post Generator Pro** ($9.00)\n6. **Student Hub Pro** (Free)\n7. **NOVA Real Estate Template** ($8.00)\n8. **Business Website Template** ($8.00)\n\n👉 **For direct purchase or inquiry, chat on WhatsApp:**\n${WA_LINK}` :
+          `🛠️ **المنتجات والأدوات والأقسام المتاحة:**\n\n1. **خدمة المساعد الذكي والشات بوت للمواقع** ($5.00)\n2. **SaaS Pricing & ROI Calculator Pro** ($9.00)\n3. **Image Compressor Pro** ($6.00)\n4. **SEO Meta & Schema Generator Pro** ($7.00)\n5. **AI Social Post Generator Pro** ($9.00)\n6. **Student Hub Pro** (منصة الطالب المجانية)\n7. **قوالب المواقع (عقارات وأعمال)** ($8.00)\n\n👉 **للشراء المباشر أو الاستفسار تواصل معنا عبر الواتساب:**\n${WA_LINK}`;
       }
       
       if (q.includes('سيرة') || q.includes('cv') || q.includes('ats') || q.includes('resume')) {
@@ -1602,7 +1615,7 @@
 
       return inEnglish ?
         `Hello! I am the AI assistant for **Ahmed Abu Omar Studio**. You can ask about our tools, templates, ATS resumes, AI chatbot service, or payment methods.\n\nFor custom orders, chat with us directly on WhatsApp:\n📲 ${WA_LINK}` :
-        `مرحباً بك! أنا المساعد الذكي لـ **Ahmed Abu Omar Studio**. يمكنك السؤال عن أدوات الـ Micro-SaaS، قوالب المواقع، السير الذاتية ATS، خدمة المساعد الذكي، أو طرق الدفع والشراء.\n\nللحصول على تفاصيل مخصصة، تواصل معنا عبر الواتساب:\n📲 ${WA_LINK}`;
+        `مرحباً بك! أنا المساعد الذكي لـ **Ahmed Abu Omar Studio**. يمكنك السؤال عن أدوات الـ Micro-SaaS، قوالب المواقع، السير الذاتية ATS، خدمة المساعد الذكي بـ $5، أو طرق الدفع والشراء.\n\nللحصول على تفاصيل مخصصة، تواصل معنا عبر الواتساب:\n📲 ${WA_LINK}`;
     }
 
     function handleUserAsk(text) {
