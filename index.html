@@ -26,7 +26,7 @@
   <meta name="twitter:description" content="أدوات ويب ذكية، خدمات سيرة ذاتية ATS احترافية، ومنصات رقمية متكاملة.">
   <meta name="twitter:image" content="https://nadyahmed211-web.github.io/ahmed-abu-omar-store/preview.jpg">
 
-  <!-- JSON-LD Schema Structured Data (Google Rich Snippets) -->
+  <!-- JSON-LD Schema Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -560,144 +560,60 @@
       background: #25d366; color: #fff;
     }
 
-    /* Offers Section Styles */
     .offers-clean-container {
-      max-width: 850px;
-      margin: 0 auto;
+      max-width: 850px; margin: 0 auto;
       background: linear-gradient(145deg, rgba(15, 21, 35, 0.95), rgba(5, 7, 12, 0.98));
-      border: 1.5px solid var(--accent-gold);
-      border-radius: var(--radius-lg);
-      padding: 40px 25px;
-      text-align: center;
+      border: 1.5px solid var(--accent-gold); border-radius: var(--radius-lg);
+      padding: 40px 25px; text-align: center;
       box-shadow: 0 20px 50px rgba(0,0,0,0.8), 0 0 30px rgba(212, 175, 55, 0.15);
-      position: relative;
-      overflow: hidden;
+      position: relative; overflow: hidden;
     }
 
     .offers-clean-container::before {
-      content: '';
-      position: absolute;
-      top: -80px;
-      right: -80px;
-      width: 200px;
-      height: 200px;
-      background: var(--gold-glow);
-      border-radius: 50%;
-      filter: blur(60px);
-      pointer-events: none;
+      content: ''; position: absolute; top: -80px; right: -80px;
+      width: 200px; height: 200px; background: var(--gold-glow);
+      border-radius: 50%; filter: blur(60px); pointer-events: none;
     }
 
     .offer-header-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: var(--gold-gradient);
-      color: #05070c;
-      font-weight: 900;
-      padding: 6px 20px;
-      border-radius: 100px;
-      font-size: 0.85rem;
-      margin-bottom: 20px;
-      box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--gold-gradient); color: #05070c;
+      font-weight: 900; padding: 6px 20px; border-radius: 100px;
+      font-size: 0.85rem; margin-bottom: 20px; box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
     }
 
-    .offer-title-main {
-      font-size: 2.2rem;
-      font-weight: 900;
-      margin-bottom: 12px;
-      line-height: 1.3;
-    }
+    .offer-title-main { font-size: 2.2rem; font-weight: 900; margin-bottom: 12px; line-height: 1.3; }
+    .offer-title-main span { background: var(--gold-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 
-    .offer-title-main span {
-      background: var(--gold-gradient);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
+    .offer-simple-desc { color: var(--text-muted); font-size: 1rem; max-width: 650px; margin: 0 auto 28px; line-height: 1.6; }
 
-    .offer-simple-desc {
-      color: var(--text-muted);
-      font-size: 1rem;
-      max-width: 650px;
-      margin: 0 auto 28px;
-      line-height: 1.6;
-    }
-
-    .timer-week-box {
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-      margin-bottom: 28px;
-    }
+    .timer-week-box { display: flex; justify-content: center; gap: 12px; margin-bottom: 28px; }
 
     .time-card {
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid var(--border-color);
-      padding: 10px 16px;
-      border-radius: var(--radius-md);
-      min-width: 75px;
+      background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-color);
+      padding: 10px 16px; border-radius: var(--radius-md); min-width: 75px;
     }
 
-    .time-card .num {
-      font-size: 1.6rem;
-      font-weight: 900;
-      color: var(--accent-gold-light);
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      line-height: 1;
-    }
-
-    .time-card .txt {
-      font-size: 0.7rem;
-      color: var(--text-muted);
-      font-weight: 700;
-      margin-top: 4px;
-    }
+    .time-card .num { font-size: 1.6rem; font-weight: 900; color: var(--accent-gold-light); font-family: 'Plus Jakarta Sans', sans-serif; line-height: 1; }
+    .time-card .txt { font-size: 0.7rem; color: var(--text-muted); font-weight: 700; margin-top: 4px; }
 
     .coupon-compact-box {
-      background: rgba(0, 0, 0, 0.5);
-      border: 2px dashed var(--accent-gold);
-      border-radius: 16px;
-      padding: 16px 24px;
-      display: inline-flex;
-      align-items: center;
-      gap: 16px;
-      margin-bottom: 30px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+      background: rgba(0, 0, 0, 0.5); border: 2px dashed var(--accent-gold);
+      border-radius: 16px; padding: 16px 24px; display: inline-flex; align-items: center; gap: 16px;
+      margin-bottom: 30px; box-shadow: 0 8px 25px rgba(0,0,0,0.5);
     }
 
-    .coupon-val {
-      font-size: 1.5rem;
-      font-weight: 900;
-      color: var(--accent-gold-light);
-      letter-spacing: 2px;
-      font-family: 'Plus Jakarta Sans', monospace;
-    }
+    .coupon-val { font-size: 1.5rem; font-weight: 900; color: var(--accent-gold-light); letter-spacing: 2px; font-family: 'Plus Jakarta Sans', monospace; }
 
     .btn-copy-simple {
-      background: var(--gold-gradient);
-      color: #05070c;
-      border: none;
-      padding: 8px 16px;
-      border-radius: 100px;
-      font-weight: 800;
-      font-size: 0.82rem;
-      cursor: pointer;
-      transition: var(--transition);
-      display: flex;
-      align-items: center;
-      gap: 6px;
+      background: var(--gold-gradient); color: #05070c; border: none;
+      padding: 8px 16px; border-radius: 100px; font-weight: 800; font-size: 0.82rem;
+      cursor: pointer; transition: var(--transition); display: flex; align-items: center; gap: 6px;
     }
 
-    .btn-copy-simple:hover {
-      opacity: 0.9;
-      transform: translateY(-2px);
-    }
+    .btn-copy-simple:hover { opacity: 0.9; transform: translateY(-2px); }
 
-    .cta-action-area {
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
+    .cta-action-area { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
 
     .contact-box {
       background: var(--bg-card); border: 1px solid var(--border-hover);
@@ -709,10 +625,7 @@
     .contact-box h3 { font-size: 2rem; font-weight: 900; margin-bottom: 10px; }
     .contact-box p { color: var(--text-muted); font-size: 1rem; margin-bottom: 25px; line-height: 1.6; }
 
-    footer {
-      border-top: 1px solid var(--border-color);
-      padding: 30px 0; margin-top: 40px; text-align: center;
-    }
+    footer { border-top: 1px solid var(--border-color); padding: 30px 0; margin-top: 40px; text-align: center; }
 
     .footer-brand {
       font-size: 1.35rem; font-weight: 900;
@@ -735,53 +648,22 @@
     }
     .social-btn:hover { border-color: var(--accent-gold); background: var(--gold-glow); }
 
-    /* ==================== TRANSPARENT AI FLOATING ASSISTANT BUTTON (FIXED POSITION) ==================== */
     .ai-launcher-btn {
-      position: fixed; 
-      bottom: 85px; 
-      right: 20px; 
-      width: 48px; 
-      height: 48px; 
-      border-radius: 50%; 
-      background: var(--gold-gradient); 
-      color: #05070c; 
-      border: 1px solid rgba(212, 175, 55, 0.5); 
-      cursor: pointer; 
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4); 
-      display: flex; 
-      align-items: center; 
-      justify-content: center; 
-      font-size: 1.25rem; 
-      z-index: 997; 
-      opacity: 0.65;
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      position: fixed; bottom: 85px; right: 20px; width: 48px; height: 48px;
+      border-radius: 50%; background: var(--gold-gradient); color: #05070c;
+      border: 1px solid rgba(212, 175, 55, 0.5); cursor: pointer;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4); display: flex; align-items: center;
+      justify-content: center; font-size: 1.25rem; z-index: 997; opacity: 0.65;
+      backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    .ai-launcher-btn:hover { 
-      opacity: 1;
-      transform: scale(1.1); 
-      box-shadow: 0 8px 25px rgba(212, 175, 55, 0.6);
-      border-color: rgba(255, 255, 255, 0.9);
-    }
+    .ai-launcher-btn:hover { opacity: 1; transform: scale(1.1); box-shadow: 0 8px 25px rgba(212, 175, 55, 0.6); border-color: rgba(255, 255, 255, 0.9); }
 
-    .chat-container { 
-      position: fixed; 
-      bottom: 140px; 
-      right: 20px; 
-      width: 360px; 
-      max-width: calc(100vw - 30px); 
-      height: 480px; 
-      max-height: calc(100vh - 160px); 
-      background: var(--bg-card); 
-      border: 1px solid var(--border-hover); 
-      border-radius: var(--radius-lg); 
-      box-shadow: var(--shadow-cinematic); 
-      display: flex; 
-      flex-direction: column; 
-      z-index: 9999; 
-      overflow: hidden; 
-      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); 
+    .chat-container {
+      position: fixed; bottom: 140px; right: 20px; width: 360px; max-width: calc(100vw - 30px);
+      height: 480px; max-height: calc(100vh - 160px); background: var(--bg-card);
+      border: 1px solid var(--border-hover); border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-cinematic); display: flex; flex-direction: column;
+      z-index: 9999; overflow: hidden; transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
     .chat-container.hidden { opacity: 0; pointer-events: none; transform: translateY(20px) scale(0.95); }
     .chat-header { background: var(--bg-surface); color: var(--text-main); padding: 12px 14px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-color); }
@@ -978,7 +860,7 @@
       </div>
     </section>
 
-    <!-- Tab 2: Services (خدماتنا المطورة ودراسات الحالة) -->
+    <!-- Tab 2: Services (خدماتنا) -->
     <section class="tab-section" id="tab-about">
       <div class="section-header">
         <h2 data-i18n="services_header">خدماتنا <span>الرقمية المتكاملة</span></h2>
@@ -1035,7 +917,6 @@
         <p data-i18n="products_sub">اختر من بين أدوات الويب الذكية، قوالب المواقع الاحترافية، وحزم السيرة الذاتية المميزة بأسعار تنافسية وخيارات دفع متعددة</p>
       </div>
 
-      <!-- قائمة الفلترة -->
       <div class="filter-buttons">
         <button class="filter-btn active" data-filter="all" data-i18n="filter_all">جميع المنتجات</button>
         <button class="filter-btn" data-filter="free" data-i18n="filter_free">🎁 منتجات مجانية</button>
@@ -1046,7 +927,7 @@
 
       <div class="products-grid">
 
-        <!-- 0. منتج المساعد الذكي الجديد (AI Assistant Service) -->
+        <!-- 0. منتج المساعد الذكي الجديد -->
         <div class="product-card" data-category="saas" style="border: 2px solid var(--accent-gold);">
           <div class="product-banner" style="background: linear-gradient(135deg, #1e293b, #0f172a);">
             <i class="fa-solid fa-robot"></i>
@@ -1100,7 +981,7 @@
           </div>
           <div class="product-body">
             <h3 class="product-title">SaaS Pricing & ROI Calculator Pro</h3>
-            <p class="product-desc">أداة مالية احترافية متقدمة لحساب العائد على الاستثمار (ROI) وتسعير خدمات الـ SaaS والمقاييس المالية بدقة لتعظيم أرباح مشروعك الرقمي.</p>
+            <p class="product-desc">أداة مالية احترافية متتقدمة لحساب العائد على الاستثمار (ROI) وتسعير خدمات الـ SaaS والمقاييس المالية بدقة لتعظيم أرباح مشروعك الرقمي.</p>
             <div class="product-footer">
               <span class="product-price">$9.00</span>
               <div class="product-actions-group">
@@ -1235,7 +1116,7 @@
       </div>
     </section>
 
-    <!-- Tab 4: Offers (العروض والخصومات الفاخرة والمختصرة) -->
+    <!-- Tab 4: Offers (العروض والخصومات) -->
     <section class="tab-section" id="tab-offers">
       <div class="offers-clean-container">
         <div class="offer-header-badge">
@@ -1289,34 +1170,61 @@
       </div>
     </section>
 
-    <!-- Tab 5: Contact (التواصل ودراسات الحالة الناجحة) -->
+    <!-- Tab 5: Contact (التواصل ودراسة الحالة النظيفة ثنائية اللغة) -->
     <section class="tab-section" id="tab-contact">
       
-      <!-- قسم دراسة الحالة المميزة (Case Study Success Story) -->
-      <div style="background: var(--bg-card); border: 1px solid var(--border-hover); border-radius: var(--radius-lg); padding: 35px; margin-bottom: 40px; box-shadow: var(--shadow-cinematic); text-align: right;">
-        <div style="display: inline-block; background-color: var(--gold-glow); color: var(--accent-gold-light); font-size: 0.85rem; font-weight: 800; padding: 5px 14px; border-radius: 20px; margin-bottom: 15px; border: 1px solid var(--border-hover);">
-          📈 قصة نجاح وقضية عمل (Case Study)
+      <!-- قسم دراسة الحالة المميزة النظيف ثنائي اللغة (Bilingual Case Study) -->
+      <div style="background: var(--bg-card); border: 1px solid var(--border-hover); border-radius: var(--radius-lg); padding: 30px 20px; margin-bottom: 40px; box-shadow: var(--shadow-cinematic); text-align: right;">
+        
+        <!-- شارة العنوان -->
+        <div style="display: inline-flex; align-items: center; gap: 8px; background: var(--gold-glow); color: var(--accent-gold-light); font-size: 0.85rem; font-weight: 800; padding: 6px 16px; border-radius: 100px; margin-bottom: 18px; border: 1px solid var(--border-hover);">
+          <i class="fa-solid fa-chart-line"></i>
+          <span>قصة نجاح وقضية عمل | Real Case Study</span>
         </div>
-        <h3 style="font-size: 1.5rem; font-weight: 900; margin-bottom: 12px; line-height: 1.4;">
-          كيف ساهمت قوالب وأدوات أحمد أبو عمر في زيادة مبيعات شركة عقارية بنسبة 40% خلال 30 يوماً؟[span_0](start_span)[span_0](end_span)
+
+        <!-- العنوان الرئيسي المدمج -->
+        <h3 style="font-size: 1.35rem; font-weight: 900; margin-bottom: 15px; line-height: 1.5; color: var(--text-main);">
+          كيف ساهمت قوالب وأدوات Ahmed Abu Omar في زيادة مبيعات شركة عقارية بنسبة 40% خلال 30 يوماً؟
+          <span style="display: block; font-size: 0.95rem; color: var(--accent-gold); font-weight: 700; margin-top: 6px; font-family: 'Plus Jakarta Sans', sans-serif;">
+            How Ahmed Abu Omar Templates & Tools Boosted Real Estate Sales by 40% in 30 Days
+          </span>
         </h3>
-        <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; margin-bottom: 15px;">
-          <strong>العميل:</strong> شركة عقارية وتطوير عقاري ناشئة[span_1](start_span)[span_1](end_span).<br>
-          <strong>الحل:</strong> قالب موقع عقاري متجاوب + حاسبة العائد الاستثماري (ROI Calculator Pro)[span_2](start_span)[span_2](end_span).<br>
-          <strong>النتيجة:</strong> قفزة في سرعة الموقع إلى 98% ونمو الاستفسارات والمبيعات بنسبة 40%[span_3](start_span)[span_3](end_span).
-        </p>
-        <blockquote style="border-right: 4px solid var(--accent-gold); padding-right: 15px; font-style: italic; color: var(--text-main); font-size: 0.95rem; margin-bottom: 20px;">
-          "العمل بقوالب وأدوات أحمد أبو عمر أحدث فارقاً كبيراً في شكل موقعنا وسرعة تواصل العملاء معنا. تجربة ممتازة وسلسة جداً[span_4](start_span)!"[span_4](end_span)
+
+        <!-- تفاصيل دراسة الحالة ببيانات حقيقية -->
+        <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 18px; margin-bottom: 20px; line-height: 1.7; font-size: 0.92rem;">
+          
+          <p style="margin-bottom: 10px; color: var(--text-main);">
+            <strong style="color: var(--accent-gold);">• العميل | Client:</strong> شركة عقارات وتطوير عقاري ناشئة (Real Estate & Development Startup)
+          </p>
+          
+          <p style="margin-bottom: 10px; color: var(--text-main);">
+            <strong style="color: var(--accent-gold);">• الحل | Solution:</strong> قالب NOVA العقاري المتجاوب + حاسبة العائد الاستثماري (NOVA Real Estate Template + SaaS ROI Calculator Pro)
+          </p>
+
+          <p style="margin-bottom: 0; color: var(--text-main);">
+            <strong style="color: var(--accent-gold);">• النتيجة | Results:</strong> رفع سرعة الموقع إلى 98% وتدفق استفسارات المبيعات بنسبة 40% (PageSpeed 98% & +40% Lead Conversions)
+          </p>
+
+        </div>
+
+        <!-- اقتباس العملاء (Testimonial) -->
+        <blockquote style="border-right: 4px solid var(--accent-gold); padding-right: 15px; font-style: italic; color: var(--text-muted); font-size: 0.9rem; margin: 0 0 10px 0; line-height: 1.6;">
+          "استخدام قوالب وأدوات أحمد أبو عمر أحدث فارقاً كبيراً في سرعة موقعنا وتجاوب العملاء معنا. تجربة احترافية وسلسة جداً!"
+          <span style="display: block; font-size: 0.82rem; color: var(--accent-gold-light); font-weight: 700; margin-top: 4px; font-style: normal; font-family: 'Plus Jakarta Sans', sans-serif;">
+            "Using Ahmed Abu Omar's templates & tools made a massive difference in site performance and customer response. A seamless and highly professional experience!"
+          </span>
         </blockquote>
+
       </div>
 
+      <!-- صندوق التواصل المباشر عبر الواتساب -->
       <div class="contact-box">
         <i class="fa-brands fa-whatsapp main-icon"></i>
-        <h3>تواصل معنا عبر الواتساب</h3>
-        <p>هل تحتاج إلى استفسار حول منتج رقمي مخصص، أو ترغب في الدفع عبر المحافظ الإلكترونية؟ فريقنا جاهز لمساعدتك فوراً بكل احترافية.</p>
-        <a href="https://wa.me/201206443652?text=مرحباً، أرغب في الاستفسار عن منتج معين أو الدفع عبر المحافظ الإلكترونية" target="_blank" class="btn-whatsapp-main" style="font-size: 1.1rem; padding: 16px 35px;">
-          <i class="fa-brands fa-whatsapp" style="font-size: 1.4rem;"></i>
-          <span>مراسلة مباشرة عبر الواتساب</span>
+        <h3>تواصل معنا مباشرة عبر الواتساب</h3>
+        <p>هل لديك استفسار حول منتج رقمي، أو ترغب في تنفيذ شراء مباشر عبر المحافظ الإلكترونية؟ نحن جاهزون لخدمتك فوراً.</p>
+        <a href="https://wa.me/201206443652?text=مرحباً،%20أرغب%20في%20الاستفسار%20عن%20المنتجات%20الرقمية%20والدفع%20المباشر" target="_blank" class="btn-whatsapp-main" style="font-size: 1.05rem; padding: 15px 32px;">
+          <i class="fa-brands fa-whatsapp" style="font-size: 1.3rem;"></i>
+          <span>مراسلة مباشرة عبر الواتساب (01206443652)</span>
         </a>
       </div>
 
@@ -1381,7 +1289,6 @@
       </div>
     </div>
     
-    <!-- BILINGUAL QUICK CHIPS -->
     <div class="quick-chips" id="quick-chips-container">
       <button onclick="handleUserAsk(currentLang === 'ar' ? '🤖 خدمة المساعد الذكي' : '🤖 AI Assistant Service')">🤖 <span data-i18n="chip_bot">المساعد الذكي</span></button>
       <button onclick="handleUserAsk(currentLang === 'ar' ? '🛠️ الأدوات والمتاجر' : '🛠️ Tools & Products')">🛠️ <span data-i18n="chip_tools">الأدوات</span></button>
@@ -1621,7 +1528,7 @@
       if (q.includes('أدوات') || q.includes('ادوات') || q.includes('saas') || q.includes('tool') || q.includes('product') || q.includes('منتجات')) {
         return inEnglish ?
           `🛠️ **Available Products & Tools:**\n\n1. **AI Assistant Service** ($5.00)\n2. **SaaS Pricing & ROI Calculator Pro** ($9.00)\n3. **Image Compressor Pro** ($6.00)\n4. **SEO Meta & Schema Generator Pro** ($7.00)\n5. **AI Social Post Generator Pro** ($9.00)\n6. **Student Hub Pro** (Free)\n7. **NOVA Real Estate Template** ($8.00)\n8. **Business Website Template** ($8.00)\n\n👉 **For direct purchase or inquiry, chat on WhatsApp:**\n${WA_LINK}` :
-          `🛠️ **المنتجات والأدوات والأقسام المتاحة:**\n\n1. **خدمة المساعد الذكي والشات بوت للمواقع** ($5.00)\n2. **SaaS Pricing & ROI Calculator Pro** ($9.00)\n3. **Image Compressor Pro** ($6.00)\n4. **SEO Meta & Schema Generator Pro** ($7.00)\n5. **AI Social Post Generator Pro** ($9.00)\n6. **Student Hub Pro** (منصة الطالب المجانية)\n7. **قوالب المواقع (عقارات وأعمال)** ($8.00)\n\n👉 **للشراء المباشر أو الاستفسار تواصل معنا عبر الواتساب والمحافظ الإلكترونية:**\n${WA_LINK}`;
+          `🛠️ **المنتجات والأدوات والأقسام المتاحة:**\n\n1. **خدمة المساعد الذكي والشات بوت للمواقع** ($5.00)\n2. **SaaS Pricing & ROI Calculator Pro** ($9.00)\n3. **Image Compressor Pro** ($6.00)\n4. **SEO Meta & Schema Generator Pro** ($7.00)\n5. **AI Social Post Generator Pro** ($9.00)\n6. **Student Hub Pro** (منصة الطالب المجانية)\n7. **قوالب المواقع (عقارات وأعمال)** ($8.00)\n\n👉 **للشراء المباشر أو الاستفسار تواصل معنا عبر الواتساب والمافظ الإلكترونية:**\n${WA_LINK}`;
       }
       
       if (q.includes('سيرة') || q.includes('cv') || q.includes('ats') || q.includes('resume')) {
@@ -1644,7 +1551,7 @@
 
       return inEnglish ?
         `Hello! I am the AI assistant for **Ahmed Abu Omar Studio**. You can ask about our tools, templates, ATS resumes, AI chatbot service, or payment methods.\n\nFor custom orders, chat with us directly on WhatsApp:\n📲 ${WA_LINK}` :
-        `مرحباً بك! أنا المساعد الذكي لـ **Ahmed Abu Omar Studio**. يمكنك السؤال عن أدوات الـ Micro-SaaS، قوالب المواقع، السير الذاتية ATS، خدمة المساعد الذكي بـ $5، أو طرق الدفع والشراء.\n\nللحصول على تفاصيل مخصصة، تواصل معنا عبر الواتساب:\n📲 ${WA_LINK}`;
+        `مرحباً بك! أنا المساعد الذكي لـ **Ahmed Abu Omar Studio**. يمكنك السؤال عن أدوات الـ Micro-SaaS، قوالب المواقع، السير الذاتية ATS، خدمة المساعد الذكي بـ $5، أو طرق الدفع والشراء.\n\nل للحصول على تفاصيل مخصصة، تواصل معنا عبر الواتساب:\n📲 ${WA_LINK}`;
     }
 
     function handleUserAsk(text) {
