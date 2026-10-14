@@ -1013,7 +1013,7 @@
       </div>
 
       <div class="services-grid">
-        <!-- الخدمة الجديدة: استشارات وتطوير حلول المساعد الذكي -->
+        <!-- الخدمة المضافة: خدمة المساعد الذكي -->
         <div class="service-card" style="border: 2px solid var(--accent-gold);">
           <div class="service-icon"><i class="fa-solid fa-headset"></i></div>
           <h3>خدمة المساعد الذكي وشات بوت المواقع</h3>
@@ -1422,6 +1422,7 @@
     
     <!-- BILINGUAL QUICK CHIPS -->
     <div class="quick-chips" id="quick-chips-container">
+      <button onclick="handleUserAsk(currentLang === 'ar' ? '🤖 خدمة المساعد الذكي' : '🤖 AI Assistant Service')">🤖 <span data-i18n="chip_bot">المساعد الذكي</span></button>
       <button onclick="handleUserAsk(currentLang === 'ar' ? '🛠️ الأدوات المتاحة' : '🛠️ Available Tools')">🛠️ <span data-i18n="chip_tools">الأدوات</span></button>
       <button onclick="handleUserAsk(currentLang === 'ar' ? '📄 تصميم السيرة الذاتية' : '📄 ATS Resume Service')">📄 <span data-i18n="chip_cv">السيرة الذاتية</span></button>
       <button onclick="handleUserAsk(currentLang === 'ar' ? '💳 كيفية الشراء والدفع' : '💳 How to Buy')">💳 <span data-i18n="chip_buy">طريقة الشراء</span></button>
@@ -1485,6 +1486,7 @@
         ai_welcome: "أهلاً بك 👋 أنا المساعد الشخصي لـ **Ahmed Abu Omar Studio**. كيف يمكنني مساعدتك اليوم في الاستفسار عن أدواتنا، خيارات الشراء، أو خدماتنا الاحترافية؟",
         ai_placeholder: "اسألني عن أي شيء...",
         ai_typing: "جاري إعداد الرد الفوري... 🤖",
+        chip_bot: "المساعد الذكي",
         chip_tools: "الأدوات",
         chip_cv: "السيرة الذاتية",
         chip_buy: "طريقة الشراء",
@@ -1536,6 +1538,7 @@
         ai_welcome: "Welcome 👋 I am the personal AI Assistant for **Ahmed Abu Omar Studio**. How can I assist you today regarding our tools, purchasing options, or services?",
         ai_placeholder: "Ask me anything...",
         ai_typing: "Preparing instant response... 🤖",
+        chip_bot: "AI Assistant",
         chip_tools: "Tools",
         chip_cv: "ATS Resume",
         chip_buy: "How to Buy",
