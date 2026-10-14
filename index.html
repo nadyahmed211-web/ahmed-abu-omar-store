@@ -26,7 +26,7 @@
   <meta name="twitter:description" content="أدوات ويب ذكية، خدمات سيرة ذاتية ATS احترافية، ومنصات رقمية متكاملة.">
   <meta name="twitter:image" content="https://nadyahmed211-web.github.io/ahmed-abu-omar-store/preview.jpg">
 
-  <!-- JSON-LD Schema Structured Data -->
+  <!-- JSON-LD Schema Structured Data (Google Rich Snippets) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -110,6 +110,10 @@
     .nav-link-btn { background: transparent; border: none; color: var(--text-muted); padding: 6px 16px; border-radius: 100px; font-weight: 700; font-size: 0.82rem; cursor: pointer; transition: var(--transition); display: flex; align-items: center; gap: 6px; white-space: nowrap; }
     .nav-link-btn:hover { color: var(--text-main); background: rgba(255, 255, 255, 0.05); }
     .nav-link-btn.active { color: #05070c; background: var(--gold-gradient); font-weight: 800; box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3); }
+    .nav-controls { display: flex; align-items: center; gap: 8px; }
+    .ctrl-btn-group { display: flex; align-items: center; gap: 4px; background: rgba(255, 255, 255, 0.03); padding: 3px; border-radius: 100px; border: 1px solid var(--border-color); }
+    .ctrl-btn { background: transparent; border: none; color: var(--text-main); width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: var(--transition); font-size: 0.8rem; font-weight: 800; }
+    .ctrl-btn:hover { background: var(--gold-glow); color: var(--accent-gold); }
 
     .app-viewport { max-width: 1280px; margin: 110px auto 60px; padding: 0 20px; min-height: calc(100vh - 180px); }
     .tab-section { display: none; animation: fadeInContent 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
@@ -155,40 +159,48 @@
     .product-card:hover { transform: translateY(-6px); border-color: var(--border-hover); box-shadow: var(--shadow-cinematic); }
     .product-banner { width: 100%; height: 180px; position: relative; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #0f172a, #1e293b); }
     .product-banner i { font-size: 3rem; color: var(--accent-gold); }
+    .product-badge-tag { position: absolute; top: 12px; right: 12px; background: rgba(5, 7, 12, 0.85); border: 1px solid var(--border-hover); color: var(--accent-gold); padding: 4px 12px; border-radius: 100px; font-size: 0.75rem; font-weight: 700; backdrop-filter: blur(5px); }
     .product-body { padding: 24px; display: flex; flex-direction: column; flex-grow: 1; }
     .product-title { font-size: 1.15rem; font-weight: 800; margin-bottom: 8px; }
     .product-desc { color: var(--text-muted); font-size: 0.88rem; margin-bottom: 20px; flex-grow: 1; line-height: 1.5; }
     .product-footer { display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--border-color); padding-top: 16px; gap: 8px; flex-wrap: wrap; }
     .product-price { font-size: 1.25rem; font-weight: 900; color: var(--accent-gold); width: 100%; margin-bottom: 4px; }
+    .product-actions-group { display: flex; gap: 8px; width: 100%; align-items: center; justify-content: space-between; }
+    .btn-product-link { background: var(--gold-glow); border: 1px solid var(--border-hover); color: var(--text-main); padding: 8px 14px; border-radius: 100px; font-weight: 700; font-size: 0.8rem; transition: var(--transition); display: inline-flex; align-items: center; gap: 5px; flex: 1; justify-content: center; text-align: center; }
+    .btn-product-link:hover { background: var(--gold-gradient); color: #05070c; border-color: transparent; }
+    .btn-product-wa { background: rgba(37, 211, 102, 0.15); border: 1px solid rgba(37, 211, 102, 0.4); color: #25d366; padding: 8px 14px; border-radius: 100px; font-weight: 700; font-size: 0.8rem; transition: var(--transition); display: inline-flex; align-items: center; gap: 5px; justify-content: center; text-align: center; }
+    .btn-product-wa:hover { background: #25d366; color: #fff; }
 
-    /* ==================== TRANSPARENT AI FLOATING BUTTON ==================== */
+    .mobile-bottom-nav { display: none; }
+
+    /* ==================== TRANSPARENT AI FLOATING BUTTON (UPDATED) ==================== */
     .ai-launcher-btn {
       position: fixed; 
       bottom: 25px; 
       right: 25px; 
-      width: 52px; 
-      height: 52px; 
+      width: 54px; 
+      height: 54px; 
       border-radius: 50%; 
       background: var(--gold-gradient); 
       color: #05070c; 
-      border: 1px solid rgba(212, 175, 55, 0.4); 
+      border: 1px solid rgba(212, 175, 55, 0.5); 
       cursor: pointer; 
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4); 
       display: flex; 
       align-items: center; 
       justify-content: center; 
-      font-size: 1.3rem; 
+      font-size: 1.4rem; 
       z-index: 9999; 
-      opacity: 0.6; /* شفافية مريحة للعين كي لا تزعج التصميم */
+      opacity: 0.65; /* شفافة تماماً كي لا تزعج واجهة الموقع وتختلط بالتصميم بشكل أنيق */
       backdrop-filter: blur(8px);
       -webkit-backdrop-filter: blur(8px);
       transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
     .ai-launcher-btn:hover { 
-      opacity: 1; 
+      opacity: 1; /* تصبح واضحة تماماً وبراقة عند المرور عليها بالماوس أو اللمس */
       transform: scale(1.1); 
       box-shadow: 0 8px 25px rgba(212, 175, 55, 0.6);
-      border-color: rgba(255, 255, 255, 0.8);
+      border-color: rgba(255, 255, 255, 0.9);
     }
     
     .chat-container { 
@@ -231,6 +243,8 @@
       header { width: 92%; padding: 10px 14px; top: 10px; }
       .nav-links { display: none; }
       .hero-grid { grid-template-columns: 1fr; text-align: center; }
+      .hero-buttons { justify-content: center; }
+      .hero-visual { height: 380px; }
       .app-viewport { margin-top: 85px; margin-bottom: 85px; padding: 0 15px; }
       .ai-launcher-btn { bottom: 20px; right: 20px; width: 48px; height: 48px; font-size: 1.2rem; }
       .chat-container { bottom: 80px; right: 15px; }
@@ -247,14 +261,21 @@
       <div class="brand-logo-box">A</div>
       <div class="brand-text">
         <h1>Ahmed Abu Omar</h1>
-        <span>Premium Digital Studio</span>
+        <span data-i18n="brand_subtitle">Premium Digital Studio</span>
       </div>
     </div>
 
     <ul class="nav-links">
-      <li><button class="nav-link-btn active" onclick="switchTab('tab-hero')"><i class="fa-solid fa-house"></i> الرئيسية</button></li>
-      <li><button class="nav-link-btn" onclick="switchTab('tab-products')"><i class="fa-solid fa-layer-group"></i> المنتجات الرقمية</button></li>
+      <li><button class="nav-link-btn active" onclick="switchTab('tab-hero')"><i class="fa-solid fa-house"></i> <span data-i18n="nav_home">الرئيسية</span></button></li>
+      <li><button class="nav-link-btn" onclick="switchTab('tab-products')"><i class="fa-solid fa-layer-group"></i> <span data-i18n="nav_templates">المنتجات الرقمية</span></button></li>
     </ul>
+
+    <div class="nav-controls">
+      <div class="ctrl-btn-group">
+        <button class="ctrl-btn" id="lang-toggle">EN</button>
+        <button class="ctrl-btn" id="theme-toggle"><i class="fa-solid fa-moon"></i></button>
+      </div>
+    </div>
   </header>
 
   <main class="app-viewport">
@@ -295,13 +316,16 @@
       <div class="section-header"><h2>متجر <span>المنتجات الرقمية</span></h2></div>
       <div class="products-grid">
         <div class="product-card">
-          <div class="product-banner" style="background: linear-gradient(135deg, #059669, #10b981);"><i class="fa-solid fa-robot"></i></div>
+          <div class="product-banner" style="background: linear-gradient(135deg, #059669, #10b981);"><i class="fa-solid fa-robot"></i><span class="product-badge-tag">جديد | Micro-SaaS</span></div>
           <div class="product-body">
             <h3 class="product-title">Gemini AI Chat Assistant Widget</h3>
-            <p class="product-desc">ودجة مساعد ذكي متكامل للمواقع لتوفير خدمة عملاء وإجابات تلقائية بذكاء اصطناعي بدون تعقيد.</p>
+            <p class="product-desc">ودجة مساعد ذكي متكامل للمواقع لتوفير خدمة عملاء وتقديم إجابات تلقائية بذكاء اصطناعي بدون تعقيد.</p>
             <div class="product-footer">
               <span class="product-price">$9.00</span>
-              <a href="https://payhip.com/b/MJFx5" target="_blank" class="btn-gold" style="width:100%; justify-content:center;">شراء من المتجر</a>
+              <div class="product-actions-group">
+                <a href="https://payhip.com/b/MJFx5" target="_blank" class="btn-product-link">شراء من المتجر</a>
+                <a href="https://wa.me/201206443652" target="_blank" class="btn-product-wa"><i class="fa-brands fa-whatsapp"></i> واتساب</a>
+              </div>
             </div>
           </div>
         </div>
@@ -309,7 +333,7 @@
     </section>
   </main>
 
-  <!-- TRANSPARENT AI FLOATING BUTTON -->
+  <!-- TRANSPARENT AI ASSISTANT FLOATING BUTTON (Replaced WhatsApp Icon) -->
   <button id="ai-launcher" class="ai-launcher-btn" onclick="toggleChat()" aria-label="المساعد الشخصي">
     <i class="fa-solid fa-headset"></i>
   </button>
@@ -356,6 +380,7 @@
 
     const WA_LINK = "https://wa.me/201206443652";
 
+    // قاعدة بيانات المعرفة الشاملة للرد الفوري المباشر بدون أخطاء
     function getSmartResponse(question) {
       const q = question.toLowerCase();
 
@@ -375,7 +400,7 @@
         return `💬 **تواصل معنا مباشرة عبر الواتساب:**\n\nنحن متواجدون لخدمتك فوراً للإجابة على جميع استفساراتك وتلبية طلباتك الخاصة.\n\n📲 **اضغط هنا للمراسلة:**\n${WA_LINK}`;
       }
 
-      return `مرحباً بك! أنا هنا لمساعدتك في كل ما يتعلق باستوديو **Ahmed Abu Omar** (قوالب المواقع، أدوات Micro-SaaS، تصاميم ATS، وخدمات الويب).\n\nل للحصول على تفاصيل مخصصة أو طلب خدمة فورية، يسعدنا تواصلك المباشر معنا عبر الواتساب:\n📲 ${WA_LINK}`;
+      return `مرحباً بك! أنا هنا لمساعدتك في كل ما يتعلق باستوديو **Ahmed Abu Omar** (قوالب المواقع، أدوات Micro-SaaS، تصاميم ATS، وخدمات الويب).\n\nللحصول على تفاصيل مخصصة أو طلب خدمة فورية، يسعدنا تواصلك المباشر معنا عبر الواتساب:\n📲 ${WA_LINK}`;
     }
 
     function handleUserAsk(text) {
