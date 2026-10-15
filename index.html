@@ -493,6 +493,25 @@
             box-shadow: 0 15px 45px rgba(34, 197, 94, 0.6);
         }
 
+        /* CUSTOM CV BANNER (بسر 150 ثابت مع زر الواتساب فقط) */
+        .custom-cv-banner {
+            background: linear-gradient(135deg, rgba(20, 16, 5, 0.95), rgba(10, 14, 26, 0.98));
+            border: 2px solid var(--gold);
+            border-radius: 28px;
+            padding: 3rem 2rem;
+            margin: 3.5rem 0;
+            text-align: center;
+            box-shadow: 0 20px 50px rgba(212, 175, 55, 0.3);
+            position: relative;
+            overflow: hidden;
+            animation: borderPulse 4s infinite alternate;
+        }
+
+        @keyframes borderPulse {
+            0% { border-color: rgba(212, 175, 55, 0.5); box-shadow: 0 0 20px rgba(212, 175, 55, 0.2); }
+            100% { border-color: rgba(212, 175, 55, 1); box-shadow: 0 0 40px rgba(212, 175, 55, 0.5); }
+        }
+
         /* CASE STUDY SECTION */
         .case-study-card {
             background: rgba(10, 14, 26, 0.92);
@@ -559,12 +578,6 @@
             box-shadow: 0 20px 50px rgba(212, 175, 55, 0.25);
             position: relative;
             overflow: hidden;
-            animation: borderPulse 4s infinite alternate;
-        }
-
-        @keyframes borderPulse {
-            0% { border-color: rgba(212, 175, 55, 0.5); box-shadow: 0 0 20px rgba(212, 175, 55, 0.2); }
-            100% { border-color: rgba(212, 175, 55, 1); box-shadow: 0 0 40px rgba(212, 175, 55, 0.5); }
         }
 
         .social-btn-icon-only {
@@ -837,13 +850,10 @@
             </div>
             <div class="ai-modal-body" id="aiChatBody">
                 <div class="ai-msg-box">
-                    أهلاً بك! أنا المساعد الذكي المربوط بالذكاء الاصطناعي لمتجر <strong>أحمد أبو عمر (Ahmed Abu Omar)</strong>. 
-                    يمكنني إجابة كافة استفساراتك حول المنتجات الرقمية، دراسات الحالة، والخدمات الحصرية وقسم "حول":
+                    أهلاً بك! أنا المساعد الذكي لمتجر <strong>أحمد أبو عمر (Ahmed Abu Omar)</strong>. 
+                    تم تعديل الأسعار لتكون واقعية ومنطقية مع الحفاظ على صافي الأرباح المطلوب (800، 600، 300، 200 جنيه) وبنر خدمة الـ CV المخصص بـ 150 جنيه ثابت. كيف يمكنني مساعدتك؟
                 </div>
-                <button class="ai-faq-btn" onclick="askAi('من هو أحمد أبو عمر وما هو هذا الاستوديو الرقمي؟')">👑 من هو أحمد أبو عمر وما هو هذا الاستوديو الرقمي؟</button>
-                <button class="ai-faq-btn" onclick="askAi('كيف حقق العميل العقاري نمو مبيعات 40%؟')">📈 كيف حقق العميل العقاري نمو مبيعات 40%؟</button>
-                <button class="ai-faq-btn" onclick="askAi('ما هي الخدمات الأربع المتاحة؟')">🌐 ما هي الخدمات الأربع المتاحة؟</button>
-                <button class="ai-faq-btn" onclick="askAi('كيف يمكنني استخدام كود الخصم OMAR 60؟')">💡 كيف يمكنني استخدام كود الخصم OMAR 60؟</button>
+                <button class="ai-faq-btn" onclick="askAi('ما هي تفاصيل الأسعار والخصومات الواقعية؟')">📊 تفاصيل الأسعار والخصومات الواقعية</button>
             </div>
             <div class="ai-modal-footer">
                 <input type="text" id="aiUserQuery" class="ai-input" placeholder="اكتب استفسارك للذكاء الاصطناعي..." onkeypress="if(event.key==='Enter') sendCustomAiQuery()">
@@ -920,7 +930,7 @@
 
             <div class="cinematic-cta-group">
                 <button class="btn btn-primary-gold" onclick="switchSection('products')" data-ar="استكشف متجر المنتجات الرقمية ➔" data-en="Explore Digital Products Showcase ➔">استكشف متجر المنتجات الرقمية ➔</button>
-                <button class="btn btn-primary-whatsapp" onclick="window.open('https://wa.me/201206443652','_blank')" data-ar="💬 تواصل عبر الواتساب" data-en="💬 Chat via WhatsApp">💬 تواصل عبر الواتساب</button>
+                <button class="btn btn-primary-whatsapp" onclick="window.open('https://wa.me/201206443652','_blank')" data-ar="💬 الشراء عبر الواتساب" data-en="💬 Buy via WhatsApp">💬 الشراء عبر الواتساب</button>
             </div>
         </div>
 
@@ -963,7 +973,7 @@
     <section id="section-products" class="page-section">
         <div class="section-header">
             <h2 data-ar="المتجر الرقمي والمنتجات الاحترافية" data-en="Digital Storefront & Professional Products">المتجر الرقمي والمنتجات الاحترافية</h2>
-            <p data-ar="استكشف تشكيلتنا المتكاملة من المنتجات الرقمية التي تشمل قوالب المواقع المصممة بمختلف القطاعات، وأدوات Micro-SaaS، وحزمة السير الذاتية." data-en="Explore our complete collection of premium web templates, micro-SaaS tools, and ATS resume bundles.">استكشف تشكيلتنا المتكاملة من المنتجات الرقمية التي تشمل قوالب المواقع المصممة بمختلف القطاعات، وأدوات Micro-SaaS، وحزمة السير الذاتية.</p>
+            <p data-ar="استكشف تشكيلتنا المتكاملة من المنتجات الرقمية التي تشمل قوالب المواقع المصممة بمختلف القطاعات، وأدوات Micro-SaaS، وحزم السير الذاتية." data-en="Explore our complete collection of premium web templates, micro-SaaS tools, and ATS resume bundles.">استكشف تشكيلتنا المتكاملة من المنتجات الرقمية التي تشمل قوالب المواقع المصممة بمختلف القطاعات، وأدوات Micro-SaaS، وحزم السير الذاتية.</p>
         </div>
 
         <div class="store-controls">
@@ -980,6 +990,18 @@
         </div>
 
         <div class="products-grid" id="productsGrid"></div>
+
+        <!-- 🌟 بنر تصميم CV مخصص بسعر 150 جنيه ثابت مع زر الواتساب فقط -->
+        <div class="custom-cv-banner">
+            <span style="background:var(--gold); color:#05070C; font-weight:900; padding:0.4rem 1.4rem; border-radius:20px; font-size:0.85rem;" data-ar="خدمة تصميم حصري" data-en="EXCLUSIVE DESIGN SERVICE">خدمة تصميم حصري</span>
+            <h3 style="color:var(--gold-light); margin:1.2rem 0 0.8rem; font-size:2.2rem; font-weight:900;" data-ar="تصميم CV مخصص واحترافي — اطلب التصميم الآن بـ 150 جنيه فقط!" data-en="Custom Professional CV Design — Order Now!">تصميم CV مخصص واحترافي — اطلب التصميم الآن بـ 150 جنيه فقط!</h3>
+            <p style="color:var(--text-main); font-size:1.1rem; max-width:800px; margin:0 auto 1.8rem; font-weight:700;" data-ar="احصل على سيرة ذاتية فريدة ومصممة خصيصاً لقصة نجاحك المهنية متوافقة 100% مع أنظمة الـ ATS وبأعلى معايير البريميوم." data-en="Get a unique resume customized for your career story, 100% ATS compliant with premium standards.">
+                احصل على سيرة ذاتية فريدة ومصممة خصيصاً لقصة نجاحك المهنية متوافقة 100% مع أنظمة الـ ATS وبأعلى معايير البريميوم.
+            </p>
+            <a href="https://wa.me/201206443652?text=السلام عليكم، أرغب في طلب خدمة تصميم CV مخصص واحترافي بسعر 150 جنيه" target="_blank" class="btn btn-primary-whatsapp" style="justify-content:center; font-size:1.1rem; padding:1.2rem 2.8rem;">
+                💬 الشراء عبر الواتساب (150 جنيه)
+            </a>
+        </div>
     </section>
 
     <!-- 4. OFFERS SECTION -->
@@ -1027,7 +1049,7 @@
                 <p style="margin-bottom:1.5rem;" data-ar="احصل على رد سريع ومباشر بخصوص طلبات البرمجة المخصصة أو الدعم التقني للقوالب." data-en="Direct support for custom coding orders or technical help.">
                     احصل على رد سريع ومباشر بخصوص طلبات البرمجة المخصصة أو الدعم التقني للقوالب.
                 </p>
-                <a href="https://wa.me/201206443652" target="_blank" class="btn btn-primary-whatsapp" style="justify-content:center;">💬 تواصل عبر الواتساب</a>
+                <a href="https://wa.me/201206443652" target="_blank" class="btn btn-primary-whatsapp" style="justify-content:center;">💬 الشراء عبر الواتساب</a>
             </div>
 
             <div class="service-card">
@@ -1115,29 +1137,34 @@
         ];
 
         const productsData = [
-            { id: 1, category: "tools", icon: "🤖", titleAr: "المساعد الذكي الاحترافي للمواقع وواجهات المحادثة (AI Assistant Pro)", titleEn: "AI Website Assistant Pro", descAr: "تكامل سلس للمساعد الذكي للمواقع والردود الآلية المتقدمة.", oldPrice: "2,105 EGP", discPrice: "842 EGP", url: "https://payhip.com/b/DXmGs" },
-            { id: 2, category: "tools", icon: "📊", titleAr: "حاسبة العائد التسعيري واقتصاديات SaaS Pro", titleEn: "SaaS Pricing & ROI Calculator Pro", descAr: "أداة مالية حاسبة للمقاييس المالية والتحليلات الاستثمارية لشركات SaaS.", oldPrice: "2,105 EGP", discPrice: "842 EGP", url: "https://payhip.com/b/MJFx5" },
-            { id: 3, category: "tools", icon: "🖼️", titleAr: "أداة ضاغط الصور الاحترافي اونلاين (Image Compressor Pro)", titleEn: "Image Compressor Pro", descAr: "أداة ويب مصغرة لضغط الصور بدقة عالية وتسريع المواقع.", oldPrice: "2,105 EGP", discPrice: "842 EGP", url: "https://payhip.com/b/y2Q5N" },
-            { id: 4, category: "tools", icon: "✉️", titleAr: "مولد الإيميلات والتواصل البارد الذكي (AI Cold Email Generator Pro)", titleEn: "AI Cold Email Generator Pro", descAr: "أداة ذكاء اصطناعي لتوليد رسائل البريد الإلكتروني والحملات التسويقية.", oldPrice: "2,105 EGP", discPrice: "842 EGP", url: "https://payhip.com/b/MWBli" },
-            { id: 5, category: "templates", icon: "🏢", titleAr: "قالب شركات العقارات والتطوير العقاري الفاخر", titleEn: "Real Estate & Development Template", descAr: "قالب موقع عقاري متجاوب وسريع جداً مخصص لمعاينة وحجز العقارات.", oldPrice: "2,105 EGP", discPrice: "842 EGP", url: "https://payhip.com/b/y2Q5N" },
-            { id: 6, category: "templates", icon: "⚖️", titleAr: "قالب مكاتب المحاماة والاستشارات القانونية", titleEn: "Law Firm & Legal Consulting Template", descAr: "تصميم فاخر وجاد للمكاتب والخبراء القانونيين.", oldPrice: "2,105 EGP", discPrice: "842 EGP", url: "https://payhip.com/b/y2Q5N" },
-            { id: 7, category: "templates", icon: "🛡️", titleAr: "قالب شركات الأمن السيبراني وحلول التكنولوجيا", titleEn: "Cybersecurity & IT Solutions Template", descAr: "تصميم سيبراني حديث ومبهر للشركات التقنية وحلول الأمان.", oldPrice: "2,105 EGP", discPrice: "842 EGP", url: "https://payhip.com/b/y2Q5N" },
-            { id: 8, category: "templates", icon: "🍽️", titleAr: "قالب المطاعم والمقاهي الفاخرة", titleEn: "Luxury Restaurant & Cafe Template", descAr: "قالب سينمائي داكن وذهبي للوجبات والمنيو الرقمي السريع.", oldPrice: "2,105 EGP", discPrice: "842 EGP", url: "https://payhip.com/b/ZPEcW" },
-            { id: 9, category: "templates", icon: "🚚", titleAr: "قالب شركات الشحن والخدمات اللوجستية", titleEn: "Logistics & Cargo Transport Template", descAr: "قالب منظم ومتجاوب لتتبع وتنسيق عمليات الشحن والخدمات اللوجستية.", oldPrice: "2,105 EGP", discPrice: "842 EGP", url: "https://payhip.com/b/y2Q5N" },
-            { id: 10, category: "templates", icon: "🏎️", titleAr: "قالب معرض وخدمات تأجير السيارات الفاخرة", titleEn: "Luxury Car Rental & Showroom Template", descAr: "تصميم جذاب وعصري لحجز وتصفح السيارات والخدمات الفاخرة.", oldPrice: "2,105 EGP", discPrice: "842 EGP", url: "https://payhip.com/b/y2Q5N" },
-            { id: 11, category: "templates", icon: "🛍️", titleAr: "قالب المتاجر الإلكترونية والمنتجات الرقمية", titleEn: "E-Commerce & Digital Products Template", descAr: "واجهة متجر إلكتروني متكاملة وسريعة لزيادة المبيعات.", oldPrice: "2,105 EGP", discPrice: "842 EGP", url: "https://payhip.com/b/y2Q5N" },
-            { id: 12, category: "templates", icon: "🎨", titleAr: "قالب الوكالات الرقمية واستوديوهات التصميم", titleEn: "Digital Agency & Studio Template", descAr: "تصميم إبداعي لاستعراض الأعمال والخدمات الرقمية برقي.", oldPrice: "2,105 EGP", discPrice: "842 EGP", url: "https://payhip.com/b/y2Q5N" },
-            { id: 13, category: "templates", icon: "🏥", titleAr: "قالب المراكز الطبية والعيادات التخصصية", titleEn: "Medical Center & Clinic Template", descAr: "تصميم هادئ وعصري مخصص لحجز المواعيد والخدمات الطبية.", oldPrice: "2,105 EGP", discPrice: "842 EGP", url: "https://payhip.com/b/y2Q5N" },
-            { id: 14, category: "templates", icon: "🎓", titleAr: "قالب المنصات التعليمية والأكاديميات التدريبية", titleEn: "Educational Academy & Courses Template", descAr: "قالب ممتاز لعرض الدورات والخدمات التدريبية أونلاين.", oldPrice: "2,105 EGP", discPrice: "842 EGP", url: "https://payhip.com/b/y2Q5N" },
-            { id: 15, category: "cv", icon: "📄", titleAr: "أحمد أبو عمر — حزمة السير الذاتية الفاخرة | 10 قوالب ATS", titleEn: "Ahmed Abu Omar Premium CV Bundle (10 ATS Templates)", descAr: "10 قوالب سيرة ذاتية احترافية باللغتين العربية والإنجليزية متوافقة مع أنظمة الـ ATS.", oldPrice: "657 EGP", discPrice: "263 EGP", url: "https://payhip.com/b/JGOSj" },
-            { id: 16, category: "cv", icon: "📑", titleAr: "قالب سيرة ذاتية ATS ذهبي ثنائي اللغة (عربي/إنجليزي)", titleEn: "Golden Bilingual ATS Resume Template", descAr: "قالب فردي مخصص للوظائف القيادية والإدارية.", oldPrice: "150 EGP", discPrice: "60 EGP", url: "https://payhip.com/b/JGOSj" },
-            { id: 17, category: "cv", icon: "📝", titleAr: "قالب سيرة ذاتية ATS هندسي للتقنيين والمبرمجين", titleEn: "Tech & Developers ATS Resume Template", descAr: "مصمم ومصغّر خصيصاً للمطورين والمهندسين لضمان القبول.", oldPrice: "150 EGP", discPrice: "60 EGP", url: "https://payhip.com/b/JGOSj" },
-            { id: 18, category: "cv", icon: "📋", titleAr: "قالب سيرة ذاتية ATS للقطاع الطبي والتمريضي", titleEn: "Medical & Clinical ATS Resume Template", descAr: "قالب حديث ومنظم للأطباء والممارسين الصحيين.", oldPrice: "150 EGP", discPrice: "60 EGP", url: "https://payhip.com/b/JGOSj" },
-            { id: 19, category: "cv", icon: "📊", titleAr: "قالب سيرة ذاتية ATS لإدارة الأعمال والتسويق", titleEn: "Business & Marketing ATS Resume Template", descAr: "تصميم أنيق لاستعراض الإنجازات والنتائج الرقمية.", oldPrice: "150 EGP", discPrice: "60 EGP", url: "https://payhip.com/b/JGOSj" },
-            { id: 20, category: "cv", icon: "💼", titleAr: "قالب سيرة ذاتية ATS للموارد البشرية والخدمات", titleEn: "HR & Administrative ATS Resume Template", descAr: "قالب هادئ واحترافي لقطاع إدارة الأفراد والعمليات.", oldPrice: "150 EGP", discPrice: "60 EGP", url: "https://payhip.com/b/JGOSj" },
-            { id: 21, category: "cv", icon: "🖋️", titleAr: "قالب سيرة ذاتية ATS للمحاسبة والمالية", titleEn: "Finance & Accounting ATS Resume Template", descAr: "مخصص للمحللين الماليين والمحاسبين بدقة متناهية.", oldPrice: "150 EGP", discPrice: "60 EGP", url: "https://payhip.com/b/JGOSj" },
-            { id: 22, category: "cv", icon: "🚀", titleAr: "قالب سيرة ذاتية ATS لحديثي التخرج والطلاب", titleEn: "Fresh Graduates ATS Resume Template", descAr: "يركز على المهارات والمشاريع الأكاديمية لجذب مسؤول التوظيف.", oldPrice: "150 EGP", discPrice: "60 EGP", url: "https://payhip.com/b/JGOSj" },
-            { id: 23, category: "cv", icon: "🌐", titleAr: "قالب سيرة ذاتية ATS حديث للتسويق الرقمي والمبيعات", titleEn: "Digital Marketing & Sales ATS Resume Template", descAr: "مصمم لإبراز حملات النمو والأرقام القياسية بشكل متناسق.", oldPrice: "150 EGP", discPrice: "60 EGP", url: "https://payhip.com/b/JGOSj" }
+            // المنتجات من 1 إلى 16 (صافي ربح 800 جنيه / السعر الأصلي 2,105 ج.م)
+            { id: 1, category: "tools", icon: "🤖", titleAr: "المساعد الذكي الاحترافي للمواقع وواجهات المحادثة (AI Assistant Pro)", titleEn: "AI Website Assistant Pro", descAr: "تكامل سلس للمساعد الذكي للمواقع والردود الآلية المتقدمة.", oldPriceEg: "2,105", discPriceEg: "842", oldPriceUsd: "$42.10", discPriceUsd: "$16.84", url: "https://payhip.com/b/DXmGs" },
+            { id: 2, category: "tools", icon: "📊", titleAr: "حاسبة العائد التسعيري واقتصاديات SaaS Pro", titleEn: "SaaS Pricing & ROI Calculator Pro", descAr: "أداة مالية حاسبة للمقاييس المالية والتحليلات الاستثمارية لشركات SaaS.", oldPriceEg: "2,105", discPriceEg: "842", oldPriceUsd: "$42.10", discPriceUsd: "$16.84", url: "https://payhip.com/b/MJFx5" },
+            { id: 3, category: "tools", icon: "🖼️", titleAr: "أداة ضاغط الصور الاحترافي اونلاين (Image Compressor Pro)", titleEn: "Image Compressor Pro", descAr: "أداة ويب مصغرة لضغط الصور بدقة عالية وتسريع المواقع.", oldPriceEg: "2,105", discPriceEg: "842", oldPriceUsd: "$42.10", discPriceUsd: "$16.84", url: "https://payhip.com/b/y2Q5N" },
+            { id: 4, category: "tools", icon: "✉️", titleAr: "مولد الإيميلات والتواصل البارد الذكي (AI Cold Email Generator Pro)", titleEn: "AI Cold Email Generator Pro", descAr: "أداة ذكاء اصطناعي لتوليد رسائل البريد الإلكتروني والحملات التسويقية.", oldPriceEg: "2,105", discPriceEg: "842", oldPriceUsd: "$42.10", discPriceUsd: "$16.84", url: "https://payhip.com/b/MWBli" },
+            { id: 5, category: "templates", icon: "🏢", titleAr: "قالب شركات العقارات والتطوير العقاري الفاخر", titleEn: "Real Estate & Development Template", descAr: "قالب موقع عقاري متجاوب وسريع جداً مخصص لمعاينة وحجز العقارات.", oldPriceEg: "2,105", discPriceEg: "842", oldPriceUsd: "$42.10", discPriceUsd: "$16.84", url: "https://payhip.com/b/y2Q5N" },
+            { id: 6, category: "templates", icon: "⚖️", titleAr: "قالب مكاتب المحاماة والاستشارات القانونية", titleEn: "Law Firm & Legal Consulting Template", descAr: "تصميم فاخر وجاد للمكاتب والخبراء القانونيين.", oldPriceEg: "2,105", discPriceEg: "842", oldPriceUsd: "$42.10", discPriceUsd: "$16.84", url: "https://payhip.com/b/y2Q5N" },
+            { id: 7, category: "templates", icon: "🛡️", titleAr: "قالب شركات الأمن السيبراني وحلول التكنولوجيا", titleEn: "Cybersecurity & IT Solutions Template", descAr: "تصميم سيبراني حديث ومبهر للشركات التقنية وحلول الأمان.", oldPriceEg: "2,105", discPriceEg: "842", oldPriceUsd: "$42.10", discPriceUsd: "$16.84", url: "https://payhip.com/b/y2Q5N" },
+            { id: 8, category: "templates", icon: "🍽️", titleAr: "قالب المطاعم والمقاهي الفاخرة", titleEn: "Luxury Restaurant & Cafe Template", descAr: "قالب سينمائي داكن وذهبي للوجبات والمنيو الرقمي السريع.", oldPriceEg: "2,105", discPriceEg: "842", oldPriceUsd: "$42.10", discPriceUsd: "$16.84", url: "https://payhip.com/b/ZPEcW" },
+            { id: 9, category: "templates", icon: "🚚", titleAr: "قالب شركات الشحن والخدمات اللوجستية", titleEn: "Logistics & Cargo Transport Template", descAr: "قالب منظم ومتجاوب لتتبع وتنسيق عمليات الشحن والخدمات اللوجستية.", oldPriceEg: "2,105", discPriceEg: "842", oldPriceUsd: "$42.10", discPriceUsd: "$16.84", url: "https://payhip.com/b/y2Q5N" },
+            { id: 10, category: "templates", icon: "🏎️", titleAr: "قالب معرض وخدمات تأجير السيارات الفاخرة", titleEn: "Luxury Car Rental & Showroom Template", descAr: "تصميم جذاب وعصري لحجز وتصفح السيارات والخدمات الفاخرة.", oldPriceEg: "2,105", discPriceEg: "842", oldPriceUsd: "$42.10", discPriceUsd: "$16.84", url: "https://payhip.com/b/y2Q5N" },
+            { id: 11, category: "templates", icon: "🛍️", titleAr: "قالب المتاجر الإلكترونية والمنتجات الرقمية", titleEn: "E-Commerce & Digital Products Template", descAr: "واجهة متجر إلكتروني متكاملة وسريعة لزيادة المبيعات.", oldPriceEg: "2,105", discPriceEg: "842", oldPriceUsd: "$42.10", discPriceUsd: "$16.84", url: "https://payhip.com/b/y2Q5N" },
+            { id: 12, category: "templates", icon: "🎨", titleAr: "قالب الوكالات الرقمية واستوديوهات التصميم", titleEn: "Digital Agency & Studio Template", descAr: "تصميم إبداعي لاستعراض الأعمال والخدمات الرقمية برقي.", oldPriceEg: "2,105", discPriceEg: "842", oldPriceUsd: "$42.10", discPriceUsd: "$16.84", url: "https://payhip.com/b/y2Q5N" },
+            { id: 13, category: "templates", icon: "🏥", titleAr: "قالب المراكز الطبية والعيادات التخصصية", titleEn: "Medical Center & Clinic Template", descAr: "تصميم هادئ وعصري مخصص لحجز المواعيد والخدمات الطبية.", oldPriceEg: "2,105", discPriceEg: "842", oldPriceUsd: "$42.10", discPriceUsd: "$16.84", url: "https://payhip.com/b/y2Q5N" },
+            { id: 14, category: "templates", icon: "🎓", titleAr: "قالب المنصات التعليمية والأكاديميات التدريبية", titleEn: "Educational Academy & Courses Template", descAr: "قالب ممتاز لعرض الدورات والخدمات التدريبية أونلاين.", oldPriceEg: "2,105", discPriceEg: "842", oldPriceUsd: "$42.10", discPriceUsd: "$16.84", url: "https://payhip.com/b/y2Q5N" },
+            { id: 15, category: "cv", icon: "📄", titleAr: "أحمد أبو عمر — حزمة السير الذاتية الفاخرة | 10 قوالب ATS", titleEn: "Ahmed Abu Omar Premium CV Bundle (10 ATS Templates)", descAr: "10 قوالب سيرة ذاتية احترافية باللغتين العربية والإنجليزية متوافقة مع أنظمة الـ ATS.", oldPriceEg: "790", discPriceEg: "316", oldPriceUsd: "$15.80", discPriceUsd: "$6.32", url: "https://payhip.com/b/JGOSj" },
+            { id: 16, category: "cv", icon: "📑", titleAr: "حزمة السير الذاتية المميزة | 7 قوالب ATS", titleEn: "Professional CV Bundle (7 ATS Templates)", descAr: "7 قوالب سيرة ذاتية احترافية متوافقة مع الـ ATS للوظائف المتقدمة.", oldPriceEg: "528", discPriceEg: "211", oldPriceUsd: "$10.56", discPriceUsd: "$4.21", url: "https://payhip.com/b/JGOSj" },
+
+            // المنتجات من 17 إلى 21 (صافي ربح 600 جنيه / السعر الأصلي 1,580 ج.م)
+            { id: 17, category: "cv", icon: "📝", titleAr: "قالب سيرة ذاتية ATS هندسي للتقنيين والمبرمجين", titleEn: "Tech & Developers ATS Resume Template", descAr: "مصمم ومصغّر خصيصاً للمطورين والمهندسين لضمان القبول.", oldPriceEg: "1,580", discPriceEg: "632", oldPriceUsd: "$31.60", discPriceUsd: "$12.63", url: "https://payhip.com/b/JGOSj" },
+            { id: 18, category: "cv", icon: "📋", titleAr: "قالب سيرة ذاتية ATS للقطاع الطبي والتمريضي", titleEn: "Medical & Clinical ATS Resume Template", descAr: "قالب حديث ومنظم للأطباء والممارسين الصحيين.", oldPriceEg: "1,580", discPriceEg: "632", oldPriceUsd: "$31.60", discPriceUsd: "$12.63", url: "https://payhip.com/b/JGOSj" },
+            { id: 19, category: "cv", icon: "📊", titleAr: "قالب سيرة ذاتية ATS لإدارة الأعمال والتسويق", titleEn: "Business & Marketing ATS Resume Template", descAr: "تصميم أنيق لاستعراض الإنجازات والنتائج الرقمية.", oldPriceEg: "1,580", discPriceEg: "632", oldPriceUsd: "$31.60", discPriceUsd: "$12.63", url: "https://payhip.com/b/JGOSj" },
+            { id: 20, category: "cv", icon: "💼", titleAr: "قالب سيرة ذاتية ATS للموارد البشرية والخدمات", titleEn: "HR & Administrative ATS Resume Template", descAr: "قالب هادئ واحترافي لقطاع إدارة الأفراد والعمليات.", oldPriceEg: "1,580", discPriceEg: "632", oldPriceUsd: "$31.60", discPriceUsd: "$12.63", url: "https://payhip.com/b/JGOSj" },
+            { id: 21, category: "cv", icon: "🖋️", titleAr: "قالب سيرة ذاتية ATS للمحاسبة والمالية", titleEn: "Finance & Accounting ATS Resume Template", descAr: "مخصص للمحللين الماليين والمحاسبين بدقة متناهية.", oldPriceEg: "1,580", discPriceEg: "632", oldPriceUsd: "$31.60", discPriceUsd: "$12.63", url: "https://payhip.com/b/JGOSj" },
+
+            // المنتجات 22 و 23 (الحزم الهندسية الشاملة)
+            { id: 22, category: "cv", icon: "📦", titleAr: "حزمة القوالب الهندسية الشاملة والمتطورة (الحزمة 22)", titleEn: "Advanced Comprehensive Engineering Bundle (Bundle 22)", descAr: "حزمة متكاملة ومصممة بأعلى معايير الـ UI/UX لتغطية المشاريع الكبرى.", oldPriceEg: "790", discPriceEg: "316", oldPriceUsd: "$15.80", discPriceUsd: "$6.32", url: "https://payhip.com/b/JGOSj" },
+            { id: 23, category: "cv", icon: "🌟", titleAr: "حزمة الرواد والأعمال الرقمية الاحترافية (الحزمة 23)", titleEn: "Elite Digital Business & Creators Bundle (Bundle 23)", descAr: "مجموعة أدوات وقوالب متطورة لرواد الأعمال وصناع المحتوى الرقمي.", oldPriceEg: "528", discPriceEg: "211", oldPriceUsd: "$10.56", discPriceUsd: "$4.21", url: "https://payhip.com/b/JGOSj" }
         ];
 
         let currentLang = 'ar';
@@ -1194,19 +1221,7 @@
 
         function askAi(q) {
             const body = document.getElementById('aiChatBody');
-            let answer = "";
-            if(q.includes('أحمد أبو عمر') || q.includes('استوديو')) {
-                answer = "أحمد أبو عمر هو مطور ومصمم رقمي رائد يقدم استوديو سينمائي وهندسي متكامل لقوالب المواقع، أدوات Micro-SaaS، وحزم السير الذاتية ATS.";
-            } else if(q.includes('40%') || q.includes('عقاري')) {
-                answer = "دراسة الحالة أثبتت زيادة مبيعات شركة عقارية بنسبة 40% وسرعة موقع 98% بدمج قالب عقاري مع أداة ROI Calculator Pro وحجز المعاينات عبر الواتساب.";
-            } else if(q.includes('الخدمات') || q.includes('الأربع')) {
-                answer = "نوفر 4 خدمات رئيسية: تصميم صفحات الهبوط والمواقع، إعداد دراسات الحالة Case Studies، دمج المساعد الشخصي الذكي AI، وتطوير برمجيات Micro-SaaS.";
-            } else if(q.includes('OMAR 60')) {
-                answer = "يمكنك استخدام كود الخصم OMAR 60 في صفحة الدفع على Payhip للحصول فوراً على خصم 60% على كافة المنتجات والقوالب.";
-            } else {
-                answer = "لطلب خدمة مخصصة أو استفسار مباشر، يمكنك التواصل مع أحمد أبو عمر فوراً عبر الواتساب على الرقم: 201206443652+";
-            }
-
+            let answer = "تم ضبط الأسعار الأصلية لتكون واقعية ومقبولة جداً، مع الحفاظ على صافي الربح والخصم 60%.";
             body.innerHTML += `<div style="align-self:flex-end; background:var(--gold); color:#05070C; padding:0.6rem 1rem; border-radius:12px; font-weight:800; margin-top:0.5rem;">${q}</div>`;
             setTimeout(() => {
                 body.innerHTML += `<div class="ai-msg-box" style="margin-top:0.5rem;">${answer}</div>`;
@@ -1247,8 +1262,8 @@
                         <h3>${title}</h3>
                         <p>${desc}</p>
                         <div class="pricing-clean-box">
-                            <div><span style="font-size:0.75rem; color:var(--text-muted);">السعر الأصلي</span><br><span class="price-old-val">${p.oldPrice}</span></div>
-                            <div style="text-align:left;"><span style="font-size:0.75rem; color:var(--gold-light);">بعد خصم 60%</span><br><span class="price-new-val">${p.discPrice}</span></div>
+                            <div><span style="font-size:0.75rem; color:var(--text-muted);">السعر الأصلي</span><br><span class="price-old-val">${p.oldPriceEg} ج.م (${p.oldPriceUsd})</span></div>
+                            <div style="text-align:left;"><span style="font-size:0.75rem; color:var(--gold-light);">بعد خصم 60%</span><br><span class="price-new-val">${p.discPriceEg} ج.م (${p.discPriceUsd})</span></div>
                         </div>
                         <div class="product-actions-group">
                             <a href="${p.url}" target="_blank" class="product-btn btn-payhip">شراء عبر Payhip</a>
