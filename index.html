@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
     <!-- SEO & Search Engines Optimization -->
-    <title>Ahmed Abu Omar — متجر التصميم الرقمي، خدمات الـ CV المخصص وقوالب الويب</title>
-    <meta name="description" content="استوديو أحمد أبو عمر الرقمي (Ahmed Abu Omar) — خدمات تصميم CV مخصص بـ 150 جنيه، قوالب مواقع سينمائية متوافقة مع محركات البحث SEO، وأدوات Micro-SaaS وحزم سيرة ذاتية احترافية.">
-    <meta name="keywords" content="Ahmed Abu Omar, أحمد أبو عمر, تصميم CV مخصص, سيرة ذاتية ATS, قوالب مواقع جاهزة, SEO, Micro-SaaS, تصميم مواقع احترافي">
+    <title>Ahmed Abu Omar — متجر التصميم الرقمي، عروض خصم 60% وقوالب الويب</title>
+    <meta name="description" content="استوديو أحمد أبو عمر الرقمي (Ahmed Abu Omar) — عرض خاص لفترة محدودة لمدة أسبوع بخصم 60% باستخدام الكود omar 60، تصميم CV مخصص بـ 150 جنيه ($3)، وقوالب مواقع وأدوات Micro-SaaS.">
+    <meta name="keywords" content="Ahmed Abu Omar, أحمد أبو عمر, خصم 60, omar 60, تصميم CV مخصص, قوالب مواقع جاهزة, SEO, Micro-SaaS">
     <meta name="author" content="Ahmed Abu Omar">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://nadyahmed211-web.github.io/ahmed-abu-omar-store/">
@@ -16,8 +16,8 @@
     <link rel="manifest" href="site.webmanifest">
     
     <!-- Open Graph / Social Media Meta Tags -->
-    <meta property="og:title" content="Ahmed Abu Omar — متجر التصميم الرقمي وقوالب الويب الفاخرة">
-    <meta property="og:description" content="اطلب تصميم CV مخصص بـ 150 جنيه فقط أو استكشف حزم القوالب والأدوات البرمجية الذكية.">
+    <meta property="og:title" content="Ahmed Abu Omar — عروض وخصم 60% باستخدام كود omar 60">
+    <meta property="og:description" content="استغل العرض المميز لمدة أسبوع! احصل على أقوى القوالب والأدوات بخصم 60% عبر كود omar 60.">
     <meta property="og:url" content="https://nadyahmed211-web.github.io/ahmed-abu-omar-store/">
     <meta property="og:type" content="website">
     <meta name="theme-color" content="#05070C">
@@ -36,7 +36,7 @@
       "url": "https://nadyahmed211-web.github.io/ahmed-abu-omar-store/",
       "telephone": "+201206443652",
       "priceRange": "$$",
-      "description": "متجر أحمد أبو عمر الرقمي — قوالب مواقع سينمائية متوافقة مع محركات البحث SEO وأدوات Micro-SaaS وحزم سير ذاتية احترافية.",
+      "description": "متجر أحمد أبو عمر الرقمي — عرض لمدة أسبوع بخصم 60% باستخدام كود omar 60 وقوالب مواقع سينمائية متوافقة مع محركات البحث SEO.",
       "address": {
         "@type": "PostalAddress",
         "addressCountry": "EG"
@@ -57,7 +57,6 @@
             user-select: none !important;
         }
 
-        /* السماح بالكتابة فقط في مدخلات البحث والشات */
         input, textarea {
             -webkit-user-select: text !important;
             -moz-user-select: text !important;
@@ -98,12 +97,7 @@
             --glass-bg: rgba(255, 255, 255, 0.90);
         }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            -webkit-tap-highlight-color: transparent;
-        }
+        * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
 
         body {
             font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -117,42 +111,15 @@
             position: relative;
         }
 
-        /* 🎬 CANVAS CINEMATIC BACKGROUND (الخلفية السينمائية المتحركة) */
         #cinematicCanvas {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            z-index: 0;
-            pointer-events: none;
+            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 0; pointer-events: none;
         }
 
-        /* Ambient Animated Glows (السديم الضوئي) */
         .ambient-glow-1, .ambient-glow-2 {
-            position: fixed;
-            width: 600px;
-            height: 600px;
-            border-radius: 50%;
-            filter: blur(140px);
-            opacity: 0.18;
-            pointer-events: none;
-            z-index: 0;
-            animation: nebulaPulse 12s infinite ease-in-out alternate;
+            position: fixed; width: 600px; height: 600px; border-radius: 50%; filter: blur(140px); opacity: 0.18; pointer-events: none; z-index: 0; animation: nebulaPulse 12s infinite ease-in-out alternate;
         }
-
-        .ambient-glow-1 {
-            top: -100px;
-            right: -100px;
-            background: radial-gradient(circle, var(--gold), transparent);
-        }
-
-        .ambient-glow-2 {
-            bottom: -100px;
-            left: -100px;
-            background: radial-gradient(circle, var(--cyan-accent), transparent);
-            animation-delay: -6s;
-        }
+        .ambient-glow-1 { top: -100px; right: -100px; background: radial-gradient(circle, var(--gold), transparent); }
+        .ambient-glow-2 { bottom: -100px; left: -100px; background: radial-gradient(circle, var(--cyan-accent), transparent); animation-delay: -6s; }
 
         @keyframes nebulaPulse {
             0% { transform: scale(1) translate(0, 0); opacity: 0.15; }
@@ -160,30 +127,23 @@
             100% { transform: scale(0.9) translate(-30px, 40px); opacity: 0.18; }
         }
 
-        /* ضمان بقاء المحتوى فوق الخلفية المتحركة */
-        header, section, div, nav, footer {
-            position: relative;
-            z-index: 1;
-        }
+        header, section, div, nav, footer { position: relative; z-index: 1; }
 
         /* TOP TICKER MARQUEE BANNER */
         .top-ticker-banner {
             width: 100%;
-            background: linear-gradient(90deg, #100d03 0%, #282006 50%, #100d03 100%);
-            border-bottom: 1.5px solid var(--border-color);
+            background: linear-gradient(90deg, #1f1703 0%, #3d2f06 50%, #1f1703 100%);
+            border-bottom: 2px solid var(--gold);
             overflow: hidden;
-            padding: 0.65rem 0;
+            padding: 0.75rem 0;
             position: relative;
             z-index: 1001;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            box-shadow: 0 4px 20px rgba(212, 175, 55, 0.3);
         }
 
         .ticker-track {
-            display: flex;
-            width: max-content;
-            animation: marqueeScroll 28s linear infinite;
+            display: flex; width: max-content; animation: marqueeScroll 26s linear infinite;
         }
-
         .ticker-track:hover { animation-play-state: paused; }
 
         @keyframes marqueeScroll {
@@ -191,195 +151,72 @@
             100% { transform: translateX(50%); }
         }
 
-        html[dir="ltr"] .ticker-track {
-            animation: marqueeScrollLTR 28s linear infinite;
-        }
-
+        html[dir="ltr"] .ticker-track { animation: marqueeScrollLTR 26s linear infinite; }
         @keyframes marqueeScrollLTR {
             0% { transform: translateX(0); }
             100% { transform: translateX(-50%); }
         }
 
         .ticker-content {
-            display: flex;
-            align-items: center;
-            gap: 2.5rem;
-            padding-left: 2.5rem;
-            white-space: nowrap;
-            font-size: 0.9rem;
-            font-weight: 800;
-            color: var(--gold-light);
+            display: flex; align-items: center; gap: 3rem; padding-left: 3rem; white-space: nowrap; font-size: 0.95rem; font-weight: 900; color: var(--gold-light);
         }
 
         .ticker-item {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.6rem;
-            color: var(--gold-light);
-            text-decoration: none;
-            transition: var(--transition);
+            display: inline-flex; align-items: center; gap: 0.6rem; color: var(--gold-light); text-decoration: none; transition: var(--transition);
         }
-
-        .ticker-item:hover { color: #FFFFFF; text-shadow: 0 0 10px var(--gold); }
+        .ticker-item:hover { color: #FFFFFF; text-shadow: 0 0 12px var(--gold); }
 
         /* HEADER & NAVIGATION */
         header {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            background: var(--glass-bg);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--border-color);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            position: sticky; top: 0; z-index: 1000; background: var(--glass-bg); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border-color); box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
 
         .header-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0.75rem 1.25rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
+            max-width: 1400px; margin: 0 auto; padding: 0.75rem 1.25rem; display: flex; align-items: center; justify-content: space-between;
         }
 
         .top-brand-card {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            background: var(--bg-card);
-            border: 1.5px solid var(--border-color);
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            width: 100%;
-            max-width: 420px;
-            margin: 0 auto;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.4);
-            backdrop-filter: blur(10px);
+            display: flex; align-items: center; justify-content: space-between; background: var(--bg-card); border: 1.5px solid var(--border-color); padding: 0.5rem 1rem; border-radius: 20px; width: 100%; max-width: 420px; margin: 0 auto; box-shadow: 0 8px 25px rgba(0,0,0,0.4); backdrop-filter: blur(10px);
         }
 
         .controls-left { display: flex; align-items: center; gap: 0.5rem; }
 
         .ctrl-btn {
-            background: var(--bg-secondary);
-            border: 1px solid var(--border-color);
-            color: var(--gold);
-            width: 38px;
-            height: 38px;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            font-size: 0.85rem;
-            font-weight: 800;
-            transition: var(--transition);
+            background: var(--bg-secondary); border: 1px solid var(--border-color); color: var(--gold); width: 38px; height: 38px; border-radius: 12px; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 0.85rem; font-weight: 800; transition: var(--transition);
         }
-
         .ctrl-btn:hover { border-color: var(--gold); background: rgba(212, 175, 55, 0.15); }
 
-        .brand-info-center {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            text-decoration: none;
-            cursor: pointer;
-        }
+        .brand-info-center { display: flex; flex-direction: column; align-items: center; text-align: center; text-decoration: none; cursor: pointer; }
 
         .brand-title-text {
-            font-size: 0.95rem;
-            font-weight: 900;
-            color: var(--gold);
-            letter-spacing: 0.5px;
-            background: linear-gradient(135deg, var(--gold-light), var(--gold), var(--gold-dark));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            line-height: 1.2;
+            font-size: 0.95rem; font-weight: 900; color: var(--gold); letter-spacing: 0.5px; background: linear-gradient(135deg, var(--gold-light), var(--gold), var(--gold-dark)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; line-height: 1.2;
         }
-
-        .brand-sub-text {
-            font-size: 0.62rem;
-            color: var(--text-muted);
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            font-weight: 700;
-        }
+        .brand-sub-text { font-size: 0.62rem; color: var(--text-muted); letter-spacing: 1px; text-transform: uppercase; font-weight: 700; }
 
         .brand-avatar-box {
-            width: 42px;
-            height: 42px;
-            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #05070C;
-            font-size: 1.2rem;
-            font-weight: 900;
-            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+            width: 42px; height: 42px; background: linear-gradient(135deg, var(--gold), var(--gold-dark)); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: #05070C; font-size: 1.2rem; font-weight: 900; box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
         }
 
-        .nav-desktop {
-            display: none;
-            gap: 1.8rem;
-            list-style: none;
-        }
-
+        .nav-desktop { display: none; gap: 1.8rem; list-style: none; }
         @media(min-width: 992px) {
             .nav-desktop { display: flex; align-items: center; }
             .top-brand-card { display: none; }
         }
 
         .nav-link {
-            background: none;
-            border: none;
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            font-weight: 700;
-            cursor: pointer;
-            transition: var(--transition);
-            padding: 0.4rem 0;
-            position: relative;
+            background: none; border: none; color: var(--text-muted); font-size: 0.95rem; font-weight: 700; cursor: pointer; transition: var(--transition); padding: 0.4rem 0; position: relative;
         }
-
         .nav-link:hover, .nav-link.active { color: var(--gold); }
-
         .nav-link.active::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 2.5px;
-            background: var(--gold);
-            border-radius: 2px;
-            box-shadow: 0 0 10px var(--gold);
+            content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 2.5px; background: var(--gold); border-radius: 2px; box-shadow: 0 0 10px var(--gold);
         }
 
-        .desktop-header-brand {
-            display: none;
-            align-items: center;
-            gap: 1rem;
-            cursor: pointer;
-            text-decoration: none;
-        }
+        .desktop-header-brand { display: none; align-items: center; gap: 1rem; cursor: pointer; text-decoration: none; }
         @media(min-width: 992px) { .desktop-header-brand { display: flex; } }
 
         .page-section {
-            display: none;
-            max-width: 1380px;
-            margin: 0 auto;
-            padding: 2.5rem 1.25rem;
-            border-radius: 32px;
-            position: relative;
-            overflow: hidden;
-            border: 1.5px solid var(--border-color);
-            background: var(--bg-card);
-            backdrop-filter: blur(20px);
-            box-shadow: var(--shadow);
-            transition: var(--transition);
+            display: none; max-width: 1380px; margin: 0 auto; padding: 2.5rem 1.25rem; border-radius: 32px; position: relative; overflow: hidden; border: 1.5px solid var(--border-color); background: var(--bg-card); backdrop-filter: blur(20px); box-shadow: var(--shadow); transition: var(--transition);
         }
-
         .page-section.active { display: block; animation: sectionFadeIn 0.5s ease forwards; }
 
         @keyframes sectionFadeIn {
@@ -387,36 +224,12 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* LANDING PAGE HERO & FLOATING SYMBOLS */
         .cinematic-hero-fullscreen {
-            min-height: calc(100vh - 120px);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            position: relative;
-            padding: 4.5rem 1.5rem;
-            margin-bottom: 3rem;
-            border-radius: 36px;
-            background: rgba(5, 7, 12, 0.4);
-            overflow: hidden;
-            border: 1.5px solid rgba(212, 175, 55, 0.35);
-            box-shadow: inset 0 0 80px rgba(0,0,0,0.8);
-            backdrop-filter: blur(10px);
+            min-height: calc(100vh - 120px); display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; position: relative; padding: 4.5rem 1.5rem; margin-bottom: 3rem; border-radius: 36px; background: rgba(5, 7, 12, 0.4); overflow: hidden; border: 1.5px solid rgba(212, 175, 55, 0.35); box-shadow: inset 0 0 80px rgba(0,0,0,0.8); backdrop-filter: blur(10px);
         }
 
         .cyber-grid-overlay {
-            position: absolute;
-            top: -50%; left: -50%; width: 200%; height: 200%;
-            background-image: 
-                linear-gradient(to right, rgba(212, 175, 55, 0.08) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(212, 175, 55, 0.08) 1px, transparent 1px);
-            background-size: 55px 55px;
-            transform: perspective(700px) rotateX(40deg);
-            animation: gridDynamicMove 18s linear infinite;
-            pointer-events: none;
-            z-index: 1;
+            position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background-image: linear-gradient(to right, rgba(212, 175, 55, 0.08) 1px, transparent 1px), linear-gradient(to bottom, rgba(212, 175, 55, 0.08) 1px, transparent 1px); background-size: 55px 55px; transform: perspective(700px) rotateX(40deg); animation: gridDynamicMove 18s linear infinite; pointer-events: none; z-index: 1;
         }
 
         @keyframes gridDynamicMove {
@@ -425,23 +238,8 @@
             100% { transform: perspective(700px) rotateX(40deg) translateY(55px) scale(1); }
         }
 
-        .floating-geo-symbols {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            pointer-events: none;
-            z-index: 1;
-            overflow: hidden;
-        }
-
-        .geo-symbol {
-            position: absolute;
-            color: rgba(212, 175, 55, 0.25);
-            font-family: monospace;
-            font-weight: 900;
-            user-select: none;
-            animation: floatSymbol 12s infinite ease-in-out alternate;
-        }
-
+        .floating-geo-symbols { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1; overflow: hidden; }
+        .geo-symbol { position: absolute; color: rgba(212, 175, 55, 0.25); font-family: monospace; font-weight: 900; user-select: none; animation: floatSymbol 12s infinite ease-in-out alternate; }
         .geo-symbol.sym-1 { top: 15%; left: 8%; font-size: 3rem; animation-duration: 9s; }
         .geo-symbol.sym-2 { top: 70%; left: 85%; font-size: 4rem; animation-duration: 14s; color: rgba(0, 240, 255, 0.2); }
         .geo-symbol.sym-3 { top: 25%; right: 12%; font-size: 2.5rem; animation-duration: 11s; }
@@ -455,116 +253,38 @@
         }
 
         .developer-tag {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.6rem;
-            background: rgba(10, 14, 26, 0.92);
-            border: 1.5px solid var(--border-hover);
-            color: var(--cyan-accent);
-            padding: 0.65rem 1.6rem;
-            border-radius: 35px;
-            font-size: 0.92rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 1.8px;
-            margin-bottom: 2rem;
-            box-shadow: 0 6px 25px rgba(0, 240, 255, 0.25);
-            backdrop-filter: blur(10px);
-            position: relative;
-            z-index: 2;
+            display: inline-flex; align-items: center; gap: 0.6rem; background: rgba(10, 14, 26, 0.92); border: 1.5px solid var(--border-hover); color: var(--cyan-accent); padding: 0.65rem 1.6rem; border-radius: 35px; font-size: 0.92rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1.8px; margin-bottom: 2rem; box-shadow: 0 6px 25px rgba(0, 240, 255, 0.25); backdrop-filter: blur(10px); position: relative; z-index: 2;
         }
 
         .cinematic-hero-fullscreen h1 {
-            font-size: clamp(2.4rem, 6vw, 4.5rem);
-            font-weight: 900;
-            line-height: 1.25;
-            margin-bottom: 1.8rem;
-            background: linear-gradient(135deg, #FFFFFF 20%, var(--gold-light) 60%, var(--gold) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-shadow: 0 15px 35px rgba(0,0,0,0.8);
-            position: relative;
-            z-index: 2;
+            font-size: clamp(2.4rem, 6vw, 4.5rem); font-weight: 900; line-height: 1.25; margin-bottom: 1.8rem; background: linear-gradient(135deg, #FFFFFF 20%, var(--gold-light) 60%, var(--gold) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-shadow: 0 15px 35px rgba(0,0,0,0.8); position: relative; z-index: 2;
         }
 
         .cinematic-hero-fullscreen p {
-            font-size: clamp(1.05rem, 2.3vw, 1.35rem);
-            color: var(--text-muted);
-            max-width: 850px;
-            margin: 0 auto 3rem;
-            line-height: 1.85;
-            font-weight: 500;
-            position: relative;
-            z-index: 2;
+            font-size: clamp(1.05rem, 2.3vw, 1.35rem); color: var(--text-muted); max-width: 850px; margin: 0 auto 3rem; line-height: 1.85; font-weight: 500; position: relative; z-index: 2;
         }
 
         .cinematic-cta-group {
-            display: flex;
-            flex-direction: column;
-            gap: 1.2rem;
-            width: 100%;
-            max-width: 520px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 2;
+            display: flex; flex-direction: column; gap: 1.2rem; width: 100%; max-width: 520px; margin: 0 auto; position: relative; z-index: 2;
         }
-
-        @media(min-width: 768px) {
-            .cinematic-cta-group { flex-direction: row; justify-content: center; max-width: 100%; }
-        }
+        @media(min-width: 768px) { .cinematic-cta-group { flex-direction: row; justify-content: center; max-width: 100%; } }
 
         .btn {
-            padding: 1.1rem 2.4rem;
-            border-radius: 16px;
-            font-size: 1.05rem;
-            font-weight: 800;
-            cursor: pointer;
-            transition: var(--transition);
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.75rem;
-            text-decoration: none;
-            border: 1.5px solid transparent;
+            padding: 1.1rem 2.4rem; border-radius: 16px; font-size: 1.05rem; font-weight: 800; cursor: pointer; transition: var(--transition); display: inline-flex; align-items: center; justify-content: center; gap: 0.75rem; text-decoration: none; border: 1.5px solid transparent;
         }
-
         .btn-primary-gold {
-            background: linear-gradient(135deg, var(--gold-light), var(--gold), var(--gold-dark));
-            color: #05070C;
-            border-color: var(--gold);
-            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.45);
+            background: linear-gradient(135deg, var(--gold-light), var(--gold), var(--gold-dark)); color: #05070C; border-color: var(--gold); box-shadow: 0 10px 30px rgba(212, 175, 55, 0.45);
         }
-
-        .btn-primary-gold:hover {
-            transform: translateY(-4px) scale(1.03);
-            box-shadow: 0 15px 45px rgba(212, 175, 55, 0.75);
-        }
+        .btn-primary-gold:hover { transform: translateY(-4px) scale(1.03); box-shadow: 0 15px 45px rgba(212, 175, 55, 0.75); }
 
         .btn-primary-whatsapp {
-            background: #22c55e;
-            color: #FFFFFF;
-            border-color: #22c55e;
-            box-shadow: 0 10px 30px rgba(34, 197, 94, 0.4);
+            background: #22c55e; color: #FFFFFF; border-color: #22c55e; box-shadow: 0 10px 30px rgba(34, 197, 94, 0.4);
         }
+        .btn-primary-whatsapp:hover { background: #16a34a; transform: translateY(-4px) scale(1.03); box-shadow: 0 15px 45px rgba(34, 197, 94, 0.6); }
 
-        .btn-primary-whatsapp:hover {
-            background: #16a34a;
-            transform: translateY(-4px) scale(1.03);
-            box-shadow: 0 15px 45px rgba(34, 197, 94, 0.6);
-        }
-
-        /* CUSTOM CV BANNER (بـ 150 جنيه ثابت بدون خصم) */
+        /* CUSTOM CV BANNER */
         .custom-cv-banner {
-            background: linear-gradient(135deg, rgba(20, 16, 5, 0.95), rgba(10, 14, 26, 0.98));
-            border: 2px solid var(--gold);
-            border-radius: 28px;
-            padding: 3rem 2rem;
-            margin-bottom: 3rem;
-            text-align: center;
-            box-shadow: 0 20px 50px rgba(212, 175, 55, 0.3);
-            position: relative;
-            overflow: hidden;
-            animation: borderPulse 4s infinite alternate;
+            background: linear-gradient(135deg, rgba(20, 16, 5, 0.95), rgba(10, 14, 26, 0.98)); border: 2px solid var(--gold); border-radius: 28px; padding: 3rem 2rem; margin-bottom: 3rem; text-align: center; box-shadow: 0 20px 50px rgba(212, 175, 55, 0.3); position: relative; overflow: hidden; animation: borderPulse 4s infinite alternate;
         }
 
         @keyframes borderPulse {
@@ -572,116 +292,38 @@
             100% { border-color: rgba(212, 175, 55, 1); box-shadow: 0 0 40px rgba(212, 175, 55, 0.5); }
         }
 
-        /* CASE STUDY SECTION */
         .case-study-card {
-            background: rgba(10, 14, 26, 0.92);
-            border: 2px solid var(--gold);
-            border-radius: 28px;
-            padding: 3rem 2rem;
-            margin-top: 3.5rem;
-            backdrop-filter: blur(15px);
-            box-shadow: 0 25px 60px rgba(0,0,0,0.85);
-            position: relative;
-            overflow: hidden;
-            animation: caseStudyFloat 5s ease-in-out infinite alternate;
-        }
-
-        @keyframes caseStudyFloat {
-            0% { transform: translateY(0); box-shadow: 0 20px 50px rgba(212, 175, 55, 0.2); }
-            100% { transform: translateY(-6px); box-shadow: 0 30px 70px rgba(212, 175, 55, 0.4); }
+            background: rgba(10, 14, 26, 0.92); border: 2px solid var(--gold); border-radius: 28px; padding: 3rem 2rem; margin-top: 3.5rem; backdrop-filter: blur(15px); box-shadow: 0 25px 60px rgba(0,0,0,0.85); position: relative; overflow: hidden;
         }
 
         .case-study-badge {
-            background: var(--gold);
-            color: #05070C;
-            font-weight: 900;
-            padding: 0.4rem 1.2rem;
-            border-radius: 20px;
-            font-size: 0.82rem;
-            text-transform: uppercase;
-            display: inline-block;
-            margin-bottom: 1.2rem;
+            background: var(--gold); color: #05070C; font-weight: 900; padding: 0.4rem 1.2rem; border-radius: 20px; font-size: 0.82rem; text-transform: uppercase; display: inline-block; margin-bottom: 1.2rem;
         }
 
-        .case-metrics-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 1.5rem;
-            margin: 2rem 0;
-        }
-
-        .metric-box {
-            background: var(--bg-secondary);
-            border: 1.5px solid var(--border-color);
-            border-radius: 18px;
-            padding: 1.5rem;
-            text-align: center;
-            transition: var(--transition);
-        }
-
-        .metric-box:hover {
-            border-color: var(--gold);
-            transform: scale(1.03);
-        }
-
+        .case-metrics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; margin: 2rem 0; }
+        .metric-box { background: var(--bg-secondary); border: 1.5px solid var(--border-color); border-radius: 18px; padding: 1.5rem; text-align: center; transition: var(--transition); }
+        .metric-box:hover { border-color: var(--gold); transform: scale(1.03); }
         .metric-val { font-size: 2.2rem; font-weight: 900; color: var(--gold-light); }
         .metric-lbl { color: var(--text-muted); font-size: 0.88rem; font-weight: 700; margin-top: 0.3rem; }
 
-        /* SOCIAL PROMO BANNER */
         .social-promo-banner {
-            background: linear-gradient(135deg, rgba(20, 15, 5, 0.95), rgba(5, 7, 12, 0.98));
-            border: 2px solid var(--gold);
-            border-radius: 28px;
-            padding: 3rem 2rem;
-            margin-bottom: 3.5rem;
-            text-align: center;
-            box-shadow: 0 20px 50px rgba(212, 175, 55, 0.25);
-            position: relative;
-            overflow: hidden;
+            background: linear-gradient(135deg, rgba(20, 15, 5, 0.95), rgba(5, 7, 12, 0.98)); border: 2px solid var(--gold); border-radius: 28px; padding: 3rem 2rem; margin-bottom: 3.5rem; text-align: center; box-shadow: 0 20px 50px rgba(212, 175, 55, 0.25); position: relative; overflow: hidden;
         }
 
         .social-btn-icon-only {
-            width: 64px;
-            height: 64px;
-            border-radius: 20px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            transition: var(--transition);
-            text-decoration: none;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-            position: relative;
-            overflow: hidden;
+            width: 64px; height: 64px; border-radius: 20px; display: inline-flex; align-items: center; justify-content: center; transition: var(--transition); text-decoration: none; box-shadow: 0 10px 25px rgba(0,0,0,0.5); position: relative; overflow: hidden;
         }
-
         .social-btn-fb { background: #1877F2; color: #FFFFFF; }
         .social-btn-fb:hover { transform: translateY(-6px) scale(1.1); box-shadow: 0 15px 35px rgba(24, 119, 242, 0.6); }
 
         .social-btn-insta { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); color: #FFFFFF; }
         .social-btn-insta:hover { transform: translateY(-6px) scale(1.1); box-shadow: 0 15px 35px rgba(220, 39, 67, 0.6); }
-
         .social-btn-icon-only svg { width: 32px; height: 32px; fill: currentColor; }
 
         /* FLOATING AI ASSISTANT */
         .floating-ai-btn {
-            position: fixed;
-            bottom: 85px;
-            left: 20px;
-            z-index: 9998;
-            width: 58px;
-            height: 58px;
-            background: linear-gradient(135deg, var(--gold-light), var(--gold), var(--gold-dark));
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.6);
-            cursor: pointer;
-            transition: var(--transition);
-            border: 2px solid #FFFFFF;
-            animation: pulseGlow 2.5s infinite;
+            position: fixed; bottom: 85px; left: 20px; z-index: 9998; width: 58px; height: 58px; background: linear-gradient(135deg, var(--gold-light), var(--gold), var(--gold-dark)); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 30px rgba(212, 175, 55, 0.6); cursor: pointer; transition: var(--transition); border: 2px solid #FFFFFF; animation: pulseGlow 2.5s infinite;
         }
-
         html[dir="rtl"] .floating-ai-btn { left: auto; right: 20px; }
 
         @keyframes pulseGlow {
@@ -694,108 +336,26 @@
         .floating-ai-btn svg { width: 32px; height: 32px; fill: #05070C; }
 
         .ai-modal-overlay {
-            position: fixed;
-            top: 0; left: 0; width: 100vw; height: 100vh;
-            background: rgba(5, 7, 12, 0.85);
-            backdrop-filter: blur(10px);
-            z-index: 10000;
-            display: none;
-            align-items: center;
-            justify-content: center;
-            padding: 1rem;
+            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(5, 7, 12, 0.85); backdrop-filter: blur(10px); z-index: 10000; display: none; align-items: center; justify-content: center; padding: 1rem;
         }
-
         .ai-modal-overlay.open { display: flex; animation: fadeIn 0.3s ease; }
 
         .ai-modal-card {
-            background: var(--bg-secondary);
-            border: 2px solid var(--gold);
-            border-radius: 24px;
-            width: 100%;
-            max-width: 520px;
-            max-height: 85vh;
-            display: flex;
-            flex-direction: column;
-            overflow: hidden;
-            box-shadow: 0 25px 60px rgba(0,0,0,0.9);
+            background: var(--bg-secondary); border: 2px solid var(--gold); border-radius: 24px; width: 100%; max-width: 520px; max-height: 85vh; display: flex; flex-direction: column; overflow: hidden; box-shadow: 0 25px 60px rgba(0,0,0,0.9);
         }
 
-        .ai-modal-header {
-            background: var(--bg-card);
-            border-bottom: 1.5px solid var(--border-color);
-            padding: 1.2rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
+        .ai-modal-header { background: var(--bg-card); border-bottom: 1.5px solid var(--border-color); padding: 1.2rem; display: flex; align-items: center; justify-content: space-between; }
         .ai-header-title { display: flex; align-items: center; gap: 0.75rem; font-weight: 800; color: var(--gold-light); }
 
-        .ai-modal-body {
-            padding: 1.2rem;
-            overflow-y: auto;
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            flex-grow: 1;
-        }
-
-        .ai-msg-box {
-            background: rgba(212, 175, 55, 0.1);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 1rem;
-            font-size: 0.92rem;
-            line-height: 1.6;
-            color: var(--text-main);
-        }
-
-        .ai-user-msg {
-            background: var(--gold);
-            color: #05070C;
-            font-weight: 800;
-            align-self: flex-end;
-            padding: 0.75rem 1.2rem;
-            border-radius: 16px 16px 0 16px;
-            max-width: 85%;
-            font-size: 0.92rem;
-        }
-
-        .ai-faq-btn {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            color: var(--gold-light);
-            padding: 0.75rem 1rem;
-            border-radius: 12px;
-            font-size: 0.88rem;
-            font-weight: 700;
-            text-align: right;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
+        .ai-modal-body { padding: 1.2rem; overflow-y: auto; display: flex; flex-direction: column; gap: 1rem; flex-grow: 1; }
+        .ai-msg-box { background: rgba(212, 175, 55, 0.1); border: 1px solid var(--border-color); border-radius: 16px; padding: 1rem; font-size: 0.92rem; line-height: 1.6; color: var(--text-main); }
+        .ai-user-msg { background: var(--gold); color: #05070C; font-weight: 800; align-self: flex-end; padding: 0.75rem 1.2rem; border-radius: 16px 16px 0 16px; max-width: 85%; font-size: 0.92rem; }
+        .ai-faq-btn { background: var(--bg-card); border: 1px solid var(--border-color); color: var(--gold-light); padding: 0.75rem 1rem; border-radius: 12px; font-size: 0.88rem; font-weight: 700; text-align: right; cursor: pointer; transition: var(--transition); }
         html[dir="rtl"] .ai-faq-btn { text-align: left; }
         .ai-faq-btn:hover { border-color: var(--gold); background: rgba(212, 175, 55, 0.15); }
 
-        .ai-modal-footer {
-            padding: 1rem;
-            border-top: 1.5px solid var(--border-color);
-            background: var(--bg-card);
-            display: flex;
-            gap: 0.6rem;
-        }
-
-        .ai-input {
-            flex-grow: 1;
-            background: var(--bg-secondary);
-            border: 1px solid var(--border-color);
-            padding: 0.75rem 1rem;
-            border-radius: 12px;
-            color: var(--text-main);
-            outline: none;
-            font-size: 0.9rem;
-        }
-
+        .ai-modal-footer { padding: 1rem; border-top: 1.5px solid var(--border-color); background: var(--bg-card); display: flex; gap: 0.6rem; }
+        .ai-input { flex-grow: 1; background: var(--bg-secondary); border: 1px solid var(--border-color); padding: 0.75rem 1rem; border-radius: 12px; color: var(--text-main); outline: none; font-size: 0.9rem; }
         .ai-input:focus { border-color: var(--gold); }
 
         /* Grids & Cards */
@@ -803,52 +363,22 @@
         .section-header h2 { font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 900; margin-bottom: 0.75rem; color: var(--text-main); }
         .section-header p { color: var(--text-muted); font-size: 1.05rem; max-width: 680px; margin: 0 auto; }
 
-        .services-grid, .products-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(305px, 1fr));
-            gap: 2rem;
-        }
-
+        .services-grid, .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(305px, 1fr)); gap: 2rem; }
         .service-card, .product-card {
-            background: var(--bg-card);
-            border: 1.5px solid var(--border-color);
-            border-radius: 20px;
-            padding: 2rem;
-            transition: var(--transition);
-            box-shadow: var(--shadow);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            backdrop-filter: blur(10px);
+            background: var(--bg-card); border: 1.5px solid var(--border-color); border-radius: 20px; padding: 2rem; transition: var(--transition); box-shadow: var(--shadow); display: flex; flex-direction: column; justify-content: space-between; backdrop-filter: blur(10px); position: relative; overflow: hidden;
         }
-
-        .service-card:hover, .product-card:hover {
-            border-color: var(--gold);
-            transform: translateY(-6px);
-            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.25);
-        }
+        .service-card:hover, .product-card:hover { border-color: var(--gold); transform: translateY(-6px); box-shadow: 0 15px 40px rgba(212, 175, 55, 0.25); }
 
         .pricing-clean-box {
-            background: rgba(5, 7, 12, 0.6);
-            border: 1.5px solid var(--border-color);
-            border-radius: 12px;
-            padding: 0.9rem 1rem;
-            margin: 1rem 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            background: rgba(5, 7, 12, 0.6); border: 1.5px solid var(--border-color); border-radius: 12px; padding: 0.9rem 1rem; margin: 1rem 0; display: flex; justify-content: space-between; align-items: center;
         }
-
-        .price-old-val { text-decoration: line-through; color: var(--text-muted); font-size: 0.88rem; direction: ltr; }
-        .price-new-val { color: var(--gold-light); font-size: 1.15rem; font-weight: 900; direction: ltr; }
+        .price-old-val { text-decoration: line-through; color: var(--text-muted); font-size: 0.8rem; direction: ltr; }
+        .price-new-val { color: var(--gold-light); font-size: 1.05rem; font-weight: 900; direction: ltr; }
 
         .product-actions-group { display: flex; gap: 0.6rem; margin-top: 1rem; }
         .product-btn {
-            flex: 1; text-align: center; padding: 0.7rem 0.5rem; border-radius: 10px;
-            font-size: 0.85rem; font-weight: 800; text-decoration: none; transition: var(--transition);
-            border: 1.5px solid var(--border-color);
+            flex: 1; text-align: center; padding: 0.7rem 0.5rem; border-radius: 10px; font-size: 0.85rem; font-weight: 800; text-decoration: none; transition: var(--transition); border: 1.5px solid var(--border-color);
         }
-
         .btn-payhip { background: linear-gradient(135deg, var(--gold), var(--gold-dark)); color: #05070C; border-color: var(--gold); }
         .btn-whatsapp-direct { background: var(--bg-secondary); color: var(--gold-light); }
 
@@ -857,28 +387,22 @@
 
         .search-box { position: relative; flex-grow: 1; max-width: 500px; }
         .search-box input {
-            width: 100%; background: var(--bg-card); border: 1.5px solid var(--border-color);
-            padding: 0.95rem 1.2rem 0.95rem 3.2rem; border-radius: 14px; color: var(--text-main); outline: none;
+            width: 100%; background: var(--bg-card); border: 1.5px solid var(--border-color); padding: 0.95rem 1.2rem 0.95rem 3.2rem; border-radius: 14px; color: var(--text-main); outline: none;
         }
         html[dir="rtl"] .search-box input { padding: 0.95rem 3.2rem 0.95rem 1.2rem; }
 
         .filter-tabs { display: flex; gap: 0.6rem; overflow-x: auto; padding-bottom: 8px; }
         .filter-tab {
-            background: var(--bg-card); border: 1.5px solid var(--border-color); color: var(--text-muted);
-            padding: 0.65rem 1.35rem; border-radius: 12px; font-size: 0.92rem; font-weight: 700; cursor: pointer; white-space: nowrap;
+            background: var(--bg-card); border: 1.5px solid var(--border-color); color: var(--text-muted); padding: 0.65rem 1.35rem; border-radius: 12px; font-size: 0.92rem; font-weight: 700; cursor: pointer; white-space: nowrap;
         }
         .filter-tab.active, .filter-tab:hover { background: var(--gold); color: #05070C; border-color: var(--gold); }
 
         /* Bottom Nav */
         .bottom-nav {
-            position: fixed; bottom: 0; left: 0; width: 100%; background: var(--glass-bg); backdrop-filter: blur(20px);
-            border-top: 1.5px solid var(--border-color); display: flex; justify-content: space-around;
-            padding: 0.6rem 0.4rem calc(0.6rem + env(safe-area-inset-bottom)); z-index: 9999;
+            position: fixed; bottom: 0; left: 0; width: 100%; background: var(--glass-bg); backdrop-filter: blur(20px); border-top: 1.5px solid var(--border-color); display: flex; justify-content: space-around; padding: 0.6rem 0.4rem calc(0.6rem + env(safe-area-inset-bottom)); z-index: 9999;
         }
-
         .bottom-nav-item {
-            background: none; border: none; color: var(--text-muted); display: flex; flex-direction: column;
-            align-items: center; gap: 4px; font-size: 0.75rem; font-weight: 700; cursor: pointer; flex: 1;
+            background: none; border: none; color: var(--text-muted); display: flex; flex-direction: column; align-items: center; gap: 4px; font-size: 0.75rem; font-weight: 700; cursor: pointer; flex: 1;
         }
         .bottom-nav-item.active { color: var(--gold); }
         .bottom-nav-item svg { width: 24px; height: 24px; stroke: currentColor; fill: none; }
@@ -893,20 +417,18 @@
     <div class="ambient-glow-1"></div>
     <div class="ambient-glow-2"></div>
 
-    <!-- 1. TOP TICKER MARQUEE BANNER -->
+    <!-- 1. TOP TICKER MARQUEE BANNER (أهلاً بكم + عرض الخصم 60% بكود omar 60) -->
     <div class="top-ticker-banner">
         <div class="ticker-track">
             <div class="ticker-content">
                 <a href="https://www.facebook.com/AhmedAbuOmarOfficial?mibextid=ZbWKwL" target="_blank" class="ticker-item">✨ أهلاً بكم في متجر أحمد أبو عمر — تابعوا صفحتنا الرسمية ليصلكم كل جديد وحصري!</a>
-                <span class="ticker-item">💎 خصم خاص 60% باستخدام الكود: OMAR 60</span>
+                <span class="ticker-item" style="color:#00f0ff;">🔥 عرض لفترة محدودة لمدة أسبوع: خصم 60% باستخدام كود الخصم: omar 60</span>
                 <a href="https://wa.me/201206443652" target="_blank" class="ticker-item">💬 دعم فني وتواصل مباشر عبر الواتساب 24/7</a>
-                <a href="https://www.instagram.com/ahmedabuomar.design" target="_blank" class="ticker-item">📷 انضموا لمتابعينا على انستغرام</a>
             </div>
             <div class="ticker-content" aria-hidden="true">
                 <a href="https://www.facebook.com/AhmedAbuOmarOfficial?mibextid=ZbWKwL" target="_blank" class="ticker-item">✨ أهلاً بكم في متجر أحمد أبو عمر — تابعوا صفحتنا الرسمية ليصلكم كل جديد وحصري!</a>
-                <span class="ticker-item">💎 خصم خاص 60% باستخدام الكود: OMAR 60</span>
+                <span class="ticker-item" style="color:#00f0ff;">🔥 عرض لفترة محدودة لمدة أسبوع: خصم 60% باستخدام كود الخصم: omar 60</span>
                 <a href="https://wa.me/201206443652" target="_blank" class="ticker-item">💬 دعم فني وتواصل مباشر عبر الواتساب 24/7</a>
-                <a href="https://www.instagram.com/ahmedabuomar.design" target="_blank" class="ticker-item">📷 انضموا لمتابعينا على انستغرام</a>
             </div>
         </div>
     </div>
@@ -928,11 +450,11 @@
             <div class="ai-modal-body" id="aiChatBody">
                 <div class="ai-msg-box">
                     أهلاً بك! أنا المساعد الذكي لمتجر <strong>أحمد أبو عمر (Ahmed Abu Omar)</strong>. 
-                    يمكنني الإجابة على كافة استفساراتك بشأن **خدمة تصميم الـ CV المخصص (150 جنيه)**، أو حزم القوالب، وكيفية الشراء والدفع. كيف يمكنني مساعدتك اليوم؟
+                    نقدم لك عرض الأسبوع بخصم 60% باستخدام كود **omar 60**، بالإضافة لخدمة تصميم الـ CV المخصص (150 ج.م / $3). كيف يمكنني مساعدتك اليوم؟
                 </div>
-                <button class="ai-faq-btn" onclick="askAi('تفاصيل خدمة تصميم CV مخصص بـ 150 جنيه')">📄 تفاصيل تصميم الـ CV المخصص بـ 150 جنيه</button>
+                <button class="ai-faq-btn" onclick="askAi('كيف أفعل كود خصم omar 60؟')">🏷️ كيفية تفعيل كود خصم omar 60 (خصم 60%)</button>
+                <button class="ai-faq-btn" onclick="askAi('تفاصيل خدمة تصميم CV مخصص بـ 150 جنيه')">📄 تفاصيل تصميم الـ CV المخصص (150 ج.م / $3)</button>
                 <button class="ai-faq-btn" onclick="askAi('ما هي وسائل الدفع وطريقة الشراء؟')">💳 طرق الدفع والشراء المتاحة</button>
-                <button class="ai-faq-btn" onclick="askAi('كيف أحصل على خصم OMAR 60؟')">🏷️ كيفية تفعيل كود الخصم OMAR 60</button>
             </div>
             <div class="ai-modal-footer">
                 <input type="text" id="aiUserQuery" class="ai-input" placeholder="اكتب سؤالك للذكاء الاصطناعي..." onkeypress="if(event.key==='Enter') sendCustomAiQuery()">
@@ -968,7 +490,7 @@
                 <li><button class="nav-link active" onclick="switchSection('home')" id="dnav-home" data-ar="الرئيسية" data-en="Home">الرئيسية</button></li>
                 <li><button class="nav-link" onclick="switchSection('services')" id="dnav-services" data-ar="خدماتنا" data-en="Services">خدماتنا</button></li>
                 <li><button class="nav-link" onclick="switchSection('products')" id="dnav-products" data-ar="منتجاتنا" data-en="Products">منتجاتنا</button></li>
-                <li><button class="nav-link" onclick="switchSection('offers')" id="dnav-offers" data-ar="عروض" data-en="Offers">عروض</button></li>
+                <li><button class="nav-link" onclick="switchSection('offers')" id="dnav-offers" data-ar="قائمة العروض" data-en="Offers List">قائمة العروض</button></li>
                 <li><button class="nav-link" onclick="switchSection('contact')" id="dnav-contact" data-ar="التواصل" data-en="Contact">التواصل</button></li>
                 <li><button class="nav-link" onclick="switchSection('about')" id="dnav-about" data-ar="حول" data-en="About">حول</button></li>
             </ul>
@@ -982,7 +504,7 @@
 
     <style>@media(min-width: 992px) { .desktop-actions { display: flex !important; } }</style>
 
-    <!-- 1. HOME SECTION / LANDING PAGE HERO -->
+    <!-- 1. HOME SECTION -->
     <section id="section-home" class="page-section active">
         <div class="cinematic-hero-fullscreen">
             <div class="cyber-grid-overlay"></div>
@@ -995,21 +517,21 @@
                 <div class="geo-symbol sym-5">⬡</div>
             </div>
             
-            <div class="developer-tag" data-ar="⚡ MESH & GEOMETRIC ARCHITECTURE — ELITE DEVELOPERS STUDIO" data-en="⚡ MESH & GEOMETRIC ARCHITECTURE — ELITE DEVELOPERS STUDIO">
-                ⚡ MESH & GEOMETRIC ARCHITECTURE — ELITE DEVELOPERS STUDIO
+            <div class="developer-tag" data-ar="⚡ عرض الأسبوع — خصم 60% باستخدام كود omar 60" data-en="⚡ WEEKLY OFFER — 60% OFF WITH CODE omar 60">
+                ⚡ عرض الأسبوع — خصم 60% باستخدام كود omar 60
             </div>
             
-            <h1 data-ar="نبْتكر ونبني منتجات رقمية استثنائية" data-en="Creating Exceptional Digital Products & High-Performance Solutions">
-                نبْتكر ونبني منتجات رقمية استثنائية
+            <h1 data-ar="نبْتكر ونبني منتجات رقمية استثنائية بأسعار تنافسية" data-en="Creating Exceptional Digital Products with Unmatched Competitive Pricing">
+                نبْتكر ونبني منتجات رقمية استثنائية بأسعار تنافسية
             </h1>
             
-            <p data-ar="وجهتك الأولى لاقتناء أقوى المنتجات الرقمية، أدوات الويب المصغرة (Micro-SaaS)، قوالب المواقع المتوافقة مع محركات البحث SEO، والسير الذاتية المصممة خصيصاً لتعزيز نجاحك بأعلى معايير البريميوم." data-en="Your ultimate destination for powerful digital products, Micro-SaaS tools, SEO-friendly website templates, and ATS resumes engineered for success.">
-                وجهتك الأولى لاقتناء أقوى المنتجات الرقمية، أدوات الويب المصغرة (Micro-SaaS)، قوالب المواقع المتوافقة مع محركات البحث SEO، والسير الذاتية المصممة خصيصاً لتعزيز نجاحك بأعلى معايير البريميوم.
+            <p data-ar="استغل عرض الأسبوع الآن! احصل على أقوى قوالب الويب السينمائية وأدوات الويب المصغرة وحزم السير الذاتية بخصم 60% باستخدام كود الخصم omar 60." data-en="Take advantage of our weekly offer! Get cinematic templates and micro-SaaS tools with 60% off using code omar 60.">
+                استغل عرض الأسبوع الآن! احصل على أقوى قوالب الويب السينمائية وأدوات الويب المصغرة وحزم السير الذاتية بخصم 60% باستخدام كود الخصم omar 60.
             </p>
 
             <div class="cinematic-cta-group">
-                <button class="btn btn-primary-gold" onclick="switchSection('products')" data-ar="استكشف متجر المنتجات الرقمية ➔" data-en="Explore Digital Products Showcase ➔">استكشف متجر المنتجات الرقمية ➔</button>
-                <button class="btn btn-primary-whatsapp" onclick="window.open('https://wa.me/201206443652','_blank')" data-ar="💬 الشراء عبر الواتساب" data-en="💬 Buy via WhatsApp">💬 الشراء عبر الواتساب</button>
+                <button class="btn btn-primary-gold" onclick="switchSection('offers')" data-ar="🔥 تصفح قائمة العروض الحصرية" data-en="🔥 Browse Exclusive Offers">🔥 تصفح قائمة العروض الحصرية</button>
+                <button class="btn btn-primary-whatsapp" onclick="window.open('https://wa.me/201206443652','_blank')" data-ar="💬 الشراء الفوري عبر الواتساب" data-en="💬 Buy Instantly via WhatsApp">💬 الشراء الفوري عبر الواتساب</button>
             </div>
         </div>
 
@@ -1056,19 +578,19 @@
             <p data-ar="استكشف تشكيلتنا المتكاملة من خدمات التصميم المخصص والمنتجات الرقمية التي تشمل قوالب المواقع وأدوات Micro-SaaS وسير الـ ATS." data-en="Explore custom design services and premium digital products collection.">استكشف تشكيلتنا المتكاملة من خدمات التصميم المخصص والمنتجات الرقمية التي تشمل قوالب المواقع وأدوات Micro-SaaS وسير الـ ATS.</p>
         </div>
 
-        <!-- 🌟 خدمات التصميم المخصص في الأعلى (بنر خدمة CV مخصص بسعر 150 جنيه ثابت بدون خصم) -->
+        <!-- 🌟 خدمات التصميم المخصص في الأعلى (بـ 150 ج.م / $3) -->
         <div class="custom-cv-banner">
             <span style="background:var(--gold); color:#05070C; font-weight:900; padding:0.4rem 1.4rem; border-radius:20px; font-size:0.85rem;" data-ar="خدمة تصميم حصري" data-en="EXCLUSIVE DESIGN SERVICE">خدمة تصميم حصري</span>
-            <h3 style="color:var(--gold-light); margin:1.2rem 0 0.8rem; font-size:2.2rem; font-weight:900;" data-ar="تصميم CV مخصص واحترافي — اطلب التصميم الآن بـ 150 جنيه فقط!" data-en="Custom Professional CV Design — Order Now!">تصميم CV مخصص واحترافي — اطلب التصميم الآن بـ 150 جنيه فقط!</h3>
-            <p style="color:var(--text-main); font-size:1.1rem; max-width:800px; margin:0 auto 1.8rem; font-weight:700;" data-ar="احصل على سيرة ذاتية فريدة ومصممة خصيصاً لقصة نجاحك المهنية متوافقة 100% مع أنظمة الـ ATS وبأعلى معايير البريميوم بسعر ثابت 150 جنيه بدون خصم." data-en="Get a unique resume customized for your career story, 100% ATS compliant with premium standards for a fixed 150 EGP price.">
-                احصل على سيرة ذاتية فريدة ومصممة خصيصاً لقصة نجاحك المهنية متوافقة 100% مع أنظمة الـ ATS وبأعلى معايير البريميوم بسعر ثابت 150 جنيه بدون خصم.
+            <h3 style="color:var(--gold-light); margin:1.2rem 0 0.8rem; font-size:2.2rem; font-weight:900;" data-ar="تصميم CV مخصص واحترافي — اطلب التصميم بـ 150 ج.م ($3) فقط!" data-en="Custom Professional CV Design — 150 EGP ($3) Only!">تصميم CV مخصص واحترافي — اطلب التصميم بـ 150 ج.م ($3) فقط!</h3>
+            <p style="color:var(--text-main); font-size:1.1rem; max-width:800px; margin:0 auto 1.8rem; font-weight:700;" data-ar="احصل على سيرة ذاتية فريدة ومصممة خصيصاً لقصة نجاحك المهنية متوافقة 100% مع أنظمة الـ ATS وبأعلى معايير البريميوم بسعر تنافسي ثابت 150 ج.م ($3) بدون خصم." data-en="Get a unique resume customized for your career story, 100% ATS compliant with premium standards for a fixed 150 EGP ($3) price.">
+                احصل على سيرة ذاتية فريدة ومصممة خصيصاً لقصة نجاحك المهنية متوافقة 100% مع أنظمة الـ ATS وبأعلى معايير البريميوم بسعر تنافسي ثابت 150 ج.م ($3) بدون خصم.
             </p>
-            <a href="https://wa.me/201206443652?text=السلام عليكم، أرغب في طلب خدمة تصميم CV مخصص واحترافي بسعر 150 جنيه" target="_blank" class="btn btn-primary-whatsapp" style="justify-content:center; font-size:1.1rem; padding:1.2rem 2.8rem;">
-                💬 الشراء عبر الواتساب (150 جنيه)
+            <a href="https://wa.me/201206443652?text=السلام عليكم، أرغب في طلب خدمة تصميم CV مخصص واحترافي بسعر 150 جنيه ($3)" target="_blank" class="btn btn-primary-whatsapp" style="justify-content:center; font-size:1.1rem; padding:1.2rem 2.8rem;">
+                💬 الشراء عبر الواتساب (150 ج.م / $3)
             </a>
         </div>
 
-        <!-- الحزم والمنتجات تحت خدمات التصميم المخصص -->
+        <!-- الحزم والمنتجات -->
         <div class="store-controls">
             <div class="search-box">
                 <span style="position:absolute; top:50%; right:1.2rem; transform:translateY(-50%);">🔍</span>
@@ -1085,16 +607,21 @@
         <div class="products-grid" id="productsGrid"></div>
     </section>
 
-    <!-- 4. OFFERS SECTION -->
+    <!-- 4. OFFERS SECTION (قائمة العروض وخصم 60% لمدة أسبوع بكود omar 60) -->
     <section id="section-offers" class="page-section">
-        <div style="background: rgba(10, 14, 26, 0.85); border: 2px solid var(--gold); border-radius:24px; padding:4rem 2rem; text-align:center; backdrop-filter:blur(10px);">
-            <span style="background:var(--gold); color:#05070C; font-weight:900; padding:0.4rem 1.2rem; border-radius:20px; font-size:0.85rem;" data-ar="خصومات لفترة محدودة" data-en="LIMITED OFFER">خصومات لفترة محدودة</span>
-            <h2 style="color:var(--gold-light); margin:1.5rem 0 1rem; font-size:2.5rem;" data-ar="أسعار تنافسية وخصومات تصل إلى 60%" data-en="Up to 60% Savings">أسعار تنافسية وخصومات تصل إلى 60%</h2>
-            <div style="display:inline-flex; align-items:center; gap:1rem; background:rgba(0,0,0,0.8); border:1.5px dashed var(--gold); padding:1rem 2rem; border-radius:16px; margin-bottom:2rem;">
-                <span style="font-family:monospace; font-size:1.8rem; font-weight:900; color:var(--gold-light);">OMAR 60</span>
+        <div style="background: linear-gradient(135deg, rgba(20, 15, 5, 0.95), rgba(10, 14, 26, 0.98)); border: 2.5px solid var(--gold); border-radius:28px; padding:4rem 2rem; text-align:center; backdrop-filter:blur(15px); box-shadow: 0 25px 60px rgba(212, 175, 55, 0.4);">
+            <span style="background:var(--gold); color:#05070C; font-weight:900; padding:0.5rem 1.6rem; border-radius:20px; font-size:0.9rem;" data-ar="🔥 قائمة العروض الحصرية — خصم 60%" data-en="🔥 EXCLUSIVE OFFERS LIST — 60% OFF">🔥 قائمة العروض الحصرية — خصم 60%</span>
+            <h2 style="color:var(--gold-light); margin:1.5rem 0 1rem; font-size:clamp(2rem, 4vw, 3rem); font-weight:900;" data-ar="خصم 60% لفترة محدودة لمدة أسبوع باستخدام كود omar 60" data-en="60% Off For 1 Week Using Code omar 60">خصم 60% لفترة محدودة لمدة أسبوع باستخدام كود omar 60</h2>
+            <p style="color:var(--text-main); font-size:1.15rem; max-width:800px; margin:0 auto 2rem; font-weight:700;" data-ar="استغل الأسعار التنافسية وامتلك أقوى الأدوات والقوالب بخصم 60% عبر تفعيل الكود في متجر Payhip أو التواصل المباشر عبر الواتساب." data-en="Take advantage of competitive pricing with 60% off using code omar 60.">
+                استغل الأسعار التنافسية وامتلك أقوى الأدوات والقوالب بخصم 60% عبر تفعيل الكود في متجر Payhip أو التواصل المباشر عبر الواتساب.
+            </p>
+            <div style="display:inline-flex; align-items:center; gap:1.2rem; background:rgba(0,0,0,0.85); border:2px dashed var(--gold); padding:1.2rem 2.5rem; border-radius:20px; margin-bottom:2.5rem;">
+                <span style="font-family:monospace; font-size:2rem; font-weight:900; color:var(--gold-light);">omar 60</span>
             </div>
             <div>
-                <button class="btn btn-primary-gold" onclick="switchSection('products')" data-ar="استكشف المنتجات" data-en="Explore Products">استكشف المنتجات</button>
+                <button class="btn btn-primary-whatsapp" onclick="window.open('https://wa.me/201206443652?text=السلام عليكم، أرغب في الاستفادة من عرض الخصم (60%) لمدة أسبوع بكود omar 60','_blank')" style="font-size:1.1rem; padding:1.2rem 3rem;">
+                    💬 اطلب عرض الأسبوع الآن عبر الواتساب
+                </button>
             </div>
         </div>
     </section>
@@ -1103,8 +630,8 @@
     <section id="section-contact" class="page-section">
         <div class="social-promo-banner">
             <h3 style="font-size:1.6rem; color:var(--gold-light); margin-bottom:0.8rem; font-weight:900;" data-ar="✨ سُعداء بزيارتكم الكريمة!" data-en="✨ Delighted by your visit!">✨ سُعداء بزيارتكم الكريمة!</h3>
-            <p style="color:var(--text-main); font-size:1.1rem; max-width:780px; margin:0 auto 2rem; font-weight:700;" data-ar="اشتركوا وتابعوا صفحاتنا الرسمية الآن لتكونوا أول من يكتشف أحدث القوالب، الأدوات الذكية، والعروض الحصرية." data-en="Follow our official pages now to be the first to discover the latest templates, smart tools, and exclusive offers.">
-                اشتركوا وتابعوا صفحاتنا الرسمية الآن لتكونوا أول من يكتشف أحدث القوالب، الأدوات الذكية، والعروض الحصرية.
+            <p style="color:var(--text-main); font-size:1.1rem; max-width:780px; margin:0 auto 2rem; font-weight:700;" data-ar="اشتركوا وتابعوا صفحاتنا الرسمية الآن لتكونوا أول من يكتشف أحدث القوالب، الأدوات الذكية، وعروض الخصم الحصرية." data-en="Follow our official pages now to be the first to discover the latest templates, smart tools, and exclusive discounts.">
+                اشتركوا وتابعوا صفحاتنا الرسمية الآن لتكونوا أول من يكتشف أحدث القوالب، الأدوات الذكية، وعروض الخصم الحصرية.
             </p>
 
             <div style="display:flex; justify-content:center; align-items:center; gap:1.8rem;">
@@ -1119,16 +646,16 @@
 
         <div class="section-header">
             <h2 data-ar="التواصل المباشر مع المبرمجين" data-en="Direct Developer Contact">التواصل المباشر مع المبرمجين</h2>
-            <p data-ar="نحن هنا لمساعدتك في بناء مشاريعك الرقمية أو الإجابة على كافة استفساراتك الفنية." data-en="We are here to assist you in developing your digital projects and answering technical questions.">
-                نحن هنا لمساعدتك في بناء مشاريعك الرقمية أو الإجابة على كافة استفساراتك الفنية.
+            <p data-ar="نحن هنا لمساعدتك في بناء مشاريعك الرقمية أو الاستفادة من عروض الخصم." data-en="We are here to assist you in developing your digital projects.">
+                نحن هنا لمساعدتك في بناء مشاريعك الرقمية أو الاستفادة من عروض الخصم.
             </p>
         </div>
 
         <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:2rem;">
             <div class="service-card">
                 <h3 style="color:var(--gold); margin-bottom:1rem;" data-ar="قناة الواتساب المباشرة" data-en="WhatsApp Direct">قناة الواتساب المباشرة</h3>
-                <p style="margin-bottom:1.5rem;" data-ar="احصل على رد سريع ومباشر بخصوص طلبات البرمجة المخصصة أو الدعم التقني للقوالب." data-en="Direct support for custom coding orders or technical help.">
-                    احصل على رد سريع ومباشر بخصوص طلبات البرمجة المخصصة أو الدعم التقني للقوالب.
+                <p style="margin-bottom:1.5rem;" data-ar="احصل على رد سريع ومباشر بخصوص طلبات البرمجة المخصصة أو عروض الخصم." data-en="Direct support for custom orders or discounts.">
+                    احصل على رد سريع ومباشر بخصوص طلبات البرمجة المخصصة أو عروض الخصم.
                 </p>
                 <a href="https://wa.me/201206443652" target="_blank" class="btn btn-primary-whatsapp" style="justify-content:center;">💬 الشراء عبر الواتساب</a>
             </div>
@@ -1193,7 +720,7 @@
         </button>
         <button class="bottom-nav-item" onclick="switchSection('offers')" id="bnav-offers">
             <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-            <span data-ar="عروض" data-en="Offers">عروض</span>
+            <span data-ar="قائمة العروض" data-en="Offers">العروض</span>
         </button>
         <button class="bottom-nav-item" onclick="switchSection('contact')" id="bnav-contact">
             <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
@@ -1257,7 +784,6 @@
                 if (this.y > canvas.height) this.y = 0;
                 if (this.y < 0) this.y = canvas.height;
 
-                // التفاعل مع حركة الماوس أو اللمس
                 if (mouse.x && mouse.y) {
                     let dx = mouse.x - this.x;
                     let dy = mouse.y - this.y;
@@ -1386,16 +912,14 @@
 
         function generateAiSmartResponse(q) {
             const query = q.toLowerCase();
-            if (query.includes('cv') || query.includes('سيرة') || query.includes('150') || query.includes('مخصص')) {
-                return "📄 **خدمة تصميم الـ CV المخصص:**\nنقدم لك سيرة ذاتية احترافية ومصممة خصيصاً لك بسعر ثابت **150 جنيه فقط** (بدون أي خصم). يتم التسليم خلال وقت قياسي ومتوافقة 100% مع أنظمة الـ ATS.\n👉 [يمكنك طلبها الآن مباشرة عبر الواتساب](https://wa.me/201206443652?text=طلب_تصميم_CV_مخصص_150)";
+            if (query.includes('عرض') || query.includes('أسبوع') || query.includes('60') || query.includes('omar 60')) {
+                return "🔥 **عرض الأسبوع (خصم 60%):**\nاستمتع بخصم 60% على كافة منتجات وقوالب وأدوات المتجر لفترة محدودة لمدة أسبوع باستخدام كود الخصم **omar 60**!\n👉 [اطلب العرض الآن عبر الواتساب](https://wa.me/201206443652?text=طلب_عرض_الأسبوع_omar60)";
+            } else if (query.includes('cv') || query.includes('سيرة') || query.includes('150') || query.includes('مخصص')) {
+                return "📄 **خدمة تصميم الـ CV المخصص:**\nسيرة ذاتية احترافية ومصممة خصيصاً لك بسعر تنافسي ثابت **150 ج.م / $3 فقط** (متوافقة 100% مع أنظمة الـ ATS).\n👉 [يمكنك طلبها الآن مباشرة عبر الواتساب](https://wa.me/201206443652?text=طلب_تصميم_CV_مخصص_150)";
             } else if (query.includes('دفع') || query.includes('شراء') || query.includes('طريقة') || query.includes('محفظة')) {
                 return "💳 **طرق الدفع والشراء المتاحة:**\n1. **الشراء المباشر عبر الواتساب:** يدعم المحافظ الإلكترونية، InstaPay، التحويلات البنكية.\n2. **المتجر الإلكتروني Payhip:** يدعم البطاقات البنكية و PayPal ويوفر تحميلاً فورياً للملفات.";
-            } else if (query.includes('خصم') || query.includes('omar 60') || query.includes('عروض')) {
-                return "🎉 **كود الخصم:**\nاستخدم كود الخصم **OMAR 60** للحصول على خصم 60% على كافة الحزم والمنتجات الرقمية في المتجر!";
-            } else if (query.includes('موقع') || query.includes('قالب') || query.includes('تطوير')) {
-                return "💻 **قوالب المواقع وخدمات الويب:**\nجميع قوالبنا مبنية بأحدث معايير الـ UI/UX وواجهات سينمائية فائقة السرعة ومتوافقة 100% مع محركات البحث SEO لضمان أعلى المبيعات.";
             } else {
-                return "✨ أهلاً بك! أنا المساعد الذكي لمتجر أحمد أبو عمر.\nيمكنني مساعدتك في طلب **خدمة الـ CV المخصص (150 جنيه)**، اختيار القوالب المناسبة لمشروعك، أو إرشادك لطريقة الشراء السريعة عبر الواتساب.";
+                return "✨ أهلاً بك في متجر أحمد أبو عمر!\nنقدم لك عرض الأسبوع بخصم 60% باستخدام كود **omar 60**، بالإضافة لخدمة تصميم الـ CV المخصص (150 ج.م / $3). كيف يمكنني مساعدتك؟";
             }
         }
 
@@ -1411,34 +935,29 @@
         ];
 
         const productsData = [
-            // المنتجات من 1 إلى 16
-            { id: 1, category: "tools", icon: "🤖", titleAr: "المساعد الذكي الاحترافي للمواقع وواجهات المحادثة (AI Assistant Pro)", titleEn: "AI Website Assistant Pro", descAr: "تكامل سلس للمساعد الذكي للمواقع والردود الآلية المتقدمة.", oldPriceEg: "2,105", discPriceEg: "842", oldPriceUsd: "$42.10", discPriceUsd: "$16.84", url: "https://payhip.com/b/DXmGs" },
-            { id: 2, category: "tools", icon: "📊", titleAr: "حاسبة العائد التسعيري واقتصاديات SaaS Pro", titleEn: "SaaS Pricing & ROI Calculator Pro", descAr: "أداة مالية حاسبة للمقاييس المالية والتحليلات الاستثمارية لشركات SaaS.", oldPriceEg: "2,105", discPriceEg: "842", oldPriceUsd: "$42.10", discPriceUsd: "$16.84", url: "https://payhip.com/b/MJFx5" },
-            { id: 3, category: "tools", icon: "🖼️", titleAr: "أداة ضاغط الصور الاحترافي اونلاين (Image Compressor Pro)", titleEn: "Image Compressor Pro", descAr: "أداة ويب مصغرة لضغط الصور بدقة عالية وتسريع المواقع وتحسين الـ SEO.", oldPriceEg: "2,105", discPriceEg: "842", oldPriceUsd: "$42.10", discPriceUsd: "$16.84", url: "https://payhip.com/b/y2Q5N" },
-            { id: 4, category: "tools", icon: "✉️", titleAr: "مولد الإيميلات والتواصل البارد الذكي (AI Cold Email Generator Pro)", titleEn: "AI Cold Email Generator Pro", descAr: "أداة ذكاء اصطناعي لتوليد رسائل البريد الإلكتروني والحملات التسويقية.", oldPriceEg: "2,105", discPriceEg: "842", oldPriceUsd: "$42.10", discPriceUsd: "$16.84", url: "https://payhip.com/b/MWBli" },
-            { id: 5, category: "templates", icon: "🏢", titleAr: "قالب شركات العقارات والتطوير العقاري الفاخر", titleEn: "Real Estate & Development Template", descAr: "قالب موقع عقاري متجاوب وسريع جداً مخصص لمعاينة وحجز العقارات.", oldPriceEg: "2,105", discPriceEg: "842", oldPriceUsd: "$42.10", discPriceUsd: "$16.84", url: "https://payhip.com/b/y2Q5N" },
-            { id: 6, category: "templates", icon: "⚖️", titleAr: "قالب مكاتب المحاماة والاستشارات القانونية", titleEn: "Law Firm & Legal Consulting Template", descAr: "تصميم فاخر وجاد للمكاتب والخبراء القانونيين.", oldPriceEg: "2,105", discPriceEg: "842", oldPriceUsd: "$42.10", discPriceUsd: "$16.84", url: "https://payhip.com/b/y2Q5N" },
-            { id: 7, category: "templates", icon: "🛡️", titleAr: "قالب شركات الأمن السيبراني وحلول التكنولوجيا", titleEn: "Cybersecurity & IT Solutions Template", descAr: "تصميم سيبراني حديث ومبهر للشركات التقنية وحلول الأمان.", oldPriceEg: "2,105", discPriceEg: "842", oldPriceUsd: "$42.10", discPriceUsd: "$16.84", url: "https://payhip.com/b/y2Q5N" },
-            { id: 8, category: "templates", icon: "🍽️", titleAr: "قالب المطاعم والمقاهي الفاخرة", titleEn: "Luxury Restaurant & Cafe Template", descAr: "قالب سينمائي داكن وذهبي للوجبات والمنيو الرقمي السريع.", oldPriceEg: "2,105", discPriceEg: "842", oldPriceUsd: "$42.10", discPriceUsd: "$16.84", url: "https://payhip.com/b/ZPEcW" },
-            { id: 9, category: "templates", icon: "🚚", titleAr: "قالب شركات الشحن والخدمات اللوجستية", titleEn: "Logistics & Cargo Transport Template", descAr: "قالب منظم ومتجاوب لتتبع وتنسيق عمليات الشحن والخدمات اللوجستية.", oldPriceEg: "2,105", discPriceEg: "842", oldPriceUsd: "$42.10", discPriceUsd: "$16.84", url: "https://payhip.com/b/y2Q5N" },
-            { id: 10, category: "templates", icon: "🏎️", titleAr: "قالب معرض وخدمات تأجير السيارات الفاخرة", titleEn: "Luxury Car Rental & Showroom Template", descAr: "تصميم جذاب وعصري لحجز وتصفح السيارات والخدمات الفاخرة.", oldPriceEg: "2,105", discPriceEg: "842", oldPriceUsd: "$42.10", discPriceUsd: "$16.84", url: "https://payhip.com/b/y2Q5N" },
-            { id: 11, category: "templates", icon: "🛍️", titleAr: "قالب المتاجر الإلكترونية والمنتجات الرقمية", titleEn: "E-Commerce & Digital Products Template", descAr: "واجهة متجر إلكتروني متكاملة وسريعة لزيادة المبيعات.", oldPriceEg: "2,105", discPriceEg: "842", oldPriceUsd: "$42.10", discPriceUsd: "$16.84", url: "https://payhip.com/b/y2Q5N" },
-            { id: 12, category: "templates", icon: "🎨", titleAr: "قالب الوكالات الرقمية واستوديوهات التصميم", titleEn: "Digital Agency & Studio Template", descAr: "تصميم إبداعي لاستعراض الأعمال والخدمات الرقمية برقي.", oldPriceEg: "2,105", discPriceEg: "842", oldPriceUsd: "$42.10", discPriceUsd: "$16.84", url: "https://payhip.com/b/y2Q5N" },
-            { id: 13, category: "templates", icon: "🏥", titleAr: "قالب المراكز الطبية والعيادات التخصصية", titleEn: "Medical Center & Clinic Template", descAr: "تصميم هادئ وعصري مخصص لحجز المواعيد والخدمات الطبية.", oldPriceEg: "2,105", discPriceEg: "842", oldPriceUsd: "$42.10", discPriceUsd: "$16.84", url: "https://payhip.com/b/y2Q5N" },
-            { id: 14, category: "templates", icon: "🎓", titleAr: "قالب المنصات التعليمية والأكاديميات التدريبية", titleEn: "Educational Academy & Courses Template", descAr: "قالب ممتاز لعرض الدورات والخدمات التدريبية أونلاين.", oldPriceEg: "2,105", discPriceEg: "842", oldPriceUsd: "$42.10", discPriceUsd: "$16.84", url: "https://payhip.com/b/y2Q5N" },
-            { id: 15, category: "cv", icon: "📄", titleAr: "أحمد أبو عمر — حزمة السير الذاتية الفاخرة | 10 قوالب ATS", titleEn: "Ahmed Abu Omar Premium CV Bundle (10 ATS Templates)", descAr: "10 قوالب سيرة ذاتية احترافية باللغتين العربية والإنجليزية متوافقة مع أنظمة الـ ATS.", oldPriceEg: "790", discPriceEg: "316", oldPriceUsd: "$15.80", discPriceUsd: "$6.32", url: "https://payhip.com/b/JGOSj" },
-            { id: 16, category: "cv", icon: "📑", titleAr: "حزمة السير الذاتية المميزة | 7 قوالب ATS", titleEn: "Professional CV Bundle (7 ATS Templates)", descAr: "7 قوالب سيرة ذاتية احترافية متوافقة مع الـ ATS للوظائف المتقدمة.", oldPriceEg: "528", discPriceEg: "211", oldPriceUsd: "$10.56", discPriceUsd: "$4.21", url: "https://payhip.com/b/JGOSj" },
-
-            // المنتجات من 17 إلى 21
-            { id: 17, category: "cv", icon: "📝", titleAr: "قالب سيرة ذاتية ATS هندسي للتقنيين والمبرمجين", titleEn: "Tech & Developers ATS Resume Template", descAr: "مصمم ومصغّر خصيصاً للمطورين والمهندسين لضمان القبول.", oldPriceEg: "1,580", discPriceEg: "632", oldPriceUsd: "$31.60", discPriceUsd: "$12.63", url: "https://payhip.com/b/JGOSj" },
-            { id: 18, category: "cv", icon: "📋", titleAr: "قالب سيرة ذاتية ATS للقطاع الطبي والتمريضي", titleEn: "Medical & Clinical ATS Resume Template", descAr: "قالب حديث ومنظم للأطباء والممارسين الصحيين.", oldPriceEg: "1,580", discPriceEg: "632", oldPriceUsd: "$31.60", discPriceUsd: "$12.63", url: "https://payhip.com/b/JGOSj" },
-            { id: 19, category: "cv", icon: "📊", titleAr: "قالب سيرة ذاتية ATS لإدارة الأعمال والتسويق", titleEn: "Business & Marketing ATS Resume Template", descAr: "تصميم أنيق لاستعراض الإنجازات والنتائج الرقمية.", oldPriceEg: "1,580", discPriceEg: "632", oldPriceUsd: "$31.60", discPriceUsd: "$12.63", url: "https://payhip.com/b/JGOSj" },
-            { id: 20, category: "cv", icon: "💼", titleAr: "قالب سيرة ذاتية ATS للموارد البشرية والخدمات", titleEn: "HR & Administrative ATS Resume Template", descAr: "قالب هادئ واحترافي لقطاع إدارة الأفراد والعمليات.", oldPriceEg: "1,580", discPriceEg: "632", oldPriceUsd: "$31.60", discPriceUsd: "$12.63", url: "https://payhip.com/b/JGOSj" },
-            { id: 21, category: "cv", icon: "🖋️", titleAr: "قالب سيرة ذاتية ATS للمحاسبة والمالية", titleEn: "Finance & Accounting ATS Resume Template", descAr: "مخصص للمحللين الماليين والمحاسبين بدقة متناهية.", oldPriceEg: "1,580", discPriceEg: "632", oldPriceUsd: "$31.60", discPriceUsd: "$12.63", url: "https://payhip.com/b/JGOSj" },
-
-            // المنتجات 22 و 23
-            { id: 22, category: "cv", icon: "📦", titleAr: "حزمة القوالب الهندسية الشاملة والمتطورة (الحزمة 22)", titleEn: "Advanced Comprehensive Engineering Bundle (Bundle 22)", descAr: "حزمة متكاملة ومصممة بأعلى معايير الـ UI/UX لتغطية المشاريع الكبرى.", oldPriceEg: "790", discPriceEg: "316", oldPriceUsd: "$15.80", discPriceUsd: "$6.32", url: "https://payhip.com/b/JGOSj" },
-            { id: 23, category: "cv", icon: "🌟", titleAr: "حزمة الرواد والأعمال الرقمية الاحترافية (الحزمة 23)", titleEn: "Elite Digital Business & Creators Bundle (Bundle 23)", descAr: "مجموعة أدوات وقوالب متطورة لرواد الأعمال وصناع المحتوى الرقمي.", oldPriceEg: "528", discPriceEg: "211", oldPriceUsd: "$10.56", discPriceUsd: "$4.21", url: "https://payhip.com/b/JGOSj" }
+            { id: 1, category: "tools", icon: "🤖", titleAr: "المساعد الذكي الاحترافي للمواقع وواجهات المحادثة (AI Assistant Pro)", titleEn: "AI Website Assistant Pro", descAr: "تكامل سلس للمساعد الذكي للمواقع والردود الآلية المتقدمة.", oldPriceEg: "2,105 ج.م", discPriceEg: "842 ج.م", oldPriceUsd: "$42.10", discPriceUsd: "$16.84", url: "https://payhip.com/b/DXmGs" },
+            { id: 2, category: "tools", icon: "📊", titleAr: "حاسبة العائد التسعيري واقتصاديات SaaS Pro", titleEn: "SaaS Pricing & ROI Calculator Pro", descAr: "أداة مالية حاسبة للمقاييس المالية والتحليلات الاستثمارية لشركات SaaS.", oldPriceEg: "2,105 ج.م", discPriceEg: "842 ج.م", oldPriceUsd: "$42.10", discPriceUsd: "$16.84", url: "https://payhip.com/b/MJFx5" },
+            { id: 3, category: "tools", icon: "🖼️", titleAr: "أداة ضاغط الصور الاحترافي اونلاين (Image Compressor Pro)", titleEn: "Image Compressor Pro", descAr: "أداة ويب مصغرة لضغط الصور بدقة عالية وتسريع المواقع وتحسين الـ SEO.", oldPriceEg: "2,105 ج.م", discPriceEg: "842 ج.م", oldPriceUsd: "$42.10", discPriceUsd: "$16.84", url: "https://payhip.com/b/y2Q5N" },
+            { id: 4, category: "tools", icon: "✉️", titleAr: "مولد الإيميلات والتواصل البارد الذكي (AI Cold Email Generator Pro)", titleEn: "AI Cold Email Generator Pro", descAr: "أداة ذكاء اصطناعي لتوليد رسائل البريد الإلكتروني والحملات التسويقية.", oldPriceEg: "2,105 ج.م", discPriceEg: "842 ج.م", oldPriceUsd: "$42.10", discPriceUsd: "$16.84", url: "https://payhip.com/b/MWBli" },
+            { id: 5, category: "templates", icon: "🏢", titleAr: "قالب شركات العقارات والتطوير العقاري الفاخر", titleEn: "Real Estate & Development Template", descAr: "قالب موقع عقاري متجاوب وسريع جداً مخصص لمعاينة وحجز العقارات.", oldPriceEg: "2,105 ج.م", discPriceEg: "842 ج.م", oldPriceUsd: "$42.10", discPriceUsd: "$16.84", url: "https://payhip.com/b/y2Q5N" },
+            { id: 6, category: "templates", icon: "⚖️", titleAr: "قالب مكاتب المحاماة والاستشارات القانونية", titleEn: "Law Firm & Legal Consulting Template", descAr: "تصميم فاخر وجاد للمكاتب والخبراء القانونيين.", oldPriceEg: "2,105 ج.م", discPriceEg: "842 ج.م", oldPriceUsd: "$42.10", discPriceUsd: "$16.84", url: "https://payhip.com/b/y2Q5N" },
+            { id: 7, category: "templates", icon: "🛡️", titleAr: "قالب شركات الأمن السيبراني وحلول التكنولوجيا", titleEn: "Cybersecurity & IT Solutions Template", descAr: "تصميم سيبراني حديث ومبهر للشركات التقنية وحلول الأمان.", oldPriceEg: "2,105 ج.م", discPriceEg: "842 ج.م", oldPriceUsd: "$42.10", discPriceUsd: "$16.84", url: "https://payhip.com/b/y2Q5N" },
+            { id: 8, category: "templates", icon: "🍽️", titleAr: "قالب المطاعم والمقاهي الفاخرة", titleEn: "Luxury Restaurant & Cafe Template", descAr: "قالب سينمائي داكن وذهبي للوجبات والمنيو الرقمي السريع.", oldPriceEg: "2,105 ج.م", discPriceEg: "842 ج.م", oldPriceUsd: "$42.10", discPriceUsd: "$16.84", url: "https://payhip.com/b/ZPEcW" },
+            { id: 9, category: "templates", icon: "🚚", titleAr: "قالب شركات الشحن والخدمات اللوجستية", titleEn: "Logistics & Cargo Transport Template", descAr: "قالب منظم ومتجاوب لتتبع وتنسيق عمليات الشحن والخدمات اللوجستية.", oldPriceEg: "2,105 ج.م", discPriceEg: "842 ج.م", oldPriceUsd: "$42.10", discPriceUsd: "$16.84", url: "https://payhip.com/b/y2Q5N" },
+            { id: 10, category: "templates", icon: "🏎️", titleAr: "قالب معرض وخدمات تأجير السيارات الفاخرة", titleEn: "Luxury Car Rental & Showroom Template", descAr: "تصميم جذاب وعصري لحجز وتصفح السيارات والخدمات الفاخرة.", oldPriceEg: "2,105 ج.م", discPriceEg: "842 ج.م", oldPriceUsd: "$42.10", discPriceUsd: "$16.84", url: "https://payhip.com/b/y2Q5N" },
+            { id: 11, category: "templates", icon: "🛍️", titleAr: "قالب المتاجر الإلكترونية والمنتجات الرقمية", titleEn: "E-Commerce & Digital Products Template", descAr: "واجهة متجر إلكتروني متكاملة وسريعة لزيادة المبيعات.", oldPriceEg: "2,105 ج.م", discPriceEg: "842 ج.م", oldPriceUsd: "$42.10", discPriceUsd: "$16.84", url: "https://payhip.com/b/y2Q5N" },
+            { id: 12, category: "templates", icon: "🎨", titleAr: "قالب الوكالات الرقمية واستوديوهات التصميم", titleEn: "Digital Agency & Studio Template", descAr: "تصميم إبداعي لاستعراض الأعمال والخدمات الرقمية برقي.", oldPriceEg: "2,105 ج.م", discPriceEg: "842 ج.م", oldPriceUsd: "$42.10", discPriceUsd: "$16.84", url: "https://payhip.com/b/y2Q5N" },
+            { id: 13, category: "templates", icon: "🏥", titleAr: "قالب المراكز الطبية والعيادات التخصصية", titleEn: "Medical Center & Clinic Template", descAr: "تصميم هادئ وعصري مخصص لحجز المواعيد والخدمات الطبية.", oldPriceEg: "2,105 ج.م", discPriceEg: "842 ج.م", oldPriceUsd: "$42.10", discPriceUsd: "$16.84", url: "https://payhip.com/b/y2Q5N" },
+            { id: 14, category: "templates", icon: "🎓", titleAr: "قالب المنصات التعليمية والأكاديميات التدريبية", titleEn: "Educational Academy & Courses Template", descAr: "قالب ممتاز لعرض الدورات والخدمات التدريبية أونلاين.", oldPriceEg: "2,105 ج.م", discPriceEg: "842 ج.م", oldPriceUsd: "$42.10", discPriceUsd: "$16.84", url: "https://payhip.com/b/y2Q5N" },
+            { id: 15, category: "cv", icon: "📄", titleAr: "أحمد أبو عمر — حزمة السير الذاتية الفاخرة | 10 قوالب ATS", titleEn: "Ahmed Abu Omar Premium CV Bundle (10 ATS Templates)", descAr: "10 قوالب سيرة ذاتية احترافية باللغتين العربية والإنجليزية متوافقة مع أنظمة الـ ATS.", oldPriceEg: "790 ج.م", discPriceEg: "316 ج.م", oldPriceUsd: "$15.80", discPriceUsd: "$6.32", url: "https://payhip.com/b/JGOSj" },
+            { id: 16, category: "cv", icon: "📑", titleAr: "حزمة السير الذاتية المميزة | 7 قوالب ATS", titleEn: "Professional CV Bundle (7 ATS Templates)", descAr: "7 قوالب سيرة ذاتية احترافية متوافقة مع الـ ATS للوظائف المتقدمة.", oldPriceEg: "528 ج.م", discPriceEg: "211 ج.م", oldPriceUsd: "$10.56", discPriceUsd: "$4.21", url: "https://payhip.com/b/JGOSj" },
+            { id: 17, category: "cv", icon: "📝", titleAr: "قالب سيرة ذاتية ATS هندسي للتقنيين والمبرمجين", titleEn: "Tech & Developers ATS Resume Template", descAr: "مصمم ومصغّر خصيصاً للمطورين والمهندسين لضمان القبول.", oldPriceEg: "1,580 ج.م", discPriceEg: "632 ج.م", oldPriceUsd: "$31.60", discPriceUsd: "$12.63", url: "https://payhip.com/b/JGOSj" },
+            { id: 18, category: "cv", icon: "📋", titleAr: "قالب سيرة ذاتية ATS للقطاع الطبي والتمريضي", titleEn: "Medical & Clinical ATS Resume Template", descAr: "قالب حديث ومنظم للأطباء والممارسين الصحيين.", oldPriceEg: "1,580 ج.م", discPriceEg: "632 ج.م", oldPriceUsd: "$31.60", discPriceUsd: "$12.63", url: "https://payhip.com/b/JGOSj" },
+            { id: 19, category: "cv", icon: "📊", titleAr: "قالب سيرة ذاتية ATS لإدارة الأعمال والتسويق", titleEn: "Business & Marketing ATS Resume Template", descAr: "تصميم أنيق لاستعراض الإنجازات والنتائج الرقمية.", oldPriceEg: "1,580 ج.م", discPriceEg: "632 ج.م", oldPriceUsd: "$31.60", discPriceUsd: "$12.63", url: "https://payhip.com/b/JGOSj" },
+            { id: 20, category: "cv", icon: "💼", titleAr: "قالب سيرة ذاتية ATS للموارد البشرية والخدمات", titleEn: "HR & Administrative ATS Resume Template", descAr: "قالب هادئ واحترافي لقطاع إدارة الأفراد والعمليات.", oldPriceEg: "1,580 ج.م", discPriceEg: "632 ج.م", oldPriceUsd: "$31.60", discPriceUsd: "$12.63", url: "https://payhip.com/b/JGOSj" },
+            { id: 21, category: "cv", icon: "🖋️", titleAr: "قالب سيرة ذاتية ATS للمحاسبة والمالية", titleEn: "Finance & Accounting ATS Resume Template", descAr: "مخصص للمحللين الماليين والمحاسبين بدقة متناهية.", oldPriceEg: "1,580 ج.م", discPriceEg: "632 ج.م", oldPriceUsd: "$31.60", discPriceUsd: "$12.63", url: "https://payhip.com/b/JGOSj" },
+            { id: 22, category: "cv", icon: "📦", titleAr: "حزمة القوالب الهندسية الشاملة والمتطورة (الحزمة 22)", titleEn: "Advanced Comprehensive Engineering Bundle (Bundle 22)", descAr: "حزمة متكاملة ومصممة بأعلى معايير الـ UI/UX لتغطية المشاريع الكبرى.", oldPriceEg: "790 ج.م", discPriceEg: "316 ج.م", oldPriceUsd: "$15.80", discPriceUsd: "$6.32", url: "https://payhip.com/b/JGOSj" },
+            { id: 23, category: "cv", icon: "🌟", titleAr: "حزمة الرواد والأعمال الرقمية الاحترافية (الحزمة 23)", titleEn: "Elite Digital Business & Creators Bundle (Bundle 23)", descAr: "مجموعة أدوات وقوالب متطورة لرواد الأعمال وصناع المحتوى الرقمي.", oldPriceEg: "528 ج.م", discPriceEg: "211 ج.م", oldPriceUsd: "$10.56", discPriceUsd: "$4.21", url: "https://payhip.com/b/JGOSj" }
         ];
 
         let currentLang = 'ar';
@@ -1509,12 +1028,13 @@
                 const desc = currentLang === 'ar' ? p.descAr : p.descEn;
                 return `
                     <div class="product-card">
-                        <div style="font-size:3rem; text-align:center;">${p.icon}</div>
+                        <div style="position:absolute; top:12px; left:12px; background:#ef4444; color:#fff; font-size:0.7rem; font-weight:900; padding:0.2rem 0.6rem; border-radius:8px;">خصم 60%</div>
+                        <div style="font-size:3rem; text-align:center; margin-top:10px;">${p.icon}</div>
                         <h3>${title}</h3>
                         <p>${desc}</p>
                         <div class="pricing-clean-box">
-                            <div><span style="font-size:0.75rem; color:var(--text-muted);">السعر الأصلي</span><br><span class="price-old-val">${p.oldPriceEg} ج.م (${p.oldPriceUsd})</span></div>
-                            <div style="text-align:left;"><span style="font-size:0.75rem; color:var(--gold-light);">بعد خصم 60%</span><br><span class="price-new-val">${p.discPriceEg} ج.م (${p.discPriceUsd})</span></div>
+                            <div><span style="font-size:0.7rem; color:var(--text-muted);">السعر قبل الخصم</span><br><span class="price-old-val">${p.oldPriceEg} / ${p.oldPriceUsd}</span></div>
+                            <div style="text-align:left;"><span style="font-size:0.7rem; color:var(--gold-light);">بعد خصم 60%</span><br><span class="price-new-val">${p.discPriceEg} / ${p.discPriceUsd}</span></div>
                         </div>
                         <div class="product-actions-group">
                             <a href="${p.url}" target="_blank" class="product-btn btn-payhip">شراء عبر Payhip</a>
