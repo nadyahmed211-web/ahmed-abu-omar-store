@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr" data-theme="dark">
+<html lang="ar" dir="rtl" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -121,7 +121,7 @@
             justify-content: space-between;
         }
 
-        /* Exact Layout matching screenshot top bar */
+        /* Top Brand Card matching screenshot */
         .top-brand-card {
             display: flex;
             align-items: center;
@@ -399,10 +399,7 @@
             font-size: 1.4rem;
         }
 
-        html[dir="rtl"] .floating-ai-assistant {
-            left: auto;
-            right: 20px;
-        }
+        html[dir="rtl"] .floating-ai-assistant { left: auto; right: 20px; }
 
         @keyframes floatAssistant {
             0%, 100% { transform: translateY(0); }
@@ -632,24 +629,34 @@
         .product-title { font-size: 1.12rem; font-weight: 800; margin-bottom: 0.6rem; color: var(--text-main); line-height: 1.4; }
         .product-desc { color: var(--text-muted); font-size: 0.88rem; margin-bottom: 1.2rem; flex-grow: 1; }
 
-        .pricing-breakdown {
-            background: rgba(5, 7, 12, 0.5);
+        .pricing-clean-box {
+            background: rgba(5, 7, 12, 0.6);
             border: 1.5px solid var(--border-color);
             border-radius: 12px;
-            padding: 0.85rem;
+            padding: 0.9rem 1rem;
             margin-bottom: 1.2rem;
-            font-size: 0.82rem;
             display: flex;
-            flex-direction: column;
-            gap: 0.35rem;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        .price-row { display: flex; justify-content: space-between; align-items: center; }
-        .price-label { color: var(--text-muted); }
-        .price-val { font-weight: 800; color: var(--text-main); direction: ltr; }
-        .price-strike { text-decoration: line-through; color: var(--text-muted); font-size: 0.78rem; }
-        .price-highlight { color: var(--gold-light); font-weight: 900; }
-        .net-profit { color: #4ade80; font-weight: 900; }
+        .price-old-wrap {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .price-old-label { font-size: 0.72rem; color: var(--text-muted); }
+        .price-old-val { text-decoration: line-through; color: var(--text-muted); font-size: 0.88rem; font-weight: 700; direction: ltr; }
+
+        .price-new-wrap {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+        }
+        html[dir="rtl"] .price-new-wrap { text-align: left; }
+
+        .price-new-label { font-size: 0.72rem; color: var(--gold-light); font-weight: 700; }
+        .price-new-val { color: var(--gold-light); font-size: 1.15rem; font-weight: 900; direction: ltr; }
 
         .product-footer {
             display: flex;
@@ -777,7 +784,7 @@
 
         .social-follow-buttons { display: flex; justify-content: center; gap: 1.2rem; flex-wrap: wrap; }
 
-        /* Mobile Bottom Navigation Bar matching screenshot */
+        /* Mobile Bottom Navigation Bar */
         .bottom-nav {
             position: fixed;
             bottom: 0;
@@ -845,23 +852,23 @@
 </head>
 <body>
 
-    <!-- Floating AI Assistant Widget (Bottom-Left matching screenshot) -->
-    <a href="https://wa.me/201206443652?text=Hello%20Ahmed%20Abu%20Omar,%20I%20need%20assistance%20from%20your%20AI%20Assistant." target="_blank" rel="noopener noreferrer" class="floating-ai-assistant" title="المساعد الذكي">
+    <!-- Floating AI Assistant Widget (Bottom-Left) -->
+    <a href="https://wa.me/201206443652?text=مرحباً%20أحمد%20أبو%20عمر،%20أحتاج%20إلى%20مساعدة%20من%20المساعد%20الذكي." target="_blank" rel="noopener noreferrer" class="floating-ai-assistant" title="المساعد الذكي">
         🤖
     </a>
 
     <!-- Cinematic Header -->
     <header>
         <div class="header-container">
-            <!-- Mobile Top Brand Card matching screenshot -->
+            <!-- Mobile Top Brand Card (Default Arabic) -->
             <div class="top-brand-card">
                 <div class="controls-left">
-                    <button class="ctrl-btn" id="themeToggleBtnMobile" onclick="toggleTheme()" title="Theme">🌙</button>
-                    <button class="ctrl-btn" id="langToggleBtnMobile" onclick="toggleLanguage()" title="Language">EN</button>
+                    <button class="ctrl-btn" id="themeToggleBtnMobile" onclick="toggleTheme()" title="تغيير المظهر">🌙</button>
+                    <button class="ctrl-btn" id="langToggleBtnMobile" onclick="toggleLanguage()" title="Change Language">EN</button>
                 </div>
                 <a class="brand-info-center" onclick="switchSection('home')">
                     <span class="brand-title-text">Ahmed Abu Omar</span>
-                    <span class="brand-sub-text">Premium Digital Studio</span>
+                    <span class="brand-sub-text">استوديو التصميم الرقمي</span>
                 </a>
                 <div class="brand-avatar-box">A</div>
             </div>
@@ -871,22 +878,22 @@
                 <div class="brand-avatar-box">A</div>
                 <div style="display:flex; flex-direction:column;">
                     <span class="brand-title-text" style="font-size:1.2rem;">Ahmed Abu Omar</span>
-                    <span class="brand-sub-text">Cinematic Digital Studio</span>
+                    <span class="brand-sub-text">استوديو التصميم الرقمي السينمائي</span>
                 </div>
             </a>
 
             <!-- Desktop Navigation Links (Unified Order: الرئيسية | خدماتنا | منتجاتنا | العروض والخصومات | التواصل) -->
             <ul class="nav-desktop">
-                <li><button class="nav-link active" onclick="switchSection('home')" id="dnav-home" data-en="Home" data-ar="الرئيسية">الرئيسية</button></li>
-                <li><button class="nav-link" onclick="switchSection('services')" id="dnav-services" data-en="Services" data-ar="خدماتنا">خدماتنا</button></li>
-                <li><button class="nav-link" onclick="switchSection('products')" id="dnav-products" data-en="Products" data-ar="منتجاتنا">منتجاتنا</button></li>
-                <li><button class="nav-link" onclick="switchSection('offers')" id="dnav-offers" data-en="Offers & Discounts" data-ar="العروض والخصومات">العروض والخصومات</button></li>
-                <li><button class="nav-link" onclick="switchSection('contact')" id="dnav-contact" data-en="Contact" data-ar="التواصل">التواصل</button></li>
+                <li><button class="nav-link active" onclick="switchSection('home')" id="dnav-home" data-ar="الرئيسية" data-en="Home">الرئيسية</button></li>
+                <li><button class="nav-link" onclick="switchSection('services')" id="dnav-services" data-ar="خدماتنا" data-en="Services">خدماتنا</button></li>
+                <li><button class="nav-link" onclick="switchSection('products')" id="dnav-products" data-ar="منتجاتنا" data-en="Products">منتجاتنا</button></li>
+                <li><button class="nav-link" onclick="switchSection('offers')" id="dnav-offers" data-ar="العروض والخصومات" data-en="Offers & Discounts">العروض والخصومات</button></li>
+                <li><button class="nav-link" onclick="switchSection('contact')" id="dnav-contact" data-ar="التواصل" data-en="Contact">التواصل</button></li>
             </ul>
 
             <!-- Desktop Actions -->
             <div style="display:none; align-items:center; gap:0.85rem;" class="desktop-actions">
-                <button class="ctrl-btn" id="langToggleBtn" onclick="toggleLanguage()">AR</button>
+                <button class="ctrl-btn" id="langToggleBtn" onclick="toggleLanguage()">EN</button>
                 <button class="ctrl-btn" id="themeToggleBtn" onclick="toggleTheme()">☀️</button>
             </div>
         </div>
@@ -896,28 +903,28 @@
         @media(min-width: 992px) { .desktop-actions { display: flex !important; } }
     </style>
 
-    <!-- 1. HOME SECTION (MATCHING SCREENSHOT HERO) -->
+    <!-- 1. HOME SECTION (CINEMATIC HERO) -->
     <section id="section-home" class="page-section active">
         <div class="cinematic-hero">
-            <div class="cinematic-badge" data-en="👑 Professional Digital Studio" data-ar="👑 استوديو التصميم الرقمي الاحترافي">👑 استوديو التصميم الرقمي الاحترافي</div>
+            <div class="cinematic-badge" data-ar="👑 استوديو التصميم الرقمي الاحترافي" data-en="👑 Professional Digital Studio">👑 استوديو التصميم الرقمي الاحترافي</div>
             
-            <h1 data-en="Creating Exceptional Digital Products & High-Performance Solutions" data-ar="نبْتكر ونبني منتجات رقمية استثنائية">
+            <h1 data-ar="نبْتكر ونبني منتجات رقمية استثنائية" data-en="Creating Exceptional Digital Products & High-Performance Solutions">
                 نبْتكر ونبني منتجات رقمية استثنائية
             </h1>
             
-            <p data-en="Your ultimate destination for powerful digital products, Micro-SaaS tools, website templates, and ATS resumes meticulously engineered for your success." data-ar="وجهتك الأولى لاقتناء أقوى المنتجات الرقمية، أدوات الويب المصغرة (Micro-SaaS)، قوالب المواقع، والسير الذاتية المصممة خصيصاً لتعزيز نجاحك بأعلى معايير البريميوم.">
+            <p data-ar="وجهتك الأولى لاقتناء أقوى المنتجات الرقمية، أدوات الويب المصغرة (Micro-SaaS)، قوالب المواقع، والسير الذاتية المصممة خصيصاً لتعزيز نجاحك بأعلى معايير البريميوم." data-en="Your ultimate destination for powerful digital products, Micro-SaaS tools, website templates, and ATS resumes meticulously engineered for your success.">
                 وجهتك الأولى لاقتناء أقوى المنتجات الرقمية، أدوات الويب المصغرة (Micro-SaaS)، قوالب المواقع، والسير الذاتية المصممة خصيصاً لتعزيز نجاحك بأعلى معايير البريميوم.
             </p>
 
             <div class="cinematic-cta-group">
-                <button class="btn btn-primary-gold" onclick="switchSection('products')" data-en="Explore Digital Products Showcase" data-ar="استكشف متجر المنتجات الرقمية ➔">استكشف متجر المنتجات الرقمية ➔</button>
-                <button class="btn btn-primary-whatsapp" onclick="window.open('https://wa.me/201206443652','_blank')" data-en="Chat via WhatsApp" data-ar="💬 تواصل عبر الواتساب">💬 تواصل عبر الواتساب</button>
+                <button class="btn btn-primary-gold" onclick="switchSection('products')" data-ar="استكشف متجر المنتجات الرقمية ➔" data-en="Explore Digital Products Showcase ➔">استكشف متجر المنتجات الرقمية ➔</button>
+                <button class="btn btn-primary-whatsapp" onclick="window.open('https://wa.me/201206443652','_blank')" data-ar="💬 تواصل عبر الواتساب" data-en="💬 Chat via WhatsApp">💬 تواصل عبر الواتساب</button>
             </div>
         </div>
 
         <div class="thank-you-banner">
-            <h3 data-en="Thank You for Visiting Our Cinematic Studio" data-ar="شكرًا لزيارتك وثقتك الدائمة باستوديونا">شكرًا لزيارتك وثقتك الدائمة باستوديونا</h3>
-            <p data-en="Follow our official channels to receive exclusive digital releases, template updates, and promotional discount codes." data-ar="تابع منصاتنا الرسمية ليصلك جديد الإصدارات البرمجية، التحديثات الحصرية، وأكواد الخصم الخاصة.">
+            <h3 data-ar="شكرًا لزيارتك وثقتك الدائمة باستوديونا" data-en="Thank You for Visiting Our Cinematic Studio">شكرًا لزيارتك وثقتك الدائمة باستوديونا</h3>
+            <p data-ar="تابع منصاتنا الرسمية ليصلك جديد الإصدارات البرمجية، التحديثات الحصرية، وأكواد الخصم الخاصة." data-en="Follow our official channels to receive exclusive digital releases, template updates, and promotional discount codes.">
                 تابع منصاتنا الرسمية ليصلك جديد الإصدارات البرمجية، التحديثات الحصرية، وأكواد الخصم الخاصة.
             </p>
             <div class="social-follow-buttons">
@@ -930,8 +937,8 @@
     <!-- 2. SERVICES SECTION -->
     <section id="section-services" class="page-section">
         <div class="section-header">
-            <h2 data-en="Our Professional Services" data-ar="خدماتنا الاحترافية">خدماتنا الاحترافية</h2>
-            <p data-en="Tailored digital solutions and custom web development services designed for your business growth." data-ar="حلول رقمية وتطبيقات مخصصة مصممة لتسريع نموك وتعظيم أرباحك على الإنترنت.">حلول رقمية وتطبيقات مخصصة مصممة لتسريع نموك وتعظيم أرباحك على الإنترنت.</p>
+            <h2 data-ar="خدماتنا الاحترافية" data-en="Our Professional Services">خدماتنا الاحترافية</h2>
+            <p data-ar="حلول رقمية وتطبيقات مخصصة مصممة لتسريع نموك وتعظيم أرباحك على الإنترنت." data-en="Tailored digital solutions and custom web development services designed for your business growth.">حلول رقمية وتطبيقات مخصصة مصممة لتسريع نموك وتعظيم أرباحك على الإنترنت.</p>
         </div>
         <div class="services-grid" id="servicesGrid"></div>
     </section>
@@ -939,28 +946,28 @@
     <!-- 3. PRODUCTS SECTION -->
     <section id="section-products" class="page-section">
         <div class="section-header">
-            <h2 data-en="Digital Storefront & Products" data-ar="المتجر الرقمي والمنتجات">المتجر الرقمي والمنتجات</h2>
-            <p data-en="Explore our full collection of 23 premium web templates, micro-SaaS tools, and ATS resume bundles." data-ar="استكشف جميع منتجاتنا الرقمية الـ 23 التي تشمل قوالب المواقع، أدوات Micro-SaaS، وقوالب السيرة الذاتية.">استكشف جميع منتجاتنا الرقمية الـ 23 التي تشمل قوالب المواقع، أدوات Micro-SaaS، وقوالب السيرة الذاتية.</p>
+            <h2 data-ar="المتجر الرقمي والمنتجات" data-en="Digital Storefront & Products">المتجر الرقمي والمنتجات</h2>
+            <p data-ar="استكشف جميع منتجاتنا الرقمية الـ 23 التي تشمل قوالب المواقع، أدوات Micro-SaaS، وقوالب السيرة الذاتية." data-en="Explore our full collection of 23 premium web templates, micro-SaaS tools, and ATS resume bundles.">استكشف جميع منتجاتنا الرقمية الـ 23 التي تشمل قوالب المواقع، أدوات Micro-SaaS، وقوالب السيرة الذاتية.</p>
         </div>
 
         <div class="offers-mini-banner">
             <div>
-                <strong style="color:var(--gold-light);" data-en="🔥 Special Savings Available!" data-ar="🔥 تتوفر خصومات خاصة!">🔥 تتوفر خصومات خاصة!</strong>
-                <span style="color:var(--text-muted); font-size:0.88rem; display:block;" data-en="Use code OMAR 60 for up to 60% savings on Payhip." data-ar="استخدم كود OMAR 60 للحصول على خصم يصل إلى 60% على Payhip.">استخدم كود OMAR 60 للحصول على خصم يصل إلى 60% على Payhip.</span>
+                <strong style="color:var(--gold-light);" data-ar="🔥 تتوفر خصومات خاصة!" data-en="🔥 Special Savings Available!">🔥 تتوفر خصومات خاصة!</strong>
+                <span style="color:var(--text-muted); font-size:0.88rem; display:block;" data-ar="استخدم كود OMAR 60 للحصول على خصم يصل إلى 60% على Payhip." data-en="Use code OMAR 60 for up to 60% savings on Payhip.">استخدم كود OMAR 60 للحصول على خصم يصل إلى 60% على Payhip.</span>
             </div>
-            <button class="btn btn-primary-gold" onclick="switchSection('offers')" style="padding:0.5rem 1.1rem; font-size:0.85rem;" data-en="Offers & Discounts" data-ar="العروض والخصومات">العروض والخصومات</button>
+            <button class="btn btn-primary-gold" onclick="switchSection('offers')" style="padding:0.5rem 1.1rem; font-size:0.85rem;" data-ar="العروض والخصومات" data-en="Offers & Discounts">العروض والخصومات</button>
         </div>
 
         <div class="store-controls">
             <div class="search-box">
                 <span class="search-icon">🔍</span>
-                <input type="text" id="productSearch" placeholder="ابحث عن منتج أو قالب..." data-placeholder-en="Search products, templates..." data-placeholder-ar="ابحث عن منتج أو قالب..." oninput="filterProducts()">
+                <input type="text" id="productSearch" placeholder="ابحث عن منتج أو قالب..." data-placeholder-ar="ابحث عن منتج أو قالب..." data-placeholder-en="Search products, templates..." oninput="filterProducts()">
             </div>
             <div class="filter-tabs">
-                <button class="filter-tab active" onclick="setCategory('all')" data-en="All Products" data-ar="جميع المنتجات">جميع المنتجات</button>
-                <button class="filter-tab" onclick="setCategory('tools')" data-en="Digital Tools" data-ar="الأدوات الرقمية">الأدوات الرقمية</button>
-                <button class="filter-tab" onclick="setCategory('templates')" data-en="Website Templates" data-ar="قوالب المواقع">قوالب المواقع</button>
-                <button class="filter-tab" onclick="setCategory('cv')" data-en="CV Templates" data-ar="قوالب السيرة الذاتية">قوالب السيرة الذاتية</button>
+                <button class="filter-tab active" onclick="setCategory('all')" data-ar="جميع المنتجات" data-en="All Products">جميع المنتجات</button>
+                <button class="filter-tab" onclick="setCategory('tools')" data-ar="الأدوات الرقمية" data-en="Digital Tools">الأدوات الرقمية</button>
+                <button class="filter-tab" onclick="setCategory('templates')" data-ar="قوالب المواقع" data-en="Website Templates">قوالب المواقع</button>
+                <button class="filter-tab" onclick="setCategory('cv')" data-ar="قوالب السيرة الذاتية" data-en="CV Templates">قوالب السيرة الذاتية</button>
             </div>
         </div>
 
@@ -970,17 +977,17 @@
     <!-- 4. OFFERS SECTION -->
     <section id="section-offers" class="page-section">
         <div class="main-offer-banner">
-            <span class="offer-tag" data-en="LIMITED-TIME SAVINGS" data-ar="خصومات لفترة محدودة">خصومات لفترة محدودة</span>
-            <h2 data-en="Competitive Prices — Up to 60% Off" data-ar="أسعار تنافسية وخصومات تصل إلى 60%">أسعار تنافسية وخصومات تصل إلى 60%</h2>
-            <p data-en="Redeem promotional discount codes on our Payhip digital storefront." data-ar="استفد الآن من الخصومات المتاحة على متجرنا الرقمي على منصة Payhip.">استفد الآن من الخصومات المتاحة على متجرنا الرقمي على منصة Payhip.</p>
+            <span class="offer-tag" data-ar="خصومات لفترة محدودة" data-en="LIMITED-TIME SAVINGS">خصومات لفترة محدودة</span>
+            <h2 data-ar="أسعار تنافسية وخصومات تصل إلى 60%" data-en="Competitive Prices — Up to 60% Off">أسعار تنافسية وخصومات تصل إلى 60%</h2>
+            <p data-ar="استفد الآن من الخصومات المتاحة على متجرنا الرقمي على منصة Payhip." data-en="Redeem promotional discount codes on our Payhip digital storefront.">استفد الآن من الخصومات المتاحة على متجرنا الرقمي على منصة Payhip.</p>
             
             <div class="coupon-box">
                 <span class="coupon-code">OMAR 60</span>
-                <button class="copy-btn" onclick="copyCoupon()" data-en="Copy Code" data-ar="نسخ الرمز">نسخ الرمز</button>
+                <button class="copy-btn" onclick="copyCoupon()" data-ar="نسخ الرمز" data-en="Copy Code">نسخ الرمز</button>
             </div>
 
             <div>
-                <button class="btn btn-primary-gold" onclick="switchSection('products')" data-en="Explore Products" data-ar="منتجاتنا">منتجاتنا</button>
+                <button class="btn btn-primary-gold" onclick="switchSection('products')" data-ar="منتجاتنا" data-en="Explore Products">منتجاتنا</button>
             </div>
         </div>
     </section>
@@ -988,8 +995,8 @@
     <!-- 5. CONTACT SECTION WITH MOVING MARQUEE BANNER -->
     <section id="section-contact" class="page-section">
         <div class="section-header">
-            <h2 data-en="Contact Us & Social Hub" data-ar="التواصل ومنصات التواصل الاجتماعي">التواصل ومنصات التواصل الاجتماعي</h2>
-            <p data-en="Connect directly via WhatsApp or browse our moving social channel links below." data-ar="تواصل معنا مباشرة عبر الواتساب أو تصفح روابط منصاتنا عبر البنر المتحرك أدناه.">تواصل معنا مباشرة عبر الواتساب أو تصفح روابط منصاتنا عبر البنر المتحرك أدناه.</p>
+            <h2 data-ar="التواصل ومنصات التواصل الاجتماعي" data-en="Contact Us & Social Hub">التواصل ومنصات التواصل الاجتماعي</h2>
+            <p data-ar="تواصل معنا مباشرة عبر الواتساب أو تصفح روابط منصاتنا عبر البنر المتحرك أدناه." data-en="Connect directly via WhatsApp or browse our moving social channel links below.">تواصل معنا مباشرة عبر الواتساب أو تصفح روابط منصاتنا عبر البنر المتحرك أدناه.</p>
         </div>
 
         <!-- Moving Marquee Banner (Social Links Only) -->
@@ -1014,8 +1021,8 @@
 
         <div class="contact-grid">
             <div class="contact-card">
-                <h3 style="color:var(--gold); margin-bottom:0.85rem;" data-en="Direct WhatsApp Channel" data-ar="التواصل المباشر عبر الواتساب">التواصل المباشر عبر الواتساب</h3>
-                <p style="color:var(--text-muted); font-size:0.95rem; margin-bottom:1.6rem;" data-en="Get immediate assistance regarding custom orders, template support, or licensing inquiries." data-ar="احصل على رد سريع ومباشر بخصوص طلبات البرمجة، القوالب، أو المساعدة التقنية.">احصل على رد سريع ومباشر بخصوص طلبات البرمجة، القوالب، أو المساعدة التقنية.</p>
+                <h3 style="color:var(--gold); margin-bottom:0.85rem;" data-ar="التواصل المباشر عبر الواتساب" data-en="Direct WhatsApp Channel">التواصل المباشر عبر الواتساب</h3>
+                <p style="color:var(--text-muted); font-size:0.95rem; margin-bottom:1.6rem;" data-ar="احصل على رد سريع ومباشر بخصوص طلبات البرمجة، القوالب، أو المساعدة التقنية." data-en="Get immediate assistance regarding custom orders, template support, or licensing inquiries.">احصل على رد سريع ومباشر بخصوص طلبات البرمجة، القوالب، أو المساعدة التقنية.</p>
                 <a href="https://wa.me/201206443652" target="_blank" rel="noopener noreferrer" class="btn btn-primary-whatsapp" style="width:100%; justify-content:center;">💬 Chat on WhatsApp</a>
                 
                 <div style="margin-top:1.6rem; display:flex; flex-direction:column; gap:0.7rem;">
@@ -1027,14 +1034,14 @@
             </div>
 
             <div class="contact-card">
-                <h3 style="color:var(--gold); margin-bottom:0.85rem;" data-en="Custom Service Order Form" data-ar="نموذج طلب خدمة مخصصة">نموذج طلب خدمة مخصصة</h3>
+                <h3 style="color:var(--gold); margin-bottom:0.85rem;" data-ar="نموذج طلب خدمة مخصصة" data-en="Custom Service Order Form">نموذج طلب خدمة مخصصة</h3>
                 <form onsubmit="submitContactForm(event)">
                     <div class="form-group">
-                        <label data-en="Your Name" data-ar="الاسم الكريم">الاسم الكريم</label>
-                        <input type="text" id="cName" class="form-control" required placeholder="أدخل اسمك الكريم" data-placeholder-en="Enter your full name" data-placeholder-ar="أدخل اسمك الكريم">
+                        <label data-ar="الاسم الكريم" data-en="Your Name">الاسم الكريم</label>
+                        <input type="text" id="cName" class="form-control" required placeholder="أدخل اسمك الكريم" data-placeholder-ar="أدخل اسمك الكريم" data-placeholder-en="Enter your full name">
                     </div>
                     <div class="form-group">
-                        <label data-en="Service Needed" data-ar="نوع الخدمة المطلوبة">نوع الخدمة المطلوبة</label>
+                        <label data-ar="نوع الخدمة المطلوبة" data-en="Service Needed">نوع الخدمة المطلوبة</label>
                         <select id="cService" class="form-control">
                             <option value="Website Design & Development">تصميم وتطوير المواقع / Website Design & Development</option>
                             <option value="Landing Page Design">تصميم صفحات الهبوط / Landing Page Design</option>
@@ -1046,36 +1053,36 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label data-en="Project Details" data-ar="تفاصيل الطلب">تفاصيل الطلب</label>
-                        <textarea id="cDetails" class="form-control" required placeholder="اكتب تفاصيل ومتطلبات مشروعك..." data-placeholder-en="Provide brief requirements..." data-placeholder-ar="اكتب تفاصيل ومتطلبات مشروعك..."></textarea>
+                        <label data-ar="تفاصيل الطلب" data-en="Project Details">تفاصيل الطلب</label>
+                        <textarea id="cDetails" class="form-control" required placeholder="اكتب تفاصيل ومتطلبات مشروعك..." data-placeholder-ar="اكتب تفاصيل ومتطلبات مشروعك..." data-placeholder-en="Provide brief requirements..."></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary-whatsapp" style="width:100%; justify-content:center;" data-en="Send Order via WhatsApp" data-ar="إرسال الطلب عبر الواتساب">إرسال الطلب عبر الواتساب</button>
+                    <button type="submit" class="btn btn-primary-whatsapp" style="width:100%; justify-content:center;" data-ar="إرسال الطلب عبر الواتساب" data-en="Send Order via WhatsApp">إرسال الطلب عبر الواتساب</button>
                 </form>
             </div>
         </div>
     </section>
 
-    <!-- Mobile Bottom Navigation Bar matching screenshot EXACT ORDER: الرئيسية | خدماتنا | منتجاتنا | العروض والخصومات | التواصل -->
+    <!-- Mobile Bottom Navigation Bar (Unified Order: الرئيسية | خدماتنا | منتجاتنا | العروض والخصومات | التواصل) -->
     <nav class="bottom-nav">
         <button class="bottom-nav-item active" onclick="switchSection('home')" id="bnav-home">
             <svg viewBox="0 0 24 24"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>
-            <span data-en="Home" data-ar="الرئيسية">الرئيسية</span>
+            <span data-ar="الرئيسية" data-en="Home">الرئيسية</span>
         </button>
         <button class="bottom-nav-item" onclick="switchSection('services')" id="bnav-services">
             <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
-            <span data-en="Services" data-ar="خدماتنا">خدماتنا</span>
+            <span data-ar="خدماتنا" data-en="Services">خدماتنا</span>
         </button>
         <button class="bottom-nav-item" onclick="switchSection('products')" id="bnav-products">
             <svg viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path><line x1="3" y1="6" x2="21" y2="6"></line></svg>
-            <span data-en="Products" data-ar="منتجاتنا">منتجاتنا</span>
+            <span data-ar="منتجاتنا" data-en="Products">منتجاتنا</span>
         </button>
         <button class="bottom-nav-item" onclick="switchSection('offers')" id="bnav-offers">
             <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-            <span data-en="Offers & Discounts" data-ar="العروض والخصومات">العروض والخصومات</span>
+            <span data-ar="العروض والخصومات" data-en="Offers & Discounts">العروض والخصومات</span>
         </button>
         <button class="bottom-nav-item" onclick="switchSection('contact')" id="bnav-contact">
             <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-            <span data-en="Contact" data-ar="التواصل">التواصل</span>
+            <span data-ar="التواصل" data-en="Contact">التواصل</span>
         </button>
     </nav>
 
@@ -1086,46 +1093,46 @@
     </footer>
 
     <!-- Toast Notification -->
-    <div class="toast" id="toastNotification">Copied coupon code OMAR 60!</div>
+    <div class="toast" id="toastNotification">تم نسخ رمز الخصم OMAR 60 بنجاح!</div>
 
     <script>
         const servicesData = [
-            { id: 1, icon: "💻", titleEn: "Website Design & Development", titleAr: "تصميم وتطوير المواقع", descEn: "Custom, high-speed responsive website design engineered for maximum digital authority.", descAr: "تطوير مواقع إلكترونية فائقة السرعة ومتجاوبة بالكامل لتعزيز الأداء والحضور الرقمي." },
-            { id: 2, icon: "🎯", titleEn: "Landing Pages Design", titleAr: "تصميم صفحات الهبوط", descEn: "High-converting cinematic landing pages meticulously structured to boost conversion rates.", descAr: "صفحات هبوط سينمائية عالية التحويل مصممة خصيصًا لتحويل الزوار إلى عملاء." },
-            { id: 3, icon: "⚙️", titleEn: "Custom Digital Tool Development", titleAr: "تطوير الأدوات الرقمية المخصصة", descEn: "Bespoke micro-SaaS calculators, web utilities, and operational software tools.", descAr: "تطبيقات Micro-SaaS وأدوات رقمية ذكية مخصصة لتحسين سير العمل." },
-            { id: 4, icon: "🤖", titleEn: "AI Assistant Integration & Chatbots", titleAr: "إنشاء مساعدات رقمية وواجهات Chatbot", descEn: "Intelligent AI assistant setups to automate client communication and support.", descAr: "إعداد روبوتات المحادثة الذكية وتكامل المساعدات الرقمية لأتمتة دعم العملاء." },
-            { id: 5, icon: "📈", titleEn: "Website Review & SEO Basics", titleAr: "مراجعة المواقع وتحسين أساسيات SEO", descEn: "Comprehensive web performance audits and foundational search engine optimization.", descAr: "تدقيق شامل لأداء الموقع وتحسين أساسيات محركات البحث للتصدر." },
-            { id: 6, icon: "📄", titleEn: "CV Resume Design", titleAr: "تصميم السير الذاتية CV", descEn: "ATS-compliant bilingual resume designs tailored for corporate career advancement.", descAr: "قوالب سيرة ذاتية احترافية متوافقة مع أنظمة الـ ATS باللغتين." },
-            { id: 7, icon: "🛠️", titleEn: "Template Customization", titleAr: "تخصيص القوالب حسب متطلبات العميل", descEn: "Tailored modifications to align any template seamlessly with your brand identity.", descAr: "تعديلات وتخصيصات دقيقة لأي قالب ليطابق تمامًا هوية علامتك التجارية." }
+            { id: 1, icon: "💻", titleAr: "تصميم وتطوير المواقع", titleEn: "Website Design & Development", descAr: "تطوير مواقع إلكترونية فائقة السرعة ومتجاوبة بالكامل لتعزيز الأداء والحضور الرقمي.", descEn: "Custom, high-speed responsive website design engineered for maximum digital authority." },
+            { id: 2, icon: "🎯", titleAr: "تصميم صفحات الهبوط", titleEn: "Landing Pages Design", descAr: "صفحات هبوط سينمائية عالية التحويل مصممة خصيصًا لتحويل الزوار إلى عملاء.", descEn: "High-converting cinematic landing pages meticulously structured to boost conversion rates." },
+            { id: 3, icon: "⚙️", titleAr: "تطوير الأدوات الرقمية المخصصة", titleEn: "Custom Digital Tool Development", descAr: "تطبيقات Micro-SaaS وأدوات رقمية ذكية مخصصة لتحسين سير العمل.", descEn: "Bespoke micro-SaaS calculators, web utilities, and operational software tools." },
+            { id: 4, icon: "🤖", titleAr: "إنشاء مساعدات رقمية وواجهات Chatbot", titleEn: "AI Assistant Integration & Chatbots", descAr: "إعداد روبوتات المحادثة الذكية وتكامل المساعدات الرقمية لأتمتة دعم العملاء.", descEn: "Intelligent AI assistant setups to automate client communication and support." },
+            { id: 5, icon: "📈", titleAr: "مراجعة المواقع وتحسين أساسيات SEO", titleEn: "Website Review & SEO Basics", descAr: "تدقيق شامل لأداء الموقع وتحسين أساسيات محركات البحث للتصدر.", descEn: "Comprehensive web performance audits and foundational search engine optimization." },
+            { id: 6, icon: "📄", titleAr: "تصميم السير الذاتية CV", titleEn: "CV Resume Design", descAr: "قوالب سيرة ذاتية احترافية متوافقة مع أنظمة الـ ATS باللغتين.", descEn: "ATS-compliant bilingual resume designs tailored for corporate career advancement." },
+            { id: 7, icon: "🛠️", titleAr: "تخصيص القوالب حسب متطلبات العميل", titleEn: "Template Customization", descAr: "تعديلات وتخصيصات دقيقة لأي قالب ليطابق تمامًا هوية علامتك التجارية.", descEn: "Tailored modifications to align any template seamlessly with your brand identity." }
         ];
 
         const productsData = [
-            { id: 1, category: "tools", icon: "🤖", titleEn: "Ultimate AI Website Assistant & Chatbot Integration", titleAr: "المساعد الذكي الاحترافي للمواقع وواجهات المحادثة", descEn: "Seamless AI assistant integration for professional websites.", descAr: "تكامل سلس للمساعد الذكي للمواقع الاحترافية.", oldPrice: "2,105.28 EGP / $21.05", discPrice: "842.11 EGP / $8.42", fee: "42.11 EGP / $0.42", net: "800 EGP / $8.00", url: "https://payhip.com/b/DXmGs" },
-            { id: 2, category: "tools", icon: "📊", titleEn: "SaaS Pricing & ROI Calculator Pro – Financial Metrics Tool", titleAr: "حاسبة العائد التسعيري واقتصاديات SaaS Pro", descEn: "Financial metrics tool designed for SaaS startups and founders.", descAr: "حاسبة مقاييس مالية احترافية لشركات البرمجيات الناشئة.", oldPrice: "2,105.28 EGP / $21.05", discPrice: "842.11 EGP / $8.42", fee: "42.11 EGP / $0.42", net: "800 EGP / $8.00", url: "https://payhip.com/b/MJFx5" },
-            { id: 3, category: "tools", icon: "⚡", titleEn: "Image Compressor Pro – Micro-SaaS Image Optimizer", titleAr: "أداة ضغط الصور وتحسين الأداء Image Compressor Pro", descEn: "High-performance browser-side image optimization utility.", descAr: "أداة تحسين وضغط صور مصغرة عالية الأداء.", oldPrice: "2,105.28 EGP / $21.05", discPrice: "842.11 EGP / $8.42", fee: "42.11 EGP / $0.42", net: "800 EGP / $8.00", url: "https://payhip.com/b/MWBli" },
-            { id: 4, category: "tools", icon: "🔍", titleEn: "SEO Meta & Schema Generator Pro", titleAr: "مولد بيانات السكيما والميتا SEO Meta & Schema Generator", descEn: "Advanced meta tags and structured JSON-LD schema generator.", descAr: "مولد متطور لوسوم الميتا وسكيما JSON-LD المنظمة.", oldPrice: "2,105.28 EGP / $21.05", discPrice: "842.11 EGP / $8.42", fee: "42.11 EGP / $0.42", net: "800 EGP / $8.00", url: "https://payhip.com/b/1tfs7" },
-            { id: 5, category: "tools", icon: "✉️", titleEn: "AI Cold Email & Outreach Generator Pro – Bilingual", titleAr: "مولد البريد البارد وحملات الترويج بالذكاء الاصطناعي", descEn: "Bilingual AI cold email and outreach messaging generator.", descAr: "مولد ترويج وتواصل بارد مدعوم بالذكاء الاصطناعي ثنائي اللغة.", oldPrice: "2,105.28 EGP / $21.05", discPrice: "842.11 EGP / $8.42", fee: "42.11 EGP / $0.42", net: "800 EGP / $8.00", url: "https://payhip.com/b/y2Q5N" },
-            { id: 6, category: "tools", icon: "📱", titleEn: "AI Social Post Generator Pro", titleAr: "مولد منشورات وسائل التواصل الاجتماعي الذكي", descEn: "Smart post copy and campaign generator for social platforms.", descAr: "أداة توليد ذكية لمنشورات وسائل التواصل الاجتماعي.", oldPrice: "2,105.28 EGP / $21.05", discPrice: "842.11 EGP / $8.42", fee: "42.11 EGP / $0.42", net: "800 EGP / $8.00", url: "https://payhip.com/b/cS1eq" },
-            { id: 7, category: "templates", icon: "📈", titleEn: "Neoflow E-Commerce Dashboard & Analytics Website", titleAr: "قالب لوحة تحكم التجارة الإلكترونية Neoflow", descEn: "Sleek e-commerce dashboard and analytics site template.", descAr: "قالب لوحة تحكم تحليلات التجارة الإلكترونية الفاخر.", oldPrice: "2,105.28 EGP / $21.05", discPrice: "842.11 EGP / $8.42", fee: "42.11 EGP / $0.42", net: "800 EGP / $8.00", url: "https://payhip.com/b/NkyiO" },
-            { id: 8, category: "templates", icon: "🍽️", titleEn: "Premium Restaurant & Cafe Website Template", titleAr: "قالب المطاعم والمقاهي الفاخرة", descEn: "Cinematic dark & gold luxury restaurant web layout.", descAr: "قالب سينمائي داكن وذهبي للمطاعم والمقاهي الفاخرة.", oldPrice: "2,105.28 EGP / $21.05", discPrice: "842.11 EGP / $8.42", fee: "42.11 EGP / $0.42", net: "800 EGP / $8.00", url: "https://payhip.com/b/ZPEcW" },
-            { id: 9, category: "templates", icon: "🏡", titleEn: "Premium Real Estate & Elite Property Website Template", titleAr: "قالب العقارات والعقارات الفاخرة", descEn: "Elite property showcase site template for real estate agencies.", descAr: "قالب عقاري راقي يعرض العقارات الفاخرة.", oldPrice: "2,105.28 EGP / $21.05", discPrice: "842.11 EGP / $8.42", fee: "42.11 EGP / $0.42", net: "800 EGP / $8.00", url: "https://payhip.com/b/iC7jQ" },
-            { id: 10, category: "templates", icon: "⚖️", titleEn: "Premium Lawyer & Legal Services Website Template", titleAr: "قالب المحاماة والخدمات القانونية", descEn: "Professional law firm and legal consultancy template.", descAr: "قالب ويب احترافي لمكاتب المحاماة والاستشارات القانونية.", oldPrice: "2,105.28 EGP / $21.05", discPrice: "842.11 EGP / $8.42", fee: "42.11 EGP / $0.42", net: "800 EGP / $8.00", url: "https://payhip.com/b/i3kaJ" },
-            { id: 11, category: "templates", icon: "✨", titleEn: "Aura Luxury & Premium Brand Template", titleAr: "قالب العلامة التجارية الفاخرة Aura", descEn: "Aesthetic luxury boutique and high-end brand showcase.", descAr: "قالب عالي الجودة للعلامات التجارية الفاخرة والمنتجات الراقية.", oldPrice: "2,105.28 EGP / $21.05", discPrice: "842.11 EGP / $8.42", fee: "42.11 EGP / $0.42", net: "800 EGP / $8.00", url: "https://payhip.com/b/mQvIj" },
-            { id: 12, category: "templates", icon: "👤", titleEn: "Ahmed Professional Portfolio Template", titleAr: "قالب المعرض المهني الشخصي Ahmed", descEn: "Modern executive portfolio for digital creators and developers.", descAr: "قالب معرض أعمال مهني أنيق للمطورين والمصممين.", oldPrice: "2,105.28 EGP / $21.05", discPrice: "842.11 EGP / $8.42", fee: "42.11 EGP / $0.42", net: "800 EGP / $8.00", url: "https://payhip.com/b/GgdNQ" },
-            { id: 13, category: "templates", icon: "🛡️", titleEn: "Zenith Cyber & Tech Security Template", titleAr: "قالب الأمن السيبراني والتكنولوجيا Zenith", descEn: "Futuristic cybersecurity agency layout.", descAr: "قالب أمن سيبراني متطور بجماليات مستقبلية.", oldPrice: "2,105.28 EGP / $21.05", discPrice: "842.11 EGP / $8.42", fee: "42.11 EGP / $0.42", net: "800 EGP / $8.00", url: "https://payhip.com/b/IOocl" },
-            { id: 14, category: "templates", icon: "🏢", titleEn: "AbuOmar Business & Corporate Solution Template", titleAr: "قالب الأعمال والحلول المؤسسية AbuOmar", descEn: "Comprehensive enterprise template for commercial entities.", descAr: "قالب مؤسسي شامل مصمم للشركات والمؤسسات.", oldPrice: "2,105.28 EGP / $21.05", discPrice: "842.11 EGP / $8.42", fee: "42.11 EGP / $0.42", net: "800 EGP / $8.00", url: "https://payhip.com/b/mNYI5" },
-            { id: 15, category: "templates", icon: "🚀", titleEn: "Apex Exotic & Creative", titleAr: "قالب الأفكار الإبداعية Apex Exotic", descEn: "Dynamic animated layout for creative studios.", descAr: "قالب إبداعي ديناميكي بتصميم حديث ومبتكر.", oldPrice: "2,105.28 EGP / $21.05", discPrice: "842.11 EGP / $8.42", fee: "42.11 EGP / $0.42", net: "800 EGP / $8.00", url: "https://payhip.com/b/Uipv7" },
-            { id: 16, category: "templates", icon: "💻", titleEn: "Tech Startup & SaaS Website", titleAr: "قالب شركات البرمجيات والـ SaaS الناشئة", descEn: "High impact SaaS product landing page.", descAr: "قالب متعدد الصفحات لشركات البرمجيات الناشئة.", oldPrice: "2,105.28 EGP / $21.05", discPrice: "842.11 EGP / $8.42", fee: "42.11 EGP / $0.42", net: "800 EGP / $8.00", url: "https://payhip.com/b/D2bnY" },
-            { id: 17, category: "templates", icon: "🏢", titleEn: "NOVA – Premium Real Estate Website Template", titleAr: "قالب العقارات الفاخرة NOVA", descEn: "Advanced real estate listing agency template.", descAr: "قالب وكالة عقارية فاخرة متكامل.", oldPrice: "1,578.95 EGP / $15.80", discPrice: "631.58 EGP / $6.32", fee: "31.58 EGP / $0.32", net: "600 EGP / $6.00", url: "https://payhip.com/b/7N0IC" },
-            { id: 18, category: "templates", icon: "🏡", titleEn: "Premium Real Estate Website Template", titleAr: "قالب العقارات القياسي الفاخر", descEn: "Standard responsive real estate broker site.", descAr: "قالب مواقع عقارية متجاوب قياسي.", oldPrice: "1,578.95 EGP / $15.80", discPrice: "631.58 EGP / $6.32", fee: "31.58 EGP / $0.32", net: "600 EGP / $6.00", url: "https://payhip.com/b/TKrM8" },
-            { id: 19, category: "templates", icon: "📊", titleEn: "Premium Business Website Template", titleAr: "قالب الأعمال التجارية القياسي الفاخر", descEn: "Multi-purpose business corporate template.", descAr: "قالب أعمال متعدد الاستخدامات.", oldPrice: "1,578.95 EGP / $15.80", discPrice: "631.58 EGP / $6.32", fee: "31.58 EGP / $0.32", net: "600 EGP / $6.00", url: "https://payhip.com/b/yizhn" },
-            { id: 20, category: "templates", icon: "🍲", titleEn: "Premium Restaurant Website Template | Arabic & English | RTL/LTR", titleAr: "قالب المطاعم ثنائي اللغة (عربي وإنجليزي)", descEn: "Full RTL & LTR bilingual restaurant site layout.", descAr: "قالب مطعم ثنائي اللغة بالكامل ثنائي الاتجاه.", oldPrice: "1,578.95 EGP / $15.80", discPrice: "631.58 EGP / $6.32", fee: "31.58 EGP / $0.32", net: "600 EGP / $6.00", url: "https://payhip.com/b/SnpTh" },
-            { id: 21, category: "templates", icon: "⚖️", titleEn: "Premium Lawyer Website Template – Arabic & English", titleAr: "قالب المحاماة ثنائي اللغة (عربي وإنجليزي)", descEn: "International law firm bilingual template.", descAr: "قالب خدمات قانونية ثنائي اللغة للشركات الدولية.", oldPrice: "1,578.95 EGP / $15.80", discPrice: "631.58 EGP / $6.32", fee: "31.58 EGP / $0.32", net: "600 EGP / $6.00", url: "https://payhip.com/b/V7sGk" },
-            { id: 22, category: "cv", icon: "📄", titleEn: "Ahmed Abu Omar – Premium CV Bundle | 10 Arabic & English Templates", titleAr: "أحمد أبو عمر — حزمة السير الذاتية الفاخرة | 10 قوالب عربية وإنجليزية (المجموعة الثالثة)", descEn: "Comprehensive ATS-friendly bilingual CV bundle (10 Templates).", descAr: "حزمة تحتوي على 10 قوالب سيرة ذاتية عربية وإنجليزية متوافقة مع الـ ATS.", oldPrice: "657.89 EGP / $13.16", discPrice: "263.16 EGP / $5.26", fee: "13.16 EGP / $0.26", net: "250 EGP / $5.00", url: "https://payhip.com/b/JGOSj" },
-            { id: 23, category: "cv", icon: "📄", titleEn: "Premium CV Bundle – 7 Professional Resume Templates", titleAr: "حزمة السير الذاتية الاحترافية — 7 قوالب متطورة (المجموعة الثالثة)", descEn: "Collection of 7 professional ATS resume designs.", descAr: "حزمة تضم 7 تصميمات سيرة ذاتية احترافية ثنائية اللغة متوافقة مع الـ ATS.", oldPrice: "657.89 EGP / $13.16", discPrice: "263.16 EGP / $5.26", fee: "13.16 EGP / $0.26", net: "250 EGP / $5.00", url: "https://payhip.com/b/Dy2bz" }
+            { id: 1, category: "tools", icon: "🤖", titleAr: "المساعد الذكي الاحترافي للمواقع وواجهات المحادثة", titleEn: "Ultimate AI Website Assistant & Chatbot Integration", descAr: "تكامل سلس للمساعد الذكي للمواقع الاحترافية.", descEn: "Seamless AI assistant integration for professional websites.", oldPrice: "2,105.28 EGP / $21.05", discPrice: "842.11 EGP / $8.42", url: "https://payhip.com/b/DXmGs" },
+            { id: 2, category: "tools", icon: "📊", titleAr: "حاسبة العائد التسعيري واقتصاديات SaaS Pro", titleEn: "SaaS Pricing & ROI Calculator Pro – Financial Metrics Tool", descAr: "حاسبة مقاييس مالية احترافية لشركات البرمجيات الناشئة.", descEn: "Financial metrics tool designed for SaaS startups and founders.", oldPrice: "2,105.28 EGP / $21.05", discPrice: "842.11 EGP / $8.42", url: "https://payhip.com/b/MJFx5" },
+            { id: 3, category: "tools", icon: "⚡", titleAr: "أداة ضغط الصور وتحسين الأداء Image Compressor Pro", titleEn: "Image Compressor Pro – Micro-SaaS Image Optimizer", descAr: "أداة تحسين وضغط صور مصغرة عالية الأداء.", descEn: "High-performance browser-side image optimization utility.", oldPrice: "2,105.28 EGP / $21.05", discPrice: "842.11 EGP / $8.42", url: "https://payhip.com/b/MWBli" },
+            { id: 4, category: "tools", icon: "🔍", titleAr: "مولد بيانات السكيما والميتا SEO Meta & Schema Generator", titleEn: "SEO Meta & Schema Generator Pro", descAr: "مولد متطور لوسوم الميتا وسكيما JSON-LD المنظمة.", descEn: "Advanced meta tags and structured JSON-LD schema generator.", oldPrice: "2,105.28 EGP / $21.05", discPrice: "842.11 EGP / $8.42", url: "https://payhip.com/b/1tfs7" },
+            { id: 5, category: "tools", icon: "✉️", titleAr: "مولد البريد البارد وحملات الترويج بالذكاء الاصطناعي", titleEn: "AI Cold Email & Outreach Generator Pro – Bilingual", descAr: "مولد ترويج وتواصل بارد مدعوم بالذكاء الاصطناعي ثنائي اللغة.", descEn: "Bilingual AI cold email and outreach messaging generator.", oldPrice: "2,105.28 EGP / $21.05", discPrice: "842.11 EGP / $8.42", url: "https://payhip.com/b/y2Q5N" },
+            { id: 6, category: "tools", icon: "📱", titleAr: "مولد منشورات وسائل التواصل الاجتماعي الذكي", titleEn: "AI Social Post Generator Pro", descAr: "أداة توليد ذكية لمنشورات وسائل التواصل الاجتماعي.", descEn: "Smart post copy and campaign generator for social platforms.", oldPrice: "2,105.28 EGP / $21.05", discPrice: "842.11 EGP / $8.42", url: "https://payhip.com/b/cS1eq" },
+            { id: 7, category: "templates", icon: "📈", titleAr: "قالب لوحة تحكم التجارة الإلكترونية Neoflow", titleEn: "Neoflow E-Commerce Dashboard & Analytics Website", descAr: "قالب لوحة تحكم تحليلات التجارة الإلكترونية الفاخر.", descEn: "Sleek e-commerce dashboard and analytics site template.", oldPrice: "2,105.28 EGP / $21.05", discPrice: "842.11 EGP / $8.42", url: "https://payhip.com/b/NkyiO" },
+            { id: 8, category: "templates", icon: "🍽️", titleAr: "قالب المطاعم والمقاهي الفاخرة", titleEn: "Premium Restaurant & Cafe Website Template", descAr: "قالب سينمائي داكن وذهبي للمطاعم والمقاهي الفاخرة.", descEn: "Cinematic dark & gold luxury restaurant web layout.", oldPrice: "2,105.28 EGP / $21.05", discPrice: "842.11 EGP / $8.42", url: "https://payhip.com/b/ZPEcW" },
+            { id: 9, category: "templates", icon: "🏡", titleAr: "قالب العقارات والعقارات الفاخرة", titleEn: "Premium Real Estate & Elite Property Website Template", descAr: "قالب عقاري راقي يعرض العقارات الفاخرة.", descEn: "Elite property showcase site template for real estate agencies.", oldPrice: "2,105.28 EGP / $21.05", discPrice: "842.11 EGP / $8.42", url: "https://payhip.com/b/iC7jQ" },
+            { id: 10, category: "templates", icon: "⚖️", titleAr: "قالب المحاماة والخدمات القانونية", titleEn: "Premium Lawyer & Legal Services Website Template", descAr: "قالب ويب احترافي لمكاتب المحاماة والاستشارات القانونية.", descEn: "Professional law firm and legal consultancy template.", oldPrice: "2,105.28 EGP / $21.05", discPrice: "842.11 EGP / $8.42", url: "https://payhip.com/b/i3kaJ" },
+            { id: 11, category: "templates", icon: "✨", titleAr: "قالب العلامة التجارية الفاخرة Aura", titleEn: "Aura Luxury & Premium Brand Template", descAr: "قالب عالي الجودة للعلامات التجارية الفاخرة والمنتجات الراقية.", descEn: "Aesthetic luxury boutique and high-end brand showcase.", oldPrice: "2,105.28 EGP / $21.05", discPrice: "842.11 EGP / $8.42", url: "https://payhip.com/b/mQvIj" },
+            { id: 12, category: "templates", icon: "👤", titleAr: "قالب المعرض المهني الشخصي Ahmed", titleEn: "Ahmed Professional Portfolio Template", descAr: "قالب معرض أعمال مهني أنيق للمطورين والمصممين.", descEn: "Modern executive portfolio for digital creators and developers.", oldPrice: "2,105.28 EGP / $21.05", discPrice: "842.11 EGP / $8.42", url: "https://payhip.com/b/GgdNQ" },
+            { id: 13, category: "templates", icon: "🛡️", titleAr: "قالب الأمن السيبراني والتكنولوجيا Zenith", titleEn: "Zenith Cyber & Tech Security Template", descAr: "قالب أمن سيبراني متطور بجماليات مستقبلية.", descEn: "Futuristic cybersecurity agency layout.", oldPrice: "2,105.28 EGP / $21.05", discPrice: "842.11 EGP / $8.42", url: "https://payhip.com/b/IOocl" },
+            { id: 14, category: "templates", icon: "🏢", titleAr: "قالب الأعمال والحلول المؤسسية AbuOmar", titleEn: "AbuOmar Business & Corporate Solution Template", descAr: "قالب مؤسسي شامل مصمم للشركات والمؤسسات.", descEn: "Comprehensive enterprise template for commercial entities.", oldPrice: "2,105.28 EGP / $21.05", discPrice: "842.11 EGP / $8.42", url: "https://payhip.com/b/mNYI5" },
+            { id: 15, category: "templates", icon: "🚀", titleAr: "قالب الأفكار الإبداعية Apex Exotic", titleEn: "Apex Exotic & Creative", descAr: "قالب إبداعي ديناميكي بتصميم حديث ومبتكر.", descEn: "Dynamic animated layout for creative studios.", oldPrice: "2,105.28 EGP / $21.05", discPrice: "842.11 EGP / $8.42", url: "https://payhip.com/b/Uipv7" },
+            { id: 16, category: "templates", icon: "💻", titleAr: "قالب شركات البرمجيات والـ SaaS الناشئة", titleEn: "Tech Startup & SaaS Website", descAr: "قالب متعدد الصفحات لشركات البرمجيات الناشئة.", descEn: "High impact SaaS product landing page.", oldPrice: "2,105.28 EGP / $21.05", discPrice: "842.11 EGP / $8.42", url: "https://payhip.com/b/D2bnY" },
+            { id: 17, category: "templates", icon: "🏢", titleAr: "قالب العقارات الفاخرة NOVA", titleEn: "NOVA – Premium Real Estate Website Template", descAr: "قالب وكالة عقارية فاخرة متكامل.", descEn: "Advanced real estate listing agency template.", oldPrice: "1,578.95 EGP / $15.80", discPrice: "631.58 EGP / $6.32", url: "https://payhip.com/b/7N0IC" },
+            { id: 18, category: "templates", icon: "🏡", titleAr: "قالب العقارات القياسي الفاخر", titleEn: "Premium Real Estate Website Template", descAr: "قالب مواقع عقارية متجاوب قياسي.", descEn: "Standard responsive real estate broker site.", oldPrice: "1,578.95 EGP / $15.80", discPrice: "631.58 EGP / $6.32", url: "https://payhip.com/b/TKrM8" },
+            { id: 19, category: "templates", icon: "📊", titleAr: "قالب الأعمال التجارية القياسي الفاخر", titleEn: "Premium Business Website Template", descAr: "قالب أعمال متعدد الاستخدامات.", descEn: "Multi-purpose business corporate template.", oldPrice: "1,578.95 EGP / $15.80", discPrice: "631.58 EGP / $6.32", url: "https://payhip.com/b/yizhn" },
+            { id: 20, category: "templates", icon: "🍲", titleAr: "قالب المطاعم ثنائي اللغة (عربي وإنجليزي)", titleEn: "Premium Restaurant Website Template | Arabic & English | RTL/LTR", descAr: "قالب مطعم ثنائي اللغة بالكامل ثنائي الاتجاه.", descEn: "Full RTL & LTR bilingual restaurant site layout.", oldPrice: "1,578.95 EGP / $15.80", discPrice: "631.58 EGP / $6.32", url: "https://payhip.com/b/SnpTh" },
+            { id: 21, category: "templates", icon: "⚖️", titleAr: "قالب المحاماة ثنائي اللغة (عربي وإنجليزي)", titleEn: "Premium Lawyer Website Template – Arabic & English", descAr: "قالب خدمات قانونية ثنائي اللغة للشركات الدولية.", descEn: "International law firm bilingual template.", oldPrice: "1,578.95 EGP / $15.80", discPrice: "631.58 EGP / $6.32", url: "https://payhip.com/b/V7sGk" },
+            { id: 22, category: "cv", icon: "📄", titleAr: "أحمد أبو عمر — حزمة السير الذاتية الفاخرة | 10 قوالب عربية وإنجليزية (المجموعة الثالثة)", titleEn: "Ahmed Abu Omar – Premium CV Bundle | 10 Arabic & English Templates", descAr: "حزمة تحتوي على 10 قوالب سيرة ذاتية عربية وإنجليزية متوافقة مع الـ ATS.", descEn: "Comprehensive ATS-friendly bilingual CV bundle (10 Templates).", oldPrice: "657.89 EGP / $13.16", discPrice: "263.16 EGP / $5.26", url: "https://payhip.com/b/JGOSj" },
+            { id: 23, category: "cv", icon: "📄", titleAr: "حزمة السير الذاتية الاحترافية — 7 قوالب متطورة (المجموعة الثالثة)", titleEn: "Premium CV Bundle – 7 Professional Resume Templates", descAr: "حزمة تضم 7 تصميمات سيرة ذاتية احترافية ثنائية اللغة متوافقة مع الـ ATS.", descEn: "Collection of 7 professional ATS resume designs.", oldPrice: "657.89 EGP / $13.16", discPrice: "263.16 EGP / $5.26", url: "https://payhip.com/b/Dy2bz" }
         ];
 
-        let currentLang = 'en';
+        let currentLang = 'ar';
         let currentTheme = 'dark';
         let currentCategory = 'all';
 
@@ -1151,21 +1158,21 @@
         }
 
         function toggleLanguage() {
-            currentLang = currentLang === 'en' ? 'ar' : 'en';
+            currentLang = currentLang === 'ar' ? 'en' : 'ar';
             const html = document.documentElement;
             html.setAttribute('lang', currentLang);
             html.setAttribute('dir', currentLang === 'ar' ? 'rtl' : 'ltr');
             
-            const btnText = currentLang === 'en' ? 'AR' : 'EN';
+            const btnText = currentLang === 'ar' ? 'EN' : 'AR';
             document.getElementById('langToggleBtn').innerText = btnText;
             document.getElementById('langToggleBtnMobile').innerText = btnText;
             
-            document.querySelectorAll('[data-en]').forEach(el => {
+            document.querySelectorAll('[data-ar]').forEach(el => {
                 const txt = el.getAttribute(`data-${currentLang}`);
                 if(txt) el.innerText = txt;
             });
 
-            document.querySelectorAll('[data-placeholder-en]').forEach(el => {
+            document.querySelectorAll('[data-placeholder-ar]').forEach(el => {
                 const ph = el.getAttribute(`data-placeholder-${currentLang}`);
                 if(ph) el.setAttribute('placeholder', ph);
             });
@@ -1215,10 +1222,8 @@
                 const buyPayhip = currentLang === 'ar' ? 'شراء من المتجر' : 'Buy on Payhip';
                 const buyWa = currentLang === 'ar' ? 'طلب عبر الواتساب' : 'WhatsApp Direct';
 
-                const lblBefore = currentLang === 'ar' ? 'قبل الخصم:' : 'Before:';
-                const lblOffer = currentLang === 'ar' ? 'بعد خصم 60%:' : '60% Off:';
-                const lblFee = currentLang === 'ar' ? 'عمولة المتجر (5%):' : 'Platform Fee (5%):';
-                const lblNet = currentLang === 'ar' ? 'صافي الربح:' : 'Net Profit:';
+                const lblBefore = currentLang === 'ar' ? 'قبل الخصم' : 'Before';
+                const lblOffer = currentLang === 'ar' ? 'بعد خصم 60%' : '60% Off';
 
                 const waMsg = encodeURIComponent(`Hello Ahmed Abu Omar,\nI am interested in purchasing: ${title}`);
                 const waUrl = `https://wa.me/201206443652?text=${waMsg}`;
@@ -1233,22 +1238,14 @@
                             <h3 class="product-title">${title}</h3>
                             <p class="product-desc">${desc}</p>
                             
-                            <div class="pricing-breakdown">
-                                <div class="price-row">
-                                    <span class="price-label">${lblBefore}</span>
-                                    <span class="price-val price-strike">${p.oldPrice}</span>
+                            <div class="pricing-clean-box">
+                                <div class="price-old-wrap">
+                                    <span class="price-old-label">${lblBefore}</span>
+                                    <span class="price-old-val">${p.oldPrice}</span>
                                 </div>
-                                <div class="price-row">
-                                    <span class="price-label">${lblOffer}</span>
-                                    <span class="price-val price-highlight">${p.discPrice}</span>
-                                </div>
-                                <div class="price-row">
-                                    <span class="price-label">${lblFee}</span>
-                                    <span class="price-val">${p.fee}</span>
-                                </div>
-                                <div class="price-row" style="border-top:1.5px dashed var(--border-color); padding-top:4px; margin-top:2px;">
-                                    <span class="price-label" style="font-weight:800;">${lblNet}</span>
-                                    <span class="price-val net-profit">${p.net}</span>
+                                <div class="price-new-wrap">
+                                    <span class="price-new-label">${lblOffer}</span>
+                                    <span class="price-new-val">${p.discPrice}</span>
                                 </div>
                             </div>
 
