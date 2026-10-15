@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Ahmed Abu Omar — Premium Digital Studio</title>
+    <title>Ahmed Abu Omar — Premium Cinematic Digital Studio</title>
     <meta name="description" content="Ahmed Abu Omar (Ahmed Web Templates) — Premium Digital Studio specializing in high-performance web templates, micro-SaaS tools, and custom WebApp solutions.">
     <meta name="keywords" content="Ahmed Abu Omar, Ahmed Web Templates, Premium Digital Studio, Web Templates, Micro-SaaS Tools, WebApps, ATS Resume Templates">
     <link rel="canonical" href="https://nadyahmed211-web.github.io/ahmed-abu-omar-store/">
     
     <!-- Open Graph Metadata -->
-    <meta property="og:title" content="Ahmed Abu Omar — Premium Digital Studio">
+    <meta property="og:title" content="Ahmed Abu Omar — Premium Cinematic Digital Studio">
     <meta property="og:description" content="Cinematic digital showcase & storefront featuring premium web templates, micro-SaaS tools, and custom WebApp solutions.">
     <meta property="og:url" content="https://nadyahmed211-web.github.io/ahmed-abu-omar-store/">
     <meta property="og:type" content="website">
@@ -47,11 +47,11 @@
             --gold-dark: #9C7A22;
             --text-main: #F5F5F5;
             --text-muted: #94A3B8;
-            --border-color: rgba(212, 175, 55, 0.28);
-            --border-hover: rgba(212, 175, 55, 0.75);
-            --shadow: 0 15px 40px rgba(0, 0, 0, 0.65);
-            --glass-bg: rgba(5, 7, 12, 0.94);
-            --transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+            --border-color: rgba(212, 175, 55, 0.32);
+            --border-hover: rgba(212, 175, 55, 0.85);
+            --shadow: 0 20px 50px rgba(0, 0, 0, 0.75);
+            --glass-bg: rgba(5, 7, 12, 0.92);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         [data-theme="light"] {
@@ -64,8 +64,8 @@
             --text-main: #0F172A;
             --text-muted: #64748B;
             --border-color: rgba(184, 134, 11, 0.25);
-            --border-hover: rgba(184, 134, 11, 0.6);
-            --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+            --border-hover: rgba(184, 134, 11, 0.65);
+            --shadow: 0 12px 35px rgba(15, 23, 42, 0.08);
             --glass-bg: rgba(255, 255, 255, 0.95);
         }
 
@@ -87,7 +87,7 @@
             padding-bottom: 95px;
         }
 
-        /* Cinematic Studio Dynamic Backdrop Overlay */
+        /* Cinematic Background Overlay */
         body::before {
             content: '';
             position: fixed;
@@ -95,26 +95,27 @@
             left: 0;
             width: 100vw;
             height: 100vh;
-            background: linear-gradient(to bottom, rgba(5, 7, 12, 0.85), rgba(5, 7, 12, 0.95)), 
-                        url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+            background: linear-gradient(135deg, rgba(5, 7, 12, 0.90) 0%, rgba(10, 14, 26, 0.95) 100%), 
+                        url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
             pointer-events: none;
             z-index: 0;
         }
 
-        /* Top Header */
+        /* Cinematic Header Styling */
         header {
             position: sticky;
             top: 0;
             z-index: 1000;
             background: var(--glass-bg);
-            backdrop-filter: blur(16px);
+            backdrop-filter: blur(20px);
             border-bottom: 1px solid var(--border-color);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
 
         .header-container {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 0.75rem 1.25rem;
+            padding: 0.85rem 1.5rem;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -123,33 +124,34 @@
         .brand-wrapper {
             display: flex;
             align-items: center;
-            gap: 0.85rem;
+            gap: 1rem;
             cursor: pointer;
             text-decoration: none;
         }
 
         .brand-logo-icon {
-            width: 44px;
-            height: 44px;
-            background: linear-gradient(135deg, var(--bg-secondary), rgba(212, 175, 55, 0.25));
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--bg-secondary), rgba(212, 175, 55, 0.3));
+            border: 1.5px solid var(--border-color);
+            border-radius: 14px;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.35);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.2);
             transition: var(--transition);
         }
 
         .brand-logo-icon:hover {
             border-color: var(--gold);
-            transform: scale(1.05);
+            transform: scale(1.08) rotate(5deg);
         }
 
         .brand-logo-icon svg {
-            width: 24px;
-            height: 24px;
+            width: 26px;
+            height: 26px;
             fill: var(--gold);
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
         }
 
         .brand-text-group {
@@ -158,30 +160,29 @@
         }
 
         .brand-name {
-            font-size: 1.18rem;
-            font-weight: 800;
+            font-size: 1.25rem;
+            font-weight: 900;
             color: var(--gold);
-            letter-spacing: 0.5px;
-            background: linear-gradient(135deg, var(--gold-light), var(--gold));
+            letter-spacing: 0.8px;
+            background: linear-gradient(135deg, var(--gold-light), var(--gold), var(--gold-dark));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             line-height: 1.2;
-            font-family: system-ui, -apple-system, sans-serif;
             direction: ltr;
             text-align: left;
         }
 
         .brand-subtitle {
-            font-size: 0.68rem;
+            font-size: 0.72rem;
             color: var(--text-muted);
-            letter-spacing: 0.8px;
+            letter-spacing: 1.2px;
             text-transform: uppercase;
-            font-weight: 600;
+            font-weight: 700;
         }
 
         .nav-desktop {
             display: none;
-            gap: 1.5rem;
+            gap: 1.8rem;
             list-style: none;
         }
 
@@ -193,8 +194,8 @@
             background: none;
             border: none;
             color: var(--text-muted);
-            font-size: 0.92rem;
-            font-weight: 600;
+            font-size: 0.95rem;
+            font-weight: 700;
             cursor: pointer;
             transition: var(--transition);
             padding: 0.4rem 0;
@@ -209,9 +210,10 @@
             bottom: 0;
             left: 0;
             width: 100%;
-            height: 2px;
+            height: 2.5px;
             background: var(--gold);
             border-radius: 2px;
+            box-shadow: 0 0 10px var(--gold);
         }
 
         html[dir="rtl"] .nav-link.active::after { left: auto; right: 0; }
@@ -219,49 +221,52 @@
         .header-actions {
             display: flex;
             align-items: center;
-            gap: 0.65rem;
+            gap: 0.85rem;
         }
 
+        /* Professional Control Buttons (Language & Theme) */
         .icon-btn {
-            background: var(--bg-secondary);
-            border: 1px solid var(--border-color);
+            background: linear-gradient(135deg, var(--bg-secondary), rgba(212, 175, 55, 0.1));
+            border: 1.5px solid var(--border-color);
             color: var(--gold);
-            width: 40px;
-            height: 40px;
-            border-radius: 10px;
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
             transition: var(--transition);
-            font-size: 0.85rem;
-            font-weight: 700;
+            font-size: 0.9rem;
+            font-weight: 800;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
         }
 
         .icon-btn:hover {
             border-color: var(--gold);
-            transform: translateY(-2px);
+            background: rgba(212, 175, 55, 0.15);
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
         }
 
         .mobile-hamburger { display: flex; }
         @media(min-width: 992px) { .mobile-hamburger { display: none; } }
 
-        /* Mobile Drawer Menu */
         .mobile-drawer {
             position: fixed;
             top: 0;
             right: -100%;
-            width: 280px;
+            width: 300px;
             height: 100vh;
             background: var(--bg-secondary);
             border-left: 1px solid var(--border-color);
             z-index: 2000;
-            padding: 2rem 1.5rem;
+            padding: 2.2rem 1.8rem;
             display: flex;
             flex-direction: column;
-            gap: 1.5rem;
+            gap: 1.8rem;
             transition: var(--transition);
-            box-shadow: -10px 0 30px rgba(0,0,0,0.8);
+            box-shadow: -15px 0 40px rgba(0,0,0,0.85);
         }
 
         html[dir="rtl"] .mobile-drawer { right: auto; left: -100%; border-left: none; border-right: 1px solid var(--border-color); }
@@ -274,10 +279,10 @@
             left: 0;
             width: 100vw;
             height: 100vh;
-            background: rgba(0,0,0,0.7);
+            background: rgba(0,0,0,0.75);
             z-index: 1999;
             display: none;
-            backdrop-filter: blur(4px);
+            backdrop-filter: blur(6px);
         }
 
         .drawer-overlay.open { display: block; }
@@ -287,109 +292,131 @@
             justify-content: space-between;
             align-items: center;
             border-bottom: 1px solid var(--border-color);
-            padding-bottom: 1rem;
+            padding-bottom: 1.2rem;
         }
 
         .drawer-links {
             list-style: none;
             display: flex;
             flex-direction: column;
-            gap: 1rem;
+            gap: 1.2rem;
         }
 
         .drawer-link-btn {
             background: none;
             border: none;
             color: var(--text-main);
-            font-size: 1.05rem;
-            font-weight: 600;
+            font-size: 1.12rem;
+            font-weight: 700;
             text-align: left;
             cursor: pointer;
             width: 100%;
-            padding: 0.5rem 0;
+            padding: 0.6rem 0;
             transition: var(--transition);
         }
 
         html[dir="rtl"] .drawer-link-btn { text-align: right; }
         .drawer-link-btn.active, .drawer-link-btn:hover { color: var(--gold); }
 
-        /* Single Page Section Management */
         .page-section {
             display: none;
             max-width: 1350px;
             margin: 0 auto;
-            padding: 2.2rem 1.25rem;
+            padding: 2.5rem 1.25rem;
             position: relative;
             z-index: 1;
         }
 
-        .page-section.active { display: block; animation: fadeIn 0.35s ease forwards; }
+        .page-section.active { display: block; animation: fadeIn 0.4s ease forwards; }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(8px); }
+            from { opacity: 0; transform: translateY(12px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Welcome Banner Top Highlight */
-        .welcome-banner {
-            background: linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(10, 14, 26, 0.92));
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 1.1rem 1.5rem;
-            text-align: center;
-            margin-bottom: 2rem;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.4);
-        }
-
-        .welcome-banner h2 {
-            font-size: 1.15rem;
-            font-weight: 800;
-            color: var(--gold-light);
-            letter-spacing: 0.5px;
-        }
-
-        /* Hero Section Styling */
-        .hero {
-            text-align: center;
-            padding: 2.5rem 0.5rem 2rem;
+        /* ==========================================
+           CINEMATIC HERO SECTION
+           ========================================== */
+        .cinematic-hero {
             position: relative;
+            border-radius: 28px;
+            overflow: hidden;
+            border: 1.5px solid var(--border-color);
+            box-shadow: var(--shadow);
+            margin-bottom: 3rem;
+            background: linear-gradient(135deg, rgba(10, 14, 26, 0.95), rgba(5, 7, 12, 0.98)),
+                        url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+            background-blend-mode: overlay;
+            padding: 5rem 2rem;
+            text-align: center;
         }
 
-        .hero h1 {
-            font-size: clamp(2.1rem, 5.2vw, 3.8rem);
+        .cinematic-hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle at center, rgba(212, 175, 55, 0.12) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .cinematic-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(212, 175, 55, 0.15);
+            border: 1px solid var(--border-color);
+            color: var(--gold-light);
+            padding: 0.5rem 1.25rem;
+            border-radius: 30px;
+            font-size: 0.85rem;
             font-weight: 800;
-            line-height: 1.2;
-            margin-bottom: 1.25rem;
-            background: linear-gradient(135deg, var(--text-main) 15%, var(--gold) 100%);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 1.8rem;
+            box-shadow: 0 4px 20px rgba(212, 175, 55, 0.25);
+        }
+
+        .cinematic-hero h1 {
+            font-size: clamp(2.4rem, 5.5vw, 4.2rem);
+            font-weight: 900;
+            line-height: 1.25;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #FFFFFF 20%, var(--gold-light) 60%, var(--gold) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            text-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        .hero p {
-            font-size: clamp(1rem, 2vw, 1.18rem);
+        .cinematic-hero p {
+            font-size: clamp(1.05rem, 2.2vw, 1.28rem);
             color: var(--text-muted);
-            max-width: 780px;
-            margin: 0 auto 2.2rem;
+            max-width: 820px;
+            margin: 0 auto 2.8rem;
+            line-height: 1.8;
+            font-weight: 500;
         }
 
-        .hero-cta {
+        .cinematic-cta-group {
             display: flex;
             flex-wrap: wrap;
-            gap: 1rem;
+            gap: 1.25rem;
             justify-content: center;
-            margin-bottom: 2.5rem;
+            margin-bottom: 3rem;
         }
 
         .btn {
-            padding: 0.88rem 1.85rem;
-            border-radius: 12px;
-            font-size: 0.95rem;
-            font-weight: 700;
+            padding: 0.95rem 2.2rem;
+            border-radius: 14px;
+            font-size: 1rem;
+            font-weight: 800;
             cursor: pointer;
             transition: var(--transition);
             display: inline-flex;
             align-items: center;
-            gap: 0.55rem;
+            gap: 0.7rem;
             text-decoration: none;
             border: 1px solid transparent;
         }
@@ -398,143 +425,245 @@
             background: linear-gradient(135deg, var(--gold), var(--gold-dark));
             color: #05070C;
             border-color: var(--gold);
-            box-shadow: 0 6px 25px rgba(212, 175, 55, 0.4);
+            box-shadow: 0 8px 30px rgba(212, 175, 55, 0.45);
         }
 
         .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 30px rgba(212, 175, 55, 0.6);
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 12px 35px rgba(212, 175, 55, 0.7);
         }
 
         .btn-secondary {
             background: var(--bg-secondary);
             color: var(--text-main);
             border-color: var(--border-color);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.4);
         }
 
         .btn-secondary:hover {
             border-color: var(--gold);
             color: var(--gold);
-            transform: translateY(-2px);
+            transform: translateY(-3px);
+            background: rgba(212, 175, 55, 0.08);
         }
 
-        .hero-features {
+        .cinematic-features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 1rem;
-            max-width: 950px;
-            margin: 0 auto 2.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.25rem;
+            max-width: 1000px;
+            margin: 0 auto;
         }
 
-        .feature-badge {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            padding: 0.85rem;
-            border-radius: 12px;
-            font-size: 0.88rem;
-            font-weight: 600;
-            color: var(--gold-light);
-            backdrop-filter: blur(10px);
+        .cinematic-feature-card {
+            background: rgba(5, 7, 12, 0.75);
+            border: 1.5px solid var(--border-color);
+            padding: 1.2rem;
+            border-radius: 16px;
+            backdrop-filter: blur(12px);
             box-shadow: var(--shadow);
             text-align: center;
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--gold-light);
+            transition: var(--transition);
         }
 
-        /* Cinematic About Us Section */
-        .about-cinematic-wrapper {
-            background: linear-gradient(145deg, rgba(10, 14, 26, 0.92), rgba(5, 7, 12, 0.96)),
-                        url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1200&q=80') center/cover;
-            background-blend-mode: overlay;
-            border: 1px solid var(--border-color);
-            border-radius: 24px;
-            padding: 2.8rem 2.2rem;
+        .cinematic-feature-card:hover {
+            border-color: var(--gold);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+        }
+
+        /* ==========================================
+           FLOATING ASSISTANT WIDGET (BOTTOM-LEFT)
+           ========================================== */
+        .floating-ai-assistant {
+            position: fixed;
+            bottom: 85px;
+            left: 20px;
+            z-index: 9998;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: var(--glass-bg);
+            border: 1.5px solid var(--gold);
+            padding: 0.5rem 1rem 0.5rem 0.5rem;
+            border-radius: 50px;
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.35);
+            backdrop-filter: blur(16px);
+            cursor: pointer;
+            transition: var(--transition);
+            animation: floatAssistant 3s ease-in-out infinite;
+        }
+
+        html[dir="rtl"] .floating-ai-assistant {
+            left: auto;
+            right: 20px;
+            padding: 0.5rem 0.5rem 0.5rem 1rem;
+        }
+
+        @keyframes floatAssistant {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-6px); }
+        }
+
+        .floating-ai-assistant:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.6);
+            border-color: var(--gold-light);
+        }
+
+        .ai-avatar-icon {
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+            position: relative;
+        }
+
+        .ai-avatar-icon::after {
+            content: '';
+            position: absolute;
+            top: 2px; right: 2px;
+            width: 9px; height: 9px;
+            background: #4ade80;
+            border-radius: 50%;
+            border: 2px solid var(--bg-primary);
+            animation: pulseDot 1.5s infinite;
+        }
+
+        @keyframes pulseDot {
+            0% { transform: scale(0.9); opacity: 1; }
+            50% { transform: scale(1.3); opacity: 0.6; }
+            100% { transform: scale(0.9); opacity: 1; }
+        }
+
+        .ai-assistant-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .ai-assistant-title {
+            font-size: 0.78rem;
+            font-weight: 800;
+            color: var(--gold-light);
+            line-height: 1.1;
+        }
+
+        .ai-assistant-subtitle {
+            font-size: 0.68rem;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        /* ==========================================
+           MARQUEE ANIMATED BANNER (COMMUNICATION)
+           ========================================== */
+        .marquee-container {
+            width: 100%;
+            overflow: hidden;
+            background: linear-gradient(135deg, rgba(10, 14, 26, 0.95), rgba(5, 7, 12, 0.98));
+            border: 1.5px solid var(--border-color);
+            border-radius: 18px;
+            padding: 1.5rem 0;
             margin-bottom: 2.5rem;
             box-shadow: var(--shadow);
             position: relative;
-            overflow: hidden;
-            text-align: left;
         }
 
-        html[dir="rtl"] .about-cinematic-wrapper { text-align: right; }
-
-        .about-cinematic-wrapper::before {
+        .marquee-container::before, .marquee-container::after {
             content: '';
             position: absolute;
-            top: 0; left: 0; width: 6px; height: 100%;
-            background: linear-gradient(to bottom, var(--gold-light), var(--gold), var(--gold-dark));
+            top: 0; width: 100px; height: 100%;
+            z-index: 3;
+            pointer-events: none;
+        }
+        .marquee-container::before { left: 0; background: linear-gradient(to right, var(--bg-primary), transparent); }
+        .marquee-container::after { right: 0; background: linear-gradient(to left, var(--bg-primary), transparent); }
+
+        .marquee-track {
+            display: flex;
+            width: max-content;
+            animation: scrollMarquee 25s linear infinite;
         }
 
-        html[dir="rtl"] .about-cinematic-wrapper::before { left: auto; right: 0; }
+        .marquee-track:hover {
+            animation-play-state: paused;
+        }
 
-        .about-cinematic-header {
+        @keyframes scrollMarquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .marquee-content {
             display: flex;
             align-items: center;
-            gap: 1rem;
-            margin-bottom: 1.25rem;
+            gap: 2rem;
+            padding-left: 2rem;
         }
 
-        .about-cinematic-icon {
-            font-size: 2.2rem;
-            background: rgba(212, 175, 55, 0.18);
-            border: 1px solid var(--border-color);
-            width: 58px; height: 58px;
-            border-radius: 16px;
-            display: flex; align-items: center; justify-content: center;
-            flex-shrink: 0;
-        }
-
-        .about-cinematic-title h3 {
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: var(--gold-light);
-            margin-bottom: 0.2rem;
-        }
-
-        .about-cinematic-title span {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .about-cinematic-desc {
+        .social-marquee-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: var(--bg-card);
+            border: 1.5px solid var(--border-color);
             color: var(--text-main);
-            font-size: 1.02rem;
-            line-height: 1.8;
-            margin-bottom: 1.8rem;
+            padding: 0.85rem 1.8rem;
+            border-radius: 14px;
+            font-weight: 800;
+            font-size: 0.95rem;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            transition: var(--transition);
+            white-space: nowrap;
         }
 
-        /* Section Title Header */
+        .social-marquee-item:hover {
+            border-color: var(--gold);
+            color: var(--gold);
+            transform: scale(1.05);
+            background: rgba(212, 175, 55, 0.12);
+        }
+
+        /* Standard Store Sections */
         .section-header {
             text-align: center;
-            margin-bottom: 2.5rem;
+            margin-bottom: 2.8rem;
         }
 
         .section-header h2 {
-            font-size: clamp(1.7rem, 3.2vw, 2.5rem);
-            font-weight: 800;
-            margin-bottom: 0.65rem;
+            font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+            font-weight: 900;
+            margin-bottom: 0.75rem;
             color: var(--text-main);
         }
 
         .section-header p {
             color: var(--text-muted);
-            font-size: 1.02rem;
-            max-width: 650px;
+            font-size: 1.05rem;
+            max-width: 680px;
             margin: 0 auto;
         }
 
-        /* Services Grid */
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.85rem;
+            grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+            gap: 2rem;
         }
 
         .service-card {
             background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 18px;
-            padding: 2.1rem 1.85rem;
+            border: 1.5px solid var(--border-color);
+            border-radius: 20px;
+            padding: 2.4rem 2rem;
             transition: var(--transition);
             display: flex;
             flex-direction: column;
@@ -543,20 +672,20 @@
         }
 
         .service-card:hover {
-            border-color: var(--border-hover);
-            transform: translateY(-5px);
+            border-color: var(--gold);
+            transform: translateY(-6px);
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.25);
         }
 
-        .service-icon { font-size: 2.5rem; margin-bottom: 1.25rem; }
-        .service-card h3 { font-size: 1.25rem; font-weight: 700; margin-bottom: 0.85rem; color: var(--text-main); }
-        .service-card p { color: var(--text-muted); font-size: 0.92rem; margin-bottom: 1.85rem; flex-grow: 1; }
+        .service-icon { font-size: 2.8rem; margin-bottom: 1.4rem; }
+        .service-card h3 { font-size: 1.35rem; font-weight: 800; margin-bottom: 0.9rem; color: var(--text-main); }
+        .service-card p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 2rem; flex-grow: 1; }
 
-        /* Store Search & Filters */
         .store-controls {
             display: flex;
             flex-direction: column;
-            gap: 1.25rem;
-            margin-bottom: 2.5rem;
+            gap: 1.4rem;
+            margin-bottom: 2.8rem;
         }
 
         @media(min-width: 768px) {
@@ -566,44 +695,44 @@
         .search-box {
             position: relative;
             flex-grow: 1;
-            max-width: 480px;
+            max-width: 500px;
         }
 
         .search-box input {
             width: 100%;
             background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            padding: 0.85rem 1.1rem 0.85rem 3rem;
-            border-radius: 12px;
+            border: 1.5px solid var(--border-color);
+            padding: 0.95rem 1.2rem 0.95rem 3.2rem;
+            border-radius: 14px;
             color: var(--text-main);
-            font-size: 0.92rem;
+            font-size: 0.95rem;
             outline: none;
             transition: var(--transition);
         }
 
-        html[dir="rtl"] .search-box input { padding: 0.85rem 3rem 0.85rem 1.1rem; }
-        .search-box input:focus { border-color: var(--gold); box-shadow: var(--shadow); }
+        html[dir="rtl"] .search-box input { padding: 0.95rem 3.2rem 0.95rem 1.2rem; }
+        .search-box input:focus { border-color: var(--gold); box-shadow: 0 0 20px rgba(212, 175, 55, 0.3); }
 
         .search-icon {
             position: absolute;
             top: 50%;
-            left: 1.1rem;
+            left: 1.2rem;
             transform: translateY(-50%);
             color: var(--text-muted);
         }
 
-        html[dir="rtl"] .search-icon { left: auto; right: 1.1rem; }
+        html[dir="rtl"] .search-icon { left: auto; right: 1.2rem; }
 
-        .filter-tabs { display: flex; gap: 0.55rem; overflow-x: auto; padding-bottom: 6px; }
+        .filter-tabs { display: flex; gap: 0.6rem; overflow-x: auto; padding-bottom: 8px; }
 
         .filter-tab {
             background: var(--bg-card);
-            border: 1px solid var(--border-color);
+            border: 1.5px solid var(--border-color);
             color: var(--text-muted);
-            padding: 0.6rem 1.2rem;
-            border-radius: 10px;
-            font-size: 0.88rem;
-            font-weight: 600;
+            padding: 0.65rem 1.35rem;
+            border-radius: 12px;
+            font-size: 0.92rem;
+            font-weight: 700;
             cursor: pointer;
             white-space: nowrap;
             transition: var(--transition);
@@ -613,32 +742,33 @@
             background: var(--gold);
             color: #05070C;
             border-color: var(--gold);
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
         }
 
         .offers-mini-banner {
-            background: linear-gradient(135deg, rgba(212, 175, 55, 0.15), var(--bg-secondary));
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 1.25rem 1.8rem;
-            margin-bottom: 2rem;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.18), var(--bg-secondary));
+            border: 1.5px solid var(--border-color);
+            border-radius: 18px;
+            padding: 1.4rem 2rem;
+            margin-bottom: 2.2rem;
             display: flex;
             align-items: center;
             justify-content: space-between;
             flex-wrap: wrap;
-            gap: 1rem;
+            gap: 1.2rem;
+            box-shadow: var(--shadow);
         }
 
-        /* Products Grid */
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(295px, 1fr));
-            gap: 1.85rem;
+            grid-template-columns: repeat(auto-fill, minmax(305px, 1fr));
+            gap: 2rem;
         }
 
         .product-card {
             background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 18px;
+            border: 1.5px solid var(--border-color);
+            border-radius: 20px;
             overflow: hidden;
             display: flex;
             flex-direction: column;
@@ -647,52 +777,53 @@
         }
 
         .product-card:hover {
-            border-color: var(--border-hover);
-            transform: translateY(-6px);
+            border-color: var(--gold);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(212, 175, 55, 0.3);
         }
 
         .product-preview {
-            height: 170px;
-            background: linear-gradient(135deg, var(--bg-secondary), rgba(212, 175, 55, 0.16));
+            height: 185px;
+            background: linear-gradient(135deg, var(--bg-secondary), rgba(212, 175, 55, 0.2));
             display: flex;
             align-items: center;
             justify-content: center;
-            border-bottom: 1px solid var(--border-color);
+            border-bottom: 1.5px solid var(--border-color);
             position: relative;
         }
 
-        .product-preview-icon { font-size: 3rem; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.5)); }
+        .product-preview-icon { font-size: 3.2rem; filter: drop-shadow(0 6px 15px rgba(0,0,0,0.6)); }
 
         .product-category-tag {
             position: absolute;
-            top: 12px;
-            left: 12px;
-            background: rgba(5, 7, 12, 0.88);
+            top: 14px;
+            left: 14px;
+            background: rgba(5, 7, 12, 0.9);
             border: 1px solid var(--border-color);
             color: var(--gold-light);
-            font-size: 0.7rem;
-            font-weight: 700;
-            padding: 0.3rem 0.65rem;
-            border-radius: 7px;
+            font-size: 0.75rem;
+            font-weight: 800;
+            padding: 0.35rem 0.75rem;
+            border-radius: 8px;
             text-transform: uppercase;
         }
 
-        html[dir="rtl"] .product-category-tag { left: auto; right: 12px; }
+        html[dir="rtl"] .product-category-tag { left: auto; right: 14px; }
 
-        .product-body { padding: 1.35rem; display: flex; flex-direction: column; flex-grow: 1; }
-        .product-title { font-size: 1.05rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--text-main); line-height: 1.35; }
-        .product-desc { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1rem; flex-grow: 1; }
+        .product-body { padding: 1.5rem; display: flex; flex-direction: column; flex-grow: 1; }
+        .product-title { font-size: 1.12rem; font-weight: 800; margin-bottom: 0.6rem; color: var(--text-main); line-height: 1.4; }
+        .product-desc { color: var(--text-muted); font-size: 0.88rem; margin-bottom: 1.2rem; flex-grow: 1; }
 
         .pricing-breakdown {
-            background: rgba(5, 7, 12, 0.45);
-            border: 1px solid var(--border-color);
-            border-radius: 10px;
-            padding: 0.75rem;
-            margin-bottom: 1rem;
-            font-size: 0.78rem;
+            background: rgba(5, 7, 12, 0.5);
+            border: 1.5px solid var(--border-color);
+            border-radius: 12px;
+            padding: 0.85rem;
+            margin-bottom: 1.2rem;
+            font-size: 0.82rem;
             display: flex;
             flex-direction: column;
-            gap: 0.3rem;
+            gap: 0.35rem;
         }
 
         .price-row {
@@ -702,35 +833,35 @@
         }
 
         .price-label { color: var(--text-muted); }
-        .price-val { font-weight: 700; color: var(--text-main); direction: ltr; }
-        .price-strike { text-decoration: line-through; color: var(--text-muted); font-size: 0.75rem; }
-        .price-highlight { color: var(--gold-light); font-weight: 800; }
-        .net-profit { color: #4ade80; font-weight: 800; }
+        .price-val { font-weight: 800; color: var(--text-main); direction: ltr; }
+        .price-strike { text-decoration: line-through; color: var(--text-muted); font-size: 0.78rem; }
+        .price-highlight { color: var(--gold-light); font-weight: 900; }
+        .net-profit { color: #4ade80; font-weight: 900; }
 
         .product-footer {
             display: flex;
             flex-direction: column;
-            gap: 0.75rem;
-            border-top: 1px solid var(--border-color);
-            padding-top: 0.85rem;
+            gap: 0.85rem;
+            border-top: 1.5px solid var(--border-color);
+            padding-top: 1rem;
             margin-top: auto;
         }
 
         .product-actions-group {
             display: flex;
-            gap: 0.5rem;
+            gap: 0.6rem;
         }
 
         .product-btn {
             flex: 1;
             text-align: center;
-            padding: 0.6rem 0.4rem;
-            border-radius: 9px;
-            font-size: 0.82rem;
-            font-weight: 700;
+            padding: 0.7rem 0.5rem;
+            border-radius: 10px;
+            font-size: 0.85rem;
+            font-weight: 800;
             text-decoration: none;
             transition: var(--transition);
-            border: 1px solid var(--border-color);
+            border: 1.5px solid var(--border-color);
         }
 
         .btn-payhip {
@@ -751,117 +882,115 @@
             color: var(--gold);
         }
 
-        /* Offers Banner Section */
         .main-offer-banner {
             background: linear-gradient(135deg, #100d03, #282006, #100d03);
             border: 2px solid var(--gold);
-            border-radius: 22px;
-            padding: 3.5rem 2rem;
+            border-radius: 24px;
+            padding: 4rem 2.2rem;
             text-align: center;
             position: relative;
-            box-shadow: 0 25px 50px rgba(0,0,0,0.7);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.8);
         }
 
         .offer-tag {
             display: inline-block;
             background: var(--gold);
             color: #05070C;
-            font-weight: 800;
-            font-size: 0.78rem;
-            padding: 0.4rem 1rem;
-            border-radius: 20px;
+            font-weight: 900;
+            font-size: 0.82rem;
+            padding: 0.45rem 1.2rem;
+            border-radius: 25px;
             text-transform: uppercase;
-            margin-bottom: 1.35rem;
-            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+            margin-bottom: 1.5rem;
+            box-shadow: 0 5px 20px rgba(212, 175, 55, 0.45);
         }
 
-        .main-offer-banner h2 { font-size: clamp(2rem, 4.5vw, 3rem); color: var(--gold-light); font-weight: 800; margin-bottom: 0.9rem; }
-        .main-offer-banner p { color: var(--text-main); font-size: 1.1rem; max-width: 650px; margin: 0 auto 2rem; }
+        .main-offer-banner h2 { font-size: clamp(2.2rem, 4.8vw, 3.2rem); color: var(--gold-light); font-weight: 900; margin-bottom: 1rem; }
+        .main-offer-banner p { color: var(--text-main); font-size: 1.15rem; max-width: 680px; margin: 0 auto 2.2rem; }
 
         .coupon-box {
             display: inline-flex;
             align-items: center;
-            gap: 1.1rem;
-            background: rgba(5, 7, 12, 0.88);
-            border: 1px dashed var(--gold);
-            padding: 0.85rem 1.6rem;
-            border-radius: 14px;
-            margin-bottom: 1.85rem;
+            gap: 1.2rem;
+            background: rgba(5, 7, 12, 0.9);
+            border: 1.5px dashed var(--gold);
+            padding: 0.95rem 1.8rem;
+            border-radius: 16px;
+            margin-bottom: 2rem;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.5);
         }
 
-        .coupon-code { font-family: monospace; font-size: 1.45rem; font-weight: 800; color: var(--gold-light); letter-spacing: 1.5px; }
+        .coupon-code { font-family: monospace; font-size: 1.6rem; font-weight: 900; color: var(--gold-light); letter-spacing: 2px; }
 
         .copy-btn {
             background: var(--gold);
             color: #05070C;
             border: none;
-            padding: 0.5rem 1rem;
-            border-radius: 9px;
-            font-weight: 700;
+            padding: 0.55rem 1.2rem;
+            border-radius: 10px;
+            font-weight: 800;
             cursor: pointer;
             transition: var(--transition);
         }
 
-        .copy-btn:hover { background: var(--gold-light); }
+        .copy-btn:hover { background: var(--gold-light); transform: scale(1.05); }
 
         .coupon-disclaimer {
-            font-size: 0.82rem;
+            font-size: 0.85rem;
             color: var(--text-muted);
-            margin-top: 1rem;
+            margin-top: 1.2rem;
         }
 
-        /* Contact Section */
         .contact-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.2rem;
+            margin-bottom: 2.8rem;
         }
 
         .contact-card {
             background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 18px;
-            padding: 2.25rem 1.85rem;
+            border: 1.5px solid var(--border-color);
+            border-radius: 20px;
+            padding: 2.5rem 2rem;
             box-shadow: var(--shadow);
         }
 
-        .form-group { margin-bottom: 1.2rem; }
-        .form-group label { display: block; margin-bottom: 0.45rem; font-size: 0.88rem; font-weight: 600; }
+        .form-group { margin-bottom: 1.35rem; }
+        .form-group label { display: block; margin-bottom: 0.5rem; font-size: 0.92rem; font-weight: 700; }
 
         .form-control {
             width: 100%;
             background: var(--bg-secondary);
-            border: 1px solid var(--border-color);
-            padding: 0.85rem 1rem;
-            border-radius: 11px;
+            border: 1.5px solid var(--border-color);
+            padding: 0.95rem 1.1rem;
+            border-radius: 12px;
             color: var(--text-main);
-            font-size: 0.92rem;
+            font-size: 0.95rem;
             outline: none;
             transition: var(--transition);
         }
 
-        .form-control:focus { border-color: var(--gold); }
-        textarea.form-control { min-height: 120px; resize: vertical; }
+        .form-control:focus { border-color: var(--gold); box-shadow: 0 0 15px rgba(212, 175, 55, 0.25); }
+        textarea.form-control { min-height: 130px; resize: vertical; }
 
-        /* Thank You Banner & Follow Section */
         .thank-you-banner {
-            background: linear-gradient(135deg, rgba(10, 14, 26, 0.95), rgba(5, 7, 12, 0.98));
-            border: 1px solid var(--border-color);
-            border-radius: 20px;
-            padding: 2.5rem 1.8rem;
+            background: linear-gradient(135deg, rgba(10, 14, 26, 0.96), rgba(5, 7, 12, 0.99));
+            border: 1.5px solid var(--border-color);
+            border-radius: 22px;
+            padding: 2.8rem 2rem;
             text-align: center;
-            margin-top: 3rem;
+            margin-top: 3.5rem;
             box-shadow: var(--shadow);
         }
 
-        .thank-you-banner h3 { font-size: 1.6rem; color: var(--gold-light); font-weight: 800; margin-bottom: 0.75rem; }
-        .thank-you-banner p { color: var(--text-muted); max-width: 600px; margin: 0 auto 1.5rem; font-size: 0.98rem; }
+        .thank-you-banner h3 { font-size: 1.75rem; color: var(--gold-light); font-weight: 900; margin-bottom: 0.85rem; }
+        .thank-you-banner p { color: var(--text-muted); max-width: 620px; margin: 0 auto 1.6rem; font-size: 1.02rem; }
 
         .social-follow-buttons {
             display: flex;
             justify-content: center;
-            gap: 1rem;
+            gap: 1.1rem;
             flex-wrap: wrap;
         }
 
@@ -872,13 +1001,13 @@
             left: 0;
             width: 100%;
             background: var(--glass-bg);
-            backdrop-filter: blur(18px);
-            border-top: 1px solid var(--border-color);
+            backdrop-filter: blur(20px);
+            border-top: 1.5px solid var(--border-color);
             display: flex;
             justify-content: space-around;
-            padding: 0.55rem 0.3rem calc(0.55rem + env(safe-area-inset-bottom));
+            padding: 0.6rem 0.4rem calc(0.6rem + env(safe-area-inset-bottom));
             z-index: 9999;
-            box-shadow: 0 -10px 30px rgba(0,0,0,0.6);
+            box-shadow: 0 -15px 35px rgba(0,0,0,0.7);
         }
 
         .bottom-nav-item {
@@ -888,52 +1017,50 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 3px;
-            font-size: 0.72rem;
-            font-weight: 600;
+            gap: 4px;
+            font-size: 0.75rem;
+            font-weight: 700;
             cursor: pointer;
             transition: var(--transition);
             flex: 1;
-            padding: 0.2rem 0;
+            padding: 0.25rem 0;
         }
 
-        .bottom-nav-item svg { width: 23px; height: 23px; transition: var(--transition); stroke: currentColor; fill: none; }
+        .bottom-nav-item svg { width: 24px; height: 24px; transition: var(--transition); stroke: currentColor; fill: none; }
         .bottom-nav-item.active { color: var(--gold); }
-        .bottom-nav-item.active svg { transform: translateY(-2px) scale(1.12); stroke: var(--gold); }
+        .bottom-nav-item.active svg { transform: translateY(-3px) scale(1.15); stroke: var(--gold); filter: drop-shadow(0 2px 8px var(--gold)); }
 
-        /* Footer Copyright & IP Notice */
         footer {
             text-align: center;
-            padding: 2rem 1.25rem;
+            padding: 2.2rem 1.25rem;
             color: var(--text-muted);
-            font-size: 0.82rem;
-            border-top: 1px solid var(--border-color);
-            margin-top: 3rem;
+            font-size: 0.85rem;
+            border-top: 1.5px solid var(--border-color);
+            margin-top: 3.5rem;
         }
 
         .ip-notice {
-            margin-top: 0.5rem;
-            font-size: 0.75rem;
+            margin-top: 0.6rem;
+            font-size: 0.78rem;
             color: var(--text-muted);
-            opacity: 0.8;
+            opacity: 0.85;
         }
 
-        /* Toast Notification */
         .toast {
             position: fixed;
             bottom: 100px;
             left: 50%;
             transform: translateX(-50%) translateY(100px);
             background: var(--bg-secondary);
-            border: 1px solid var(--gold);
+            border: 1.5px solid var(--gold);
             color: var(--text-main);
-            padding: 0.8rem 1.6rem;
-            border-radius: 13px;
+            padding: 0.9rem 1.8rem;
+            border-radius: 14px;
             z-index: 10000;
             opacity: 0;
             transition: transform 0.3s ease, opacity 0.3s ease;
-            font-weight: 700;
-            font-size: 0.92rem;
+            font-weight: 800;
+            font-size: 0.95rem;
             box-shadow: var(--shadow);
             pointer-events: none;
         }
@@ -943,7 +1070,16 @@
 </head>
 <body>
 
-    <!-- Header -->
+    <!-- Floating AI Assistant Widget (Bottom-Left) -->
+    <a href="https://wa.me/201206443652?text=Hello%20Ahmed%20Abu%20Omar,%20I%20need%20assistance%20from%20your%20AI%20Assistant." target="_blank" rel="noopener noreferrer" class="floating-ai-assistant" title="مساعدك الذكي للتواصل السريع">
+        <div class="ai-avatar-icon">🤖</div>
+        <div class="ai-assistant-text">
+            <span class="ai-assistant-title" data-en="AI Assistant" data-ar="المساعد الذكي">المساعد الذكي</span>
+            <span class="ai-assistant-subtitle" data-en="Online 24/7" data-ar="متاح للمساعدة">متاح للمساعدة</span>
+        </div>
+    </a>
+
+    <!-- Cinematic Header -->
     <header>
         <div class="header-container">
             <a class="brand-wrapper" onclick="switchSection('home')">
@@ -952,26 +1088,26 @@
                 </div>
                 <div class="brand-text-group">
                     <span class="brand-name">Ahmed Abu Omar</span>
-                    <span class="brand-subtitle">Premium Digital Studio</span>
+                    <span class="brand-subtitle">Cinematic Digital Studio</span>
                 </div>
             </a>
 
             <!-- Desktop Navigation Links -->
             <ul class="nav-desktop">
-                <li><button class="nav-link active" onclick="switchSection('home')" id="dnav-home" data-en="Home" data-ar="الرئيسية">Home</button></li>
-                <li><button class="nav-link" onclick="switchSection('services')" id="dnav-services" data-en="Services" data-ar="خدماتنا">Services</button></li>
-                <li><button class="nav-link" onclick="switchSection('products')" id="dnav-products" data-en="Products" data-ar="منتجاتنا">Products</button></li>
-                <li><button class="nav-link" onclick="switchSection('offers')" id="dnav-offers" data-en="Offers" data-ar="العروض">Offers</button></li>
-                <li><button class="nav-link" onclick="switchSection('contact')" id="dnav-contact" data-en="Contact" data-ar="التواصل">Contact</button></li>
+                <li><button class="nav-link active" onclick="switchSection('home')" id="dnav-home" data-en="Home" data-ar="الرئيسية">الرئيسية</button></li>
+                <li><button class="nav-link" onclick="switchSection('services')" id="dnav-services" data-en="Services" data-ar="خدماتنا">خدماتنا</button></li>
+                <li><button class="nav-link" onclick="switchSection('products')" id="dnav-products" data-en="Products" data-ar="منتجاتنا">منتجاتنا</button></li>
+                <li><button class="nav-link" onclick="switchSection('offers')" id="dnav-offers" data-en="Offers & Discounts" data-ar="العروض والخصومات">العروض والخصومات</button></li>
+                <li><button class="nav-link" onclick="switchSection('contact')" id="dnav-contact" data-en="Contact" data-ar="التواصل">التواصل</button></li>
             </ul>
 
             <div class="header-actions">
-                <button class="icon-btn" id="langToggleBtn" onclick="toggleLanguage()" title="Language / اللغة">AR</button>
-                <button class="icon-btn" id="themeToggleBtn" onclick="toggleTheme()" title="Theme / الإضاءة">
-                    <svg id="themeIcon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line></svg>
+                <button class="icon-btn" id="langToggleBtn" onclick="toggleLanguage()" title="Language / تغيير اللغة">AR</button>
+                <button class="icon-btn" id="themeToggleBtn" onclick="toggleTheme()" title="Theme / تغيير الإضاءة">
+                    <svg id="themeIcon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line></svg>
                 </button>
                 <button class="icon-btn mobile-hamburger" onclick="toggleDrawer()" title="Menu">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
                 </button>
             </div>
         </div>
@@ -981,64 +1117,48 @@
     <div class="drawer-overlay" id="drawerOverlay" onclick="toggleDrawer()"></div>
     <div class="mobile-drawer" id="mobileDrawer">
         <div class="drawer-header">
-            <span class="brand-name" style="font-size:1.1rem;">Ahmed Abu Omar</span>
+            <span class="brand-name" style="font-size:1.15rem;">Ahmed Abu Omar</span>
             <button class="icon-btn" onclick="toggleDrawer()">✕</button>
         </div>
         <ul class="drawer-links">
-            <li><button class="drawer-link-btn active" onclick="switchSection('home'); toggleDrawer();" id="mnav-home" data-en="Home" data-ar="الرئيسية">Home</button></li>
-            <li><button class="drawer-link-btn" onclick="switchSection('services'); toggleDrawer();" id="mnav-services" data-en="Services" data-ar="خدماتنا">Services</button></li>
-            <li><button class="drawer-link-btn" onclick="switchSection('products'); toggleDrawer();" id="mnav-products" data-en="Products" data-ar="منتجاتنا">Products</button></li>
-            <li><button class="drawer-link-btn" onclick="switchSection('offers'); toggleDrawer();" id="mnav-offers" data-en="Offers" data-ar="العروض">Offers</button></li>
-            <li><button class="drawer-link-btn" onclick="switchSection('contact'); toggleDrawer();" id="mnav-contact" data-en="Contact" data-ar="التواصل">Contact</button></li>
+            <li><button class="drawer-link-btn active" onclick="switchSection('home'); toggleDrawer();" id="mnav-home" data-en="Home" data-ar="الرئيسية">الرئيسية</button></li>
+            <li><button class="drawer-link-btn" onclick="switchSection('services'); toggleDrawer();" id="mnav-services" data-en="Services" data-ar="خدماتنا">خدماتنا</button></li>
+            <li><button class="drawer-link-btn" onclick="switchSection('products'); toggleDrawer();" id="mnav-products" data-en="Products" data-ar="منتجاتنا">منتجاتنا</button></li>
+            <li><button class="drawer-link-btn" onclick="switchSection('offers'); toggleDrawer();" id="mnav-offers" data-en="Offers & Discounts" data-ar="العروض والخصومات">العروض والخصومات</button></li>
+            <li><button class="drawer-link-btn" onclick="switchSection('contact'); toggleDrawer();" id="mnav-contact" data-en="Contact" data-ar="التواصل">التواصل</button></li>
         </ul>
     </div>
 
-    <!-- 1. HOME SECTION -->
+    <!-- 1. HOME SECTION (ULTRA CINEMATIC LANDING PAGE HERO) -->
     <section id="section-home" class="page-section active">
-        <div class="welcome-banner">
-            <h2 data-en="Welcome to Ahmed Abu Omar — Premium Digital Studio" data-ar="مرحبًا بك في أحمد أبو عمر — استوديو المنتجات الرقمية الاحترافية">
-                Welcome to Ahmed Abu Omar — Premium Digital Studio
-            </h2>
-        </div>
-
-        <div class="hero">
-            <h1 data-en="We Build Digital Experiences That Stand Out" data-ar="نصنع تجارب رقمية تترك أثرًا">
-                We Build Digital Experiences That Stand Out
+        <div class="cinematic-hero">
+            <div class="cinematic-badge" data-en="✨ Premium Cinematic Digital Studio" data-ar="✨ استوديو المنتجات الرقمية السينمائية الفاخرة">✨ Premium Cinematic Digital Studio</div>
+            
+            <h1 data-en="Architecting World-Class Digital Experiences & High-Performance Solutions" data-ar="نصنع تجارب رقمية استثنائية وحلول برمجية فائقة الأداء تترك بصمتك في العالم الرقمي">
+                Architecting World-Class Digital Experiences & High-Performance Solutions
             </h1>
-            <p data-en="Premium website templates, smart digital tools, and professional designs built to elevate your online presence." data-ar="قوالب مواقع احترافية، أدوات رقمية ذكية، وتصميمات تساعدك على بناء حضور رقمي أكثر احترافية.">
-                Premium website templates, smart digital tools, and professional designs built to elevate your online presence.
+            
+            <p data-en="Welcome to Ahmed Abu Omar Studio. Our mission is to empower creators, founders, and enterprises with elite responsive website templates, smart micro-SaaS utilities, and custom WebApps engineered for maximum digital authority and success." data-ar="مرحبًا بك في استوديو أحمد أبو عمر. هدفنا الرئيسي هو تمكين رواد الأعمال والشركات والمبدعين من بناء حضور رقمي لا يُقارن، من خلال قوالب مواقع سينمائية متجاوبة، أدوات Micro-SaaS ذكية، وحلول برمجية مصممة خصيصًا لتسريع نموك وتعظيم أرباحك.">
+                Welcome to Ahmed Abu Omar Studio. Our mission is to empower creators, founders, and enterprises with elite responsive website templates, smart micro-SaaS utilities, and custom WebApps engineered for maximum digital authority and success.
             </p>
-            <div class="hero-cta">
-                <button class="btn btn-primary" onclick="switchSection('products')" data-en="Explore Products" data-ar="استكشف المنتجات">Explore Products</button>
-                <button class="btn btn-secondary" onclick="switchSection('services')" data-en="Explore Services" data-ar="اكتشف خدماتنا">Explore Services</button>
-                <button class="btn btn-secondary" onclick="switchSection('contact')" data-en="Contact Us" data-ar="تواصل معنا">Contact Us</button>
+
+            <div class="cinematic-cta-group">
+                <button class="btn btn-primary" onclick="switchSection('products')" data-en="Explore Products Showcase" data-ar="استكشف المنتجات الرقمية">Explore Products</button>
+                <button class="btn btn-secondary" onclick="switchSection('services')" data-en="Our Professional Services" data-ar="خدماتنا الاحترافية">Explore Services</button>
+                <button class="btn btn-secondary" onclick="switchSection('contact')" data-en="Direct WhatsApp Channel" data-ar="تواصل معنا مباشرة">Contact Us</button>
             </div>
 
-            <div class="hero-features">
-                <div class="feature-badge">✓ Responsive Design</div>
-                <div class="feature-badge">✓ Arabic & English</div>
-                <div class="feature-badge">✓ Digital Downloads</div>
-                <div class="feature-badge">✓ Professional Design</div>
-            </div>
-
-            <div class="about-cinematic-wrapper">
-                <div class="about-cinematic-header">
-                    <div class="about-cinematic-icon">💎</div>
-                    <div class="about-cinematic-title">
-                        <h3 data-en="About Us — Ahmed Abu Omar Studio" data-ar="من نحن — استوديو أحمد أبو عمر">About Us — Ahmed Abu Omar Studio</h3>
-                        <span data-en="Ahmed Web Templates — Premium Digital Studio" data-ar="أحمد أبو عمر — استوديو المنتجات الرقمية">Ahmed Web Templates — Premium Digital Studio</span>
-                    </div>
-                </div>
-                <p class="about-cinematic-desc" data-en="We are a premium digital studio specializing in high-performance responsive website templates, smart micro-SaaS tools, and custom WebApp solutions. Designed for Arabic and international clients seeking world-class digital presence." data-ar="نحن استوديو رقمي احترافي متخصص في تصميم وتطوير قوالب المواقع الإلكترونية المتجاوبة فائقة الأداء، والأدوات الرقمية الذكية Micro-SaaS، وتطبيقات الويب المخصصة للعملاء العرب والأجانب.">
-                    We are a premium digital studio specializing in high-performance responsive website templates, smart micro-SaaS tools, and custom WebApp solutions. Designed for Arabic and international clients seeking world-class digital presence.
-                </p>
+            <div class="cinematic-features-grid">
+                <div class="cinematic-feature-card" data-en="⚡ Blazing Fast Performance" data-ar="⚡ أداء فائق السرعة وتجاوب كامل">⚡ Blazing Fast Performance</div>
+                <div class="cinematic-feature-card" data-en="🌐 Bilingual (Arabic & English)" data-ar="🌐 دعم كامل للغتين (عربي / إنجليزي)">🌐 Bilingual (Arabic & English)</div>
+                <div class="cinematic-feature-card" data-en="💎 Cinematic UI/UX Design" data-ar="💎 تصميم سينمائي فائق الفخامة">💎 Cinematic UI/UX Design</div>
             </div>
         </div>
 
         <div class="thank-you-banner">
-            <h3 data-en="Thank You for Visiting" data-ar="شكرًا لزيارتك وثقتك بنا">Thank You for Visiting</h3>
-            <p data-en="Follow our official social pages to receive the latest digital releases, template updates, and promotional discounts." data-ar="تابع صفحاتنا الرسمية على منصات التواصل الاجتماعي ليصلك جديد المنتجات والتحديثات والعروض الحصرية.">
-                Follow our official social pages to receive the latest digital releases, template updates, and promotional discounts.
+            <h3 data-en="Thank You for Visiting Our Cinematic Studio" data-ar="شكرًا لزيارتك وثقتك الدائمة باستوديونا">Thank You for Visiting Our Cinematic Studio</h3>
+            <p data-en="Follow our official channels to receive exclusive digital releases, template updates, and promotional discount codes." data-ar="تابع منصاتنا الرسمية ليصلك جديد الإصدارات البرمجية، التحديثات الحصرية، وأكواد الخصم الخاصة.">
+                Follow our official channels to receive exclusive digital releases, template updates, and promotional discount codes.
             </p>
             <div class="social-follow-buttons">
                 <a href="https://www.facebook.com/AhmedAbuOmarOfficial?mibextid=ZbWKwL" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">📘 Facebook Page</a>
@@ -1068,7 +1188,7 @@
                 <strong style="color:var(--gold-light);" data-en="🔥 Special Savings Available!" data-ar="🔥 تتوفر خصومات خاصة!">🔥 Special Savings Available!</strong>
                 <span style="color:var(--text-muted); font-size:0.88rem; display:block;" data-en="Use code OMAR 60 for up to 60% savings on Payhip." data-ar="استخدم كود OMAR 60 للحصول على خصم يصل إلى 60% على Payhip.">Use code OMAR 60 for up to 60% savings on Payhip.</span>
             </div>
-            <button class="btn btn-primary" onclick="switchSection('offers')" style="padding:0.5rem 1rem; font-size:0.85rem;" data-en="View Offers" data-ar="عرض العروض">View Offers</button>
+            <button class="btn btn-primary" onclick="switchSection('offers')" style="padding:0.5rem 1.1rem; font-size:0.85rem;" data-en="Offers & Discounts" data-ar="العروض والخصومات">View Offers</button>
         </div>
 
         <div class="store-controls">
@@ -1100,7 +1220,7 @@
             </div>
 
             <div>
-                <button class="btn btn-primary" onclick="switchSection('products')" data-en="Explore Products" data-ar="استكشف المنتجات">Explore Products</button>
+                <button class="btn btn-primary" onclick="switchSection('products')" data-en="Explore Products" data-ar="منتجاتنا">Explore Products</button>
             </div>
 
             <div class="coupon-disclaimer" data-en="Discount code applicability, terms, and final pricing are verified at Payhip checkout." data-ar="صلاحية كود الخصم والشروط والتكلفة النهائية تخضع لما يظهر في صفحة الدفع على Payhip.">
@@ -1109,20 +1229,41 @@
         </div>
     </section>
 
-    <!-- 5. CONTACT SECTION -->
+    <!-- 5. CONTACT SECTION WITH MOVING MARQUEE BANNER -->
     <section id="section-contact" class="page-section">
         <div class="section-header">
-            <h2 data-en="Contact Us" data-ar="تواصل معنا">Contact Us</h2>
-            <p data-en="Have a project requirement or question? Connect directly via WhatsApp or submit a service request." data-ar="هل لديك استفسار أو مشروع خاص؟ تواصل معنا عبر الواتساب أو أرسل نموذج الطلب المباشر.">Have a project requirement or question? Connect directly via WhatsApp or submit a service request.</p>
+            <h2 data-en="Contact Us & Social Hub" data-ar="التواصل ومنصات التواصل الاجتماعي">Contact Us & Social Hub</h2>
+            <p data-en="Connect directly via WhatsApp or browse our moving social channel links below." data-ar="تواصل معنا مباشرة عبر الواتساب أو تصفح روابط منصاتنا عبر البنر المتحرك أدناه.">Connect directly via WhatsApp or browse our moving social channel links below.</p>
+        </div>
+
+        <!-- Moving Marquee Banner (Social Links Only) -->
+        <div class="marquee-container">
+            <div class="marquee-track">
+                <div class="marquee-content">
+                    <a href="https://wa.me/201206443652" target="_blank" rel="noopener noreferrer" class="social-marquee-item">💬 WhatsApp Direct</a>
+                    <a href="https://payhip.com/ahmedabuomar" target="_blank" rel="noopener noreferrer" class="social-marquee-item">🛒 Payhip Storefront</a>
+                    <a href="https://www.facebook.com/AhmedAbuOmarOfficial?mibextid=ZbWKwL" target="_blank" rel="noopener noreferrer" class="social-marquee-item">📘 Facebook Official</a>
+                    <a href="https://www.instagram.com/ahmedabuomar.design" target="_blank" rel="noopener noreferrer" class="social-marquee-item">📷 Instagram Design</a>
+                    <a href="https://www.linkedin.com/in/ahmedwebtemplates" target="_blank" rel="noopener noreferrer" class="social-marquee-item">💼 LinkedIn Profile</a>
+                </div>
+                <!-- Duplicate for seamless infinite loop -->
+                <div class="marquee-content" aria-hidden="true">
+                    <a href="https://wa.me/201206443652" target="_blank" rel="noopener noreferrer" class="social-marquee-item">💬 WhatsApp Direct</a>
+                    <a href="https://payhip.com/ahmedabuomar" target="_blank" rel="noopener noreferrer" class="social-marquee-item">🛒 Payhip Storefront</a>
+                    <a href="https://www.facebook.com/AhmedAbuOmarOfficial?mibextid=ZbWKwL" target="_blank" rel="noopener noreferrer" class="social-marquee-item">📘 Facebook Official</a>
+                    <a href="https://www.instagram.com/ahmedabuomar.design" target="_blank" rel="noopener noreferrer" class="social-marquee-item">📷 Instagram Design</a>
+                    <a href="https://www.linkedin.com/in/ahmedwebtemplates" target="_blank" rel="noopener noreferrer" class="social-marquee-item">💼 LinkedIn Profile</a>
+                </div>
+            </div>
         </div>
 
         <div class="contact-grid">
             <div class="contact-card">
-                <h3 style="color:var(--gold); margin-bottom:0.75rem;" data-en="Direct WhatsApp Channel" data-ar="التواصل المباشر عبر الواتساب">Direct WhatsApp Channel</h3>
-                <p style="color:var(--text-muted); font-size:0.92rem; margin-bottom:1.5rem;" data-en="Get immediate assistance regarding custom orders, template support, or licensing inquiries." data-ar="احصل على رد سريع ومباشر بخصوص طلبات البرمجة، القوالب، أو المساعدة التقنية.">Get immediate assistance regarding custom orders, template support, or licensing inquiries.</p>
+                <h3 style="color:var(--gold); margin-bottom:0.85rem;" data-en="Direct WhatsApp Channel" data-ar="التواصل المباشر عبر الواتساب">Direct WhatsApp Channel</h3>
+                <p style="color:var(--text-muted); font-size:0.95rem; margin-bottom:1.6rem;" data-en="Get immediate assistance regarding custom orders, template support, or licensing inquiries." data-ar="احصل على رد سريع ومباشر بخصوص طلبات البرمجة، القوالب، أو المساعدة التقنية.">Get immediate assistance regarding custom orders, template support, or licensing inquiries.</p>
                 <a href="https://wa.me/201206443652" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="width:100%; justify-content:center;">💬 Chat on WhatsApp</a>
                 
-                <div style="margin-top:1.5rem; display:flex; flex-direction:column; gap:0.6rem;">
+                <div style="margin-top:1.6rem; display:flex; flex-direction:column; gap:0.7rem;">
                     <a href="https://payhip.com/ahmedabuomar" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="justify-content:center;">🛒 Payhip Digital Storefront</a>
                     <a href="https://www.facebook.com/AhmedAbuOmarOfficial?mibextid=ZbWKwL" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="justify-content:center;">📘 Facebook Page</a>
                     <a href="https://www.instagram.com/ahmedabuomar.design" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="justify-content:center;">📷 Instagram Profile</a>
@@ -1131,7 +1272,7 @@
             </div>
 
             <div class="contact-card">
-                <h3 style="color:var(--gold); margin-bottom:0.75rem;" data-en="Custom Service Order Form" data-ar="نموذج طلب خدمة مخصصة">Custom Service Order Form</h3>
+                <h3 style="color:var(--gold); margin-bottom:0.85rem;" data-en="Custom Service Order Form" data-ar="نموذج طلب خدمة مخصصة">Custom Service Order Form</h3>
                 <form onsubmit="submitContactForm(event)">
                     <div class="form-group">
                         <label data-en="Your Name" data-ar="الاسم الكريم">Your Name</label>
@@ -1163,29 +1304,29 @@
     <nav class="bottom-nav">
         <button class="bottom-nav-item active" onclick="switchSection('home')" id="bnav-home">
             <svg viewBox="0 0 24 24"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>
-            <span data-en="Home" data-ar="الرئيسية">Home</span>
+            <span data-en="Home" data-ar="الرئيسية">الرئيسية</span>
         </button>
         <button class="bottom-nav-item" onclick="switchSection('services')" id="bnav-services">
             <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
-            <span data-en="Services" data-ar="خدماتنا">Services</span>
+            <span data-en="Services" data-ar="خدماتنا">خدماتنا</span>
         </button>
         <button class="bottom-nav-item" onclick="switchSection('products')" id="bnav-products">
             <svg viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path><line x1="3" y1="6" x2="21" y2="6"></line></svg>
-            <span data-en="Products" data-ar="منتجاتنا">Products</span>
+            <span data-en="Products" data-ar="منتجاتنا">منتجاتنا</span>
         </button>
         <button class="bottom-nav-item" onclick="switchSection('offers')" id="bnav-offers">
             <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-            <span data-en="Offers" data-ar="العروض">Offers</span>
+            <span data-en="Offers & Discounts" data-ar="العروض والخصومات">العروض والخصومات</span>
         </button>
         <button class="bottom-nav-item" onclick="switchSection('contact')" id="bnav-contact">
             <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-            <span data-en="Contact" data-ar="التواصل">Contact</span>
+            <span data-en="Contact" data-ar="التواصل">التواصل</span>
         </button>
     </nav>
 
     <!-- Footer Copyright -->
     <footer>
-        <p>© Ahmed Abu Omar (Ahmed Web Templates) — Premium Digital Studio. All Rights Reserved.</p>
+        <p>© Ahmed Abu Omar (Ahmed Web Templates) — Cinematic Digital Studio. All Rights Reserved.</p>
         <p class="ip-notice">Notice: Unauthorized copying, reproduction, or redistribution of digital assets and templates is strictly prohibited.</p>
     </footer>
 
@@ -1204,34 +1345,29 @@
         ];
 
         const productsData = [
-            // Tools (1-6)
-            { id: 1, category: "tools", icon: "🤖", titleEn: "Ultimate AI Website Assistant & Chatbot Integration", titleAr: "المساعد الذكي الاحترافي للمواقع وواجهات المحادثة", descEn: "Seamless AI assistant integration for professional websites.", descAr: "تكامل سلس للمساعد الذكي للمواقع الاحترافية.", oldPrice: "1,500 EGP / $28.28", discPrice: "600 EGP / $11.31", fee: "30 EGP / $0.57", net: "570 EGP / $10.74", url: "https://payhip.com/b/DXmGs" },
-            { id: 2, category: "tools", icon: "📊", titleEn: "SaaS Pricing & ROI Calculator Pro – Financial Metrics Tool", titleAr: "حاسبة العائد التسعيري واقتصاديات SaaS Pro", descEn: "Financial metrics tool designed for SaaS startups and founders.", descAr: "حاسبة مقاييس مالية احترافية لشركات البرمجيات الناشئة.", oldPrice: "1,200 EGP / $22.62", discPrice: "480 EGP / $9.05", fee: "24 EGP / $0.45", net: "456 EGP / $8.60", url: "https://payhip.com/b/MJFx5" },
-            { id: 3, category: "tools", icon: "⚡", titleEn: "Image Compressor Pro – Micro-SaaS Image Optimizer", titleAr: "أداة ضغط الصور وتحسين الأداء Image Compressor Pro", descEn: "High-performance browser-side image optimization utility.", descAr: "أداة تحسين وضغط صور مصغرة عالية الأداء.", oldPrice: "990 EGP / $18.66", discPrice: "396 EGP / $7.46", fee: "19.80 EGP / $0.37", net: "376.20 EGP / $7.09", url: "https://payhip.com/b/MWBli" },
-            { id: 4, category: "tools", icon: "🔍", titleEn: "SEO Meta & Schema Generator Pro", titleAr: "مولد بيانات السكيما والميتا SEO Meta & Schema Generator", descEn: "Advanced meta tags and structured JSON-LD schema generator.", descAr: "مولد متطور لوسوم الميتا وسكيما JSON-LD المنظمة.", oldPrice: "850 EGP / $16.03", discPrice: "340 EGP / $6.41", fee: "17 EGP / $0.32", net: "323 EGP / $6.09", url: "https://payhip.com/b/1tfs7" },
-            { id: 5, category: "tools", icon: "✉️", titleEn: "AI Cold Email & Outreach Generator Pro – Bilingual", titleAr: "مولد البريد البارد وحملات الترويج بالذكاء الاصطناعي", descEn: "Bilingual AI cold email and outreach messaging generator.", descAr: "مولد ترويج وتواصل بارد مدعوم بالذكاء الاصطناعي ثنائي اللغة.", oldPrice: "1,100 EGP / $20.74", discPrice: "440 EGP / $8.30", fee: "22 EGP / $0.42", net: "418 EGP / $7.88", url: "https://payhip.com/b/y2Q5N" },
-            { id: 6, category: "tools", icon: "📱", titleEn: "AI Social Post Generator Pro", titleAr: "مولد منشورات وسائل التواصل الاجتماعي الذكي", descEn: "Smart post copy and campaign generator for social platforms.", descAr: "أداة توليد ذكية لمنشورات وسائل التواصل الاجتماعي.", oldPrice: "950 EGP / $17.91", discPrice: "380 EGP / $7.16", fee: "19 EGP / $0.36", net: "361 EGP / $6.80", url: "https://payhip.com/b/cS1eq" },
-
-            // Web Templates (7-21)
-            { id: 7, category: "templates", icon: "📈", titleEn: "Neoflow E-Commerce Dashboard & Analytics Website", titleAr: "قالب لوحة تحكم التجارة الإلكترونية Neoflow", descEn: "Sleek e-commerce dashboard and analytics site template.", descAr: "قالب لوحة تحكم تحليلات التجارة الإلكترونية الفاخر.", oldPrice: "1,800 EGP / $33.93", discPrice: "720 EGP / $13.57", fee: "36 EGP / $0.68", net: "684 EGP / $12.89", url: "https://payhip.com/b/NkyiO" },
-            { id: 8, category: "templates", icon: "🍽️", titleEn: "Premium Restaurant & Cafe Website Template", titleAr: "قالب المطاعم والمقاهي الفاخرة", descEn: "Cinematic dark & gold luxury restaurant web layout.", descAr: "قالب سينمائي داكن وذهبي للمطاعم والمقاهي الفاخرة.", oldPrice: "1,999 EGP / $37.68", discPrice: "799.60 EGP / $15.07", fee: "39.98 EGP / $0.75", net: "759.62 EGP / $14.32", url: "https://payhip.com/b/ZPEcW" },
-            { id: 9, category: "templates", icon: "🏡", titleEn: "Premium Real Estate & Elite Property Website Template", titleAr: "قالب العقارات والعقارات الفاخرة", descEn: "Elite property showcase site template for real estate agencies.", descAr: "قالب عقاري راقي يعرض العقارات الفاخرة.", oldPrice: "2,200 EGP / $41.47", discPrice: "880 EGP / $16.59", fee: "44 EGP / $0.83", net: "836 EGP / $15.76", url: "https://payhip.com/b/iC7jQ" },
-            { id: 10, category: "templates", icon: "⚖️", titleEn: "Premium Lawyer & Legal Services Website Template", titleAr: "قالب المحاماة والخدمات القانونية", descEn: "Professional law firm and legal consultancy template.", descAr: "قالب ويب احترافي لمكاتب المحاماة والاستشارات القانونية.", oldPrice: "1,999 EGP / $37.68", discPrice: "799.60 EGP / $15.07", fee: "39.98 EGP / $0.75", net: "759.62 EGP / $14.32", url: "https://payhip.com/b/i3kaJ" },
-            { id: 11, category: "templates", icon: "✨", titleEn: "Aura Luxury & Premium Brand Template", titleAr: "قالب العلامة التجارية الفاخرة Aura", descEn: "Aesthetic luxury boutique and high-end brand showcase.", descAr: "قالب عالي الجودة للعلامات التجارية الفاخرة والمنتجات الراقية.", oldPrice: "1,850 EGP / $34.88", discPrice: "740 EGP / $13.95", fee: "37 EGP / $0.70", net: "703 EGP / $13.25", url: "https://payhip.com/b/mQvIj" },
-            { id: 12, category: "templates", icon: "👤", titleEn: "Ahmed Professional Portfolio Template", titleAr: "قالب المعرض المهني الشخصي Ahmed", descEn: "Modern executive portfolio for digital creators and developers.", descAr: "قالب معرض أعمال مهني أنيق للمطورين والمصممين.", oldPrice: "1,400 EGP / $26.39", discPrice: "560 EGP / $10.56", fee: "28 EGP / $0.53", net: "532 EGP / $10.03", url: "https://payhip.com/b/GgdNQ" },
-            { id: 13, category: "templates", icon: "🛡️", titleEn: "Zenith Cyber & Tech Security Template", titleAr: "قالب الأمن السيبراني والتكنولوجيا Zenith", descEn: "Futuristic cybersecurity agency layout.", descAr: "قالب أمن سيبراني متطور بجماليات مستقبلية.", oldPrice: "1,999 EGP / $37.68", discPrice: "799.60 EGP / $15.07", fee: "39.98 EGP / $0.75", net: "759.62 EGP / $14.32", url: "https://payhip.com/b/IOocl" },
-            { id: 14, category: "templates", icon: "🏢", titleEn: "AbuOmar Business & Corporate Solution Template", titleAr: "قالب الأعمال والحلول المؤسسية AbuOmar", descEn: "Comprehensive enterprise template for commercial entities.", descAr: "قالب مؤسسي شامل مصمم للشركات والمؤسسات.", oldPrice: "2,100 EGP / $39.58", discPrice: "840 EGP / $15.83", fee: "42 EGP / $0.79", net: "798 EGP / $15.04", url: "https://payhip.com/b/mNYI5" },
-            { id: 15, category: "templates", icon: "🚀", titleEn: "Apex Exotic & Creative", titleAr: "قالب الأفكار الإبداعية Apex Exotic", descEn: "Dynamic animated layout for creative studios.", descAr: "قالب إبداعي ديناميكي بتصميم حديث ومبتكر.", oldPrice: "1,750 EGP / $32.99", discPrice: "700 EGP / $13.20", fee: "35 EGP / $0.66", net: "665 EGP / $12.54", url: "https://payhip.com/b/Uipv7" },
-            { id: 16, category: "templates", icon: "💻", titleEn: "Tech Startup & SaaS Website", titleAr: "قالب شركات البرمجيات والـ SaaS الناشئة", descEn: "High impact SaaS product landing page.", descAr: "قالب متعدد الصفحات لشركات البرمجيات الناشئة.", oldPrice: "1,999 EGP / $37.68", discPrice: "799.60 EGP / $15.07", fee: "39.98 EGP / $0.75", net: "759.62 EGP / $14.32", url: "https://payhip.com/b/D2bnY" },
-            { id: 17, category: "templates", icon: "🏢", titleEn: "NOVA – Premium Real Estate Website Template", titleAr: "قالب العقارات الفاخرة NOVA", descEn: "Advanced real estate listing agency template.", descAr: "قالب وكالة عقارية فاخرة متكامل.", oldPrice: "2,200 EGP / $41.47", discPrice: "880 EGP / $16.59", fee: "44 EGP / $0.83", net: "836 EGP / $15.76", url: "https://payhip.com/b/7N0IC" },
-            { id: 18, category: "templates", icon: "🏡", titleEn: "Premium Real Estate Website Template", titleAr: "قالب العقارات القياسي الفاخر", descEn: "Standard responsive real estate broker site.", descAr: "قالب مواقع عقارية متجاوب قياسي.", oldPrice: "1,750 EGP / $32.99", discPrice: "700 EGP / $13.20", fee: "35 EGP / $0.66", net: "665 EGP / $12.54", url: "https://payhip.com/b/TKrM8" },
-            { id: 19, category: "templates", icon: "📊", titleEn: "Premium Business Website Template", titleAr: "قالب الأعمال التجارية القياسي الفاخر", descEn: "Multi-purpose business corporate template.", descAr: "قالب أعمال متعدد الاستخدامات.", oldPrice: "1,750 EGP / $32.99", discPrice: "700 EGP / $13.20", fee: "35 EGP / $0.66", net: "665 EGP / $12.54", url: "https://payhip.com/b/yizhn" },
-            { id: 20, category: "templates", icon: "🍲", titleEn: "Premium Restaurant Website Template | Arabic & English | RTL/LTR", titleAr: "قالب المطاعم ثنائي اللغة (عربي وإنجليزي)", descEn: "Full RTL & LTR bilingual restaurant site layout.", descAr: "قالب مطعم ثنائي اللغة بالكامل ثنائي الاتجاه.", oldPrice: "1,999 EGP / $37.68", discPrice: "799.60 EGP / $15.07", fee: "39.98 EGP / $0.75", net: "759.62 EGP / $14.32", url: "https://payhip.com/b/SnpTh" },
-            { id: 21, category: "templates", icon: "⚖️", titleEn: "Premium Lawyer Website Template – Arabic & English", titleAr: "قالب المحاماة ثنائي اللغة (عربي وإنجليزي)", descEn: "International law firm bilingual template.", descAr: "قالب خدمات قانونية ثنائي اللغة للشركات الدولية.", oldPrice: "1,999 EGP / $37.68", discPrice: "799.60 EGP / $15.07", fee: "39.98 EGP / $0.75", net: "759.62 EGP / $14.32", url: "https://payhip.com/b/V7sGk" },
-
-            // CV Templates (22-23) - Updated Pricing Plan
-            { id: 22, category: "cv", icon: "📄", titleEn: "Ahmed Abu Omar – Premium CV Bundle | 10 Arabic & English Templates", titleAr: "أحمد أبو عمر — حزمة السير الذاتية الفاخرة | 10 قوالب عربية وإنجليزية (المجموعة الثالثة)", descEn: "Comprehensive ATS-friendly bilingual CV bundle (10 Templates).", descAr: "حزمة تحتوي على 10 قوالب سيرة ذاتية عربية وإنجليزية متوافقة مع الـ ATS.", oldPrice: "659 EGP / $12.42", discPrice: "263.60 EGP / $4.97", fee: "13.18 EGP / $0.25", net: "250.42 EGP / $4.72", url: "https://payhip.com/b/JGOSj" },
-            { id: 23, category: "cv", icon: "📄", titleEn: "Premium CV Bundle – 7 Professional Resume Templates", titleAr: "حزمة السير الذاتية الاحترافية — 7 قوالب متطورة (المجموعة الثالثة)", descEn: "Collection of 7 professional ATS resume designs.", descAr: "حزمة تضم 7 تصميمات سيرة ذاتية احترافية ثنائية اللغة متوافقة مع الـ ATS.", oldPrice: "659 EGP / $12.42", discPrice: "263.60 EGP / $4.97", fee: "13.18 EGP / $0.25", net: "250.42 EGP / $4.72", url: "https://payhip.com/b/Dy2bz" }
+            { id: 1, category: "tools", icon: "🤖", titleEn: "Ultimate AI Website Assistant & Chatbot Integration", titleAr: "المساعد الذكي الاحترافي للمواقع وواجهات المحادثة", descEn: "Seamless AI assistant integration for professional websites.", descAr: "تكامل سلس للمساعد الذكي للمواقع الاحترافية.", oldPrice: "2,105.28 EGP / $21.05", discPrice: "842.11 EGP / $8.42", fee: "42.11 EGP / $0.42", net: "800 EGP / $8.00", url: "https://payhip.com/b/DXmGs" },
+            { id: 2, category: "tools", icon: "📊", titleEn: "SaaS Pricing & ROI Calculator Pro – Financial Metrics Tool", titleAr: "حاسبة العائد التسعيري واقتصاديات SaaS Pro", descEn: "Financial metrics tool designed for SaaS startups and founders.", descAr: "حاسبة مقاييس مالية احترافية لشركات البرمجيات الناشئة.", oldPrice: "2,105.28 EGP / $21.05", discPrice: "842.11 EGP / $8.42", fee: "42.11 EGP / $0.42", net: "800 EGP / $8.00", url: "https://payhip.com/b/MJFx5" },
+            { id: 3, category: "tools", icon: "⚡", titleEn: "Image Compressor Pro – Micro-SaaS Image Optimizer", titleAr: "أداة ضغط الصور وتحسين الأداء Image Compressor Pro", descEn: "High-performance browser-side image optimization utility.", descAr: "أداة تحسين وضغط صور مصغرة عالية الأداء.", oldPrice: "2,105.28 EGP / $21.05", discPrice: "842.11 EGP / $8.42", fee: "42.11 EGP / $0.42", net: "800 EGP / $8.00", url: "https://payhip.com/b/MWBli" },
+            { id: 4, category: "tools", icon: "🔍", titleEn: "SEO Meta & Schema Generator Pro", titleAr: "مولد بيانات السكيما والميتا SEO Meta & Schema Generator", descEn: "Advanced meta tags and structured JSON-LD schema generator.", descAr: "مولد متطور لوسوم الميتا وسكيما JSON-LD المنظمة.", oldPrice: "2,105.28 EGP / $21.05", discPrice: "842.11 EGP / $8.42", fee: "42.11 EGP / $0.42", net: "800 EGP / $8.00", url: "https://payhip.com/b/1tfs7" },
+            { id: 5, category: "tools", icon: "✉️", titleEn: "AI Cold Email & Outreach Generator Pro – Bilingual", titleAr: "مولد البريد البارد وحملات الترويج بالذكاء الاصطناعي", descEn: "Bilingual AI cold email and outreach messaging generator.", descAr: "مولد ترويج وتواصل بارد مدعوم بالذكاء الاصطناعي ثنائي اللغة.", oldPrice: "2,105.28 EGP / $21.05", discPrice: "842.11 EGP / $8.42", fee: "42.11 EGP / $0.42", net: "800 EGP / $8.00", url: "https://payhip.com/b/y2Q5N" },
+            { id: 6, category: "tools", icon: "📱", titleEn: "AI Social Post Generator Pro", titleAr: "مولد منشورات وسائل التواصل الاجتماعي الذكي", descEn: "Smart post copy and campaign generator for social platforms.", descAr: "أداة توليد ذكية لمنشورات وسائل التواصل الاجتماعي.", oldPrice: "2,105.28 EGP / $21.05", discPrice: "842.11 EGP / $8.42", fee: "42.11 EGP / $0.42", net: "800 EGP / $8.00", url: "https://payhip.com/b/cS1eq" },
+            { id: 7, category: "templates", icon: "📈", titleEn: "Neoflow E-Commerce Dashboard & Analytics Website", titleAr: "قالب لوحة تحكم التجارة الإلكترونية Neoflow", descEn: "Sleek e-commerce dashboard and analytics site template.", descAr: "قالب لوحة تحكم تحليلات التجارة الإلكترونية الفاخر.", oldPrice: "2,105.28 EGP / $21.05", discPrice: "842.11 EGP / $8.42", fee: "42.11 EGP / $0.42", net: "800 EGP / $8.00", url: "https://payhip.com/b/NkyiO" },
+            { id: 8, category: "templates", icon: "🍽️", titleEn: "Premium Restaurant & Cafe Website Template", titleAr: "قالب المطاعم والمقاهي الفاخرة", descEn: "Cinematic dark & gold luxury restaurant web layout.", descAr: "قالب سينمائي داكن وذهبي للمطاعم والمقاهي الفاخرة.", oldPrice: "2,105.28 EGP / $21.05", discPrice: "842.11 EGP / $8.42", fee: "42.11 EGP / $0.42", net: "800 EGP / $8.00", url: "https://payhip.com/b/ZPEcW" },
+            { id: 9, category: "templates", icon: "🏡", titleEn: "Premium Real Estate & Elite Property Website Template", titleAr: "قالب العقارات والعقارات الفاخرة", descEn: "Elite property showcase site template for real estate agencies.", descAr: "قالب عقاري راقي يعرض العقارات الفاخرة.", oldPrice: "2,105.28 EGP / $21.05", discPrice: "842.11 EGP / $8.42", fee: "42.11 EGP / $0.42", net: "800 EGP / $8.00", url: "https://payhip.com/b/iC7jQ" },
+            { id: 10, category: "templates", icon: "⚖️", titleEn: "Premium Lawyer & Legal Services Website Template", titleAr: "قالب المحاماة والخدمات القانونية", descEn: "Professional law firm and legal consultancy template.", descAr: "قالب ويب احترافي لمكاتب المحاماة والاستشارات القانونية.", oldPrice: "2,105.28 EGP / $21.05", discPrice: "842.11 EGP / $8.42", fee: "42.11 EGP / $0.42", net: "800 EGP / $8.00", url: "https://payhip.com/b/i3kaJ" },
+            { id: 11, category: "templates", icon: "✨", titleEn: "Aura Luxury & Premium Brand Template", titleAr: "قالب العلامة التجارية الفاخرة Aura", descEn: "Aesthetic luxury boutique and high-end brand showcase.", descAr: "قالب عالي الجودة للعلامات التجارية الفاخرة والمنتجات الراقية.", oldPrice: "2,105.28 EGP / $21.05", discPrice: "842.11 EGP / $8.42", fee: "42.11 EGP / $0.42", net: "800 EGP / $8.00", url: "https://payhip.com/b/mQvIj" },
+            { id: 12, category: "templates", icon: "👤", titleEn: "Ahmed Professional Portfolio Template", titleAr: "قالب المعرض المهني الشخصي Ahmed", descEn: "Modern executive portfolio for digital creators and developers.", descAr: "قالب معرض أعمال مهني أنيق للمطورين والمصممين.", oldPrice: "2,105.28 EGP / $21.05", discPrice: "842.11 EGP / $8.42", fee: "42.11 EGP / $0.42", net: "800 EGP / $8.00", url: "https://payhip.com/b/GgdNQ" },
+            { id: 13, category: "templates", icon: "🛡️", titleEn: "Zenith Cyber & Tech Security Template", titleAr: "قالب الأمن السيبراني والتكنولوجيا Zenith", descEn: "Futuristic cybersecurity agency layout.", descAr: "قالب أمن سيبراني متطور بجماليات مستقبلية.", oldPrice: "2,105.28 EGP / $21.05", discPrice: "842.11 EGP / $8.42", fee: "42.11 EGP / $0.42", net: "800 EGP / $8.00", url: "https://payhip.com/b/IOocl" },
+            { id: 14, category: "templates", icon: "🏢", titleEn: "AbuOmar Business & Corporate Solution Template", titleAr: "قالب الأعمال والحلول المؤسسية AbuOmar", descEn: "Comprehensive enterprise template for commercial entities.", descAr: "قالب مؤسسي شامل مصمم للشركات والمؤسسات.", oldPrice: "2,105.28 EGP / $21.05", discPrice: "842.11 EGP / $8.42", fee: "42.11 EGP / $0.42", net: "800 EGP / $8.00", url: "https://payhip.com/b/mNYI5" },
+            { id: 15, category: "templates", icon: "🚀", titleEn: "Apex Exotic & Creative", titleAr: "قالب الأفكار الإبداعية Apex Exotic", descEn: "Dynamic animated layout for creative studios.", descAr: "قالب إبداعي ديناميكي بتصميم حديث ومبتكر.", oldPrice: "2,105.28 EGP / $21.05", discPrice: "842.11 EGP / $8.42", fee: "42.11 EGP / $0.42", net: "800 EGP / $8.00", url: "https://payhip.com/b/Uipv7" },
+            { id: 16, category: "templates", icon: "💻", titleEn: "Tech Startup & SaaS Website", titleAr: "قالب شركات البرمجيات والـ SaaS الناشئة", descEn: "High impact SaaS product landing page.", descAr: "قالب متعدد الصفحات لشركات البرمجيات الناشئة.", oldPrice: "2,105.28 EGP / $21.05", discPrice: "842.11 EGP / $8.42", fee: "42.11 EGP / $0.42", net: "800 EGP / $8.00", url: "https://payhip.com/b/D2bnY" },
+            { id: 17, category: "templates", icon: "🏢", titleEn: "NOVA – Premium Real Estate Website Template", titleAr: "قالب العقارات الفاخرة NOVA", descEn: "Advanced real estate listing agency template.", descAr: "قالب وكالة عقارية فاخرة متكامل.", oldPrice: "1,578.95 EGP / $15.80", discPrice: "631.58 EGP / $6.32", fee: "31.58 EGP / $0.32", net: "600 EGP / $6.00", url: "https://payhip.com/b/7N0IC" },
+            { id: 18, category: "templates", icon: "🏡", titleEn: "Premium Real Estate Website Template", titleAr: "قالب العقارات القياسي الفاخر", descEn: "Standard responsive real estate broker site.", descAr: "قالب مواقع عقارية متجاوب قياسي.", oldPrice: "1,578.95 EGP / $15.80", discPrice: "631.58 EGP / $6.32", fee: "31.58 EGP / $0.32", net: "600 EGP / $6.00", url: "https://payhip.com/b/TKrM8" },
+            { id: 19, category: "templates", icon: "📊", titleEn: "Premium Business Website Template", titleAr: "قالب الأعمال التجارية القياسي الفاخر", descEn: "Multi-purpose business corporate template.", descAr: "قالب أعمال متعدد الاستخدامات.", oldPrice: "1,578.95 EGP / $15.80", discPrice: "631.58 EGP / $6.32", fee: "31.58 EGP / $0.32", net: "600 EGP / $6.00", url: "https://payhip.com/b/yizhn" },
+            { id: 20, category: "templates", icon: "🍲", titleEn: "Premium Restaurant Website Template | Arabic & English | RTL/LTR", titleAr: "قالب المطاعم ثنائي اللغة (عربي وإنجليزي)", descEn: "Full RTL & LTR bilingual restaurant site layout.", descAr: "قالب مطعم ثنائي اللغة بالكامل ثنائي الاتجاه.", oldPrice: "1,578.95 EGP / $15.80", discPrice: "631.58 EGP / $6.32", fee: "31.58 EGP / $0.32", net: "600 EGP / $6.00", url: "https://payhip.com/b/SnpTh" },
+            { id: 21, category: "templates", icon: "⚖️", titleEn: "Premium Lawyer Website Template – Arabic & English", titleAr: "قالب المحاماة ثنائي اللغة (عربي وإنجليزي)", descEn: "International law firm bilingual template.", descAr: "قالب خدمات قانونية ثنائي اللغة للشركات الدولية.", oldPrice: "1,578.95 EGP / $15.80", discPrice: "631.58 EGP / $6.32", fee: "31.58 EGP / $0.32", net: "600 EGP / $6.00", url: "https://payhip.com/b/V7sGk" },
+            { id: 22, category: "cv", icon: "📄", titleEn: "Ahmed Abu Omar – Premium CV Bundle | 10 Arabic & English Templates", titleAr: "أحمد أبو عمر — حزمة السير الذاتية الفاخرة | 10 قوالب عربية وإنجليزية (المجموعة الثالثة)", descEn: "Comprehensive ATS-friendly bilingual CV bundle (10 Templates).", descAr: "حزمة تحتوي على 10 قوالب سيرة ذاتية عربية وإنجليزية متوافقة مع الـ ATS.", oldPrice: "657.89 EGP / $13.16", discPrice: "263.16 EGP / $5.26", fee: "13.16 EGP / $0.26", net: "250 EGP / $5.00", url: "https://payhip.com/b/JGOSj" },
+            { id: 23, category: "cv", icon: "📄", titleEn: "Premium CV Bundle – 7 Professional Resume Templates", titleAr: "حزمة السير الذاتية الاحترافية — 7 قوالب متطورة (المجموعة الثالثة)", descEn: "Collection of 7 professional ATS resume designs.", descAr: "حزمة تضم 7 تصميمات سيرة ذاتية احترافية ثنائية اللغة متوافقة مع الـ ATS.", oldPrice: "657.89 EGP / $13.16", discPrice: "263.16 EGP / $5.26", fee: "13.16 EGP / $0.26", net: "250 EGP / $5.00", url: "https://payhip.com/b/Dy2bz" }
         ];
 
         let currentLang = 'en';
@@ -1248,17 +1384,14 @@
             const targetSection = document.getElementById('section-' + secId);
             if (targetSection) targetSection.classList.add('active');
 
-            // Update bottom nav
             document.querySelectorAll('.bottom-nav-item').forEach(b => b.classList.remove('active'));
             const bItem = document.getElementById('bnav-' + secId);
             if (bItem) bItem.classList.add('active');
 
-            // Update desktop nav
             document.querySelectorAll('.nav-desktop .nav-link').forEach(d => d.classList.remove('active'));
             const dItem = document.getElementById('dnav-' + secId);
             if (dItem) dItem.classList.add('active');
 
-            // Update mobile drawer links
             document.querySelectorAll('.drawer-link-btn').forEach(m => m.classList.remove('active'));
             const mItem = document.getElementById('mnav-' + secId);
             if (mItem) mItem.classList.add('active');
@@ -1362,8 +1495,8 @@
                                     <span class="price-label">${lblFee}</span>
                                     <span class="price-val">${p.fee}</span>
                                 </div>
-                                <div class="price-row" style="border-top:1px dashed var(--border-color); padding-top:4px; margin-top:2px;">
-                                    <span class="price-label" style="font-weight:700;">${lblNet}</span>
+                                <div class="price-row" style="border-top:1.5px dashed var(--border-color); padding-top:4px; margin-top:2px;">
+                                    <span class="price-label" style="font-weight:800;">${lblNet}</span>
                                     <span class="price-val net-profit">${p.net}</span>
                                 </div>
                             </div>
