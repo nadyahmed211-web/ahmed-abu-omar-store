@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Ahmed Abu Omar — Premium Cinematic Digital Studio</title>
-    <meta name="description" content="Ahmed Abu Omar — المتجر الرقمي السينمائي الفاخر لقوالب المواقع وأدوات الويب المصغرة والسير الذاتية الاحترافية.">
+    <title>Ahmed Abu Omar — Premium Geometric Cinematic Studio</title>
+    <meta name="description" content="Ahmed Abu Omar — المتجر الرقمي الهندسي والسينمائي الفاخر لقوالب المواقع وأدوات الويب المصغرة والسير الذاتية الاحترافية.">
     <link rel="canonical" href="https://nadyahmed211-web.github.io/ahmed-abu-omar-store/">
     
-    <meta property="og:title" content="Ahmed Abu Omar — Premium Cinematic Digital Studio">
-    <meta property="og:description" content="استوديو أحمد أبو عمر الرقمي - منتجات وقوالب ويب سينمائية فاخرة.">
+    <meta property="og:title" content="Ahmed Abu Omar — Premium Geometric Cinematic Studio">
+    <meta property="og:description" content="استوديو أحمد أبو عمر الرقمي - منتجات وقوالب ويب سينمائية وهندسية فاخرة.">
     <meta property="og:url" content="https://nadyahmed211-web.github.io/ahmed-abu-omar-store/">
     <meta property="og:type" content="website">
     <meta name="theme-color" content="#05070C">
@@ -68,9 +68,7 @@
             padding-bottom: 95px;
         }
 
-        /* ----------------------------------------------------
-           1. TOP TICKER MARQUEE BANNER
-           ---------------------------------------------------- */
+        /* TOP TICKER MARQUEE BANNER */
         .top-ticker-banner {
             width: 100%;
             background: linear-gradient(90deg, #100d03 0%, #282006 50%, #100d03 100%);
@@ -126,9 +124,7 @@
 
         .ticker-item:hover { color: #FFFFFF; text-shadow: 0 0 10px var(--gold); }
 
-        /* ----------------------------------------------------
-           2. HEADER & NAVIGATION
-           ---------------------------------------------------- */
+        /* HEADER & NAVIGATION */
         header {
             position: sticky;
             top: 0;
@@ -270,9 +266,7 @@
         }
         @media(min-width: 992px) { .desktop-header-brand { display: flex; } }
 
-        /* ----------------------------------------------------
-           3. DYNAMIC CINEMATIC SECTION BACKGROUNDS
-           ---------------------------------------------------- */
+        /* DYNAMIC GEOMETRIC CINEMATIC BACKGROUNDS & SYMBOLS */
         .page-section {
             display: none;
             max-width: 1380px;
@@ -293,7 +287,7 @@
         }
 
         #section-home {
-            background: linear-gradient(135deg, rgba(5, 7, 12, 0.93) 0%, rgba(10, 14, 26, 0.97) 100%),
+            background: linear-gradient(135deg, rgba(5, 7, 12, 0.95) 0%, rgba(10, 14, 26, 0.98) 100%),
                         url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
             background-blend-mode: overlay;
         }
@@ -334,6 +328,7 @@
             border-color: var(--gold);
         }
 
+        /* GEOMETRIC CINEMATIC HERO & FLOATING SYMBOLS */
         .cinematic-hero-fullscreen {
             min-height: calc(100vh - 120px);
             display: flex;
@@ -347,6 +342,8 @@
             border-radius: 36px;
             background: transparent;
             overflow: hidden;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            box-shadow: inset 0 0 80px rgba(0,0,0,0.8);
         }
 
         .cyber-grid-overlay {
@@ -355,24 +352,53 @@
             background-image: 
                 linear-gradient(to right, rgba(212, 175, 55, 0.08) 1px, transparent 1px),
                 linear-gradient(to bottom, rgba(212, 175, 55, 0.08) 1px, transparent 1px);
-            background-size: 60px 60px;
-            transform: perspective(600px) rotateX(45deg);
-            animation: gridDynamicMove 15s linear infinite;
+            background-size: 55px 55px;
+            transform: perspective(700px) rotateX(40deg);
+            animation: gridDynamicMove 18s linear infinite;
             pointer-events: none;
             z-index: 1;
         }
 
         @keyframes gridDynamicMove {
-            0% { transform: perspective(600px) rotateX(45deg) translateY(0) scale(1); }
-            50% { transform: perspective(600px) rotateX(45deg) translateY(30px) scale(1.02); }
-            100% { transform: perspective(600px) rotateX(45deg) translateY(60px) scale(1); }
+            0% { transform: perspective(700px) rotateX(40deg) translateY(0) scale(1); }
+            50% { transform: perspective(700px) rotateX(40deg) translateY(28px) scale(1.02); }
+            100% { transform: perspective(700px) rotateX(40deg) translateY(55px) scale(1); }
+        }
+
+        .floating-geo-symbols {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .geo-symbol {
+            position: absolute;
+            color: rgba(212, 175, 55, 0.25);
+            font-family: monospace;
+            font-weight: 900;
+            user-select: none;
+            animation: floatSymbol 12s infinite ease-in-out alternate;
+        }
+
+        .geo-symbol.sym-1 { top: 15%; left: 8%; font-size: 3rem; animation-duration: 9s; }
+        .geo-symbol.sym-2 { top: 70%; left: 85%; font-size: 4rem; animation-duration: 14s; color: rgba(0, 240, 255, 0.2); }
+        .geo-symbol.sym-3 { top: 25%; right: 12%; font-size: 2.5rem; animation-duration: 11s; }
+        .geo-symbol.sym-4 { bottom: 20%; left: 15%; font-size: 3.5rem; animation-duration: 13s; }
+        .geo-symbol.sym-5 { top: 60%; right: 80%; font-size: 2rem; animation-duration: 8s; color: rgba(212, 175, 55, 0.3); }
+
+        @keyframes floatSymbol {
+            0% { transform: translateY(0) rotate(0deg) scale(1); opacity: 0.3; }
+            50% { transform: translateY(-25px) rotate(45deg) scale(1.15); opacity: 0.8; }
+            100% { transform: translateY(15px) rotate(90deg) scale(0.9); opacity: 0.4; }
         }
 
         .developer-tag {
             display: inline-flex;
             align-items: center;
             gap: 0.6rem;
-            background: rgba(10, 14, 26, 0.9);
+            background: rgba(10, 14, 26, 0.92);
             border: 1.5px solid var(--border-hover);
             color: var(--cyan-accent);
             padding: 0.65rem 1.6rem;
@@ -382,7 +408,7 @@
             text-transform: uppercase;
             letter-spacing: 1.8px;
             margin-bottom: 2rem;
-            box-shadow: 0 6px 25px rgba(0, 240, 255, 0.2);
+            box-shadow: 0 6px 25px rgba(0, 240, 255, 0.25);
             backdrop-filter: blur(10px);
             position: relative;
             z-index: 2;
@@ -467,9 +493,7 @@
             box-shadow: 0 15px 45px rgba(34, 197, 94, 0.6);
         }
 
-        /* ----------------------------------------------------
-           4. CASE STUDY SECTION (دراسة حالة متحركة)
-           ---------------------------------------------------- */
+        /* CASE STUDY SECTION */
         .case-study-card {
             background: rgba(10, 14, 26, 0.92);
             border: 2px solid var(--gold);
@@ -524,9 +548,7 @@
         .metric-val { font-size: 2.2rem; font-weight: 900; color: var(--gold-light); }
         .metric-lbl { color: var(--text-muted); font-size: 0.88rem; font-weight: 700; margin-top: 0.3rem; }
 
-        /* ----------------------------------------------------
-           5. SOCIAL PROMO BANNER
-           ---------------------------------------------------- */
+        /* SOCIAL PROMO BANNER */
         .social-promo-banner {
             background: linear-gradient(135deg, rgba(20, 15, 5, 0.95), rgba(5, 7, 12, 0.98));
             border: 2px solid var(--gold);
@@ -668,7 +690,7 @@
             transition: var(--transition);
         }
 
-        html[dir="ltr"] .ai-faq-btn { text-align: left; }
+        html[dir="rtl"] .ai-faq-btn { text-align: left; }
         .ai-faq-btn:hover { border-color: var(--gold); background: rgba(212, 175, 55, 0.15); }
 
         .ai-modal-footer {
@@ -816,7 +838,7 @@
             <div class="ai-modal-body" id="aiChatBody">
                 <div class="ai-msg-box">
                     أهلاً بك! أنا المساعد الذكي المربوط بالذكاء الاصطناعي لمتجر <strong>أحمد أبو عمر (Ahmed Abu Omar)</strong>. 
-                    يمكنني إجابة كافة استفساراتك حول المنتجات الـ 23، دراسات الحالة، والخدمات الحصرية:
+                    يمكنني إجابة كافة استفساراتك حول المنتجات الرقمية، دراسات الحالة، والخدمات الحصرية وقسم "حول":
                 </div>
                 <button class="ai-faq-btn" onclick="askAi('من هو أحمد أبو عمر وما هو هذا الاستوديو الرقمي؟')">👑 من هو أحمد أبو عمر وما هو هذا الاستوديو الرقمي؟</button>
                 <button class="ai-faq-btn" onclick="askAi('كيف حقق العميل العقاري نمو مبيعات 40%؟')">📈 كيف حقق العميل العقاري نمو مبيعات 40%؟</button>
@@ -859,7 +881,7 @@
                 <li><button class="nav-link" onclick="switchSection('products')" id="dnav-products" data-ar="منتجاتنا" data-en="Products">منتجاتنا</button></li>
                 <li><button class="nav-link" onclick="switchSection('offers')" id="dnav-offers" data-ar="عروض" data-en="Offers">عروض</button></li>
                 <li><button class="nav-link" onclick="switchSection('contact')" id="dnav-contact" data-ar="التواصل" data-en="Contact">التواصل</button></li>
-                <li><button class="nav-link" onclick="switchSection('about')" id="dnav-about" data-ar="حول متجرنا" data-en="About Us">حول متجرنا</button></li>
+                <li><button class="nav-link" onclick="switchSection('about')" id="dnav-about" data-ar="حول" data-en="About">حول</button></li>
             </ul>
 
             <div style="display:none; align-items:center; gap:0.85rem;" class="desktop-actions">
@@ -876,20 +898,28 @@
         <div class="cinematic-hero-fullscreen">
             <div class="cyber-grid-overlay"></div>
             
-            <div class="developer-tag" data-ar="⚡ MESH & CYBERNETIC ARCHITECTURE — ELITE DEVELOPERS STUDIO" data-en="⚡ MESH & CYBERNETIC ARCHITECTURE — ELITE DEVELOPERS STUDIO">
-                ⚡ MESH & CYBERNETIC ARCHITECTURE — ELITE DEVELOPERS STUDIO
+            <div class="floating-geo-symbols">
+                <div class="geo-symbol sym-1">◇</div>
+                <div class="geo-symbol sym-2">△</div>
+                <div class="geo-symbol sym-3">{ }</div>
+                <div class="geo-symbol sym-4">&lt;/&gt;</div>
+                <div class="geo-symbol sym-5">⬡</div>
+            </div>
+            
+            <div class="developer-tag" data-ar="⚡ MESH & GEOMETRIC ARCHITECTURE — ELITE DEVELOPERS STUDIO" data-en="⚡ MESH & GEOMETRIC ARCHITECTURE — ELITE DEVELOPERS STUDIO">
+                ⚡ MESH & GEOMETRIC ARCHITECTURE — ELITE DEVELOPERS STUDIO
             </div>
             
             <h1 data-ar="نبْتكر ونبني منتجات رقمية استثنائية" data-en="Creating Exceptional Digital Products & High-Performance Solutions">
                 نبْتكر ونبني منتجات رقمية استثنائية
             </h1>
             
-            <p data-ar="وجهتك الأولى لاقتناء أقوى المنتجات الرقمية الـ 23، أدوات الويب المصغرة (Micro-SaaS)، قوالب المواقع، والسير الذاتية المصممة خصيصاً لتعزيز نجاحك بأعلى معايير البريميوم." data-en="Your ultimate destination for 23 powerful digital products, Micro-SaaS tools, website templates, and ATS resumes engineered for success.">
-                وجهتك الأولى لاقتناء أقوى المنتجات الرقمية الـ 23، أدوات الويب المصغرة (Micro-SaaS)، قوالب المواقع، والسير الذاتية المصممة خصيصاً لتعزيز نجاحك بأعلى معايير البريميوم.
+            <p data-ar="وجهتك الأولى لاقتناء أقوى المنتجات الرقمية، أدوات الويب المصغرة (Micro-SaaS)، قوالب المواقع، والسير الذاتية المصممة خصيصاً لتعزيز نجاحك بأعلى معايير البريميوم." data-en="Your ultimate destination for powerful digital products, Micro-SaaS tools, website templates, and ATS resumes engineered for success.">
+                وجهتك الأولى لاقتناء أقوى المنتجات الرقمية، أدوات الويب المصغرة (Micro-SaaS)، قوالب المواقع، والسير الذاتية المصممة خصيصاً لتعزيز نجاحك بأعلى معايير البريميوم.
             </p>
 
             <div class="cinematic-cta-group">
-                <button class="btn btn-primary-gold" onclick="switchSection('products')" data-ar="استكشف متجر المنتجات الرقمية الـ 23 ➔" data-en="Explore All 23 Digital Products Showcase ➔">استكشف متجر المنتجات الرقمية الـ 23 ➔</button>
+                <button class="btn btn-primary-gold" onclick="switchSection('products')" data-ar="استكشف متجر المنتجات الرقمية ➔" data-en="Explore Digital Products Showcase ➔">استكشف متجر المنتجات الرقمية ➔</button>
                 <button class="btn btn-primary-whatsapp" onclick="window.open('https://wa.me/201206443652','_blank')" data-ar="💬 تواصل عبر الواتساب" data-en="💬 Chat via WhatsApp">💬 تواصل عبر الواتساب</button>
             </div>
         </div>
@@ -932,8 +962,8 @@
     <!-- 3. PRODUCTS SECTION -->
     <section id="section-products" class="page-section">
         <div class="section-header">
-            <h2 data-ar="المتجر الرقمي والمنتجات (23 منتج احترافي)" data-en="Digital Storefront & Products (23 Items)">المتجر الرقمي والمنتجات (23 منتج احترافي)</h2>
-            <p data-ar="استكشف تشكيلتنا الكاملة والمكونة من 23 منتج رقمي تشمل قوالب المواقع المصممة بمختلف القطاعات، وأدوات Micro-SaaS، وحزمة السير الذاتية." data-en="Explore our complete collection of 23 premium web templates, micro-SaaS tools, and ATS resume bundles.">استكشف تشكيلتنا الكاملة والمكونة من 23 منتج رقمي تشمل قوالب المواقع المصممة بمختلف القطاعات، وأدوات Micro-SaaS، وحزمة السير الذاتية.</p>
+            <h2 data-ar="المتجر الرقمي والمنتجات الاحترافية" data-en="Digital Storefront & Professional Products">المتجر الرقمي والمنتجات الاحترافية</h2>
+            <p data-ar="استكشف تشكيلتنا المتكاملة من المنتجات الرقمية التي تشمل قوالب المواقع المصممة بمختلف القطاعات، وأدوات Micro-SaaS، وحزمة السير الذاتية." data-en="Explore our complete collection of premium web templates, micro-SaaS tools, and ATS resume bundles.">استكشف تشكيلتنا المتكاملة من المنتجات الرقمية التي تشمل قوالب المواقع المصممة بمختلف القطاعات، وأدوات Micro-SaaS، وحزمة السير الذاتية.</p>
         </div>
 
         <div class="store-controls">
@@ -942,7 +972,7 @@
                 <input type="text" id="productSearch" placeholder="ابحث فوراً بالاسم أو القسم..." oninput="filterProducts()">
             </div>
             <div class="filter-tabs">
-                <button class="filter-tab active" onclick="setCategory('all')" data-ar="جميع المنتجات (23)" data-en="All Products (23)">جميع المنتجات (23)</button>
+                <button class="filter-tab active" onclick="setCategory('all')" data-ar="جميع المنتجات" data-en="All Products">جميع المنتجات</button>
                 <button class="filter-tab" onclick="setCategory('tools')" data-ar="الأدوات الرقمية" data-en="Digital Tools">الأدوات الرقمية</button>
                 <button class="filter-tab" onclick="setCategory('templates')" data-ar="قوالب المواقع" data-en="Website Templates">قوالب المواقع</button>
                 <button class="filter-tab" onclick="setCategory('cv')" data-ar="قوالب السيرة الذاتية" data-en="CV Templates">قوالب السيرة الذاتية</button>
@@ -1009,36 +1039,36 @@
         </div>
     </section>
 
-    <!-- 6. ABOUT US SECTION -->
+    <!-- 6. ABOUT SECTION -->
     <section id="section-about" class="page-section">
         <div class="section-header">
             <span class="case-study-badge">👑 استوديو أحمد أبو عمر الرقمي</span>
-            <h2 data-ar="حول متجرنا وقصة نجاحنا" data-en="About Our Store & Success Story">حول متجرنا وقصة نجاحنا</h2>
+            <h2 data-ar="حول براند أحمد أبو عمر وقصة النجاح" data-en="About Ahmed Abu Omar Brand & Story">حول براند أحمد أبو عمر وقصة النجاح</h2>
             <p data-ar="نحن نبتكر مستقبل التجارة الرقمية والحلول البرمجية بأعلى المعايير العالمية." data-en="We innovate the future of digital commerce and software solutions with world-class standards.">نحن نبتكر مستقبل التجارة الرقمية والحلول البرمجية بأعلى المعايير العالمية.</p>
         </div>
 
         <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:2rem; margin-top:2rem;">
             <div class="service-card">
                 <div style="font-size:2.5rem;">🎯</div>
-                <h3 style="color:var(--gold); margin-top:1rem;" data-ar="رؤيتنا وهدفنا" data-en="Our Vision & Mission">رؤيتنا وهدفنا</h3>
-                <p style="margin-top:0.8rem;" data-ar="تمكين الشركات، المطورين، ورواد الأعمال من امتلاك واجهات ومواقع فائقة السرعة، أدوات Micro-SaaS ذكية، وحزم سير ذاتية احترافية تنافس أكبر الأسواق العالمية." data-en="Empowering businesses and developers with elite ultra-fast templates and smart SaaS tools.">
-                    تمكين الشركات، المطورين، ورواد الأعمال من امتلاك واجهات ومواقع فائقة السرعة، أدوات Micro-SaaS ذكية، وحزم سير ذاتية احترافية تنافس أكبر الأسواق العالمية.
+                <h3 style="color:var(--gold); margin-top:1rem;" data-ar="رؤيتنا وهدفنا الاستراتيجي" data-en="Our Strategic Vision">رؤيتنا وهدفنا الاستراتيجي</h3>
+                <p style="margin-top:0.8rem;" data-ar="تأسس استوديو أحمد أبو عمر ليكون الوجهة البرمجية الأولى لتمكين الشركات، المطورين، ورواد الأعمال من امتلاك واجهات سينمائية، مواقع فائقة السرعة تتخطى معايير محركات البحث، أدوات Micro-SaaS ذكية، وحزم سير ذاتية احترافية تنافس أكبر الأسواق العالمية." data-en="Founded to be the premier software studio empowering businesses with cinematic interfaces, ultra-fast websites, smart SaaS tools, and elite ATS resumes.">
+                    تأسس استوديو أحمد أبو عمر ليكون الوجهة البرمجية الأولى لتمكين الشركات، المطورين، ورواد الأعمال من امتلاك واجهات سينمائية، مواقع فائقة السرعة تتخطى معايير محركات البحث، أدوات Micro-SaaS ذكية، وحزم سير ذاتية احترافية تنافس أكبر الأسواق العالمية.
                 </p>
             </div>
 
             <div class="service-card">
                 <div style="font-size:2.5rem;">⚡</div>
-                <h3 style="color:var(--gold); margin-top:1rem;" data-ar="لماذا تختار أحمد أبو عمر؟" data-en="Why Choose Ahmed Abu Omar?">لماذا تختار أحمد أبو عمر؟</h3>
-                <p style="margin-top:0.8rem;" data-ar="نتميز بتصميم سينمائي متفاعل، سرعة تحميل تتخطى 98% على محركات البحث، دعم فني مباشر على مدار الساعة عبر الواتساب، ومنتجات رقمية فريدة من نوعها." data-en="Cinematic UI, 98+ PageSpeed, 24/7 direct WhatsApp support, and unique digital products.">
-                    نتميز بتصميم سينمائي متفاعل، سرعة تحميل تتخطى 98% على محركات البحث، دعم فني مباشر على مدار الساعة عبر الواتساب، ومنتجات رقمية فريدة من نوعها.
+                <h3 style="color:var(--gold); margin-top:1rem;" data-ar="لماذا تختار براند أحمد أبو عمر؟" data-en="Why Choose Ahmed Abu Omar?">لماذا تختار براند أحمد أبو عمر؟</h3>
+                <p style="margin-top:0.8rem;" data-ar="نتميز بتصميم سينمائي متفاعل ومستدام، أداء تقني خارق يتخطى 98% على مؤشرات الأداء، دراسات حالة موثقة تدعم زيادة المبيعات بنسبة 40%، ودعم فني مباشر على مدار الساعة عبر الواتساب مع تحديثات مستمرة للمنتجات." data-en="We stand out with interactive cinematic design, 98+ PageSpeed performance, proven 40% sales growth case studies, and 24/7 direct WhatsApp support.">
+                    نتميز بتصميم سينمائي متفاعل ومستدام، أداء تقني خارق يتخطى 98% على مؤشرات الأداء، دراسات حالة موثقة تدعم زيادة المبيعات بنسبة 40%، ودعم فني مباشر على مدار الساعة عبر الواتساب مع تحديثات مستمرة للمنتجات.
                 </p>
             </div>
 
             <div class="service-card">
                 <div style="font-size:2.5rem;">💎</div>
-                <h3 style="color:var(--gold); margin-top:1rem;" data-ar="جودة البريميوم المطلقة" data-en="Absolute Premium Quality">جودة البريميوم المطلقة</h3>
-                <p style="margin-top:0.8rem;" data-ar="كل منتج في المتجر (سواء من الـ 23 منتجاً قوالب أو أدوات) مصمم بعناية فائقة لضمان أعلى معدلات التحويل (Conversion Rate) وتحقيق أرباح حقيقية لعملائنا." data-en="Every product is meticulously crafted to ensure maximum conversion rates and real business ROI.">
-                    كل منتج في المتجر (سواء من الـ 23 منتجاً قوالب أو أدوات) مصمم بعناية فائقة لضمان أعلى معدلات التحويل (Conversion Rate) وتحقيق أرباح حقيقية لعملائنا.
+                <h3 style="color:var(--gold); margin-top:1rem;" data-ar="جودة البريميوم والمستقبل" data-en="Premium Quality & Future">جودة البريميوم والمستقبل</h3>
+                <p style="margin-top:0.8rem;" data-ar="كل منتج وقالب يتم هندسته بعناية فائقة لضمان أعلى معدلات التحويل (Conversion Rate). نحن نؤمن بالابتكار المستمر وإضافة حلول برمجية جديدة باستمرار لتلبية تطلعات عملائنا في شتى القطاعات التجارية." data-en="Every product is meticulously engineered for maximum conversion rates. We believe in continuous innovation and adding cutting-edge software solutions.">
+                    كل منتج وقالب يتم هندسته بعناية فائقة لضمان أعلى معدلات التحويل (Conversion Rate). نحن نؤمن بالابتكار المستمر وإضافة حلول برمجية جديدة باستمرار لتلبية تطلعات عملائنا في شتى القطاعات التجارية.
                 </p>
             </div>
         </div>
@@ -1068,7 +1098,7 @@
         </button>
         <button class="bottom-nav-item" onclick="switchSection('about')" id="bnav-about">
             <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
-            <span data-ar="حول متجرنا" data-en="About Us">حول متجرنا</span>
+            <span data-ar="حول" data-en="About">حول</span>
         </button>
     </nav>
 
@@ -1166,7 +1196,7 @@
             const body = document.getElementById('aiChatBody');
             let answer = "";
             if(q.includes('أحمد أبو عمر') || q.includes('استوديو')) {
-                answer = "أحمد أبو عمر هو مطور ومصمم رقمي رائد يقدم استوديو سينمائي متكامل لقوالب المواقع، أدوات Micro-SaaS، وحزم السير الذاتية ATS.";
+                answer = "أحمد أبو عمر هو مطور ومصمم رقمي رائد يقدم استوديو سينمائي وهندسي متكامل لقوالب المواقع، أدوات Micro-SaaS، وحزم السير الذاتية ATS.";
             } else if(q.includes('40%') || q.includes('عقاري')) {
                 answer = "دراسة الحالة أثبتت زيادة مبيعات شركة عقارية بنسبة 40% وسرعة موقع 98% بدمج قالب عقاري مع أداة ROI Calculator Pro وحجز المعاينات عبر الواتساب.";
             } else if(q.includes('الخدمات') || q.includes('الأربع')) {
@@ -1201,7 +1231,7 @@
                         <div style="font-size:2.5rem;">${s.icon}</div>
                         <h3>${title}</h3>
                         <p>${desc}</p>
-                        <a href="https://wa.me/201206443652" target="_blank" class="btn btn-primary-whatsapp" style="justify-content:center; margin-top:1rem;">اطلب الخدمة</a>
+                        <a href="https://wa.me/201206443652" target="_blank" class="btn btn-primary-whatsapp" style="justify-content:center; margin-top:1rem;">الشراء عبر الواتساب</a>
                     </div>
                 `;
             }).join('');
@@ -1222,7 +1252,7 @@
                         </div>
                         <div class="product-actions-group">
                             <a href="${p.url}" target="_blank" class="product-btn btn-payhip">شراء عبر Payhip</a>
-                            <a href="https://wa.me/201206443652" target="_blank" class="product-btn btn-whatsapp-direct">طلب بالواتساب</a>
+                            <a href="https://wa.me/201206443652" target="_blank" class="product-btn btn-whatsapp-direct">الشراء عبر الواتساب</a>
                         </div>
                     </div>
                 `;
