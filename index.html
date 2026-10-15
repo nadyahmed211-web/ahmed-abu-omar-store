@@ -4,69 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Ahmed Abu Omar — Premium Cinematic Digital Studio</title>
-    <meta name="description" content="Ahmed Abu Omar (Ahmed Web Templates) — Premium Digital Studio specializing in high-performance web templates, micro-SaaS tools, and custom WebApp solutions.">
-    <meta name="keywords" content="Ahmed Abu Omar, Ahmed Web Templates, Premium Digital Studio, Web Templates, Micro-SaaS Tools, WebApps, ATS Resume Templates">
+    <meta name="description" content="Ahmed Abu Omar — المتجر الرقمي السينمائي الفاخر لقوالب المواقع وأدوات الويب المصغرة والسير الذاتية الاحترافية.">
+    <meta name="keywords" content="Ahmed Abu Omar, أحمد أبو عمر, قوالب مواقع, Micro-SaaS, سير ذاتية, متجر رقمي">
     <link rel="canonical" href="https://nadyahmed211-web.github.io/ahmed-abu-omar-store/">
     
-    <!-- Open Graph Metadata -->
     <meta property="og:title" content="Ahmed Abu Omar — Premium Cinematic Digital Studio">
-    <meta property="og:description" content="Cinematic digital showcase & storefront featuring premium web templates, micro-SaaS tools, and custom WebApp solutions.">
+    <meta property="og:description" content="استوديو أحمد أبو عمر الرقمي - منتجات وقوالب ويب سينمائية فاخرة.">
     <meta property="og:url" content="https://nadyahmed211-web.github.io/ahmed-abu-omar-store/">
     <meta property="og:type" content="website">
     <meta name="theme-color" content="#05070C">
-    
-    <!-- Schema.org JSON-LD -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Ahmed Abu Omar - Premium Digital Studio",
-      "alternateName": "Ahmed Web Templates",
-      "url": "https://nadyahmed211-web.github.io/ahmed-abu-omar-store/",
-      "logo": "https://nadyahmed211-web.github.io/ahmed-abu-omar-store/favicon.ico",
-      "sameAs": [
-        "https://www.facebook.com/AhmedAbuOmarOfficial?mibextid=ZbWKwL",
-        "https://www.instagram.com/ahmedabuomar.design",
-        "https://www.linkedin.com/in/ahmedwebtemplates",
-        "https://payhip.com/ahmedabuomar"
-      ],
-      "description": "Premium Web Templates, Micro-SaaS Tools & WebApp Development Studio"
-    }
-    </script>
 
-    <!-- Custom Favicon -->
+    <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%2305070C'/><path d='M30 70 L50 30 L70 70 Z' fill='%23D4AF37'/></svg>">
     
     <style>
         :root {
             --bg-primary: #05070C;
             --bg-secondary: #0A0E1A;
-            --bg-card: rgba(10, 14, 26, 0.88);
+            --bg-card: rgba(10, 14, 26, 0.90);
             --gold: #D4AF37;
             --gold-light: #F5E6A8;
             --gold-dark: #9C7A22;
+            --cyan-accent: #00f0ff;
             --text-main: #F5F5F5;
             --text-muted: #94A3B8;
-            --border-color: rgba(212, 175, 55, 0.32);
+            --border-color: rgba(212, 175, 55, 0.3);
             --border-hover: rgba(212, 175, 55, 0.85);
-            --shadow: 0 20px 50px rgba(0, 0, 0, 0.75);
-            --glass-bg: rgba(5, 7, 12, 0.94);
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+            --glass-bg: rgba(5, 7, 12, 0.95);
+            --transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         [data-theme="light"] {
             --bg-primary: #F8FAFC;
             --bg-secondary: #FFFFFF;
-            --bg-card: rgba(255, 255, 255, 0.92);
+            --bg-card: rgba(255, 255, 255, 0.95);
             --gold: #B8860B;
             --gold-light: #D4AF37;
             --gold-dark: #8B6508;
+            --cyan-accent: #008b9b;
             --text-main: #0F172A;
             --text-muted: #64748B;
             --border-color: rgba(184, 134, 11, 0.25);
             --border-hover: rgba(184, 134, 11, 0.65);
             --shadow: 0 12px 35px rgba(15, 23, 42, 0.08);
-            --glass-bg: rgba(255, 255, 255, 0.95);
+            --glass-bg: rgba(255, 255, 255, 0.96);
         }
 
         * {
@@ -87,21 +69,67 @@
             padding-bottom: 95px;
         }
 
-        /* Cinematic Background Overlay */
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background: linear-gradient(135deg, rgba(5, 7, 12, 0.90) 0%, rgba(10, 14, 26, 0.95) 100%), 
-                        url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
-            pointer-events: none;
-            z-index: 0;
+        /* ----------------------------------------------------
+           1. TOP TICKER MARQUEE BANNER
+           ---------------------------------------------------- */
+        .top-ticker-banner {
+            width: 100%;
+            background: linear-gradient(90deg, #100d03 0%, #282006 50%, #100d03 100%);
+            border-bottom: 1.5px solid var(--border-color);
+            overflow: hidden;
+            padding: 0.65rem 0;
+            position: relative;
+            z-index: 1001;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
         }
 
-        /* Cinematic Header Styling matching user screenshot */
+        .ticker-track {
+            display: flex;
+            width: max-content;
+            animation: marqueeScroll 28s linear infinite;
+        }
+
+        .ticker-track:hover { animation-play-state: paused; }
+
+        @keyframes marqueeScroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(50%); }
+        }
+
+        html[dir="ltr"] .ticker-track {
+            animation: marqueeScrollLTR 28s linear infinite;
+        }
+
+        @keyframes marqueeScrollLTR {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .ticker-content {
+            display: flex;
+            align-items: center;
+            gap: 2.5rem;
+            padding-left: 2.5rem;
+            white-space: nowrap;
+            font-size: 0.9rem;
+            font-weight: 800;
+            color: var(--gold-light);
+        }
+
+        .ticker-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            color: var(--gold-light);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .ticker-item:hover { color: #FFFFFF; text-shadow: 0 0 10px var(--gold); }
+
+        /* ----------------------------------------------------
+           2. HEADER & NAVIGATION
+           ---------------------------------------------------- */
         header {
             position: sticky;
             top: 0;
@@ -121,7 +149,6 @@
             justify-content: space-between;
         }
 
-        /* Top Brand Card matching screenshot */
         .top-brand-card {
             display: flex;
             align-items: center;
@@ -136,11 +163,7 @@
             box-shadow: 0 8px 25px rgba(0,0,0,0.4);
         }
 
-        .controls-left {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
+        .controls-left { display: flex; align-items: center; gap: 0.5rem; }
 
         .ctrl-btn {
             background: var(--bg-secondary);
@@ -239,8 +262,6 @@
             box-shadow: 0 0 10px var(--gold);
         }
 
-        html[dir="rtl"] .nav-link.active::after { left: auto; right: 0; }
-
         .desktop-header-brand {
             display: none;
             align-items: center;
@@ -250,85 +271,149 @@
         }
         @media(min-width: 992px) { .desktop-header-brand { display: flex; } }
 
+        /* ----------------------------------------------------
+           3. DYNAMIC CINEMATIC SECTION BACKGROUNDS & LAYOUTS
+           ---------------------------------------------------- */
         .page-section {
             display: none;
-            max-width: 1350px;
+            max-width: 1380px;
             margin: 0 auto;
-            padding: 2rem 1.25rem;
+            padding: 2.5rem 1.25rem;
+            border-radius: 32px;
             position: relative;
-            z-index: 1;
+            overflow: hidden;
+            border: 1.5px solid transparent;
+            transition: var(--transition);
         }
 
-        .page-section.active { display: block; animation: fadeIn 0.4s ease forwards; }
+        .page-section.active { display: block; animation: sectionFadeIn 0.5s ease forwards; }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(12px); }
+        @keyframes sectionFadeIn {
+            from { opacity: 0; transform: translateY(18px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* ==========================================
-           CINEMATIC HERO SECTION (MATCHING SCREENSHOT)
-           ========================================== */
-        .cinematic-hero {
-            position: relative;
-            border-radius: 28px;
-            overflow: hidden;
-            border: 2px solid var(--border-hover);
-            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.85);
-            margin-bottom: 3rem;
-            background: linear-gradient(135deg, rgba(5, 7, 12, 0.96), rgba(10, 14, 26, 0.99)),
-                        url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+        /* 1. HOME SECTION BG */
+        #section-home {
+            background: linear-gradient(135deg, rgba(5, 7, 12, 0.95) 0%, rgba(10, 14, 26, 0.98) 100%),
+                        url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
             background-blend-mode: overlay;
-            padding: 4.5rem 1.8rem;
-            text-align: center;
         }
 
-        .cinematic-badge {
+        /* 2. SERVICES SECTION BG */
+        #section-services {
+            background: linear-gradient(135deg, rgba(5, 7, 12, 0.92) 0%, rgba(15, 23, 42, 0.96) 100%),
+                        url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+            background-blend-mode: overlay;
+            border-color: rgba(0, 240, 255, 0.25);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+        }
+
+        /* 3. PRODUCTS SECTION BG */
+        #section-products {
+            background: linear-gradient(135deg, rgba(5, 7, 12, 0.94) 0%, rgba(10, 14, 26, 0.98) 100%),
+                        url('https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+            background-blend-mode: overlay;
+            border-color: var(--border-color);
+        }
+
+        /* 4. OFFERS SECTION BG */
+        #section-offers {
+            background: linear-gradient(135deg, rgba(16, 13, 3, 0.95) 0%, rgba(40, 32, 6, 0.98) 100%),
+                        url('https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+            background-blend-mode: overlay;
+            border-color: var(--gold);
+        }
+
+        /* 5. CONTACT SECTION BG */
+        #section-contact {
+            background: linear-gradient(135deg, rgba(5, 7, 12, 0.93) 0%, rgba(10, 14, 26, 0.97) 100%),
+                        url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+            background-blend-mode: overlay;
+            border-color: var(--border-hover);
+        }
+
+        /* Hero styling */
+        .cinematic-hero-fullscreen {
+            min-height: calc(100vh - 120px);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            padding: 4.5rem 1.5rem;
+            margin-bottom: 3rem;
+            border-radius: 36px;
+            border: 2px solid var(--border-hover);
+            background: radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.15) 0%, rgba(5, 7, 12, 0.98) 85%);
+            box-shadow: 0 35px 90px rgba(0, 0, 0, 0.95), inset 0 0 60px rgba(212, 175, 55, 0.2);
+            overflow: hidden;
+        }
+
+        .cyber-grid-overlay {
+            position: absolute;
+            top: -50%; left: -50%; width: 200%; height: 200%;
+            background-image: 
+                linear-gradient(to right, rgba(212, 175, 55, 0.08) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(212, 175, 55, 0.08) 1px, transparent 1px);
+            background-size: 50px 50px;
+            transform: perspective(600px) rotateX(45deg);
+            animation: gridMove 18s linear infinite;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        @keyframes gridMove {
+            0% { transform: perspective(600px) rotateX(45deg) translateY(0); }
+            100% { transform: perspective(600px) rotateX(45deg) translateY(50px); }
+        }
+
+        .developer-tag {
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
-            background: rgba(212, 175, 55, 0.15);
-            border: 1.5px solid var(--border-color);
-            color: var(--gold-light);
-            padding: 0.5rem 1.3rem;
-            border-radius: 30px;
-            font-size: 0.85rem;
+            gap: 0.6rem;
+            background: rgba(10, 14, 26, 0.85);
+            border: 1.5px solid var(--border-hover);
+            color: var(--cyan-accent);
+            padding: 0.65rem 1.6rem;
+            border-radius: 35px;
+            font-size: 0.92rem;
             font-weight: 800;
             text-transform: uppercase;
-            letter-spacing: 1.5px;
-            margin-bottom: 1.8rem;
-            box-shadow: 0 4px 20px rgba(212, 175, 55, 0.25);
+            letter-spacing: 1.8px;
+            margin-bottom: 2rem;
+            box-shadow: 0 6px 25px rgba(0, 240, 255, 0.2);
+            backdrop-filter: blur(10px);
         }
 
-        .cinematic-hero h1 {
-            font-size: clamp(2.2rem, 5.2vw, 4rem);
+        .cinematic-hero-fullscreen h1 {
+            font-size: clamp(2.4rem, 6vw, 4.5rem);
             font-weight: 900;
             line-height: 1.25;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.8rem;
             background: linear-gradient(135deg, #FFFFFF 20%, var(--gold-light) 60%, var(--gold) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            text-shadow: 0 10px 30px rgba(0,0,0,0.6);
-            max-width: 950px;
-            margin-left: auto;
-            margin-right: auto;
+            text-shadow: 0 15px 35px rgba(0,0,0,0.8);
         }
 
-        .cinematic-hero p {
-            font-size: clamp(1rem, 2.1vw, 1.22rem);
+        .cinematic-hero-fullscreen p {
+            font-size: clamp(1.05rem, 2.3vw, 1.35rem);
             color: var(--text-muted);
-            max-width: 800px;
-            margin: 0 auto 2.5rem;
-            line-height: 1.8;
+            max-width: 850px;
+            margin: 0 auto 3rem;
+            line-height: 1.85;
             font-weight: 500;
         }
 
         .cinematic-cta-group {
             display: flex;
             flex-direction: column;
-            gap: 1rem;
-            max-width: 500px;
-            margin: 0 auto 3rem;
+            gap: 1.2rem;
+            width: 100%;
+            max-width: 520px;
+            margin: 0 auto;
         }
 
         @media(min-width: 768px) {
@@ -336,9 +421,9 @@
         }
 
         .btn {
-            padding: 1rem 2.2rem;
+            padding: 1.1rem 2.4rem;
             border-radius: 16px;
-            font-size: 1.02rem;
+            font-size: 1.05rem;
             font-weight: 800;
             cursor: pointer;
             transition: var(--transition);
@@ -358,8 +443,8 @@
         }
 
         .btn-primary-gold:hover {
-            transform: translateY(-3px) scale(1.02);
-            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.7);
+            transform: translateY(-4px) scale(1.03);
+            box-shadow: 0 15px 45px rgba(212, 175, 55, 0.75);
         }
 
         .btn-primary-whatsapp {
@@ -371,500 +456,327 @@
 
         .btn-primary-whatsapp:hover {
             background: #16a34a;
-            transform: translateY(-3px) scale(1.02);
-            box-shadow: 0 15px 40px rgba(34, 197, 94, 0.6);
+            transform: translateY(-4px) scale(1.03);
+            box-shadow: 0 15px 45px rgba(34, 197, 94, 0.6);
         }
 
-        /* ==========================================
-           FLOATING ASSISTANT WIDGET (BOTTOM-LEFT)
-           ========================================== */
-        .floating-ai-assistant {
+        /* ----------------------------------------------------
+           4. CASE STUDY SECTION (دراسة الحالة الفاخرة)
+           ---------------------------------------------------- */
+        .case-study-card {
+            background: rgba(10, 14, 26, 0.88);
+            border: 2px solid var(--gold);
+            border-radius: 28px;
+            padding: 3rem 2rem;
+            margin-top: 3.5rem;
+            backdrop-filter: blur(15px);
+            box-shadow: 0 25px 60px rgba(0,0,0,0.85);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .case-study-badge {
+            background: var(--gold);
+            color: #05070C;
+            font-weight: 900;
+            padding: 0.4rem 1.2rem;
+            border-radius: 20px;
+            font-size: 0.82rem;
+            text-transform: uppercase;
+            display: inline-block;
+            margin-bottom: 1.2rem;
+        }
+
+        .case-metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .metric-box {
+            background: var(--bg-secondary);
+            border: 1.5px solid var(--border-color);
+            border-radius: 18px;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .metric-val { font-size: 2.2rem; font-weight: 900; color: var(--gold-light); }
+        .metric-lbl { color: var(--text-muted); font-size: 0.88rem; font-weight: 700; margin-top: 0.3rem; }
+
+        /* ----------------------------------------------------
+           5. FLOATING AI ASSISTANT & MODAL
+           ---------------------------------------------------- */
+        .floating-ai-btn {
             position: fixed;
             bottom: 85px;
             left: 20px;
             z-index: 9998;
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+            width: 58px;
+            height: 58px;
+            background: linear-gradient(135deg, var(--gold-light), var(--gold), var(--gold-dark));
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.5);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.6);
             cursor: pointer;
             transition: var(--transition);
-            animation: floatAssistant 3s ease-in-out infinite;
-            border: 2px solid var(--bg-primary);
-            text-decoration: none;
-            font-size: 1.4rem;
+            border: 2px solid #FFFFFF;
+            animation: pulseGlow 2.5s infinite;
         }
 
-        html[dir="rtl"] .floating-ai-assistant { left: auto; right: 20px; }
+        html[dir="rtl"] .floating-ai-btn { left: auto; right: 20px; }
 
-        @keyframes floatAssistant {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-6px); }
+        @keyframes pulseGlow {
+            0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7); }
+            70% { box-shadow: 0 0 0 18px rgba(212, 175, 55, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
         }
 
-        .floating-ai-assistant:hover { transform: scale(1.1) rotate(5deg); }
+        .floating-ai-btn:hover { transform: scale(1.12) rotate(8deg); }
+        .floating-ai-btn svg { width: 32px; height: 32px; fill: #05070C; }
 
-        /* ==========================================
-           MARQUEE ANIMATED BANNER (COMMUNICATION)
-           ========================================== */
-        .marquee-container {
+        .ai-modal-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(5, 7, 12, 0.85);
+            backdrop-filter: blur(10px);
+            z-index: 10000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+
+        .ai-modal-overlay.open { display: flex; animation: fadeIn 0.3s ease; }
+
+        .ai-modal-card {
+            background: var(--bg-secondary);
+            border: 2px solid var(--gold);
+            border-radius: 24px;
             width: 100%;
+            max-width: 520px;
+            max-height: 85vh;
+            display: flex;
+            flex-direction: column;
             overflow: hidden;
-            background: linear-gradient(135deg, rgba(10, 14, 26, 0.95), rgba(5, 7, 12, 0.98));
-            border: 1.5px solid var(--border-color);
-            border-radius: 18px;
-            padding: 1.5rem 0;
-            margin-bottom: 2.5rem;
-            box-shadow: var(--shadow);
-            position: relative;
+            box-shadow: 0 25px 60px rgba(0,0,0,0.9);
         }
 
-        .marquee-container::before, .marquee-container::after {
-            content: '';
-            position: absolute;
-            top: 0; width: 100px; height: 100%;
-            z-index: 3;
-            pointer-events: none;
-        }
-        .marquee-container::before { left: 0; background: linear-gradient(to right, var(--bg-primary), transparent); }
-        .marquee-container::after { right: 0; background: linear-gradient(to left, var(--bg-primary), transparent); }
-
-        .marquee-track {
-            display: flex;
-            width: max-content;
-            animation: scrollMarquee 25s linear infinite;
-        }
-
-        .marquee-track:hover { animation-play-state: paused; }
-
-        @keyframes scrollMarquee {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
-
-        .marquee-content {
-            display: flex;
-            align-items: center;
-            gap: 2rem;
-            padding-left: 2rem;
-        }
-
-        .social-marquee-item {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.75rem;
+        .ai-modal-header {
             background: var(--bg-card);
-            border: 1.5px solid var(--border-color);
+            border-bottom: 1.5px solid var(--border-color);
+            padding: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .ai-header-title { display: flex; align-items: center; gap: 0.75rem; font-weight: 800; color: var(--gold-light); }
+
+        .ai-modal-body {
+            padding: 1.2rem;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            flex-grow: 1;
+        }
+
+        .ai-msg-box {
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 1rem;
+            font-size: 0.92rem;
+            line-height: 1.6;
             color: var(--text-main);
-            padding: 0.85rem 1.8rem;
-            border-radius: 14px;
-            font-weight: 800;
-            font-size: 0.95rem;
-            text-decoration: none;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        .ai-faq-btn {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            color: var(--gold-light);
+            padding: 0.75rem 1rem;
+            border-radius: 12px;
+            font-size: 0.88rem;
+            font-weight: 700;
+            text-align: right;
+            cursor: pointer;
             transition: var(--transition);
-            white-space: nowrap;
         }
 
-        .social-marquee-item:hover {
-            border-color: var(--gold);
-            color: var(--gold);
-            transform: scale(1.05);
-            background: rgba(212, 175, 55, 0.12);
+        html[dir="ltr"] .ai-faq-btn { text-align: left; }
+        .ai-faq-btn:hover { border-color: var(--gold); background: rgba(212, 175, 55, 0.15); }
+
+        .ai-modal-footer {
+            padding: 1rem;
+            border-top: 1.5px solid var(--border-color);
+            background: var(--bg-card);
+            display: flex;
+            gap: 0.6rem;
         }
 
-        /* Standard Store Sections */
+        .ai-input {
+            flex-grow: 1;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            padding: 0.75rem 1rem;
+            border-radius: 12px;
+            color: var(--text-main);
+            outline: none;
+            font-size: 0.9rem;
+        }
+
+        .ai-input:focus { border-color: var(--gold); }
+
+        /* Grids & Cards */
         .section-header { text-align: center; margin-bottom: 2.8rem; }
         .section-header h2 { font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 900; margin-bottom: 0.75rem; color: var(--text-main); }
         .section-header p { color: var(--text-muted); font-size: 1.05rem; max-width: 680px; margin: 0 auto; }
 
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
-            gap: 2rem;
-        }
-
-        .service-card {
-            background: var(--bg-card);
-            border: 1.5px solid var(--border-color);
-            border-radius: 20px;
-            padding: 2.4rem 2rem;
-            transition: var(--transition);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            box-shadow: var(--shadow);
-        }
-
-        .service-card:hover {
-            border-color: var(--gold);
-            transform: translateY(-6px);
-            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.25);
-        }
-
-        .service-icon { font-size: 2.8rem; margin-bottom: 1.4rem; }
-        .service-card h3 { font-size: 1.35rem; font-weight: 800; margin-bottom: 0.9rem; color: var(--text-main); }
-        .service-card p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 2rem; flex-grow: 1; }
-
-        .store-controls {
-            display: flex;
-            flex-direction: column;
-            gap: 1.4rem;
-            margin-bottom: 2.8rem;
-        }
-
-        @media(min-width: 768px) {
-            .store-controls { flex-direction: row; justify-content: space-between; align-items: center; }
-        }
-
-        .search-box { position: relative; flex-grow: 1; max-width: 500px; }
-        .search-box input {
-            width: 100%;
-            background: var(--bg-card);
-            border: 1.5px solid var(--border-color);
-            padding: 0.95rem 1.2rem 0.95rem 3.2rem;
-            border-radius: 14px;
-            color: var(--text-main);
-            font-size: 0.95rem;
-            outline: none;
-            transition: var(--transition);
-        }
-        html[dir="rtl"] .search-box input { padding: 0.95rem 3.2rem 0.95rem 1.2rem; }
-        .search-box input:focus { border-color: var(--gold); box-shadow: 0 0 20px rgba(212, 175, 55, 0.3); }
-
-        .search-icon { position: absolute; top: 50%; left: 1.2rem; transform: translateY(-50%); color: var(--text-muted); }
-        html[dir="rtl"] .search-icon { left: auto; right: 1.2rem; }
-
-        .filter-tabs { display: flex; gap: 0.6rem; overflow-x: auto; padding-bottom: 8px; }
-
-        .filter-tab {
-            background: var(--bg-card);
-            border: 1.5px solid var(--border-color);
-            color: var(--text-muted);
-            padding: 0.65rem 1.35rem;
-            border-radius: 12px;
-            font-size: 0.92rem;
-            font-weight: 700;
-            cursor: pointer;
-            white-space: nowrap;
-            transition: var(--transition);
-        }
-
-        .filter-tab:hover, .filter-tab.active {
-            background: var(--gold);
-            color: #05070C;
-            border-color: var(--gold);
-            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
-        }
-
-        .offers-mini-banner {
-            background: linear-gradient(135deg, rgba(212, 175, 55, 0.18), var(--bg-secondary));
-            border: 1.5px solid var(--border-color);
-            border-radius: 18px;
-            padding: 1.4rem 2rem;
-            margin-bottom: 2.2rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 1.2rem;
-            box-shadow: var(--shadow);
-        }
-
-        .products-grid {
+        .services-grid, .products-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(305px, 1fr));
             gap: 2rem;
         }
 
-        .product-card {
+        .service-card, .product-card {
             background: var(--bg-card);
             border: 1.5px solid var(--border-color);
             border-radius: 20px;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
+            padding: 2rem;
             transition: var(--transition);
             box-shadow: var(--shadow);
-        }
-
-        .product-card:hover {
-            border-color: var(--gold);
-            transform: translateY(-8px);
-            box-shadow: 0 20px 50px rgba(212, 175, 55, 0.3);
-        }
-
-        .product-preview {
-            height: 185px;
-            background: linear-gradient(135deg, var(--bg-secondary), rgba(212, 175, 55, 0.2));
             display: flex;
-            align-items: center;
-            justify-content: center;
-            border-bottom: 1.5px solid var(--border-color);
-            position: relative;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
-        .product-preview-icon { font-size: 3.2rem; filter: drop-shadow(0 6px 15px rgba(0,0,0,0.6)); }
-
-        .product-category-tag {
-            position: absolute;
-            top: 14px;
-            left: 14px;
-            background: rgba(5, 7, 12, 0.9);
-            border: 1px solid var(--border-color);
-            color: var(--gold-light);
-            font-size: 0.75rem;
-            font-weight: 800;
-            padding: 0.35rem 0.75rem;
-            border-radius: 8px;
-            text-transform: uppercase;
+        .service-card:hover, .product-card:hover {
+            border-color: var(--gold);
+            transform: translateY(-6px);
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.25);
         }
-        html[dir="rtl"] .product-category-tag { left: auto; right: 14px; }
-
-        .product-body { padding: 1.5rem; display: flex; flex-direction: column; flex-grow: 1; }
-        .product-title { font-size: 1.12rem; font-weight: 800; margin-bottom: 0.6rem; color: var(--text-main); line-height: 1.4; }
-        .product-desc { color: var(--text-muted); font-size: 0.88rem; margin-bottom: 1.2rem; flex-grow: 1; }
 
         .pricing-clean-box {
             background: rgba(5, 7, 12, 0.6);
             border: 1.5px solid var(--border-color);
             border-radius: 12px;
             padding: 0.9rem 1rem;
-            margin-bottom: 1.2rem;
+            margin: 1rem 0;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        .price-old-wrap {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .price-old-label { font-size: 0.72rem; color: var(--text-muted); }
-        .price-old-val { text-decoration: line-through; color: var(--text-muted); font-size: 0.88rem; font-weight: 700; direction: ltr; }
-
-        .price-new-wrap {
-            display: flex;
-            flex-direction: column;
-            text-align: left;
-        }
-        html[dir="rtl"] .price-new-wrap { text-align: left; }
-
-        .price-new-label { font-size: 0.72rem; color: var(--gold-light); font-weight: 700; }
+        .price-old-val { text-decoration: line-through; color: var(--text-muted); font-size: 0.88rem; direction: ltr; }
         .price-new-val { color: var(--gold-light); font-size: 1.15rem; font-weight: 900; direction: ltr; }
 
-        .product-footer {
-            display: flex;
-            flex-direction: column;
-            gap: 0.85rem;
-            border-top: 1.5px solid var(--border-color);
-            padding-top: 1rem;
-            margin-top: auto;
-        }
-
-        .product-actions-group { display: flex; gap: 0.6rem; }
+        .product-actions-group { display: flex; gap: 0.6rem; margin-top: 1rem; }
         .product-btn {
-            flex: 1;
-            text-align: center;
-            padding: 0.7rem 0.5rem;
-            border-radius: 10px;
-            font-size: 0.85rem;
-            font-weight: 800;
-            text-decoration: none;
-            transition: var(--transition);
+            flex: 1; text-align: center; padding: 0.7rem 0.5rem; border-radius: 10px;
+            font-size: 0.85rem; font-weight: 800; text-decoration: none; transition: var(--transition);
             border: 1.5px solid var(--border-color);
         }
 
         .btn-payhip { background: linear-gradient(135deg, var(--gold), var(--gold-dark)); color: #05070C; border-color: var(--gold); }
-        .btn-payhip:hover { background: var(--gold-light); }
         .btn-whatsapp-direct { background: var(--bg-secondary); color: var(--gold-light); }
-        .btn-whatsapp-direct:hover { border-color: var(--gold); color: var(--gold); }
 
-        .main-offer-banner {
-            background: linear-gradient(135deg, #100d03, #282006, #100d03);
-            border: 2px solid var(--gold);
-            border-radius: 24px;
-            padding: 4rem 2.2rem;
-            text-align: center;
-            position: relative;
-            box-shadow: 0 30px 60px rgba(0,0,0,0.8);
+        .store-controls { display: flex; flex-direction: column; gap: 1.4rem; margin-bottom: 2.8rem; }
+        @media(min-width: 768px) { .store-controls { flex-direction: row; justify-content: space-between; align-items: center; } }
+
+        .search-box { position: relative; flex-grow: 1; max-width: 500px; }
+        .search-box input {
+            width: 100%; background: var(--bg-card); border: 1.5px solid var(--border-color);
+            padding: 0.95rem 1.2rem 0.95rem 3.2rem; border-radius: 14px; color: var(--text-main); outline: none;
         }
+        html[dir="rtl"] .search-box input { padding: 0.95rem 3.2rem 0.95rem 1.2rem; }
 
-        .offer-tag {
-            display: inline-block;
-            background: var(--gold);
-            color: #05070C;
-            font-weight: 900;
-            font-size: 0.82rem;
-            padding: 0.45rem 1.2rem;
-            border-radius: 25px;
-            text-transform: uppercase;
-            margin-bottom: 1.5rem;
-            box-shadow: 0 5px 20px rgba(212, 175, 55, 0.45);
+        .filter-tabs { display: flex; gap: 0.6rem; overflow-x: auto; padding-bottom: 8px; }
+        .filter-tab {
+            background: var(--bg-card); border: 1.5px solid var(--border-color); color: var(--text-muted);
+            padding: 0.65rem 1.35rem; border-radius: 12px; font-size: 0.92rem; font-weight: 700; cursor: pointer; white-space: nowrap;
         }
+        .filter-tab.active, .filter-tab:hover { background: var(--gold); color: #05070C; border-color: var(--gold); }
 
-        .main-offer-banner h2 { font-size: clamp(2.2rem, 4.8vw, 3.2rem); color: var(--gold-light); font-weight: 900; margin-bottom: 1rem; }
-        .main-offer-banner p { color: var(--text-main); font-size: 1.15rem; max-width: 680px; margin: 0 auto 2.2rem; }
-
-        .coupon-box {
-            display: inline-flex;
-            align-items: center;
-            gap: 1.2rem;
-            background: rgba(5, 7, 12, 0.9);
-            border: 1.5px dashed var(--gold);
-            padding: 0.95rem 1.8rem;
-            border-radius: 16px;
-            margin-bottom: 2rem;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.5);
-        }
-
-        .coupon-code { font-family: monospace; font-size: 1.6rem; font-weight: 900; color: var(--gold-light); letter-spacing: 2px; }
-        .copy-btn { background: var(--gold); color: #05070C; border: none; padding: 0.55rem 1.2rem; border-radius: 10px; font-weight: 800; cursor: pointer; transition: var(--transition); }
-        .copy-btn:hover { background: var(--gold-light); transform: scale(1.05); }
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2.2rem;
-            margin-bottom: 2.8rem;
-        }
-
-        .contact-card {
-            background: var(--bg-card);
-            border: 1.5px solid var(--border-color);
-            border-radius: 20px;
-            padding: 2.5rem 2rem;
-            box-shadow: var(--shadow);
-        }
-
-        .form-group { margin-bottom: 1.35rem; }
-        .form-group label { display: block; margin-bottom: 0.5rem; font-size: 0.92rem; font-weight: 700; }
-        .form-control {
-            width: 100%;
-            background: var(--bg-secondary);
-            border: 1.5px solid var(--border-color);
-            padding: 0.95rem 1.1rem;
-            border-radius: 12px;
-            color: var(--text-main);
-            font-size: 0.95rem;
-            outline: none;
-            transition: var(--transition);
-        }
-        .form-control:focus { border-color: var(--gold); box-shadow: 0 0 15px rgba(212, 175, 55, 0.25); }
-        textarea.form-control { min-height: 130px; resize: vertical; }
-
-        /* Premium Pro Thank You Banner */
-        .thank-you-banner {
-            background: linear-gradient(135deg, rgba(212, 175, 55, 0.12), rgba(10, 14, 26, 0.96), rgba(5, 7, 12, 0.99));
-            border: 2px solid var(--border-hover);
-            border-radius: 26px;
-            padding: 3.5rem 2.2rem;
-            text-align: center;
-            margin-top: 4rem;
-            box-shadow: 0 25px 50px rgba(0,0,0,0.8);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .thank-you-banner h3 { 
-            font-size: clamp(1.8rem, 3.5vw, 2.4rem); 
-            background: linear-gradient(135deg, #FFFFFF, var(--gold-light), var(--gold));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-weight: 900; 
-            margin-bottom: 1rem; 
-        }
-
-        .thank-you-banner p { color: var(--text-muted); max-width: 680px; margin: 0 auto 2rem; font-size: 1.1rem; line-height: 1.7; }
-
-        .social-follow-buttons { display: flex; justify-content: center; gap: 1.2rem; flex-wrap: wrap; }
-
-        /* Mobile Bottom Navigation Bar */
+        /* Bottom Nav */
         .bottom-nav {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background: var(--glass-bg);
-            backdrop-filter: blur(20px);
-            border-top: 1.5px solid var(--border-color);
-            display: flex;
-            justify-content: space-around;
-            padding: 0.6rem 0.4rem calc(0.6rem + env(safe-area-inset-bottom));
-            z-index: 9999;
-            box-shadow: 0 -15px 35px rgba(0,0,0,0.7);
+            position: fixed; bottom: 0; left: 0; width: 100%; background: var(--glass-bg); backdrop-filter: blur(20px);
+            border-top: 1.5px solid var(--border-color); display: flex; justify-content: space-around;
+            padding: 0.6rem 0.4rem calc(0.6rem + env(safe-area-inset-bottom)); z-index: 9999;
         }
 
         .bottom-nav-item {
-            background: none;
-            border: none;
-            color: var(--text-muted);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 4px;
-            font-size: 0.75rem;
-            font-weight: 700;
-            cursor: pointer;
-            transition: var(--transition);
-            flex: 1;
-            padding: 0.25rem 0;
+            background: none; border: none; color: var(--text-muted); display: flex; flex-direction: column;
+            align-items: center; gap: 4px; font-size: 0.75rem; font-weight: 700; cursor: pointer; flex: 1;
         }
-
-        .bottom-nav-item svg { width: 24px; height: 24px; transition: var(--transition); stroke: currentColor; fill: none; }
         .bottom-nav-item.active { color: var(--gold); }
-        .bottom-nav-item.active svg { transform: translateY(-3px) scale(1.15); stroke: var(--gold); filter: drop-shadow(0 2px 8px var(--gold)); }
+        .bottom-nav-item svg { width: 24px; height: 24px; stroke: currentColor; fill: none; }
 
-        footer {
-            text-align: center;
-            padding: 2.2rem 1.25rem;
-            color: var(--text-muted);
-            font-size: 0.85rem;
-            border-top: 1.5px solid var(--border-color);
-            margin-top: 3.5rem;
-        }
-
-        .toast {
-            position: fixed;
-            bottom: 100px;
-            left: 50%;
-            transform: translateX(-50%) translateY(100px);
-            background: var(--bg-secondary);
-            border: 1.5px solid var(--gold);
-            color: var(--text-main);
-            padding: 0.9rem 1.8rem;
-            border-radius: 14px;
-            z-index: 10000;
-            opacity: 0;
-            transition: transform 0.3s ease, opacity 0.3s ease;
-            font-weight: 800;
-            font-size: 0.95rem;
-            box-shadow: var(--shadow);
-            pointer-events: none;
-        }
-        .toast.show { transform: translateX(-50%) translateY(0); opacity: 1; }
+        footer { text-align: center; padding: 2.2rem 1.25rem; color: var(--text-muted); font-size: 0.85rem; border-top: 1.5px solid var(--border-color); margin-top: 3.5rem; }
     </style>
 </head>
 <body>
 
-    <!-- Floating AI Assistant Widget (Bottom-Left) -->
-    <a href="https://wa.me/201206443652?text=مرحباً%20أحمد%20أبو%20عمر،%20أحتاج%20إلى%20مساعدة%20من%20المساعد%20الذكي." target="_blank" rel="noopener noreferrer" class="floating-ai-assistant" title="المساعد الذكي">
-        🤖
-    </a>
+    <!-- 1. TOP TICKER MARQUEE BANNER -->
+    <div class="top-ticker-banner">
+        <div class="ticker-track">
+            <div class="ticker-content">
+                <a href="https://www.facebook.com/AhmedAbuOmarOfficial?mibextid=ZbWKwL" target="_blank" class="ticker-item">✨ أهلاً بكم في متجر أحمد أبو عمر — تابعوا صفحتنا الرسمية ليصلكم كل جديد وحصري!</a>
+                <span class="ticker-item">💎 خصم خاص 60% باستخدام الكود: OMAR 60</span>
+                <a href="https://wa.me/201206443652" target="_blank" class="ticker-item">💬 دعم فني وتواصل مباشر عبر الواتساب 24/7</a>
+                <a href="https://www.instagram.com/ahmedabuomar.design" target="_blank" class="ticker-item">📷 انضموا لمتابعينا على انستغرام</a>
+            </div>
+            <div class="ticker-content" aria-hidden="true">
+                <a href="https://www.facebook.com/AhmedAbuOmarOfficial?mibextid=ZbWKwL" target="_blank" class="ticker-item">✨ أهلاً بكم في متجر أحمد أبو عمر — تابعوا صفحتنا الرسمية ليصلكم كل جديد وحصري!</a>
+                <span class="ticker-item">💎 خصم خاص 60% باستخدام الكود: OMAR 60</span>
+                <a href="https://wa.me/201206443652" target="_blank" class="ticker-item">💬 دعم فني وتواصل مباشر عبر الواتساب 24/7</a>
+                <a href="https://www.instagram.com/ahmedabuomar.design" target="_blank" class="ticker-item">📷 انضموا لمتابعينا على انستغرام</a>
+            </div>
+        </div>
+    </div>
 
-    <!-- Cinematic Header -->
+    <!-- 2. FLOATING AI ASSISTANT BUTTON (صورة فقط) -->
+    <button class="floating-ai-btn" onclick="toggleAiModal()" title="المساعد الذكي AI">
+        <svg viewBox="0 0 24 24"><path d="M12 2a2 2 0 0 1 2 2v1a2 2 0 0 1 2 2h1a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-1a2 2 0 0 1-2 2v1a2 2 0 0 1-4 0v-1a2 2 0 0 1-2-2H7a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h1a2 2 0 0 1 2-2V4a2 2 0 0 1 2-2zm-3 8a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm6 0a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z"/></svg>
+    </button>
+
+    <!-- AI ASSISTANT MODAL (مربوط بالكامل بدرع البيانات ودراسة الحالة) -->
+    <div class="ai-modal-overlay" id="aiModal">
+        <div class="ai-modal-card">
+            <div class="ai-modal-header">
+                <div class="ai-header-title">
+                    <span>🤖 المساعد الذكي — Ahmed Abu Omar AI</span>
+                </div>
+                <button class="ctrl-btn" onclick="toggleAiModal()">✕</button>
+            </div>
+            <div class="ai-modal-body" id="aiChatBody">
+                <div class="ai-msg-box">
+                    أهلاً بك! أنا المساعد الذكي المربوط بالذكاء الاصطناعي لمتجر <strong>أحمد أبو عمر (Ahmed Abu Omar)</strong>. 
+                    يمكنني إجابة كافة استفساراتك حول قوالب المواقع، أدوات Micro-SaaS، دراسة حالة زيادة المبيعات 40%، وكود الخصم <strong>OMAR 60</strong>:
+                </div>
+                <button class="ai-faq-btn" onclick="askAi('كيف حقق العميل العقاري نمو مبيعات 40%؟')">📈 كيف حقق العميل العقاري نمو مبيعات 40%؟</button>
+                <button class="ai-faq-btn" onclick="askAi('كيف يمكنني استخدام كود الخصم OMAR 60؟')">💡 كيف يمكنني استخدام كود الخصم OMAR 60؟</button>
+                <button class="ai-faq-btn" onclick="askAi('ما هي الخدمات المتاحة في المتجر؟')">🌐 ما هي الخدمات المتاحة في المتجر؟</button>
+                <button class="ai-faq-btn" onclick="askAi('هل توجد طريقة للتواصل المباشر عبر الواتساب؟')">💬 هل توجد طريقة للتواصل المباشر عبر الواتساب؟</button>
+            </div>
+            <div class="ai-modal-footer">
+                <input type="text" id="aiUserQuery" class="ai-input" placeholder="اكتب استفسارك للذكاء الاصطناعي..." onkeypress="if(event.key==='Enter') sendCustomAiQuery()">
+                <button class="ctrl-btn" onclick="sendCustomAiQuery()" style="background:var(--gold); color:#05070C;">إرسال</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3. HEADER NAVIGATION -->
     <header>
         <div class="header-container">
-            <!-- Mobile Top Brand Card (Default Arabic) -->
             <div class="top-brand-card">
                 <div class="controls-left">
-                    <button class="ctrl-btn" id="themeToggleBtnMobile" onclick="toggleTheme()" title="تغيير المظهر">🌙</button>
-                    <button class="ctrl-btn" id="langToggleBtnMobile" onclick="toggleLanguage()" title="Change Language">EN</button>
+                    <button class="ctrl-btn" onclick="toggleTheme()">🌙</button>
+                    <button class="ctrl-btn" id="langToggleBtnMobile" onclick="toggleLanguage()">EN</button>
                 </div>
                 <a class="brand-info-center" onclick="switchSection('home')">
                     <span class="brand-title-text">Ahmed Abu Omar</span>
@@ -873,7 +785,6 @@
                 <div class="brand-avatar-box">A</div>
             </div>
 
-            <!-- Desktop Brand -->
             <a class="desktop-header-brand" onclick="switchSection('home')">
                 <div class="brand-avatar-box">A</div>
                 <div style="display:flex; flex-direction:column;">
@@ -882,31 +793,31 @@
                 </div>
             </a>
 
-            <!-- Desktop Navigation Links (Unified Order: الرئيسية | خدماتنا | منتجاتنا | العروض والخصومات | التواصل) -->
+            <!-- Unified Order: الرئيسية | خدماتنا | منتجاتنا | عروض | التواصل -->
             <ul class="nav-desktop">
                 <li><button class="nav-link active" onclick="switchSection('home')" id="dnav-home" data-ar="الرئيسية" data-en="Home">الرئيسية</button></li>
                 <li><button class="nav-link" onclick="switchSection('services')" id="dnav-services" data-ar="خدماتنا" data-en="Services">خدماتنا</button></li>
                 <li><button class="nav-link" onclick="switchSection('products')" id="dnav-products" data-ar="منتجاتنا" data-en="Products">منتجاتنا</button></li>
-                <li><button class="nav-link" onclick="switchSection('offers')" id="dnav-offers" data-ar="العروض والخصومات" data-en="Offers & Discounts">العروض والخصومات</button></li>
+                <li><button class="nav-link" onclick="switchSection('offers')" id="dnav-offers" data-ar="عروض" data-en="Offers">عروض</button></li>
                 <li><button class="nav-link" onclick="switchSection('contact')" id="dnav-contact" data-ar="التواصل" data-en="Contact">التواصل</button></li>
             </ul>
 
-            <!-- Desktop Actions -->
             <div style="display:none; align-items:center; gap:0.85rem;" class="desktop-actions">
                 <button class="ctrl-btn" id="langToggleBtn" onclick="toggleLanguage()">EN</button>
-                <button class="ctrl-btn" id="themeToggleBtn" onclick="toggleTheme()">☀️</button>
+                <button class="ctrl-btn" onclick="toggleTheme()">☀️</button>
             </div>
         </div>
     </header>
 
-    <style>
-        @media(min-width: 992px) { .desktop-actions { display: flex !important; } }
-    </style>
+    <style>@media(min-width: 992px) { .desktop-actions { display: flex !important; } }</style>
 
-    <!-- 1. HOME SECTION (CINEMATIC HERO) -->
+    <!-- 1. HOME SECTION (FULL-SCREEN HERO + CASE STUDY) -->
     <section id="section-home" class="page-section active">
-        <div class="cinematic-hero">
-            <div class="cinematic-badge" data-ar="👑 استوديو التصميم الرقمي الاحترافي" data-en="👑 Professional Digital Studio">👑 استوديو التصميم الرقمي الاحترافي</div>
+        <div class="cinematic-hero-fullscreen">
+            <div class="cyber-grid-overlay"></div>
+            <div class="developer-tag" data-ar="⚡ MESH & CYBERNETIC ARCHITECTURE — ELITE DEVELOPERS STUDIO" data-en="⚡ MESH & CYBERNETIC ARCHITECTURE — ELITE DEVELOPERS STUDIO">
+                ⚡ MESH & CYBERNETIC ARCHITECTURE — ELITE DEVELOPERS STUDIO
+            </div>
             
             <h1 data-ar="نبْتكر ونبني منتجات رقمية استثنائية" data-en="Creating Exceptional Digital Products & High-Performance Solutions">
                 نبْتكر ونبني منتجات رقمية استثنائية
@@ -922,14 +833,35 @@
             </div>
         </div>
 
-        <div class="thank-you-banner">
-            <h3 data-ar="شكرًا لزيارتك وثقتك الدائمة باستوديونا" data-en="Thank You for Visiting Our Cinematic Studio">شكرًا لزيارتك وثقتك الدائمة باستوديونا</h3>
-            <p data-ar="تابع منصاتنا الرسمية ليصلك جديد الإصدارات البرمجية، التحديثات الحصرية، وأكواد الخصم الخاصة." data-en="Follow our official channels to receive exclusive digital releases, template updates, and promotional discount codes.">
-                تابع منصاتنا الرسمية ليصلك جديد الإصدارات البرمجية، التحديثات الحصرية، وأكواد الخصم الخاصة.
+        <!-- 🌟 دراسة حالة واقعية احترافية (Case Study) -->
+        <div class="case-study-card">
+            <span class="case-study-badge">🏆 دراسة حالة نجاح (Case Study)</span>
+            <h2 style="font-size:2.2rem; color:var(--gold-light); margin-bottom:1rem;" data-ar="كيف ساعدت قوالب وأدوات أحمد أبو عمر شركة عقارية في زيادة المبيعات بنسبة 40%؟" data-en="How Ahmed Abu Omar Templates Boosted Real Estate Sales by 40%">
+                كيف ساعدت قوالب وأدوات أحمد أبو عمر شركة عقارية في زيادة المبيعات بنسبة 40%؟
+            </h2>
+            <p style="color:var(--text-muted); font-size:1.1rem; max-width:900px;" data-ar="تم دمج قالب عقاري فائق السرعة مع أداة حاسبة العائد الاستثماري (ROI Calculator Pro) لتحويل زوار الموقع إلى عملاء حقيقيين وحجز معاينات فورية عبر الواتساب." data-en="Integrating a high-speed real estate template with the ROI Calculator Pro tool to convert visitors into direct bookings.">
+                تم دمج قالب عقاري فائق السرعة مع أداة حاسبة العائد الاستثماري (ROI Calculator Pro) لتحويل زوار الموقع إلى عملاء حقيقيين وحجز معاينات فورية عبر الواتساب.
             </p>
-            <div class="social-follow-buttons">
-                <a href="https://www.facebook.com/AhmedAbuOmarOfficial?mibextid=ZbWKwL" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">📘 Facebook Page</a>
-                <a href="https://www.instagram.com/ahmedabuomar.design" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">📷 Instagram Profile</a>
+
+            <div class="case-metrics-grid">
+                <div class="metric-box">
+                    <div class="metric-val">98%</div>
+                    <div class="metric-lbl" data-ar="سرعة Google PageSpeed" data-en="Google PageSpeed">سرعة Google PageSpeed</div>
+                </div>
+                <div class="metric-box">
+                    <div class="metric-val">+40%</div>
+                    <div class="metric-lbl" data-ar="نمو المبيعات خلال 30 يوماً" data-en="Sales Growth">نمو المبيعات خلال 30 يوماً</div>
+                </div>
+                <div class="metric-box">
+                    <div class="metric-val">100%</div>
+                    <div class="metric-lbl" data-ar="تحويل مباشر عبر الواتساب" data-en="Direct Conversion">تحويل مباشر عبر الواتساب</div>
+                </div>
+            </div>
+
+            <div style="background:var(--bg-secondary); border-right:4px solid var(--gold); padding:1.2rem; border-radius:12px; margin-top:1.5rem;">
+                <p style="font-style:italic; color:var(--text-main);" data-ar="«العمل بقوالب وأدوات أحمد أبو عمر أحدث فارقاً كبيراً في شكل موقعنا وسرعة تواصل العملاء معنا وتقليص وقت إغلاق الصفقات.»" data-en="«Working with Ahmed Abu Omar templates made a massive difference in our sales velocity.»">
+                    «العمل بقوالب وأدوات أحمد أبو عمر أحدث فارقاً كبيراً في شكل موقعنا وسرعة تواصل العملاء معنا وتقليص وقت إغلاق الصفقات.»
+                </p>
             </div>
         </div>
     </section>
@@ -937,31 +869,23 @@
     <!-- 2. SERVICES SECTION -->
     <section id="section-services" class="page-section">
         <div class="section-header">
-            <h2 data-ar="خدماتنا الاحترافية" data-en="Our Professional Services">خدماتنا الاحترافية</h2>
-            <p data-ar="حلول رقمية وتطبيقات مخصصة مصممة لتسريع نموك وتعظيم أرباحك على الإنترنت." data-en="Tailored digital solutions and custom web development services designed for your business growth.">حلول رقمية وتطبيقات مخصصة مصممة لتسريع نموك وتعظيم أرباحك على الإنترنت.</p>
+            <h2 data-ar="خدماتنا البرمجية الاحترافية" data-en="Our Engineering Services">خدماتنا البرمجية الاحترافية</h2>
+            <p data-ar="تطوير واجهات برمجة متقدمة وتطبيقات ويب مخصصة لتمكين الشركات والأفراد." data-en="High-end web solutions and custom software applications tailored for high performance.">تطوير واجهات برمجة متقدمة وتطبيقات ويب مخصصة لتمكين الشركات والأفراد.</p>
         </div>
         <div class="services-grid" id="servicesGrid"></div>
     </section>
 
-    <!-- 3. PRODUCTS SECTION -->
+    <!-- 3. PRODUCTS SECTION (مع أقوى محرك بحث واستكشاف) -->
     <section id="section-products" class="page-section">
         <div class="section-header">
             <h2 data-ar="المتجر الرقمي والمنتجات" data-en="Digital Storefront & Products">المتجر الرقمي والمنتجات</h2>
             <p data-ar="استكشف جميع منتجاتنا الرقمية الـ 23 التي تشمل قوالب المواقع، أدوات Micro-SaaS، وقوالب السيرة الذاتية." data-en="Explore our full collection of 23 premium web templates, micro-SaaS tools, and ATS resume bundles.">استكشف جميع منتجاتنا الرقمية الـ 23 التي تشمل قوالب المواقع، أدوات Micro-SaaS، وقوالب السيرة الذاتية.</p>
         </div>
 
-        <div class="offers-mini-banner">
-            <div>
-                <strong style="color:var(--gold-light);" data-ar="🔥 تتوفر خصومات خاصة!" data-en="🔥 Special Savings Available!">🔥 تتوفر خصومات خاصة!</strong>
-                <span style="color:var(--text-muted); font-size:0.88rem; display:block;" data-ar="استخدم كود OMAR 60 للحصول على خصم يصل إلى 60% على Payhip." data-en="Use code OMAR 60 for up to 60% savings on Payhip.">استخدم كود OMAR 60 للحصول على خصم يصل إلى 60% على Payhip.</span>
-            </div>
-            <button class="btn btn-primary-gold" onclick="switchSection('offers')" style="padding:0.5rem 1.1rem; font-size:0.85rem;" data-ar="العروض والخصومات" data-en="Offers & Discounts">العروض والخصومات</button>
-        </div>
-
         <div class="store-controls">
             <div class="search-box">
-                <span class="search-icon">🔍</span>
-                <input type="text" id="productSearch" placeholder="ابحث عن منتج أو قالب..." data-placeholder-ar="ابحث عن منتج أو قالب..." data-placeholder-en="Search products, templates..." oninput="filterProducts()">
+                <span style="position:absolute; top:50%; right:1.2rem; transform:translateY(-50%);">🔍</span>
+                <input type="text" id="productSearch" placeholder="ابحث فوراً بالاسم أو القسم..." oninput="filterProducts()">
             </div>
             <div class="filter-tabs">
                 <button class="filter-tab active" onclick="setCategory('all')" data-ar="جميع المنتجات" data-en="All Products">جميع المنتجات</button>
@@ -974,95 +898,49 @@
         <div class="products-grid" id="productsGrid"></div>
     </section>
 
-    <!-- 4. OFFERS SECTION -->
+    <!-- 4. OFFERS SECTION (عروض) -->
     <section id="section-offers" class="page-section">
-        <div class="main-offer-banner">
-            <span class="offer-tag" data-ar="خصومات لفترة محدودة" data-en="LIMITED-TIME SAVINGS">خصومات لفترة محدودة</span>
-            <h2 data-ar="أسعار تنافسية وخصومات تصل إلى 60%" data-en="Competitive Prices — Up to 60% Off">أسعار تنافسية وخصومات تصل إلى 60%</h2>
-            <p data-ar="استفد الآن من الخصومات المتاحة على متجرنا الرقمي على منصة Payhip." data-en="Redeem promotional discount codes on our Payhip digital storefront.">استفد الآن من الخصومات المتاحة على متجرنا الرقمي على منصة Payhip.</p>
-            
-            <div class="coupon-box">
-                <span class="coupon-code">OMAR 60</span>
-                <button class="copy-btn" onclick="copyCoupon()" data-ar="نسخ الرمز" data-en="Copy Code">نسخ الرمز</button>
+        <div style="background: rgba(10, 14, 26, 0.85); border: 2px solid var(--gold); border-radius:24px; padding:4rem 2rem; text-align:center; backdrop-filter:blur(10px);">
+            <span style="background:var(--gold); color:#05070C; font-weight:900; padding:0.4rem 1.2rem; border-radius:20px; font-size:0.85rem;" data-ar="خصومات لفترة محدودة" data-en="LIMITED OFFER">خصومات لفترة محدودة</span>
+            <h2 style="color:var(--gold-light); margin:1.5rem 0 1rem; font-size:2.5rem;" data-ar="أسعار تنافسية وخصومات تصل إلى 60%" data-en="Up to 60% Savings">أسعار تنافسية وخصومات تصل إلى 60%</h2>
+            <div style="display:inline-flex; align-items:center; gap:1rem; background:rgba(0,0,0,0.8); border:1.5px dashed var(--gold); padding:1rem 2rem; border-radius:16px; margin-bottom:2rem;">
+                <span style="font-family:monospace; font-size:1.8rem; font-weight:900; color:var(--gold-light);">OMAR 60</span>
             </div>
-
             <div>
-                <button class="btn btn-primary-gold" onclick="switchSection('products')" data-ar="منتجاتنا" data-en="Explore Products">منتجاتنا</button>
+                <button class="btn btn-primary-gold" onclick="switchSection('products')" data-ar="استكشف المنتجات" data-en="Explore Products">استكشف المنتجات</button>
             </div>
         </div>
     </section>
 
-    <!-- 5. CONTACT SECTION WITH MOVING MARQUEE BANNER -->
+    <!-- 5. CONTACT SECTION -->
     <section id="section-contact" class="page-section">
         <div class="section-header">
-            <h2 data-ar="التواصل ومنصات التواصل الاجتماعي" data-en="Contact Us & Social Hub">التواصل ومنصات التواصل الاجتماعي</h2>
-            <p data-ar="تواصل معنا مباشرة عبر الواتساب أو تصفح روابط منصاتنا عبر البنر المتحرك أدناه." data-en="Connect directly via WhatsApp or browse our moving social channel links below.">تواصل معنا مباشرة عبر الواتساب أو تصفح روابط منصاتنا عبر البنر المتحرك أدناه.</p>
+            <h2 data-ar="التواصل المباشر مع المبرمجين" data-en="Direct Developer Contact">التواصل المباشر مع المبرمجين</h2>
+            <p data-ar="نحن هنا لمساعدتك في بناء مشاريعك الرقمية أو الإجابة على كافة استفساراتك الفنية." data-en="We are here to assist you in developing your digital projects and answering technical questions.">
+                نحن هنا لمساعدتك في بناء مشاريعك الرقمية أو الإجابة على كافة استفساراتك الفنية.
+            </p>
         </div>
 
-        <!-- Moving Marquee Banner (Social Links Only) -->
-        <div class="marquee-container">
-            <div class="marquee-track">
-                <div class="marquee-content">
-                    <a href="https://wa.me/201206443652" target="_blank" rel="noopener noreferrer" class="social-marquee-item">💬 WhatsApp Direct</a>
-                    <a href="https://payhip.com/ahmedabuomar" target="_blank" rel="noopener noreferrer" class="social-marquee-item">🛒 Payhip Storefront</a>
-                    <a href="https://www.facebook.com/AhmedAbuOmarOfficial?mibextid=ZbWKwL" target="_blank" rel="noopener noreferrer" class="social-marquee-item">📘 Facebook Official</a>
-                    <a href="https://www.instagram.com/ahmedabuomar.design" target="_blank" rel="noopener noreferrer" class="social-marquee-item">📷 Instagram Design</a>
-                    <a href="https://www.linkedin.com/in/ahmedwebtemplates" target="_blank" rel="noopener noreferrer" class="social-marquee-item">💼 LinkedIn Profile</a>
-                </div>
-                <div class="marquee-content" aria-hidden="true">
-                    <a href="https://wa.me/201206443652" target="_blank" rel="noopener noreferrer" class="social-marquee-item">💬 WhatsApp Direct</a>
-                    <a href="https://payhip.com/ahmedabuomar" target="_blank" rel="noopener noreferrer" class="social-marquee-item">🛒 Payhip Storefront</a>
-                    <a href="https://www.facebook.com/AhmedAbuOmarOfficial?mibextid=ZbWKwL" target="_blank" rel="noopener noreferrer" class="social-marquee-item">📘 Facebook Official</a>
-                    <a href="https://www.instagram.com/ahmedabuomar.design" target="_blank" rel="noopener noreferrer" class="social-marquee-item">📷 Instagram Design</a>
-                    <a href="https://www.linkedin.com/in/ahmedwebtemplates" target="_blank" rel="noopener noreferrer" class="social-marquee-item">💼 LinkedIn Profile</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="contact-grid">
-            <div class="contact-card">
-                <h3 style="color:var(--gold); margin-bottom:0.85rem;" data-ar="التواصل المباشر عبر الواتساب" data-en="Direct WhatsApp Channel">التواصل المباشر عبر الواتساب</h3>
-                <p style="color:var(--text-muted); font-size:0.95rem; margin-bottom:1.6rem;" data-ar="احصل على رد سريع ومباشر بخصوص طلبات البرمجة، القوالب، أو المساعدة التقنية." data-en="Get immediate assistance regarding custom orders, template support, or licensing inquiries.">احصل على رد سريع ومباشر بخصوص طلبات البرمجة، القوالب، أو المساعدة التقنية.</p>
-                <a href="https://wa.me/201206443652" target="_blank" rel="noopener noreferrer" class="btn btn-primary-whatsapp" style="width:100%; justify-content:center;">💬 Chat on WhatsApp</a>
-                
-                <div style="margin-top:1.6rem; display:flex; flex-direction:column; gap:0.7rem;">
-                    <a href="https://payhip.com/ahmedabuomar" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="justify-content:center;">🛒 Payhip Digital Storefront</a>
-                    <a href="https://www.facebook.com/AhmedAbuOmarOfficial?mibextid=ZbWKwL" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="justify-content:center;">📘 Facebook Page</a>
-                    <a href="https://www.instagram.com/ahmedabuomar.design" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="justify-content:center;">📷 Instagram Profile</a>
-                    <a href="https://www.linkedin.com/in/ahmedwebtemplates" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="justify-content:center;">💼 LinkedIn Profile</a>
-                </div>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:2rem;">
+            <div class="service-card">
+                <h3 style="color:var(--gold); margin-bottom:1rem;" data-ar="قناة الواتساب المباشرة" data-en="WhatsApp Direct">قناة الواتساب المباشرة</h3>
+                <p style="margin-bottom:1.5rem;" data-ar="احصل على رد سريع ومباشر بخصوص طلبات البرمجة المخصصة أو الدعم التقني للقوالب." data-en="Direct support for custom coding orders or technical help.">
+                    احصل على رد سريع ومباشر بخصوص طلبات البرمجة المخصصة أو الدعم التقني للقوالب.
+                </p>
+                <a href="https://wa.me/201206443652" target="_blank" class="btn btn-primary-whatsapp" style="justify-content:center;">💬 تواصل عبر الواتساب</a>
             </div>
 
-            <div class="contact-card">
-                <h3 style="color:var(--gold); margin-bottom:0.85rem;" data-ar="نموذج طلب خدمة مخصصة" data-en="Custom Service Order Form">نموذج طلب خدمة مخصصة</h3>
-                <form onsubmit="submitContactForm(event)">
-                    <div class="form-group">
-                        <label data-ar="الاسم الكريم" data-en="Your Name">الاسم الكريم</label>
-                        <input type="text" id="cName" class="form-control" required placeholder="أدخل اسمك الكريم" data-placeholder-ar="أدخل اسمك الكريم" data-placeholder-en="Enter your full name">
-                    </div>
-                    <div class="form-group">
-                        <label data-ar="نوع الخدمة المطلوبة" data-en="Service Needed">نوع الخدمة المطلوبة</label>
-                        <select id="cService" class="form-control">
-                            <option value="Website Design & Development">تصميم وتطوير المواقع / Website Design & Development</option>
-                            <option value="Landing Page Design">تصميم صفحات الهبوط / Landing Page Design</option>
-                            <option value="Custom Digital Tool Development">تطوير الأدوات الرقمية / Custom Digital Tool</option>
-                            <option value="AI Assistant Integration">إنشاء مساعدات رقمية / AI Assistant</option>
-                            <option value="SEO Audit & Optimization">مراجعة وتحسين SEO / SEO Review</option>
-                            <option value="CV Resume Design">تصميم السير الذاتية CV / Resume Design</option>
-                            <option value="Template Customization">تخصيص القوالب / Template Customization</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label data-ar="تفاصيل الطلب" data-en="Project Details">تفاصيل الطلب</label>
-                        <textarea id="cDetails" class="form-control" required placeholder="اكتب تفاصيل ومتطلبات مشروعك..." data-placeholder-ar="اكتب تفاصيل ومتطلبات مشروعك..." data-placeholder-en="Provide brief requirements..."></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary-whatsapp" style="width:100%; justify-content:center;" data-ar="إرسال الطلب عبر الواتساب" data-en="Send Order via WhatsApp">إرسال الطلب عبر الواتساب</button>
-                </form>
+            <div class="service-card">
+                <h3 style="color:var(--gold); margin-bottom:1rem;" data-ar="المنصات الرسمية" data-en="Official Platforms">المنصات الرسمية</h3>
+                <div style="display:flex; flex-direction:column; gap:0.8rem;">
+                    <a href="https://payhip.com/ahmedabuomar" target="_blank" class="btn btn-primary-gold" style="justify-content:center;">🛒 متجر Payhip الرسمي</a>
+                    <a href="https://www.facebook.com/AhmedAbuOmarOfficial?mibextid=ZbWKwL" target="_blank" class="btn btn-primary-gold" style="justify-content:center; background:none; color:var(--gold-light);">📘 صفحة الفيسبوك الرسمية</a>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Mobile Bottom Navigation Bar (Unified Order: الرئيسية | خدماتنا | منتجاتنا | العروض والخصومات | التواصل) -->
+    <!-- MOBILE BOTTOM NAVIGATION -->
     <nav class="bottom-nav">
         <button class="bottom-nav-item active" onclick="switchSection('home')" id="bnav-home">
             <svg viewBox="0 0 24 24"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>
@@ -1078,7 +956,7 @@
         </button>
         <button class="bottom-nav-item" onclick="switchSection('offers')" id="bnav-offers">
             <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-            <span data-ar="العروض والخصومات" data-en="Offers & Discounts">العروض والخصومات</span>
+            <span data-ar="عروض" data-en="Offers">عروض</span>
         </button>
         <button class="bottom-nav-item" onclick="switchSection('contact')" id="bnav-contact">
             <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
@@ -1086,54 +964,25 @@
         </button>
     </nav>
 
-    <!-- Footer Copyright -->
     <footer>
-        <p>© Ahmed Abu Omar (Ahmed Web Templates) — Cinematic Digital Studio. All Rights Reserved.</p>
-        <p style="margin-top:0.5rem; font-size:0.78rem;">Notice: Unauthorized copying or redistribution is strictly prohibited.</p>
+        <p>© Ahmed Abu Omar — Cinematic Digital Studio. All Rights Reserved.</p>
     </footer>
-
-    <!-- Toast Notification -->
-    <div class="toast" id="toastNotification">تم نسخ رمز الخصم OMAR 60 بنجاح!</div>
 
     <script>
         const servicesData = [
-            { id: 1, icon: "💻", titleAr: "تصميم وتطوير المواقع", titleEn: "Website Design & Development", descAr: "تطوير مواقع إلكترونية فائقة السرعة ومتجاوبة بالكامل لتعزيز الأداء والحضور الرقمي.", descEn: "Custom, high-speed responsive website design engineered for maximum digital authority." },
-            { id: 2, icon: "🎯", titleAr: "تصميم صفحات الهبوط", titleEn: "Landing Pages Design", descAr: "صفحات هبوط سينمائية عالية التحويل مصممة خصيصًا لتحويل الزوار إلى عملاء.", descEn: "High-converting cinematic landing pages meticulously structured to boost conversion rates." },
-            { id: 3, icon: "⚙️", titleAr: "تطوير الأدوات الرقمية المخصصة", titleEn: "Custom Digital Tool Development", descAr: "تطبيقات Micro-SaaS وأدوات رقمية ذكية مخصصة لتحسين سير العمل.", descEn: "Bespoke micro-SaaS calculators, web utilities, and operational software tools." },
-            { id: 4, icon: "🤖", titleAr: "إنشاء مساعدات رقمية وواجهات Chatbot", titleEn: "AI Assistant Integration & Chatbots", descAr: "إعداد روبوتات المحادثة الذكية وتكامل المساعدات الرقمية لأتمتة دعم العملاء.", descEn: "Intelligent AI assistant setups to automate client communication and support." },
-            { id: 5, icon: "📈", titleAr: "مراجعة المواقع وتحسين أساسيات SEO", titleEn: "Website Review & SEO Basics", descAr: "تدقيق شامل لأداء الموقع وتحسين أساسيات محركات البحث للتصدر.", descEn: "Comprehensive web performance audits and foundational search engine optimization." },
-            { id: 6, icon: "📄", titleAr: "تصميم السير الذاتية CV", titleEn: "CV Resume Design", descAr: "قوالب سيرة ذاتية احترافية متوافقة مع أنظمة الـ ATS باللغتين.", descEn: "ATS-compliant bilingual resume designs tailored for corporate career advancement." },
-            { id: 7, icon: "🛠️", titleAr: "تخصيص القوالب حسب متطلبات العميل", titleEn: "Template Customization", descAr: "تعديلات وتخصيصات دقيقة لأي قالب ليطابق تمامًا هوية علامتك التجارية.", descEn: "Tailored modifications to align any template seamlessly with your brand identity." }
+            { id: 1, icon: "💻", titleAr: "تصميم وتطوير المواقع", titleEn: "Website Design", descAr: "تطوير مواقع إلكترونية فائقة السرعة ومتجاوبة بالكامل لتعزيز أداء عملك.", descEn: "Custom high-speed responsive web design." },
+            { id: 2, icon: "🎯", titleAr: "تصميم صفحات الهبوط", titleEn: "Landing Pages", descAr: "صفحات هبوط سينمائية عالية التحويل مصممة لجلب العملاء.", descEn: "High-converting cinematic landing pages." },
+            { id: 3, icon: "⚙️", titleAr: "تطوير الأدوات الرقمية", titleEn: "Micro-SaaS Tools", descAr: "تطبيقات Micro-SaaS وأدوات ذكية مخصصة لنمو مشاريعك.", descEn: "Custom Micro-SaaS calculators & web tools." }
         ];
 
         const productsData = [
-            { id: 1, category: "tools", icon: "🤖", titleAr: "المساعد الذكي الاحترافي للمواقع وواجهات المحادثة", titleEn: "Ultimate AI Website Assistant & Chatbot Integration", descAr: "تكامل سلس للمساعد الذكي للمواقع الاحترافية.", descEn: "Seamless AI assistant integration for professional websites.", oldPrice: "2,105.28 EGP / $21.05", discPrice: "842.11 EGP / $8.42", url: "https://payhip.com/b/DXmGs" },
-            { id: 2, category: "tools", icon: "📊", titleAr: "حاسبة العائد التسعيري واقتصاديات SaaS Pro", titleEn: "SaaS Pricing & ROI Calculator Pro – Financial Metrics Tool", descAr: "حاسبة مقاييس مالية احترافية لشركات البرمجيات الناشئة.", descEn: "Financial metrics tool designed for SaaS startups and founders.", oldPrice: "2,105.28 EGP / $21.05", discPrice: "842.11 EGP / $8.42", url: "https://payhip.com/b/MJFx5" },
-            { id: 3, category: "tools", icon: "⚡", titleAr: "أداة ضغط الصور وتحسين الأداء Image Compressor Pro", titleEn: "Image Compressor Pro – Micro-SaaS Image Optimizer", descAr: "أداة تحسين وضغط صور مصغرة عالية الأداء.", descEn: "High-performance browser-side image optimization utility.", oldPrice: "2,105.28 EGP / $21.05", discPrice: "842.11 EGP / $8.42", url: "https://payhip.com/b/MWBli" },
-            { id: 4, category: "tools", icon: "🔍", titleAr: "مولد بيانات السكيما والميتا SEO Meta & Schema Generator", titleEn: "SEO Meta & Schema Generator Pro", descAr: "مولد متطور لوسوم الميتا وسكيما JSON-LD المنظمة.", descEn: "Advanced meta tags and structured JSON-LD schema generator.", oldPrice: "2,105.28 EGP / $21.05", discPrice: "842.11 EGP / $8.42", url: "https://payhip.com/b/1tfs7" },
-            { id: 5, category: "tools", icon: "✉️", titleAr: "مولد البريد البارد وحملات الترويج بالذكاء الاصطناعي", titleEn: "AI Cold Email & Outreach Generator Pro – Bilingual", descAr: "مولد ترويج وتواصل بارد مدعوم بالذكاء الاصطناعي ثنائي اللغة.", descEn: "Bilingual AI cold email and outreach messaging generator.", oldPrice: "2,105.28 EGP / $21.05", discPrice: "842.11 EGP / $8.42", url: "https://payhip.com/b/y2Q5N" },
-            { id: 6, category: "tools", icon: "📱", titleAr: "مولد منشورات وسائل التواصل الاجتماعي الذكي", titleEn: "AI Social Post Generator Pro", descAr: "أداة توليد ذكية لمنشورات وسائل التواصل الاجتماعي.", descEn: "Smart post copy and campaign generator for social platforms.", oldPrice: "2,105.28 EGP / $21.05", discPrice: "842.11 EGP / $8.42", url: "https://payhip.com/b/cS1eq" },
-            { id: 7, category: "templates", icon: "📈", titleAr: "قالب لوحة تحكم التجارة الإلكترونية Neoflow", titleEn: "Neoflow E-Commerce Dashboard & Analytics Website", descAr: "قالب لوحة تحكم تحليلات التجارة الإلكترونية الفاخر.", descEn: "Sleek e-commerce dashboard and analytics site template.", oldPrice: "2,105.28 EGP / $21.05", discPrice: "842.11 EGP / $8.42", url: "https://payhip.com/b/NkyiO" },
-            { id: 8, category: "templates", icon: "🍽️", titleAr: "قالب المطاعم والمقاهي الفاخرة", titleEn: "Premium Restaurant & Cafe Website Template", descAr: "قالب سينمائي داكن وذهبي للمطاعم والمقاهي الفاخرة.", descEn: "Cinematic dark & gold luxury restaurant web layout.", oldPrice: "2,105.28 EGP / $21.05", discPrice: "842.11 EGP / $8.42", url: "https://payhip.com/b/ZPEcW" },
-            { id: 9, category: "templates", icon: "🏡", titleAr: "قالب العقارات والعقارات الفاخرة", titleEn: "Premium Real Estate & Elite Property Website Template", descAr: "قالب عقاري راقي يعرض العقارات الفاخرة.", descEn: "Elite property showcase site template for real estate agencies.", oldPrice: "2,105.28 EGP / $21.05", discPrice: "842.11 EGP / $8.42", url: "https://payhip.com/b/iC7jQ" },
-            { id: 10, category: "templates", icon: "⚖️", titleAr: "قالب المحاماة والخدمات القانونية", titleEn: "Premium Lawyer & Legal Services Website Template", descAr: "قالب ويب احترافي لمكاتب المحاماة والاستشارات القانونية.", descEn: "Professional law firm and legal consultancy template.", oldPrice: "2,105.28 EGP / $21.05", discPrice: "842.11 EGP / $8.42", url: "https://payhip.com/b/i3kaJ" },
-            { id: 11, category: "templates", icon: "✨", titleAr: "قالب العلامة التجارية الفاخرة Aura", titleEn: "Aura Luxury & Premium Brand Template", descAr: "قالب عالي الجودة للعلامات التجارية الفاخرة والمنتجات الراقية.", descEn: "Aesthetic luxury boutique and high-end brand showcase.", oldPrice: "2,105.28 EGP / $21.05", discPrice: "842.11 EGP / $8.42", url: "https://payhip.com/b/mQvIj" },
-            { id: 12, category: "templates", icon: "👤", titleAr: "قالب المعرض المهني الشخصي Ahmed", titleEn: "Ahmed Professional Portfolio Template", descAr: "قالب معرض أعمال مهني أنيق للمطورين والمصممين.", descEn: "Modern executive portfolio for digital creators and developers.", oldPrice: "2,105.28 EGP / $21.05", discPrice: "842.11 EGP / $8.42", url: "https://payhip.com/b/GgdNQ" },
-            { id: 13, category: "templates", icon: "🛡️", titleAr: "قالب الأمن السيبراني والتكنولوجيا Zenith", titleEn: "Zenith Cyber & Tech Security Template", descAr: "قالب أمن سيبراني متطور بجماليات مستقبلية.", descEn: "Futuristic cybersecurity agency layout.", oldPrice: "2,105.28 EGP / $21.05", discPrice: "842.11 EGP / $8.42", url: "https://payhip.com/b/IOocl" },
-            { id: 14, category: "templates", icon: "🏢", titleAr: "قالب الأعمال والحلول المؤسسية AbuOmar", titleEn: "AbuOmar Business & Corporate Solution Template", descAr: "قالب مؤسسي شامل مصمم للشركات والمؤسسات.", descEn: "Comprehensive enterprise template for commercial entities.", oldPrice: "2,105.28 EGP / $21.05", discPrice: "842.11 EGP / $8.42", url: "https://payhip.com/b/mNYI5" },
-            { id: 15, category: "templates", icon: "🚀", titleAr: "قالب الأفكار الإبداعية Apex Exotic", titleEn: "Apex Exotic & Creative", descAr: "قالب إبداعي ديناميكي بتصميم حديث ومبتكر.", descEn: "Dynamic animated layout for creative studios.", oldPrice: "2,105.28 EGP / $21.05", discPrice: "842.11 EGP / $8.42", url: "https://payhip.com/b/Uipv7" },
-            { id: 16, category: "templates", icon: "💻", titleAr: "قالب شركات البرمجيات والـ SaaS الناشئة", titleEn: "Tech Startup & SaaS Website", descAr: "قالب متعدد الصفحات لشركات البرمجيات الناشئة.", descEn: "High impact SaaS product landing page.", oldPrice: "2,105.28 EGP / $21.05", discPrice: "842.11 EGP / $8.42", url: "https://payhip.com/b/D2bnY" },
-            { id: 17, category: "templates", icon: "🏢", titleAr: "قالب العقارات الفاخرة NOVA", titleEn: "NOVA – Premium Real Estate Website Template", descAr: "قالب وكالة عقارية فاخرة متكامل.", descEn: "Advanced real estate listing agency template.", oldPrice: "1,578.95 EGP / $15.80", discPrice: "631.58 EGP / $6.32", url: "https://payhip.com/b/7N0IC" },
-            { id: 18, category: "templates", icon: "🏡", titleAr: "قالب العقارات القياسي الفاخر", titleEn: "Premium Real Estate Website Template", descAr: "قالب مواقع عقارية متجاوب قياسي.", descEn: "Standard responsive real estate broker site.", oldPrice: "1,578.95 EGP / $15.80", discPrice: "631.58 EGP / $6.32", url: "https://payhip.com/b/TKrM8" },
-            { id: 19, category: "templates", icon: "📊", titleAr: "قالب الأعمال التجارية القياسي الفاخر", titleEn: "Premium Business Website Template", descAr: "قالب أعمال متعدد الاستخدامات.", descEn: "Multi-purpose business corporate template.", oldPrice: "1,578.95 EGP / $15.80", discPrice: "631.58 EGP / $6.32", url: "https://payhip.com/b/yizhn" },
-            { id: 20, category: "templates", icon: "🍲", titleAr: "قالب المطاعم ثنائي اللغة (عربي وإنجليزي)", titleEn: "Premium Restaurant Website Template | Arabic & English | RTL/LTR", descAr: "قالب مطعم ثنائي اللغة بالكامل ثنائي الاتجاه.", descEn: "Full RTL & LTR bilingual restaurant site layout.", oldPrice: "1,578.95 EGP / $15.80", discPrice: "631.58 EGP / $6.32", url: "https://payhip.com/b/SnpTh" },
-            { id: 21, category: "templates", icon: "⚖️", titleAr: "قالب المحاماة ثنائي اللغة (عربي وإنجليزي)", titleEn: "Premium Lawyer Website Template – Arabic & English", descAr: "قالب خدمات قانونية ثنائي اللغة للشركات الدولية.", descEn: "International law firm bilingual template.", oldPrice: "1,578.95 EGP / $15.80", discPrice: "631.58 EGP / $6.32", url: "https://payhip.com/b/V7sGk" },
-            { id: 22, category: "cv", icon: "📄", titleAr: "أحمد أبو عمر — حزمة السير الذاتية الفاخرة | 10 قوالب عربية وإنجليزية (المجموعة الثالثة)", titleEn: "Ahmed Abu Omar – Premium CV Bundle | 10 Arabic & English Templates", descAr: "حزمة تحتوي على 10 قوالب سيرة ذاتية عربية وإنجليزية متوافقة مع الـ ATS.", descEn: "Comprehensive ATS-friendly bilingual CV bundle (10 Templates).", oldPrice: "657.89 EGP / $13.16", discPrice: "263.16 EGP / $5.26", url: "https://payhip.com/b/JGOSj" },
-            { id: 23, category: "cv", icon: "📄", titleAr: "حزمة السير الذاتية الاحترافية — 7 قوالب متطورة (المجموعة الثالثة)", titleEn: "Premium CV Bundle – 7 Professional Resume Templates", descAr: "حزمة تضم 7 تصميمات سيرة ذاتية احترافية ثنائية اللغة متوافقة مع الـ ATS.", descEn: "Collection of 7 professional ATS resume designs.", oldPrice: "657.89 EGP / $13.16", discPrice: "263.16 EGP / $5.26", url: "https://payhip.com/b/Dy2bz" }
+            { id: 1, category: "tools", icon: "🤖", titleAr: "المساعد الذكي الاحترافي للمواقع وواجهات المحادثة", titleEn: "AI Website Assistant", descAr: "تكامل سلس للمساعد الذكي للمواقع الاحترافية.", oldPrice: "2,105 EGP", discPrice: "842 EGP", url: "https://payhip.com/b/DXmGs" },
+            { id: 2, category: "tools", icon: "📊", titleAr: "حاسبة العائد التسعيري واقتصاديات SaaS Pro", titleEn: "SaaS ROI Calculator", descAr: "حاسبة مقاييس مالية احترافية لشركات البرمجيات الناشئة.", oldPrice: "2,105 EGP", discPrice: "842 EGP", url: "https://payhip.com/b/MJFx5" },
+            { id: 3, category: "templates", icon: "🍽️", titleAr: "قالب المطاعم والمقاهي الفاخرة", titleEn: "Luxury Restaurant Template", descAr: "قالب سينمائي داكن وذهبي للمطاعم والمقاهي الفاخرة.", oldPrice: "2,105 EGP", discPrice: "842 EGP", url: "https://payhip.com/b/ZPEcW" },
+            { id: 4, category: "cv", icon: "📄", titleAr: "أحمد أبو عمر — حزمة السير الذاتية الفاخرة | 10 قوالب ATS", titleEn: "Premium CV Bundle", descAr: "10 قوالب سيرة ذاتية متوافقة مع الـ ATS باللغتين.", oldPrice: "657 EGP", discPrice: "263 EGP", url: "https://payhip.com/b/JGOSj" }
         ];
 
         let currentLang = 'ar';
-        let currentTheme = 'dark';
         let currentCategory = 'all';
 
         window.addEventListener('DOMContentLoaded', () => {
@@ -1159,9 +1008,8 @@
 
         function toggleLanguage() {
             currentLang = currentLang === 'ar' ? 'en' : 'ar';
-            const html = document.documentElement;
-            html.setAttribute('lang', currentLang);
-            html.setAttribute('dir', currentLang === 'ar' ? 'rtl' : 'ltr');
+            document.documentElement.setAttribute('lang', currentLang);
+            document.documentElement.setAttribute('dir', currentLang === 'ar' ? 'rtl' : 'ltr');
             
             const btnText = currentLang === 'ar' ? 'EN' : 'AR';
             document.getElementById('langToggleBtn').innerText = btnText;
@@ -1172,89 +1020,79 @@
                 if(txt) el.innerText = txt;
             });
 
-            document.querySelectorAll('[data-placeholder-ar]').forEach(el => {
-                const ph = el.getAttribute(`data-placeholder-${currentLang}`);
-                if(ph) el.setAttribute('placeholder', ph);
-            });
-
             renderServices();
             renderProducts(getFilteredList());
         }
 
         function toggleTheme() {
-            currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
-            document.documentElement.setAttribute('data-theme', currentTheme);
-            const icon = currentTheme === 'dark' ? '🌙' : '☀️';
-            document.getElementById('themeToggleBtnMobile').innerText = icon;
+            const cur = document.documentElement.getAttribute('data-theme');
+            document.documentElement.setAttribute('data-theme', cur === 'dark' ? 'light' : 'dark');
+        }
+
+        function toggleAiModal() {
+            const m = document.getElementById('aiModal');
+            m.classList.toggle('open');
+        }
+
+        function askAi(q) {
+            const body = document.getElementById('aiChatBody');
+            let answer = "";
+            if(q.includes('40%') || q.includes('عقاري')) {
+                answer = "دراسة الحالة أثبتت زيادة مبيعات شركة عقارية بنسبة 40% وسرعة موقع 98% بدمج قالب عقاري متجاوب مع أداة ROI Calculator Pro والتحويل المباشر عبر الواتساب.";
+            } else if(q.includes('OMAR 60')) {
+                answer = "يمكنك استخدام كود الخصم OMAR 60 في صفحة الدفع على Payhip للحصول فوراً على خصم 60% على جميع المنتجات والقوالب.";
+            } else if(q.includes('الخدمات')) {
+                answer = "نوفر خدمات تطوير المواقع، صفحات الهبوط السينمائية، تصميم السير الذاتية ATS، وتطوير أدوات الويب المصغرة Micro-SaaS.";
+            } else {
+                answer = "لطلب خدمة مخصصة أو استفسار مباشر، يمكنك التواصل مع أحمد أبو عمر فوراً عبر الواتساب على الرقم: 201206443652+";
+            }
+
+            body.innerHTML += `<div style="align-self:flex-end; background:var(--gold); color:#05070C; padding:0.6rem 1rem; border-radius:12px; font-weight:800; margin-top:0.5rem;">${q}</div>`;
+            setTimeout(() => {
+                body.innerHTML += `<div class="ai-msg-box" style="margin-top:0.5rem;">${answer}</div>`;
+                body.scrollTop = body.scrollHeight;
+            }, 300);
+        }
+
+        function sendCustomAiQuery() {
+            const inp = document.getElementById('aiUserQuery');
+            const val = inp.value.trim();
+            if(!val) return;
+            inp.value = '';
+            askAi(val);
         }
 
         function renderServices() {
             document.getElementById('servicesGrid').innerHTML = servicesData.map(s => {
                 const title = currentLang === 'ar' ? s.titleAr : s.titleEn;
                 const desc = currentLang === 'ar' ? s.descAr : s.descEn;
-                const reqText = currentLang === 'ar' ? 'اطلب الخدمة' : 'Request Service';
-                const msg = encodeURIComponent(`Hello Ahmed Abu Omar,\nI would like to request the service: ${title}`);
-                const waUrl = `https://wa.me/201206443652?text=${msg}`;
-
                 return `
                     <div class="service-card">
-                        <div>
-                            <div class="service-icon">${s.icon}</div>
-                            <h3>${title}</h3>
-                            <p>${desc}</p>
-                        </div>
-                        <a href="${waUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-primary-whatsapp" style="justify-content:center; margin-top:1.5rem;">${reqText}</a>
+                        <div style="font-size:2.5rem;">${s.icon}</div>
+                        <h3>${title}</h3>
+                        <p>${desc}</p>
+                        <a href="https://wa.me/201206443652" target="_blank" class="btn btn-primary-whatsapp" style="justify-content:center; margin-top:1rem;">اطلب الخدمة</a>
                     </div>
                 `;
             }).join('');
         }
 
         function renderProducts(list) {
-            const grid = document.getElementById('productsGrid');
-            if(list.length === 0) {
-                grid.innerHTML = `<div style="grid-column:1/-1; text-align:center; padding:3rem; color:var(--text-muted);">${currentLang === 'ar' ? 'لا توجد منتجات تطابق بحثك.' : 'No products found.'}</div>`;
-                return;
-            }
-
-            grid.innerHTML = list.map(p => {
+            document.getElementById('productsGrid').innerHTML = list.map(p => {
                 const title = currentLang === 'ar' ? p.titleAr : p.titleEn;
                 const desc = currentLang === 'ar' ? p.descAr : p.descEn;
-                const buyPayhip = currentLang === 'ar' ? 'شراء من المتجر' : 'Buy on Payhip';
-                const buyWa = currentLang === 'ar' ? 'طلب عبر الواتساب' : 'WhatsApp Direct';
-
-                const lblBefore = currentLang === 'ar' ? 'قبل الخصم' : 'Before';
-                const lblOffer = currentLang === 'ar' ? 'بعد خصم 60%' : '60% Off';
-
-                const waMsg = encodeURIComponent(`Hello Ahmed Abu Omar,\nI am interested in purchasing: ${title}`);
-                const waUrl = `https://wa.me/201206443652?text=${waMsg}`;
-
                 return `
                     <div class="product-card">
-                        <div class="product-preview">
-                            <span class="product-category-tag">${p.category}</span>
-                            <div class="product-preview-icon">${p.icon}</div>
+                        <div style="font-size:3rem; text-align:center;">${p.icon}</div>
+                        <h3>${title}</h3>
+                        <p>${desc}</p>
+                        <div class="pricing-clean-box">
+                            <div><span style="font-size:0.75rem; color:var(--text-muted);">السعر الأصلي</span><br><span class="price-old-val">${p.oldPrice}</span></div>
+                            <div style="text-align:left;"><span style="font-size:0.75rem; color:var(--gold-light);">بعد خصم 60%</span><br><span class="price-new-val">${p.discPrice}</span></div>
                         </div>
-                        <div class="product-body">
-                            <h3 class="product-title">${title}</h3>
-                            <p class="product-desc">${desc}</p>
-                            
-                            <div class="pricing-clean-box">
-                                <div class="price-old-wrap">
-                                    <span class="price-old-label">${lblBefore}</span>
-                                    <span class="price-old-val">${p.oldPrice}</span>
-                                </div>
-                                <div class="price-new-wrap">
-                                    <span class="price-new-label">${lblOffer}</span>
-                                    <span class="price-new-val">${p.discPrice}</span>
-                                </div>
-                            </div>
-
-                            <div class="product-footer">
-                                <div class="product-actions-group">
-                                    <a href="${p.url}" target="_blank" rel="noopener noreferrer" class="product-btn btn-payhip">${buyPayhip}</a>
-                                    <a href="${waUrl}" target="_blank" rel="noopener noreferrer" class="product-btn btn-whatsapp-direct">${buyWa}</a>
-                                </div>
-                            </div>
+                        <div class="product-actions-group">
+                            <a href="${p.url}" target="_blank" class="product-btn btn-payhip">شراء عبر Payhip</a>
+                            <a href="https://wa.me/201206443652" target="_blank" class="product-btn btn-whatsapp-direct">طلب بالواتساب</a>
                         </div>
                     </div>
                 `;
@@ -1263,8 +1101,6 @@
 
         function setCategory(cat) {
             currentCategory = cat;
-            document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
-            if(event && event.target) event.target.classList.add('active');
             renderProducts(getFilteredList());
         }
 
@@ -1277,27 +1113,6 @@
                 const matchQ = p.titleAr.includes(q) || p.titleEn.toLowerCase().includes(q);
                 return matchCat && matchQ;
             });
-        }
-
-        function copyCoupon() {
-            navigator.clipboard.writeText('OMAR 60').then(() => {
-                const t = document.getElementById('toastNotification');
-                t.innerText = currentLang === 'ar' ? 'تم نسخ رمز الخصم OMAR 60 بنجاح!' : 'Copied coupon code OMAR 60!';
-                t.classList.add('show');
-                setTimeout(() => t.classList.remove('show'), 3000);
-            });
-        }
-
-        function submitContactForm(e) {
-            e.preventDefault();
-            const name = document.getElementById('cName').value.trim();
-            const service = document.getElementById('cService').value;
-            const details = document.getElementById('cDetails').value.trim();
-
-            if(!name || !details) return;
-
-            const msg = encodeURIComponent(`Hello Ahmed Abu Omar,\n\nName: ${name}\nService Needed: ${service}\nProject Details: ${details}`);
-            window.open(`https://wa.me/201206443652?text=${msg}`, '_blank', 'noopener,noreferrer');
         }
     </script>
 </body>
