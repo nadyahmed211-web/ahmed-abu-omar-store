@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Ahmed Abu Omar — Premium Cinematic Digital Studio</title>
     <meta name="description" content="Ahmed Abu Omar — المتجر الرقمي السينمائي الفاخر لقوالب المواقع وأدوات الويب المصغرة والسير الذاتية الاحترافية.">
-    <meta name="keywords" content="Ahmed Abu Omar, أحمد أبو عمر, قوالب مواقع, Micro-SaaS, سير ذاتية, متجر رقمي">
     <link rel="canonical" href="https://nadyahmed211-web.github.io/ahmed-abu-omar-store/">
     
     <meta property="og:title" content="Ahmed Abu Omar — Premium Cinematic Digital Studio">
@@ -294,7 +293,7 @@
         }
 
         #section-home {
-            background: linear-gradient(135deg, rgba(5, 7, 12, 0.95) 0%, rgba(10, 14, 26, 0.98) 100%),
+            background: linear-gradient(135deg, rgba(5, 7, 12, 0.93) 0%, rgba(10, 14, 26, 0.97) 100%),
                         url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
             background-blend-mode: overlay;
         }
@@ -335,7 +334,6 @@
             border-color: var(--gold);
         }
 
-        /* الواجهة السينمائية بدون خطوط داخلية مزعجة */
         .cinematic-hero-fullscreen {
             min-height: calc(100vh - 120px);
             display: flex;
@@ -355,18 +353,19 @@
             position: absolute;
             top: -50%; left: -50%; width: 200%; height: 200%;
             background-image: 
-                linear-gradient(to right, rgba(212, 175, 55, 0.05) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(212, 175, 55, 0.05) 1px, transparent 1px);
-            background-size: 50px 50px;
+                linear-gradient(to right, rgba(212, 175, 55, 0.08) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(212, 175, 55, 0.08) 1px, transparent 1px);
+            background-size: 60px 60px;
             transform: perspective(600px) rotateX(45deg);
-            animation: gridMove 18s linear infinite;
+            animation: gridDynamicMove 15s linear infinite;
             pointer-events: none;
             z-index: 1;
         }
 
-        @keyframes gridMove {
-            0% { transform: perspective(600px) rotateX(45deg) translateY(0); }
-            100% { transform: perspective(600px) rotateX(45deg) translateY(50px); }
+        @keyframes gridDynamicMove {
+            0% { transform: perspective(600px) rotateX(45deg) translateY(0) scale(1); }
+            50% { transform: perspective(600px) rotateX(45deg) translateY(30px) scale(1.02); }
+            100% { transform: perspective(600px) rotateX(45deg) translateY(60px) scale(1); }
         }
 
         .developer-tag {
@@ -469,10 +468,10 @@
         }
 
         /* ----------------------------------------------------
-           4. CASE STUDY SECTION
+           4. CASE STUDY SECTION (دراسة حالة متحركة)
            ---------------------------------------------------- */
         .case-study-card {
-            background: rgba(10, 14, 26, 0.88);
+            background: rgba(10, 14, 26, 0.92);
             border: 2px solid var(--gold);
             border-radius: 28px;
             padding: 3rem 2rem;
@@ -481,6 +480,12 @@
             box-shadow: 0 25px 60px rgba(0,0,0,0.85);
             position: relative;
             overflow: hidden;
+            animation: caseStudyFloat 5s ease-in-out infinite alternate;
+        }
+
+        @keyframes caseStudyFloat {
+            0% { transform: translateY(0); box-shadow: 0 20px 50px rgba(212, 175, 55, 0.2); }
+            100% { transform: translateY(-6px); box-shadow: 0 30px 70px rgba(212, 175, 55, 0.4); }
         }
 
         .case-study-badge {
@@ -508,6 +513,12 @@
             border-radius: 18px;
             padding: 1.5rem;
             text-align: center;
+            transition: var(--transition);
+        }
+
+        .metric-box:hover {
+            border-color: var(--gold);
+            transform: scale(1.03);
         }
 
         .metric-val { font-size: 2.2rem; font-weight: 900; color: var(--gold-light); }
@@ -805,7 +816,7 @@
             <div class="ai-modal-body" id="aiChatBody">
                 <div class="ai-msg-box">
                     أهلاً بك! أنا المساعد الذكي المربوط بالذكاء الاصطناعي لمتجر <strong>أحمد أبو عمر (Ahmed Abu Omar)</strong>. 
-                    يمكنني إجابة كافة استفساراتك حول المنتجات الـ 23، خدماتنا، دراسات الحالة، وقسم "حول متجرنا":
+                    يمكنني إجابة كافة استفساراتك حول المنتجات الـ 23، دراسات الحالة، والخدمات الحصرية:
                 </div>
                 <button class="ai-faq-btn" onclick="askAi('من هو أحمد أبو عمر وما هو هذا الاستوديو الرقمي؟')">👑 من هو أحمد أبو عمر وما هو هذا الاستوديو الرقمي؟</button>
                 <button class="ai-faq-btn" onclick="askAi('كيف حقق العميل العقاري نمو مبيعات 40%؟')">📈 كيف حقق العميل العقاري نمو مبيعات 40%؟</button>
@@ -819,7 +830,7 @@
         </div>
     </div>
 
-    <!-- 3. HEADER NAVIGATION (الترتيب: الرئيسية | خدماتنا | منتجاتنا | عروض | التواصل | حول متجرنا) -->
+    <!-- 3. HEADER NAVIGATION -->
     <header>
         <div class="header-container">
             <div class="top-brand-card">
@@ -884,7 +895,7 @@
         </div>
 
         <div class="case-study-card">
-            <span class="case-study-badge">🏆 دراسة حالة نجاح (Case Study)</span>
+            <span class="case-study-badge">🏆 دراسة حالة نجاح متحركة (Case Study)</span>
             <h2 style="font-size:2.2rem; color:var(--gold-light); margin-bottom:1rem;" data-ar="كيف ساعدت قوالب وأدوات أحمد أبو عمر شركة عقارية في زيادة المبيعات بنسبة 40%؟" data-en="How Ahmed Abu Omar Templates Boosted Real Estate Sales by 40%">
                 كيف ساعدت قوالب وأدوات أحمد أبو عمر شركة عقارية في زيادة المبيعات بنسبة 40%؟
             </h2>
@@ -998,7 +1009,7 @@
         </div>
     </section>
 
-    <!-- 6. ABOUT US SECTION (قائمة "حول متجرنا" الفاخرة المضافة بعد التواصل مباشرة) -->
+    <!-- 6. ABOUT US SECTION -->
     <section id="section-about" class="page-section">
         <div class="section-header">
             <span class="case-study-badge">👑 استوديو أحمد أبو عمر الرقمي</span>
@@ -1033,7 +1044,7 @@
         </div>
     </section>
 
-    <!-- MOBILE BOTTOM NAVIGATION (محدثة لتشمل زر "حول متجرنا") -->
+    <!-- MOBILE BOTTOM NAVIGATION -->
     <nav class="bottom-nav">
         <button class="bottom-nav-item active" onclick="switchSection('home')" id="bnav-home">
             <svg viewBox="0 0 24 24"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>
@@ -1073,7 +1084,6 @@
             { id: 4, icon: "⚙️", titleAr: "تطوير البرمجيات والمواقع المخصصة (Micro-SaaS)", titleEn: "Custom Software & Micro-SaaS", descAr: "بناء وتطوير أدوات وتطبيقات ويب مخصصة لتمكين مشروعك الرقمي بنجاح تام.", descEn: "Custom Micro-SaaS tools and web applications development." }
         ];
 
-        /* مصفوفة الـ 23 منتجاً كاملة */
         const productsData = [
             { id: 1, category: "tools", icon: "🤖", titleAr: "المساعد الذكي الاحترافي للمواقع وواجهات المحادثة (AI Assistant Pro)", titleEn: "AI Website Assistant Pro", descAr: "تكامل سلس للمساعد الذكي للمواقع والردود الآلية المتقدمة.", oldPrice: "2,105 EGP", discPrice: "842 EGP", url: "https://payhip.com/b/DXmGs" },
             { id: 2, category: "tools", icon: "📊", titleAr: "حاسبة العائد التسعيري واقتصاديات SaaS Pro", titleEn: "SaaS Pricing & ROI Calculator Pro", descAr: "أداة مالية حاسبة للمقاييس المالية والتحليلات الاستثمارية لشركات SaaS.", oldPrice: "2,105 EGP", discPrice: "842 EGP", url: "https://payhip.com/b/MJFx5" },
@@ -1160,7 +1170,7 @@
             } else if(q.includes('40%') || q.includes('عقاري')) {
                 answer = "دراسة الحالة أثبتت زيادة مبيعات شركة عقارية بنسبة 40% وسرعة موقع 98% بدمج قالب عقاري مع أداة ROI Calculator Pro وحجز المعاينات عبر الواتساب.";
             } else if(q.includes('الخدمات') || q.includes('الأربع')) {
-                answer = "نوفر 4 خدمات رئيسية: تصميم صفحات الهبوط والمواكب، إعداد دراسات الحالة Case Studies، دمج المساعد الشخصي الذكي AI، وتطوير برمجيات Micro-SaaS.";
+                answer = "نوفر 4 خدمات رئيسية: تصميم صفحات الهبوط والمواقع، إعداد دراسات الحالة Case Studies، دمج المساعد الشخصي الذكي AI، وتطوير برمجيات Micro-SaaS.";
             } else if(q.includes('OMAR 60')) {
                 answer = "يمكنك استخدام كود الخصم OMAR 60 في صفحة الدفع على Payhip للحصول فوراً على خصم 60% على كافة المنتجات والقوالب.";
             } else {
