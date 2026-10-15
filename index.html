@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Ahmed Abu Omar — Premium Cinematic Digital Studio (Pro Edition)</title>
-    <meta name="description" content="Ahmed Abu Omar (Ahmed Web Templates) — Premium Cinematic Digital Studio specializing in high-performance web templates, micro-SaaS tools, and custom WebApp solutions.">
+    <title>Ahmed Abu Omar — Premium Cinematic Digital Studio</title>
+    <meta name="description" content="Ahmed Abu Omar (Ahmed Web Templates) — Premium Digital Studio specializing in high-performance web templates, micro-SaaS tools, and custom WebApp solutions.">
     <meta name="keywords" content="Ahmed Abu Omar, Ahmed Web Templates, Premium Digital Studio, Web Templates, Micro-SaaS Tools, WebApps, ATS Resume Templates">
     <link rel="canonical" href="https://nadyahmed211-web.github.io/ahmed-abu-omar-store/">
     
@@ -50,7 +50,7 @@
             --border-color: rgba(212, 175, 55, 0.32);
             --border-hover: rgba(212, 175, 55, 0.85);
             --shadow: 0 20px 50px rgba(0, 0, 0, 0.75);
-            --glass-bg: rgba(5, 7, 12, 0.92);
+            --glass-bg: rgba(5, 7, 12, 0.94);
             --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
@@ -101,7 +101,7 @@
             z-index: 0;
         }
 
-        /* Cinematic Header Styling */
+        /* Cinematic Header Styling matching user screenshot */
         header {
             position: sticky;
             top: 0;
@@ -115,69 +115,91 @@
         .header-container {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 0.85rem 1.5rem;
+            padding: 0.75rem 1.25rem;
             display: flex;
             align-items: center;
             justify-content: space-between;
         }
 
-        .brand-wrapper {
+        /* Exact Layout matching screenshot top bar */
+        .top-brand-card {
             display: flex;
             align-items: center;
-            gap: 1rem;
-            cursor: pointer;
-            text-decoration: none;
+            justify-content: space-between;
+            background: var(--bg-card);
+            border: 1.5px solid var(--border-color);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            width: 100%;
+            max-width: 420px;
+            margin: 0 auto;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.4);
         }
 
-        .brand-logo-icon {
-            width: 48px;
-            height: 48px;
-            background: linear-gradient(135deg, var(--bg-secondary), rgba(212, 175, 55, 0.3));
-            border: 1.5px solid var(--border-color);
-            border-radius: 14px;
+        .controls-left {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .ctrl-btn {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            color: var(--gold);
+            width: 38px;
+            height: 38px;
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.2);
+            cursor: pointer;
+            font-size: 0.85rem;
+            font-weight: 800;
             transition: var(--transition);
         }
 
-        .brand-logo-icon:hover {
-            border-color: var(--gold);
-            transform: scale(1.08) rotate(5deg);
-        }
+        .ctrl-btn:hover { border-color: var(--gold); background: rgba(212, 175, 55, 0.15); }
 
-        .brand-logo-icon svg {
-            width: 26px;
-            height: 26px;
-            fill: var(--gold);
-            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
-        }
-
-        .brand-text-group {
+        .brand-info-center {
             display: flex;
             flex-direction: column;
+            align-items: center;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
         }
 
-        .brand-name {
-            font-size: 1.25rem;
+        .brand-title-text {
+            font-size: 0.95rem;
             font-weight: 900;
             color: var(--gold);
-            letter-spacing: 0.8px;
+            letter-spacing: 0.5px;
             background: linear-gradient(135deg, var(--gold-light), var(--gold), var(--gold-dark));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             line-height: 1.2;
-            direction: ltr;
-            text-align: left;
         }
 
-        .brand-subtitle {
-            font-size: 0.72rem;
+        .brand-sub-text {
+            font-size: 0.62rem;
             color: var(--text-muted);
-            letter-spacing: 1.2px;
+            letter-spacing: 1px;
             text-transform: uppercase;
             font-weight: 700;
+        }
+
+        .brand-avatar-box {
+            width: 42px;
+            height: 42px;
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #05070C;
+            font-size: 1.2rem;
+            font-weight: 900;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
         }
 
         .nav-desktop {
@@ -188,6 +210,7 @@
 
         @media(min-width: 992px) {
             .nav-desktop { display: flex; align-items: center; }
+            .top-brand-card { display: none; }
         }
 
         .nav-link {
@@ -218,111 +241,20 @@
 
         html[dir="rtl"] .nav-link.active::after { left: auto; right: 0; }
 
-        .header-actions {
-            display: flex;
-            align-items: center;
-            gap: 0.85rem;
-        }
-
-        /* Professional Control Buttons (Language & Theme) */
-        .icon-btn {
-            background: linear-gradient(135deg, var(--bg-secondary), rgba(212, 175, 55, 0.1));
-            border: 1.5px solid var(--border-color);
-            color: var(--gold);
-            width: 44px;
-            height: 44px;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: var(--transition);
-            font-size: 0.9rem;
-            font-weight: 800;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-        }
-
-        .icon-btn:hover {
-            border-color: var(--gold);
-            background: rgba(212, 175, 55, 0.15);
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
-        }
-
-        .mobile-hamburger { display: flex; }
-        @media(min-width: 992px) { .mobile-hamburger { display: none; } }
-
-        .mobile-drawer {
-            position: fixed;
-            top: 0;
-            right: -100%;
-            width: 300px;
-            height: 100vh;
-            background: var(--bg-secondary);
-            border-left: 1px solid var(--border-color);
-            z-index: 2000;
-            padding: 2.2rem 1.8rem;
-            display: flex;
-            flex-direction: column;
-            gap: 1.8rem;
-            transition: var(--transition);
-            box-shadow: -15px 0 40px rgba(0,0,0,0.85);
-        }
-
-        html[dir="rtl"] .mobile-drawer { right: auto; left: -100%; border-left: none; border-right: 1px solid var(--border-color); }
-        .mobile-drawer.open { right: 0; }
-        html[dir="rtl"] .mobile-drawer.open { left: 0; }
-
-        .drawer-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background: rgba(0,0,0,0.75);
-            z-index: 1999;
+        .desktop-header-brand {
             display: none;
-            backdrop-filter: blur(6px);
-        }
-
-        .drawer-overlay.open { display: block; }
-
-        .drawer-header {
-            display: flex;
-            justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 1.2rem;
-        }
-
-        .drawer-links {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 1.2rem;
-        }
-
-        .drawer-link-btn {
-            background: none;
-            border: none;
-            color: var(--text-main);
-            font-size: 1.12rem;
-            font-weight: 700;
-            text-align: left;
+            gap: 1rem;
             cursor: pointer;
-            width: 100%;
-            padding: 0.6rem 0;
-            transition: var(--transition);
+            text-decoration: none;
         }
-
-        html[dir="rtl"] .drawer-link-btn { text-align: right; }
-        .drawer-link-btn.active, .drawer-link-btn:hover { color: var(--gold); }
+        @media(min-width: 992px) { .desktop-header-brand { display: flex; } }
 
         .page-section {
             display: none;
             max-width: 1350px;
             margin: 0 auto;
-            padding: 2.5rem 1.25rem;
+            padding: 2rem 1.25rem;
             position: relative;
             z-index: 1;
         }
@@ -335,80 +267,76 @@
         }
 
         /* ==========================================
-           CINEMATIC HERO SECTION (PREMIUM PRO)
+           CINEMATIC HERO SECTION (MATCHING SCREENSHOT)
            ========================================== */
         .cinematic-hero {
             position: relative;
-            border-radius: 32px;
+            border-radius: 28px;
             overflow: hidden;
             border: 2px solid var(--border-hover);
-            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.85), inset 0 0 40px rgba(212, 175, 55, 0.1);
-            margin-bottom: 3.5rem;
-            background: linear-gradient(135deg, rgba(5, 7, 12, 0.96), rgba(10, 14, 26, 0.98)),
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.85);
+            margin-bottom: 3rem;
+            background: linear-gradient(135deg, rgba(5, 7, 12, 0.96), rgba(10, 14, 26, 0.99)),
                         url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
             background-blend-mode: overlay;
-            padding: 6rem 2.5rem;
+            padding: 4.5rem 1.8rem;
             text-align: center;
-        }
-
-        .cinematic-hero::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: radial-gradient(circle at center, rgba(212, 175, 55, 0.18) 0%, transparent 75%);
-            pointer-events: none;
         }
 
         .cinematic-badge {
             display: inline-flex;
             align-items: center;
-            gap: 0.6rem;
-            background: rgba(212, 175, 55, 0.18);
-            border: 1.5px solid var(--border-hover);
+            gap: 0.5rem;
+            background: rgba(212, 175, 55, 0.15);
+            border: 1.5px solid var(--border-color);
             color: var(--gold-light);
-            padding: 0.6rem 1.4rem;
-            border-radius: 35px;
-            font-size: 0.88rem;
+            padding: 0.5rem 1.3rem;
+            border-radius: 30px;
+            font-size: 0.85rem;
             font-weight: 800;
             text-transform: uppercase;
-            letter-spacing: 1.8px;
-            margin-bottom: 2rem;
-            box-shadow: 0 6px 25px rgba(212, 175, 55, 0.3);
+            letter-spacing: 1.5px;
+            margin-bottom: 1.8rem;
+            box-shadow: 0 4px 20px rgba(212, 175, 55, 0.25);
         }
 
         .cinematic-hero h1 {
-            font-size: clamp(2.6rem, 6vw, 4.5rem);
+            font-size: clamp(2.2rem, 5.2vw, 4rem);
             font-weight: 900;
-            line-height: 1.2;
-            margin-bottom: 1.6rem;
-            background: linear-gradient(135deg, #FFFFFF 25% , var(--gold-light) 65%, var(--gold) 100%);
+            line-height: 1.25;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #FFFFFF 20%, var(--gold-light) 60%, var(--gold) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            text-shadow: 0 15px 35px rgba(0,0,0,0.6);
-            max-width: 1050px;
+            text-shadow: 0 10px 30px rgba(0,0,0,0.6);
+            max-width: 950px;
             margin-left: auto;
             margin-right: auto;
         }
 
         .cinematic-hero p {
-            font-size: clamp(1.1rem, 2.3vw, 1.32rem);
+            font-size: clamp(1rem, 2.1vw, 1.22rem);
             color: var(--text-muted);
-            max-width: 850px;
-            margin: 0 auto 3rem;
-            line-height: 1.85;
+            max-width: 800px;
+            margin: 0 auto 2.5rem;
+            line-height: 1.8;
             font-weight: 500;
         }
 
         .cinematic-cta-group {
             display: flex;
-            flex-wrap: wrap;
-            gap: 1.35rem;
-            justify-content: center;
-            margin-bottom: 3.2rem;
+            flex-direction: column;
+            gap: 1rem;
+            max-width: 500px;
+            margin: 0 auto 3rem;
+        }
+
+        @media(min-width: 768px) {
+            .cinematic-cta-group { flex-direction: row; justify-content: center; max-width: 100%; }
         }
 
         .btn {
-            padding: 1rem 2.4rem;
+            padding: 1rem 2.2rem;
             border-radius: 16px;
             font-size: 1.02rem;
             font-weight: 800;
@@ -416,63 +344,35 @@
             transition: var(--transition);
             display: inline-flex;
             align-items: center;
+            justify-content: center;
             gap: 0.75rem;
             text-decoration: none;
             border: 1.5px solid transparent;
         }
 
-        .btn-primary {
-            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+        .btn-primary-gold {
+            background: linear-gradient(135deg, var(--gold-light), var(--gold), var(--gold-dark));
             color: #05070C;
             border-color: var(--gold);
-            box-shadow: 0 10px 35px rgba(212, 175, 55, 0.5);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.45);
         }
 
-        .btn-primary:hover {
-            transform: translateY(-4px) scale(1.03);
-            box-shadow: 0 15px 45px rgba(212, 175, 55, 0.75);
+        .btn-primary-gold:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.7);
         }
 
-        .btn-secondary {
-            background: var(--bg-secondary);
-            color: var(--text-main);
-            border-color: var(--border-color);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.45);
+        .btn-primary-whatsapp {
+            background: #22c55e;
+            color: #FFFFFF;
+            border-color: #22c55e;
+            box-shadow: 0 10px 30px rgba(34, 197, 94, 0.4);
         }
 
-        .btn-secondary:hover {
-            border-color: var(--gold);
-            color: var(--gold);
-            transform: translateY(-4px);
-            background: rgba(212, 175, 55, 0.1);
-        }
-
-        .cinematic-features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 1.35rem;
-            max-width: 1050px;
-            margin: 0 auto;
-        }
-
-        .cinematic-feature-card {
-            background: rgba(5, 7, 12, 0.82);
-            border: 1.5px solid var(--border-color);
-            padding: 1.4rem;
-            border-radius: 18px;
-            backdrop-filter: blur(14px);
-            box-shadow: var(--shadow);
-            text-align: center;
-            font-size: 0.98rem;
-            font-weight: 700;
-            color: var(--gold-light);
-            transition: var(--transition);
-        }
-
-        .cinematic-feature-card:hover {
-            border-color: var(--gold);
-            transform: translateY(-6px);
-            box-shadow: 0 12px 35px rgba(212, 175, 55, 0.35);
+        .btn-primary-whatsapp:hover {
+            background: #16a34a;
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 15px 40px rgba(34, 197, 94, 0.6);
         }
 
         /* ==========================================
@@ -483,24 +383,25 @@
             bottom: 85px;
             left: 20px;
             z-index: 9998;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+            border-radius: 50%;
             display: flex;
             align-items: center;
-            gap: 0.75rem;
-            background: var(--glass-bg);
-            border: 1.5px solid var(--gold);
-            padding: 0.5rem 1rem 0.5rem 0.5rem;
-            border-radius: 50px;
-            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.35);
-            backdrop-filter: blur(16px);
+            justify-content: center;
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.5);
             cursor: pointer;
             transition: var(--transition);
             animation: floatAssistant 3s ease-in-out infinite;
+            border: 2px solid var(--bg-primary);
+            text-decoration: none;
+            font-size: 1.4rem;
         }
 
         html[dir="rtl"] .floating-ai-assistant {
             left: auto;
             right: 20px;
-            padding: 0.5rem 0.5rem 0.5rem 1rem;
         }
 
         @keyframes floatAssistant {
@@ -508,59 +409,7 @@
             50% { transform: translateY(-6px); }
         }
 
-        .floating-ai-assistant:hover {
-            transform: scale(1.05);
-            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.6);
-            border-color: var(--gold-light);
-        }
-
-        .ai-avatar-icon {
-            width: 36px;
-            height: 36px;
-            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.1rem;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.4);
-            position: relative;
-        }
-
-        .ai-avatar-icon::after {
-            content: '';
-            position: absolute;
-            top: 2px; right: 2px;
-            width: 9px; height: 9px;
-            background: #4ade80;
-            border-radius: 50%;
-            border: 2px solid var(--bg-primary);
-            animation: pulseDot 1.5s infinite;
-        }
-
-        @keyframes pulseDot {
-            0% { transform: scale(0.9); opacity: 1; }
-            50% { transform: scale(1.3); opacity: 0.6; }
-            100% { transform: scale(0.9); opacity: 1; }
-        }
-
-        .ai-assistant-text {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .ai-assistant-title {
-            font-size: 0.78rem;
-            font-weight: 800;
-            color: var(--gold-light);
-            line-height: 1.1;
-        }
-
-        .ai-assistant-subtitle {
-            font-size: 0.68rem;
-            color: var(--text-muted);
-            font-weight: 600;
-        }
+        .floating-ai-assistant:hover { transform: scale(1.1) rotate(5deg); }
 
         /* ==========================================
            MARQUEE ANIMATED BANNER (COMMUNICATION)
@@ -593,9 +442,7 @@
             animation: scrollMarquee 25s linear infinite;
         }
 
-        .marquee-track:hover {
-            animation-play-state: paused;
-        }
+        .marquee-track:hover { animation-play-state: paused; }
 
         @keyframes scrollMarquee {
             0% { transform: translateX(0); }
@@ -634,24 +481,9 @@
         }
 
         /* Standard Store Sections */
-        .section-header {
-            text-align: center;
-            margin-bottom: 2.8rem;
-        }
-
-        .section-header h2 {
-            font-size: clamp(1.8rem, 3.5vw, 2.8rem);
-            font-weight: 900;
-            margin-bottom: 0.75rem;
-            color: var(--text-main);
-        }
-
-        .section-header p {
-            color: var(--text-muted);
-            font-size: 1.05rem;
-            max-width: 680px;
-            margin: 0 auto;
-        }
+        .section-header { text-align: center; margin-bottom: 2.8rem; }
+        .section-header h2 { font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 900; margin-bottom: 0.75rem; color: var(--text-main); }
+        .section-header p { color: var(--text-muted); font-size: 1.05rem; max-width: 680px; margin: 0 auto; }
 
         .services-grid {
             display: grid;
@@ -692,12 +524,7 @@
             .store-controls { flex-direction: row; justify-content: space-between; align-items: center; }
         }
 
-        .search-box {
-            position: relative;
-            flex-grow: 1;
-            max-width: 500px;
-        }
-
+        .search-box { position: relative; flex-grow: 1; max-width: 500px; }
         .search-box input {
             width: 100%;
             background: var(--bg-card);
@@ -709,18 +536,10 @@
             outline: none;
             transition: var(--transition);
         }
-
         html[dir="rtl"] .search-box input { padding: 0.95rem 3.2rem 0.95rem 1.2rem; }
         .search-box input:focus { border-color: var(--gold); box-shadow: 0 0 20px rgba(212, 175, 55, 0.3); }
 
-        .search-icon {
-            position: absolute;
-            top: 50%;
-            left: 1.2rem;
-            transform: translateY(-50%);
-            color: var(--text-muted);
-        }
-
+        .search-icon { position: absolute; top: 50%; left: 1.2rem; transform: translateY(-50%); color: var(--text-muted); }
         html[dir="rtl"] .search-icon { left: auto; right: 1.2rem; }
 
         .filter-tabs { display: flex; gap: 0.6rem; overflow-x: auto; padding-bottom: 8px; }
@@ -807,7 +626,6 @@
             border-radius: 8px;
             text-transform: uppercase;
         }
-
         html[dir="rtl"] .product-category-tag { left: auto; right: 14px; }
 
         .product-body { padding: 1.5rem; display: flex; flex-direction: column; flex-grow: 1; }
@@ -826,12 +644,7 @@
             gap: 0.35rem;
         }
 
-        .price-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
+        .price-row { display: flex; justify-content: space-between; align-items: center; }
         .price-label { color: var(--text-muted); }
         .price-val { font-weight: 800; color: var(--text-main); direction: ltr; }
         .price-strike { text-decoration: line-through; color: var(--text-muted); font-size: 0.78rem; }
@@ -847,11 +660,7 @@
             margin-top: auto;
         }
 
-        .product-actions-group {
-            display: flex;
-            gap: 0.6rem;
-        }
-
+        .product-actions-group { display: flex; gap: 0.6rem; }
         .product-btn {
             flex: 1;
             text-align: center;
@@ -864,23 +673,10 @@
             border: 1.5px solid var(--border-color);
         }
 
-        .btn-payhip {
-            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
-            color: #05070C;
-            border-color: var(--gold);
-        }
-
+        .btn-payhip { background: linear-gradient(135deg, var(--gold), var(--gold-dark)); color: #05070C; border-color: var(--gold); }
         .btn-payhip:hover { background: var(--gold-light); }
-
-        .btn-whatsapp-direct {
-            background: var(--bg-secondary);
-            color: var(--gold-light);
-        }
-
-        .btn-whatsapp-direct:hover {
-            border-color: var(--gold);
-            color: var(--gold);
-        }
+        .btn-whatsapp-direct { background: var(--bg-secondary); color: var(--gold-light); }
+        .btn-whatsapp-direct:hover { border-color: var(--gold); color: var(--gold); }
 
         .main-offer-banner {
             background: linear-gradient(135deg, #100d03, #282006, #100d03);
@@ -921,25 +717,8 @@
         }
 
         .coupon-code { font-family: monospace; font-size: 1.6rem; font-weight: 900; color: var(--gold-light); letter-spacing: 2px; }
-
-        .copy-btn {
-            background: var(--gold);
-            color: #05070C;
-            border: none;
-            padding: 0.55rem 1.2rem;
-            border-radius: 10px;
-            font-weight: 800;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
+        .copy-btn { background: var(--gold); color: #05070C; border: none; padding: 0.55rem 1.2rem; border-radius: 10px; font-weight: 800; cursor: pointer; transition: var(--transition); }
         .copy-btn:hover { background: var(--gold-light); transform: scale(1.05); }
-
-        .coupon-disclaimer {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            margin-top: 1.2rem;
-        }
 
         .contact-grid {
             display: grid;
@@ -958,7 +737,6 @@
 
         .form-group { margin-bottom: 1.35rem; }
         .form-group label { display: block; margin-bottom: 0.5rem; font-size: 0.92rem; font-weight: 700; }
-
         .form-control {
             width: 100%;
             background: var(--bg-secondary);
@@ -970,7 +748,6 @@
             outline: none;
             transition: var(--transition);
         }
-
         .form-control:focus { border-color: var(--gold); box-shadow: 0 0 15px rgba(212, 175, 55, 0.25); }
         textarea.form-control { min-height: 130px; resize: vertical; }
 
@@ -982,27 +759,9 @@
             padding: 3.5rem 2.2rem;
             text-align: center;
             margin-top: 4rem;
-            box-shadow: 0 25px 50px rgba(0,0,0,0.8), inset 0 0 30px rgba(212, 175, 55, 0.15);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.8);
             position: relative;
             overflow: hidden;
-        }
-
-        .thank-you-banner::before {
-            content: '✨';
-            position: absolute;
-            top: 20px;
-            left: 30px;
-            font-size: 1.8rem;
-            opacity: 0.6;
-        }
-
-        .thank-you-banner::after {
-            content: '💎';
-            position: absolute;
-            bottom: 20px;
-            right: 30px;
-            font-size: 1.8rem;
-            opacity: 0.6;
         }
 
         .thank-you-banner h3 { 
@@ -1016,14 +775,9 @@
 
         .thank-you-banner p { color: var(--text-muted); max-width: 680px; margin: 0 auto 2rem; font-size: 1.1rem; line-height: 1.7; }
 
-        .social-follow-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 1.2rem;
-            flex-wrap: wrap;
-        }
+        .social-follow-buttons { display: flex; justify-content: center; gap: 1.2rem; flex-wrap: wrap; }
 
-        /* Mobile Bottom Navigation Bar */
+        /* Mobile Bottom Navigation Bar matching screenshot */
         .bottom-nav {
             position: fixed;
             bottom: 0;
@@ -1068,13 +822,6 @@
             margin-top: 3.5rem;
         }
 
-        .ip-notice {
-            margin-top: 0.6rem;
-            font-size: 0.78rem;
-            color: var(--text-muted);
-            opacity: 0.85;
-        }
-
         .toast {
             position: fixed;
             bottom: 100px;
@@ -1093,31 +840,38 @@
             box-shadow: var(--shadow);
             pointer-events: none;
         }
-
         .toast.show { transform: translateX(-50%) translateY(0); opacity: 1; }
     </style>
 </head>
 <body>
 
-    <!-- Floating AI Assistant Widget (Bottom-Left) -->
-    <a href="https://wa.me/201206443652?text=Hello%20Ahmed%20Abu%20Omar,%20I%20need%20assistance%20from%20your%20AI%20Assistant." target="_blank" rel="noopener noreferrer" class="floating-ai-assistant" title="مساعدك الذكي للتواصل السريع">
-        <div class="ai-avatar-icon">🤖</div>
-        <div class="ai-assistant-text">
-            <span class="ai-assistant-title" data-en="AI Assistant" data-ar="المساعد الذكي">المساعد الذكي</span>
-            <span class="ai-assistant-subtitle" data-en="Online 24/7" data-ar="متاح للمساعدة">متاح للمساعدة</span>
-        </div>
+    <!-- Floating AI Assistant Widget (Bottom-Left matching screenshot) -->
+    <a href="https://wa.me/201206443652?text=Hello%20Ahmed%20Abu%20Omar,%20I%20need%20assistance%20from%20your%20AI%20Assistant." target="_blank" rel="noopener noreferrer" class="floating-ai-assistant" title="المساعد الذكي">
+        🤖
     </a>
 
     <!-- Cinematic Header -->
     <header>
         <div class="header-container">
-            <a class="brand-wrapper" onclick="switchSection('home')">
-                <div class="brand-logo-icon">
-                    <svg viewBox="0 0 100 100"><path d="M30 70 L50 30 L70 70 Z" fill="#D4AF37"/><path d="M42 70 L50 54 L58 70 Z" fill="#05070C"/></svg>
+            <!-- Mobile Top Brand Card matching screenshot -->
+            <div class="top-brand-card">
+                <div class="controls-left">
+                    <button class="ctrl-btn" id="themeToggleBtnMobile" onclick="toggleTheme()" title="Theme">🌙</button>
+                    <button class="ctrl-btn" id="langToggleBtnMobile" onclick="toggleLanguage()" title="Language">EN</button>
                 </div>
-                <div class="brand-text-group">
-                    <span class="brand-name">Ahmed Abu Omar</span>
-                    <span class="brand-subtitle">Cinematic Digital Studio</span>
+                <a class="brand-info-center" onclick="switchSection('home')">
+                    <span class="brand-title-text">Ahmed Abu Omar</span>
+                    <span class="brand-sub-text">Premium Digital Studio</span>
+                </a>
+                <div class="brand-avatar-box">A</div>
+            </div>
+
+            <!-- Desktop Brand -->
+            <a class="desktop-header-brand" onclick="switchSection('home')">
+                <div class="brand-avatar-box">A</div>
+                <div style="display:flex; flex-direction:column;">
+                    <span class="brand-title-text" style="font-size:1.2rem;">Ahmed Abu Omar</span>
+                    <span class="brand-sub-text">Cinematic Digital Studio</span>
                 </div>
             </a>
 
@@ -1130,64 +884,41 @@
                 <li><button class="nav-link" onclick="switchSection('contact')" id="dnav-contact" data-en="Contact" data-ar="التواصل">التواصل</button></li>
             </ul>
 
-            <div class="header-actions">
-                <button class="icon-btn" id="langToggleBtn" onclick="toggleLanguage()" title="Language / تغيير اللغة">AR</button>
-                <button class="icon-btn" id="themeToggleBtn" onclick="toggleTheme()" title="Theme / تغيير الإضاءة">
-                    <svg id="themeIcon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line></svg>
-                </button>
-                <button class="icon-btn mobile-hamburger" onclick="toggleDrawer()" title="Menu">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
-                </button>
+            <!-- Desktop Actions -->
+            <div style="display:none; align-items:center; gap:0.85rem;" class="desktop-actions">
+                <button class="ctrl-btn" id="langToggleBtn" onclick="toggleLanguage()">AR</button>
+                <button class="ctrl-btn" id="themeToggleBtn" onclick="toggleTheme()">☀️</button>
             </div>
         </div>
     </header>
 
-    <!-- Mobile Drawer (Unified Order) -->
-    <div class="drawer-overlay" id="drawerOverlay" onclick="toggleDrawer()"></div>
-    <div class="mobile-drawer" id="mobileDrawer">
-        <div class="drawer-header">
-            <span class="brand-name" style="font-size:1.15rem;">Ahmed Abu Omar</span>
-            <button class="icon-btn" onclick="toggleDrawer()">✕</button>
-        </div>
-        <ul class="drawer-links">
-            <li><button class="drawer-link-btn active" onclick="switchSection('home'); toggleDrawer();" id="mnav-home" data-en="Home" data-ar="الرئيسية">الرئيسية</button></li>
-            <li><button class="drawer-link-btn" onclick="switchSection('services'); toggleDrawer();" id="mnav-services" data-en="Services" data-ar="خدماتنا">خدماتنا</button></li>
-            <li><button class="drawer-link-btn" onclick="switchSection('products'); toggleDrawer();" id="mnav-products" data-en="Products" data-ar="منتجاتنا">منتجاتنا</button></li>
-            <li><button class="drawer-link-btn" onclick="switchSection('offers'); toggleDrawer();" id="mnav-offers" data-en="Offers & Discounts" data-ar="العروض والخصومات">العروض والخصومات</button></li>
-            <li><button class="drawer-link-btn" onclick="switchSection('contact'); toggleDrawer();" id="mnav-contact" data-en="Contact" data-ar="التواصل">التواصل</button></li>
-        </ul>
-    </div>
+    <style>
+        @media(min-width: 992px) { .desktop-actions { display: flex !important; } }
+    </style>
 
-    <!-- 1. HOME SECTION (ULTRA CINEMATIC LANDING PAGE HERO - PREMIUM PRO) -->
+    <!-- 1. HOME SECTION (MATCHING SCREENSHOT HERO) -->
     <section id="section-home" class="page-section active">
         <div class="cinematic-hero">
-            <div class="cinematic-badge" data-en="✨ Premium Pro Cinematic Digital Studio" data-ar="✨ استوديو المنتجات الرقمية السينمائية الفاخرة - إصدار بريميم برو">✨ Premium Pro Cinematic Digital Studio</div>
+            <div class="cinematic-badge" data-en="👑 Professional Digital Studio" data-ar="👑 استوديو التصميم الرقمي الاحترافي">👑 استوديو التصميم الرقمي الاحترافي</div>
             
-            <h1 data-en="Architecting World-Class Digital Experiences & High-Performance Solutions" data-ar="نصنع تجارب رقمية استثنائية وحلول برمجية فائقة الأداء تترك بصمتك في العالم الرقمي">
-                Architecting World-Class Digital Experiences & High-Performance Solutions
+            <h1 data-en="Creating Exceptional Digital Products & High-Performance Solutions" data-ar="نبْتكر ونبني منتجات رقمية استثنائية">
+                نبْتكر ونبني منتجات رقمية استثنائية
             </h1>
             
-            <p data-en="Welcome to Ahmed Abu Omar Studio. Our mission is to empower creators, founders, and enterprises with elite responsive website templates, smart micro-SaaS utilities, and custom WebApps engineered for maximum digital authority and success." data-ar="مرحبًا بك في استوديو أحمد أبو عمر. هدفنا الرئيسي هو تمكين رواد الأعمال والشركات والمبدعين من بناء حضور رقمي لا يُقارن، من خلال قوالب مواقع سينمائية متجاوبة، أدوات Micro-SaaS ذكية، وحلول برمجية مصممة خصيصًا لتسريع نموك وتعظيم أرباحك.">
-                Welcome to Ahmed Abu Omar Studio. Our mission is to empower creators, founders, and enterprises with elite responsive website templates, smart micro-SaaS utilities, and custom WebApps engineered for maximum digital authority and success.
+            <p data-en="Your ultimate destination for powerful digital products, Micro-SaaS tools, website templates, and ATS resumes meticulously engineered for your success." data-ar="وجهتك الأولى لاقتناء أقوى المنتجات الرقمية، أدوات الويب المصغرة (Micro-SaaS)، قوالب المواقع، والسير الذاتية المصممة خصيصاً لتعزيز نجاحك بأعلى معايير البريميوم.">
+                وجهتك الأولى لاقتناء أقوى المنتجات الرقمية، أدوات الويب المصغرة (Micro-SaaS)، قوالب المواقع، والسير الذاتية المصممة خصيصاً لتعزيز نجاحك بأعلى معايير البريميوم.
             </p>
 
             <div class="cinematic-cta-group">
-                <button class="btn btn-primary" onclick="switchSection('products')" data-en="Explore Products Showcase" data-ar="استكشف المنتجات الرقمية">Explore Products</button>
-                <button class="btn btn-secondary" onclick="switchSection('services')" data-en="Our Professional Services" data-ar="خدماتنا الاحترافية">Explore Services</button>
-                <button class="btn btn-secondary" onclick="switchSection('contact')" data-en="Direct WhatsApp Channel" data-ar="تواصل معنا مباشرة">Contact Us</button>
-            </div>
-
-            <div class="cinematic-features-grid">
-                <div class="cinematic-feature-card" data-en="⚡ Blazing Fast Performance" data-ar="⚡ أداء فائق السرعة وتجاوب كامل">⚡ Blazing Fast Performance</div>
-                <div class="cinematic-feature-card" data-en="🌐 Bilingual (Arabic & English)" data-ar="🌐 دعم كامل للغتين (عربي / إنجليزي)">🌐 Bilingual (Arabic & English)</div>
-                <div class="cinematic-feature-card" data-en="💎 Cinematic UI/UX Design" data-ar="💎 تصميم سينمائي فائق الفخامة">💎 Cinematic UI/UX Design</div>
+                <button class="btn btn-primary-gold" onclick="switchSection('products')" data-en="Explore Digital Products Showcase" data-ar="استكشف متجر المنتجات الرقمية ➔">استكشف متجر المنتجات الرقمية ➔</button>
+                <button class="btn btn-primary-whatsapp" onclick="window.open('https://wa.me/201206443652','_blank')" data-en="Chat via WhatsApp" data-ar="💬 تواصل عبر الواتساب">💬 تواصل عبر الواتساب</button>
             </div>
         </div>
 
         <div class="thank-you-banner">
-            <h3 data-en="Thank You for Visiting Our Premium Pro Cinematic Studio" data-ar="شكرًا لزيارتك وثقتك الدائمة باستوديونا السينمائي الفاخر">Thank You for Visiting Our Premium Pro Cinematic Studio</h3>
+            <h3 data-en="Thank You for Visiting Our Cinematic Studio" data-ar="شكرًا لزيارتك وثقتك الدائمة باستوديونا">شكرًا لزيارتك وثقتك الدائمة باستوديونا</h3>
             <p data-en="Follow our official channels to receive exclusive digital releases, template updates, and promotional discount codes." data-ar="تابع منصاتنا الرسمية ليصلك جديد الإصدارات البرمجية، التحديثات الحصرية، وأكواد الخصم الخاصة.">
-                Follow our official channels to receive exclusive digital releases, template updates, and promotional discount codes.
+                تابع منصاتنا الرسمية ليصلك جديد الإصدارات البرمجية، التحديثات الحصرية، وأكواد الخصم الخاصة.
             </p>
             <div class="social-follow-buttons">
                 <a href="https://www.facebook.com/AhmedAbuOmarOfficial?mibextid=ZbWKwL" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">📘 Facebook Page</a>
@@ -1199,8 +930,8 @@
     <!-- 2. SERVICES SECTION -->
     <section id="section-services" class="page-section">
         <div class="section-header">
-            <h2 data-en="Our Professional Services" data-ar="خدماتنا الاحترافية">Our Professional Services</h2>
-            <p data-en="Tailored digital solutions and custom web development services designed for your business growth." data-ar="حلول رقمية وتطبيقات مخصصة مصممة لتسريع نموك وتعظيم أرباحك على الإنترنت.">Tailored digital solutions and custom web development services designed for your business growth.</p>
+            <h2 data-en="Our Professional Services" data-ar="خدماتنا الاحترافية">خدماتنا الاحترافية</h2>
+            <p data-en="Tailored digital solutions and custom web development services designed for your business growth." data-ar="حلول رقمية وتطبيقات مخصصة مصممة لتسريع نموك وتعظيم أرباحك على الإنترنت.">حلول رقمية وتطبيقات مخصصة مصممة لتسريع نموك وتعظيم أرباحك على الإنترنت.</p>
         </div>
         <div class="services-grid" id="servicesGrid"></div>
     </section>
@@ -1208,28 +939,28 @@
     <!-- 3. PRODUCTS SECTION -->
     <section id="section-products" class="page-section">
         <div class="section-header">
-            <h2 data-en="Digital Storefront & Products" data-ar="المتجر الرقمي والمنتجات">Digital Storefront & Products</h2>
-            <p data-en="Explore our full collection of 23 premium web templates, micro-SaaS tools, and ATS resume bundles." data-ar="استكشف جميع منتجاتنا الرقمية الـ 23 التي تشمل قوالب المواقع، أدوات Micro-SaaS، وقوالب السيرة الذاتية.">Explore our full collection of 23 premium web templates, micro-SaaS tools, and ATS resume bundles.</p>
+            <h2 data-en="Digital Storefront & Products" data-ar="المتجر الرقمي والمنتجات">المتجر الرقمي والمنتجات</h2>
+            <p data-en="Explore our full collection of 23 premium web templates, micro-SaaS tools, and ATS resume bundles." data-ar="استكشف جميع منتجاتنا الرقمية الـ 23 التي تشمل قوالب المواقع، أدوات Micro-SaaS، وقوالب السيرة الذاتية.">استكشف جميع منتجاتنا الرقمية الـ 23 التي تشمل قوالب المواقع، أدوات Micro-SaaS، وقوالب السيرة الذاتية.</p>
         </div>
 
         <div class="offers-mini-banner">
             <div>
-                <strong style="color:var(--gold-light);" data-en="🔥 Special Savings Available!" data-ar="🔥 تتوفر خصومات خاصة!">🔥 Special Savings Available!</strong>
-                <span style="color:var(--text-muted); font-size:0.88rem; display:block;" data-en="Use code OMAR 60 for up to 60% savings on Payhip." data-ar="استخدم كود OMAR 60 للحصول على خصم يصل إلى 60% على Payhip.">Use code OMAR 60 for up to 60% savings on Payhip.</span>
+                <strong style="color:var(--gold-light);" data-en="🔥 Special Savings Available!" data-ar="🔥 تتوفر خصومات خاصة!">🔥 تتوفر خصومات خاصة!</strong>
+                <span style="color:var(--text-muted); font-size:0.88rem; display:block;" data-en="Use code OMAR 60 for up to 60% savings on Payhip." data-ar="استخدم كود OMAR 60 للحصول على خصم يصل إلى 60% على Payhip.">استخدم كود OMAR 60 للحصول على خصم يصل إلى 60% على Payhip.</span>
             </div>
-            <button class="btn btn-primary" onclick="switchSection('offers')" style="padding:0.5rem 1.1rem; font-size:0.85rem;" data-en="Offers & Discounts" data-ar="العروض والخصومات">View Offers</button>
+            <button class="btn btn-primary-gold" onclick="switchSection('offers')" style="padding:0.5rem 1.1rem; font-size:0.85rem;" data-en="Offers & Discounts" data-ar="العروض والخصومات">العروض والخصومات</button>
         </div>
 
         <div class="store-controls">
             <div class="search-box">
                 <span class="search-icon">🔍</span>
-                <input type="text" id="productSearch" placeholder="Search products, templates..." data-placeholder-en="Search products, templates..." data-placeholder-ar="ابحث عن منتج أو قالب..." oninput="filterProducts()">
+                <input type="text" id="productSearch" placeholder="ابحث عن منتج أو قالب..." data-placeholder-en="Search products, templates..." data-placeholder-ar="ابحث عن منتج أو قالب..." oninput="filterProducts()">
             </div>
             <div class="filter-tabs">
-                <button class="filter-tab active" onclick="setCategory('all')" data-en="All Products" data-ar="جميع المنتجات">All Products</button>
-                <button class="filter-tab" onclick="setCategory('tools')" data-en="Digital Tools" data-ar="الأدوات الرقمية">Digital Tools</button>
-                <button class="filter-tab" onclick="setCategory('templates')" data-en="Website Templates" data-ar="قوالب المواقع">Website Templates</button>
-                <button class="filter-tab" onclick="setCategory('cv')" data-en="CV Templates" data-ar="قوالب السيرة الذاتية">CV Templates</button>
+                <button class="filter-tab active" onclick="setCategory('all')" data-en="All Products" data-ar="جميع المنتجات">جميع المنتجات</button>
+                <button class="filter-tab" onclick="setCategory('tools')" data-en="Digital Tools" data-ar="الأدوات الرقمية">الأدوات الرقمية</button>
+                <button class="filter-tab" onclick="setCategory('templates')" data-en="Website Templates" data-ar="قوالب المواقع">قوالب المواقع</button>
+                <button class="filter-tab" onclick="setCategory('cv')" data-en="CV Templates" data-ar="قوالب السيرة الذاتية">قوالب السيرة الذاتية</button>
             </div>
         </div>
 
@@ -1239,21 +970,17 @@
     <!-- 4. OFFERS SECTION -->
     <section id="section-offers" class="page-section">
         <div class="main-offer-banner">
-            <span class="offer-tag" data-en="LIMITED-TIME SAVINGS" data-ar="خصومات لفترة محدودة">LIMITED-TIME SAVINGS</span>
-            <h2 data-en="Competitive Prices — Up to 60% Off" data-ar="أسعار تنافسية وخصومات تصل إلى 60%">Competitive Prices — Up to 60% Off</h2>
-            <p data-en="Redeem promotional discount codes on our Payhip digital storefront." data-ar="استفد الآن من الخصومات المتاحة على متجرنا الرقمي على منصة Payhip.">Redeem promotional discount codes on our Payhip digital storefront.</p>
+            <span class="offer-tag" data-en="LIMITED-TIME SAVINGS" data-ar="خصومات لفترة محدودة">خصومات لفترة محدودة</span>
+            <h2 data-en="Competitive Prices — Up to 60% Off" data-ar="أسعار تنافسية وخصومات تصل إلى 60%">أسعار تنافسية وخصومات تصل إلى 60%</h2>
+            <p data-en="Redeem promotional discount codes on our Payhip digital storefront." data-ar="استفد الآن من الخصومات المتاحة على متجرنا الرقمي على منصة Payhip.">استفد الآن من الخصومات المتاحة على متجرنا الرقمي على منصة Payhip.</p>
             
             <div class="coupon-box">
                 <span class="coupon-code">OMAR 60</span>
-                <button class="copy-btn" onclick="copyCoupon()" data-en="Copy Code" data-ar="نسخ الرمز">Copy Code</button>
+                <button class="copy-btn" onclick="copyCoupon()" data-en="Copy Code" data-ar="نسخ الرمز">نسخ الرمز</button>
             </div>
 
             <div>
-                <button class="btn btn-primary" onclick="switchSection('products')" data-en="Explore Products" data-ar="منتجاتنا">Explore Products</button>
-            </div>
-
-            <div class="coupon-disclaimer" data-en="Discount code applicability, terms, and final pricing are verified at Payhip checkout." data-ar="صلاحية كود الخصم والشروط والتكلفة النهائية تخضع لما يظهر في صفحة الدفع على Payhip.">
-                Discount code applicability, terms, and final pricing are verified at Payhip checkout.
+                <button class="btn btn-primary-gold" onclick="switchSection('products')" data-en="Explore Products" data-ar="منتجاتنا">منتجاتنا</button>
             </div>
         </div>
     </section>
@@ -1261,8 +988,8 @@
     <!-- 5. CONTACT SECTION WITH MOVING MARQUEE BANNER -->
     <section id="section-contact" class="page-section">
         <div class="section-header">
-            <h2 data-en="Contact Us & Social Hub" data-ar="التواصل ومنصات التواصل الاجتماعي">Contact Us & Social Hub</h2>
-            <p data-en="Connect directly via WhatsApp or browse our moving social channel links below." data-ar="تواصل معنا مباشرة عبر الواتساب أو تصفح روابط منصاتنا عبر البنر المتحرك أدناه.">Connect directly via WhatsApp or browse our moving social channel links below.</p>
+            <h2 data-en="Contact Us & Social Hub" data-ar="التواصل ومنصات التواصل الاجتماعي">التواصل ومنصات التواصل الاجتماعي</h2>
+            <p data-en="Connect directly via WhatsApp or browse our moving social channel links below." data-ar="تواصل معنا مباشرة عبر الواتساب أو تصفح روابط منصاتنا عبر البنر المتحرك أدناه.">تواصل معنا مباشرة عبر الواتساب أو تصفح روابط منصاتنا عبر البنر المتحرك أدناه.</p>
         </div>
 
         <!-- Moving Marquee Banner (Social Links Only) -->
@@ -1275,7 +1002,6 @@
                     <a href="https://www.instagram.com/ahmedabuomar.design" target="_blank" rel="noopener noreferrer" class="social-marquee-item">📷 Instagram Design</a>
                     <a href="https://www.linkedin.com/in/ahmedwebtemplates" target="_blank" rel="noopener noreferrer" class="social-marquee-item">💼 LinkedIn Profile</a>
                 </div>
-                <!-- Duplicate for seamless infinite loop -->
                 <div class="marquee-content" aria-hidden="true">
                     <a href="https://wa.me/201206443652" target="_blank" rel="noopener noreferrer" class="social-marquee-item">💬 WhatsApp Direct</a>
                     <a href="https://payhip.com/ahmedabuomar" target="_blank" rel="noopener noreferrer" class="social-marquee-item">🛒 Payhip Storefront</a>
@@ -1288,9 +1014,9 @@
 
         <div class="contact-grid">
             <div class="contact-card">
-                <h3 style="color:var(--gold); margin-bottom:0.85rem;" data-en="Direct WhatsApp Channel" data-ar="التواصل المباشر عبر الواتساب">Direct WhatsApp Channel</h3>
-                <p style="color:var(--text-muted); font-size:0.95rem; margin-bottom:1.6rem;" data-en="Get immediate assistance regarding custom orders, template support, or licensing inquiries." data-ar="احصل على رد سريع ومباشر بخصوص طلبات البرمجة، القوالب، أو المساعدة التقنية.">Get immediate assistance regarding custom orders, template support, or licensing inquiries.</p>
-                <a href="https://wa.me/201206443652" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="width:100%; justify-content:center;">💬 Chat on WhatsApp</a>
+                <h3 style="color:var(--gold); margin-bottom:0.85rem;" data-en="Direct WhatsApp Channel" data-ar="التواصل المباشر عبر الواتساب">التواصل المباشر عبر الواتساب</h3>
+                <p style="color:var(--text-muted); font-size:0.95rem; margin-bottom:1.6rem;" data-en="Get immediate assistance regarding custom orders, template support, or licensing inquiries." data-ar="احصل على رد سريع ومباشر بخصوص طلبات البرمجة، القوالب، أو المساعدة التقنية.">احصل على رد سريع ومباشر بخصوص طلبات البرمجة، القوالب، أو المساعدة التقنية.</p>
+                <a href="https://wa.me/201206443652" target="_blank" rel="noopener noreferrer" class="btn btn-primary-whatsapp" style="width:100%; justify-content:center;">💬 Chat on WhatsApp</a>
                 
                 <div style="margin-top:1.6rem; display:flex; flex-direction:column; gap:0.7rem;">
                     <a href="https://payhip.com/ahmedabuomar" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="justify-content:center;">🛒 Payhip Digital Storefront</a>
@@ -1301,35 +1027,35 @@
             </div>
 
             <div class="contact-card">
-                <h3 style="color:var(--gold); margin-bottom:0.85rem;" data-en="Custom Service Order Form" data-ar="نموذج طلب خدمة مخصصة">Custom Service Order Form</h3>
+                <h3 style="color:var(--gold); margin-bottom:0.85rem;" data-en="Custom Service Order Form" data-ar="نموذج طلب خدمة مخصصة">نموذج طلب خدمة مخصصة</h3>
                 <form onsubmit="submitContactForm(event)">
                     <div class="form-group">
-                        <label data-en="Your Name" data-ar="الاسم الكريم">Your Name</label>
-                        <input type="text" id="cName" class="form-control" required placeholder="Enter your full name" data-placeholder-en="Enter your full name" data-placeholder-ar="أدخل اسمك الكريم">
+                        <label data-en="Your Name" data-ar="الاسم الكريم">الاسم الكريم</label>
+                        <input type="text" id="cName" class="form-control" required placeholder="أدخل اسمك الكريم" data-placeholder-en="Enter your full name" data-placeholder-ar="أدخل اسمك الكريم">
                     </div>
                     <div class="form-group">
-                        <label data-en="Service Needed" data-ar="نوع الخدمة المطلوبة">Service Needed</label>
+                        <label data-en="Service Needed" data-ar="نوع الخدمة المطلوبة">نوع الخدمة المطلوبة</label>
                         <select id="cService" class="form-control">
-                            <option value="Website Design & Development">Website Design & Development / تصميم وتطوير المواقع</option>
-                            <option value="Landing Page Design">Landing Page Design / تصميم صفحات الهبوط</option>
-                            <option value="Custom Digital Tool Development">Custom Digital Tool / تطوير الأدوات الرقمية</option>
-                            <option value="AI Assistant Integration">AI Assistant / إنشاء مساعدات رقمية</option>
-                            <option value="SEO Audit & Optimization">SEO Review / مراجعة وتحسين SEO</option>
-                            <option value="CV Resume Design">CV Resume Design / تصميم السير الذاتية</option>
-                            <option value="Template Customization">Template Customization / تخصيص القوالب</option>
+                            <option value="Website Design & Development">تصميم وتطوير المواقع / Website Design & Development</option>
+                            <option value="Landing Page Design">تصميم صفحات الهبوط / Landing Page Design</option>
+                            <option value="Custom Digital Tool Development">تطوير الأدوات الرقمية / Custom Digital Tool</option>
+                            <option value="AI Assistant Integration">إنشاء مساعدات رقمية / AI Assistant</option>
+                            <option value="SEO Audit & Optimization">مراجعة وتحسين SEO / SEO Review</option>
+                            <option value="CV Resume Design">تصميم السير الذاتية CV / Resume Design</option>
+                            <option value="Template Customization">تخصيص القوالب / Template Customization</option>
                         </select>
                     </div>
                     <div class="form-group">
-                        <label data-en="Project Details" data-ar="تفاصيل الطلب">Project Details</label>
-                        <textarea id="cDetails" class="form-control" required placeholder="Provide brief requirements..." data-placeholder-en="Provide brief requirements..." data-placeholder-ar="اكتب تفاصيل ومتطلبات مشروعك..."></textarea>
+                        <label data-en="Project Details" data-ar="تفاصيل الطلب">تفاصيل الطلب</label>
+                        <textarea id="cDetails" class="form-control" required placeholder="اكتب تفاصيل ومتطلبات مشروعك..." data-placeholder-en="Provide brief requirements..." data-placeholder-ar="اكتب تفاصيل ومتطلبات مشروعك..."></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center;" data-en="Send Order via WhatsApp" data-ar="إرسال الطلب عبر الواتساب">Send Order via WhatsApp</button>
+                    <button type="submit" class="btn btn-primary-whatsapp" style="width:100%; justify-content:center;" data-en="Send Order via WhatsApp" data-ar="إرسال الطلب عبر الواتساب">إرسال الطلب عبر الواتساب</button>
                 </form>
             </div>
         </div>
     </section>
 
-    <!-- Mobile Bottom Navigation Bar (Unified Order: الرئيسية | خدماتنا | منتجاتنا | العروض والخصومات | التواصل) -->
+    <!-- Mobile Bottom Navigation Bar matching screenshot EXACT ORDER: الرئيسية | خدماتنا | منتجاتنا | العروض والخصومات | التواصل -->
     <nav class="bottom-nav">
         <button class="bottom-nav-item active" onclick="switchSection('home')" id="bnav-home">
             <svg viewBox="0 0 24 24"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>
@@ -1355,8 +1081,8 @@
 
     <!-- Footer Copyright -->
     <footer>
-        <p>© Ahmed Abu Omar (Ahmed Web Templates) — Premium Pro Cinematic Digital Studio. All Rights Reserved.</p>
-        <p class="ip-notice">Notice: Unauthorized copying, reproduction, or redistribution of digital assets and templates is strictly prohibited.</p>
+        <p>© Ahmed Abu Omar (Ahmed Web Templates) — Cinematic Digital Studio. All Rights Reserved.</p>
+        <p style="margin-top:0.5rem; font-size:0.78rem;">Notice: Unauthorized copying or redistribution is strictly prohibited.</p>
     </footer>
 
     <!-- Toast Notification -->
@@ -1421,10 +1147,6 @@
             const dItem = document.getElementById('dnav-' + secId);
             if (dItem) dItem.classList.add('active');
 
-            document.querySelectorAll('.drawer-link-btn').forEach(m => m.classList.remove('active'));
-            const mItem = document.getElementById('mnav-' + secId);
-            if (mItem) mItem.classList.add('active');
-
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
@@ -1433,7 +1155,10 @@
             const html = document.documentElement;
             html.setAttribute('lang', currentLang);
             html.setAttribute('dir', currentLang === 'ar' ? 'rtl' : 'ltr');
-            document.getElementById('langToggleBtn').innerText = currentLang === 'en' ? 'AR' : 'EN';
+            
+            const btnText = currentLang === 'en' ? 'AR' : 'EN';
+            document.getElementById('langToggleBtn').innerText = btnText;
+            document.getElementById('langToggleBtnMobile').innerText = btnText;
             
             document.querySelectorAll('[data-en]').forEach(el => {
                 const txt = el.getAttribute(`data-${currentLang}`);
@@ -1452,11 +1177,8 @@
         function toggleTheme() {
             currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
             document.documentElement.setAttribute('data-theme', currentTheme);
-        }
-
-        function toggleDrawer() {
-            document.getElementById('mobileDrawer').classList.toggle('open');
-            document.getElementById('drawerOverlay').classList.toggle('open');
+            const icon = currentTheme === 'dark' ? '🌙' : '☀️';
+            document.getElementById('themeToggleBtnMobile').innerText = icon;
         }
 
         function renderServices() {
@@ -1474,7 +1196,7 @@
                             <h3>${title}</h3>
                             <p>${desc}</p>
                         </div>
-                        <a href="${waUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="justify-content:center;">${reqText}</a>
+                        <a href="${waUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-primary-whatsapp" style="justify-content:center; margin-top:1.5rem;">${reqText}</a>
                     </div>
                 `;
             }).join('');
