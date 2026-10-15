@@ -1,15 +1,21 @@
 {
   "name": "Ahmed Abu Omar Digital Store",
-  "short_name": "Ahmed Abu Omar",
-  "start_url": "/ahmed-abu-omar-store/",
+  "short_name": "Abu Omar Store",
+  "description": "متجر أحمد أبو عمر الرقمي - قوالب مواقع، أدوات Micro-SaaS، وحزم السير الذاتية.",
+  "start_url": "/",
   "display": "standalone",
-  "background_color": "#05070C",
-  "theme_color": "#D4AF37",
+  "background_color": "#090d16",
+  "theme_color": "#6366f1",
   "icons": [
     {
-      "src": "favicon.ico",
-      "sizes": "48x48",
-      "type": "image/x-icon"
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
     }
   ]
 }
