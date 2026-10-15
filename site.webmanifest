@@ -1,0 +1,15 @@
+{
+  "name": "Ahmed Abu Omar Digital Store",
+  "short_name": "Ahmed Abu Omar",
+  "start_url": "/ahmed-abu-omar-store/",
+  "display": "standalone",
+  "background_color": "#05070C",
+  "theme_color": "#D4AF37",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "48x48",
+      "type": "image/x-icon"
+    }
+  ]
+}
