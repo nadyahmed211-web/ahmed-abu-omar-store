@@ -12,6 +12,9 @@
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://nadyahmed211-web.github.io/ahmed-abu-omar-store/">
     
+    <!-- PWA & Webmanifest -->
+    <link rel="manifest" href="site.webmanifest">
+    
     <!-- Open Graph / Social Media Meta Tags -->
     <meta property="og:title" content="Ahmed Abu Omar — متجر التصميم الرقمي وقوالب الويب الفاخرة">
     <meta property="og:description" content="اطلب تصميم CV مخصص بـ 150 جنيه فقط أو استكشف حزم القوالب والأدوات البرمجية الذكية.">
@@ -22,6 +25,29 @@
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%2305070C'/><path d='M30 70 L50 30 L70 70 Z' fill='%23D4AF37'/></svg>">
     
+    <!-- Schema.org Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Store",
+      "name": "Ahmed Abu Omar Digital Store",
+      "image": "https://nadyahmed211-web.github.io/ahmed-abu-omar-store/",
+      "@id": "https://nadyahmed211-web.github.io/ahmed-abu-omar-store/",
+      "url": "https://nadyahmed211-web.github.io/ahmed-abu-omar-store/",
+      "telephone": "+201206443652",
+      "priceRange": "$$",
+      "description": "متجر أحمد أبو عمر الرقمي — قوالب مواقع سينمائية متوافقة مع محركات البحث SEO وأدوات Micro-SaaS وحزم سير ذاتية احترافية.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "EG"
+      },
+      "sameAs": [
+        "https://www.facebook.com/AhmedAbuOmarOfficial",
+        "https://www.instagram.com/ahmedabuomar.design"
+      ]
+    }
+    </script>
+
     <style>
         /* 🔒 حماية الملكية الفكرية - منع تحديد النصوص والنسخ */
         * {
@@ -134,7 +160,7 @@
             100% { transform: scale(0.9) translate(-30px, 40px); opacity: 0.18; }
         }
 
-        /* ensure content stays above canvas */
+        /* ضمان بقاء المحتوى فوق الخلفية المتحركة */
         header, section, div, nav, footer {
             position: relative;
             z-index: 1;
@@ -527,7 +553,7 @@
             box-shadow: 0 15px 45px rgba(34, 197, 94, 0.6);
         }
 
-        /* CUSTOM CV BANNER (في الأعلى - بسعر 150 جنيه ثابت بدون خصم) */
+        /* CUSTOM CV BANNER (بـ 150 جنيه ثابت بدون خصم) */
         .custom-cv-banner {
             background: linear-gradient(135deg, rgba(20, 16, 5, 0.95), rgba(10, 14, 26, 0.98));
             border: 2px solid var(--gold);
@@ -1030,7 +1056,7 @@
             <p data-ar="استكشف تشكيلتنا المتكاملة من خدمات التصميم المخصص والمنتجات الرقمية التي تشمل قوالب المواقع وأدوات Micro-SaaS وسير الـ ATS." data-en="Explore custom design services and premium digital products collection.">استكشف تشكيلتنا المتكاملة من خدمات التصميم المخصص والمنتجات الرقمية التي تشمل قوالب المواقع وأدوات Micro-SaaS وسير الـ ATS.</p>
         </div>
 
-        <!-- 🌟 1. خدمات التصميم المخصص في الأعلى (بنر خدمة CV مخصص بسعر 150 جنيه ثابت بدون خصم) -->
+        <!-- 🌟 خدمات التصميم المخصص في الأعلى (بنر خدمة CV مخصص بسعر 150 جنيه ثابت بدون خصم) -->
         <div class="custom-cv-banner">
             <span style="background:var(--gold); color:#05070C; font-weight:900; padding:0.4rem 1.4rem; border-radius:20px; font-size:0.85rem;" data-ar="خدمة تصميم حصري" data-en="EXCLUSIVE DESIGN SERVICE">خدمة تصميم حصري</span>
             <h3 style="color:var(--gold-light); margin:1.2rem 0 0.8rem; font-size:2.2rem; font-weight:900;" data-ar="تصميم CV مخصص واحترافي — اطلب التصميم الآن بـ 150 جنيه فقط!" data-en="Custom Professional CV Design — Order Now!">تصميم CV مخصص واحترافي — اطلب التصميم الآن بـ 150 جنيه فقط!</h3>
@@ -1042,7 +1068,7 @@
             </a>
         </div>
 
-        <!-- 🌟 2. الحزم والمنتجات تحت خدمات التصميم المخصص -->
+        <!-- الحزم والمنتجات تحت خدمات التصميم المخصص -->
         <div class="store-controls">
             <div class="search-box">
                 <span style="position:absolute; top:50%; right:1.2rem; transform:translateY(-50%);">🔍</span>
@@ -1231,7 +1257,7 @@
                 if (this.y > canvas.height) this.y = 0;
                 if (this.y < 0) this.y = canvas.height;
 
-                // التفاعل مع الماوس
+                // التفاعل مع حركة الماوس أو اللمس
                 if (mouse.x && mouse.y) {
                     let dx = mouse.x - this.x;
                     let dy = mouse.y - this.y;
@@ -1378,9 +1404,10 @@
            ========================================================= */
         const servicesData = [
             { id: 1, icon: "💻", titleAr: "تصميم المواقع وصفحات الهبوط السينمائية (Landing Pages)", titleEn: "Cinematic Landing Pages & Web Design", descAr: "تطوير صفحات هبوط ومواقع إلكترونية فائقة السرعة، متجاوبة ومتوافقة تماماً مع محركات البحث SEO لتعظيم مبيعاتك.", descEn: "High-converting cinematic landing pages & ultra-fast SEO friendly websites." },
-            { id: 2, icon: "📊", titleAr: "إعداد دراسات الحالة الاحترافية (Case Studies)", titleEn: "Professional Case Studies", descAr: "بناء دراسات حالة موثقة وأرقام حقيقية لإثبات كفاءة مشاريعك ومضاعفة ثقة العملاء.", descEn: "Verified case studies proving high ROI and business growth." },
-            { id: 3, icon: "🤖", titleAr: "دمج المساعد الشخصي الذكي (AI Assistant)", titleEn: "AI Smart Assistant Integration", descAr: "ربط وتطوير مساعد ذكي متقدم لموقعك للرد الآلي على استفسارات العملاء 24/7.", descEn: "Advanced AI chatbot integration for automated 24/7 customer support." },
-            { id: 4, icon: "⚙️", titleAr: "تطوير البرمجيات والمواقع المخصصة (Micro-SaaS)", titleEn: "Custom Software & Micro-SaaS", descAr: "بناء وتطوير أدوات وتطبيقات ويب مخصصة لتمكين مشروعك الرقمي بنجاح تام.", descEn: "Custom Micro-SaaS tools and web applications development." }
+            { id: 2, icon: "📱", titleAr: "تنزيل وتثبيت المتجر كتطبيق ذكي مستقل (PWA App)", titleEn: "PWA App Installation & Mobile Integration", descAr: "تمكين العملاء من تثبيت المتجر كتطبيق على الهواتف والأجهزة الذكية للوصول السريع والعمل بدون إنترنت.", descEn: "Enable customers to install your store as a native PWA app on mobile devices." },
+            { id: 3, icon: "📊", titleAr: "إعداد دراسات الحالة الاحترافية (Case Studies)", titleEn: "Professional Case Studies", descAr: "بناء دراسات حالة موثقة وأرقام حقيقية لإثبات كفاءة مشاريعك ومضاعفة ثقة العملاء.", descEn: "Verified case studies proving high ROI and business growth." },
+            { id: 4, icon: "🤖", titleAr: "دمج المساعد الشخصي الذكي (AI Assistant)", titleEn: "AI Smart Assistant Integration", descAr: "ربط وتطوير مساعد ذكي متقدم لموقعك للرد الآلي على استفسارات العملاء 24/7.", descEn: "Advanced AI chatbot integration for automated 24/7 customer support." },
+            { id: 5, icon: "⚙️", titleAr: "تطوير البرمجيات والمواقع المخصصة (Micro-SaaS)", titleEn: "Custom Software & Micro-SaaS", descAr: "بناء وتطوير أدوات وتطبيقات ويب مخصصة لتمكين مشروعك الرقمي بنجاح تام.", descEn: "Custom Micro-SaaS tools and web applications development." }
         ];
 
         const productsData = [
