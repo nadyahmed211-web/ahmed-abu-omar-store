@@ -5,14 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ahmed Abu Omar Digital Store | متجر أحمد أبو عمر الرقمي</title>
     <!-- SEO Meta Tags -->
-    <meta name="description" content="متجر أحمد أبو عمر الرقمي - المتجر الرسمي لقوالب المواقع، أدوات الميكرو-ساس (Micro-SaaS)، وحزم السير الذاتية الاحترافية.">
+    <meta name="description" content="متجر أحمد أبو عمر الرقمي - المتجر الرسمي لقوالب المواقع، أدوات الـ Micro-SaaS، وحزم السير الذاتية الاحترافية.">
     <meta name="keywords" content="أحمد أبو عمر, قوالب مواقع, أدوات ساس, CV Design, Digital Store, Payhip, تصميم مواقع">
     <meta name="author" content="Ahmed Abu Omar">
-    
-    <!-- Open Graph / Social Media -->
-    <meta property="og:title" content="Ahmed Abu Omar Digital Store">
-    <meta property="og:description" content="احصل على أقوى القوالب والأدوات الرقمية بخصم حصري 60% باستخدام الكود omar 60">
-    <meta property="og:type" content="website">
 
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -22,8 +17,8 @@
                 extend: {
                     colors: {
                         primary: '#6366f1',
-                        darkBg: '#090d16',
-                        cardBg: '#111827'
+                        darkBg: '#050811',
+                        cardBg: '#0f172a'
                     }
                 }
             }
@@ -34,54 +29,41 @@
     <!-- Google Fonts (Cairo) -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Cairo', sans-serif; }
-        .glass-panel { background: rgba(17, 24, 39, 0.75); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        body { font-family: 'Cairo', sans-serif; background-color: #050811; color: #f8fafc; }
+        .glass-card { background: rgba(15, 23, 42, 0.7); backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.08); box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
+        .glass-card:hover { border-color: rgba(99, 102, 241, 0.4); }
         canvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none; }
     </style>
-
-    <!-- Structured Data (JSON-LD SEO) -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Store",
-      "name": "Ahmed Abu Omar Digital Store",
-      "image": "",
-      "description": "متجر رقمي متخصص في بيع قوالب المواقع الإلكترونية، أدوات الـ Micro-SaaS، وتصميم السير الذاتية.",
-      "currenciesAccepted": "EGP, USD",
-      "paymentAccepted": "Credit Card, PayPal, Electronic Wallets, InstaPay"
-    }
-    </script>
 </head>
-<body class="bg-darkBg text-gray-100 min-h-screen select-none relative overflow-x-hidden" oncopy="return false" oncut="return false" onpaste="return false">
+<body class="min-h-screen select-none relative overflow-x-hidden" oncopy="return false" oncut="return false" onpaste="return false">
 
     <!-- Cinematic Background Canvas -->
     <canvas id="bgCanvas"></canvas>
 
-    <!-- Top Banner Promo -->
-    <div class="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 text-white text-center py-2 px-4 text-sm font-bold shadow-lg">
-        🔥 عرض لفترة محدودة: استخدم كود الخصم <span class="bg-black/30 px-2 py-0.5 rounded text-yellow-300 tracking-wider">omar 60</span> واحصل على خصم 60% على جميع المنتجات الرقمية!
+    <!-- Top Announcement Banner -->
+    <div class="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 text-white text-center py-2.5 px-4 text-xs sm:text-sm font-bold shadow-lg">
+        🔥 عرض لفترة محدودة: استخدم كود الخصم <span class="bg-black/40 px-2.5 py-1 rounded text-yellow-300 tracking-wider">omar 60</span> واحصل على خصم 60% على جميع المنتجات الرقمية!
     </div>
 
-    <!-- Navigation Header -->
-    <header class="sticky top-0 z-50 glass-panel border-b border-gray-800">
+    <!-- Header / Navbar -->
+    <header class="sticky top-0 z-50 bg-[#050811]/80 backdrop-blur-md border-b border-gray-800/80">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             <div class="flex items-center space-x-3 space-x-reverse">
-                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-500 to-pink-500 flex items-center justify-center font-black text-xl text-white shadow-md">
+                <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-indigo-600 to-pink-600 flex items-center justify-center font-black text-xl text-white shadow-lg shadow-indigo-500/20">
                     AO
                 </div>
                 <div>
-                    <span class="text-xl font-black bg-gradient-to-r from-indigo-400 to-pink-400 bg-clip-text text-transparent">Ahmed Abu Omar</span>
-                    <span class="block text-xs text-gray-400">Digital Creator & Developer</span>
+                    <span class="text-xl font-black bg-gradient-to-r from-indigo-400 via-purple-300 to-pink-400 bg-clip-text text-transparent">Ahmed Abu Omar</span>
+                    <span class="block text-xs text-gray-400 font-semibold">Digital Store & SaaS Solutions</span>
                 </div>
             </div>
-            <nav class="hidden md:flex items-center space-x-6 space-x-reverse text-sm font-semibold text-gray-300">
+            <nav class="hidden md:flex items-center space-x-8 space-x-reverse text-sm font-bold text-gray-300">
                 <a href="#products" class="hover:text-indigo-400 transition">المنتجات الرقمية (23)</a>
-                <a href="#services" class="hover:text-indigo-400 transition">خدماتنا الاحترافية</a>
-                <a href="#about" class="hover:text-indigo-400 transition">من نحن</a>
-                <a href="#contact" class="hover:text-indigo-400 transition">تواصل معنا</a>
+                <a href="#services" class="hover:text-pink-400 transition">خدمات الـ CV المخصصة</a>
+                <a href="#about" class="hover:text-indigo-400 transition">عن المتجر</a>
             </nav>
             <div class="flex items-center space-x-3 space-x-reverse">
-                <button onclick="toggleCurrency()" id="currencyBtn" class="px-3 py-1.5 rounded-lg bg-gray-800 border border-gray-700 text-xs font-bold hover:bg-gray-700 transition">
+                <button onclick="toggleCurrency()" id="currencyBtn" class="px-3.5 py-2 rounded-xl bg-gray-800/90 border border-gray-700 text-xs font-bold hover:bg-gray-700 transition text-gray-200 shadow-md">
                     🌐 EGP / USD
                 </button>
             </div>
@@ -90,43 +72,46 @@
 
     <!-- Hero Section -->
     <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center relative">
-        <h1 class="text-4xl sm:text-6xl font-black tracking-tight mb-6">
-            طور مشروعك الرقمي مع <span class="bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">أحمد أبو عمر</span>
+        <div class="inline-block mb-4 px-4 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/35 text-indigo-400 text-xs font-bold tracking-wide">
+            ✨ المنصة الاحترافية الأولى لرواد الأعمال والمطورين
+        </div>
+        <h1 class="text-4xl sm:text-6xl font-black tracking-tight mb-6 leading-tight">
+            متجر <span class="bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">أحمد أبو عمر</span> الرقمي
         </h1>
-        <p class="max-w-2xl mx-auto text-gray-400 text-lg mb-8 leading-relaxed">
-            وجهتك الأولى للحصول على أقوى قوالب الويب البرمجية، أدوات الـ Micro-SaaS المصممة خصيصاً لمضاعفة أرباحك، وخدمات تصميم السير الذاتية باحترافية تامة.
+        <p class="max-w-2xl mx-auto text-gray-400 text-base sm:text-lg mb-10 leading-relaxed">
+            اكتشف أقوى قوالب الويب البرمجية الحديثة، أدوات الـ Micro-SaaS لتطوير عملك، وحزم السير الذاتية الاحترافية بأفضل الأسعار وأعلى معايير الجودة.
         </p>
         <div class="flex justify-center gap-4 flex-wrap">
-            <a href="#products" class="px-8 py-3.5 rounded-xl bg-gradient-to-r from-indigo-600 to-pink-600 font-bold text-white shadow-lg hover:opacity-95 transition transform hover:-translate-y-0.5">
-                تصفح المنتجات الرقمية
+            <a href="#products" class="px-8 py-3.5 rounded-xl bg-gradient-to-r from-indigo-600 to-pink-600 font-bold text-white shadow-lg shadow-indigo-600/30 hover:opacity-95 transition transform hover:-translate-y-0.5">
+                تصفح المنتجات الرقمية (23)
             </a>
-            <a href="#services" class="px-8 py-3.5 rounded-xl glass-panel font-bold text-gray-200 hover:bg-gray-800 transition">
+            <a href="#services" class="px-8 py-3.5 rounded-xl glass-card font-bold text-gray-200 hover:bg-gray-800 transition">
                 خدمة تصميم الـ CV
             </a>
         </div>
     </section>
 
-    <!-- Professional Services Section (CV Design Service Separated) -->
+    <!-- Professional Services Section (CV Design Service) -->
     <section id="services" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div class="border-b border-gray-800 pb-4 mb-8">
+        <div class="border-b border-gray-800/80 pb-4 mb-8">
             <h2 class="text-2xl font-black text-white flex items-center gap-3">
-                <i class="fa-solid fa-briefcase text-pink-500"></i> خدماتنا الاحترافية (مستقلة عن المنتجات)
+                <i class="fa-solid fa-briefcase text-pink-500"></i> خدماتنا الاحترافية المباشرة
             </h2>
-            <p class="text-gray-400 text-sm mt-1">خدمات مخصصة يتم تنفيذها واطلبها مباشرة عبر التواصل معنا.</p>
+            <p class="text-gray-400 text-sm mt-1">خدمات مصممة لرفع كفاءتك المهنية يتم تنفيذها خصيصاً لك.</p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-1 max-w-xl mx-auto">
-            <div class="glass-panel rounded-2xl p-6 border border-pink-500/30 hover:border-pink-500 transition relative overflow-hidden group">
-                <div class="absolute top-0 right-0 bg-pink-600 text-white text-xs px-3 py-1 rounded-bl-xl font-bold">خدمة مميزة</div>
-                <h3 class="text-xl font-bold text-white mb-2">تصميم سيرة ذاتية (CV) احترافية مخصصة</h3>
-                <p class="text-gray-400 text-sm mb-4">تصميم سيرة ذاتية متوافقة مع أنظمة الـ ATS باللغتين العربية والإنجليزية مصممة خصيصاً لبروفايلك المهني.</p>
-                <div class="flex items-center justify-between mt-6">
+        <div class="grid grid-cols-1 max-w-xl mx-auto">
+            <div class="glass-card rounded-2xl p-6 border-pink-500/40 relative overflow-hidden group">
+                <div class="absolute top-0 right-0 bg-pink-600 text-white text-xs px-3 py-1 rounded-bl-xl font-bold">بدون خصم (خدمة مباشرة)</div>
+                <h3 class="text-xl font-bold text-white mb-2">تصميم سيرة ذاتية (CV) احترافية ومخصصة</h3>
+                <p class="text-gray-400 text-sm mb-6 leading-relaxed">تصميم سيرة ذاتية فريدة متوافقة تماماً مع أنظمة الفرز الآلي (ATS) باللغتين العربية والإنجليزية لضمان قبولك في كبرى الشركات.</p>
+                <div class="flex items-center justify-between pt-4 border-t border-gray-800/80">
                     <div>
-                        <span class="text-xs text-gray-400 block">السعر الثابت (بدون خصم)</span>
+                        <span class="text-xs text-gray-400 block mb-0.5">السعر الثابت للخدمة</span>
                         <span class="text-2xl font-black text-pink-400 price-display" data-egp="150" data-usd="3">150 ج.م</span>
                     </div>
-                    <a href="https://wa.me/?text=مرحباً%20أحمد،%20أريد%20طلب%20خدمة%20تصميم%20السيرة%20الذاتية%20المخصصة%20بسعر%20150%20جنيه." target="_blank" class="px-5 py-2.5 rounded-xl bg-pink-600 hover:bg-pink-500 text-white font-bold text-sm transition shadow-md flex items-center gap-2">
-                        <i class="fa-brands fa-whatsapp"></i> اطلب الخدمة الآن
+                    <a href="https://wa.me/?text=مرحباً%20أحمد،%20أريد%20طلب%20خدمة%20تصميم%20السيرة%20الذاتية%20المخصصة%20بسعر%20150%20جنيه." target="_blank" class="px-6 py-2.5 rounded-xl bg-gradient-to-r from-pink-600 to-purple-600 hover:opacity-90 text-white font-bold text-sm transition shadow-md flex items-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-lg"></i> اطلب الخدمة الآن
                     </a>
                 </div>
             </div>
@@ -135,496 +120,455 @@
 
     <!-- Digital Products Store Section (23 Products) -->
     <section id="products" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div class="border-b border-gray-800 pb-4 mb-8 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+        <div class="border-b border-gray-800/80 pb-4 mb-8 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
             <div>
                 <h2 class="text-2xl font-black text-white flex items-center gap-3">
                     <i class="fa-solid fa-store text-indigo-500"></i> متجر المنتجات الرقمية (23 منتج)
                 </h2>
-                <p class="text-gray-400 text-sm mt-1">طبق كود الخصم <span class="text-yellow-400 font-bold">omar 60</span> عند الدفع في Payhip.</p>
+                <p class="text-gray-400 text-sm mt-1">استخدم كود الخصم <span class="text-yellow-400 font-bold">omar 60</span> عند الدفع في Payhip.</p>
             </div>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="productsGrid">
-            <!-- Product 1 -->
-            <div class="glass-panel rounded-2xl p-5 flex flex-col justify-between border border-gray-800 hover:border-indigo-500/50 transition">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <!-- Products 1 to 15 (800 EGP Net Profit Tier -> 840 EGP Final / Original 2100 EGP) -->
+            <!-- 1 -->
+            <div class="glass-card rounded-2xl p-5 flex flex-col justify-between transition">
                 <div>
-                    <span class="text-xs text-indigo-400 font-bold block mb-1">المنتج #1 (صانع محتوى وساس)</span>
-                    <h3 class="text-lg font-bold text-white mb-2">SEO Meta & Schema Generator Pro</h3>
-                    <p class="text-gray-400 text-xs mb-4">أداة احترافية لتوليد أكواد الميتا وسكيما المخصصة لمحركات البحث بسهولة فائقة.</p>
+                    <span class="text-xs text-indigo-400 font-bold block mb-1">المنتج #1</span>
+                    <h3 class="text-base font-bold text-white mb-2">SEO Meta & Schema Generator Pro</h3>
+                    <p class="text-gray-400 text-xs mb-4 leading-relaxed">أداة احترافية لتوليد أكواد الميتا وسكيما المخصصة لمحركات البحث بسهولة.</p>
                 </div>
                 <div>
-                    <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center justify-between mb-4 pt-3 border-t border-gray-800/60">
                         <div>
                             <span class="text-xs text-gray-500 line-through original-price" data-egp="2100" data-usd="42">2,100 ج.م</span>
-                            <span class="text-xl font-black text-indigo-400 price-display" data-egp="840" data-usd="16.80">840 ج.م</span>
+                            <span class="text-lg font-black text-indigo-400 price-display" data-egp="840" data-usd="16.80">840 ج.م</span>
                         </div>
                         <span class="text-xs bg-indigo-500/20 text-indigo-300 px-2.5 py-1 rounded-full font-bold">خصم 60%</span>
                     </div>
-                    <a href="https://payhip.com/b/1tfs7" target="_blank" class="w-full py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-sm transition text-center block shadow-md">
-                        شراء المنتج الآن
-                    </a>
+                    <a href="https://payhip.com/b/1tfs7" target="_blank" class="w-full py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-sm transition text-center block shadow-md">شراء عبر Payhip</a>
                 </div>
             </div>
 
-            <!-- Product 2 -->
-            <div class="glass-panel rounded-2xl p-5 flex flex-col justify-between border border-gray-800 hover:border-indigo-500/50 transition">
+            <!-- 2 -->
+            <div class="glass-card rounded-2xl p-5 flex flex-col justify-between transition">
                 <div>
                     <span class="text-xs text-indigo-400 font-bold block mb-1">المنتج #2</span>
-                    <h3 class="text-lg font-bold text-white mb-2">AI Cold Email & Outreach Generator Pro</h3>
-                    <p class="text-gray-400 text-xs mb-4">مساعد ذكي لتوليد رسائل البريد الإلكتروني البارد وحملات الترويج للمبيعات.</p>
+                    <h3 class="text-base font-bold text-white mb-2">AI Cold Email & Outreach Generator Pro</h3>
+                    <p class="text-gray-400 text-xs mb-4 leading-relaxed">مساعد ذكي لتوليد رسائل البريد الإلكتروني البارد وحملات الترويج للمبيعات.</p>
                 </div>
                 <div>
-                    <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center justify-between mb-4 pt-3 border-t border-gray-800/60">
                         <div>
                             <span class="text-xs text-gray-500 line-through original-price" data-egp="2100" data-usd="42">2,100 ج.م</span>
-                            <span class="text-xl font-black text-indigo-400 price-display" data-egp="840" data-usd="16.80">840 ج.م</span>
+                            <span class="text-lg font-black text-indigo-400 price-display" data-egp="840" data-usd="16.80">840 ج.م</span>
                         </div>
                         <span class="text-xs bg-indigo-500/20 text-indigo-300 px-2.5 py-1 rounded-full font-bold">خصم 60%</span>
                     </div>
-                    <a href="https://payhip.com/b/y2Q5N" target="_blank" class="w-full py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-sm transition text-center block shadow-md">
-                        شراء المنتج الآن
-                    </a>
+                    <a href="https://payhip.com/b/y2Q5N" target="_blank" class="w-full py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-sm transition text-center block shadow-md">شراء عبر Payhip</a>
                 </div>
             </div>
 
-            <!-- Product 3 -->
-            <div class="glass-panel rounded-2xl p-5 flex flex-col justify-between border border-gray-800 hover:border-indigo-500/50 transition">
+            <!-- 3 -->
+            <div class="glass-card rounded-2xl p-5 flex flex-col justify-between transition">
                 <div>
                     <span class="text-xs text-indigo-400 font-bold block mb-1">المنتج #3</span>
-                    <h3 class="text-lg font-bold text-white mb-2">AI Social Post Generator Pro</h3>
-                    <p class="text-gray-400 text-xs mb-4">أداة لتوليد منشورات وسائل التواصل الاجتماعي بذكاء واحترافية.</p>
+                    <h3 class="text-base font-bold text-white mb-2">AI Social Post Generator Pro</h3>
+                    <p class="text-gray-400 text-xs mb-4 leading-relaxed">أداة لتوليد منشورات وسائل التواصل الاجتماعي بذكاء واحترافية تامة.</p>
                 </div>
                 <div>
-                    <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center justify-between mb-4 pt-3 border-t border-gray-800/60">
                         <div>
                             <span class="text-xs text-gray-500 line-through original-price" data-egp="2100" data-usd="42">2,100 ج.م</span>
-                            <span class="text-xl font-black text-indigo-400 price-display" data-egp="840" data-usd="16.80">840 ج.م</span>
+                            <span class="text-lg font-black text-indigo-400 price-display" data-egp="840" data-usd="16.80">840 ج.م</span>
                         </div>
                         <span class="text-xs bg-indigo-500/20 text-indigo-300 px-2.5 py-1 rounded-full font-bold">خصم 60%</span>
                     </div>
-                    <a href="https://payhip.com/b/cS1eq" target="_blank" class="w-full py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-sm transition text-center block shadow-md">
-                        شراء المنتج الآن
-                    </a>
+                    <a href="https://payhip.com/b/cS1eq" target="_blank" class="w-full py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-sm transition text-center block shadow-md">شراء عبر Payhip</a>
                 </div>
             </div>
 
-            <!-- Product 4 -->
-            <div class="glass-panel rounded-2xl p-5 flex flex-col justify-between border border-gray-800 hover:border-indigo-500/50 transition">
+            <!-- 4 -->
+            <div class="glass-card rounded-2xl p-5 flex flex-col justify-between transition">
                 <div>
                     <span class="text-xs text-indigo-400 font-bold block mb-1">المنتج #4</span>
-                    <h3 class="text-lg font-bold text-white mb-2">Neoflow E-Commerce Dashboard & Analytics</h3>
-                    <p class="text-gray-400 text-xs mb-4">لوحة تحكم متكاملة لإدارة المتاجر الإلكترونية وتحليلات المبيعات.</p>
+                    <h3 class="text-base font-bold text-white mb-2">Neoflow E-Commerce Dashboard & Analytics</h3>
+                    <p class="text-gray-400 text-xs mb-4 leading-relaxed">لوحة تحكم متكاملة لإدارة المتاجر الإلكترونية وتحليلات المبيعات بدقة.</p>
                 </div>
                 <div>
-                    <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center justify-between mb-4 pt-3 border-t border-gray-800/60">
                         <div>
                             <span class="text-xs text-gray-500 line-through original-price" data-egp="2100" data-usd="42">2,100 ج.م</span>
-                            <span class="text-xl font-black text-indigo-400 price-display" data-egp="840" data-usd="16.80">840 ج.م</span>
+                            <span class="text-lg font-black text-indigo-400 price-display" data-egp="840" data-usd="16.80">840 ج.م</span>
                         </div>
                         <span class="text-xs bg-indigo-500/20 text-indigo-300 px-2.5 py-1 rounded-full font-bold">خصم 60%</span>
                     </div>
-                    <a href="https://payhip.com/b/NkyiO" target="_blank" class="w-full py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-sm transition text-center block shadow-md">
-                        شراء المنتج الآن
-                    </a>
+                    <a href="https://payhip.com/b/NkyiO" target="_blank" class="w-full py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-sm transition text-center block shadow-md">شراء عبر Payhip</a>
                 </div>
             </div>
 
-            <!-- Product 5 -->
-            <div class="glass-panel rounded-2xl p-5 flex flex-col justify-between border border-gray-800 hover:border-indigo-500/50 transition">
+            <!-- 5 -->
+            <div class="glass-card rounded-2xl p-5 flex flex-col justify-between transition">
                 <div>
                     <span class="text-xs text-indigo-400 font-bold block mb-1">المنتج #5</span>
-                    <h3 class="text-lg font-bold text-white mb-2">Premium Restaurant & Cafe Website Template</h3>
-                    <p class="text-gray-400 text-xs mb-4">قالب موقع عصري ومخصص للمطاعم والكافيهات مع قائمة طعام تفاعلية.</p>
+                    <h3 class="text-base font-bold text-white mb-2">Premium Restaurant & Cafe Website Template</h3>
+                    <p class="text-gray-400 text-xs mb-4 leading-relaxed">قالب موقع عصري ومخصص للمطاعم والكافيهات مع قائمة طعام تفاعلية.</p>
                 </div>
                 <div>
-                    <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center justify-between mb-4 pt-3 border-t border-gray-800/60">
                         <div>
                             <span class="text-xs text-gray-500 line-through original-price" data-egp="2100" data-usd="42">2,100 ج.م</span>
-                            <span class="text-xl font-black text-indigo-400 price-display" data-egp="840" data-usd="16.80">840 ج.م</span>
+                            <span class="text-lg font-black text-indigo-400 price-display" data-egp="840" data-usd="16.80">840 ج.م</span>
                         </div>
                         <span class="text-xs bg-indigo-500/20 text-indigo-300 px-2.5 py-1 rounded-full font-bold">خصم 60%</span>
                     </div>
-                    <a href="https://payhip.com/b/ZPEcW" target="_blank" class="w-full py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-sm transition text-center block shadow-md">
-                        شراء المنتج الآن
-                    </a>
+                    <a href="https://payhip.com/b/ZPEcW" target="_blank" class="w-full py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-sm transition text-center block shadow-md">شراء عبر Payhip</a>
                 </div>
             </div>
 
-            <!-- Product 6 -->
-            <div class="glass-panel rounded-2xl p-5 flex flex-col justify-between border border-gray-800 hover:border-indigo-500/50 transition">
+            <!-- 6 -->
+            <div class="glass-card rounded-2xl p-5 flex flex-col justify-between transition">
                 <div>
                     <span class="text-xs text-indigo-400 font-bold block mb-1">المنتج #6</span>
-                    <h3 class="text-lg font-bold text-white mb-2">Premium Real Estate & Elite Property</h3>
-                    <p class="text-gray-400 text-xs mb-4">قالب عقاري فاخر لعرض العقارات والوحدات السكنية باحترافية.</p>
+                    <h3 class="text-base font-bold text-white mb-2">Premium Real Estate & Elite Property</h3>
+                    <p class="text-gray-400 text-xs mb-4 leading-relaxed">قالب عقاري فاخر لعرض العقارات والوحدات السكنية باحترافية.</p>
                 </div>
                 <div>
-                    <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center justify-between mb-4 pt-3 border-t border-gray-800/60">
                         <div>
                             <span class="text-xs text-gray-500 line-through original-price" data-egp="2100" data-usd="42">2,100 ج.م</span>
-                            <span class="text-xl font-black text-indigo-400 price-display" data-egp="840" data-usd="16.80">840 ج.م</span>
+                            <span class="text-lg font-black text-indigo-400 price-display" data-egp="840" data-usd="16.80">840 ج.م</span>
                         </div>
                         <span class="text-xs bg-indigo-500/20 text-indigo-300 px-2.5 py-1 rounded-full font-bold">خصم 60%</span>
                     </div>
-                    <a href="https://payhip.com/b/iC7jQ" target="_blank" class="w-full py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-sm transition text-center block shadow-md">
-                        شراء المنتج الآن
-                    </a>
+                    <a href="https://payhip.com/b/iC7jQ" target="_blank" class="w-full py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-sm transition text-center block shadow-md">شراء عبر Payhip</a>
                 </div>
             </div>
 
-            <!-- Product 7 -->
-            <div class="glass-panel rounded-2xl p-5 flex flex-col justify-between border border-gray-800 hover:border-indigo-500/50 transition">
+            <!-- 7 -->
+            <div class="glass-card rounded-2xl p-5 flex flex-col justify-between transition">
                 <div>
                     <span class="text-xs text-indigo-400 font-bold block mb-1">المنتج #7</span>
-                    <h3 class="text-lg font-bold text-white mb-2">Mium Lawyer & Legal Services Template</h3>
-                    <p class="text-gray-400 text-xs mb-4">قالب مخصص للمحامين والمكاتب القانونية والاستشارات.</p>
+                    <h3 class="text-base font-bold text-white mb-2">Mium Lawyer & Legal Services Template</h3>
+                    <p class="text-gray-400 text-xs mb-4 leading-relaxed">قالب مخصص للمحامين والمكاتب القانونية والاستشارات.</p>
                 </div>
                 <div>
-                    <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center justify-between mb-4 pt-3 border-t border-gray-800/60">
                         <div>
                             <span class="text-xs text-gray-500 line-through original-price" data-egp="2100" data-usd="42">2,100 ج.م</span>
-                            <span class="text-xl font-black text-indigo-400 price-display" data-egp="840" data-usd="16.80">840 ج.م</span>
+                            <span class="text-lg font-black text-indigo-400 price-display" data-egp="840" data-usd="16.80">840 ج.م</span>
                         </div>
                         <span class="text-xs bg-indigo-500/20 text-indigo-300 px-2.5 py-1 rounded-full font-bold">خصم 60%</span>
                     </div>
-                    <a href="https://payhip.com/b/i3kaJ" target="_blank" class="w-full py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-sm transition text-center block shadow-md">
-                        شراء المنتج الآن
-                    </a>
+                    <a href="https://payhip.com/b/i3kaJ" target="_blank" class="w-full py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-sm transition text-center block shadow-md">شراء عبر Payhip</a>
                 </div>
             </div>
 
-            <!-- Product 8 -->
-            <div class="glass-panel rounded-2xl p-5 flex flex-col justify-between border border-gray-800 hover:border-indigo-500/50 transition">
+            <!-- 8 -->
+            <div class="glass-card rounded-2xl p-5 flex flex-col justify-between transition">
                 <div>
                     <span class="text-xs text-indigo-400 font-bold block mb-1">المنتج #8</span>
-                    <h3 class="text-lg font-bold text-white mb-2">Ultimate AI Website Assistant & Chatbot</h3>
-                    <p class="text-gray-400 text-xs mb-4">مساعد ذكي ومدمج للمواقع الإلكترونية للرد على العملاء تلقائياً.</p>
+                    <h3 class="text-base font-bold text-white mb-2">Ultimate AI Website Assistant & Chatbot</h3>
+                    <p class="text-gray-400 text-xs mb-4 leading-relaxed">مساعد ذكي ومدمج للمواقع الإلكترونية للرد على العملاء تلقائياً.</p>
                 </div>
                 <div>
-                    <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center justify-between mb-4 pt-3 border-t border-gray-800/60">
                         <div>
                             <span class="text-xs text-gray-500 line-through original-price" data-egp="2100" data-usd="42">2,100 ج.م</span>
-                            <span class="text-xl font-black text-indigo-400 price-display" data-egp="840" data-usd="16.80">840 ج.م</span>
+                            <span class="text-lg font-black text-indigo-400 price-display" data-egp="840" data-usd="16.80">840 ج.م</span>
                         </div>
                         <span class="text-xs bg-indigo-500/20 text-indigo-300 px-2.5 py-1 rounded-full font-bold">خصم 60%</span>
                     </div>
-                    <a href="https://payhip.com/b/DXmGs" target="_blank" class="w-full py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-sm transition text-center block shadow-md">
-                        شراء المنتج الآن
-                    </a>
+                    <a href="https://payhip.com/b/DXmGs" target="_blank" class="w-full py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-sm transition text-center block shadow-md">شراء عبر Payhip</a>
                 </div>
             </div>
 
-            <!-- Product 9 -->
-            <div class="glass-panel rounded-2xl p-5 flex flex-col justify-between border border-gray-800 hover:border-indigo-500/50 transition">
+            <!-- 9 -->
+            <div class="glass-card rounded-2xl p-5 flex flex-col justify-between transition">
                 <div>
                     <span class="text-xs text-indigo-400 font-bold block mb-1">المنتج #9</span>
-                    <h3 class="text-lg font-bold text-white mb-2">Image Compressor Pro – Micro-SaaS</h3>
-                    <p class="text-gray-400 text-xs mb-4">أداة ساس لضغط وتحسين الصور بدون فقدان الجودة.</p>
+                    <h3 class="text-base font-bold text-white mb-2">Image Compressor Pro – Micro-SaaS</h3>
+                    <p class="text-gray-400 text-xs mb-4 leading-relaxed">أداة ساس لضغط وتحسين الصور بدون فقدان الجودة.</p>
                 </div>
                 <div>
-                    <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center justify-between mb-4 pt-3 border-t border-gray-800/60">
                         <div>
                             <span class="text-xs text-gray-500 line-through original-price" data-egp="2100" data-usd="42">2,100 ج.م</span>
-                            <span class="text-xl font-black text-indigo-400 price-display" data-egp="840" data-usd="16.80">840 ج.م</span>
+                            <span class="text-lg font-black text-indigo-400 price-display" data-egp="840" data-usd="16.80">840 ج.م</span>
                         </div>
                         <span class="text-xs bg-indigo-500/20 text-indigo-300 px-2.5 py-1 rounded-full font-bold">خصم 60%</span>
                     </div>
-                    <a href="https://payhip.com/b/MWBli" target="_blank" class="w-full py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-sm transition text-center block shadow-md">
-                        شراء المنتج الآن
-                    </a>
+                    <a href="https://payhip.com/b/MWBli" target="_blank" class="w-full py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-sm transition text-center block shadow-md">شراء عبر Payhip</a>
                 </div>
             </div>
 
-            <!-- Product 10 -->
-            <div class="glass-panel rounded-2xl p-5 flex flex-col justify-between border border-gray-800 hover:border-indigo-500/50 transition">
+            <!-- 10 -->
+            <div class="glass-card rounded-2xl p-5 flex flex-col justify-between transition">
                 <div>
                     <span class="text-xs text-indigo-400 font-bold block mb-1">المنتج #10</span>
-                    <h3 class="text-lg font-bold text-white mb-2">Aura Luxury & Premium Brand Template</h3>
-                    <p class="text-gray-400 text-xs mb-4">قالب راقي للعلامات التجارية الفاخرة وعروض المنتجات الراقية.</p>
+                    <h3 class="text-base font-bold text-white mb-2">Aura Luxury & Premium Brand Template</h3>
+                    <p class="text-gray-400 text-xs mb-4 leading-relaxed">قالب راقي للعلامات التجارية الفاخرة وعروض المنتجات الراقية.</p>
                 </div>
                 <div>
-                    <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center justify-between mb-4 pt-3 border-t border-gray-800/60">
                         <div>
                             <span class="text-xs text-gray-500 line-through original-price" data-egp="2100" data-usd="42">2,100 ج.م</span>
-                            <span class="text-xl font-black text-indigo-400 price-display" data-egp="840" data-usd="16.80">840 ج.م</span>
+                            <span class="text-lg font-black text-indigo-400 price-display" data-egp="840" data-usd="16.80">840 ج.م</span>
                         </div>
                         <span class="text-xs bg-indigo-500/20 text-indigo-300 px-2.5 py-1 rounded-full font-bold">خصم 60%</span>
                     </div>
-                    <a href="https://payhip.com/b/mQvIj" target="_blank" class="w-full py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-sm transition text-center block shadow-md">
-                        شراء المنتج الآن
-                    </a>
+                    <a href="https://payhip.com/b/mQvIj" target="_blank" class="w-full py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-sm transition text-center block shadow-md">شراء عبر Payhip</a>
                 </div>
             </div>
 
-            <!-- Product 11 -->
-            <div class="glass-panel rounded-2xl p-5 flex flex-col justify-between border border-gray-800 hover:border-indigo-500/50 transition">
+            <!-- 11 -->
+            <div class="glass-card rounded-2xl p-5 flex flex-col justify-between transition">
                 <div>
                     <span class="text-xs text-indigo-400 font-bold block mb-1">المنتج #11</span>
-                    <h3 class="text-lg font-bold text-white mb-2">Ahmed Professional Portfolio Template</h3>
-                    <p class="text-gray-400 text-xs mb-4">قالب معرض أعمال احترافي ومميز لإبراز مهاراتك ومشاريعك.</p>
+                    <h3 class="text-base font-bold text-white mb-2">Ahmed Professional Portfolio Template</h3>
+                    <p class="text-gray-400 text-xs mb-4 leading-relaxed">قالب معرض أعمال احترافي ومميز لإبراز مهاراتك ومشاريعك.</p>
                 </div>
                 <div>
-                    <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center justify-between mb-4 pt-3 border-t border-gray-800/60">
                         <div>
                             <span class="text-xs text-gray-500 line-through original-price" data-egp="2100" data-usd="42">2,100 ج.م</span>
-                            <span class="text-xl font-black text-indigo-400 price-display" data-egp="840" data-usd="16.80">840 ج.م</span>
+                            <span class="text-lg font-black text-indigo-400 price-display" data-egp="840" data-usd="16.80">840 ج.م</span>
                         </div>
                         <span class="text-xs bg-indigo-500/20 text-indigo-300 px-2.5 py-1 rounded-full font-bold">خصم 60%</span>
                     </div>
-                    <a href="https://payhip.com/b/GgdNQ" target="_blank" class="w-full py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-sm transition text-center block shadow-md">
-                        شراء المنتج الآن
-                    </a>
+                    <a href="https://payhip.com/b/GgdNQ" target="_blank" class="w-full py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-sm transition text-center block shadow-md">شراء عبر Payhip</a>
                 </div>
             </div>
 
-            <!-- Product 12 -->
-            <div class="glass-panel rounded-2xl p-5 flex flex-col justify-between border border-gray-800 hover:border-indigo-500/50 transition">
+            <!-- 12 -->
+            <div class="glass-card rounded-2xl p-5 flex flex-col justify-between transition">
                 <div>
                     <span class="text-xs text-indigo-400 font-bold block mb-1">المنتج #12</span>
-                    <h3 class="text-lg font-bold text-white mb-2">Zenith Cyber & Tech Security Template</h3>
-                    <p class="text-gray-400 text-xs mb-4">قالب مخصص لشركات الأمن السيبراني والخدمات التقنية المتقدمة.</p>
+                    <h3 class="text-base font-bold text-white mb-2">Zenith Cyber & Tech Security Template</h3>
+                    <p class="text-gray-400 text-xs mb-4 leading-relaxed">قالب مخصص لشركات الأمن السيبراني والخدمات التقنية المتقدمة.</p>
                 </div>
                 <div>
-                    <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center justify-between mb-4 pt-3 border-t border-gray-800/60">
                         <div>
                             <span class="text-xs text-gray-500 line-through original-price" data-egp="2100" data-usd="42">2,100 ج.م</span>
-                            <span class="text-xl font-black text-indigo-400 price-display" data-egp="840" data-usd="16.80">840 ج.م</span>
+                            <span class="text-lg font-black text-indigo-400 price-display" data-egp="840" data-usd="16.80">840 ج.م</span>
                         </div>
                         <span class="text-xs bg-indigo-500/20 text-indigo-300 px-2.5 py-1 rounded-full font-bold">خصم 60%</span>
                     </div>
-                    <a href="https://payhip.com/b/IOocl" target="_blank" class="w-full py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-sm transition text-center block shadow-md">
-                        شراء المنتج الآن
-                    </a>
+                    <a href="https://payhip.com/b/IOocl" target="_blank" class="w-full py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-sm transition text-center block shadow-md">شراء عبر Payhip</a>
                 </div>
             </div>
 
-            <!-- Product 13 -->
-            <div class="glass-panel rounded-2xl p-5 flex flex-col justify-between border border-gray-800 hover:border-indigo-500/50 transition">
+            <!-- 13 -->
+            <div class="glass-card rounded-2xl p-5 flex flex-col justify-between transition">
                 <div>
                     <span class="text-xs text-indigo-400 font-bold block mb-1">المنتج #13</span>
-                    <h3 class="text-lg font-bold text-white mb-2">AbuOmar Business & Corporate Solution</h3>
-                    <p class="text-gray-400 text-xs mb-4">قالب للشركات والحلول المؤسسية والأعمال التجارية الكبرى.</p>
+                    <h3 class="text-base font-bold text-white mb-2">AbuOmar Business & Corporate Solution</h3>
+                    <p class="text-gray-400 text-xs mb-4 leading-relaxed">قالب للشركات والحلول المؤسسية والأعمال التجارية الكبرى.</p>
                 </div>
                 <div>
-                    <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center justify-between mb-4 pt-3 border-t border-gray-800/60">
                         <div>
                             <span class="text-xs text-gray-500 line-through original-price" data-egp="2100" data-usd="42">2,100 ج.م</span>
-                            <span class="text-xl font-black text-indigo-400 price-display" data-egp="840" data-usd="16.80">840 ج.م</span>
+                            <span class="text-lg font-black text-indigo-400 price-display" data-egp="840" data-usd="16.80">840 ج.م</span>
                         </div>
                         <span class="text-xs bg-indigo-500/20 text-indigo-300 px-2.5 py-1 rounded-full font-bold">خصم 60%</span>
                     </div>
-                    <a href="https://payhip.com/b/mNYI5" target="_blank" class="w-full py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-sm transition text-center block shadow-md">
-                        شراء المنتج الآن
-                    </a>
+                    <a href="https://payhip.com/b/mNYI5" target="_blank" class="w-full py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-sm transition text-center block shadow-md">شراء عبر Payhip</a>
                 </div>
             </div>
 
-            <!-- Product 14 -->
-            <div class="glass-panel rounded-2xl p-5 flex flex-col justify-between border border-gray-800 hover:border-indigo-500/50 transition">
+            <!-- 14 -->
+            <div class="glass-card rounded-2xl p-5 flex flex-col justify-between transition">
                 <div>
                     <span class="text-xs text-indigo-400 font-bold block mb-1">المنتج #14</span>
-                    <h3 class="text-lg font-bold text-white mb-2">Apex Exotic & Creative</h3>
-                    <p class="text-gray-400 text-xs mb-4">قالب إبداعي فريد للمصممين ووكالات الإبداع الفني.</p>
+                    <h3 class="text-base font-bold text-white mb-2">Apex Exotic & Creative</h3>
+                    <p class="text-gray-400 text-xs mb-4 leading-relaxed">قالب إبداعي فريد للمصممين ووكالات الإبداع الفني.</p>
                 </div>
                 <div>
-                    <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center justify-between mb-4 pt-3 border-t border-gray-800/60">
                         <div>
                             <span class="text-xs text-gray-500 line-through original-price" data-egp="2100" data-usd="42">2,100 ج.م</span>
-                            <span class="text-xl font-black text-indigo-400 price-display" data-egp="840" data-usd="16.80">840 ج.م</span>
+                            <span class="text-lg font-black text-indigo-400 price-display" data-egp="840" data-usd="16.80">840 ج.م</span>
                         </div>
                         <span class="text-xs bg-indigo-500/20 text-indigo-300 px-2.5 py-1 rounded-full font-bold">خصم 60%</span>
                     </div>
-                    <a href="https://payhip.com/b/Uipv7" target="_blank" class="w-full py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-sm transition text-center block shadow-md">
-                        شراء المنتج الآن
-                    </a>
+                    <a href="https://payhip.com/b/Uipv7" target="_blank" class="w-full py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-sm transition text-center block shadow-md">شراء عبر Payhip</a>
                 </div>
             </div>
 
-            <!-- Product 15 -->
-            <div class="glass-panel rounded-2xl p-5 flex flex-col justify-between border border-gray-800 hover:border-indigo-500/50 transition">
+            <!-- 15 -->
+            <div class="glass-card rounded-2xl p-5 flex flex-col justify-between transition">
                 <div>
                     <span class="text-xs text-indigo-400 font-bold block mb-1">المنتج #15</span>
-                    <h3 class="text-lg font-bold text-white mb-2">Tech Startup & SaaS Website</h3>
-                    <p class="text-gray-400 text-xs mb-4">قالب متكامل لشركات التقنية الناشئة ومنصات الـ SaaS.</p>
+                    <h3 class="text-base font-bold text-white mb-2">Tech Startup & SaaS Website</h3>
+                    <p class="text-gray-400 text-xs mb-4 leading-relaxed">قالب متكامل لشركات التقنية الناشئة ومنصات الـ SaaS.</p>
                 </div>
                 <div>
-                    <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center justify-between mb-4 pt-3 border-t border-gray-800/60">
                         <div>
                             <span class="text-xs text-gray-500 line-through original-price" data-egp="2100" data-usd="42">2,100 ج.م</span>
-                            <span class="text-xl font-black text-indigo-400 price-display" data-egp="840" data-usd="16.80">840 ج.م</span>
+                            <span class="text-lg font-black text-indigo-400 price-display" data-egp="840" data-usd="16.80">840 ج.م</span>
                         </div>
                         <span class="text-xs bg-indigo-500/20 text-indigo-300 px-2.5 py-1 rounded-full font-bold">خصم 60%</span>
                     </div>
-                    <a href="https://payhip.com/b/D2bnY" target="_blank" class="w-full py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-sm transition text-center block shadow-md">
-                        شراء المنتج الآن
-                    </a>
+                    <a href="https://payhip.com/b/D2bnY" target="_blank" class="w-full py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-sm transition text-center block shadow-md">شراء عبر Payhip</a>
                 </div>
             </div>
 
-            <!-- Product 16 (Tier: 600 EGP Net Profit -> 630 EGP Final) -->
-            <div class="glass-panel rounded-2xl p-5 flex flex-col justify-between border border-gray-800 hover:border-indigo-500/50 transition">
-                <div>
-                    <span class="text-xs text-purple-400 font-bold block mb-1">المنتج #16 (فئة مميزة)</span>
-                    <h3 class="text-lg font-bold text-white mb-2">NOVA – Premium Real Estate Template</h3>
-                    <p class="text-gray-400 text-xs mb-4">قالب عقاري متطور NOVA بتصميم عصري وجذاب.</p>
-                </div>
-                <div>
-                    <div class="flex items-center justify-between mb-4">
-                        <div>
-                            <span class="text-xs text-gray-500 line-through original-price" data-egp="1575" data-usd="31.50">1,575 ج.م</span>
-                            <span class="text-xl font-black text-purple-400 price-display" data-egp="630" data-usd="12.60">630 ج.م</span>
-                        </div>
-                        <span class="text-xs bg-purple-500/20 text-purple-300 px-2.5 py-1 rounded-full font-bold">خصم 60%</span>
-                    </div>
-                    <a href="https://payhip.com/b/7N0IC" target="_blank" class="w-full py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-sm transition text-center block shadow-md">
-                        شراء المنتج الآن
-                    </a>
-                </div>
-            </div>
 
-            <!-- Product 17 -->
-            <div class="glass-panel rounded-2xl p-5 flex flex-col justify-between border border-gray-800 hover:border-indigo-500/50 transition">
+            <!-- Products 17 to 21 (600 EGP Net Profit Tier -> 630 EGP Final / Original 1575 EGP) -->
+            <!-- 17 -->
+            <div class="glass-card rounded-2xl p-5 flex flex-col justify-between transition">
                 <div>
                     <span class="text-xs text-purple-400 font-bold block mb-1">المنتج #17</span>
-                    <h3 class="text-lg font-bold text-white mb-2">Premium Real Estate Website Template 🏠</h3>
-                    <p class="text-gray-400 text-xs mb-4">قالب عقاري إضافي لإدارة وتسويق العقارات والفلل.</p>
+                    <h3 class="text-base font-bold text-white mb-2">NOVA – Premium Real Estate Template</h3>
+                    <p class="text-gray-400 text-xs mb-4 leading-relaxed">قالب عقاري متطور NOVA بتصميم عصري وجذاب.</p>
                 </div>
                 <div>
-                    <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center justify-between mb-4 pt-3 border-t border-gray-800/60">
                         <div>
                             <span class="text-xs text-gray-500 line-through original-price" data-egp="1575" data-usd="31.50">1,575 ج.م</span>
-                            <span class="text-xl font-black text-purple-400 price-display" data-egp="630" data-usd="12.60">630 ج.م</span>
+                            <span class="text-lg font-black text-purple-400 price-display" data-egp="630" data-usd="12.60">630 ج.م</span>
                         </div>
                         <span class="text-xs bg-purple-500/20 text-purple-300 px-2.5 py-1 rounded-full font-bold">خصم 60%</span>
                     </div>
-                    <a href="https://payhip.com/b/TKrM8" target="_blank" class="w-full py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-sm transition text-center block shadow-md">
-                        شراء المنتج الآن
-                    </a>
+                    <a href="https://payhip.com/b/7N0IC" target="_blank" class="w-full py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-sm transition text-center block shadow-md">شراء عبر Payhip</a>
                 </div>
             </div>
 
-            <!-- Product 18 -->
-            <div class="glass-panel rounded-2xl p-5 flex flex-col justify-between border border-gray-800 hover:border-indigo-500/50 transition">
+            <!-- 18 -->
+            <div class="glass-card rounded-2xl p-5 flex flex-col justify-between transition">
                 <div>
                     <span class="text-xs text-purple-400 font-bold block mb-1">المنتج #18</span>
-                    <h3 class="text-lg font-bold text-white mb-2">Premium Business Website Template</h3>
-                    <p class="text-gray-400 text-xs mb-4">قالب تجاري واحترافي لجميع أنواع الأنشطة التجارية.</p>
+                    <h3 class="text-base font-bold text-white mb-2">Premium Real Estate Website Template 🏠</h3>
+                    <p class="text-gray-400 text-xs mb-4 leading-relaxed">قالب عقاري إضافي لإدارة وتسويق العقارات والفلل.</p>
                 </div>
                 <div>
-                    <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center justify-between mb-4 pt-3 border-t border-gray-800/60">
                         <div>
                             <span class="text-xs text-gray-500 line-through original-price" data-egp="1575" data-usd="31.50">1,575 ج.م</span>
-                            <span class="text-xl font-black text-purple-400 price-display" data-egp="630" data-usd="12.60">630 ج.م</span>
+                            <span class="text-lg font-black text-purple-400 price-display" data-egp="630" data-usd="12.60">630 ج.م</span>
                         </div>
                         <span class="text-xs bg-purple-500/20 text-purple-300 px-2.5 py-1 rounded-full font-bold">خصم 60%</span>
                     </div>
-                    <a href="https://payhip.com/b/yizhn" target="_blank" class="w-full py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-sm transition text-center block shadow-md">
-                        شراء المنتج الآن
-                    </a>
+                    <a href="https://payhip.com/b/TKrM8" target="_blank" class="w-full py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-sm transition text-center block shadow-md">شراء عبر Payhip</a>
                 </div>
             </div>
 
-            <!-- Product 19 -->
-            <div class="glass-panel rounded-2xl p-5 flex flex-col justify-between border border-gray-800 hover:border-indigo-500/50 transition">
+            <!-- 19 -->
+            <div class="glass-card rounded-2xl p-5 flex flex-col justify-between transition">
                 <div>
                     <span class="text-xs text-purple-400 font-bold block mb-1">المنتج #19</span>
-                    <h3 class="text-lg font-bold text-white mb-2">Premium Lawyer Website Template – AR/EN</h3>
-                    <p class="text-gray-400 text-xs mb-4">قالب قانوني ثنائي اللغة (عربي/إنجليزي) للمحامين والمستشارين.</p>
+                    <h3 class="text-base font-bold text-white mb-2">Premium Business Website Template</h3>
+                    <p class="text-gray-400 text-xs mb-4 leading-relaxed">قالب تجاري واحترافي لجميع أنواع الأنشطة التجارية.</p>
                 </div>
                 <div>
-                    <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center justify-between mb-4 pt-3 border-t border-gray-800/60">
                         <div>
                             <span class="text-xs text-gray-500 line-through original-price" data-egp="1575" data-usd="31.50">1,575 ج.م</span>
-                            <span class="text-xl font-black text-purple-400 price-display" data-egp="630" data-usd="12.60">630 ج.م</span>
+                            <span class="text-lg font-black text-purple-400 price-display" data-egp="630" data-usd="12.60">630 ج.م</span>
                         </div>
                         <span class="text-xs bg-purple-500/20 text-purple-300 px-2.5 py-1 rounded-full font-bold">خصم 60%</span>
                     </div>
-                    <a href="https://payhip.com/b/V7sGk" target="_blank" class="w-full py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-sm transition text-center block shadow-md">
-                        شراء المنتج الآن
-                    </a>
+                    <a href="https://payhip.com/b/yizhn" target="_blank" class="w-full py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-sm transition text-center block shadow-md">شراء عبر Payhip</a>
                 </div>
             </div>
 
-            <!-- Product 20 -->
-            <div class="glass-panel rounded-2xl p-5 flex flex-col justify-between border border-gray-800 hover:border-indigo-500/50 transition">
+            <!-- 20 -->
+            <div class="glass-card rounded-2xl p-5 flex flex-col justify-between transition">
                 <div>
                     <span class="text-xs text-purple-400 font-bold block mb-1">المنتج #20</span>
-                    <h3 class="text-lg font-bold text-white mb-2">Premium Restaurant Website Template | RTL/LTR</h3>
-                    <p class="text-gray-400 text-xs mb-4">قالب مطاعم يدعم اللغتين واتجاهات الشاشة المختلفة RTL و LTR.</p>
+                    <h3 class="text-base font-bold text-white mb-2">Premium Lawyer Website Template – AR/EN</h3>
+                    <p class="text-gray-400 text-xs mb-4 leading-relaxed">قالب قانوني ثنائي اللغة (عربي/إنجليزي) للمحامين والمستشارين.</p>
                 </div>
                 <div>
-                    <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center justify-between mb-4 pt-3 border-t border-gray-800/60">
                         <div>
                             <span class="text-xs text-gray-500 line-through original-price" data-egp="1575" data-usd="31.50">1,575 ج.م</span>
-                            <span class="text-xl font-black text-purple-400 price-display" data-egp="630" data-usd="12.60">630 ج.م</span>
+                            <span class="text-lg font-black text-purple-400 price-display" data-egp="630" data-usd="12.60">630 ج.م</span>
                         </div>
                         <span class="text-xs bg-purple-500/20 text-purple-300 px-2.5 py-1 rounded-full font-bold">خصم 60%</span>
                     </div>
-                    <a href="https://payhip.com/b/SnpTh" target="_blank" class="w-full py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-sm transition text-center block shadow-md">
-                        شراء المنتج الآن
-                    </a>
+                    <a href="https://payhip.com/b/V7sGk" target="_blank" class="w-full py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-sm transition text-center block shadow-md">شراء عبر Payhip</a>
                 </div>
             </div>
 
-            <!-- Product 21 (Tier: 800 EGP Net Profit -> 840 EGP Final) -->
-            <div class="glass-panel rounded-2xl p-5 flex flex-col justify-between border border-gray-800 hover:border-indigo-500/50 transition">
+            <!-- 21 -->
+            <div class="glass-card rounded-2xl p-5 flex flex-col justify-between transition">
                 <div>
-                    <span class="text-xs text-indigo-400 font-bold block mb-1">المنتج #21</span>
-                    <h3 class="text-lg font-bold text-white mb-2">SaaS Pricing & ROI Calculator Pro</h3>
-                    <p class="text-gray-400 text-xs mb-4">أداة حاسبة التسعير والعائد على الاستثمار لمنصات الساس.</p>
+                    <span class="text-xs text-purple-400 font-bold block mb-1">المنتج #21</span>
+                    <h3 class="text-base font-bold text-white mb-2">Premium Restaurant Website Template | RTL/LTR</h3>
+                    <p class="text-gray-400 text-xs mb-4 leading-relaxed">قالب مطاعم يدعم اللغتين واتجاهات الشاشة المختلفة RTL و LTR.</p>
                 </div>
                 <div>
-                    <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center justify-between mb-4 pt-3 border-t border-gray-800/60">
+                        <div>
+                            <span class="text-xs text-gray-500 line-through original-price" data-egp="1575" data-usd="31.50">1,575 ج.م</span>
+                            <span class="text-lg font-black text-purple-400 price-display" data-egp="630" data-usd="12.60">630 ج.م</span>
+                        </div>
+                        <span class="text-xs bg-purple-500/20 text-purple-300 px-2.5 py-1 rounded-full font-bold">خصم 60%</span>
+                    </div>
+                    <a href="https://payhip.com/b/SnpTh" target="_blank" class="w-full py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-sm transition text-center block shadow-md">شراء عبر Payhip</a>
+                </div>
+            </div>
+
+
+            <!-- Product 22 (SaaS Calculator - 800 EGP Net Profit Tier -> 840 EGP Final / Original 2100 EGP) -->
+            <div class="glass-card rounded-2xl p-5 flex flex-col justify-between transition">
+                <div>
+                    <span class="text-xs text-indigo-400 font-bold block mb-1">المنتج #22</span>
+                    <h3 class="text-base font-bold text-white mb-2">SaaS Pricing & ROI Calculator Pro</h3>
+                    <p class="text-gray-400 text-xs mb-4 leading-relaxed">أداة حاسبة التسعير والعائد على الاستثمار لمنصات الساس.</p>
+                </div>
+                <div>
+                    <div class="flex items-center justify-between mb-4 pt-3 border-t border-gray-800/60">
                         <div>
                             <span class="text-xs text-gray-500 line-through original-price" data-egp="2100" data-usd="42">2,100 ج.م</span>
-                            <span class="text-xl font-black text-indigo-400 price-display" data-egp="840" data-usd="16.80">840 ج.م</span>
+                            <span class="text-lg font-black text-indigo-400 price-display" data-egp="840" data-usd="16.80">840 ج.م</span>
                         </div>
                         <span class="text-xs bg-indigo-500/20 text-indigo-300 px-2.5 py-1 rounded-full font-bold">خصم 60%</span>
                     </div>
-                    <a href="https://payhip.com/b/MJFx5" target="_blank" class="w-full py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-sm transition text-center block shadow-md">
-                        شراء المنتج الآن
-                    </a>
+                    <a href="https://payhip.com/b/MJFx5" target="_blank" class="w-full py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-sm transition text-center block shadow-md">شراء عبر Payhip</a>
                 </div>
             </div>
 
-            <!-- Product 22 (Tier: 300 EGP Net Profit -> 315 EGP Final) -->
-            <div class="glass-panel rounded-2xl p-5 flex flex-col justify-between border border-gray-800 hover:border-indigo-500/50 transition">
-                <div>
-                    <span class="text-xs text-pink-400 font-bold block mb-1">المنتج #22 (حزمة قوالب CV)</span>
-                    <h3 class="text-lg font-bold text-white mb-2">Ahmed Abu Omar – Premium CV Bundle | 10 Templates</h3>
-                    <p class="text-gray-400 text-xs mb-4">حزمة احترافية تضم 10 قوالب سيرة ذاتية باللغتين العربية والإنجليزية.</p>
-                </div>
-                <div>
-                    <div class="flex items-center justify-between mb-4">
-                        <div>
-                            <span class="text-xs text-gray-500 line-through original-price" data-egp="787.5" data-usd="15.75">787.5 ج.م</span>
-                            <span class="text-xl font-black text-pink-400 price-display" data-egp="315" data-usd="6.30">315 ج.م</span>
-                        </div>
-                        <span class="text-xs bg-pink-500/20 text-pink-300 px-2.5 py-1 rounded-full font-bold">خصم 60%</span>
-                    </div>
-                    <a href="https://payhip.com/b/JGOSj" target="_blank" class="w-full py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-sm transition text-center block shadow-md">
-                        شراء المنتج الآن
-                    </a>
-                </div>
-            </div>
-
-            <!-- Product 23 (Tier: 200 EGP Net Profit -> 210 EGP Final) -->
-            <div class="glass-panel rounded-2xl p-5 flex flex-col justify-between border border-gray-800 hover:border-indigo-500/50 transition">
+            <!-- Product 23 (CV Bundle 10 - 300 EGP Net Profit -> 315 EGP Final / Original 787.5 EGP) -->
+            <div class="glass-card rounded-2xl p-5 flex flex-col justify-between transition">
                 <div>
                     <span class="text-xs text-pink-400 font-bold block mb-1">المنتج #23 (حزمة قوالب CV)</span>
-                    <h3 class="text-lg font-bold text-white mb-2">Premium CV Bundle – 7 Professional Templates</h3>
-                    <p class="text-gray-400 text-xs mb-4">حزمة تضم 7 قوالب سيرة ذاتية احترافية وجاهزة للتعديل.</p>
+                    <h3 class="text-base font-bold text-white mb-2">Ahmed Abu Omar – Premium CV Bundle | 10 Templates</h3>
+                    <p class="text-gray-400 text-xs mb-4 leading-relaxed">حزمة احترافية تضم 10 قوالب سيرة ذاتية باللغتين العربية والإنجليزية.</p>
                 </div>
                 <div>
-                    <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center justify-between mb-4 pt-3 border-t border-gray-800/60">
                         <div>
-                            <span class="text-xs text-gray-500 line-through original-price" data-egp="525" data-usd="10.50">525 ج.م</span>
-                            <span class="text-xl font-black text-pink-400 price-display" data-egp="2100" data-usd="4.20">210 ج.م</span>
+                            <span class="text-xs text-gray-500 line-through original-price" data-egp="787.5" data-usd="15.75">787.5 ج.م</span>
+                            <span class="text-lg font-black text-pink-400 price-display" data-egp="315" data-usd="6.30">315 ج.م</span>
                         </div>
                         <span class="text-xs bg-pink-500/20 text-pink-300 px-2.5 py-1 rounded-full font-bold">خصم 60%</span>
                     </div>
-                    <a href="https://payhip.com/b/Dy2bz" target="_blank" class="w-full py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-sm transition text-center block shadow-md">
-                        شراء المنتج الآن
-                    </a>
+                    <a href="https://payhip.com/b/JGOSj" target="_blank" class="w-full py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-sm transition text-center block shadow-md">شراء عبر Payhip</a>
+                </div>
+            </div>
+
+            <!-- Product 24 (CV Bundle 7 - 200 EGP Net Profit -> 210 EGP Final / Original 525 EGP) -->
+            <div class="glass-card rounded-2xl p-5 flex flex-col justify-between transition">
+                <div>
+                    <span class="text-xs text-pink-400 font-bold block mb-1">المنتج #24 (حزمة قوالب CV)</span>
+                    <h3 class="text-base font-bold text-white mb-2">Premium CV Bundle – 7 Professional Templates</h3>
+                    <p class="text-gray-400 text-xs mb-4 leading-relaxed">حزمة تضم 7 قوالب سيرة ذاتية احترافية وجاهزة للتعديل المباشر.</p>
+                </div>
+                <div>
+                    <div class="flex items-center justify-between mb-4 pt-3 border-t border-gray-800/60">
+                        <div>
+                            <span class="text-xs text-gray-500 line-through original-price" data-egp="525" data-usd="10.50">525 ج.م</span>
+                            <span class="text-lg font-black text-pink-400 price-display" data-egp="2100" data-usd="4.20">210 ج.م</span>
+                        </div>
+                        <span class="text-xs bg-pink-500/20 text-pink-300 px-2.5 py-1 rounded-full font-bold">خصم 60%</span>
+                    </div>
+                    <a href="https://payhip.com/b/Dy2bz" target="_blank" class="w-full py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-sm transition text-center block shadow-md">شراء عبر Payhip</a>
                 </div>
             </div>
 
@@ -633,15 +577,15 @@
 
     <!-- AI Assistant Floating Widget -->
     <div id="aiChatWidget" class="fixed bottom-6 left-6 z-50">
-        <div id="chatBox" class="hidden glass-panel rounded-2xl w-80 shadow-2xl mb-4 border border-indigo-500/30 overflow-hidden flex flex-col">
+        <div id="chatBox" class="hidden glass-card rounded-2xl w-80 shadow-2xl mb-4 border-indigo-500/40 overflow-hidden flex flex-col">
             <div class="bg-indigo-600 p-3 text-white font-bold flex justify-between items-center text-sm">
                 <span><i class="fa-solid fa-robot ml-1"></i> مساعد أحمد أبو عمر الذكي</span>
-                <button onclick="toggleChat()" class="text-white hover:text-gray-200"><i class="fa-solid fa-xmark"></i></button>
+                <button onclick="toggleChat()" class="text-white hover:text-gray-200"><i class="fa-solid fa-xmark text-base"></i></button>
             </div>
             <div id="chatMessages" class="p-3 h-64 overflow-y-auto text-xs space-y-2 text-gray-300">
-                <div class="bg-gray-800/80 p-2 rounded-lg">مرحباً بك! أنا مساعدك الذكي. كيف يمكنني مساعدتك اليوم في اختيار قوالب الويب أو خدمات الـ CV؟ لا تنسَ استخدام كود الخصم <b class="text-yellow-400">omar 60</b>.</div>
+                <div class="bg-gray-800/80 p-2.5 rounded-lg">مرحباً بك! أنا مساعدك الذكي. لا تنسَ استخدام كود الخصم <b class="text-yellow-400">omar 60</b> للحصول على خصم 60% على منتجات المتجر.</div>
             </div>
-            <div class="p-2 border-t border-gray-800 flex gap-2">
+            <div class="p-2.5 border-t border-gray-800 flex gap-2">
                 <input type="text" id="chatInput" placeholder="اكتب استفسارك هنا..." class="flex-1 bg-gray-900 border border-gray-700 rounded-lg px-3 py-1.5 text-xs text-white focus:outline-none focus:border-indigo-500">
                 <button onclick="sendChatMessage()" class="bg-indigo-600 text-white px-3 py-1.5 rounded-lg text-xs font-bold hover:bg-indigo-500"><i class="fa-solid fa-paper-plane"></i></button>
             </div>
@@ -652,11 +596,11 @@
     </div>
 
     <!-- Footer -->
-    <footer class="glass-panel border-t border-gray-800 py-8 text-center text-gray-400 text-sm mt-20">
+    <footer class="glass-card border-t border-gray-800/80 py-8 text-center text-gray-400 text-sm mt-20">
         <p>© 2026 Ahmed Abu Omar Digital Store. جميع الحقوق محفوظة.</p>
     </footer>
 
-    <!-- JavaScript logic for animations, currency toggle, and AI assistant -->
+    <!-- JavaScript logic -->
     <script>
         // Cinematic Background Canvas Effect
         const canvas = document.getElementById('bgCanvas');
@@ -670,19 +614,19 @@
         window.addEventListener('resize', resizeCanvas);
         resizeCanvas();
 
-        for (let i = 0; i < 40; i++) {
+        for (let i = 0; i < 45; i++) {
             particles.push({
                 x: Math.random() * canvas.width,
                 y: Math.random() * canvas.height,
                 radius: Math.random() * 2 + 1,
-                speedX: (Math.random() - 0.5) * 0.5,
-                speedY: (Math.random() - 0.5) * 0.5
+                speedX: (Math.random() - 0.5) * 0.4,
+                speedY: (Math.random() - 0.5) * 0.4
             });
         }
 
         function animateCanvas() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-            ctx.fillStyle = 'rgba(99, 102, 241, 0.15)';
+            ctx.fillStyle = 'rgba(99, 102, 241, 0.18)';
             particles.forEach(p => {
                 p.x += p.speedX;
                 p.y += p.speedY;
@@ -745,11 +689,11 @@
             input.value = '';
 
             setTimeout(() => {
-                let reply = "أهلاً بك! يمكنك الاستفادة من خصم 60% على أي منتج رقمي باستخدام الكود omar 60، أو طلب خدمة تصميم الـ CV المخصصة مباشرة بـ 150 جنيه.";
+                let reply = "أهلاً بك! يمكنك الاستفادة من خصم 60% على أي منتج رقمي باستخدام الكود omar 60، أو طلب خدمة تصميم الـ CV المخصصة بـ 150 جنيه.";
                 if (msg.includes('خصم') || msg.includes('كود')) {
-                    reply = "كود الخصم الفعال حالياً هو omar 60 ويوفر لك خصم بنسبة 60% على جميع المنتجات!";
+                    reply = "كود الخصم الفعال حالياً هو omar 60 ويوفر لك خصم 60% على جميع المنتجات الرقمية!";
                 } else if (msg.includes('cv') || msg.includes('سيرة')) {
-                    reply = "خدمة تصميم السيرة الذاتية المخصصة متوفرة بقسم الخدمات بسعر ثابت 150 جنيه (بدون خصم).";
+                    reply = "خدمة تصميم السيرة الذاتية المخصصة متوفرة بقسم الخدمات المستقلة بسعر ثابت 150 جنيه (بدون خصم).";
                 }
                 messages.innerHTML += `<div class="bg-gray-800/80 p-2 rounded-lg">${reply}</div>`;
                 messages.scrollTop = messages.scrollHeight;
