@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://nadyahmed211-web.github.io/ahmed-abu-omar-store/sitemap.xml
