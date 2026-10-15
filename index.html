@@ -30,7 +30,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Cairo', sans-serif; background-color: #050811; color: #f8fafc; }
-        .glass-card { background: rgba(15, 23, 42, 0.7); backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.08); box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
+        .glass-card { background: rgba(15, 23, 42, 0.75); backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.08); box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
         .glass-card:hover { border-color: rgba(99, 102, 241, 0.4); }
         canvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none; }
     </style>
@@ -46,7 +46,7 @@
     </div>
 
     <!-- Header / Navbar -->
-    <header class="sticky top-0 z-50 bg-[#050811]/80 backdrop-blur-md border-b border-gray-800/80">
+    <header class="sticky top-0 z-50 bg-[#050811]/85 backdrop-blur-md border-b border-gray-800/80">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             <div class="flex items-center space-x-3 space-x-reverse">
                 <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-indigo-600 to-pink-600 flex items-center justify-center font-black text-xl text-white shadow-lg shadow-indigo-500/20">
@@ -54,13 +54,14 @@
                 </div>
                 <div>
                     <span class="text-xl font-black bg-gradient-to-r from-indigo-400 via-purple-300 to-pink-400 bg-clip-text text-transparent">Ahmed Abu Omar</span>
-                    <span class="block text-xs text-gray-400 font-semibold">Digital Store & SaaS Solutions</span>
+                    <span class="block text-xs text-gray-400 font-semibold">Digital Creator & SaaS Solutions</span>
                 </div>
             </div>
             <nav class="hidden md:flex items-center space-x-8 space-x-reverse text-sm font-bold text-gray-300">
-                <a href="#products" class="hover:text-indigo-400 transition">المنتجات الرقمية (23)</a>
+                <a href="#products" class="hover:text-indigo-400 transition">المنتجات الرقمية</a>
                 <a href="#services" class="hover:text-pink-400 transition">خدمات الـ CV المخصصة</a>
-                <a href="#about" class="hover:text-indigo-400 transition">عن المتجر</a>
+                <a href="#about" class="hover:text-indigo-400 transition">عن المنصة</a>
+                <a href="#contact" class="hover:text-indigo-400 transition">تواصل معنا</a>
             </nav>
             <div class="flex items-center space-x-3 space-x-reverse">
                 <button onclick="toggleCurrency()" id="currencyBtn" class="px-3.5 py-2 rounded-xl bg-gray-800/90 border border-gray-700 text-xs font-bold hover:bg-gray-700 transition text-gray-200 shadow-md">
@@ -131,7 +132,6 @@
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
-            <!-- Products 1 to 15 (800 EGP Net Profit Tier -> 840 EGP Final / Original 2100 EGP) -->
             <!-- 1 -->
             <div class="glass-card rounded-2xl p-5 flex flex-col justify-between transition">
                 <div>
@@ -515,7 +515,7 @@
             </div>
 
 
-            <!-- Product 22 (SaaS Calculator - 800 EGP Net Profit Tier -> 840 EGP Final / Original 2100 EGP) -->
+            <!-- Product 22 (SaaS Calculator) -->
             <div class="glass-card rounded-2xl p-5 flex flex-col justify-between transition">
                 <div>
                     <span class="text-xs text-indigo-400 font-bold block mb-1">المنتج #22</span>
@@ -534,7 +534,7 @@
                 </div>
             </div>
 
-            <!-- Product 23 (CV Bundle 10 - 300 EGP Net Profit -> 315 EGP Final / Original 787.5 EGP) -->
+            <!-- Product 23 (CV Bundle 10) -->
             <div class="glass-card rounded-2xl p-5 flex flex-col justify-between transition">
                 <div>
                     <span class="text-xs text-pink-400 font-bold block mb-1">المنتج #23 (حزمة قوالب CV)</span>
@@ -553,7 +553,7 @@
                 </div>
             </div>
 
-            <!-- Product 24 (CV Bundle 7 - 200 EGP Net Profit -> 210 EGP Final / Original 525 EGP) -->
+            <!-- Product 24 (CV Bundle 7) -->
             <div class="glass-card rounded-2xl p-5 flex flex-col justify-between transition">
                 <div>
                     <span class="text-xs text-pink-400 font-bold block mb-1">المنتج #24 (حزمة قوالب CV)</span>
@@ -595,9 +595,68 @@
         </button>
     </div>
 
-    <!-- Footer -->
-    <footer class="glass-card border-t border-gray-800/80 py-8 text-center text-gray-400 text-sm mt-20">
-        <p>© 2026 Ahmed Abu Omar Digital Store. جميع الحقوق محفوظة.</p>
+    <!-- Footer / القوائم السفلية الشاملة -->
+    <footer id="contact" class="bg-[#03050c] border-t border-gray-800/80 pt-16 pb-12 mt-24 text-gray-400 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+            <!-- العمود الأول: نبذة عن المتجر -->
+            <div>
+                <div class="flex items-center space-x-3 space-x-reverse mb-4">
+                    <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-indigo-600 to-pink-600 flex items-center justify-center font-black text-lg text-white shadow-md">
+                        AO
+                    </div>
+                    <span class="text-lg font-black text-white">Ahmed Abu Omar</span>
+                </div>
+                <p class="text-xs text-gray-400 leading-relaxed mb-4">
+                    منصتك الرقمية الموثوقة للحصول على أرقى قوالب الويب البرمجية، أدوات الـ Micro-SaaS المتقدمة، وخدمات السير الذاتية الاحترافية.
+                </p>
+                <div class="flex space-x-4 space-x-reverse text-lg">
+                    <a href="#" class="text-gray-400 hover:text-indigo-400 transition"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-indigo-400 transition"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-indigo-400 transition"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-indigo-400 transition"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+
+            <!-- العمود الثاني: روابط سريعة -->
+            <div>
+                <h4 class="text-white font-bold text-base mb-4 border-r-2 border-indigo-500 pr-3">روابط سريعة</h4>
+                <ul class="space-y-2.5 text-xs">
+                    <li><a href="#products" class="hover:text-indigo-400 transition">المنتجات الرقمية (23 منتج)</a></li>
+                    <li><a href="#services" class="hover:text-indigo-400 transition">خدمة تصميم السيرة الذاتية (CV)</a></li>
+                    <li><a href="#about" class="hover:text-indigo-400 transition">عن المنصة ومميزاتنا</a></li>
+                    <li><a href="https://payhip.com" target="_blank" class="hover:text-indigo-400 transition">منصة Payhip الآمنة</a></li>
+                </ul>
+            </div>
+
+            <!-- العمود الثالث: سياسات الاستخدام -->
+            <div>
+                <h4 class="text-white font-bold text-base mb-4 border-r-2 border-pink-500 pr-3">الشروط والسياسات</h4>
+                <ul class="space-y-2.5 text-xs">
+                    <li><a href="#" class="hover:text-pink-400 transition">شروط الخدمة (TERMS.txt)</a></li>
+                    <li><a href="#" class="hover:text-pink-400 transition">سياسة الاسترجاع والضمان</a></li>
+                    <li><a href="#" class="hover:text-pink-400 transition">سياسة الخصوصية وأمن البيانات</a></li>
+                    <li><a href="#" class="hover:text-pink-400 transition">دليل ترخيص المنتجات (README.txt)</a></li>
+                </ul>
+            </div>
+
+            <!-- العمود الرابع: وسائل الدفع والتواصل -->
+            <div>
+                <h4 class="text-white font-bold text-base mb-4 border-r-2 border-purple-500 pr-3">طرق الدفع والتواصل</h4>
+                <p class="text-xs text-gray-400 mb-4 leading-relaxed">
+                    ندعم الدفع الآمن عبر البطاقات البنكية، PayPal، المحافظ الإلكترونية، وInstaPay عبر منصة Payhip.
+                </p>
+                <div class="flex items-center gap-2 text-xl text-gray-300">
+                    <i class="fa-brands fa-cc-visa" title="Visa"></i>
+                    <i class="fa-brands fa-cc-mastercard" title="Mastercard"></i>
+                    <i class="fa-brands fa-paypal" title="PayPal"></i>
+                    <i class="fa-solid fa-wallet" title="Wallets"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 border-t border-gray-800/60 text-center text-xs text-gray-500">
+            <p>© 2026 Ahmed Abu Omar Digital Store. جميع الحقوق محفوظة. تم التطوير بأعلى معايير الجودة والأمان.</p>
+        </div>
     </footer>
 
     <!-- JavaScript logic -->
