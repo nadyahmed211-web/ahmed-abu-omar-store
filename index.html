@@ -3,12 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Ahmed Abu Omar — Premium Geometric Cinematic Studio</title>
-    <meta name="description" content="Ahmed Abu Omar — المتجر الرقمي الهندسي والسينمائي الفاخر لقوالب المواقع وأدوات الويب المصغرة والسير الذاتية الاحترافية.">
+    
+    <!-- SEO & Search Engines Optimization -->
+    <title>Ahmed Abu Omar — متجر التصميم الرقمي، خدمات الـ CV المخصص وقوالب الويب</title>
+    <meta name="description" content="استوديو أحمد أبو عمر الرقمي (Ahmed Abu Omar) — خدمات تصميم CV مخصص بـ 150 جنيه، قوالب مواقع سينمائية متوافقة مع محركات البحث SEO، وأدوات Micro-SaaS وحزم سيرة ذاتية احترافية.">
+    <meta name="keywords" content="Ahmed Abu Omar, أحمد أبو عمر, تصميم CV مخصص, سيرة ذاتية ATS, قوالب مواقع جاهزة, SEO, Micro-SaaS, تصميم مواقع احترافي">
+    <meta name="author" content="Ahmed Abu Omar">
+    <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://nadyahmed211-web.github.io/ahmed-abu-omar-store/">
     
-    <meta property="og:title" content="Ahmed Abu Omar — Premium Geometric Cinematic Studio">
-    <meta property="og:description" content="استوديو أحمد أبو عمر الرقمي - منتجات وقوالب ويب سينمائية وهندسية فاخرة.">
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Ahmed Abu Omar — متجر التصميم الرقمي وقوالب الويب الفاخرة">
+    <meta property="og:description" content="اطلب تصميم CV مخصص بـ 150 جنيه فقط أو استكشف حزم القوالب والأدوات البرمجية الذكية.">
     <meta property="og:url" content="https://nadyahmed211-web.github.io/ahmed-abu-omar-store/">
     <meta property="og:type" content="website">
     <meta name="theme-color" content="#05070C">
@@ -17,10 +23,26 @@
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%2305070C'/><path d='M30 70 L50 30 L70 70 Z' fill='%23D4AF37'/></svg>">
     
     <style>
+        /* 🔒 حماية الملكية الفكرية - منع تحديد النصوص والنسخ */
+        * {
+            -webkit-user-select: none !important;
+            -moz-user-select: none !important;
+            -ms-user-select: none !important;
+            user-select: none !important;
+        }
+
+        /* السماح بالكتابة فقط في مدخلات البحث والشات */
+        input, textarea {
+            -webkit-user-select: text !important;
+            -moz-user-select: text !important;
+            -ms-user-select: text !important;
+            user-select: text !important;
+        }
+
         :root {
             --bg-primary: #05070C;
             --bg-secondary: #0A0E1A;
-            --bg-card: rgba(10, 14, 26, 0.90);
+            --bg-card: rgba(10, 14, 26, 0.85);
             --gold: #D4AF37;
             --gold-light: #F5E6A8;
             --gold-dark: #9C7A22;
@@ -30,14 +52,14 @@
             --border-color: rgba(212, 175, 55, 0.3);
             --border-hover: rgba(212, 175, 55, 0.85);
             --shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
-            --glass-bg: rgba(5, 7, 12, 0.95);
+            --glass-bg: rgba(5, 7, 12, 0.88);
             --transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         [data-theme="light"] {
             --bg-primary: #F8FAFC;
             --bg-secondary: #FFFFFF;
-            --bg-card: rgba(255, 255, 255, 0.95);
+            --bg-card: rgba(255, 255, 255, 0.92);
             --gold: #B8860B;
             --gold-light: #D4AF37;
             --gold-dark: #8B6508;
@@ -47,7 +69,7 @@
             --border-color: rgba(184, 134, 11, 0.25);
             --border-hover: rgba(184, 134, 11, 0.65);
             --shadow: 0 12px 35px rgba(15, 23, 42, 0.08);
-            --glass-bg: rgba(255, 255, 255, 0.96);
+            --glass-bg: rgba(255, 255, 255, 0.90);
         }
 
         * {
@@ -66,6 +88,56 @@
             transition: background-color 0.3s, color 0.3s;
             overflow-x: hidden;
             padding-bottom: 95px;
+            position: relative;
+        }
+
+        /* 🎬 CANVAS CINEMATIC BACKGROUND (الخلفية السينمائية المتحركة) */
+        #cinematicCanvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* Ambient Animated Glows (السديم الضوئي) */
+        .ambient-glow-1, .ambient-glow-2 {
+            position: fixed;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            filter: blur(140px);
+            opacity: 0.18;
+            pointer-events: none;
+            z-index: 0;
+            animation: nebulaPulse 12s infinite ease-in-out alternate;
+        }
+
+        .ambient-glow-1 {
+            top: -100px;
+            right: -100px;
+            background: radial-gradient(circle, var(--gold), transparent);
+        }
+
+        .ambient-glow-2 {
+            bottom: -100px;
+            left: -100px;
+            background: radial-gradient(circle, var(--cyan-accent), transparent);
+            animation-delay: -6s;
+        }
+
+        @keyframes nebulaPulse {
+            0% { transform: scale(1) translate(0, 0); opacity: 0.15; }
+            50% { transform: scale(1.25) translate(40px, -30px); opacity: 0.28; }
+            100% { transform: scale(0.9) translate(-30px, 40px); opacity: 0.18; }
+        }
+
+        /* ensure content stays above canvas */
+        header, section, div, nav, footer {
+            position: relative;
+            z-index: 1;
         }
 
         /* TOP TICKER MARQUEE BANNER */
@@ -156,6 +228,7 @@
             max-width: 420px;
             margin: 0 auto;
             box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+            backdrop-filter: blur(10px);
         }
 
         .controls-left { display: flex; align-items: center; gap: 0.5rem; }
@@ -266,7 +339,6 @@
         }
         @media(min-width: 992px) { .desktop-header-brand { display: flex; } }
 
-        /* DYNAMIC GEOMETRIC CINEMATIC BACKGROUNDS & SYMBOLS */
         .page-section {
             display: none;
             max-width: 1380px;
@@ -275,7 +347,10 @@
             border-radius: 32px;
             position: relative;
             overflow: hidden;
-            border: 1.5px solid transparent;
+            border: 1.5px solid var(--border-color);
+            background: var(--bg-card);
+            backdrop-filter: blur(20px);
+            box-shadow: var(--shadow);
             transition: var(--transition);
         }
 
@@ -286,49 +361,7 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        #section-home {
-            background: linear-gradient(135deg, rgba(5, 7, 12, 0.95) 0%, rgba(10, 14, 26, 0.98) 100%),
-                        url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
-            background-blend-mode: overlay;
-        }
-
-        #section-services {
-            background: linear-gradient(135deg, rgba(5, 7, 12, 0.92) 0%, rgba(15, 23, 42, 0.96) 100%),
-                        url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
-            background-blend-mode: overlay;
-            border-color: rgba(0, 240, 255, 0.25);
-            box-shadow: 0 20px 50px rgba(0,0,0,0.8);
-        }
-
-        #section-products {
-            background: linear-gradient(135deg, rgba(5, 7, 12, 0.94) 0%, rgba(10, 14, 26, 0.98) 100%),
-                        url('https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
-            background-blend-mode: overlay;
-            border-color: var(--border-color);
-        }
-
-        #section-offers {
-            background: linear-gradient(135deg, rgba(16, 13, 3, 0.95) 0%, rgba(40, 32, 6, 0.98) 100%),
-                        url('https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
-            background-blend-mode: overlay;
-            border-color: var(--gold);
-        }
-
-        #section-contact {
-            background: linear-gradient(135deg, rgba(5, 7, 12, 0.93) 0%, rgba(10, 14, 26, 0.97) 100%),
-                        url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
-            background-blend-mode: overlay;
-            border-color: var(--border-hover);
-        }
-
-        #section-about {
-            background: linear-gradient(135deg, rgba(10, 14, 26, 0.96) 0%, rgba(5, 7, 12, 0.99) 100%),
-                        url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
-            background-blend-mode: overlay;
-            border-color: var(--gold);
-        }
-
-        /* GEOMETRIC CINEMATIC HERO & FLOATING SYMBOLS */
+        /* LANDING PAGE HERO & FLOATING SYMBOLS */
         .cinematic-hero-fullscreen {
             min-height: calc(100vh - 120px);
             display: flex;
@@ -340,10 +373,11 @@
             padding: 4.5rem 1.5rem;
             margin-bottom: 3rem;
             border-radius: 36px;
-            background: transparent;
+            background: rgba(5, 7, 12, 0.4);
             overflow: hidden;
-            border: 1px solid rgba(212, 175, 55, 0.2);
+            border: 1.5px solid rgba(212, 175, 55, 0.35);
             box-shadow: inset 0 0 80px rgba(0,0,0,0.8);
+            backdrop-filter: blur(10px);
         }
 
         .cyber-grid-overlay {
@@ -493,13 +527,13 @@
             box-shadow: 0 15px 45px rgba(34, 197, 94, 0.6);
         }
 
-        /* CUSTOM CV BANNER (بسر 150 ثابت مع زر الواتساب فقط) */
+        /* CUSTOM CV BANNER (في الأعلى - بسعر 150 جنيه ثابت بدون خصم) */
         .custom-cv-banner {
             background: linear-gradient(135deg, rgba(20, 16, 5, 0.95), rgba(10, 14, 26, 0.98));
             border: 2px solid var(--gold);
             border-radius: 28px;
             padding: 3rem 2rem;
-            margin: 3.5rem 0;
+            margin-bottom: 3rem;
             text-align: center;
             box-shadow: 0 20px 50px rgba(212, 175, 55, 0.3);
             position: relative;
@@ -690,6 +724,17 @@
             color: var(--text-main);
         }
 
+        .ai-user-msg {
+            background: var(--gold);
+            color: #05070C;
+            font-weight: 800;
+            align-self: flex-end;
+            padding: 0.75rem 1.2rem;
+            border-radius: 16px 16px 0 16px;
+            max-width: 85%;
+            font-size: 0.92rem;
+        }
+
         .ai-faq-btn {
             background: var(--bg-card);
             border: 1px solid var(--border-color);
@@ -748,6 +793,7 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            backdrop-filter: blur(10px);
         }
 
         .service-card:hover, .product-card:hover {
@@ -816,6 +862,11 @@
 </head>
 <body>
 
+    <!-- 🎬 BACKGROUND CINEMATIC CANVAS & NEBULAS -->
+    <canvas id="cinematicCanvas"></canvas>
+    <div class="ambient-glow-1"></div>
+    <div class="ambient-glow-2"></div>
+
     <!-- 1. TOP TICKER MARQUEE BANNER -->
     <div class="top-ticker-banner">
         <div class="ticker-track">
@@ -851,13 +902,15 @@
             <div class="ai-modal-body" id="aiChatBody">
                 <div class="ai-msg-box">
                     أهلاً بك! أنا المساعد الذكي لمتجر <strong>أحمد أبو عمر (Ahmed Abu Omar)</strong>. 
-                    تم تعديل الأسعار لتكون واقعية ومنطقية مع الحفاظ على صافي الأرباح المطلوب (800، 600، 300، 200 جنيه) وبنر خدمة الـ CV المخصص بـ 150 جنيه ثابت. كيف يمكنني مساعدتك؟
+                    يمكنني الإجابة على كافة استفساراتك بشأن **خدمة تصميم الـ CV المخصص (150 جنيه)**، أو حزم القوالب، وكيفية الشراء والدفع. كيف يمكنني مساعدتك اليوم؟
                 </div>
-                <button class="ai-faq-btn" onclick="askAi('ما هي تفاصيل الأسعار والخصومات الواقعية؟')">📊 تفاصيل الأسعار والخصومات الواقعية</button>
+                <button class="ai-faq-btn" onclick="askAi('تفاصيل خدمة تصميم CV مخصص بـ 150 جنيه')">📄 تفاصيل تصميم الـ CV المخصص بـ 150 جنيه</button>
+                <button class="ai-faq-btn" onclick="askAi('ما هي وسائل الدفع وطريقة الشراء؟')">💳 طرق الدفع والشراء المتاحة</button>
+                <button class="ai-faq-btn" onclick="askAi('كيف أحصل على خصم OMAR 60؟')">🏷️ كيفية تفعيل كود الخصم OMAR 60</button>
             </div>
             <div class="ai-modal-footer">
-                <input type="text" id="aiUserQuery" class="ai-input" placeholder="اكتب استفسارك للذكاء الاصطناعي..." onkeypress="if(event.key==='Enter') sendCustomAiQuery()">
-                <button class="ctrl-btn" onclick="sendCustomAiQuery()" style="background:var(--gold); color:#05070C;">إرسال</button>
+                <input type="text" id="aiUserQuery" class="ai-input" placeholder="اكتب سؤالك للذكاء الاصطناعي..." onkeypress="if(event.key==='Enter') sendCustomAiQuery()">
+                <button class="ctrl-btn" onclick="sendCustomAiQuery()" style="background:var(--gold); color:#05070C; font-weight:bold;">إرسال</button>
             </div>
         </div>
     </div>
@@ -903,7 +956,7 @@
 
     <style>@media(min-width: 992px) { .desktop-actions { display: flex !important; } }</style>
 
-    <!-- 1. HOME SECTION -->
+    <!-- 1. HOME SECTION / LANDING PAGE HERO -->
     <section id="section-home" class="page-section active">
         <div class="cinematic-hero-fullscreen">
             <div class="cyber-grid-overlay"></div>
@@ -924,8 +977,8 @@
                 نبْتكر ونبني منتجات رقمية استثنائية
             </h1>
             
-            <p data-ar="وجهتك الأولى لاقتناء أقوى المنتجات الرقمية، أدوات الويب المصغرة (Micro-SaaS)، قوالب المواقع، والسير الذاتية المصممة خصيصاً لتعزيز نجاحك بأعلى معايير البريميوم." data-en="Your ultimate destination for powerful digital products, Micro-SaaS tools, website templates, and ATS resumes engineered for success.">
-                وجهتك الأولى لاقتناء أقوى المنتجات الرقمية، أدوات الويب المصغرة (Micro-SaaS)، قوالب المواقع، والسير الذاتية المصممة خصيصاً لتعزيز نجاحك بأعلى معايير البريميوم.
+            <p data-ar="وجهتك الأولى لاقتناء أقوى المنتجات الرقمية، أدوات الويب المصغرة (Micro-SaaS)، قوالب المواقع المتوافقة مع محركات البحث SEO، والسير الذاتية المصممة خصيصاً لتعزيز نجاحك بأعلى معايير البريميوم." data-en="Your ultimate destination for powerful digital products, Micro-SaaS tools, SEO-friendly website templates, and ATS resumes engineered for success.">
+                وجهتك الأولى لاقتناء أقوى المنتجات الرقمية، أدوات الويب المصغرة (Micro-SaaS)، قوالب المواقع المتوافقة مع محركات البحث SEO، والسير الذاتية المصممة خصيصاً لتعزيز نجاحك بأعلى معايير البريميوم.
             </p>
 
             <div class="cinematic-cta-group">
@@ -934,19 +987,20 @@
             </div>
         </div>
 
+        <!-- 🏆 CASE STUDY SECTION -->
         <div class="case-study-card">
-            <span class="case-study-badge">🏆 دراسة حالة نجاح متحركة (Case Study)</span>
+            <span class="case-study-badge">🏆 دراسة حالة نجاح موثقة (Case Study)</span>
             <h2 style="font-size:2.2rem; color:var(--gold-light); margin-bottom:1rem;" data-ar="كيف ساعدت قوالب وأدوات أحمد أبو عمر شركة عقارية في زيادة المبيعات بنسبة 40%؟" data-en="How Ahmed Abu Omar Templates Boosted Real Estate Sales by 40%">
                 كيف ساعدت قوالب وأدوات أحمد أبو عمر شركة عقارية في زيادة المبيعات بنسبة 40%؟
             </h2>
-            <p style="color:var(--text-muted); font-size:1.1rem; max-width:900px;" data-ar="تم دمج قالب عقاري فائق السرعة مع أداة حاسبة العائد الاستثماري (ROI Calculator Pro) لتحويل زوار الموقع إلى عملاء حقيقيين وحجز معاينات فورية عبر الواتساب." data-en="Integrating a high-speed real estate template with the ROI Calculator Pro tool to convert visitors into direct bookings.">
-                تم دمج قالب عقاري فائق السرعة مع أداة حاسبة العائد الاستثماري (ROI Calculator Pro) لتحويل زوار الموقع إلى عملاء حقيقيين وحجز معاينات فورية عبر الواتساب.
+            <p style="color:var(--text-muted); font-size:1.1rem; max-width:900px;" data-ar="تم دمج قالب عقاري فائق السرعة متوافق مع محركات البحث (SEO) مع أداة حاسبة العائد الاستثماري (ROI Calculator Pro) لتحويل زوار الموقع إلى عملاء حقيقيين وحجز معاينات فورية عبر الواتساب." data-en="Integrating a high-speed real estate template with the ROI Calculator Pro tool to convert visitors into direct bookings.">
+                تم دمج قالب عقاري فائق السرعة متوافق مع محركات البحث (SEO) مع أداة حاسبة العائد الاستثماري (ROI Calculator Pro) لتحويل زوار الموقع إلى عملاء حقيقيين وحجز معاينات فورية عبر الواتساب.
             </p>
 
             <div class="case-metrics-grid">
                 <div class="metric-box">
                     <div class="metric-val">98%</div>
-                    <div class="metric-lbl" data-ar="سرعة Google PageSpeed" data-en="Google PageSpeed">سرعة Google PageSpeed</div>
+                    <div class="metric-lbl" data-ar="سرعة Google PageSpeed & SEO" data-en="Google PageSpeed & SEO">سرعة Google PageSpeed & SEO</div>
                 </div>
                 <div class="metric-box">
                     <div class="metric-val">+40%</div>
@@ -973,9 +1027,22 @@
     <section id="section-products" class="page-section">
         <div class="section-header">
             <h2 data-ar="المتجر الرقمي والمنتجات الاحترافية" data-en="Digital Storefront & Professional Products">المتجر الرقمي والمنتجات الاحترافية</h2>
-            <p data-ar="استكشف تشكيلتنا المتكاملة من المنتجات الرقمية التي تشمل قوالب المواقع المصممة بمختلف القطاعات، وأدوات Micro-SaaS، وحزم السير الذاتية." data-en="Explore our complete collection of premium web templates, micro-SaaS tools, and ATS resume bundles.">استكشف تشكيلتنا المتكاملة من المنتجات الرقمية التي تشمل قوالب المواقع المصممة بمختلف القطاعات، وأدوات Micro-SaaS، وحزم السير الذاتية.</p>
+            <p data-ar="استكشف تشكيلتنا المتكاملة من خدمات التصميم المخصص والمنتجات الرقمية التي تشمل قوالب المواقع وأدوات Micro-SaaS وسير الـ ATS." data-en="Explore custom design services and premium digital products collection.">استكشف تشكيلتنا المتكاملة من خدمات التصميم المخصص والمنتجات الرقمية التي تشمل قوالب المواقع وأدوات Micro-SaaS وسير الـ ATS.</p>
         </div>
 
+        <!-- 🌟 1. خدمات التصميم المخصص في الأعلى (بنر خدمة CV مخصص بسعر 150 جنيه ثابت بدون خصم) -->
+        <div class="custom-cv-banner">
+            <span style="background:var(--gold); color:#05070C; font-weight:900; padding:0.4rem 1.4rem; border-radius:20px; font-size:0.85rem;" data-ar="خدمة تصميم حصري" data-en="EXCLUSIVE DESIGN SERVICE">خدمة تصميم حصري</span>
+            <h3 style="color:var(--gold-light); margin:1.2rem 0 0.8rem; font-size:2.2rem; font-weight:900;" data-ar="تصميم CV مخصص واحترافي — اطلب التصميم الآن بـ 150 جنيه فقط!" data-en="Custom Professional CV Design — Order Now!">تصميم CV مخصص واحترافي — اطلب التصميم الآن بـ 150 جنيه فقط!</h3>
+            <p style="color:var(--text-main); font-size:1.1rem; max-width:800px; margin:0 auto 1.8rem; font-weight:700;" data-ar="احصل على سيرة ذاتية فريدة ومصممة خصيصاً لقصة نجاحك المهنية متوافقة 100% مع أنظمة الـ ATS وبأعلى معايير البريميوم بسعر ثابت 150 جنيه بدون خصم." data-en="Get a unique resume customized for your career story, 100% ATS compliant with premium standards for a fixed 150 EGP price.">
+                احصل على سيرة ذاتية فريدة ومصممة خصيصاً لقصة نجاحك المهنية متوافقة 100% مع أنظمة الـ ATS وبأعلى معايير البريميوم بسعر ثابت 150 جنيه بدون خصم.
+            </p>
+            <a href="https://wa.me/201206443652?text=السلام عليكم، أرغب في طلب خدمة تصميم CV مخصص واحترافي بسعر 150 جنيه" target="_blank" class="btn btn-primary-whatsapp" style="justify-content:center; font-size:1.1rem; padding:1.2rem 2.8rem;">
+                💬 الشراء عبر الواتساب (150 جنيه)
+            </a>
+        </div>
+
+        <!-- 🌟 2. الحزم والمنتجات تحت خدمات التصميم المخصص -->
         <div class="store-controls">
             <div class="search-box">
                 <span style="position:absolute; top:50%; right:1.2rem; transform:translateY(-50%);">🔍</span>
@@ -990,18 +1057,6 @@
         </div>
 
         <div class="products-grid" id="productsGrid"></div>
-
-        <!-- 🌟 بنر تصميم CV مخصص بسعر 150 جنيه ثابت مع زر الواتساب فقط -->
-        <div class="custom-cv-banner">
-            <span style="background:var(--gold); color:#05070C; font-weight:900; padding:0.4rem 1.4rem; border-radius:20px; font-size:0.85rem;" data-ar="خدمة تصميم حصري" data-en="EXCLUSIVE DESIGN SERVICE">خدمة تصميم حصري</span>
-            <h3 style="color:var(--gold-light); margin:1.2rem 0 0.8rem; font-size:2.2rem; font-weight:900;" data-ar="تصميم CV مخصص واحترافي — اطلب التصميم الآن بـ 150 جنيه فقط!" data-en="Custom Professional CV Design — Order Now!">تصميم CV مخصص واحترافي — اطلب التصميم الآن بـ 150 جنيه فقط!</h3>
-            <p style="color:var(--text-main); font-size:1.1rem; max-width:800px; margin:0 auto 1.8rem; font-weight:700;" data-ar="احصل على سيرة ذاتية فريدة ومصممة خصيصاً لقصة نجاحك المهنية متوافقة 100% مع أنظمة الـ ATS وبأعلى معايير البريميوم." data-en="Get a unique resume customized for your career story, 100% ATS compliant with premium standards.">
-                احصل على سيرة ذاتية فريدة ومصممة خصيصاً لقصة نجاحك المهنية متوافقة 100% مع أنظمة الـ ATS وبأعلى معايير البريميوم.
-            </p>
-            <a href="https://wa.me/201206443652?text=السلام عليكم، أرغب في طلب خدمة تصميم CV مخصص واحترافي بسعر 150 جنيه" target="_blank" class="btn btn-primary-whatsapp" style="justify-content:center; font-size:1.1rem; padding:1.2rem 2.8rem;">
-                💬 الشراء عبر الواتساب (150 جنيه)
-            </a>
-        </div>
     </section>
 
     <!-- 4. OFFERS SECTION -->
@@ -1081,8 +1136,8 @@
             <div class="service-card">
                 <div style="font-size:2.5rem;">⚡</div>
                 <h3 style="color:var(--gold); margin-top:1rem;" data-ar="لماذا تختار براند أحمد أبو عمر؟" data-en="Why Choose Ahmed Abu Omar?">لماذا تختار براند أحمد أبو عمر؟</h3>
-                <p style="margin-top:0.8rem;" data-ar="نتميز بتصميم سينمائي متفاعل ومستدام، أداء تقني خارق يتخطى 98% على مؤشرات الأداء، دراسات حالة موثقة تدعم زيادة المبيعات بنسبة 40%، ودعم فني مباشر على مدار الساعة عبر الواتساب مع تحديثات مستمرة للمنتجات." data-en="We stand out with interactive cinematic design, 98+ PageSpeed performance, proven 40% sales growth case studies, and 24/7 direct WhatsApp support.">
-                    نتميز بتصميم سينمائي متفاعل ومستدام، أداء تقني خارق يتخطى 98% على مؤشرات الأداء، دراسات حالة موثقة تدعم زيادة المبيعات بنسبة 40%، ودعم فني مباشر على مدار الساعة عبر الواتساب مع تحديثات مستمرة للمنتجات.
+                <p style="margin-top:0.8rem;" data-ar="نتميز بتصميم سينمائي متفاعل ومستدام، أداء تقني خارق يتخطى 98% على مؤشرات الأداء ومحركات البحث SEO، دراسات حالة موثقة تدعم زيادة المبيعات بنسبة 40%، ودعم فني مباشر على مدار الساعة عبر الواتساب." data-en="We stand out with interactive cinematic design, 98+ PageSpeed performance, SEO compliance, proven 40% sales growth case studies, and 24/7 direct WhatsApp support.">
+                    نتميز بتصميم سينمائي متفاعل ومستدام، أداء تقني خارق يتخطى 98% على مؤشرات الأداء ومحركات البحث SEO، دراسات حالة موثقة تدعم زيادة المبيعات بنسبة 40%، ودعم فني مباشر على مدار الساعة عبر الواتساب.
                 </p>
             </div>
 
@@ -1128,19 +1183,211 @@
         <p>© Ahmed Abu Omar — Cinematic Digital Studio. All Rights Reserved.</p>
     </footer>
 
+    <!-- 🔒 JAVASCRIPT PROTECTIONS, CINEMATIC BACKGROUND & ENGINE -->
     <script>
+        /* =========================================================
+           ✨ 1. محرك الخلفية السينمائية المتحركة (Cinematic Particle Canvas)
+           ========================================================= */
+        const canvas = document.getElementById('cinematicCanvas');
+        const ctx = canvas.getContext('2d');
+
+        let particlesArray = [];
+        let mouse = { x: null, y: null, radius: 150 };
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            initParticles();
+        }
+
+        window.addEventListener('resize', resizeCanvas);
+        window.addEventListener('mousemove', e => {
+            mouse.x = e.x;
+            mouse.y = e.y;
+        });
+        window.addEventListener('touchmove', e => {
+            if(e.touches.length > 0) {
+                mouse.x = e.touches[0].clientX;
+                mouse.y = e.touches[0].clientY;
+            }
+        });
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 2.5 + 0.8;
+                this.speedX = (Math.random() - 0.5) * 0.8;
+                this.speedY = (Math.random() - 0.5) * 0.8;
+                this.color = Math.random() > 0.3 ? '#D4AF37' : '#00f0ff';
+                this.alpha = Math.random() * 0.7 + 0.3;
+            }
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+
+                if (this.x > canvas.width) this.x = 0;
+                if (this.x < 0) this.x = canvas.width;
+                if (this.y > canvas.height) this.y = 0;
+                if (this.y < 0) this.y = canvas.height;
+
+                // التفاعل مع الماوس
+                if (mouse.x && mouse.y) {
+                    let dx = mouse.x - this.x;
+                    let dy = mouse.y - this.y;
+                    let distance = Math.sqrt(dx * dx + dy * dy);
+                    if (distance < mouse.radius) {
+                        let force = (mouse.radius - distance) / mouse.radius;
+                        this.x -= (dx / distance) * force * 3;
+                        this.y -= (dy / distance) * force * 3;
+                    }
+                }
+            }
+            draw() {
+                ctx.save();
+                ctx.globalAlpha = this.alpha;
+                ctx.fillStyle = this.color;
+                ctx.shadowBlur = 10;
+                ctx.shadowColor = this.color;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.restore();
+            }
+        }
+
+        function initParticles() {
+            particlesArray = [];
+            let count = Math.floor((canvas.width * canvas.height) / 14000);
+            for (let i = 0; i < Math.min(count, 90); i++) {
+                particlesArray.push(new Particle());
+            }
+        }
+
+        function connectParticles() {
+            for (let a = 0; a < particlesArray.length; a++) {
+                for (let b = a; b < particlesArray.length; b++) {
+                    let dx = particlesArray[a].x - particlesArray[b].x;
+                    let dy = particlesArray[a].y - particlesArray[b].y;
+                    let distance = Math.sqrt(dx * dx + dy * dy);
+
+                    if (distance < 110) {
+                        ctx.save();
+                        ctx.globalAlpha = (1 - distance / 110) * 0.25;
+                        ctx.strokeStyle = '#D4AF37';
+                        ctx.lineWidth = 0.8;
+                        ctx.beginPath();
+                        ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
+                        ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
+                        ctx.stroke();
+                        ctx.restore();
+                    }
+                }
+            }
+        }
+
+        function animateCanvas() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particlesArray.forEach(p => {
+                p.update();
+                p.draw();
+            });
+            connectParticles();
+            requestAnimationFrame(animateCanvas);
+        }
+
+        resizeCanvas();
+        animateCanvas();
+
+        /* =========================================================
+           🔒 2. نظام حماية الكود والملكية الفكرية (Anti-Copy Protection)
+           ========================================================= */
+        document.addEventListener('contextmenu', e => e.preventDefault());
+
+        document.addEventListener('keydown', e => {
+            if (
+                e.key === 'F12' ||
+                (e.ctrlKey && e.shiftKey && e.key === 'I') ||
+                (e.ctrlKey && e.shiftKey && e.key === 'J') ||
+                (e.ctrlKey && e.shiftKey && e.key === 'C') ||
+                (e.ctrlKey && e.key === 'u') ||
+                (e.ctrlKey && e.key === 'U') ||
+                (e.ctrlKey && e.key === 's') ||
+                (e.ctrlKey && e.key === 'S') ||
+                (e.ctrlKey && e.key === 'a') ||
+                (e.ctrlKey && e.key === 'A') ||
+                (e.ctrlKey && e.key === 'c') ||
+                (e.ctrlKey && e.key === 'C')
+            ) {
+                e.preventDefault();
+                return false;
+            }
+        });
+
+        document.addEventListener('selectstart', e => {
+            if (e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') e.preventDefault();
+        });
+        document.addEventListener('copy', e => {
+            if (e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') e.preventDefault();
+        });
+
+        /* =========================================================
+           🤖 3. المساعد الشخصي الذكي AI Chat Engine
+           ========================================================= */
+        function toggleAiModal() {
+            document.getElementById('aiModal').classList.toggle('open');
+        }
+
+        function askAi(query) {
+            const body = document.getElementById('aiChatBody');
+            body.innerHTML += `<div class="ai-user-msg">${query}</div>`;
+            body.scrollTop = body.scrollHeight;
+
+            setTimeout(() => {
+                let response = generateAiSmartResponse(query);
+                body.innerHTML += `<div class="ai-msg-box">${response}</div>`;
+                body.scrollTop = body.scrollHeight;
+            }, 400);
+        }
+
+        function sendCustomAiQuery() {
+            const input = document.getElementById('aiUserQuery');
+            const val = input.value.trim();
+            if(!val) return;
+            input.value = '';
+            askAi(val);
+        }
+
+        function generateAiSmartResponse(q) {
+            const query = q.toLowerCase();
+            if (query.includes('cv') || query.includes('سيرة') || query.includes('150') || query.includes('مخصص')) {
+                return "📄 **خدمة تصميم الـ CV المخصص:**\nنقدم لك سيرة ذاتية احترافية ومصممة خصيصاً لك بسعر ثابت **150 جنيه فقط** (بدون أي خصم). يتم التسليم خلال وقت قياسي ومتوافقة 100% مع أنظمة الـ ATS.\n👉 [يمكنك طلبها الآن مباشرة عبر الواتساب](https://wa.me/201206443652?text=طلب_تصميم_CV_مخصص_150)";
+            } else if (query.includes('دفع') || query.includes('شراء') || query.includes('طريقة') || query.includes('محفظة')) {
+                return "💳 **طرق الدفع والشراء المتاحة:**\n1. **الشراء المباشر عبر الواتساب:** يدعم المحافظ الإلكترونية، InstaPay، التحويلات البنكية.\n2. **المتجر الإلكتروني Payhip:** يدعم البطاقات البنكية و PayPal ويوفر تحميلاً فورياً للملفات.";
+            } else if (query.includes('خصم') || query.includes('omar 60') || query.includes('عروض')) {
+                return "🎉 **كود الخصم:**\nاستخدم كود الخصم **OMAR 60** للحصول على خصم 60% على كافة الحزم والمنتجات الرقمية في المتجر!";
+            } else if (query.includes('موقع') || query.includes('قالب') || query.includes('تطوير')) {
+                return "💻 **قوالب المواقع وخدمات الويب:**\nجميع قوالبنا مبنية بأحدث معايير الـ UI/UX وواجهات سينمائية فائقة السرعة ومتوافقة 100% مع محركات البحث SEO لضمان أعلى المبيعات.";
+            } else {
+                return "✨ أهلاً بك! أنا المساعد الذكي لمتجر أحمد أبو عمر.\nيمكنني مساعدتك في طلب **خدمة الـ CV المخصص (150 جنيه)**، اختيار القوالب المناسبة لمشروعك، أو إرشادك لطريقة الشراء السريعة عبر الواتساب.";
+            }
+        }
+
+        /* =========================================================
+           🛒 4. بيانات المنتجات والخدمات ونظام العرض
+           ========================================================= */
         const servicesData = [
-            { id: 1, icon: "💻", titleAr: "تصميم المواقع وصفحات الهبوط السينمائية", titleEn: "Cinematic Landing Pages & Web Design", descAr: "تطوير صفحات هبوط ومواقع إلكترونية فائقة السرعة ومتجاوبة بالكامل لتعظيم مبيعاتك.", descEn: "High-converting cinematic landing pages & ultra-fast websites." },
+            { id: 1, icon: "💻", titleAr: "تصميم المواقع وصفحات الهبوط السينمائية (Landing Pages)", titleEn: "Cinematic Landing Pages & Web Design", descAr: "تطوير صفحات هبوط ومواقع إلكترونية فائقة السرعة، متجاوبة ومتوافقة تماماً مع محركات البحث SEO لتعظيم مبيعاتك.", descEn: "High-converting cinematic landing pages & ultra-fast SEO friendly websites." },
             { id: 2, icon: "📊", titleAr: "إعداد دراسات الحالة الاحترافية (Case Studies)", titleEn: "Professional Case Studies", descAr: "بناء دراسات حالة موثقة وأرقام حقيقية لإثبات كفاءة مشاريعك ومضاعفة ثقة العملاء.", descEn: "Verified case studies proving high ROI and business growth." },
             { id: 3, icon: "🤖", titleAr: "دمج المساعد الشخصي الذكي (AI Assistant)", titleEn: "AI Smart Assistant Integration", descAr: "ربط وتطوير مساعد ذكي متقدم لموقعك للرد الآلي على استفسارات العملاء 24/7.", descEn: "Advanced AI chatbot integration for automated 24/7 customer support." },
             { id: 4, icon: "⚙️", titleAr: "تطوير البرمجيات والمواقع المخصصة (Micro-SaaS)", titleEn: "Custom Software & Micro-SaaS", descAr: "بناء وتطوير أدوات وتطبيقات ويب مخصصة لتمكين مشروعك الرقمي بنجاح تام.", descEn: "Custom Micro-SaaS tools and web applications development." }
         ];
 
         const productsData = [
-            // المنتجات من 1 إلى 16 (صافي ربح 800 جنيه / السعر الأصلي 2,105 ج.م)
+            // المنتجات من 1 إلى 16
             { id: 1, category: "tools", icon: "🤖", titleAr: "المساعد الذكي الاحترافي للمواقع وواجهات المحادثة (AI Assistant Pro)", titleEn: "AI Website Assistant Pro", descAr: "تكامل سلس للمساعد الذكي للمواقع والردود الآلية المتقدمة.", oldPriceEg: "2,105", discPriceEg: "842", oldPriceUsd: "$42.10", discPriceUsd: "$16.84", url: "https://payhip.com/b/DXmGs" },
             { id: 2, category: "tools", icon: "📊", titleAr: "حاسبة العائد التسعيري واقتصاديات SaaS Pro", titleEn: "SaaS Pricing & ROI Calculator Pro", descAr: "أداة مالية حاسبة للمقاييس المالية والتحليلات الاستثمارية لشركات SaaS.", oldPriceEg: "2,105", discPriceEg: "842", oldPriceUsd: "$42.10", discPriceUsd: "$16.84", url: "https://payhip.com/b/MJFx5" },
-            { id: 3, category: "tools", icon: "🖼️", titleAr: "أداة ضاغط الصور الاحترافي اونلاين (Image Compressor Pro)", titleEn: "Image Compressor Pro", descAr: "أداة ويب مصغرة لضغط الصور بدقة عالية وتسريع المواقع.", oldPriceEg: "2,105", discPriceEg: "842", oldPriceUsd: "$42.10", discPriceUsd: "$16.84", url: "https://payhip.com/b/y2Q5N" },
+            { id: 3, category: "tools", icon: "🖼️", titleAr: "أداة ضاغط الصور الاحترافي اونلاين (Image Compressor Pro)", titleEn: "Image Compressor Pro", descAr: "أداة ويب مصغرة لضغط الصور بدقة عالية وتسريع المواقع وتحسين الـ SEO.", oldPriceEg: "2,105", discPriceEg: "842", oldPriceUsd: "$42.10", discPriceUsd: "$16.84", url: "https://payhip.com/b/y2Q5N" },
             { id: 4, category: "tools", icon: "✉️", titleAr: "مولد الإيميلات والتواصل البارد الذكي (AI Cold Email Generator Pro)", titleEn: "AI Cold Email Generator Pro", descAr: "أداة ذكاء اصطناعي لتوليد رسائل البريد الإلكتروني والحملات التسويقية.", oldPriceEg: "2,105", discPriceEg: "842", oldPriceUsd: "$42.10", discPriceUsd: "$16.84", url: "https://payhip.com/b/MWBli" },
             { id: 5, category: "templates", icon: "🏢", titleAr: "قالب شركات العقارات والتطوير العقاري الفاخر", titleEn: "Real Estate & Development Template", descAr: "قالب موقع عقاري متجاوب وسريع جداً مخصص لمعاينة وحجز العقارات.", oldPriceEg: "2,105", discPriceEg: "842", oldPriceUsd: "$42.10", discPriceUsd: "$16.84", url: "https://payhip.com/b/y2Q5N" },
             { id: 6, category: "templates", icon: "⚖️", titleAr: "قالب مكاتب المحاماة والاستشارات القانونية", titleEn: "Law Firm & Legal Consulting Template", descAr: "تصميم فاخر وجاد للمكاتب والخبراء القانونيين.", oldPriceEg: "2,105", discPriceEg: "842", oldPriceUsd: "$42.10", discPriceUsd: "$16.84", url: "https://payhip.com/b/y2Q5N" },
@@ -1155,14 +1402,14 @@
             { id: 15, category: "cv", icon: "📄", titleAr: "أحمد أبو عمر — حزمة السير الذاتية الفاخرة | 10 قوالب ATS", titleEn: "Ahmed Abu Omar Premium CV Bundle (10 ATS Templates)", descAr: "10 قوالب سيرة ذاتية احترافية باللغتين العربية والإنجليزية متوافقة مع أنظمة الـ ATS.", oldPriceEg: "790", discPriceEg: "316", oldPriceUsd: "$15.80", discPriceUsd: "$6.32", url: "https://payhip.com/b/JGOSj" },
             { id: 16, category: "cv", icon: "📑", titleAr: "حزمة السير الذاتية المميزة | 7 قوالب ATS", titleEn: "Professional CV Bundle (7 ATS Templates)", descAr: "7 قوالب سيرة ذاتية احترافية متوافقة مع الـ ATS للوظائف المتقدمة.", oldPriceEg: "528", discPriceEg: "211", oldPriceUsd: "$10.56", discPriceUsd: "$4.21", url: "https://payhip.com/b/JGOSj" },
 
-            // المنتجات من 17 إلى 21 (صافي ربح 600 جنيه / السعر الأصلي 1,580 ج.م)
+            // المنتجات من 17 إلى 21
             { id: 17, category: "cv", icon: "📝", titleAr: "قالب سيرة ذاتية ATS هندسي للتقنيين والمبرمجين", titleEn: "Tech & Developers ATS Resume Template", descAr: "مصمم ومصغّر خصيصاً للمطورين والمهندسين لضمان القبول.", oldPriceEg: "1,580", discPriceEg: "632", oldPriceUsd: "$31.60", discPriceUsd: "$12.63", url: "https://payhip.com/b/JGOSj" },
             { id: 18, category: "cv", icon: "📋", titleAr: "قالب سيرة ذاتية ATS للقطاع الطبي والتمريضي", titleEn: "Medical & Clinical ATS Resume Template", descAr: "قالب حديث ومنظم للأطباء والممارسين الصحيين.", oldPriceEg: "1,580", discPriceEg: "632", oldPriceUsd: "$31.60", discPriceUsd: "$12.63", url: "https://payhip.com/b/JGOSj" },
             { id: 19, category: "cv", icon: "📊", titleAr: "قالب سيرة ذاتية ATS لإدارة الأعمال والتسويق", titleEn: "Business & Marketing ATS Resume Template", descAr: "تصميم أنيق لاستعراض الإنجازات والنتائج الرقمية.", oldPriceEg: "1,580", discPriceEg: "632", oldPriceUsd: "$31.60", discPriceUsd: "$12.63", url: "https://payhip.com/b/JGOSj" },
             { id: 20, category: "cv", icon: "💼", titleAr: "قالب سيرة ذاتية ATS للموارد البشرية والخدمات", titleEn: "HR & Administrative ATS Resume Template", descAr: "قالب هادئ واحترافي لقطاع إدارة الأفراد والعمليات.", oldPriceEg: "1,580", discPriceEg: "632", oldPriceUsd: "$31.60", discPriceUsd: "$12.63", url: "https://payhip.com/b/JGOSj" },
             { id: 21, category: "cv", icon: "🖋️", titleAr: "قالب سيرة ذاتية ATS للمحاسبة والمالية", titleEn: "Finance & Accounting ATS Resume Template", descAr: "مخصص للمحللين الماليين والمحاسبين بدقة متناهية.", oldPriceEg: "1,580", discPriceEg: "632", oldPriceUsd: "$31.60", discPriceUsd: "$12.63", url: "https://payhip.com/b/JGOSj" },
 
-            // المنتجات 22 و 23 (الحزم الهندسية الشاملة)
+            // المنتجات 22 و 23
             { id: 22, category: "cv", icon: "📦", titleAr: "حزمة القوالب الهندسية الشاملة والمتطورة (الحزمة 22)", titleEn: "Advanced Comprehensive Engineering Bundle (Bundle 22)", descAr: "حزمة متكاملة ومصممة بأعلى معايير الـ UI/UX لتغطية المشاريع الكبرى.", oldPriceEg: "790", discPriceEg: "316", oldPriceUsd: "$15.80", discPriceUsd: "$6.32", url: "https://payhip.com/b/JGOSj" },
             { id: 23, category: "cv", icon: "🌟", titleAr: "حزمة الرواد والأعمال الرقمية الاحترافية (الحزمة 23)", titleEn: "Elite Digital Business & Creators Bundle (Bundle 23)", descAr: "مجموعة أدوات وقوالب متطورة لرواد الأعمال وصناع المحتوى الرقمي.", oldPriceEg: "528", discPriceEg: "211", oldPriceUsd: "$10.56", discPriceUsd: "$4.21", url: "https://payhip.com/b/JGOSj" }
         ];
@@ -1212,29 +1459,6 @@
         function toggleTheme() {
             const cur = document.documentElement.getAttribute('data-theme');
             document.documentElement.setAttribute('data-theme', cur === 'dark' ? 'light' : 'dark');
-        }
-
-        function toggleAiModal() {
-            const m = document.getElementById('aiModal');
-            m.classList.toggle('open');
-        }
-
-        function askAi(q) {
-            const body = document.getElementById('aiChatBody');
-            let answer = "تم ضبط الأسعار الأصلية لتكون واقعية ومقبولة جداً، مع الحفاظ على صافي الربح والخصم 60%.";
-            body.innerHTML += `<div style="align-self:flex-end; background:var(--gold); color:#05070C; padding:0.6rem 1rem; border-radius:12px; font-weight:800; margin-top:0.5rem;">${q}</div>`;
-            setTimeout(() => {
-                body.innerHTML += `<div class="ai-msg-box" style="margin-top:0.5rem;">${answer}</div>`;
-                body.scrollTop = body.scrollHeight;
-            }, 300);
-        }
-
-        function sendCustomAiQuery() {
-            const inp = document.getElementById('aiUserQuery');
-            const val = inp.value.trim();
-            if(!val) return;
-            inp.value = '';
-            askAi(val);
         }
 
         function renderServices() {
