@@ -328,6 +328,14 @@
             border-color: var(--border-hover);
         }
 
+        #section-about {
+            background: linear-gradient(135deg, rgba(10, 14, 26, 0.96) 0%, rgba(5, 7, 12, 0.99) 100%),
+                        url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+            background-blend-mode: overlay;
+            border-color: var(--gold);
+        }
+
+        /* الواجهة السينمائية بدون خطوط داخلية مزعجة */
         .cinematic-hero-fullscreen {
             min-height: calc(100vh - 120px);
             display: flex;
@@ -339,9 +347,7 @@
             padding: 4.5rem 1.5rem;
             margin-bottom: 3rem;
             border-radius: 36px;
-            border: 2px solid var(--border-hover);
-            background: radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.15) 0%, rgba(5, 7, 12, 0.98) 85%);
-            box-shadow: 0 35px 90px rgba(0, 0, 0, 0.95), inset 0 0 60px rgba(212, 175, 55, 0.2);
+            background: transparent;
             overflow: hidden;
         }
 
@@ -349,8 +355,8 @@
             position: absolute;
             top: -50%; left: -50%; width: 200%; height: 200%;
             background-image: 
-                linear-gradient(to right, rgba(212, 175, 55, 0.08) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(212, 175, 55, 0.08) 1px, transparent 1px);
+                linear-gradient(to right, rgba(212, 175, 55, 0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(212, 175, 55, 0.05) 1px, transparent 1px);
             background-size: 50px 50px;
             transform: perspective(600px) rotateX(45deg);
             animation: gridMove 18s linear infinite;
@@ -367,7 +373,7 @@
             display: inline-flex;
             align-items: center;
             gap: 0.6rem;
-            background: rgba(10, 14, 26, 0.85);
+            background: rgba(10, 14, 26, 0.9);
             border: 1.5px solid var(--border-hover);
             color: var(--cyan-accent);
             padding: 0.65rem 1.6rem;
@@ -379,6 +385,8 @@
             margin-bottom: 2rem;
             box-shadow: 0 6px 25px rgba(0, 240, 255, 0.2);
             backdrop-filter: blur(10px);
+            position: relative;
+            z-index: 2;
         }
 
         .cinematic-hero-fullscreen h1 {
@@ -390,6 +398,8 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             text-shadow: 0 15px 35px rgba(0,0,0,0.8);
+            position: relative;
+            z-index: 2;
         }
 
         .cinematic-hero-fullscreen p {
@@ -399,6 +409,8 @@
             margin: 0 auto 3rem;
             line-height: 1.85;
             font-weight: 500;
+            position: relative;
+            z-index: 2;
         }
 
         .cinematic-cta-group {
@@ -408,6 +420,8 @@
             width: 100%;
             max-width: 520px;
             margin: 0 auto;
+            position: relative;
+            z-index: 2;
         }
 
         @media(min-width: 768px) {
@@ -455,7 +469,52 @@
         }
 
         /* ----------------------------------------------------
-           4. PROMO DYNAMIC BANNER FOR SOCIAL MEDIA (بنر المتابعة والترحيب)
+           4. CASE STUDY SECTION
+           ---------------------------------------------------- */
+        .case-study-card {
+            background: rgba(10, 14, 26, 0.88);
+            border: 2px solid var(--gold);
+            border-radius: 28px;
+            padding: 3rem 2rem;
+            margin-top: 3.5rem;
+            backdrop-filter: blur(15px);
+            box-shadow: 0 25px 60px rgba(0,0,0,0.85);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .case-study-badge {
+            background: var(--gold);
+            color: #05070C;
+            font-weight: 900;
+            padding: 0.4rem 1.2rem;
+            border-radius: 20px;
+            font-size: 0.82rem;
+            text-transform: uppercase;
+            display: inline-block;
+            margin-bottom: 1.2rem;
+        }
+
+        .case-metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .metric-box {
+            background: var(--bg-secondary);
+            border: 1.5px solid var(--border-color);
+            border-radius: 18px;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .metric-val { font-size: 2.2rem; font-weight: 900; color: var(--gold-light); }
+        .metric-lbl { color: var(--text-muted); font-size: 0.88rem; font-weight: 700; margin-top: 0.3rem; }
+
+        /* ----------------------------------------------------
+           5. SOCIAL PROMO BANNER
            ---------------------------------------------------- */
         .social-promo-banner {
             background: linear-gradient(135deg, rgba(20, 15, 5, 0.95), rgba(5, 7, 12, 0.98));
@@ -746,12 +805,12 @@
             <div class="ai-modal-body" id="aiChatBody">
                 <div class="ai-msg-box">
                     أهلاً بك! أنا المساعد الذكي المربوط بالذكاء الاصطناعي لمتجر <strong>أحمد أبو عمر (Ahmed Abu Omar)</strong>. 
-                    يمكنني إجابة كافة استفساراتك حول الـ 23 منتج وقوالب المواقع وأدوات الـ Micro-SaaS وكود الخصم <strong>OMAR 60</strong>:
+                    يمكنني إجابة كافة استفساراتك حول المنتجات الـ 23، خدماتنا، دراسات الحالة، وقسم "حول متجرنا":
                 </div>
-                <button class="ai-faq-btn" onclick="askAi('كم عدد المنتجات والقوالب المتاحة بالمتجر؟')">📦 كم عدد المنتجات والقوالب المتاحة بالمتجر؟</button>
+                <button class="ai-faq-btn" onclick="askAi('من هو أحمد أبو عمر وما هو هذا الاستوديو الرقمي؟')">👑 من هو أحمد أبو عمر وما هو هذا الاستوديو الرقمي؟</button>
+                <button class="ai-faq-btn" onclick="askAi('كيف حقق العميل العقاري نمو مبيعات 40%؟')">📈 كيف حقق العميل العقاري نمو مبيعات 40%؟</button>
+                <button class="ai-faq-btn" onclick="askAi('ما هي الخدمات الأربع المتاحة؟')">🌐 ما هي الخدمات الأربع المتاحة؟</button>
                 <button class="ai-faq-btn" onclick="askAi('كيف يمكنني استخدام كود الخصم OMAR 60؟')">💡 كيف يمكنني استخدام كود الخصم OMAR 60؟</button>
-                <button class="ai-faq-btn" onclick="askAi('ما هي الخدمات المتاحة في المتجر؟')">🌐 ما هي الخدمات المتاحة في المتجر؟</button>
-                <button class="ai-faq-btn" onclick="askAi('هل توجد طريقة للتواصل المباشر عبر الواتساب؟')">💬 هل توجد طريقة للتواصل المباشر عبر الواتساب؟</button>
             </div>
             <div class="ai-modal-footer">
                 <input type="text" id="aiUserQuery" class="ai-input" placeholder="اكتب استفسارك للذكاء الاصطناعي..." onkeypress="if(event.key==='Enter') sendCustomAiQuery()">
@@ -760,7 +819,7 @@
         </div>
     </div>
 
-    <!-- 3. HEADER NAVIGATION -->
+    <!-- 3. HEADER NAVIGATION (الترتيب: الرئيسية | خدماتنا | منتجاتنا | عروض | التواصل | حول متجرنا) -->
     <header>
         <div class="header-container">
             <div class="top-brand-card">
@@ -789,6 +848,7 @@
                 <li><button class="nav-link" onclick="switchSection('products')" id="dnav-products" data-ar="منتجاتنا" data-en="Products">منتجاتنا</button></li>
                 <li><button class="nav-link" onclick="switchSection('offers')" id="dnav-offers" data-ar="عروض" data-en="Offers">عروض</button></li>
                 <li><button class="nav-link" onclick="switchSection('contact')" id="dnav-contact" data-ar="التواصل" data-en="Contact">التواصل</button></li>
+                <li><button class="nav-link" onclick="switchSection('about')" id="dnav-about" data-ar="حول متجرنا" data-en="About Us">حول متجرنا</button></li>
             </ul>
 
             <div style="display:none; align-items:center; gap:0.85rem;" class="desktop-actions">
@@ -804,6 +864,7 @@
     <section id="section-home" class="page-section active">
         <div class="cinematic-hero-fullscreen">
             <div class="cyber-grid-overlay"></div>
+            
             <div class="developer-tag" data-ar="⚡ MESH & CYBERNETIC ARCHITECTURE — ELITE DEVELOPERS STUDIO" data-en="⚡ MESH & CYBERNETIC ARCHITECTURE — ELITE DEVELOPERS STUDIO">
                 ⚡ MESH & CYBERNETIC ARCHITECTURE — ELITE DEVELOPERS STUDIO
             </div>
@@ -821,13 +882,38 @@
                 <button class="btn btn-primary-whatsapp" onclick="window.open('https://wa.me/201206443652','_blank')" data-ar="💬 تواصل عبر الواتساب" data-en="💬 Chat via WhatsApp">💬 تواصل عبر الواتساب</button>
             </div>
         </div>
+
+        <div class="case-study-card">
+            <span class="case-study-badge">🏆 دراسة حالة نجاح (Case Study)</span>
+            <h2 style="font-size:2.2rem; color:var(--gold-light); margin-bottom:1rem;" data-ar="كيف ساعدت قوالب وأدوات أحمد أبو عمر شركة عقارية في زيادة المبيعات بنسبة 40%؟" data-en="How Ahmed Abu Omar Templates Boosted Real Estate Sales by 40%">
+                كيف ساعدت قوالب وأدوات أحمد أبو عمر شركة عقارية في زيادة المبيعات بنسبة 40%؟
+            </h2>
+            <p style="color:var(--text-muted); font-size:1.1rem; max-width:900px;" data-ar="تم دمج قالب عقاري فائق السرعة مع أداة حاسبة العائد الاستثماري (ROI Calculator Pro) لتحويل زوار الموقع إلى عملاء حقيقيين وحجز معاينات فورية عبر الواتساب." data-en="Integrating a high-speed real estate template with the ROI Calculator Pro tool to convert visitors into direct bookings.">
+                تم دمج قالب عقاري فائق السرعة مع أداة حاسبة العائد الاستثماري (ROI Calculator Pro) لتحويل زوار الموقع إلى عملاء حقيقيين وحجز معاينات فورية عبر الواتساب.
+            </p>
+
+            <div class="case-metrics-grid">
+                <div class="metric-box">
+                    <div class="metric-val">98%</div>
+                    <div class="metric-lbl" data-ar="سرعة Google PageSpeed" data-en="Google PageSpeed">سرعة Google PageSpeed</div>
+                </div>
+                <div class="metric-box">
+                    <div class="metric-val">+40%</div>
+                    <div class="metric-lbl" data-ar="نمو المبيعات خلال 30 يوماً" data-en="Sales Growth">نمو المبيعات خلال 30 يوماً</div>
+                </div>
+                <div class="metric-box">
+                    <div class="metric-val">100%</div>
+                    <div class="metric-lbl" data-ar="تحويل مباشر عبر الواتساب" data-en="Direct Conversion">تحويل مباشر عبر الواتساب</div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- 2. SERVICES SECTION -->
     <section id="section-services" class="page-section">
         <div class="section-header">
             <h2 data-ar="خدماتنا البرمجية الاحترافية" data-en="Our Engineering Services">خدماتنا البرمجية الاحترافية</h2>
-            <p data-ar="تطوير واجهات برمجة متقدمة وتطبيقات ويب مخصصة لتمكين الشركات والأفراد." data-en="High-end web solutions and custom software applications tailored for high performance.">تطوير واجهات برمجة متقدمة وتطبيقات ويب مخصصة لتمكين الشركات والأفراد.</p>
+            <p data-ar="نقدم باقة الخدمات الأقوى في العالم لتمكين الشركات والمتاجر بأعلى معايير الجودة." data-en="The world's elite web development, landing pages, case studies, and AI assistant integration services.">نقدم باقة الخدمات الأقوى في العالم لتمكين الشركات والمتاجر بأعلى معايير الجودة.</p>
         </div>
         <div class="services-grid" id="servicesGrid"></div>
     </section>
@@ -836,7 +922,7 @@
     <section id="section-products" class="page-section">
         <div class="section-header">
             <h2 data-ar="المتجر الرقمي والمنتجات (23 منتج احترافي)" data-en="Digital Storefront & Products (23 Items)">المتجر الرقمي والمنتجات (23 منتج احترافي)</h2>
-            <p data-ar="استكشف تشكيلتنا الكاملة والمكونة من 23 منتج رقمي تشمل قوالب المواقع المصممة بمختلف القطاعات التجارية، وأدوات Micro-SaaS، وحزمة السير الذاتية." data-en="Explore our complete collection of 23 premium web templates, micro-SaaS tools, and ATS resume bundles.">استكشف تشكيلتنا الكاملة والمكونة من 23 منتج رقمي تشمل قوالب المواقع المصممة بمختلف القطاعات التجارية، وأدوات Micro-SaaS، وحزمة السير الذاتية.</p>
+            <p data-ar="استكشف تشكيلتنا الكاملة والمكونة من 23 منتج رقمي تشمل قوالب المواقع المصممة بمختلف القطاعات، وأدوات Micro-SaaS، وحزمة السير الذاتية." data-en="Explore our complete collection of 23 premium web templates, micro-SaaS tools, and ATS resume bundles.">استكشف تشكيلتنا الكاملة والمكونة من 23 منتج رقمي تشمل قوالب المواقع المصممة بمختلف القطاعات، وأدوات Micro-SaaS، وحزمة السير الذاتية.</p>
         </div>
 
         <div class="store-controls">
@@ -869,10 +955,8 @@
         </div>
     </section>
 
-    <!-- 5. CONTACT SECTION (مع جملة البنر الفاخرة والمحدثة) -->
+    <!-- 5. CONTACT SECTION -->
     <section id="section-contact" class="page-section">
-        
-        <!-- 🔥 بنر الصفحات والمتابعة الاحترافي بالجملة الجديدة -->
         <div class="social-promo-banner">
             <h3 style="font-size:1.6rem; color:var(--gold-light); margin-bottom:0.8rem; font-weight:900;" data-ar="✨ سُعداء بزيارتكم الكريمة!" data-en="✨ Delighted by your visit!">✨ سُعداء بزيارتكم الكريمة!</h3>
             <p style="color:var(--text-main); font-size:1.1rem; max-width:780px; margin:0 auto 2rem; font-weight:700;" data-ar="اشتركوا وتابعوا صفحاتنا الرسمية الآن لتكونوا أول من يكتشف أحدث القوالب، الأدوات الذكية، والعروض الحصرية." data-en="Follow our official pages now to be the first to discover the latest templates, smart tools, and exclusive offers.">
@@ -880,12 +964,9 @@
             </p>
 
             <div style="display:flex; justify-content:center; align-items:center; gap:1.8rem;">
-                <!-- Facebook Icon Button -->
                 <a href="https://www.facebook.com/AhmedAbuOmarOfficial?mibextid=ZbWKwL" target="_blank" class="social-btn-icon-only social-btn-fb" title="تابعنا على فيسبوك">
                     <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
                 </a>
-
-                <!-- Instagram Icon Button -->
                 <a href="https://www.instagram.com/ahmedabuomar.design" target="_blank" class="social-btn-icon-only social-btn-insta" title="تابعنا على إنستغرام">
                     <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
                 </a>
@@ -917,7 +998,42 @@
         </div>
     </section>
 
-    <!-- MOBILE BOTTOM NAVIGATION -->
+    <!-- 6. ABOUT US SECTION (قائمة "حول متجرنا" الفاخرة المضافة بعد التواصل مباشرة) -->
+    <section id="section-about" class="page-section">
+        <div class="section-header">
+            <span class="case-study-badge">👑 استوديو أحمد أبو عمر الرقمي</span>
+            <h2 data-ar="حول متجرنا وقصة نجاحنا" data-en="About Our Store & Success Story">حول متجرنا وقصة نجاحنا</h2>
+            <p data-ar="نحن نبتكر مستقبل التجارة الرقمية والحلول البرمجية بأعلى المعايير العالمية." data-en="We innovate the future of digital commerce and software solutions with world-class standards.">نحن نبتكر مستقبل التجارة الرقمية والحلول البرمجية بأعلى المعايير العالمية.</p>
+        </div>
+
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:2rem; margin-top:2rem;">
+            <div class="service-card">
+                <div style="font-size:2.5rem;">🎯</div>
+                <h3 style="color:var(--gold); margin-top:1rem;" data-ar="رؤيتنا وهدفنا" data-en="Our Vision & Mission">رؤيتنا وهدفنا</h3>
+                <p style="margin-top:0.8rem;" data-ar="تمكين الشركات، المطورين، ورواد الأعمال من امتلاك واجهات ومواقع فائقة السرعة، أدوات Micro-SaaS ذكية، وحزم سير ذاتية احترافية تنافس أكبر الأسواق العالمية." data-en="Empowering businesses and developers with elite ultra-fast templates and smart SaaS tools.">
+                    تمكين الشركات، المطورين، ورواد الأعمال من امتلاك واجهات ومواقع فائقة السرعة، أدوات Micro-SaaS ذكية، وحزم سير ذاتية احترافية تنافس أكبر الأسواق العالمية.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <div style="font-size:2.5rem;">⚡</div>
+                <h3 style="color:var(--gold); margin-top:1rem;" data-ar="لماذا تختار أحمد أبو عمر؟" data-en="Why Choose Ahmed Abu Omar?">لماذا تختار أحمد أبو عمر؟</h3>
+                <p style="margin-top:0.8rem;" data-ar="نتميز بتصميم سينمائي متفاعل، سرعة تحميل تتخطى 98% على محركات البحث، دعم فني مباشر على مدار الساعة عبر الواتساب، ومنتجات رقمية فريدة من نوعها." data-en="Cinematic UI, 98+ PageSpeed, 24/7 direct WhatsApp support, and unique digital products.">
+                    نتميز بتصميم سينمائي متفاعل، سرعة تحميل تتخطى 98% على محركات البحث، دعم فني مباشر على مدار الساعة عبر الواتساب، ومنتجات رقمية فريدة من نوعها.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <div style="font-size:2.5rem;">💎</div>
+                <h3 style="color:var(--gold); margin-top:1rem;" data-ar="جودة البريميوم المطلقة" data-en="Absolute Premium Quality">جودة البريميوم المطلقة</h3>
+                <p style="margin-top:0.8rem;" data-ar="كل منتج في المتجر (سواء من الـ 23 منتجاً قوالب أو أدوات) مصمم بعناية فائقة لضمان أعلى معدلات التحويل (Conversion Rate) وتحقيق أرباح حقيقية لعملائنا." data-en="Every product is meticulously crafted to ensure maximum conversion rates and real business ROI.">
+                    كل منتج في المتجر (سواء من الـ 23 منتجاً قوالب أو أدوات) مصمم بعناية فائقة لضمان أعلى معدلات التحويل (Conversion Rate) وتحقيق أرباح حقيقية لعملائنا.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- MOBILE BOTTOM NAVIGATION (محدثة لتشمل زر "حول متجرنا") -->
     <nav class="bottom-nav">
         <button class="bottom-nav-item active" onclick="switchSection('home')" id="bnav-home">
             <svg viewBox="0 0 24 24"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>
@@ -939,6 +1055,10 @@
             <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
             <span data-ar="التواصل" data-en="Contact">التواصل</span>
         </button>
+        <button class="bottom-nav-item" onclick="switchSection('about')" id="bnav-about">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+            <span data-ar="حول متجرنا" data-en="About Us">حول متجرنا</span>
+        </button>
     </nav>
 
     <footer>
@@ -947,9 +1067,10 @@
 
     <script>
         const servicesData = [
-            { id: 1, icon: "💻", titleAr: "تصميم وتطوير المواقع", titleEn: "Website Design", descAr: "تطوير مواقع إلكترونية فائقة السرعة ومتجاوبة بالكامل لتعزيز أداء عملك.", descEn: "Custom high-speed responsive web design." },
-            { id: 2, icon: "🎯", titleAr: "تصميم صفحات الهبوط", titleEn: "Landing Pages", descAr: "صفحات هبوط سينمائية عالية التحويل مصممة لجلب العملاء.", descEn: "High-converting cinematic landing pages." },
-            { id: 3, icon: "⚙️", titleAr: "تطوير الأدوات الرقمية", titleEn: "Micro-SaaS Tools", descAr: "تطبيقات Micro-SaaS وأدوات ذكية مخصصة لنمو مشاريعك.", descEn: "Custom Micro-SaaS calculators & web tools." }
+            { id: 1, icon: "💻", titleAr: "تصميم المواقع وصفحات الهبوط السينمائية", titleEn: "Cinematic Landing Pages & Web Design", descAr: "تطوير صفحات هبوط ومواقع إلكترونية فائقة السرعة ومتجاوبة بالكامل لتعظيم مبيعاتك.", descEn: "High-converting cinematic landing pages & ultra-fast websites." },
+            { id: 2, icon: "📊", titleAr: "إعداد دراسات الحالة الاحترافية (Case Studies)", titleEn: "Professional Case Studies", descAr: "بناء دراسات حالة موثقة وأرقام حقيقية لإثبات كفاءة مشاريعك ومضاعفة ثقة العملاء.", descEn: "Verified case studies proving high ROI and business growth." },
+            { id: 3, icon: "🤖", titleAr: "دمج المساعد الشخصي الذكي (AI Assistant)", titleEn: "AI Smart Assistant Integration", descAr: "ربط وتطوير مساعد ذكي متقدم لموقعك للرد الآلي على استفسارات العملاء 24/7.", descEn: "Advanced AI chatbot integration for automated 24/7 customer support." },
+            { id: 4, icon: "⚙️", titleAr: "تطوير البرمجيات والمواقع المخصصة (Micro-SaaS)", titleEn: "Custom Software & Micro-SaaS", descAr: "بناء وتطوير أدوات وتطبيقات ويب مخصصة لتمكين مشروعك الرقمي بنجاح تام.", descEn: "Custom Micro-SaaS tools and web applications development." }
         ];
 
         /* مصفوفة الـ 23 منتجاً كاملة */
@@ -1034,12 +1155,14 @@
         function askAi(q) {
             const body = document.getElementById('aiChatBody');
             let answer = "";
-            if(q.includes('23') || q.includes('عدد')) {
-                answer = "يحتوي متجر أحمد أبو عمر على 23 منتجاً كاملاً وتشمل: 4 أدوات Micro-SaaS ذكية، 10 قوالب مواقع متجاوبة لمختلف الأنشطة، و9 قوالب بالإضافة لحزمة السير الذاتية الـ 10 قوالب ATS.";
+            if(q.includes('أحمد أبو عمر') || q.includes('استوديو')) {
+                answer = "أحمد أبو عمر هو مطور ومصمم رقمي رائد يقدم استوديو سينمائي متكامل لقوالب المواقع، أدوات Micro-SaaS، وحزم السير الذاتية ATS.";
+            } else if(q.includes('40%') || q.includes('عقاري')) {
+                answer = "دراسة الحالة أثبتت زيادة مبيعات شركة عقارية بنسبة 40% وسرعة موقع 98% بدمج قالب عقاري مع أداة ROI Calculator Pro وحجز المعاينات عبر الواتساب.";
+            } else if(q.includes('الخدمات') || q.includes('الأربع')) {
+                answer = "نوفر 4 خدمات رئيسية: تصميم صفحات الهبوط والمواكب، إعداد دراسات الحالة Case Studies، دمج المساعد الشخصي الذكي AI، وتطوير برمجيات Micro-SaaS.";
             } else if(q.includes('OMAR 60')) {
-                answer = "يمكنك كتابة كود الخصم OMAR 60 في صفحة الدفع على Payhip للحصول فوراً على خصم 60% على جميع المنتجات والقوالب.";
-            } else if(q.includes('الخدمات')) {
-                answer = "نوفر خدمات تطوير المواقع، صفحات الهبوط السينمائية، تصميم السير الذاتية ATS، وتطوير أدوات الويب المصغرة Micro-SaaS.";
+                answer = "يمكنك استخدام كود الخصم OMAR 60 في صفحة الدفع على Payhip للحصول فوراً على خصم 60% على كافة المنتجات والقوالب.";
             } else {
                 answer = "لطلب خدمة مخصصة أو استفسار مباشر، يمكنك التواصل مع أحمد أبو عمر فوراً عبر الواتساب على الرقم: 201206443652+";
             }
