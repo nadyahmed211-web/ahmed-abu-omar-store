@@ -1,3 +1,8 @@
+# Ahmed Abu Omar Digital Store - Robots.txt
+# https://nadyahmed211-web.github.io/ahmed-abu-omar-store/
+
 User-agent: *
 Allow: /
+
+# السماح لجميع محركات البحث بأرشفة الصفحة الرئيسية وكل الأقسام
 Sitemap: https://nadyahmed211-web.github.io/ahmed-abu-omar-store/sitemap.xml
