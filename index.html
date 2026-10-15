@@ -1,1055 +1,1423 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl" data-theme="dark">
+<html lang="en" dir="ltr" data-theme="dark">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
-  <!-- ==================== SEO META TAGS ==================== -->
-  <title>Ahmed Abu Omar | المنصة العالمية للحلول الرقمية وقوالب الويب</title>
-  <meta name="description" content="استوديو Ahmed Abu Omar للمنتجات الرقمية - احصل على أقوى أدوات الويب (Micro-SaaS)، قوالب المواقع الفاخرة، خدمات تصميم السير الذاتية (ATS)، وتطبيقات PWA المجانية.">
-  <meta name="keywords" content="أحمد أبو عمر, Ahmed Abu Omar, قوالب مواقع, Micro-SaaS, سيرة ذاتية ATS, تصميم مواقع, أدوات ويب, Payhip, Student Hub Pro, PWA, تطوير برمجيات">
-  <meta name="author" content="Ahmed Abu Omar">
-  <meta name="robots" content="index, follow, max-image-preview:large">
-  <link rel="canonical" href="https://nadyahmed211-web.github.io/ahmed-abu-omar-store/">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  
-  <style>
-    :root {
-      --bg-main: #030509;
-      --bg-surface: #080c16;
-      --bg-card: rgba(12, 17, 29, 0.96);
-      --bg-glass: rgba(8, 12, 22, 0.88);
-      --text-main: #f8fafc;
-      --text-muted: #94a3b8;
-      --accent-gold: #d4af37;
-      --accent-gold-light: #fef08a;
-      --gold-gradient: linear-gradient(135deg, #fff2a8 0%, #d4af37 50%, #997300 100%);
-      --gold-glow: rgba(212, 175, 55, 0.25);
-      --border-color: rgba(212, 175, 55, 0.2);
-      --border-hover: rgba(212, 175, 55, 0.6);
-      --shadow-cinematic: 0 30px 60px -15px rgba(0, 0, 0, 0.95);
-      --radius-lg: 24px;
-      --radius-md: 14px;
-      --font-family: 'Cairo', 'Plus Jakarta Sans', sans-serif;
-      --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    [data-theme="light"] {
-      --bg-main: #f8fafc;
-      --bg-surface: #f1f5f9;
-      --bg-card: rgba(255, 255, 255, 0.95);
-      --bg-glass: rgba(248, 250, 252, 0.9);
-      --text-main: #0f172a;
-      --text-muted: #64748b;
-      --accent-gold: #b8860b;
-      --accent-gold-light: #d4af37;
-      --gold-gradient: linear-gradient(135deg, #d4af37 0%, #b8860b 50%, #8b6508 100%);
-      --gold-glow: rgba(184, 134, 11, 0.15);
-      --border-color: rgba(184, 134, 11, 0.22);
-      --border-hover: rgba(184, 134, 11, 0.6);
-      --shadow-cinematic: 0 20px 40px -15px rgba(0, 0, 0, 0.12);
-    }
-
-    * { box-sizing: border-box; margin: 0; padding: 0; font-family: var(--font-family); -webkit-tap-highlight-color: transparent; }
-    body { background-color: var(--bg-main); color: var(--text-main); transition: background-color 0.4s ease, color 0.4s ease; min-height: 100vh; overflow-x: hidden; position: relative; }
-    a { text-decoration: none; color: inherit; }
-    ul { list-style: none; }
-
-    .cinematic-bg {
-      position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
-      z-index: -2; pointer-events: none;
-      background: radial-gradient(circle at 15% 20%, rgba(212, 175, 55, 0.14) 0%, transparent 45%),
-                  radial-gradient(circle at 85% 80%, rgba(212, 175, 55, 0.08) 0%, transparent 50%),
-                  var(--bg-main);
-    }
-
-    .grid-overlay {
-      position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
-      z-index: -1; pointer-events: none;
-      background-image: linear-gradient(to right, var(--border-color) 1px, transparent 1px),
-                        linear-gradient(to bottom, var(--border-color) 1px, transparent 1px);
-      background-size: 60px 60px; opacity: 0.08;
-    }
-
-    .enterprise-top-bar {
-      background: var(--gold-gradient); color: #030509; font-size: 0.78rem; font-weight: 900;
-      text-align: center; padding: 7px 15px; position: fixed; top: 0; left: 0; width: 100%;
-      z-index: 1001; box-shadow: 0 2px 12px rgba(0,0,0,0.4); display: flex; align-items: center; justify-content: center; gap: 10px;
-    }
-
-    header {
-      position: fixed; top: 38px; left: 50%; transform: translateX(-50%);
-      width: 96%; max-width: 1320px; background: var(--bg-glass); backdrop-filter: blur(25px);
-      -webkit-backdrop-filter: blur(25px); border: 1px solid var(--border-color); border-radius: var(--radius-lg);
-      padding: 12px 18px; display: flex; justify-content: space-between; align-items: center; z-index: 1000; box-shadow: var(--shadow-cinematic);
-    }
-
-    .brand-container { display: flex; align-items: center; gap: 12px; }
-    .brand-logo-box {
-      width: 40px; height: 40px; background: var(--gold-gradient); border-radius: 12px;
-      display: flex; align-items: center; justify-content: center; color: #030509; font-weight: 900; font-size: 1.2rem;
-      box-shadow: 0 4px 18px rgba(212, 175, 55, 0.4);
-    }
-    .brand-text h1 {
-      font-size: 0.95rem; font-weight: 900; background: var(--gold-gradient);
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-    }
-    .brand-text span { font-size: 0.6rem; color: var(--text-muted); font-weight: 700; display: block; letter-spacing: 0.5px; }
-
-    .nav-links {
-      display: flex; gap: 6px; background: rgba(255, 255, 255, 0.02);
-      padding: 4px; border-radius: 100px; border: 1px solid rgba(255, 255, 255, 0.04);
-    }
-    .nav-link-btn {
-      background: transparent; border: none; color: var(--text-muted); padding: 7px 18px;
-      border-radius: 100px; font-weight: 700; font-size: 0.85rem; cursor: pointer; transition: var(--transition);
-      display: flex; align-items: center; gap: 7px; white-space: nowrap;
-    }
-    .nav-link-btn:hover { color: var(--text-main); background: rgba(255, 255, 255, 0.05); }
-    .nav-link-btn.active {
-      color: #030509; background: var(--gold-gradient); font-weight: 800;
-      box-shadow: 0 4px 15px rgba(212, 175, 55, 0.35);
-    }
-
-    .nav-controls { display: flex; align-items: center; gap: 8px; }
-    .ctrl-btn-group {
-      display: flex; align-items: center; gap: 4px; background: rgba(255, 255, 255, 0.03);
-      padding: 3px; border-radius: 100px; border: 1px solid var(--border-color);
-    }
-    .ctrl-btn {
-      background: transparent; border: none; color: var(--text-main); width: 30px; height: 30px;
-      border-radius: 50%; display: flex; align-items: center; justify-content: center;
-      cursor: pointer; transition: var(--transition); font-size: 0.75rem; font-weight: 800;
-    }
-    .ctrl-btn:hover { background: var(--gold-glow); color: var(--accent-gold); }
-
-    .app-viewport { max-width: 1320px; margin: 135px auto 70px; padding: 0 20px; min-height: calc(100vh - 200px); }
-    .tab-section { display: none; animation: fadeInContent 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
-    .tab-section.active-tab { display: block; }
-    @keyframes fadeInContent { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
-
-    /* ================= CINEMATIC HERO SLIDER SYSTEM (بنر المنتج ووظيفته والسعر والواتساب) ================= */
-    .hero-slider-container {
-      position: relative; width: 100%; height: 540px;
-      background: var(--bg-card); border: 1.5px solid var(--border-hover);
-      border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-cinematic);
-    }
-
-    .hero-slides-wrapper { position: relative; width: 100%; height: 100%; }
-
-    .hero-slide {
-      position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-      opacity: 0; visibility: hidden; transition: opacity 0.8s ease-in-out, visibility 0.8s ease-in-out;
-      display: grid; grid-template-columns: 1.1fr 0.9fr; align-items: center; padding: 45px; gap: 30px;
-      background: linear-gradient(135deg, rgba(8, 12, 22, 0.96), rgba(3, 5, 9, 0.99));
-    }
-
-    .hero-slide.active-slide { opacity: 1; visibility: visible; }
-
-    .hero-slide-content .badge {
-      display: inline-flex; align-items: center; gap: 8px; padding: 6px 16px; border-radius: 100px;
-      background: var(--gold-glow); border: 1px solid var(--border-hover);
-      color: var(--accent-gold-light); font-size: 0.85rem; font-weight: 800; margin-bottom: 15px;
-    }
-
-    .hero-slide-content h2 { font-size: 2.3rem; font-weight: 900; line-height: 1.25; margin-bottom: 12px; }
-    .hero-slide-content h2 span { background: var(--gold-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-    .hero-slide-content p { font-size: 0.98rem; color: var(--text-muted); margin-bottom: 20px; line-height: 1.6; }
-
-    /* أسعار البنر (الأساسي وبعد الخصم بالمصري) */
-    .banner-price-box {
-      display: flex; align-items: center; gap: 14px; margin-bottom: 22px; background: rgba(255,255,255,0.03);
-      border: 1px solid var(--border-color); padding: 10px 18px; border-radius: var(--radius-md); width: fit-content;
-    }
-    .banner-old-price { font-size: 1rem; color: var(--text-muted); text-decoration: line-through; font-weight: 700; }
-    .banner-new-price { font-size: 1.4rem; font-weight: 900; color: var(--accent-gold-light); font-family: 'Plus Jakarta Sans', sans-serif; }
-
-    .hero-slide-actions { display: flex; gap: 12px; flex-wrap: wrap; }
-
-    .hero-slide-visual { position: relative; height: 100%; display: flex; align-items: center; justify-content: center; }
-
-    .cinematic-mockup-card {
-      width: 100%; height: 330px;
-      background: radial-gradient(circle at center, rgba(212, 175, 55, 0.15) 0%, rgba(5, 7, 12, 0.92) 80%);
-      border: 1px solid var(--border-hover); border-radius: var(--radius-lg);
-      display: flex; flex-direction: column; align-items: center; justify-content: center;
-      text-align: center; padding: 25px; box-shadow: 0 20px 40px rgba(0,0,0,0.6); position: relative; overflow: hidden;
-    }
-    .cinematic-mockup-card i { font-size: 3.5rem; color: var(--accent-gold); margin-bottom: 14px; filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.4)); }
-    .cinematic-mockup-card h3 { font-size: 1.25rem; font-weight: 900; margin-bottom: 6px; color: var(--text-main); }
-    .cinematic-mockup-card p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; }
-
-    .slider-dots {
-      position: absolute; bottom: 18px; left: 50%; transform: translateX(-50%);
-      display: flex; gap: 8px; z-index: 10;
-    }
-    .slider-dot {
-      width: 12px; height: 12px; border-radius: 50%; background: rgba(255, 255, 255, 0.2);
-      border: 1px solid var(--border-color); cursor: pointer; transition: var(--transition);
-    }
-    .slider-dot.active { width: 32px; border-radius: 100px; background: var(--gold-gradient); border-color: transparent; }
-
-    .slider-arrow {
-      position: absolute; top: 50%; transform: translateY(-50%);
-      background: rgba(8, 12, 22, 0.8); border: 1px solid var(--border-color); color: var(--text-main);
-      width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
-      cursor: pointer; z-index: 10; transition: var(--transition); font-size: 1rem;
-    }
-    .slider-arrow:hover { background: var(--accent-gold); color: #030509; border-color: transparent; }
-    .slider-prev { right: 16px; }
-    .slider-next { left: 16px; }
-    [dir="ltr"] .slider-prev { right: auto; left: 16px; }
-    [dir="ltr"] .slider-next { left: auto; right: 16px; }
-
-    .btn-gold {
-      background: var(--gold-gradient); color: #030509; font-weight: 800;
-      padding: 12px 26px; border-radius: 100px; border: none; cursor: pointer;
-      box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4); transition: var(--transition);
-      display: inline-flex; align-items: center; gap: 8px; font-size: 0.92rem;
-    }
-    .btn-gold:hover { transform: translateY(-3px); box-shadow: 0 12px 35px rgba(212, 175, 55, 0.5); }
-
-    .btn-whatsapp-main {
-      background: #25d366; color: #fff; font-weight: 800;
-      padding: 12px 26px; border-radius: 100px; border: none; cursor: pointer;
-      box-shadow: 0 8px 25px rgba(37, 211, 102, 0.35); transition: var(--transition);
-      display: inline-flex; align-items: center; gap: 8px; font-size: 0.92rem;
-    }
-    .btn-whatsapp-main:hover { transform: translateY(-3px); background: #22bf5b; }
-
-    /* Section Headers & Grids */
-    .section-header { text-align: center; max-width: 750px; margin: 50px auto 40px; }
-    .section-header h2 { font-size: 2.6rem; font-weight: 900; margin-bottom: 12px; }
-    .section-header h2 span { background: var(--gold-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-    .section-header p { color: var(--text-muted); font-size: 1.05rem; line-height: 1.6; }
-
-    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 24px; }
-    .service-card {
-      background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg);
-      padding: 35px 28px; backdrop-filter: blur(10px); transition: var(--transition); display: flex; flex-direction: column;
-    }
-    .service-card:hover { transform: translateY(-8px); border-color: var(--border-hover); box-shadow: var(--shadow-cinematic); }
-    .service-icon {
-      width: 60px; height: 60px; border-radius: var(--radius-md); background: var(--gold-glow);
-      border: 1px solid var(--border-hover); display: flex; align-items: center; justify-content: center;
-      font-size: 1.6rem; color: var(--accent-gold); margin-bottom: 22px;
-    }
-    .service-card h3 { font-size: 1.25rem; font-weight: 800; margin-bottom: 12px; }
-    .service-card p { color: var(--text-muted); font-size: 0.92rem; margin-bottom: 22px; flex-grow: 1; line-height: 1.6; }
-
-    .service-btn {
-      align-self: flex-start; background: #25d366; color: #fff; font-weight: 700; padding: 10px 20px;
-      border-radius: 100px; font-size: 0.88rem; display: inline-flex; align-items: center; gap: 8px; transition: var(--transition);
-    }
-    .service-btn:hover { background: #22bf5b; }
-
-    .filter-buttons { display: flex; justify-content: center; gap: 10px; margin-bottom: 35px; flex-wrap: wrap; }
-    .filter-btn {
-      background: var(--bg-card); border: 1px solid var(--border-color); color: var(--text-muted);
-      padding: 10px 22px; border-radius: 100px; font-weight: 700; font-size: 0.9rem; cursor: pointer; transition: var(--transition);
-    }
-    .filter-btn.active, .filter-btn:hover { background: var(--gold-gradient); color: #030509; border-color: transparent; }
-
-    .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(310px, 1fr)); gap: 26px; }
-    .product-card {
-      background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg);
-      overflow: hidden; display: flex; flex-direction: column; transition: var(--transition);
-    }
-    .product-card:hover { transform: translateY(-8px); border-color: var(--border-hover); box-shadow: var(--shadow-cinematic); }
-    .product-banner {
-      width: 100%; height: 190px; position: relative; display: flex; align-items: center; justify-content: center;
-      background: linear-gradient(135deg, #0c111d, #1e293b);
-    }
-    .product-banner i { font-size: 3.2rem; color: var(--accent-gold); filter: drop-shadow(0 4px 12px rgba(0,0,0,0.4)); }
-    .product-badge-tag {
-      position: absolute; top: 14px; right: 14px; background: rgba(3, 5, 9, 0.88);
-      border: 1px solid var(--border-hover); color: var(--accent-gold); padding: 5px 14px;
-      border-radius: 100px; font-size: 0.78rem; font-weight: 700; backdrop-filter: blur(5px);
-    }
-    [dir="ltr"] .product-badge-tag { right: auto; left: 14px; }
-    .product-body { padding: 26px; display: flex; flex-direction: column; flex-grow: 1; }
-    .product-title { font-size: 1.2rem; font-weight: 800; margin-bottom: 10px; }
-    .product-desc { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 22px; flex-grow: 1; line-height: 1.6; }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Ahmed Abu Omar — Premium Digital Studio</title>
+    <meta name="description" content="Ahmed Abu Omar (Ahmed Web Templates) — Premium Digital Studio specializing in high-performance web templates, micro-SaaS tools, and custom WebApp solutions.">
+    <meta name="keywords" content="Ahmed Abu Omar, Ahmed Web Templates, Premium Digital Studio, Web Templates, Micro-SaaS Tools, WebApps, ATS Resume Templates">
+    <link rel="canonical" href="https://nadyahmed211-web.github.io/ahmed-abu-omar-store/">
     
-    .product-price-container { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
-    .product-old-price { font-size: 0.9rem; color: var(--text-muted); text-decoration: line-through; font-weight: 700; }
-    .product-price { font-size: 1.25rem; font-weight: 900; color: var(--accent-gold); font-family: 'Plus Jakarta Sans', sans-serif; }
+    <!-- Open Graph Metadata -->
+    <meta property="og:title" content="Ahmed Abu Omar — Premium Digital Studio">
+    <meta property="og:description" content="Cinematic digital showcase & storefront featuring premium web templates, micro-SaaS tools, and custom WebApp solutions.">
+    <meta property="og:url" content="https://nadyahmed211-web.github.io/ahmed-abu-omar-store/">
+    <meta property="og:type" content="website">
+    <meta name="theme-color" content="#05070C">
+    
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Ahmed Abu Omar - Premium Digital Studio",
+      "alternateName": "Ahmed Web Templates",
+      "url": "https://nadyahmed211-web.github.io/ahmed-abu-omar-store/",
+      "logo": "https://nadyahmed211-web.github.io/ahmed-abu-omar-store/favicon.ico",
+      "sameAs": [
+        "https://www.facebook.com/AhmedAbuOmarOfficial?mibextid=ZbWKwL",
+        "https://www.instagram.com/ahmedabuomar.design",
+        "https://www.linkedin.com/in/ahmedwebtemplates",
+        "https://payhip.com/ahmedabuomar"
+      ],
+      "description": "Premium Web Templates, Micro-SaaS Tools & WebApp Development Studio"
+    }
+    </script>
 
-    .product-footer { display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--border-color); padding-top: 18px; gap: 10px; flex-wrap: wrap; }
-    .product-actions-group { display: flex; gap: 10px; width: 100%; align-items: center; justify-content: space-between; }
-    .btn-product-link {
-      background: var(--gold-glow); border: 1px solid var(--border-hover); color: var(--text-main);
-      padding: 9px 16px; border-radius: 100px; font-weight: 700; font-size: 0.85rem; transition: var(--transition);
-      display: inline-flex; align-items: center; gap: 6px; flex: 1; justify-content: center; text-align: center;
-    }
-    .btn-product-link:hover { background: var(--gold-gradient); color: #030509; border-color: transparent; }
-    .btn-product-wa {
-      background: rgba(37, 211, 102, 0.15); border: 1px solid rgba(37, 211, 102, 0.4); color: #25d366;
-      padding: 9px 16px; border-radius: 100px; font-weight: 700; font-size: 0.85rem; transition: var(--transition);
-      display: inline-flex; align-items: center; gap: 6px; justify-content: center; text-align: center;
-    }
-    .btn-product-wa:hover { background: #25d366; color: #fff; }
+    <!-- Custom Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%2305070C'/><path d='M30 70 L50 30 L70 70 Z' fill='%23D4AF37'/></svg>">
+    
+    <style>
+        :root {
+            --bg-primary: #05070C;
+            --bg-secondary: #0A0E1A;
+            --bg-card: rgba(10, 14, 26, 0.88);
+            --gold: #D4AF37;
+            --gold-light: #F5E6A8;
+            --gold-dark: #9C7A22;
+            --text-main: #F5F5F5;
+            --text-muted: #94A3B8;
+            --border-color: rgba(212, 175, 55, 0.28);
+            --border-hover: rgba(212, 175, 55, 0.75);
+            --shadow: 0 15px 40px rgba(0, 0, 0, 0.65);
+            --glass-bg: rgba(5, 7, 12, 0.94);
+            --transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+        }
 
-    .offers-clean-container {
-      max-width: 850px; margin: 0 auto;
-      background: linear-gradient(145deg, rgba(12, 17, 29, 0.96), rgba(3, 5, 9, 0.99));
-      border: 1.5px solid var(--accent-gold); border-radius: var(--radius-lg); padding: 45px 30px; text-align: center;
-      box-shadow: 0 25px 60px rgba(0,0,0,0.85), 0 0 35px rgba(212, 175, 55, 0.15); position: relative; overflow: hidden;
-    }
-    .offers-clean-container::before {
-      content: ''; position: absolute; top: -90px; right: -90px; width: 220px; height: 220px;
-      background: var(--gold-glow); border-radius: 50%; filter: blur(70px); pointer-events: none;
-    }
-    .offer-header-badge {
-      display: inline-flex; align-items: center; gap: 8px; background: var(--gold-gradient); color: #030509;
-      font-weight: 900; padding: 8px 22px; border-radius: 100px; font-size: 0.88rem; margin-bottom: 22px; box-shadow: 0 4px 18px rgba(212, 175, 55, 0.35);
-    }
-    .offer-title-main { font-size: 2.3rem; font-weight: 900; margin-bottom: 14px; line-height: 1.3; }
-    .offer-title-main span { background: var(--gold-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-    .offer-simple-desc { color: var(--text-muted); font-size: 1.05rem; max-width: 680px; margin: 0 auto 30px; line-height: 1.7; }
-    .timer-week-box { display: flex; justify-content: center; gap: 14px; margin-bottom: 30px; }
-    .time-card { background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-color); padding: 12px 18px; border-radius: var(--radius-md); min-width: 80px; }
-    .time-card .num { font-size: 1.7rem; font-weight: 900; color: var(--accent-gold-light); font-family: 'Plus Jakarta Sans', sans-serif; line-height: 1; }
-    .time-card .txt { font-size: 0.75rem; color: var(--text-muted); font-weight: 700; margin-top: 5px; }
-    .coupon-compact-box {
-      background: rgba(0, 0, 0, 0.5); border: 2px dashed var(--accent-gold); border-radius: 18px;
-      padding: 18px 26px; display: inline-flex; align-items: center; gap: 18px; margin-bottom: 32px; box-shadow: 0 10px 30px rgba(0,0,0,0.6);
-    }
-    .coupon-val { font-size: 1.6rem; font-weight: 900; color: var(--accent-gold-light); letter-spacing: 2px; font-family: 'Plus Jakarta Sans', monospace; }
-    .btn-copy-simple {
-      background: var(--gold-gradient); color: #030509; border: none; padding: 9px 18px; border-radius: 100px;
-      font-weight: 800; font-size: 0.85rem; cursor: pointer; transition: var(--transition); display: flex; align-items: center; gap: 6px;
-    }
-    .btn-copy-simple:hover { opacity: 0.9; transform: translateY(-2px); }
-    .cta-action-area { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+        [data-theme="light"] {
+            --bg-primary: #F8FAFC;
+            --bg-secondary: #FFFFFF;
+            --bg-card: rgba(255, 255, 255, 0.92);
+            --gold: #B8860B;
+            --gold-light: #D4AF37;
+            --gold-dark: #8B6508;
+            --text-main: #0F172A;
+            --text-muted: #64748B;
+            --border-color: rgba(184, 134, 11, 0.25);
+            --border-hover: rgba(184, 134, 11, 0.6);
+            --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+            --glass-bg: rgba(255, 255, 255, 0.95);
+        }
 
-    .contact-box {
-      background: var(--bg-card); border: 1px solid var(--border-hover); border-radius: var(--radius-lg);
-      padding: 50px 35px; text-align: center; max-width: 800px; margin: 0 auto; box-shadow: var(--shadow-cinematic);
-    }
-    .contact-box i.main-icon { font-size: 3.5rem; color: #25d366; margin-bottom: 18px; }
-    .contact-box h3 { font-size: 2.2rem; font-weight: 900; margin-bottom: 12px; }
-    .contact-box p { color: var(--text-muted); font-size: 1.05rem; margin-bottom: 28px; line-height: 1.7; }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
 
-    footer { border-top: 1px solid var(--border-color); padding: 35px 0; margin-top: 50px; text-align: center; }
-    .footer-brand {
-      font-size: 1.45rem; font-weight: 900; background: var(--gold-gradient);
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 10px;
-    }
-    .footer-rights { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 18px; max-width: 850px; margin-left: auto; margin-right: auto; line-height: 1.6; }
-    .footer-thanks {
-      background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-md);
-      padding: 18px; margin: 0 auto 24px; max-width: 700px; font-size: 0.92rem; color: var(--accent-gold-light);
-    }
-    .social-buttons { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
-    .social-btn {
-      display: inline-flex; align-items: center; gap: 8px; padding: 10px 24px; border-radius: 100px;
-      border: 1px solid var(--border-color); background: var(--bg-card); font-weight: 700; font-size: 0.88rem; transition: var(--transition);
-    }
-    .social-btn:hover { border-color: var(--accent-gold); background: var(--gold-glow); }
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-main);
+            min-height: 100vh;
+            line-height: 1.6;
+            transition: background-color 0.3s, color 0.3s;
+            overflow-x: hidden;
+            padding-bottom: 95px;
+        }
 
-    .ai-launcher-btn {
-      position: fixed; bottom: 85px; right: 22px; width: 50px; height: 50px; border-radius: 50%;
-      background: var(--gold-gradient); color: #030509; border: 1px solid rgba(212, 175, 55, 0.5);
-      cursor: pointer; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); display: flex; align-items: center;
-      justify-content: center; font-size: 1.3rem; z-index: 997; opacity: 0.75; backdrop-filter: blur(8px); transition: var(--transition);
-    }
-    .ai-launcher-btn:hover { opacity: 1; transform: scale(1.1); box-shadow: 0 8px 30px rgba(212, 175, 55, 0.7); border-color: rgba(255, 255, 255, 0.9); }
+        /* Cinematic Studio Dynamic Backdrop Overlay */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: linear-gradient(to bottom, rgba(5, 7, 12, 0.85), rgba(5, 7, 12, 0.95)), 
+                        url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+            pointer-events: none;
+            z-index: 0;
+        }
 
-    .chat-container {
-      position: fixed; bottom: 145px; right: 22px; width: 380px; max-width: calc(100vw - 30px);
-      height: 500px; max-height: calc(100vh - 170px); background: var(--bg-card);
-      border: 1px solid var(--border-hover); border-radius: var(--radius-lg);
-      box-shadow: var(--shadow-cinematic); display: flex; flex-direction: column; z-index: 9999; overflow: hidden; transition: var(--transition);
-    }
-    .chat-container.hidden { opacity: 0; pointer-events: none; transform: translateY(20px) scale(0.95); }
-    .chat-header { background: var(--bg-surface); color: var(--text-main); padding: 14px 16px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-color); }
-    .chat-messages { flex: 1; padding: 14px; overflow-y: auto; background: var(--bg-main); display: flex; flex-direction: column; gap: 12px; }
-    .message { max-width: 88%; display: flex; flex-direction: column; }
-    .bot-message { align-self: flex-start; }
-    .user-message { align-self: flex-end; }
-    .message-content { padding: 11px 15px; border-radius: 14px; font-size: 0.88rem; line-height: 1.6; }
-    .bot-message .message-content { background: var(--bg-card); color: var(--text-main); border: 1px solid var(--border-color); border-bottom-right-radius: 3px; }
-    .user-message .message-content { background: var(--accent-gold); color: #030509; font-weight: 700; border-bottom-left-radius: 3px; }
-    .quick-chips { padding: 10px; background: var(--bg-card); display: flex; gap: 6px; overflow-x: auto; border-top: 1px solid var(--border-color); }
-    .quick-chips button { background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); padding: 6px 12px; border-radius: 20px; font-size: 0.78rem; color: var(--text-main); cursor: pointer; white-space: nowrap; font-weight: 700; transition: var(--transition); }
-    .quick-chips button:hover { background: var(--gold-gradient); color: #030509; }
-    .chat-footer { padding: 12px; background: var(--bg-card); border-top: 1px solid var(--border-color); }
-    .input-wrapper { display: flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.03); border: 1px solid var(--border-color); padding: 4px 6px 4px 12px; border-radius: 30px; }
-    .input-wrapper input { flex: 1; border: none; background: transparent; padding: 8px; font-family: inherit; font-size: 0.88rem; color: var(--text-main); outline: none; }
-    .input-wrapper button { background: var(--accent-gold); color: #030509; border: none; width: 34px; height: 34px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; }
-    [dir="ltr"] .chat-container, [dir="ltr"] .ai-launcher-btn { right: auto; left: 22px; }
+        /* Top Header */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: var(--glass-bg);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border-color);
+        }
 
-    .mobile-bottom-nav { display: none; }
+        .header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0.75rem 1.25rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
 
-    @media (max-width: 1024px) {
-      .hero-slide { grid-template-columns: 1fr; padding: 25px; text-align: center; height: auto; min-height: 500px; }
-      .hero-slide-actions { justify-content: center; }
-      .banner-price-box { margin: 0 auto 18px; }
-      .cinematic-mockup-card { height: 220px; }
-    }
+        .brand-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 0.85rem;
+            cursor: pointer;
+            text-decoration: none;
+        }
 
-    @media (max-width: 768px) {
-      .enterprise-top-bar { font-size: 0.7rem; padding: 5px 10px; }
-      header { width: 94%; padding: 10px 14px; top: 32px; }
-      .nav-links { display: none; }
-      .brand-text h1 { font-size: 0.88rem; }
-      .brand-text span { font-size: 0.58rem; }
-      .brand-logo-box { width: 34px; height: 34px; font-size: 1.1rem; }
-      .ctrl-btn { width: 28px; height: 28px; font-size: 0.7rem; }
-      
-      .hero-slider-container { height: 480px; }
-      .hero-slide { padding: 18px; }
-      .hero-slide-content h2 { font-size: 1.65rem; }
-      .hero-slide-content p { font-size: 0.88rem; }
+        .brand-logo-icon {
+            width: 44px;
+            height: 44px;
+            background: linear-gradient(135deg, var(--bg-secondary), rgba(212, 175, 55, 0.25));
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.35);
+            transition: var(--transition);
+        }
 
-      .mobile-bottom-nav {
-        position: fixed; bottom: 0; left: 0; width: 100%;
-        background: var(--bg-glass); backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px);
-        border-top: 1px solid var(--border-color); display: flex; justify-content: space-around; padding: 10px 6px;
-        z-index: 998; box-shadow: 0 -10px 30px rgba(0,0,0,0.6);
-      }
-      .mobile-nav-btn {
-        background: transparent; border: none; color: var(--text-muted);
-        display: flex; flex-direction: column; align-items: center; gap: 4px; font-size: 0.65rem; font-weight: 700; cursor: pointer;
-      }
-      .mobile-nav-btn i { font-size: 1.15rem; }
-      .mobile-nav-btn.active { color: var(--accent-gold); }
+        .brand-logo-icon:hover {
+            border-color: var(--gold);
+            transform: scale(1.05);
+        }
 
-      .app-viewport { margin-top: 95px; margin-bottom: 80px; padding: 0 14px; }
-      .ai-launcher-btn { bottom: 75px; right: 14px; width: 46px; height: 46px; font-size: 1.15rem; }
-      .chat-container { bottom: 130px; right: 14px; width: calc(100vw - 28px); }
-      [dir="ltr"] .ai-launcher-btn, [dir="ltr"] .chat-container { right: auto; left: 14px; }
-    }
-  </style>
+        .brand-logo-icon svg {
+            width: 24px;
+            height: 24px;
+            fill: var(--gold);
+        }
+
+        .brand-text-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .brand-name {
+            font-size: 1.18rem;
+            font-weight: 800;
+            color: var(--gold);
+            letter-spacing: 0.5px;
+            background: linear-gradient(135deg, var(--gold-light), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.2;
+            font-family: system-ui, -apple-system, sans-serif;
+            direction: ltr;
+            text-align: left;
+        }
+
+        .brand-subtitle {
+            font-size: 0.68rem;
+            color: var(--text-muted);
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .nav-desktop {
+            display: none;
+            gap: 1.5rem;
+            list-style: none;
+        }
+
+        @media(min-width: 992px) {
+            .nav-desktop { display: flex; align-items: center; }
+        }
+
+        .nav-link {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-size: 0.92rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            padding: 0.4rem 0;
+            position: relative;
+        }
+
+        .nav-link:hover, .nav-link.active { color: var(--gold); }
+
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--gold);
+            border-radius: 2px;
+        }
+
+        html[dir="rtl"] .nav-link.active::after { left: auto; right: 0; }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 0.65rem;
+        }
+
+        .icon-btn {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            color: var(--gold);
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 0.85rem;
+            font-weight: 700;
+        }
+
+        .icon-btn:hover {
+            border-color: var(--gold);
+            transform: translateY(-2px);
+        }
+
+        .mobile-hamburger { display: flex; }
+        @media(min-width: 992px) { .mobile-hamburger { display: none; } }
+
+        /* Mobile Drawer Menu */
+        .mobile-drawer {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 280px;
+            height: 100vh;
+            background: var(--bg-secondary);
+            border-left: 1px solid var(--border-color);
+            z-index: 2000;
+            padding: 2rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            transition: var(--transition);
+            box-shadow: -10px 0 30px rgba(0,0,0,0.8);
+        }
+
+        html[dir="rtl"] .mobile-drawer { right: auto; left: -100%; border-left: none; border-right: 1px solid var(--border-color); }
+        .mobile-drawer.open { right: 0; }
+        html[dir="rtl"] .mobile-drawer.open { left: 0; }
+
+        .drawer-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0,0,0,0.7);
+            z-index: 1999;
+            display: none;
+            backdrop-filter: blur(4px);
+        }
+
+        .drawer-overlay.open { display: block; }
+
+        .drawer-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 1rem;
+        }
+
+        .drawer-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .drawer-link-btn {
+            background: none;
+            border: none;
+            color: var(--text-main);
+            font-size: 1.05rem;
+            font-weight: 600;
+            text-align: left;
+            cursor: pointer;
+            width: 100%;
+            padding: 0.5rem 0;
+            transition: var(--transition);
+        }
+
+        html[dir="rtl"] .drawer-link-btn { text-align: right; }
+        .drawer-link-btn.active, .drawer-link-btn:hover { color: var(--gold); }
+
+        /* Single Page Section Management */
+        .page-section {
+            display: none;
+            max-width: 1350px;
+            margin: 0 auto;
+            padding: 2.2rem 1.25rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .page-section.active { display: block; animation: fadeIn 0.35s ease forwards; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Welcome Banner Top Highlight */
+        .welcome-banner {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(10, 14, 26, 0.92));
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 1.1rem 1.5rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+        }
+
+        .welcome-banner h2 {
+            font-size: 1.15rem;
+            font-weight: 800;
+            color: var(--gold-light);
+            letter-spacing: 0.5px;
+        }
+
+        /* Hero Section Styling */
+        .hero {
+            text-align: center;
+            padding: 2.5rem 0.5rem 2rem;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.1rem, 5.2vw, 3.8rem);
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 1.25rem;
+            background: linear-gradient(135deg, var(--text-main) 15%, var(--gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: clamp(1rem, 2vw, 1.18rem);
+            color: var(--text-muted);
+            max-width: 780px;
+            margin: 0 auto 2.2rem;
+        }
+
+        .hero-cta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .btn {
+            padding: 0.88rem 1.85rem;
+            border-radius: 12px;
+            font-size: 0.95rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.55rem;
+            text-decoration: none;
+            border: 1px solid transparent;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+            color: #05070C;
+            border-color: var(--gold);
+            box-shadow: 0 6px 25px rgba(212, 175, 55, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(212, 175, 55, 0.6);
+        }
+
+        .btn-secondary {
+            background: var(--bg-secondary);
+            color: var(--text-main);
+            border-color: var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--gold);
+            color: var(--gold);
+            transform: translateY(-2px);
+        }
+
+        .hero-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1rem;
+            max-width: 950px;
+            margin: 0 auto 2.5rem;
+        }
+
+        .feature-badge {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 0.85rem;
+            border-radius: 12px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: var(--gold-light);
+            backdrop-filter: blur(10px);
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+
+        /* Cinematic About Us Section */
+        .about-cinematic-wrapper {
+            background: linear-gradient(145deg, rgba(10, 14, 26, 0.92), rgba(5, 7, 12, 0.96)),
+                        url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1200&q=80') center/cover;
+            background-blend-mode: overlay;
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            padding: 2.8rem 2.2rem;
+            margin-bottom: 2.5rem;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+            text-align: left;
+        }
+
+        html[dir="rtl"] .about-cinematic-wrapper { text-align: right; }
+
+        .about-cinematic-wrapper::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 6px; height: 100%;
+            background: linear-gradient(to bottom, var(--gold-light), var(--gold), var(--gold-dark));
+        }
+
+        html[dir="rtl"] .about-cinematic-wrapper::before { left: auto; right: 0; }
+
+        .about-cinematic-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .about-cinematic-icon {
+            font-size: 2.2rem;
+            background: rgba(212, 175, 55, 0.18);
+            border: 1px solid var(--border-color);
+            width: 58px; height: 58px;
+            border-radius: 16px;
+            display: flex; align-items: center; justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .about-cinematic-title h3 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--gold-light);
+            margin-bottom: 0.2rem;
+        }
+
+        .about-cinematic-title span {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .about-cinematic-desc {
+            color: var(--text-main);
+            font-size: 1.02rem;
+            line-height: 1.8;
+            margin-bottom: 1.8rem;
+        }
+
+        /* Section Title Header */
+        .section-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-header h2 {
+            font-size: clamp(1.7rem, 3.2vw, 2.5rem);
+            font-weight: 800;
+            margin-bottom: 0.65rem;
+            color: var(--text-main);
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 1.02rem;
+            max-width: 650px;
+            margin: 0 auto;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.85rem;
+        }
+
+        .service-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 18px;
+            padding: 2.1rem 1.85rem;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: var(--shadow);
+        }
+
+        .service-card:hover {
+            border-color: var(--border-hover);
+            transform: translateY(-5px);
+        }
+
+        .service-icon { font-size: 2.5rem; margin-bottom: 1.25rem; }
+        .service-card h3 { font-size: 1.25rem; font-weight: 700; margin-bottom: 0.85rem; color: var(--text-main); }
+        .service-card p { color: var(--text-muted); font-size: 0.92rem; margin-bottom: 1.85rem; flex-grow: 1; }
+
+        /* Store Search & Filters */
+        .store-controls {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+            margin-bottom: 2.5rem;
+        }
+
+        @media(min-width: 768px) {
+            .store-controls { flex-direction: row; justify-content: space-between; align-items: center; }
+        }
+
+        .search-box {
+            position: relative;
+            flex-grow: 1;
+            max-width: 480px;
+        }
+
+        .search-box input {
+            width: 100%;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 0.85rem 1.1rem 0.85rem 3rem;
+            border-radius: 12px;
+            color: var(--text-main);
+            font-size: 0.92rem;
+            outline: none;
+            transition: var(--transition);
+        }
+
+        html[dir="rtl"] .search-box input { padding: 0.85rem 3rem 0.85rem 1.1rem; }
+        .search-box input:focus { border-color: var(--gold); box-shadow: var(--shadow); }
+
+        .search-icon {
+            position: absolute;
+            top: 50%;
+            left: 1.1rem;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+        }
+
+        html[dir="rtl"] .search-icon { left: auto; right: 1.1rem; }
+
+        .filter-tabs { display: flex; gap: 0.55rem; overflow-x: auto; padding-bottom: 6px; }
+
+        .filter-tab {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            color: var(--text-muted);
+            padding: 0.6rem 1.2rem;
+            border-radius: 10px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: var(--transition);
+        }
+
+        .filter-tab:hover, .filter-tab.active {
+            background: var(--gold);
+            color: #05070C;
+            border-color: var(--gold);
+        }
+
+        .offers-mini-banner {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.15), var(--bg-secondary));
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 1.25rem 1.8rem;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        /* Products Grid */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(295px, 1fr));
+            gap: 1.85rem;
+        }
+
+        .product-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 18px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+        }
+
+        .product-card:hover {
+            border-color: var(--border-hover);
+            transform: translateY(-6px);
+        }
+
+        .product-preview {
+            height: 170px;
+            background: linear-gradient(135deg, var(--bg-secondary), rgba(212, 175, 55, 0.16));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 1px solid var(--border-color);
+            position: relative;
+        }
+
+        .product-preview-icon { font-size: 3rem; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.5)); }
+
+        .product-category-tag {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: rgba(5, 7, 12, 0.88);
+            border: 1px solid var(--border-color);
+            color: var(--gold-light);
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 0.3rem 0.65rem;
+            border-radius: 7px;
+            text-transform: uppercase;
+        }
+
+        html[dir="rtl"] .product-category-tag { left: auto; right: 12px; }
+
+        .product-body { padding: 1.35rem; display: flex; flex-direction: column; flex-grow: 1; }
+        .product-title { font-size: 1.05rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--text-main); line-height: 1.35; }
+        .product-desc { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1rem; flex-grow: 1; }
+
+        .pricing-breakdown {
+            background: rgba(5, 7, 12, 0.45);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 0.75rem;
+            margin-bottom: 1rem;
+            font-size: 0.78rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+        }
+
+        .price-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .price-label { color: var(--text-muted); }
+        .price-val { font-weight: 700; color: var(--text-main); direction: ltr; }
+        .price-strike { text-decoration: line-through; color: var(--text-muted); font-size: 0.75rem; }
+        .price-highlight { color: var(--gold-light); font-weight: 800; }
+        .net-profit { color: #4ade80; font-weight: 800; }
+
+        .product-footer {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            border-top: 1px solid var(--border-color);
+            padding-top: 0.85rem;
+            margin-top: auto;
+        }
+
+        .product-actions-group {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .product-btn {
+            flex: 1;
+            text-align: center;
+            padding: 0.6rem 0.4rem;
+            border-radius: 9px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: var(--transition);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-payhip {
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+            color: #05070C;
+            border-color: var(--gold);
+        }
+
+        .btn-payhip:hover { background: var(--gold-light); }
+
+        .btn-whatsapp-direct {
+            background: var(--bg-secondary);
+            color: var(--gold-light);
+        }
+
+        .btn-whatsapp-direct:hover {
+            border-color: var(--gold);
+            color: var(--gold);
+        }
+
+        /* Offers Banner Section */
+        .main-offer-banner {
+            background: linear-gradient(135deg, #100d03, #282006, #100d03);
+            border: 2px solid var(--gold);
+            border-radius: 22px;
+            padding: 3.5rem 2rem;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.7);
+        }
+
+        .offer-tag {
+            display: inline-block;
+            background: var(--gold);
+            color: #05070C;
+            font-weight: 800;
+            font-size: 0.78rem;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            text-transform: uppercase;
+            margin-bottom: 1.35rem;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+        }
+
+        .main-offer-banner h2 { font-size: clamp(2rem, 4.5vw, 3rem); color: var(--gold-light); font-weight: 800; margin-bottom: 0.9rem; }
+        .main-offer-banner p { color: var(--text-main); font-size: 1.1rem; max-width: 650px; margin: 0 auto 2rem; }
+
+        .coupon-box {
+            display: inline-flex;
+            align-items: center;
+            gap: 1.1rem;
+            background: rgba(5, 7, 12, 0.88);
+            border: 1px dashed var(--gold);
+            padding: 0.85rem 1.6rem;
+            border-radius: 14px;
+            margin-bottom: 1.85rem;
+        }
+
+        .coupon-code { font-family: monospace; font-size: 1.45rem; font-weight: 800; color: var(--gold-light); letter-spacing: 1.5px; }
+
+        .copy-btn {
+            background: var(--gold);
+            color: #05070C;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 9px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .copy-btn:hover { background: var(--gold-light); }
+
+        .coupon-disclaimer {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            margin-top: 1rem;
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .contact-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 18px;
+            padding: 2.25rem 1.85rem;
+            box-shadow: var(--shadow);
+        }
+
+        .form-group { margin-bottom: 1.2rem; }
+        .form-group label { display: block; margin-bottom: 0.45rem; font-size: 0.88rem; font-weight: 600; }
+
+        .form-control {
+            width: 100%;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            padding: 0.85rem 1rem;
+            border-radius: 11px;
+            color: var(--text-main);
+            font-size: 0.92rem;
+            outline: none;
+            transition: var(--transition);
+        }
+
+        .form-control:focus { border-color: var(--gold); }
+        textarea.form-control { min-height: 120px; resize: vertical; }
+
+        /* Thank You Banner & Follow Section */
+        .thank-you-banner {
+            background: linear-gradient(135deg, rgba(10, 14, 26, 0.95), rgba(5, 7, 12, 0.98));
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 2.5rem 1.8rem;
+            text-align: center;
+            margin-top: 3rem;
+            box-shadow: var(--shadow);
+        }
+
+        .thank-you-banner h3 { font-size: 1.6rem; color: var(--gold-light); font-weight: 800; margin-bottom: 0.75rem; }
+        .thank-you-banner p { color: var(--text-muted); max-width: 600px; margin: 0 auto 1.5rem; font-size: 0.98rem; }
+
+        .social-follow-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        /* Mobile Bottom Navigation Bar */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: var(--glass-bg);
+            backdrop-filter: blur(18px);
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-around;
+            padding: 0.55rem 0.3rem calc(0.55rem + env(safe-area-inset-bottom));
+            z-index: 9999;
+            box-shadow: 0 -10px 30px rgba(0,0,0,0.6);
+        }
+
+        .bottom-nav-item {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 3px;
+            font-size: 0.72rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            flex: 1;
+            padding: 0.2rem 0;
+        }
+
+        .bottom-nav-item svg { width: 23px; height: 23px; transition: var(--transition); stroke: currentColor; fill: none; }
+        .bottom-nav-item.active { color: var(--gold); }
+        .bottom-nav-item.active svg { transform: translateY(-2px) scale(1.12); stroke: var(--gold); }
+
+        /* Footer Copyright & IP Notice */
+        footer {
+            text-align: center;
+            padding: 2rem 1.25rem;
+            color: var(--text-muted);
+            font-size: 0.82rem;
+            border-top: 1px solid var(--border-color);
+            margin-top: 3rem;
+        }
+
+        .ip-notice {
+            margin-top: 0.5rem;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            opacity: 0.8;
+        }
+
+        /* Toast Notification */
+        .toast {
+            position: fixed;
+            bottom: 100px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background: var(--bg-secondary);
+            border: 1px solid var(--gold);
+            color: var(--text-main);
+            padding: 0.8rem 1.6rem;
+            border-radius: 13px;
+            z-index: 10000;
+            opacity: 0;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+            font-weight: 700;
+            font-size: 0.92rem;
+            box-shadow: var(--shadow);
+            pointer-events: none;
+        }
+
+        .toast.show { transform: translateX(-50%) translateY(0); opacity: 1; }
+    </style>
 </head>
 <body>
 
-  <!-- Enterprise Top Banner Bar -->
-  <div class="enterprise-top-bar">
-    <i class="fa-solid fa-crown"></i>
-    <span>Ahmed Abu Omar Enterprise Studio | تجربة رقمية عالمية وبدون اشتراكات شهرية</span>
-  </div>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <a class="brand-wrapper" onclick="switchSection('home')">
+                <div class="brand-logo-icon">
+                    <svg viewBox="0 0 100 100"><path d="M30 70 L50 30 L70 70 Z" fill="#D4AF37"/><path d="M42 70 L50 54 L58 70 Z" fill="#05070C"/></svg>
+                </div>
+                <div class="brand-text-group">
+                    <span class="brand-name">Ahmed Abu Omar</span>
+                    <span class="brand-subtitle">Premium Digital Studio</span>
+                </div>
+            </a>
 
-  <div class="cinematic-bg"></div>
-  <div class="grid-overlay"></div>
+            <!-- Desktop Navigation Links -->
+            <ul class="nav-desktop">
+                <li><button class="nav-link active" onclick="switchSection('home')" id="dnav-home" data-en="Home" data-ar="الرئيسية">Home</button></li>
+                <li><button class="nav-link" onclick="switchSection('services')" id="dnav-services" data-en="Services" data-ar="خدماتنا">Services</button></li>
+                <li><button class="nav-link" onclick="switchSection('products')" id="dnav-products" data-en="Products" data-ar="منتجاتنا">Products</button></li>
+                <li><button class="nav-link" onclick="switchSection('offers')" id="dnav-offers" data-en="Offers" data-ar="العروض">Offers</button></li>
+                <li><button class="nav-link" onclick="switchSection('contact')" id="dnav-contact" data-en="Contact" data-ar="التواصل">Contact</button></li>
+            </ul>
 
-  <!-- Header -->
-  <header>
-    <div class="brand-container">
-      <div class="brand-logo-box">A</div>
-      <div class="brand-text">
-        <h1>Ahmed Abu Omar</h1>
-        <span data-i18n="brand_subtitle">Enterprise Global Studio</span>
-      </div>
+            <div class="header-actions">
+                <button class="icon-btn" id="langToggleBtn" onclick="toggleLanguage()" title="Language / اللغة">AR</button>
+                <button class="icon-btn" id="themeToggleBtn" onclick="toggleTheme()" title="Theme / الإضاءة">
+                    <svg id="themeIcon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line></svg>
+                </button>
+                <button class="icon-btn mobile-hamburger" onclick="toggleDrawer()" title="Menu">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Drawer -->
+    <div class="drawer-overlay" id="drawerOverlay" onclick="toggleDrawer()"></div>
+    <div class="mobile-drawer" id="mobileDrawer">
+        <div class="drawer-header">
+            <span class="brand-name" style="font-size:1.1rem;">Ahmed Abu Omar</span>
+            <button class="icon-btn" onclick="toggleDrawer()">✕</button>
+        </div>
+        <ul class="drawer-links">
+            <li><button class="drawer-link-btn active" onclick="switchSection('home'); toggleDrawer();" id="mnav-home" data-en="Home" data-ar="الرئيسية">Home</button></li>
+            <li><button class="drawer-link-btn" onclick="switchSection('services'); toggleDrawer();" id="mnav-services" data-en="Services" data-ar="خدماتنا">Services</button></li>
+            <li><button class="drawer-link-btn" onclick="switchSection('products'); toggleDrawer();" id="mnav-products" data-en="Products" data-ar="منتجاتنا">Products</button></li>
+            <li><button class="drawer-link-btn" onclick="switchSection('offers'); toggleDrawer();" id="mnav-offers" data-en="Offers" data-ar="العروض">Offers</button></li>
+            <li><button class="drawer-link-btn" onclick="switchSection('contact'); toggleDrawer();" id="mnav-contact" data-en="Contact" data-ar="التواصل">Contact</button></li>
+        </ul>
     </div>
 
-    <ul class="nav-links">
-      <li><button class="nav-link-btn active" data-tab="tab-hero"><i class="fa-solid fa-house"></i> <span data-i18n="nav_home">الرئيسية</span></button></li>
-      <li><button class="nav-link-btn" data-tab="tab-about"><i class="fa-solid fa-code"></i> <span data-i18n="nav_services">خدماتنا</span></button></li>
-      <li><button class="nav-link-btn" data-tab="tab-products"><i class="fa-solid fa-layer-group"></i> <span data-i18n="nav_templates">المنتجات الرقمية</span></button></li>
-      <li><button class="nav-link-btn" data-tab="tab-offers"><i class="fa-solid fa-tag"></i> <span data-i18n="nav_offers">العروض والخصومات</span></button></li>
-      <li><button class="nav-link-btn" data-tab="tab-contact"><i class="fa-solid fa-envelope"></i> <span data-i18n="nav_contact">التواصل</span></button></li>
-    </ul>
-
-    <div class="nav-controls">
-      <div class="ctrl-btn-group">
-        <button class="ctrl-btn" id="lang-toggle">EN</button>
-        <button class="ctrl-btn" id="theme-toggle"><i class="fa-solid fa-moon"></i></button>
-      </div>
-    </div>
-  </header>
-
-  <!-- Main Viewport -->
-  <main class="app-viewport">
-
-    <!-- Tab 1: Hero (البنرات السينمائية المتحركة مع اسم المنتج، الوظيفة، السعر بالمصري قبل وبعد الخصم، وزر الواتساب) -->
-    <section class="tab-section active-tab" id="tab-hero">
-      <div class="hero-slider-container">
-        <div class="hero-slides-wrapper" id="slides-wrapper">
-          
-          <!-- Slide 1: Ultimate AI Website Assistant & Chatbot Pro -->
-          <div class="hero-slide active-slide">
-            <div class="hero-slide-content">
-              <div class="badge"><i class="fa-solid fa-robot"></i> <span>مساعد ذكي للمواقع</span></div>
-              <h2>Ultimate AI Website Assistant <span>& Chatbot Pro</span></h2>
-              <p>مساعد ذكي ثنائي اللغة لموقعك لخدمة العملاء 24/7، الرد على الاستفسارات، وزيادة المبيعات بربط مباشر مع الواتساب.</p>
-              
-              <!-- السعر بالمصري قبل وبعد الخصم -->
-              <div class="banner-price-box">
-                <span class="banner-old-price">450 ج.م</span>
-                <span class="banner-new-price">180 ج.م <span style="font-size: 0.8rem; font-weight:normal;">(بعد خصم 60%)</span></span>
-              </div>
-
-              <div class="hero-slide-actions">
-                <a href="https://wa.me/201206443652?text=مرحباً، أرغب في شراء (Ultimate AI Website Assistant & Chatbot Pro) بسعر العرض 180 جنيه" target="_blank" class="btn-whatsapp-main">
-                  <i class="fa-brands fa-whatsapp"></i> <span>احصل عليه عبر الواتساب (180 ج.م)</span>
-                </a>
-              </div>
-            </div>
-            <div class="hero-slide-visual">
-              <div class="cinematic-mockup-card">
-                <i class="fa-solid fa-robot"></i>
-                <h3>AI Chatbot Integration</h3>
-                <p>دعم فوري ومباشر لعملائك على مدار الساعة</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Slide 2: SaaS Pricing & ROI Calculator Pro -->
-          <div class="hero-slide">
-            <div class="hero-slide-content">
-              <div class="badge"><i class="fa-solid fa-calculator"></i> <span>أداة Micro-SaaS مالية</span></div>
-              <h2>SaaS Pricing & ROI Calculator <span>Pro</span></h2>
-              <p>أداة مالية متقدمة لحساب العائد على الاستثمار (ROI) وتسعير خدمات الـ SaaS والمقاييس المالية بدقة لتعظيم أرباحك.</p>
-              
-              <div class="banner-price-box">
-                <span class="banner-old-price">750 ج.م</span>
-                <span class="banner-new-price">300 ج.م <span style="font-size: 0.8rem; font-weight:normal;">(بعد خصم 60%)</span></span>
-              </div>
-
-              <div class="hero-slide-actions">
-                <a href="https://wa.me/201206443652?text=مرحباً، أرغب في شراء (SaaS Pricing & ROI Calculator Pro) بسعر العرض 300 جنيه" target="_blank" class="btn-whatsapp-main">
-                  <i class="fa-brands fa-whatsapp"></i> <span>احصل عليه عبر الواتساب (300 ج.م)</span>
-                </a>
-              </div>
-            </div>
-            <div class="hero-slide-visual">
-              <div class="cinematic-mockup-card">
-                <i class="fa-solid fa-calculator"></i>
-                <h3>SaaS ROI Calculator</h3>
-                <p>تسعير دقيق وعائد استثماري مضمون لمشروعك</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Slide 3: Ahmed Abu Omar – Premium CV Bundle (10 Templates) -->
-          <div class="hero-slide">
-            <div class="hero-slide-content">
-              <div class="badge"><i class="fa-solid fa-file-invoice"></i> <span>حزمة السير الذاتية الذهبية</span></div>
-              <h2>Ahmed Abu Omar – Premium CV Bundle <span>(10 Templates)</span></h2>
-              <p>حزمة احترافية تحتوي على 10 نماذج سيرة ذاتية باللغتين العربية والإنجليزية مصممة خصيصاً لاجتياز أنظمة الفرز الآلي (ATS).</p>
-              
-              <div class="banner-price-box">
-                <span class="banner-old-price">450 ج.م</span>
-                <span class="banner-new-price">180 ج.م <span style="font-size: 0.8rem; font-weight:normal;">(بعد خصم 60%)</span></span>
-              </div>
-
-              <div class="hero-slide-actions">
-                <a href="https://wa.me/201206443652?text=مرحباً، أرغب في شراء حزمة (10 CV Templates Bundle) بسعر العرض 180 جنيه" target="_blank" class="btn-whatsapp-main">
-                  <i class="fa-brands fa-whatsapp"></i> <span>احصل عليه عبر الواتساب (180 ج.م)</span>
-                </a>
-              </div>
-            </div>
-            <div class="hero-slide-visual">
-              <div class="cinematic-mockup-card">
-                <i class="fa-solid fa-file-shield"></i>
-                <h3>10 ATS CV Templates</h3>
-                <p>قبول فوري في كبرى الشركات المحلية والعالمية</p>
-              </div>
-            </div>
-          </div>
-
+    <!-- 1. HOME SECTION -->
+    <section id="section-home" class="page-section active">
+        <div class="welcome-banner">
+            <h2 data-en="Welcome to Ahmed Abu Omar — Premium Digital Studio" data-ar="مرحبًا بك في أحمد أبو عمر — استوديو المنتجات الرقمية الاحترافية">
+                Welcome to Ahmed Abu Omar — Premium Digital Studio
+            </h2>
         </div>
 
-        <button class="slider-arrow slider-prev" onclick="changeSlide(-1)"><i class="fa-solid fa-chevron-right"></i></button>
-        <button class="slider-arrow slider-next" onclick="changeSlide(1)"><i class="fa-solid fa-chevron-left"></i></button>
-        <div class="slider-dots" id="slider-dots-container">
-          <span class="slider-dot active" onclick="currentSlide(0)"></span>
-          <span class="slider-dot" onclick="currentSlide(1)"></span>
-          <span class="slider-dot" onclick="currentSlide(2)"></span>
+        <div class="hero">
+            <h1 data-en="We Build Digital Experiences That Stand Out" data-ar="نصنع تجارب رقمية تترك أثرًا">
+                We Build Digital Experiences That Stand Out
+            </h1>
+            <p data-en="Premium website templates, smart digital tools, and professional designs built to elevate your online presence." data-ar="قوالب مواقع احترافية، أدوات رقمية ذكية، وتصميمات تساعدك على بناء حضور رقمي أكثر احترافية.">
+                Premium website templates, smart digital tools, and professional designs built to elevate your online presence.
+            </p>
+            <div class="hero-cta">
+                <button class="btn btn-primary" onclick="switchSection('products')" data-en="Explore Products" data-ar="استكشف المنتجات">Explore Products</button>
+                <button class="btn btn-secondary" onclick="switchSection('services')" data-en="Explore Services" data-ar="اكتشف خدماتنا">Explore Services</button>
+                <button class="btn btn-secondary" onclick="switchSection('contact')" data-en="Contact Us" data-ar="تواصل معنا">Contact Us</button>
+            </div>
+
+            <div class="hero-features">
+                <div class="feature-badge">✓ Responsive Design</div>
+                <div class="feature-badge">✓ Arabic & English</div>
+                <div class="feature-badge">✓ Digital Downloads</div>
+                <div class="feature-badge">✓ Professional Design</div>
+            </div>
+
+            <div class="about-cinematic-wrapper">
+                <div class="about-cinematic-header">
+                    <div class="about-cinematic-icon">💎</div>
+                    <div class="about-cinematic-title">
+                        <h3 data-en="About Us — Ahmed Abu Omar Studio" data-ar="من نحن — استوديو أحمد أبو عمر">About Us — Ahmed Abu Omar Studio</h3>
+                        <span data-en="Ahmed Web Templates — Premium Digital Studio" data-ar="أحمد أبو عمر — استوديو المنتجات الرقمية">Ahmed Web Templates — Premium Digital Studio</span>
+                    </div>
+                </div>
+                <p class="about-cinematic-desc" data-en="We are a premium digital studio specializing in high-performance responsive website templates, smart micro-SaaS tools, and custom WebApp solutions. Designed for Arabic and international clients seeking world-class digital presence." data-ar="نحن استوديو رقمي احترافي متخصص في تصميم وتطوير قوالب المواقع الإلكترونية المتجاوبة فائقة الأداء، والأدوات الرقمية الذكية Micro-SaaS، وتطبيقات الويب المخصصة للعملاء العرب والأجانب.">
+                    We are a premium digital studio specializing in high-performance responsive website templates, smart micro-SaaS tools, and custom WebApp solutions. Designed for Arabic and international clients seeking world-class digital presence.
+                </p>
+            </div>
         </div>
-      </div>
+
+        <div class="thank-you-banner">
+            <h3 data-en="Thank You for Visiting" data-ar="شكرًا لزيارتك وثقتك بنا">Thank You for Visiting</h3>
+            <p data-en="Follow our official social pages to receive the latest digital releases, template updates, and promotional discounts." data-ar="تابع صفحاتنا الرسمية على منصات التواصل الاجتماعي ليصلك جديد المنتجات والتحديثات والعروض الحصرية.">
+                Follow our official social pages to receive the latest digital releases, template updates, and promotional discounts.
+            </p>
+            <div class="social-follow-buttons">
+                <a href="https://www.facebook.com/AhmedAbuOmarOfficial?mibextid=ZbWKwL" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">📘 Facebook Page</a>
+                <a href="https://www.instagram.com/ahmedabuomar.design" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">📷 Instagram Profile</a>
+            </div>
+        </div>
     </section>
 
-    <!-- Tab 2: Services (خدماتنا) -->
-    <section class="tab-section" id="tab-about">
-      <div class="section-header">
-        <h2 data-i18n="services_header">خدماتنا <span>الرقمية المتكاملة</span></h2>
-        <p data-i18n="services_sub">نحن نبتكر ونبني منتجات رقمية مستقلة، أدوات ذكية (Micro-SaaS)، وتصميمات مخصصة تلبي احتياجات السوق الاحترافي بأعلى المعايير.</p>
-      </div>
-
-      <div class="services-grid">
-        <div class="service-card">
-          <div class="service-icon"><i class="fa-solid fa-file-shield"></i></div>
-          <h3>خدمة السيرة الذاتية المخصصة (ATS)</h3>
-          <p>تصميم وتعديل سيرة ذاتية احترافية باللغتين العربية والإنجليزية، متوافقة تماماً مع أنظمة الفرز الآلي (ATS) لزيادة فرص قبولك في كبرى الشركات.</p>
-          <a href="https://wa.me/201206443652?text=مرحباً، أرغب في طلب خدمة تصميم سيرة ذاتية ATS" target="_blank" class="service-btn">
-            <i class="fa-brands fa-whatsapp"></i> تواصل عبر الواتساب
-          </a>
+    <!-- 2. SERVICES SECTION -->
+    <section id="section-services" class="page-section">
+        <div class="section-header">
+            <h2 data-en="Our Professional Services" data-ar="خدماتنا الاحترافية">Our Professional Services</h2>
+            <p data-en="Tailored digital solutions and custom web development services designed for your business growth." data-ar="حلول رقمية وتطبيقات مخصصة مصممة لتسريع نموك وتعظيم أرباحك على الإنترنت.">Tailored digital solutions and custom web development services designed for your business growth.</p>
         </div>
-
-        <div class="service-card">
-          <div class="service-icon"><i class="fa-solid fa-rocket"></i></div>
-          <h3>تطوير المنتجات الرقمية & Micro-SaaS</h3>
-          <p>بناء وتطوير أدوات ويب مصغرة ومنتجات رقمية مستقلة عالية الجودة ومخصصة لتوليد دخل إضافي وحل مشاكل حقيقية بدون اشتراكات شهرية.</p>
-          <a href="https://wa.me/201206443652?text=مرحباً، أرغب في الاستفسار عن تطوير منتج Micro-SaaS" target="_blank" class="service-btn">
-            <i class="fa-brands fa-whatsapp"></i> تواصل عبر الواتساب
-          </a>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon"><i class="fa-solid fa-code"></i></div>
-          <h3>تصميم وتطوير المواقع وتطبيقات PWA</h3>
-          <p>بناء وتطوير مواقع إلكترونية وتطبيقات ويب حديثة (Progressive Web Apps) لشركتك بأعلى معايير السرعة، الأمان، والتصميم العصري.</p>
-          <a href="https://wa.me/201206443652?text=مرحباً، أرغب في استشارة حول تصميم موقع أو تطبيق PWA" target="_blank" class="service-btn">
-            <i class="fa-brands fa-whatsapp"></i> تواصل عبر الواتساب
-          </a>
-        </div>
-      </div>
+        <div class="services-grid" id="servicesGrid"></div>
     </section>
 
-    <!-- Tab 3: Products (المنتجات الرقمية مع السعر الأساسي وبعد الخصم بالمصري) -->
-    <section class="tab-section" id="tab-products">
-      <div class="section-header">
-        <h2 data-i18n="products_header">متجر <span>المنتجات الرقمية</span></h2>
-        <p data-i18n="products_sub">اختر من بين أدوات الويب الذكية، قوالب المواقع الاحترافية، وحزم السيرة الذاتية المميزة بأسعار تنافسية وخيارات دفع متعددة</p>
-      </div>
-
-      <div class="filter-buttons">
-        <button class="filter-btn active" data-filter="all">جميع المنتجات</button>
-        <button class="filter-btn" data-filter="free">🎁 منتجات مجانية</button>
-        <button class="filter-btn" data-filter="saas">أدوات Micro-SaaS</button>
-        <button class="filter-btn" data-filter="web">قوالب المواقع</button>
-        <button class="filter-btn" data-filter="cv">قوالب وحزم السيرة الذاتية</button>
-      </div>
-
-      <div class="products-grid">
-
-        <!-- 1. AI Assistant -->
-        <div class="product-card" data-category="saas" style="border: 2px solid var(--accent-gold);">
-          <div class="product-banner"><i class="fa-solid fa-robot"></i><span class="product-badge-tag">AI Chatbot Pro</span></div>
-          <div class="product-body">
-            <h3 class="product-title">Ultimate AI Website Assistant & Chatbot</h3>
-            <p class="product-desc">مساعد ذكي ثنائي اللغة لموقعك لخدمة العملاء 24/7 وربط مباشر بالواتساب.</p>
-            
-            <div class="product-price-container">
-              <span class="product-old-price">450 ج.م</span>
-              <span class="product-price">180 ج.م <span style="font-size: 0.75rem; color:var(--text-muted);">(بعد الخصم)</span></span>
-            </div>
-
-            <div class="product-footer">
-              <div class="product-actions-group">
-                <a href="https://payhip.com/b/DXmGs" target="_blank" class="btn-product-link">شراء فوري <i class="fa-solid fa-arrow-left icon-dir"></i></a>
-                <a href="https://wa.me/201206443652?text=مرحباً، أرغب بشراء AI Assistant بسعر 180 جنيه عبر المحافظ الإلكترونية" target="_blank" class="btn-product-wa"><i class="fa-brands fa-whatsapp"></i> واتساب</a>
-              </div>
-            </div>
-          </div>
+    <!-- 3. PRODUCTS SECTION -->
+    <section id="section-products" class="page-section">
+        <div class="section-header">
+            <h2 data-en="Digital Storefront & Products" data-ar="المتجر الرقمي والمنتجات">Digital Storefront & Products</h2>
+            <p data-en="Explore our full collection of 23 premium web templates, micro-SaaS tools, and ATS resume bundles." data-ar="استكشف جميع منتجاتنا الرقمية الـ 23 التي تشمل قوالب المواقع، أدوات Micro-SaaS، وقوالب السيرة الذاتية.">Explore our full collection of 23 premium web templates, micro-SaaS tools, and ATS resume bundles.</p>
         </div>
 
-        <!-- 2. Student Hub Pro -->
-        <div class="product-card" data-category="free">
-          <div class="product-banner" style="background: linear-gradient(135deg, #059669, #10b981);"><i class="fa-solid fa-graduation-cap"></i><span class="product-badge-tag">🎁 مجاني</span></div>
-          <div class="product-body">
-            <h3 class="product-title">Student Hub Pro – منصة الطالب</h3>
-            <p class="product-desc">منصة ويب متكاملة للطلاب تضم مؤقت Pomodoro، حاسبة GPA، ودفتر ملاحظات.</p>
-            
-            <div class="product-price-container">
-              <span class="product-price" style="color: #10b981;">مجاناً / Free</span>
+        <div class="offers-mini-banner">
+            <div>
+                <strong style="color:var(--gold-light);" data-en="🔥 Special Savings Available!" data-ar="🔥 تتوفر خصومات خاصة!">🔥 Special Savings Available!</strong>
+                <span style="color:var(--text-muted); font-size:0.88rem; display:block;" data-en="Use code OMAR 60 for up to 60% savings on Payhip." data-ar="استخدم كود OMAR 60 للحصول على خصم يصل إلى 60% على Payhip.">Use code OMAR 60 for up to 60% savings on Payhip.</span>
             </div>
-
-            <div class="product-footer">
-              <div class="product-actions-group">
-                <a href="https://nadyahmed211-web.github.io/student-hub-pro/" target="_blank" class="btn-product-link">دخول المنصة <i class="fa-solid fa-arrow-left icon-dir"></i></a>
-                <a href="https://wa.me/201206443652?text=مرحباً، أرغب بالاستفسار عن منصة Student Hub Pro المجانية" target="_blank" class="btn-product-wa"><i class="fa-brands fa-whatsapp"></i> واتساب</a>
-              </div>
-            </div>
-          </div>
+            <button class="btn btn-primary" onclick="switchSection('offers')" style="padding:0.5rem 1rem; font-size:0.85rem;" data-en="View Offers" data-ar="عرض العروض">View Offers</button>
         </div>
 
-        <!-- 3. SaaS ROI Calculator -->
-        <div class="product-card" data-category="saas">
-          <div class="product-banner"><i class="fa-solid fa-calculator"></i><span class="product-badge-tag">Micro-SaaS</span></div>
-          <div class="product-body">
-            <h3 class="product-title">SaaS Pricing & ROI Calculator Pro</h3>
-            <p class="product-desc">أداة مالية متقدمة لحساب العائد على الاستثمار وتسعير خدمات الـ SaaS بدقة.</p>
-            
-            <div class="product-price-container">
-              <span class="product-old-price">750 ج.م</span>
-              <span class="product-price">300 ج.م <span style="font-size: 0.75rem; color:var(--text-muted);">(بعد الخصم)</span></span>
+        <div class="store-controls">
+            <div class="search-box">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="productSearch" placeholder="Search products, templates..." data-placeholder-en="Search products, templates..." data-placeholder-ar="ابحث عن منتج أو قالب..." oninput="filterProducts()">
             </div>
-
-            <div class="product-footer">
-              <div class="product-actions-group">
-                <a href="https://payhip.com/b/MJFx5" target="_blank" class="btn-product-link">شراء فوري <i class="fa-solid fa-arrow-left icon-dir"></i></a>
-                <a href="https://wa.me/201206443652?text=مرحباً، أرغب بشراء SaaS ROI Calculator بسعر 300 جنيه عبر المحافظ" target="_blank" class="btn-product-wa"><i class="fa-brands fa-whatsapp"></i> واتساب</a>
-              </div>
+            <div class="filter-tabs">
+                <button class="filter-tab active" onclick="setCategory('all')" data-en="All Products" data-ar="جميع المنتجات">All Products</button>
+                <button class="filter-tab" onclick="setCategory('tools')" data-en="Digital Tools" data-ar="الأدوات الرقمية">Digital Tools</button>
+                <button class="filter-tab" onclick="setCategory('templates')" data-en="Website Templates" data-ar="قوالب المواقع">Website Templates</button>
+                <button class="filter-tab" onclick="setCategory('cv')" data-en="CV Templates" data-ar="قوالب السيرة الذاتية">CV Templates</button>
             </div>
-          </div>
         </div>
 
-        <!-- 4. Image Compressor -->
-        <div class="product-card" data-category="saas">
-          <div class="product-banner"><i class="fa-solid fa-file-image"></i><span class="product-badge-tag">Micro-SaaS</span></div>
-          <div class="product-body">
-            <h3 class="product-title">Image Compressor Pro</h3>
-            <p class="product-desc">أداة ويب احترافية لضغط الصور ورفع سرعة الموقع وتحسين محركات البحث SEO.</p>
-            
-            <div class="product-price-container">
-              <span class="product-old-price">450 ج.م</span>
-              <span class="product-price">180 ج.م <span style="font-size: 0.75rem; color:var(--text-muted);">(بعد الخصم)</span></span>
-            </div>
-
-            <div class="product-footer">
-              <div class="product-actions-group">
-                <a href="https://payhip.com/b/MWBli" target="_blank" class="btn-product-link">شراء فوري <i class="fa-solid fa-arrow-left icon-dir"></i></a>
-                <a href="https://wa.me/201206443652?text=مرحباً، أرغب بشراء Image Compressor Pro بسعر 180 جنيه عبر المحافظ" target="_blank" class="btn-product-wa"><i class="fa-brands fa-whatsapp"></i> واتساب</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- 5. SEO Meta & Schema -->
-        <div class="product-card" data-category="saas">
-          <div class="product-banner"><i class="fa-solid fa-wand-magic-sparkles"></i><span class="product-badge-tag">Micro-SaaS</span></div>
-          <div class="product-body">
-            <h3 class="product-title">SEO Meta & Schema Generator Pro</h3>
-            <p class="product-desc">أداة احترافية لتوليد أوسمة SEO وأكواد Schema لتصدر نتائج البحث.</p>
-            
-            <div class="product-price-container">
-              <span class="product-old-price">750 ج.م</span>
-              <span class="product-price">300 ج.م <span style="font-size: 0.75rem; color:var(--text-muted);">(بعد الخصم)</span></span>
-            </div>
-
-            <div class="product-footer">
-              <div class="product-actions-group">
-                <a href="https://payhip.com/b/1tfs7" target="_blank" class="btn-product-link">شراء فوري <i class="fa-solid fa-arrow-left icon-dir"></i></a>
-                <a href="https://wa.me/201206443652?text=مرحباً، أرغب بشراء SEO Meta Generator بسعر 300 جنيه عبر المحافظ" target="_blank" class="btn-product-wa"><i class="fa-brands fa-whatsapp"></i> واتساب</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- 6. AI Social Post Generator -->
-        <div class="product-card" data-category="saas">
-          <div class="product-banner"><i class="fa-solid fa-share-nodes"></i><span class="product-badge-tag">Micro-SaaS</span></div>
-          <div class="product-body">
-            <h3 class="product-title">AI Social Post Generator Pro 🚀</h3>
-            <p class="product-desc">أداة ويب لتوليد منشورات احترافية لـ LinkedIn و X مع الهاشتاجات الذكية.</p>
-            
-            <div class="product-price-container">
-              <span class="product-old-price">750 ج.م</span>
-              <span class="product-price">300 ج.م <span style="font-size: 0.75rem; color:var(--text-muted);">(بعد الخصم)</span></span>
-            </div>
-
-            <div class="product-footer">
-              <div class="product-actions-group">
-                <a href="https://payhip.com/b/cS1eq" target="_blank" class="btn-product-link">شراء فوري <i class="fa-solid fa-arrow-left icon-dir"></i></a>
-                <a href="https://wa.me/201206443652?text=مرحباً، أرغب بشراء Social Post Generator بسعر 300 جنيه عبر المحافظ" target="_blank" class="btn-product-wa"><i class="fa-brands fa-whatsapp"></i> واتساب</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- 7. NOVA Real Estate Template -->
-        <div class="product-card" data-category="web">
-          <div class="product-banner"><i class="fa-solid fa-building"></i><span class="product-badge-tag">عقارات</span></div>
-          <div class="product-body">
-            <h3 class="product-title">NOVA – Premium Real Estate Template</h3>
-            <p class="product-desc">اكتشف منازل استثنائية ومصايف فاخرة وفرصاً استثمارية بأرقى واجهة عقارية.</p>
-            
-            <div class="product-price-container">
-              <span class="product-old-price">750 ج.م</span>
-              <span class="product-price">300 ج.م <span style="font-size: 0.75rem; color:var(--text-muted);">(بعد الخصم)</span></span>
-            </div>
-
-            <div class="product-footer">
-              <div class="product-actions-group">
-                <a href="https://payhip.com/b/7N0IC" target="_blank" class="btn-product-link">شراء فوري <i class="fa-solid fa-arrow-left icon-dir"></i></a>
-                <a href="https://wa.me/201206443652?text=مرحباً، أرغب بشراء قالب NOVA العقاري بسعر 300 جنيه عبر المحافظ" target="_blank" class="btn-product-wa"><i class="fa-brands fa-whatsapp"></i> واتساب</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- 8. Business Website Template -->
-        <div class="product-card" data-category="web">
-          <div class="product-banner"><i class="fa-solid fa-briefcase"></i><span class="product-badge-tag">أعمال رقمية</span></div>
-          <div class="product-body">
-            <h3 class="product-title">Premium Business Website Template</h3>
-            <p class="product-desc">قالب أعمال فاخر مصمم للشركات والوكالات والمستشارين لبناء حضور قوي.</p>
-            
-            <div class="product-price-container">
-              <span class="product-old-price">750 ج.م</span>
-              <span class="product-price">300 ج.م <span style="font-size: 0.75rem; color:var(--text-muted);">(بعد الخصم)</span></span>
-            </div>
-
-            <div class="product-footer">
-              <div class="product-actions-group">
-                <a href="https://payhip.com/b/yizhn" target="_blank" class="btn-product-link">شراء فوري <i class="fa-solid fa-arrow-left icon-dir"></i></a>
-                <a href="https://wa.me/201206443652?text=مرحباً، أرغب بشراء قالب الأعمال بسعر 300 جنيه عبر المحافظ" target="_blank" class="btn-product-wa"><i class="fa-brands fa-whatsapp"></i> واتساب</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- 9. CV Bundle -->
-        <div class="product-card" data-category="cv">
-          <div class="product-banner" style="background: linear-gradient(135deg, #065f46, #059669);"><i class="fa-solid fa-file-invoice"></i><span class="product-badge-tag">الحزمة الذهبية (10)</span></div>
-          <div class="product-body">
-            <h3 class="product-title">Ahmed Abu Omar – Premium CV Bundle | 10 Templates</h3>
-            <p class="product-desc">حزمة احترافية متكاملة تحتوي على 10 نماذج سيرة ذاتية عربية وإنجليزية لاجتياز ATS.</p>
-            
-            <div class="product-price-container">
-              <span class="product-old-price">450 ج.م</span>
-              <span class="product-price">180 ج.م <span style="font-size: 0.75rem; color:var(--text-muted);">(بعد الخصم)</span></span>
-            </div>
-
-            <div class="product-footer">
-              <div class="product-actions-group">
-                <a href="https://payhip.com/b/JGOSj" target="_blank" class="btn-product-link">شراء الحزمة <i class="fa-solid fa-arrow-left icon-dir"></i></a>
-                <a href="https://wa.me/201206443652?text=مرحباً، أرغب بشراء حزمة 10 سير ذاتية بسعر 180 جنيه عبر المحافظ" target="_blank" class="btn-product-wa"><i class="fa-brands fa-whatsapp"></i> واتساب</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
+        <div class="products-grid" id="productsGrid"></div>
     </section>
 
-    <!-- Tab 4: Offers (العروض والخصومات) -->
-    <section class="tab-section" id="tab-offers">
-      <div class="offers-clean-container">
-        <div class="offer-header-badge">
-          <i class="fa-solid fa-bolt"></i>
-          <span>عرض خاص لمدة أسبوع واحد فقط! 🔥</span>
-        </div>
+    <!-- 4. OFFERS SECTION -->
+    <section id="section-offers" class="page-section">
+        <div class="main-offer-banner">
+            <span class="offer-tag" data-en="LIMITED-TIME SAVINGS" data-ar="خصومات لفترة محدودة">LIMITED-TIME SAVINGS</span>
+            <h2 data-en="Competitive Prices — Up to 60% Off" data-ar="أسعار تنافسية وخصومات تصل إلى 60%">Competitive Prices — Up to 60% Off</h2>
+            <p data-en="Redeem promotional discount codes on our Payhip digital storefront." data-ar="استفد الآن من الخصومات المتاحة على متجرنا الرقمي على منصة Payhip.">Redeem promotional discount codes on our Payhip digital storefront.</p>
+            
+            <div class="coupon-box">
+                <span class="coupon-code">OMAR 60</span>
+                <button class="copy-btn" onclick="copyCoupon()" data-en="Copy Code" data-ar="نسخ الرمز">Copy Code</button>
+            </div>
 
-        <h2 class="offer-title-main">أسعار تنافسية + خصم <span>60% OFF</span></h2>
-        <p class="offer-simple-desc">احصل على أفضل المنتجات الرقمية وأدوات الـ Micro-SaaS بأقل تكلفة ممكنة لخدمة مشروعك.</p>
+            <div>
+                <button class="btn btn-primary" onclick="switchSection('products')" data-en="Explore Products" data-ar="استكشف المنتجات">Explore Products</button>
+            </div>
 
-        <div class="timer-week-box">
-          <div class="time-card"><div class="num" id="w-days">07</div><div class="txt">أيام</div></div>
-          <div class="time-card"><div class="num" id="w-hours">00</div><div class="txt">ساعات</div></div>
-          <div class="time-card"><div class="num" id="w-mins">00</div><div class="txt">دقائق</div></div>
-          <div class="time-card"><div class="num" id="w-secs">00</div><div class="txt">ثواني</div></div>
+            <div class="coupon-disclaimer" data-en="Discount code applicability, terms, and final pricing are verified at Payhip checkout." data-ar="صلاحية كود الخصم والشروط والتكلفة النهائية تخضع لما يظهر في صفحة الدفع على Payhip.">
+                Discount code applicability, terms, and final pricing are verified at Payhip checkout.
+            </div>
         </div>
-
-        <div class="coupon-compact-box">
-          <span style="font-size: 0.88rem; color: var(--text-muted); font-weight: 700;">كود الخصم:</span>
-          <span class="coupon-val" id="code-val-txt">omar 60</span>
-          <button class="btn-copy-simple" onclick="copySimpleCode()">
-            <i class="fa-solid fa-copy"></i> <span id="copy-btn-txt">نسخ الكود</span>
-          </button>
-        </div>
-
-        <div class="cta-action-area">
-          <button class="btn-gold" onclick="switchTab('tab-products')">
-            <span>تصفح وشراء المنتجات الآن</span> <i class="fa-solid fa-arrow-left icon-dir"></i>
-          </button>
-        </div>
-      </div>
     </section>
 
-    <!-- Tab 5: Contact (التواصل) -->
-    <section class="tab-section" id="tab-contact">
-      <div class="contact-box">
-        <i class="fa-brands fa-whatsapp main-icon"></i>
-        <h3>تواصل معنا مباشرة عبر الواتساب</h3>
-        <p>هل لديك استفسار حول منتج رقمي، أو ترغب في تنفيذ شراء مباشر عبر المحافظ الإلكترونية؟ نحن جاهزون لخدمتك فوراً.</p>
-        <a href="https://wa.me/201206443652?text=مرحباً،%20أرغب%20في%20الاستفسار%20عن%20المنتجات%20الرقمية%20والدفع%20المباشر" target="_blank" class="btn-whatsapp-main" style="font-size: 1.1rem; padding: 16px 36px;">
-          <i class="fa-brands fa-whatsapp" style="font-size: 1.35rem;"></i>
-          <span>مراسلة مباشرة عبر الواتساب (01206443652)</span>
-        </a>
-      </div>
+    <!-- 5. CONTACT SECTION -->
+    <section id="section-contact" class="page-section">
+        <div class="section-header">
+            <h2 data-en="Contact Us" data-ar="تواصل معنا">Contact Us</h2>
+            <p data-en="Have a project requirement or question? Connect directly via WhatsApp or submit a service request." data-ar="هل لديك استفسار أو مشروع خاص؟ تواصل معنا عبر الواتساب أو أرسل نموذج الطلب المباشر.">Have a project requirement or question? Connect directly via WhatsApp or submit a service request.</p>
+        </div>
 
-      <footer>
-        <div class="footer-brand">Ahmed Abu Omar Studio</div>
-        <div class="footer-rights">
-          جميع حقوق الملكية الفكرية والمنتجات الرقمية والعلامة التجارية محفوظة. يُمنع إعادة توزيع المنتجات دون إذن مسبق.
+        <div class="contact-grid">
+            <div class="contact-card">
+                <h3 style="color:var(--gold); margin-bottom:0.75rem;" data-en="Direct WhatsApp Channel" data-ar="التواصل المباشر عبر الواتساب">Direct WhatsApp Channel</h3>
+                <p style="color:var(--text-muted); font-size:0.92rem; margin-bottom:1.5rem;" data-en="Get immediate assistance regarding custom orders, template support, or licensing inquiries." data-ar="احصل على رد سريع ومباشر بخصوص طلبات البرمجة، القوالب، أو المساعدة التقنية.">Get immediate assistance regarding custom orders, template support, or licensing inquiries.</p>
+                <a href="https://wa.me/201206443652" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="width:100%; justify-content:center;">💬 Chat on WhatsApp</a>
+                
+                <div style="margin-top:1.5rem; display:flex; flex-direction:column; gap:0.6rem;">
+                    <a href="https://payhip.com/ahmedabuomar" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="justify-content:center;">🛒 Payhip Digital Storefront</a>
+                    <a href="https://www.facebook.com/AhmedAbuOmarOfficial?mibextid=ZbWKwL" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="justify-content:center;">📘 Facebook Page</a>
+                    <a href="https://www.instagram.com/ahmedabuomar.design" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="justify-content:center;">📷 Instagram Profile</a>
+                    <a href="https://www.linkedin.com/in/ahmedwebtemplates" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="justify-content:center;">💼 LinkedIn Profile</a>
+                </div>
+            </div>
+
+            <div class="contact-card">
+                <h3 style="color:var(--gold); margin-bottom:0.75rem;" data-en="Custom Service Order Form" data-ar="نموذج طلب خدمة مخصصة">Custom Service Order Form</h3>
+                <form onsubmit="submitContactForm(event)">
+                    <div class="form-group">
+                        <label data-en="Your Name" data-ar="الاسم الكريم">Your Name</label>
+                        <input type="text" id="cName" class="form-control" required placeholder="Enter your full name" data-placeholder-en="Enter your full name" data-placeholder-ar="أدخل اسمك الكريم">
+                    </div>
+                    <div class="form-group">
+                        <label data-en="Service Needed" data-ar="نوع الخدمة المطلوبة">Service Needed</label>
+                        <select id="cService" class="form-control">
+                            <option value="Website Design & Development">Website Design & Development / تصميم وتطوير المواقع</option>
+                            <option value="Landing Page Design">Landing Page Design / تصميم صفحات الهبوط</option>
+                            <option value="Custom Digital Tool Development">Custom Digital Tool / تطوير الأدوات الرقمية</option>
+                            <option value="AI Assistant Integration">AI Assistant / إنشاء مساعدات رقمية</option>
+                            <option value="SEO Audit & Optimization">SEO Review / مراجعة وتحسين SEO</option>
+                            <option value="CV Resume Design">CV Resume Design / تصميم السير الذاتية</option>
+                            <option value="Template Customization">Template Customization / تخصيص القوالب</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label data-en="Project Details" data-ar="تفاصيل الطلب">Project Details</label>
+                        <textarea id="cDetails" class="form-control" required placeholder="Provide brief requirements..." data-placeholder-en="Provide brief requirements..." data-placeholder-ar="اكتب تفاصيل ومتطلبات مشروعك..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center;" data-en="Send Order via WhatsApp" data-ar="إرسال الطلب عبر الواتساب">Send Order via WhatsApp</button>
+                </form>
+            </div>
         </div>
-        <div class="footer-thanks">
-          «شكراً لثقتك ودعمك المستمر لمتجر Ahmed Abu Omar للمنتجات الرقمية وأدوات الويب.»
-        </div>
-        <div class="social-buttons">
-          <a href="https://www.facebook.com/AhmedAbuOmarOfficial" target="_blank" class="social-btn"><i class="fa-brands fa-facebook-f"></i> Facebook</a>
-          <a href="https://www.instagram.com/ahmedabuomar.design/" target="_blank" class="social-btn"><i class="fa-brands fa-instagram"></i> Instagram</a>
-          <a href="https://x.com/ahmed_mido38622" target="_blank" class="social-btn"><i class="fa-brands fa-x-twitter"></i> X (Twitter)</a>
-        </div>
-      </footer>
     </section>
 
-  </main>
+    <!-- Mobile Bottom Navigation Bar -->
+    <nav class="bottom-nav">
+        <button class="bottom-nav-item active" onclick="switchSection('home')" id="bnav-home">
+            <svg viewBox="0 0 24 24"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>
+            <span data-en="Home" data-ar="الرئيسية">Home</span>
+        </button>
+        <button class="bottom-nav-item" onclick="switchSection('services')" id="bnav-services">
+            <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+            <span data-en="Services" data-ar="خدماتنا">Services</span>
+        </button>
+        <button class="bottom-nav-item" onclick="switchSection('products')" id="bnav-products">
+            <svg viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path><line x1="3" y1="6" x2="21" y2="6"></line></svg>
+            <span data-en="Products" data-ar="منتجاتنا">Products</span>
+        </button>
+        <button class="bottom-nav-item" onclick="switchSection('offers')" id="bnav-offers">
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            <span data-en="Offers" data-ar="العروض">Offers</span>
+        </button>
+        <button class="bottom-nav-item" onclick="switchSection('contact')" id="bnav-contact">
+            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            <span data-en="Contact" data-ar="التواصل">Contact</span>
+        </button>
+    </nav>
 
-  <!-- Mobile Bottom Navigation -->
-  <nav class="mobile-bottom-nav">
-    <button class="mobile-nav-btn active" data-tab="tab-hero"><i class="fa-solid fa-house"></i><span>الرئيسية</span></button>
-    <button class="mobile-nav-btn" data-tab="tab-about"><i class="fa-solid fa-code"></i><span>خدماتنا</span></button>
-    <button class="mobile-nav-btn" data-tab="tab-products"><i class="fa-solid fa-layer-group"></i><span>المنتجات</span></button>
-    <button class="mobile-nav-btn" data-tab="tab-offers"><i class="fa-solid fa-tag"></i><span>العروض</span></button>
-    <button class="mobile-nav-btn" data-tab="tab-contact"><i class="fa-solid fa-envelope"></i><span>التواصل</span></button>
-  </nav>
+    <!-- Footer Copyright -->
+    <footer>
+        <p>© Ahmed Abu Omar (Ahmed Web Templates) — Premium Digital Studio. All Rights Reserved.</p>
+        <p class="ip-notice">Notice: Unauthorized copying, reproduction, or redistribution of digital assets and templates is strictly prohibited.</p>
+    </footer>
 
-  <!-- AI Assistant Floating Button -->
-  <button id="ai-launcher" class="ai-launcher-btn" onclick="toggleChat()" aria-label="المساعد الشخصي">
-    <i class="fa-solid fa-headset"></i>
-  </button>
+    <!-- Toast Notification -->
+    <div class="toast" id="toastNotification">Copied coupon code OMAR 60!</div>
 
-  <div id="ai-chat-container" class="chat-container hidden">
-    <div class="chat-header">
-      <div style="display: flex; align-items: center; gap: 8px;">
-        <i class="fa-solid fa-robot" style="color: var(--accent-gold);"></i>
-        <span id="chat-title-text" style="font-weight: 800; font-size: 0.95rem;">مساعد Ahmed Abu Omar الذكي</span>
-      </div>
-      <button onclick="toggleChat()" style="background:none; border:none; color:var(--text-main); cursor:pointer; font-size:1.15rem;"><i class="fa-solid fa-xmark"></i></button>
-    </div>
-    <div id="chat-messages" class="chat-messages">
-      <div class="message bot-message">
-        <div class="message-content" id="chat-welcome-msg">أهلاً بك 👋 أنا المساعد الشخصي لـ **Ahmed Abu Omar Studio**. كيف يمكنني مساعدتك اليوم في الاستفسار عن أدواتنا، خيارات الشراء، أو خدماتنا الاحترافية؟</div>
-      </div>
-    </div>
-    
-    <div class="quick-chips">
-      <button onclick="handleUserAsk('🤖 المساعد الذكي')">🤖 المساعد الذكي</button>
-      <button onclick="handleUserAsk('🛠️ الأدوات والمتاجر')">🛠️ الأدوات</button>
-      <button onclick="handleUserAsk('📄 السيرة الذاتية')">📄 السيرة الذاتية</button>
-      <button onclick="handleUserAsk('💬 الواتساب')">💬 الواتساب</button>
-    </div>
+    <script>
+        const servicesData = [
+            { id: 1, icon: "💻", titleEn: "Website Design & Development", titleAr: "تصميم وتطوير المواقع", descEn: "Custom, high-speed responsive website design engineered for maximum digital authority.", descAr: "تطوير مواقع إلكترونية فائقة السرعة ومتجاوبة بالكامل لتعزيز الأداء والحضور الرقمي." },
+            { id: 2, icon: "🎯", titleEn: "Landing Pages Design", titleAr: "تصميم صفحات الهبوط", descEn: "High-converting cinematic landing pages meticulously structured to boost conversion rates.", descAr: "صفحات هبوط سينمائية عالية التحويل مصممة خصيصًا لتحويل الزوار إلى عملاء." },
+            { id: 3, icon: "⚙️", titleEn: "Custom Digital Tool Development", titleAr: "تطوير الأدوات الرقمية المخصصة", descEn: "Bespoke micro-SaaS calculators, web utilities, and operational software tools.", descAr: "تطبيقات Micro-SaaS وأدوات رقمية ذكية مخصصة لتحسين سير العمل." },
+            { id: 4, icon: "🤖", titleEn: "AI Assistant Integration & Chatbots", titleAr: "إنشاء مساعدات رقمية وواجهات Chatbot", descEn: "Intelligent AI assistant setups to automate client communication and support.", descAr: "إعداد روبوتات المحادثة الذكية وتكامل المساعدات الرقمية لأتمتة دعم العملاء." },
+            { id: 5, icon: "📈", titleEn: "Website Review & SEO Basics", titleAr: "مراجعة المواقع وتحسين أساسيات SEO", descEn: "Comprehensive web performance audits and foundational search engine optimization.", descAr: "تدقيق شامل لأداء الموقع وتحسين أساسيات محركات البحث للتصدر." },
+            { id: 6, icon: "📄", titleEn: "CV Resume Design", titleAr: "تصميم السير الذاتية CV", descEn: "ATS-compliant bilingual resume designs tailored for corporate career advancement.", descAr: "قوالب سيرة ذاتية احترافية متوافقة مع أنظمة الـ ATS باللغتين." },
+            { id: 7, icon: "🛠️", titleEn: "Template Customization", titleAr: "تخصيص القوالب حسب متطلبات العميل", descEn: "Tailored modifications to align any template seamlessly with your brand identity.", descAr: "تعديلات وتخصيصات دقيقة لأي قالب ليطابق تمامًا هوية علامتك التجارية." }
+        ];
 
-    <div class="chat-footer">
-      <div class="input-wrapper">
-        <input type="text" id="chat-input" placeholder="اسألني عن أي شيء..." onkeypress="if(event.key==='Enter') sendMessage()">
-        <button onclick="sendMessage()"><i class="fa-solid fa-paper-plane"></i></button>
-      </div>
-    </div>
-  </div>
+        const productsData = [
+            // Tools (1-6)
+            { id: 1, category: "tools", icon: "🤖", titleEn: "Ultimate AI Website Assistant & Chatbot Integration", titleAr: "المساعد الذكي الاحترافي للمواقع وواجهات المحادثة", descEn: "Seamless AI assistant integration for professional websites.", descAr: "تكامل سلس للمساعد الذكي للمواقع الاحترافية.", oldPrice: "1,500 EGP / $28.28", discPrice: "600 EGP / $11.31", fee: "30 EGP / $0.57", net: "570 EGP / $10.74", url: "https://payhip.com/b/DXmGs" },
+            { id: 2, category: "tools", icon: "📊", titleEn: "SaaS Pricing & ROI Calculator Pro – Financial Metrics Tool", titleAr: "حاسبة العائد التسعيري واقتصاديات SaaS Pro", descEn: "Financial metrics tool designed for SaaS startups and founders.", descAr: "حاسبة مقاييس مالية احترافية لشركات البرمجيات الناشئة.", oldPrice: "1,200 EGP / $22.62", discPrice: "480 EGP / $9.05", fee: "24 EGP / $0.45", net: "456 EGP / $8.60", url: "https://payhip.com/b/MJFx5" },
+            { id: 3, category: "tools", icon: "⚡", titleEn: "Image Compressor Pro – Micro-SaaS Image Optimizer", titleAr: "أداة ضغط الصور وتحسين الأداء Image Compressor Pro", descEn: "High-performance browser-side image optimization utility.", descAr: "أداة تحسين وضغط صور مصغرة عالية الأداء.", oldPrice: "990 EGP / $18.66", discPrice: "396 EGP / $7.46", fee: "19.80 EGP / $0.37", net: "376.20 EGP / $7.09", url: "https://payhip.com/b/MWBli" },
+            { id: 4, category: "tools", icon: "🔍", titleEn: "SEO Meta & Schema Generator Pro", titleAr: "مولد بيانات السكيما والميتا SEO Meta & Schema Generator", descEn: "Advanced meta tags and structured JSON-LD schema generator.", descAr: "مولد متطور لوسوم الميتا وسكيما JSON-LD المنظمة.", oldPrice: "850 EGP / $16.03", discPrice: "340 EGP / $6.41", fee: "17 EGP / $0.32", net: "323 EGP / $6.09", url: "https://payhip.com/b/1tfs7" },
+            { id: 5, category: "tools", icon: "✉️", titleEn: "AI Cold Email & Outreach Generator Pro – Bilingual", titleAr: "مولد البريد البارد وحملات الترويج بالذكاء الاصطناعي", descEn: "Bilingual AI cold email and outreach messaging generator.", descAr: "مولد ترويج وتواصل بارد مدعوم بالذكاء الاصطناعي ثنائي اللغة.", oldPrice: "1,100 EGP / $20.74", discPrice: "440 EGP / $8.30", fee: "22 EGP / $0.42", net: "418 EGP / $7.88", url: "https://payhip.com/b/y2Q5N" },
+            { id: 6, category: "tools", icon: "📱", titleEn: "AI Social Post Generator Pro", titleAr: "مولد منشورات وسائل التواصل الاجتماعي الذكي", descEn: "Smart post copy and campaign generator for social platforms.", descAr: "أداة توليد ذكية لمنشورات وسائل التواصل الاجتماعي.", oldPrice: "950 EGP / $17.91", discPrice: "380 EGP / $7.16", fee: "19 EGP / $0.36", net: "361 EGP / $6.80", url: "https://payhip.com/b/cS1eq" },
 
-  <!-- JavaScript Engine -->
-  <script>
-    let currentSlideIndex = 0;
-    const slides = document.querySelectorAll('.hero-slide');
-    const dots = document.querySelectorAll('.slider-dot');
+            // Web Templates (7-21)
+            { id: 7, category: "templates", icon: "📈", titleEn: "Neoflow E-Commerce Dashboard & Analytics Website", titleAr: "قالب لوحة تحكم التجارة الإلكترونية Neoflow", descEn: "Sleek e-commerce dashboard and analytics site template.", descAr: "قالب لوحة تحكم تحليلات التجارة الإلكترونية الفاخر.", oldPrice: "1,800 EGP / $33.93", discPrice: "720 EGP / $13.57", fee: "36 EGP / $0.68", net: "684 EGP / $12.89", url: "https://payhip.com/b/NkyiO" },
+            { id: 8, category: "templates", icon: "🍽️", titleEn: "Premium Restaurant & Cafe Website Template", titleAr: "قالب المطاعم والمقاهي الفاخرة", descEn: "Cinematic dark & gold luxury restaurant web layout.", descAr: "قالب سينمائي داكن وذهبي للمطاعم والمقاهي الفاخرة.", oldPrice: "1,999 EGP / $37.68", discPrice: "799.60 EGP / $15.07", fee: "39.98 EGP / $0.75", net: "759.62 EGP / $14.32", url: "https://payhip.com/b/ZPEcW" },
+            { id: 9, category: "templates", icon: "🏡", titleEn: "Premium Real Estate & Elite Property Website Template", titleAr: "قالب العقارات والعقارات الفاخرة", descEn: "Elite property showcase site template for real estate agencies.", descAr: "قالب عقاري راقي يعرض العقارات الفاخرة.", oldPrice: "2,200 EGP / $41.47", discPrice: "880 EGP / $16.59", fee: "44 EGP / $0.83", net: "836 EGP / $15.76", url: "https://payhip.com/b/iC7jQ" },
+            { id: 10, category: "templates", icon: "⚖️", titleEn: "Premium Lawyer & Legal Services Website Template", titleAr: "قالب المحاماة والخدمات القانونية", descEn: "Professional law firm and legal consultancy template.", descAr: "قالب ويب احترافي لمكاتب المحاماة والاستشارات القانونية.", oldPrice: "1,999 EGP / $37.68", discPrice: "799.60 EGP / $15.07", fee: "39.98 EGP / $0.75", net: "759.62 EGP / $14.32", url: "https://payhip.com/b/i3kaJ" },
+            { id: 11, category: "templates", icon: "✨", titleEn: "Aura Luxury & Premium Brand Template", titleAr: "قالب العلامة التجارية الفاخرة Aura", descEn: "Aesthetic luxury boutique and high-end brand showcase.", descAr: "قالب عالي الجودة للعلامات التجارية الفاخرة والمنتجات الراقية.", oldPrice: "1,850 EGP / $34.88", discPrice: "740 EGP / $13.95", fee: "37 EGP / $0.70", net: "703 EGP / $13.25", url: "https://payhip.com/b/mQvIj" },
+            { id: 12, category: "templates", icon: "👤", titleEn: "Ahmed Professional Portfolio Template", titleAr: "قالب المعرض المهني الشخصي Ahmed", descEn: "Modern executive portfolio for digital creators and developers.", descAr: "قالب معرض أعمال مهني أنيق للمطورين والمصممين.", oldPrice: "1,400 EGP / $26.39", discPrice: "560 EGP / $10.56", fee: "28 EGP / $0.53", net: "532 EGP / $10.03", url: "https://payhip.com/b/GgdNQ" },
+            { id: 13, category: "templates", icon: "🛡️", titleEn: "Zenith Cyber & Tech Security Template", titleAr: "قالب الأمن السيبراني والتكنولوجيا Zenith", descEn: "Futuristic cybersecurity agency layout.", descAr: "قالب أمن سيبراني متطور بجماليات مستقبلية.", oldPrice: "1,999 EGP / $37.68", discPrice: "799.60 EGP / $15.07", fee: "39.98 EGP / $0.75", net: "759.62 EGP / $14.32", url: "https://payhip.com/b/IOocl" },
+            { id: 14, category: "templates", icon: "🏢", titleEn: "AbuOmar Business & Corporate Solution Template", titleAr: "قالب الأعمال والحلول المؤسسية AbuOmar", descEn: "Comprehensive enterprise template for commercial entities.", descAr: "قالب مؤسسي شامل مصمم للشركات والمؤسسات.", oldPrice: "2,100 EGP / $39.58", discPrice: "840 EGP / $15.83", fee: "42 EGP / $0.79", net: "798 EGP / $15.04", url: "https://payhip.com/b/mNYI5" },
+            { id: 15, category: "templates", icon: "🚀", titleEn: "Apex Exotic & Creative", titleAr: "قالب الأفكار الإبداعية Apex Exotic", descEn: "Dynamic animated layout for creative studios.", descAr: "قالب إبداعي ديناميكي بتصميم حديث ومبتكر.", oldPrice: "1,750 EGP / $32.99", discPrice: "700 EGP / $13.20", fee: "35 EGP / $0.66", net: "665 EGP / $12.54", url: "https://payhip.com/b/Uipv7" },
+            { id: 16, category: "templates", icon: "💻", titleEn: "Tech Startup & SaaS Website", titleAr: "قالب شركات البرمجيات والـ SaaS الناشئة", descEn: "High impact SaaS product landing page.", descAr: "قالب متعدد الصفحات لشركات البرمجيات الناشئة.", oldPrice: "1,999 EGP / $37.68", discPrice: "799.60 EGP / $15.07", fee: "39.98 EGP / $0.75", net: "759.62 EGP / $14.32", url: "https://payhip.com/b/D2bnY" },
+            { id: 17, category: "templates", icon: "🏢", titleEn: "NOVA – Premium Real Estate Website Template", titleAr: "قالب العقارات الفاخرة NOVA", descEn: "Advanced real estate listing agency template.", descAr: "قالب وكالة عقارية فاخرة متكامل.", oldPrice: "2,200 EGP / $41.47", discPrice: "880 EGP / $16.59", fee: "44 EGP / $0.83", net: "836 EGP / $15.76", url: "https://payhip.com/b/7N0IC" },
+            { id: 18, category: "templates", icon: "🏡", titleEn: "Premium Real Estate Website Template", titleAr: "قالب العقارات القياسي الفاخر", descEn: "Standard responsive real estate broker site.", descAr: "قالب مواقع عقارية متجاوب قياسي.", oldPrice: "1,750 EGP / $32.99", discPrice: "700 EGP / $13.20", fee: "35 EGP / $0.66", net: "665 EGP / $12.54", url: "https://payhip.com/b/TKrM8" },
+            { id: 19, category: "templates", icon: "📊", titleEn: "Premium Business Website Template", titleAr: "قالب الأعمال التجارية القياسي الفاخر", descEn: "Multi-purpose business corporate template.", descAr: "قالب أعمال متعدد الاستخدامات.", oldPrice: "1,750 EGP / $32.99", discPrice: "700 EGP / $13.20", fee: "35 EGP / $0.66", net: "665 EGP / $12.54", url: "https://payhip.com/b/yizhn" },
+            { id: 20, category: "templates", icon: "🍲", titleEn: "Premium Restaurant Website Template | Arabic & English | RTL/LTR", titleAr: "قالب المطاعم ثنائي اللغة (عربي وإنجليزي)", descEn: "Full RTL & LTR bilingual restaurant site layout.", descAr: "قالب مطعم ثنائي اللغة بالكامل ثنائي الاتجاه.", oldPrice: "1,999 EGP / $37.68", discPrice: "799.60 EGP / $15.07", fee: "39.98 EGP / $0.75", net: "759.62 EGP / $14.32", url: "https://payhip.com/b/SnpTh" },
+            { id: 21, category: "templates", icon: "⚖️", titleEn: "Premium Lawyer Website Template – Arabic & English", titleAr: "قالب المحاماة ثنائي اللغة (عربي وإنجليزي)", descEn: "International law firm bilingual template.", descAr: "قالب خدمات قانونية ثنائي اللغة للشركات الدولية.", oldPrice: "1,999 EGP / $37.68", discPrice: "799.60 EGP / $15.07", fee: "39.98 EGP / $0.75", net: "759.62 EGP / $14.32", url: "https://payhip.com/b/V7sGk" },
 
-    function showSlide(index) {
-      if (index >= slides.length) currentSlideIndex = 0;
-      if (index < 0) currentSlideIndex = slides.length - 1;
+            // CV Templates (22-23) - Updated Pricing Plan
+            { id: 22, category: "cv", icon: "📄", titleEn: "Ahmed Abu Omar – Premium CV Bundle | 10 Arabic & English Templates", titleAr: "أحمد أبو عمر — حزمة السير الذاتية الفاخرة | 10 قوالب عربية وإنجليزية (المجموعة الثالثة)", descEn: "Comprehensive ATS-friendly bilingual CV bundle (10 Templates).", descAr: "حزمة تحتوي على 10 قوالب سيرة ذاتية عربية وإنجليزية متوافقة مع الـ ATS.", oldPrice: "659 EGP / $12.42", discPrice: "263.60 EGP / $4.97", fee: "13.18 EGP / $0.25", net: "250.42 EGP / $4.72", url: "https://payhip.com/b/JGOSj" },
+            { id: 23, category: "cv", icon: "📄", titleEn: "Premium CV Bundle – 7 Professional Resume Templates", titleAr: "حزمة السير الذاتية الاحترافية — 7 قوالب متطورة (المجموعة الثالثة)", descEn: "Collection of 7 professional ATS resume designs.", descAr: "حزمة تضم 7 تصميمات سيرة ذاتية احترافية ثنائية اللغة متوافقة مع الـ ATS.", oldPrice: "659 EGP / $12.42", discPrice: "263.60 EGP / $4.97", fee: "13.18 EGP / $0.25", net: "250.42 EGP / $4.72", url: "https://payhip.com/b/Dy2bz" }
+        ];
 
-      slides.forEach(slide => slide.classList.remove('active-slide'));
-      dots.forEach(dot => dot.classList.remove('active'));
+        let currentLang = 'en';
+        let currentTheme = 'dark';
+        let currentCategory = 'all';
 
-      slides[currentSlideIndex].classList.add('active-slide');
-      if(dots[currentSlideIndex]) dots[currentSlideIndex].classList.add('active');
-    }
-
-    function changeSlide(direction) {
-      currentSlideIndex += direction;
-      showSlide(currentSlideIndex);
-    }
-
-    function currentSlide(index) {
-      currentSlideIndex = index;
-      showSlide(currentSlideIndex);
-    }
-
-    setInterval(() => {
-      currentSlideIndex++;
-      showSlide(currentSlideIndex);
-    }, 5000);
-
-    function switchTab(tabId) {
-      document.querySelectorAll('.tab-section').forEach(sec => sec.classList.remove('active-tab'));
-      document.querySelectorAll('.nav-link-btn, .mobile-nav-btn').forEach(btn => btn.classList.remove('active'));
-
-      const targetSec = document.getElementById(tabId);
-      if(targetSec) targetSec.classList.add('active-tab');
-      document.querySelectorAll(`[data-tab="${tabId}"]`).forEach(btn => btn.classList.add('active'));
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-
-    document.querySelectorAll('.nav-link-btn, .mobile-nav-btn').forEach(button => {
-      button.addEventListener('click', () => {
-        const targetTab = button.getAttribute('data-tab');
-        if (targetTab) switchTab(targetTab);
-      });
-    });
-
-    const filterBtns = document.querySelectorAll('.filter-btn');
-    const productCards = document.querySelectorAll('.product-card');
-
-    filterBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        filterBtns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        const filterVal = btn.getAttribute('data-filter');
-
-        productCards.forEach(card => {
-          if (filterVal === 'all' || card.getAttribute('data-category'] === filterVal) {
-            card.style.display = 'flex';
-          } else {
-            card.style.display = 'none';
-          }
+        window.addEventListener('DOMContentLoaded', () => {
+            renderServices();
+            renderProducts(productsData);
         });
-      });
-    });
 
-    let currentTheme = 'dark';
-    document.getElementById('theme-toggle').addEventListener('click', () => {
-      currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
-      document.documentElement.setAttribute('data-theme', currentTheme);
-      document.getElementById('theme-toggle').innerHTML = currentTheme === 'dark' ? '<i class="fa-solid fa-moon"></i>' : '<i class="fa-solid fa-sun"></i>';
-    });
+        function switchSection(secId) {
+            document.querySelectorAll('.page-section').forEach(s => s.classList.remove('active'));
+            const targetSection = document.getElementById('section-' + secId);
+            if (targetSection) targetSection.classList.add('active');
 
-    let currentLang = 'ar';
-    document.getElementById('lang-toggle').addEventListener('click', () => {
-      currentLang = currentLang === 'ar' ? 'en' : 'ar';
-      document.documentElement.setAttribute('lang', currentLang);
-      document.documentElement.setAttribute('dir', currentLang === 'ar' ? 'rtl' : 'ltr');
-      document.getElementById('lang-toggle').textContent = currentLang === 'ar' ? 'EN' : 'AR';
-    });
+            // Update bottom nav
+            document.querySelectorAll('.bottom-nav-item').forEach(b => b.classList.remove('active'));
+            const bItem = document.getElementById('bnav-' + secId);
+            if (bItem) bItem.classList.add('active');
 
-    function initWeekTimer() {
-      const endDate = new Date().getTime() + (7 * 24 * 60 * 60 * 1000);
-      setInterval(() => {
-        const now = new Date().getTime();
-        const diff = endDate - now;
-        if (diff > 0) {
-          const d = Math.floor(diff / (1000 * 60 * 60 * 24));
-          const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-          const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-          const s = Math.floor((diff % (1000 * 60)) / 1000);
-          if(document.getElementById('w-days')) document.getElementById('w-days').innerText = d < 10 ? '0' + d : d;
-          if(document.getElementById('w-hours')) document.getElementById('w-hours').innerText = h < 10 ? '0' + h : h;
-          if(document.getElementById('w-mins')) document.getElementById('w-mins').innerText = m < 10 ? '0' + m : m;
-          if(document.getElementById('w-secs')) document.getElementById('w-secs').innerText = s < 10 ? '0' + s : s;
+            // Update desktop nav
+            document.querySelectorAll('.nav-desktop .nav-link').forEach(d => d.classList.remove('active'));
+            const dItem = document.getElementById('dnav-' + secId);
+            if (dItem) dItem.classList.add('active');
+
+            // Update mobile drawer links
+            document.querySelectorAll('.drawer-link-btn').forEach(m => m.classList.remove('active'));
+            const mItem = document.getElementById('mnav-' + secId);
+            if (mItem) mItem.classList.add('active');
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
-      }, 1000);
-    }
-    initWeekTimer();
 
-    function copySimpleCode() {
-      navigator.clipboard.writeText('omar 60').then(() => {
-        const btnTxt = document.getElementById('copy-btn-txt');
-        btnTxt.textContent = 'تم النسخ!';
-        setTimeout(() => { btnTxt.textContent = 'نسخ الكود'; }, 2000);
-      });
-    }
+        function toggleLanguage() {
+            currentLang = currentLang === 'en' ? 'ar' : 'en';
+            const html = document.documentElement;
+            html.setAttribute('lang', currentLang);
+            html.setAttribute('dir', currentLang === 'ar' ? 'rtl' : 'ltr');
+            document.getElementById('langToggleBtn').innerText = currentLang === 'en' ? 'AR' : 'EN';
+            
+            document.querySelectorAll('[data-en]').forEach(el => {
+                const txt = el.getAttribute(`data-${currentLang}`);
+                if(txt) el.innerText = txt;
+            });
 
-    function toggleChat() { document.getElementById('ai-chat-container').classList.toggle('hidden'); }
+            document.querySelectorAll('[data-placeholder-en]').forEach(el => {
+                const ph = el.getAttribute(`data-placeholder-${currentLang}`);
+                if(ph) el.setAttribute('placeholder', ph);
+            });
 
-    const WA_LINK = "https://wa.me/201206443652";
-    function sendMessage() {
-      const input = document.getElementById('chat-input');
-      const text = input.value.trim();
-      if(!text) return;
-      const container = document.getElementById('chat-messages');
-      container.innerHTML += `<div class="message user-message"><div class="message-content">${text}</div></div>`;
-      input.value = '';
-      container.scrollTop = container.scrollHeight;
+            renderServices();
+            renderProducts(getFilteredList());
+        }
 
-      setTimeout(() => {
-        container.innerHTML += `<div class="message bot-message"><div class="message-content">مرحباً بك! يمكنك تصفح منتجاتنا وطلب أي خدمة مباشرة عبر الواتساب:<br><br><a href="${WA_LINK}" target="_blank" style="color:var(--accent-gold-light); font-weight:bold; text-decoration:underline;">${WA_LINK}</a></div></div>`;
-        container.scrollTop = container.scrollHeight;
-      }, 400);
-    }
+        function toggleTheme() {
+            currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', currentTheme);
+        }
 
-    function handleUserAsk(text) {
-      document.getElementById('chat-input').value = text;
-      sendMessage();
-    }
-  </script>
+        function toggleDrawer() {
+            document.getElementById('mobileDrawer').classList.toggle('open');
+            document.getElementById('drawerOverlay').classList.toggle('open');
+        }
+
+        function renderServices() {
+            document.getElementById('servicesGrid').innerHTML = servicesData.map(s => {
+                const title = currentLang === 'ar' ? s.titleAr : s.titleEn;
+                const desc = currentLang === 'ar' ? s.descAr : s.descEn;
+                const reqText = currentLang === 'ar' ? 'اطلب الخدمة' : 'Request Service';
+                const msg = encodeURIComponent(`Hello Ahmed Abu Omar,\nI would like to request the service: ${title}`);
+                const waUrl = `https://wa.me/201206443652?text=${msg}`;
+
+                return `
+                    <div class="service-card">
+                        <div>
+                            <div class="service-icon">${s.icon}</div>
+                            <h3>${title}</h3>
+                            <p>${desc}</p>
+                        </div>
+                        <a href="${waUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="justify-content:center;">${reqText}</a>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function renderProducts(list) {
+            const grid = document.getElementById('productsGrid');
+            if(list.length === 0) {
+                grid.innerHTML = `<div style="grid-column:1/-1; text-align:center; padding:3rem; color:var(--text-muted);">${currentLang === 'ar' ? 'لا توجد منتجات تطابق بحثك.' : 'No products found.'}</div>`;
+                return;
+            }
+
+            grid.innerHTML = list.map(p => {
+                const title = currentLang === 'ar' ? p.titleAr : p.titleEn;
+                const desc = currentLang === 'ar' ? p.descAr : p.descEn;
+                const buyPayhip = currentLang === 'ar' ? 'شراء من المتجر' : 'Buy on Payhip';
+                const buyWa = currentLang === 'ar' ? 'طلب عبر الواتساب' : 'WhatsApp Direct';
+
+                const lblBefore = currentLang === 'ar' ? 'قبل الخصم:' : 'Before:';
+                const lblOffer = currentLang === 'ar' ? 'بعد خصم 60%:' : '60% Off:';
+                const lblFee = currentLang === 'ar' ? 'عمولة المتجر (5%):' : 'Platform Fee (5%):';
+                const lblNet = currentLang === 'ar' ? 'صافي الربح:' : 'Net Profit:';
+
+                const waMsg = encodeURIComponent(`Hello Ahmed Abu Omar,\nI am interested in purchasing: ${title}`);
+                const waUrl = `https://wa.me/201206443652?text=${waMsg}`;
+
+                return `
+                    <div class="product-card">
+                        <div class="product-preview">
+                            <span class="product-category-tag">${p.category}</span>
+                            <div class="product-preview-icon">${p.icon}</div>
+                        </div>
+                        <div class="product-body">
+                            <h3 class="product-title">${title}</h3>
+                            <p class="product-desc">${desc}</p>
+                            
+                            <div class="pricing-breakdown">
+                                <div class="price-row">
+                                    <span class="price-label">${lblBefore}</span>
+                                    <span class="price-val price-strike">${p.oldPrice}</span>
+                                </div>
+                                <div class="price-row">
+                                    <span class="price-label">${lblOffer}</span>
+                                    <span class="price-val price-highlight">${p.discPrice}</span>
+                                </div>
+                                <div class="price-row">
+                                    <span class="price-label">${lblFee}</span>
+                                    <span class="price-val">${p.fee}</span>
+                                </div>
+                                <div class="price-row" style="border-top:1px dashed var(--border-color); padding-top:4px; margin-top:2px;">
+                                    <span class="price-label" style="font-weight:700;">${lblNet}</span>
+                                    <span class="price-val net-profit">${p.net}</span>
+                                </div>
+                            </div>
+
+                            <div class="product-footer">
+                                <div class="product-actions-group">
+                                    <a href="${p.url}" target="_blank" rel="noopener noreferrer" class="product-btn btn-payhip">${buyPayhip}</a>
+                                    <a href="${waUrl}" target="_blank" rel="noopener noreferrer" class="product-btn btn-whatsapp-direct">${buyWa}</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function setCategory(cat) {
+            currentCategory = cat;
+            document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+            if(event && event.target) event.target.classList.add('active');
+            renderProducts(getFilteredList());
+        }
+
+        function filterProducts() { renderProducts(getFilteredList()); }
+
+        function getFilteredList() {
+            const q = document.getElementById('productSearch').value.toLowerCase();
+            return productsData.filter(p => {
+                const matchCat = currentCategory === 'all' || p.category === currentCategory;
+                const matchQ = p.titleAr.includes(q) || p.titleEn.toLowerCase().includes(q);
+                return matchCat && matchQ;
+            });
+        }
+
+        function copyCoupon() {
+            navigator.clipboard.writeText('OMAR 60').then(() => {
+                const t = document.getElementById('toastNotification');
+                t.innerText = currentLang === 'ar' ? 'تم نسخ رمز الخصم OMAR 60 بنجاح!' : 'Copied coupon code OMAR 60!';
+                t.classList.add('show');
+                setTimeout(() => t.classList.remove('show'), 3000);
+            });
+        }
+
+        function submitContactForm(e) {
+            e.preventDefault();
+            const name = document.getElementById('cName').value.trim();
+            const service = document.getElementById('cService').value;
+            const details = document.getElementById('cDetails').value.trim();
+
+            if(!name || !details) return;
+
+            const msg = encodeURIComponent(`Hello Ahmed Abu Omar,\n\nName: ${name}\nService Needed: ${service}\nProject Details: ${details}`);
+            window.open(`https://wa.me/201206443652?text=${msg}`, '_blank', 'noopener,noreferrer');
+        }
+    </script>
 </body>
 </html>
