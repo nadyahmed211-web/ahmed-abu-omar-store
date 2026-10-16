@@ -606,7 +606,7 @@
     <section id="section-products" class="page-section">
         <div class="section-header">
             <h2 data-ar="متجر المنتجات والقوالب الرقمية الفاخرة" data-en="Luxury Digital Products & Templates Store">متجر المنتجات والقوالب الرقمية الفاخرة</h2>
-            <p data-ar="تصفح مجموعتنا الحصرية من قوالب المواقع، أدوات الميكرو-ساس، وحزم السير الذاتية المتطورة بخصم 60% بكود omar 60." data-en="Browse our exclusive collection of web templates, micro-SaaS tools, and resumes with 60% off using code omar 60.">تصفح مجموعتنا الحصرية من قوالب المواقع، أدوات الميكرو-ساس، وحزم السير الذاتية المتطورة بخصم 60% بكود omar 60.</p>
+            <p data-ar="تصفح مجموعتنا الحصرية من قوالب المواقع، أدوات الميكرو-ساس، حزم الأوامر الذكية، وحزم السير الذاتية بخصم 60% بكود omar 60." data-en="Browse our exclusive collection of web templates, micro-SaaS tools, AI prompt bundles, and resumes with 60% off using code omar 60.">تصفح مجموعتنا الحصرية من قوالب المواقع، أدوات الميكرو-ساس، حزم الأوامر الذكية، وحزم السير الذاتية بخصم 60% بكود omar 60.</p>
         </div>
 
         <div class="store-controls">
@@ -616,7 +616,7 @@
             </div>
             <div class="filter-tabs">
                 <button class="filter-tab active" onclick="setCategory('all')" data-ar="جميع المنتجات" data-en="All Products">جميع المنتجات</button>
-                <button class="filter-tab" onclick="setCategory('tools')" data-ar="الأدوات الرقمية" data-en="Digital Tools">الأدوات الرقمية</button>
+                <button class="filter-tab" onclick="setCategory('tools')" data-ar="الأدوات والأوامر" data-en="Tools & Prompts">الأدوات والأوامر</button>
                 <button class="filter-tab" onclick="setCategory('templates')" data-ar="قوالب المواقع" data-en="Website Templates">قوالب المواقع</button>
                 <button class="filter-tab" onclick="setCategory('cv')" data-ar="قوالب السيرة الذاتية" data-en="CV Templates">قوالب السيرة الذاتية</button>
             </div>
@@ -954,7 +954,7 @@
         }
 
         /* =========================================================
-           🛒 5. بيانات الخدمات والمنتجات الرقمية
+           🛒 5. بيانات الخدمات والمنتجات الرقمية (شاملة حزمة الأوامر الجديدة)
            ========================================================= */
         const servicesData = [
             { id: 1, icon: "💻", titleAr: "تصميم المواقع وصفحات الهبوط السينمائية (Landing Pages)", titleEn: "Cinematic Landing Pages & Web Design", descAr: "تطوير صفحات هبوط ومواقع إلكترونية فائقة السرعة، متجاوبة ومتوافقة تماماً مع محركات البحث SEO لتعظيم مبيعاتك.", descEn: "High-converting cinematic landing pages & ultra-fast SEO friendly websites." },
@@ -965,6 +965,7 @@
         ];
 
         const productsData = [
+            { id: 0, category: "tools", icon: "🧠", titleAr: "Ultimate AI Prompts & Automation Mega Bundle", titleEn: "Ultimate AI Prompts & Automation Mega Bundle", descAr: "حزمة الأوامر الاحترافية والذكاء الاصطناعي لمضاعفة الإنتاجية والمبيعات بضغطة زر.", oldPriceEg: "2,500 ج.م", discPriceEg: "1,000 ج.م", oldPriceUsd: "$50.00", discPriceUsd: "$20.00", url: "https://payhip.com/ahmedabuomar" },
             { id: 1, category: "tools", icon: "🛠️", titleAr: "SEO Meta & Schema Generator Pro", titleEn: "SEO Meta & Schema Generator Pro", descAr: "أداة احترافية لتوليد أكواد الميتا وسكيما المخصصة لمحركات البحث.", oldPriceEg: "2,100 ج.م", discPriceEg: "840 ج.م", oldPriceUsd: "$42.00", discPriceUsd: "$16.80", url: "https://payhip.com/b/1tfs7" },
             { id: 2, category: "tools", icon: "✉️", titleAr: "AI Cold Email & Outreach Generator Pro", titleEn: "AI Cold Email & Outreach Generator Pro", descAr: "مساعد ذكي لتوليد رسائل البريد الإلكتروني البارد وحملات الترويج.", oldPriceEg: "2,100 ج.م", discPriceEg: "840 ج.م", oldPriceUsd: "$42.00", discPriceUsd: "$16.80", url: "https://payhip.com/b/y2Q5N" },
             { id: 3, category: "tools", icon: "📱", titleAr: "AI Social Post Generator Pro", titleEn: "AI Social Post Generator Pro", descAr: "أداة لتوليد منشورات وسائل التواصل الاجتماعي بذكاء واحترافية.", oldPriceEg: "2,100 ج.م", discPriceEg: "840 ج.م", oldPriceUsd: "$42.00", discPriceUsd: "$16.80", url: "https://payhip.com/b/cS1eq" },
