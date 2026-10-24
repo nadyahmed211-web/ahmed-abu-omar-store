@@ -624,7 +624,7 @@
         <div class="products-grid" id="productsGrid"></div>
     </section>
 
-    <!-- 🎁 4. FREE TOOLS & SERVICES SECTION (القسم الجديد للخدمات المجانية والأداة) -->
+    <!-- 🎁 4. FREE TOOLS & SERVICES SECTION -->
     <section id="section-tools" class="page-section">
         <div class="section-header">
             <span class="case-study-badge">🎁 قسم الخدمات والأدوات المجانية</span>
@@ -634,13 +634,28 @@
             </p>
         </div>
 
-        <!-- أداة ضغط الصور الفورية Image Compressor Pro -->
         <div style="background: var(--bg-secondary); border: 2px solid var(--gold); border-radius: 28px; padding: 2.5rem; max-width: 900px; margin: 0 auto; box-shadow: 0 20px 50px rgba(0,0,0,0.8);">
             <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
                 <div style="font-size: 2.5rem;">🖼️</div>
                 <div>
                     <h3 style="color: var(--gold-light); font-size: 1.6rem; font-weight: 900;" data-ar="أداة ضغط وتصغير الصور الفورية (Image Compressor Pro)" data-en="Image Compressor Pro">أداة ضغط وتصغير الصور الفورية (Image Compressor Pro)</h3>
-                    <p style="color: var(--text-muted); font-size: 0.95rem;" data-ar="اسحب أو اختر صورك، سيتم ضغطها ومعالجتها فورا داخل متصفحك بأعلى جودة وبدون رفعها لأي سيرفر." data-en="Compress your images instantly in your browser securely.">اختر صورك ليتم ضغطها ومعالجتها فوراً بأعلى جودة وأقل حجم.</p>
+                    <p style="color: var(--text-muted); font-size: 0.95rem;" data-ar="اضبط الأبعاد، الارتفاع، العرض وجودة الضغط بدقة وسهولة تامة أوفلاين بالمتصفح." data-en="Customize dimensions and compression quality instantly.">اضبط الأبعاد، الارتفاع، العرض وجودة الضغط بدقة وسهولة تامة أوفلاين بالمتصفح.</p>
+                </div>
+            </div>
+
+            <!-- خيارات التحكم في المساحة والأبعاد والجودة -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.2rem; margin-bottom: 1.5rem; background: rgba(10,15,28,0.7); padding: 1.5rem; border-radius: 20px; border: 1.5px solid var(--border-color);">
+                <div>
+                    <label style="display: block; font-size: 0.85rem; color: var(--gold-light); font-weight: 700; margin-bottom: 0.4rem;">جودة الضغط: <span id="qualityVal">80</span>%</label>
+                    <input type="range" id="compressQuality" min="10" max="100" value="80" style="width: 100%; accent-color: var(--gold);" oninput="document.getElementById('qualityVal').innerText = this.value">
+                </div>
+                <div>
+                    <label style="display: block; font-size: 0.85rem; color: var(--gold-light); font-weight: 700; margin-bottom: 0.4rem;">العرض الأقصى (Width px):</label>
+                    <input type="number" id="customWidth" placeholder="اتركه فارغاً للأصلي" style="width: 100%; background: var(--bg-secondary); border: 1.5px solid var(--border-color); padding: 0.6rem 1rem; border-radius: 12px; color: var(--text-main); outline: none; font-size: 0.9rem;">
+                </div>
+                <div>
+                    <label style="display: block; font-size: 0.85rem; color: var(--gold-light); font-weight: 700; margin-bottom: 0.4rem;">الارتفاع الأقصى (Height px):</label>
+                    <input type="number" id="customHeight" placeholder="اتركه فارغاً للأصلي" style="width: 100%; background: var(--bg-secondary); border: 1.5px solid var(--border-color); padding: 0.6rem 1rem; border-radius: 12px; color: var(--text-main); outline: none; font-size: 0.9rem;">
                 </div>
             </div>
 
@@ -648,19 +663,18 @@
                 <input type="file" id="imageFileInput" accept="image/*" multiple style="display: none;" onchange="handleImagesSelection(this.files)">
                 <div style="font-size: 2.2rem; margin-bottom: 0.5rem;">📁</div>
                 <p style="font-weight: 700; color: var(--text-main);" data-ar="اضغط هنا لاختيار الصور أو اسحبها هنا" data-en="Click here or drag images to upload">اضغط هنا لاختيار الصور أو اسحبها هنا</p>
-                <span style="font-size: 0.8rem; color: var(--text-muted);">يدعم JPG, PNG, WEBP (معالجة سريعة أوفلاين)</span>
+                <span style="font-size: 0.8rem; color: var(--text-muted);">يدعم JPG, PNG, WEBP (معالجة حسب الأبعاد والمساحة المحددة)</span>
             </div>
 
             <div id="imageResultsContainer" style="display: flex; flex-direction: column; gap: 1rem;"></div>
         </div>
 
-        <!-- بنر ترويجي تحفيزي للمتجر بعد استخدام الأداة -->
         <div style="background: linear-gradient(135deg, rgba(20,16,5,0.9), rgba(10,15,28,0.95)); border: 1.5px solid var(--border-color); border-radius: 24px; padding: 2.5rem; text-align: center; margin-top: 3rem;">
             <h4 style="color: var(--gold-light); font-size: 1.4rem; margin-bottom: 0.8rem;" data-ar="هل أعجبتك الأداة؟ استكشف متجرنا البرمجي الكامل!" data-en="Liked the tool? Explore our store!">هل أعجبتك الأداة؟ استكشف متجرنا البرمجي الكامل!</h4>
             <p style="color: var(--text-muted); max-width: 650px; margin: 0 auto 1.5rem;" data-ar="لدينا قوالب مواقع جاهزة وأدوات ذكاء اصطناعي وميكرو-ساس ترفع كفاءة عملك بأضعاف مضاعفة." data-en="We offer high-performance web templates and AI tools.">استخدم كود الخصم الحصري <strong style="color: var(--gold);">omar60</strong> عند الشراء المباشر أو تواصل معنا عبر الواتساب.</p>
             <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
                 <button onclick="switchSection('products')" class="btn btn-primary-gold">تصفح المنتجات المدفوعة</button>
-                <button onclick="orderViaWhatsApp('السلام عليكم، استخدمت الأداة المجانية وأرغب في الاستفسار عن قوالب المتجر والخدمات')" class="btn btn-primary-whatsapp">تواصل معنا عبر الواتساب</button>
+                <button onclick="orderViaWhatsApp('السلام عليكم، استخدمت الأداة المجانية لضغط وتعديل مقاسات الصور وأرغب في الاستفسار عن قوالب المتجر')" class="btn btn-primary-whatsapp">تواصل معنا عبر الواتساب</button>
             </div>
         </div>
     </section>
@@ -743,7 +757,7 @@
         </div>
     </section>
 
-    <!-- MOBILE BOTTOM NAVIGATION (متضمنة زر خدمات مجانية) -->
+    <!-- MOBILE BOTTOM NAVIGATION -->
     <nav class="bottom-nav">
         <button class="bottom-nav-item active" onclick="switchSection('home')" id="bnav-home">
             <svg viewBox="0 0 24 24"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>
@@ -934,7 +948,7 @@
         function generateAiSmartResponse(q) {
             const query = q.toLowerCase();
             if (query.includes('أداة') || query.includes('مجانية') || query.includes('ضغط') || query.includes('صور')) {
-                return "🎁 **قسم الخدمات والأدوات المجانية:**\nيتضمن أداة ضغط الصور والفيديوهات الفورية تعمل أوفلاين بمتصفحك. يمكنك الانتقال إليها مباشرة من قائمة (خدمات مجانية).";
+                return "🎁 **قسم الخدمات والأدوات المجانية:**\nيتضمن أداة ضغط الصور وتعديل الأبعاد والمقاسات حسب اختيارك أوفلاين بمتصفحك. يمكنك الانتقال إليها مباشرة من قائمة (خدمات مجانية).";
             } else if (query.includes('ذكاء') || query.includes('اصطناعي') || query.includes('autoposter')) {
                 return "🤖 **أداة AI Social AutoPoster Pro المتاحة:**\nأداة احترافية لإدارة ونشر الحملات الإعلانية ومحتوى السوشيال ميديا بضغطة زر وبسعر مخفض مباشر.\n👉 [معاينة وطلب الأداة](https://payhip.com/b/JEN5f)";
             } else if (query.includes('cv') || query.includes('سيرة') || query.includes('150') || query.includes('مخصص')) {
@@ -944,13 +958,17 @@
             }
         }
 
-        /* DATA & IMAGE COMPRESSOR LOGIC */
+        /* DATA & CUSTOM DIMENSIONS IMAGE COMPRESSOR LOGIC */
         function handleImagesSelection(files) {
             const container = document.getElementById('imageResultsContainer');
             container.innerHTML = '';
             if (!files || files.length === 0) return;
 
-            Array.from(files).forEach((file, index) => {
+            const qualityVal = parseInt(document.getElementById('compressQuality').value) / 100;
+            const customWInput = parseInt(document.getElementById('customWidth').value);
+            const customHInput = parseInt(document.getElementById('customHeight').value);
+
+            Array.from(files).forEach((file) => {
                 if (!file.type.match('image.*')) return;
                 
                 const reader = new FileReader();
@@ -960,16 +978,31 @@
                         const canvas = document.createElement('canvas');
                         let width = img.width;
                         let height = img.height;
-                        const maxDim = 1200;
-                        if (width > maxDim || height > maxDim) {
-                            if (width > height) {
-                                height = Math.round((height * maxDim) / width);
-                                width = maxDim;
-                            } else {
-                                width = Math.round((width * maxDim) / height);
-                                height = maxDim;
+
+                        // حساب الأبعاد بناءً على رغبة العميل
+                        if (!isNaN(customWInput) && customWInput > 0 && !isNaN(customHInput) && customHInput > 0) {
+                            width = customWInput;
+                            height = customHInput;
+                        } else if (!isNaN(customWInput) && customWInput > 0) {
+                            height = Math.round((height * customWInput) / width);
+                            width = customWInput;
+                        } else if (!isNaN(customHInput) && customHInput > 0) {
+                            width = Math.round((width * customHInput) / height);
+                            height = customHInput;
+                        } else {
+                            // الحفاظ على أبعاد معقولة افتراضياً إذا تركها فارغة
+                            const maxDim = 1600;
+                            if (width > maxDim || height > maxDim) {
+                                if (width > height) {
+                                    height = Math.round((height * maxDim) / width);
+                                    width = maxDim;
+                                } else {
+                                    width = Math.round((width * maxDim) / height);
+                                    height = maxDim;
+                                }
                             }
                         }
+
                         canvas.width = width;
                         canvas.height = height;
                         const ctx = canvas.getContext('2d');
@@ -984,15 +1017,15 @@
                             card.style.cssText = "background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 16px; padding: 1.2rem; display: flex; flex-direction: column; gap: 0.8rem;";
                             card.innerHTML = `
                                 <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
-                                    <span style="font-weight: 700; color: var(--gold-light); word-break: break-all;">${file.name}</span>
+                                    <span style="font-weight: 700; color: var(--gold-light); word-break: break-all;">${file.name} (${width} × ${height} px)</span>
                                     <span style="font-size: 0.85rem; color: var(--text-muted);">الحجم الأصلي: ${originalSizeKB} KB ⬅️ بعد الضغط: <strong style="color: #22c55e;">${compressedSizeKB} KB</strong></span>
                                 </div>
                                 <div style="display: flex; gap: 0.8rem; align-items: center;">
-                                    <a href="${compressedUrl}" download="compressed_${file.name}" class="btn btn-primary-gold" style="padding: 0.6rem 1.2rem; font-size: 0.9rem;">تحميل الصورة المضغوطة</a>
+                                    <a href="${compressedUrl}" download="compressed_${width}x${height}_${file.name}" class="btn btn-primary-gold" style="padding: 0.6rem 1.2rem; font-size: 0.9rem;">تحميل الصورة المضغوطة</a>
                                 </div>
                             `;
                             container.appendChild(card);
-                        }, 'image/jpeg', 0.8);
+                        }, 'image/jpeg', qualityVal);
                     };
                     img.src = e.target.result;
                 };
