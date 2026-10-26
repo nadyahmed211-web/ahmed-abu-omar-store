@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ahmed Abu Omar | Enterprise Digital Studio & Live Demos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <style>
+    :root {
+      --bg-main: #060913;
+      --bg-surface: #0b1120;
+      --bg-card: rgba(15, 23, 42, 0.9);
+      --bg-glass: rgba(11, 17, 32, 0.95);
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --accent-blue: #3b82f6;
+      --accent-cyan: #06b6d4;
+      --cinematic-gradient: linear-gradient(135deg, #3b82f6 0%, #06b6d4 50%, #6366f1 100%);
+      --glow-effect: rgba(59, 130, 246, 0.25);
+      --border-color: rgba(59, 130, 246, 0.2);
+      --shadow-cinematic: 0 20px 40px -12px rgba(0, 0, 0, 0.85);
+      --radius-lg: 18px;
+      --font-family: 'Cairo', sans-serif;
+      --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    [data-theme="light"] {
+      --bg-main: #f8fafc;
+      --bg-surface: #f1f5f9;
+      --bg-card: rgba(255, 255, 255, 0.95);
+      --bg-glass: rgba(248, 250, 252, 0.95);
+      --text-main: #0f172a;
+      --text-muted: #64748b;
+      --border-color: rgba(37, 99, 235, 0.15);
+      --shadow-cinematic: 0 15px 30px -10px rgba(0, 0, 0, 0.1);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: var(--font-family); }
+    body { background-color: var(--bg-main); color: var(--text-main); min-height: 100vh; padding-bottom: 50px; }
+
+    header {
+      max-width: 1200px; margin: 20px auto; padding: 12px 24px;
+      background: var(--bg-glass); backdrop-filter: blur(20px);
+      border: 1px solid var(--border-color); border-radius: 16px;
+      display: flex; justify-content: space-between; align-items: center;
+      box-shadow: var(--shadow-cinematic);
+    }
+    .brand { display: flex; align-items: center; gap: 12px; }
+    .brand-logo {
+      width: 40px; height: 40px; background: var(--cinematic-gradient); border-radius: 10px;
+      display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 900; font-size: 1.2rem;
+    }
+    .brand-info h1 { font-size: 1.1rem; font-weight: 900; background: var(--cinematic-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .brand-info span { font-size: 0.75rem; color: var(--text-muted); }
+
+    .hero { text-align: center; margin: 40px 20px 30px; }
+    .hero h2 { font-size: 2rem; font-weight: 900; margin-bottom: 10px; }
+    .hero p { color: var(--text-muted); max-width: 600px; margin: 0 auto; font-size: 0.95rem; }
+
+    .filter-bar { display: flex; justify-content: center; gap: 10px; margin-bottom: 30px; flex-wrap: wrap; }
+    .filter-btn {
+      background: var(--bg-surface); border: 1px solid var(--border-color); color: var(--text-main);
+      padding: 8px 18px; border-radius: 100px; font-size: 0.85rem; font-weight: 700; cursor: pointer; transition: var(--transition);
+    }
+    .filter-btn.active, .filter-btn:hover { background: var(--cinematic-gradient); color: #fff; border-color: transparent; }
+
+    .grid { max-width: 1200px; margin: 0 auto; padding: 0 20px; display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 24px; }
+
+    .card {
+      background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg);
+      overflow: hidden; transition: var(--transition); display: flex; flex-direction: column;
+      box-shadow: var(--shadow-cinematic);
+    }
+    .card:hover { transform: translateY(-5px); border-color: var(--accent-cyan); }
+    .card-preview {
+      width: 100%; height: 180px; background: #1e293b; display: flex; align-items: center; justify-content: center;
+      position: relative; overflow: hidden;
+    }
+    .card-preview i { font-size: 4rem; color: rgba(255,255,255,0.15); }
+    .badge {
+      position: absolute; top: 12px; right: 12px; background: rgba(6, 182, 212, 0.2);
+      border: 1px solid var(--accent-cyan); color: var(--accent-cyan); padding: 4px 10px; border-radius: 100px; font-size: 0.7rem; font-weight: 800;
+    }
+
+    .card-body { padding: 20px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+    .card-title { font-size: 1.1rem; font-weight: 800; color: var(--text-main); }
+    .card-desc { font-size: 0.83rem; color: var(--text-muted); line-height: 1.6; }
+
+    .card-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: auto; padding-top: 15px; }
+    .btn {
+      padding: 10px; border-radius: 10px; font-size: 0.82rem; font-weight: 800; text-decoration: none;
+      display: flex; align-items: center; justify-content: center; gap: 6px; transition: var(--transition); text-align: center;
+    }
+    .btn-demo { background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); color: var(--text-main); }
+    .btn-demo:hover { background: var(--bg-surface); border-color: var(--accent-cyan); }
+    .btn-buy { background: var(--cinematic-gradient); color: #fff; border: none; }
+    .btn-buy:hover { opacity: 0.9; }
+
+    footer { text-align: center; margin-top: 50px; color: var(--text-muted); font-size: 0.8rem; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="brand">
+      <div class="brand-logo">AO</div>
+      <div class="brand-info">
+        <h1>Ahmed Abu Omar Studio</h1>
+        <span>Enterprise Live Demos & Products</span>
+      </div>
+    </div>
+    <a href="https://wa.me/201206443652" target="_blank" class="btn btn-buy" style="padding: 6px 16px; border-radius: 100px;">
+      <i class="fa-brands fa-whatsapp"></i> تواصل مباشر
+    </a>
+  </header>
+
+  <section class="hero">
+    <h2>معرض الأدوات والقوالب التفاعلية الاحترافية 🚀</h2>
+    <p>استكشف وجرب الحلول البرمجية الفورية قبل اقتناء النسخة الكاملة بضغطة زر واحدة.</p>
+  </section>
+
+  <div class="filter-bar">
+    <button class="filter-btn active" data-filter="all">الكل</button>
+    <button class="filter-btn" data-filter="saas">أدوات Micro-SaaS</button>
+    <button class="filter-btn" data-filter="cv">باقات السيرة الذاتية (CV)</button>
+    <button class="filter-btn" data-filter="templates">قوالب المواقع</button>
+  </div>
+
+  <div class="grid">
+
+    <!-- المنتج 1: AI Proposal Generator -->
+    <div class="card" data-category="saas">
+      <div class="card-preview">
+        <i class="fa-solid fa-file-invoice-dollar"></i>
+        <span class="badge">Micro-SaaS</span>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">AI Proposal & Quote Generator Pro</h3>
+        <p class="card-desc">أداة احترافية لتوليد عروض الأسعار والـ Proposals بالذكاء الاصطناعي مع التصدير لصور PNG والطباعة.</p>
+        <div class="card-actions">
+          <a href="https://nadyahmed211-web.github.io/proposal-demo" target="_blank" class="btn btn-demo"><i class="fa-solid fa-eye"></i> التجربة الحية</a>
+          <a href="https://payhip.com/b/f47b5" target="_blank" class="btn btn-buy"><i class="fa-solid fa-cart-shopping"></i> شراء النسخة</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- المنتج 2: باقة الـ CV الاحترافية -->
+    <div class="card" data-category="cv">
+      <div class="card-preview">
+        <i class="fa-solid fa-id-card"></i>
+        <span class="badge">ATS CV</span>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">باقة السيرة الذاتية المتوافقة مع ATS</h3>
+        <p class="card-desc">قوالب سير ذاتية هندسية واحترافية لاجتياز أنظمة الفرز الآلي للشركات وزيادة فرص التوظيف.</p>
+        <div class="card-actions">
+          <a href="#" target="_blank" class="btn btn-demo"><i class="fa-solid fa-eye"></i> معاينة القوالب</a>
+          <a href="https://payhip.com/ahmedabuomar" target="_blank" class="btn btn-buy"><i class="fa-solid fa-cart-shopping"></i> طلب الباقة</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- المنتج 3: قالب موقع سينمائي -->
+    <div class="card" data-category="templates">
+      <div class="card-preview">
+        <i class="fa-solid fa-laptop-code"></i>
+        <span class="badge">HTML Template</span>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">قالب موقع سينمائي سريع (Single-Page)</h3>
+        <p class="card-desc">هيكل برمجي أنيق متجاوب بالكامل مع الشاشات، مدعوم بنظام تفصيلي للوضع الليلي والنهاري.</p>
+        <div class="card-actions">
+          <a href="#" target="_blank" class="btn btn-demo"><i class="fa-solid fa-eye"></i> الديمو الحي</a>
+          <a href="https://payhip.com/ahmedabuomar" target="_blank" class="btn btn-buy"><i class="fa-solid fa-cart-shopping"></i> شراء القالب</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <p>© 2026 Ahmed Abu Omar Digital Studio | كافة الحقوق محفوظة</p>
+  </footer>
+
+  <script>
+    // Module: Interactive Filter Engine
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('.card');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filter = btn.getAttribute('data-filter');
+
+        cards.forEach(card => {
+          if (filter === 'all' || card.getAttribute('data-category') === filter) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
