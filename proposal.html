@@ -1,368 +1,189 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl" data-theme="dark">
+<html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ahmed Abu Omar | AI Proposal & Quote Generator Pro</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-  
-  <style>
-    :root {
-      --bg-main: #060913;
-      --bg-surface: #0b1120;
-      --bg-card: rgba(15, 23, 42, 0.9);
-      --bg-glass: rgba(11, 17, 32, 0.95);
-      --text-main: #f8fafc;
-      --text-muted: #94a3b8;
-      --accent-blue: #3b82f6;
-      --accent-cyan: #06b6d4;
-      --cinematic-gradient: linear-gradient(135deg, #3b82f6 0%, #06b6d4 50%, #6366f1 100%);
-      --glow-effect: rgba(59, 130, 246, 0.25);
-      --border-color: rgba(59, 130, 246, 0.2);
-      --border-hover: rgba(6, 182, 212, 0.5);
-      --shadow-cinematic: 0 20px 40px -12px rgba(0, 0, 0, 0.85);
-      --radius-lg: 18px;
-      --radius-md: 10px;
-      --font-family: 'Cairo', 'Plus Jakarta Sans', sans-serif;
-      --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    [data-theme="light"] {
-      --bg-main: #f8fafc;
-      --bg-surface: #f1f5f9;
-      --bg-card: rgba(255, 255, 255, 0.95);
-      --bg-glass: rgba(248, 250, 252, 0.95);
-      --text-main: #0f172a;
-      --text-muted: #64748b;
-      --accent-blue: #2563eb;
-      --accent-cyan: #0891b2;
-      --cinematic-gradient: linear-gradient(135deg, #2563eb 0%, #0891b2 50%, #4f46e5 100%);
-      --glow-effect: rgba(37, 99, 235, 0.15);
-      --border-color: rgba(37, 99, 235, 0.15);
-      --border-hover: rgba(8, 145, 178, 0.4);
-      --shadow-cinematic: 0 15px 30px -10px rgba(0, 0, 0, 0.1);
-    }
-
-    * { box-sizing: border-box; margin: 0; padding: 0; font-family: var(--font-family); }
-    html, body { width: 100%; height: 100%; overflow: hidden; }
-    body { background-color: var(--bg-main); color: var(--text-main); transition: background 0.4s, color 0.4s; position: relative; }
-
-    .cinematic-bg {
-      position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -2; pointer-events: none;
-      background: radial-gradient(circle at 10% 20%, rgba(59, 130, 246, 0.1) 0%, transparent 40%),
-                  radial-gradient(circle at 90% 80%, rgba(6, 182, 212, 0.08) 0%, transparent 45%),
-                  var(--bg-main);
-    }
-
-    header {
-      position: fixed; top: 10px; left: 50%; transform: translateX(-50%);
-      width: 96%; max-width: 1300px; background: var(--bg-glass);
-      backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-      border: 1px solid var(--border-color); border-radius: 16px;
-      padding: 8px 16px; display: flex; justify-content: space-between; align-items: center;
-      z-index: 1000; box-shadow: var(--shadow-cinematic);
-    }
-
-    .brand { display: flex; align-items: center; gap: 10px; }
-    .brand-logo {
-      width: 36px; height: 36px; background: var(--cinematic-gradient); border-radius: 9px;
-      display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 900; font-size: 1.1rem;
-      box-shadow: 0 4px 15px var(--glow-effect);
-    }
-    .brand-info h1 { font-size: 0.9rem; font-weight: 800; background: var(--cinematic-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-    .brand-info span { font-size: 0.65rem; color: var(--text-muted); display: block; }
-
-    .header-ctrls { display: flex; gap: 6px; }
-    .btn-ctrl {
-      background: rgba(255, 255, 255, 0.05); border: 1px solid var(--border-color); color: var(--text-main);
-      padding: 4px 12px; border-radius: 100px; font-weight: 700; font-size: 0.75rem; cursor: pointer; transition: var(--transition);
-    }
-    .btn-ctrl:hover { background: var(--glow-effect); border-color: var(--accent-cyan); }
-
-    .app-viewport {
-      position: absolute; top: 68px; bottom: 10px; left: 0; right: 0;
-      width: 100%; max-width: 1300px; margin: 0 auto; padding: 0 16px;
-      display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: center;
-    }
-    @media (max-width: 900px) { 
-      .app-viewport { grid-template-columns: 1fr; overflow-y: auto; position: static; margin-top: 75px; padding-bottom: 20px; }
-      html, body { overflow: auto; }
-    }
-
-    .app-card {
-      background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg);
-      padding: 16px; backdrop-filter: blur(15px); box-shadow: var(--shadow-cinematic); display: flex; flex-direction: column; gap: 10px;
-    }
-
-    .card-title { font-size: 1rem; font-weight: 800; display: flex; align-items: center; gap: 8px; color: var(--text-main); }
-    .card-title i { color: var(--accent-cyan); }
-
-    .form-group { display: flex; flex-direction: column; gap: 3px; }
-    .form-group label { font-size: 0.75rem; font-weight: 700; color: var(--text-muted); }
-    .form-control {
-      background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: var(--radius-md);
-      padding: 7px 10px; color: var(--text-main); font-size: 0.82rem; outline: none; transition: var(--transition);
-    }
-    .form-control:focus { border-color: var(--accent-cyan); box-shadow: 0 0 8px var(--glow-effect); }
-
-    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
-
-    .btn-generate {
-      background: var(--cinematic-gradient); color: #fff; font-weight: 800; padding: 9px; border-radius: var(--radius-md);
-      border: none; cursor: pointer; transition: var(--transition); display: flex; align-items: center; justify-content: center; gap: 6px;
-      font-size: 0.85rem; box-shadow: 0 6px 15px var(--glow-effect);
-    }
-    .btn-generate:hover { transform: translateY(-2px); box-shadow: 0 10px 20px var(--glow-effect); }
-
-    .proposal-paper {
-      background: #ffffff; color: #0f172a; border-radius: var(--radius-md); padding: 20px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.3); font-size: 0.8rem; line-height: 1.5; display: flex; flex-direction: column; gap: 10px;
-      max-height: 88vh; overflow-y: auto;
-    }
-    .prop-header { display: flex; justify-content: space-between; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; }
-    .prop-brand h2 { color: #1e293b; font-size: 1.1rem; font-weight: 900; }
-    .prop-brand p { color: #64748b; font-size: 0.68rem; }
-    .prop-meta { text-align: left; font-size: 0.7rem; color: #64748b; }
-    [dir="rtl"] .prop-meta { text-align: right; }
-
-    .prop-client-info { background: #f8fafc; padding: 7px 10px; border-radius: 6px; border-right: 4px solid #3b82f6; }
-    [dir="ltr"] .prop-client-info { border-right: none; border-left: 4px solid #3b82f6; }
-
-    .prop-table { width: 100%; border-collapse: collapse; margin-top: 4px; }
-    .prop-table th, .prop-table td { border: 1px solid #e2e8f0; padding: 7px; text-align: right; }
-    [dir="ltr"] .prop-table th, [dir="ltr"] .prop-table td { text-align: left; }
-    .prop-table th { background: #f1f5f9; color: #334155; font-weight: 800; font-size: 0.75rem; }
-
-    .prop-terms { font-size: 0.72rem; color: #475569; background: #f1f5f9; padding: 6px 10px; border-radius: 6px; }
-    .prop-total { align-self: flex-end; text-align: right; font-size: 0.95rem; font-weight: 900; color: #2563eb; }
-
-    .actions-bar { display: flex; gap: 6px; justify-content: flex-end; margin-bottom: 4px; }
-    .btn-action {
-      background: rgba(255, 255, 255, 0.05); border: 1px solid var(--border-color); color: var(--text-main);
-      padding: 5px 12px; border-radius: 100px; font-weight: 700; font-size: 0.75rem; cursor: pointer; transition: var(--transition);
-      display: inline-flex; align-items: center; gap: 5px;
-    }
-    .btn-action:hover { background: var(--cinematic-gradient); color: #fff; }
-
-    @media print {
-      body * { visibility: hidden; }
-      .proposal-paper, .proposal-paper * { visibility: visible; }
-      .proposal-paper { position: absolute; left: 0; top: 0; width: 100%; border: none; box-shadow: none; max-height: none; }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Proposal & Quote Generator Pro | Ahmed Abu Omar Studio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- html2canvas for PNG Export -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap');
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: #0b0f19;
+            color: #f3f4f6;
+        }
+    </style>
 </head>
-<body>
+<body class="min-h-screen flex flex-col items-center justify-between p-4 sm:p-6">
 
-  <div class="cinematic-bg"></div>
-
-  <header>
-    <div class="brand">
-      <div class="brand-logo">AI</div>
-      <div class="brand-info">
-        <h1 data-i18n="app-name">AI Proposal Generator Pro</h1>
-        <span data-i18n="app-sub">Ahmed Abu Omar Micro-SaaS Tool</span>
-      </div>
-    </div>
-    <div class="header-ctrls">
-      <button class="btn-ctrl" id="lang-btn">EN</button>
-      <button class="btn-ctrl" id="theme-btn"><i class="fa-solid fa-moon"></i></button>
-    </div>
-  </header>
-
-  <div class="app-viewport">
-    <div class="app-card">
-      <div class="card-title"><i class="fa-solid fa-wand-magic-sparkles"></i> <span data-i18n="form-title">إدخال تفاصيل عرض السعر</span></div>
-      
-      <div class="grid-2">
-        <div class="form-group">
-          <label data-i18n="lbl-company">اسم شركتك / علامتك:</label>
-          <input type="text" id="myCompany" class="form-control" value="Ahmed Abu Omar Studio">
+    <!-- Header / Branding -->
+    <header class="w-full max-w-4xl flex items-center justify-between border-b border-gray-800 pb-4 mb-6">
+        <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-amber-500 to-yellow-300 flex items-center justify-center text-gray-900 font-black text-xl shadow-lg shadow-amber-500/20">A</div>
+            <div>
+                <h1 class="font-bold text-lg text-white">AI Proposal & Quote Generator Pro</h1>
+                <p class="text-xs text-gray-400">by Ahmed Abu Omar Studio</p>
+            </div>
         </div>
-        <div class="form-group">
-          <label data-i18n="lbl-client">اسم العميل / الشركة:</label>
-          <input type="text" id="clientName" class="form-control" placeholder="شركة النور للاستثمار">
+        <div class="text-xs bg-amber-500/10 text-amber-400 border border-amber-500/30 px-3 py-1.5 rounded-full font-semibold">
+            ⚡ Micro-SaaS Tool
         </div>
-      </div>
+    </header>
 
-      <div class="form-group">
-        <label data-i18n="lbl-service">عنوان الخدمة / المشروع:</label>
-        <input type="text" id="projectTitle" class="form-control" placeholder="تطوير موقع عقاري سينمائي + نظام حجز">
-      </div>
-
-      <div class="grid-2">
-        <div class="form-group">
-          <label data-i18n="lbl-price">التكلفة / المبلغ:</label>
-          <input type="text" id="projectPrice" class="form-control" placeholder="840 EGP / $16">
-        </div>
-        <div class="form-group">
-          <label data-i18n="lbl-duration">مدة التنفيذ:</label>
-          <input type="text" id="projectDuration" class="form-control" placeholder="3 إلى 5 أيام عمل">
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label data-i18n="lbl-terms">شروط وطريقة الدفع:</label>
-        <input type="text" id="projectTerms" class="form-control" value="50% مقدم، والباقي عند التسليم والاستلام">
-      </div>
-
-      <div class="form-group">
-        <label data-i18n="lbl-details">تفاصيل البنود والخدمات المقدمة:</label>
-        <textarea id="projectDetails" class="form-control" rows="2" placeholder="1. تصميم واجهة سينمائية متجاوبة
-2. دعم اللغة العربية والإنجليزية"></textarea>
-      </div>
-
-      <button class="btn-generate" id="generateBtn">
-        <i class="fa-solid fa-bolt" id="genIcon"></i> <span data-i18n="btn-generate">توليد وصياغة بالذكاء الاصطناعي</span>
-      </button>
-    </div>
-
-    <div style="display: flex; flex-direction: column; gap: 6px; height: 100%; justify-content: center;">
-      <div class="actions-bar">
-        <button class="btn-action" id="downloadImgBtn"><i class="fa-solid fa-image"></i> <span data-i18n="btn-img">حفظ صورة PNG</span></button>
-        <button class="btn-action" onclick="window.print()"><i class="fa-solid fa-print"></i> <span data-i18n="btn-print">طباعة / PDF</span></button>
-      </div>
-
-      <div class="proposal-paper" id="proposalOutput">
-        <div class="prop-header">
-          <div class="brand-info prop-brand">
-            <h2 id="outMyCompany">Ahmed Abu Omar Studio</h2>
-            <p data-i18n="prop-tagline">العروض الفنية والمالية المعتمدة</p>
-          </div>
-          <div class="prop-meta">
-            <div><strong data-i18n="prop-date">التاريخ:</strong> <span id="outDate"></span></div>
-            <div><strong data-i18n="prop-no">رقم العرض:</strong> #OFFER-<span id="outRandom"></span></div>
-          </div>
-        </div>
-
-        <div class="prop-client-info">
-          <strong data-i18n="prop-to">مقدم إلى السيد / الجهة:</strong>
-          <div id="outClientName" style="font-size: 0.9rem; font-weight: 800; color: #1e293b; margin-top: 2px;">شركة النور للاستثمار</div>
-        </div>
-
-        <div>
-          <h3 id="outProjectTitle" style="font-size: 0.95rem; font-weight: 800; color: #2563eb; margin-bottom: 3px;">تطوير موقع عقاري سينمائي + نظام حجز</h3>
-          <p id="outAIIntro" style="color: #475569; font-size: 0.75rem; background: #f1f5f9; padding: 7px; border-radius: 6px;">
-            يسرنا تقديم هذا العرض المالي والفني المخصص لمشروعكم، حيث نضمن تنفيذ المتطلبات بدقة عالية ومعايير احترافية فائقة.
-          </p>
-        </div>
-
-        <table class="prop-table">
-          <thead>
-            <tr>
-              <th data-i18n="tbl-item">بند الخدمة / المواصفات</th>
-              <th data-i18n="tbl-time">مدة التسليم</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td id="outDetails">1. تصميم واجهة سينمائية متجاوبة<br>2. دعم اللغة العربية والإنجليزية</td>
-              <td id="outDuration">3 إلى 5 أيام عمل</td>
-            </tr>
-          </tbody>
-        </table>
-
-        <div class="prop-terms">
-          <strong data-i18n="lbl-terms-title">شروط الدفع:</strong> <span id="outTerms">50% مقدم، والباقي عند التسليم والاستلام</span>
-        </div>
-
-        <div class="prop-total">
-          <span data-i18n="lbl-total">إجمالي الاستثمار المطلـوب:</span> <span id="outPrice">840 EGP</span>
-        </div>
-
-        <div style="margin-top: auto; border-top: 1px solid #e2e8f0; padding-top: 5px; font-size: 0.68rem; color: #94a3b8; text-align: center;" data-i18n="prop-footer">
-          شكراً لثقتكم بنا | Ahmed Abu Omar Digital Solutions
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <script>
-    const translations = {
-      ar: {
-        "app-name": "AI Proposal Generator Pro", "app-sub": "أداة توليد عروض الأسعار - أحمد أبو عمر",
-        "form-title": "إدخال تفاصيل عرض السعر", "lbl-company": "اسم شركتك / علامتك:", "lbl-client": "اسم العميل / الشركة:",
-        "lbl-service": "عنوان الخدمة / المشروع:", "lbl-price": "التكلفة / المبلغ:", "lbl-duration": "مدة التنفيذ:",
-        "lbl-terms": "شروط وطريقة الدفع:", "lbl-details": "تفاصيل البنود والخدمات المقدمة:", "btn-generate": "توليد وصياغة بالذكاء الاصطناعي",
-        "btn-img": "حفظ صورة PNG", "btn-print": "طباعة / PDF", "prop-tagline": "العروض الفنية والمالية المعتمدة", "prop-date": "التاريخ:",
-        "prop-no": "رقم العرض:", "prop-to": "مقدم إلى السيد / الجهة:", "tbl-item": "بند الخدمة / المواصفات",
-        "tbl-time": "مدة التسليم", "lbl-terms-title": "شروط الدفع:", "lbl-total": "إجمالي الاستثمار المطلـوب:", 
-        "prop-footer": "شكراً لثقتكم بنا | Ahmed Abu Omar Digital Solutions",
-        "ai-intro": "يسرنا تقديم هذا العرض المالي والفني المخصص لمشروعكم، حيث نضمن تنفيذ المتطلبات بدقة عالية ومعايير احترافية فائقة."
-      },
-      en: {
-        "app-name": "AI Proposal Generator Pro", "app-sub": "Quote & Proposal Generator Tool",
-        "form-title": "Enter Proposal Details", "lbl-company": "Your Company Name:", "lbl-client": "Client / Company Name:",
-        "lbl-service": "Project / Service Title:", "lbl-price": "Cost / Price:", "lbl-duration": "Delivery Time:",
-        "lbl-terms": "Payment Terms:", "lbl-details": "Detailed Scope & Services:", "btn-generate": "Generate & Polish via AI",
-        "btn-img": "Save as PNG", "btn-print": "Print / PDF", "prop-tagline": "Official Commercial Proposal", "prop-date": "Date:",
-        "prop-no": "Proposal No:", "prop-to": "Prepared For:", "tbl-item": "Service Scope / Specifications",
-        "tbl-time": "Timeline", "lbl-terms-title": "Payment Terms:", "lbl-total": "Total Investment Required:", 
-        "prop-footer": "Thank you for your business | Ahmed Abu Omar Digital Solutions",
-        "ai-intro": "We are pleased to submit this commercial and technical proposal for your project, ensuring the highest standards of quality."
-      }
-    };
-
-    let currentLang = 'ar';
-    const htmlEl = document.documentElement;
-
-    document.getElementById('lang-btn').addEventListener('click', () => {
-      currentLang = currentLang === 'ar' ? 'en' : 'ar';
-      htmlEl.setAttribute('lang', currentLang);
-      htmlEl.setAttribute('dir', currentLang === 'ar' ? 'rtl' : 'ltr');
-      document.getElementById('lang-btn').textContent = currentLang === 'ar' ? 'EN' : 'AR';
-      
-      document.querySelectorAll('[data-i18n]').forEach(el => {
-        const key = el.getAttribute('data-i18n');
-        if (translations[currentLang][key]) el.textContent = translations[currentLang][key];
-      });
-      document.getElementById('outAIIntro').textContent = translations[currentLang]["ai-intro"];
-    });
-
-    document.getElementById('theme-btn').addEventListener('click', () => {
-      const theme = htmlEl.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-      htmlEl.setAttribute('data-theme', theme);
-      document.getElementById('theme-btn').innerHTML = theme === 'dark' ? '<i class="fa-solid fa-moon"></i>' : '<i class="fa-solid fa-sun"></i>';
-    });
-
-    document.getElementById('outDate').textContent = new Date().toLocaleDateString(currentLang === 'ar' ? 'ar-EG' : 'en-US');
-    document.getElementById('outRandom').textContent = Math.floor(1000 + Math.random() * 9000);
-
-    document.getElementById('generateBtn').addEventListener('click', () => {
-      const btn = document.getElementById('generateBtn');
-      const icon = document.getElementById('genIcon');
-      
-      icon.className = "fa-solid fa-spinner fa-spin";
-      btn.style.opacity = "0.8";
-
-      setTimeout(() => {
-        document.getElementById('outMyCompany').textContent = document.getElementById('myCompany').value || 'Ahmed Abu Omar Studio';
-        document.getElementById('outClientName').textContent = document.getElementById('clientName').value || 'عميلنا العزيز';
-        document.getElementById('outProjectTitle').textContent = document.getElementById('projectTitle').value || 'عرض سعر خدمات برمجية';
-        document.getElementById('outPrice').textContent = document.getElementById('projectPrice').value || '0.00';
-        document.getElementById('outDuration').textContent = document.getElementById('projectDuration').value || 'حسب الاتفاق';
-        document.getElementById('outTerms').textContent = document.getElementById('projectTerms').value || 'حسب الاتفاق';
+    <!-- Main Generator Container -->
+    <main class="w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-6">
         
-        const details = document.getElementById('projectDetails').value.replace(/\n/g, '<br>');
-        document.getElementById('outDetails').innerHTML = details || 'تقديم الخدمات والمواصفات حسب الاتفاق المبرم.';
+        <!-- Controls Panel -->
+        <div class="bg-gray-900/80 border border-gray-800 p-5 rounded-2xl shadow-xl flex flex-col justify-between">
+            <div>
+                <h2 class="text-base font-bold text-amber-400 mb-4 flex items-center gap-2">
+                    <span>🪄</span> إعدادات عرض السعر الذكي
+                </h2>
+                
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-xs font-medium text-gray-300 mb-1">اسم العميل / الشركة</label>
+                        <input type="text" id="clientNameInput" value="شركة النور للتجارة والتوزيع" class="w-full bg-gray-950 border border-gray-800 rounded-xl px-3 py-2 text-sm text-white focus:outline-none focus:border-amber-500">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-medium text-gray-300 mb-1">اسم المشروع / الخدمة</label>
+                        <input type="text" id="projectTitleInput" value="تطوير وتصميم موقع إلكتروني شامل" class="w-full bg-gray-950 border border-gray-800 rounded-xl px-3 py-2 text-sm text-white focus:outline-none focus:border-amber-500">
+                    </div>
+                </div>
+            </div>
 
-        icon.className = "fa-solid fa-bolt";
-        btn.style.opacity = "1";
-      }, 500);
-    });
+            <div class="mt-6 pt-4 border-t border-gray-800">
+                <button onclick="generateWithAI()" class="w-full bg-gradient-to-r from-amber-500 to-yellow-400 text-gray-950 font-bold py-3 rounded-xl shadow-lg shadow-amber-500/20 hover:opacity-90 transition flex items-center justify-center gap-2 text-sm">
+                    <span>✨</span> توليد العرض بالذكاء الاصطناعي
+                </button>
+            </div>
+        </div>
 
-    document.getElementById('downloadImgBtn').addEventListener('click', () => {
-      const paper = document.getElementById('proposalOutput');
-      html2canvas(paper, { scale: 2 }).then(canvas => {
-        const link = document.createElement('a');
-        link.download = 'Proposal-Quote.png';
-        link.href = canvas.toDataURL('image/png');
-        link.click();
-      });
-    });
-  </script>
+        <!-- Proposal Preview Card (Target for Export) -->
+        <div id="proposalCard" class="bg-gradient-to-b from-gray-900 to-gray-950 border border-amber-500/30 p-6 rounded-2xl shadow-2xl relative flex flex-col justify-between">
+            <div>
+                <!-- Top Brand Badge in Preview -->
+                <div class="flex justify-between items-start mb-6">
+                    <div>
+                        <span class="text-xs tracking-widest text-amber-500 font-bold uppercase">PROPOSAL</span>
+                        <h3 class="text-xl font-black text-white mt-0.5" id="previewClient">شركة النور للتجارة</h3>
+                    </div>
+                    <div class="w-9 h-9 rounded-lg bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 font-bold text-sm">
+                        A
+                    </div>
+                </div>
+
+                <!-- Project Details -->
+                <div class="mb-4 bg-gray-950/60 p-3 rounded-xl border border-gray-800">
+                    <p class="text-xs text-gray-400">المشروع المطلوب:</p>
+                    <p class="text-sm font-semibold text-white mt-0.5" id="previewProject">تطوير وتصميم موقع إلكتروني شامل</p>
+                </div>
+
+                <!-- Items Table -->
+                <div class="overflow-x-auto mb-4">
+                    <table class="w-full text-right text-xs">
+                        <thead>
+                            <tr class="border-b border-gray-800 text-gray-400">
+                                <th class="pb-2">البند</th>
+                                <th class="pb-2 text-center">الكمية</th>
+                                <th class="pb-2 text-left">السعر</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-800/50 text-gray-300">
+                            <tr>
+                                <td class="py-2">تصميم واجهات المستخدم UI/UX</td>
+                                <td class="py-2 text-center">1</td>
+                                <td class="py-2 text-left text-amber-400">3,500 EGP</td>
+                            </tr>
+                            <tr>
+                                <td class="py-2">برمجة وتطوير النظام البرمجي</td>
+                                <td class="py-2 text-center">1</td>
+                                <td class="py-2 text-left text-amber-400">5,000 EGP</td>
+                            </tr>
+                            <tr>
+                                <td class="py-2">ربط بوابات الدفع وإعدادات السيرفر</td>
+                                <td class="py-2 text-center">1</td>
+                                <td class="py-2 text-left text-amber-400">1,500 EGP</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Total Summary -->
+                <div class="bg-amber-500/10 border border-amber-500/20 p-3 rounded-xl flex items-center justify-between mb-4">
+                    <span class="text-xs font-bold text-amber-400">الإجمالي النهائي:</span>
+                    <span class="text-base font-black text-amber-400">10,000 EGP</span>
+                </div>
+            </div>
+
+            <div class="text-center pt-3 border-t border-gray-800/80 flex items-center justify-between text-[10px] text-gray-400">
+                <span>Ahmed Abu Omar Studio</span>
+                <span class="text-green-400 flex items-center gap-1">● جاهز للإرسال الفوري</span>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Export Actions Bar -->
+    <section class="w-full max-w-4xl mt-6 bg-gray-900 border border-gray-800 p-4 rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div class="text-xs text-gray-300 text-center sm:text-right">
+            <p class="font-bold text-white mb-0.5">تصدير وحفظ العرض بنقرة واحدة</p>
+            <p class="text-gray-400">احفظ عرض السعر كصورة عالية الدقة أو اطبع الملف فوراً كـ PDF.</p>
+        </div>
+        <div class="flex items-center gap-3 w-full sm:w-auto">
+            <button onclick="exportToPNG()" class="flex-1 sm:flex-none bg-gray-800 hover:bg-gray-700 text-white font-semibold px-4 py-2.5 rounded-xl border border-gray-700 text-xs flex items-center justify-center gap-2 transition">
+                <span>🖼️</span> تحميل PNG
+            </button>
+            <button onclick="exportToPDF()" class="flex-1 sm:flex-none bg-amber-500 hover:bg-amber-400 text-gray-950 font-bold px-4 py-2.5 rounded-xl text-xs flex items-center justify-center gap-2 transition shadow-lg shadow-amber-500/20">
+                <span>📄</span> طباعة / حفظ PDF
+            </button>
+        </div>
+    </section>
+
+    <!-- Footer Links -->
+    <footer class="w-full max-w-4xl mt-8 pt-4 border-t border-gray-800/60 text-center text-xs text-gray-500 flex flex-col sm:flex-row items-center justify-between gap-2">
+        <p>© 2026 Ahmed Abu Omar Studio. All rights reserved.</p>
+        <div class="flex items-center gap-4">
+            <a href="https://wa.me/201206443652" target="_blank" class="text-amber-400 hover:underline">تواصل عبر الواتساب</a>
+            <a href="https://payhip.com/b/f47b5" target="_blank" class="text-amber-400 hover:underline">متجر Payhip</a>
+        </div>
+    </footer>
+
+    <!-- JavaScript Logic -->
+    <script>
+        function generateWithAI() {
+            const client = document.getElementById('clientNameInput').value;
+            const project = document.getElementById('projectTitleInput').value;
+            
+            document.getElementById('previewClient').innerText = client;
+            document.getElementById('previewProject').innerText = project;
+            
+            // Subtle interactive feedback
+            const btn = event.currentTarget;
+            const originalText = btn.innerHTML;
+            btn.innerHTML = "<span>⚡</span> جاري التوليد بواسطة الذكاء الاصطناعي...";
+            setTimeout(() => {
+                btn.innerHTML = originalText;
+                alert("تم توليد وتنسيق عرض السعر بنجاح وجاهز للتصدير!");
+            }, 600);
+        }
+
+        function exportToPNG() {
+            const card = document.getElementById('proposalCard');
+            html2canvas(card, { scale: 2, backgroundColor: '#0b0f19' }).then(canvas => {
+                const link = document.createElement('a');
+                link.download = 'proposal-quote.png';
+                link.href = canvas.toDataURL('image/png');
+                link.click();
+            });
+        }
+
+        function exportToPDF() {
+            window.print();
+        }
+    </script>
 </body>
 </html>
