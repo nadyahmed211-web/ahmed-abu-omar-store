@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEO Meta & Schema Generator Pro - Live Demo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-main: #0b0f19;
+            --bg-card: rgba(22, 30, 49, 0.85);
+            --border-card: rgba(255, 255, 255, 0.08);
+            --accent-primary: #6366f1;
+            --accent-secondary: #a855f7;
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+            --success: #10b981;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Tajawal', sans-serif; }
+        body { background-color: var(--bg-main); color: var(--text-main); min-height: 100vh; padding: 20px; display: flex; justify-content: center; align-items: center; }
+        .app-container { width: 100%; max-width: 1000px; display: flex; flex-direction: column; gap: 20px; }
+        
+        .demo-banner { background: linear-gradient(135deg, #f59e0b, #ef4444); color: #fff; padding: 14px; border-radius: 12px; text-align: center; font-weight: 700; font-size: 0.95rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
+        .demo-banner .prices { background: rgba(0,0,0,0.2); padding: 4px 10px; border-radius: 6px; font-size: 0.85rem; }
+        .demo-banner .buy-link { background: #fff; color: #0b0f19; padding: 6px 14px; border-radius: 6px; text-decoration: none; font-weight: 800; font-size: 0.85rem; }
+
+        .card { background: var(--bg-card); border: 1px solid var(--border-card); border-radius: 14px; padding: 20px; display: flex; flex-direction: column; gap: 12px; }
+        label { font-size: 0.9rem; font-weight: 700; display: flex; justify-content: space-between; }
+        input, textarea { width: 100%; background: rgba(15, 23, 42, 0.8); border: 1px solid var(--border-card); border-radius: 8px; padding: 10px; color: #fff; font-size: 0.95rem; outline: none; }
+        
+        .google-card { background: #fff; color: #202124; padding: 16px; border-radius: 10px; text-align: right; }
+        .serp-url { font-size: 12px; color: #202124; margin-bottom: 3px; }
+        .serp-title { font-size: 16px; color: #1a0dab; text-decoration: none; display: block; margin-bottom: 3px; }
+        .serp-desc { font-size: 12px; color: #4d5156; line-height: 1.4; }
+
+        .btn-action { background: var(--accent-primary); color: #fff; border: none; padding: 12px 20px; border-radius: 8px; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: 8px; font-size: 1rem; width: 100%; }
+        .btn-action:hover { background: #4f46e5; }
+
+        /* Modal Overlay for Lock */
+        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(11, 15, 25, 0.9); display: none; justify-content: center; align-items: center; z-index: 999; padding: 20px; }
+        .modal-card { background: #161e31; border: 1px solid var(--border-card); padding: 30px; border-radius: 16px; max-width: 450px; width: 100%; text-align: center; display: flex; flex-direction: column; gap: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        .modal-card h3 { color: #f59e0b; font-size: 1.3rem; }
+        .modal-card p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.5; }
+        
+        .modal-buttons { display: flex; flex-direction: column; gap: 10px; margin-top: 10px; }
+        .btn-payhip { background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary)); color: #fff; padding: 12px; border-radius: 8px; text-decoration: none; font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 8px; }
+        .btn-whatsapp { background: #25d366; color: #fff; padding: 12px; border-radius: 8px; text-decoration: none; font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 8px; }
+        .btn-close { background: transparent; color: var(--text-muted); border: none; cursor: pointer; font-size: 0.85rem; margin-top: 5px; }
+    </style>
+</head>
+<body>
+
+    <div class="app-container">
+        <!-- Banner with pricing -->
+        <div class="demo-banner">
+            <span>⚡ نسخة معاينة تفاعلية (الأداة ومكتبة الأوامر تعمل للتجربة فقط)</span>
+            <div class="prices">السعر: $16 أو 800 جنيه مصري</div>
+            <a href="https://payhip.com/b/1tfs7" target="_blank" class="buy-link">اطلب النسخة الكاملة 🛒</a>
+        </div>
+
+        <!-- Inputs Card -->
+        <div class="card">
+            <label><span>عنوان الصفحة (Meta Title)</span> <span id="titleCount" style="color:var(--text-muted); font-size:0.8rem;">0 / 60</span></label>
+            <input type="text" id="titleInput" oninput="updateDemo()" placeholder="اكتب عنوان صفحتك هنا للتجربة الفورية...">
+        </div>
+
+        <div class="card">
+            <label><span>وصف الصفحة (Meta Description)</span> <span id="descCount" style="color:var(--text-muted); font-size:0.8rem;">0 / 160</span></label>
+            <textarea id="descInput" rows="2" oninput="updateDemo()" placeholder="اكتب وصف المقال أو المنتج هنا..."></textarea>
+        </div>
+
+        <!-- Live Preview -->
+        <div class="card">
+            <h3 style="font-size: 1rem; margin-bottom: 4px;"><i class="fa-solid fa-eye" style="color:var(--accent-primary);"></i> المعاينة الحية لجوجل (Live SERP Preview)</h3>
+            <div class="google-card">
+                <div class="serp-url" id="prevUrl">https://yourwebsite.com/page</div>
+                <a class="serp-title" id="prevTitle">عنوان الصفحة يظهر هنا مباشرة أثناء الكتابة...</a>
+                <div class="serp-desc" id="prevDesc">وصف الصفحة المختصر سيظهر هنا بنفس الشكل لتجربة الأداء الفوري.</div>
+            </div>
+        </div>
+
+        <!-- Locked Action Buttons -->
+        <div class="card">
+            <h3 style="font-size: 1rem; margin-bottom: 4px;"><i class="fa-solid fa-code" style="color:var(--accent-primary);"></i> تصدير الأكواد والنسخ</h3>
+            <p style="font-size: 0.85rem; color: var(--text-muted);">قم بتجربة الأداة بالأعلى، وعند النقر على النسخ أو التنزيل سيتم طلب تفعيل النسخة الكاملة.</p>
+            <button class="btn-action" onclick="showPayModal()"><i class="fa-solid fa-wand-magic-sparkles"></i> توليد ونسخ الأكواد النهائية (نسخة مدفوعة)</button>
+        </div>
+    </div>
+
+    <!-- Purchase Modal -->
+    <div class="modal-overlay" id="payModal">
+        <div class="modal-card">
+            <i class="fa-solid fa-lock fa-3x" style="color: #f59e0b;"></i>
+            <h3>هذه الميزة متاحة في النسخة الكاملة فقط!</h3>
+            <p>لقد جربت الأداة ورأيت سرعتها واحترافيتها. احصل الآن على الكود المصدري الكامل (`index.html`) لتعمل معك بدون إنترنت وبصلاحيات كاملة للأبد.</p>
+            <div style="background: rgba(255,255,255,0.05); padding: 10px; border-radius: 8px; font-weight: 700; color: #38bdf8;">
+                💰 السعر: $16 دولار فقط أو 800 جنيه مصري
+            </div>
+            <div class="modal-buttons">
+                <a href="https://payhip.com/b/1tfs7" target="_blank" class="btn-payhip">
+                    <i class="fa-solid fa-cart-shopping"></i> اشتري عبر المتجر ($16)
+                </a>
+                <a href="https://wa.me/201000000000?text=أريد%20شراء%20أداة%20SEO%20Meta%20%26%20Schema%20Generator%20Pro%20بسعر%20800%20جنيه" target="_blank" class="btn-whatsapp">
+                    <i class="fa-brands fa-whatsapp"></i> اطلب عبر الواتساب (800 جنيه)
+                </a>
+            </div>
+            <button class="btn-close" onclick="hidePayModal()">إغلاق والعودة للتجربة</button>
+        </div>
+    </div>
+
+    <script>
+        function updateDemo() {
+            const title = document.getElementById('titleInput').value || 'عنوان الصفحة يظهر هنا مباشرة أثناء الكتابة...';
+            const desc = document.getElementById('descInput').value || 'وصف الصفحة المختصر سيظهر هنا بنفس الشكل لتجربة الأداء الفوري.';
+            
+            document.getElementById('prevTitle').innerText = title;
+            document.getElementById('prevDesc').innerText = desc;
+
+            document.getElementById('titleCount').innerText = `${title.length} / 60`;
+            document.getElementById('descCount').innerText = `${desc.length} / 160`;
+        }
+
+        function showPayModal() {
+            document.getElementById('payModal').style.display = 'flex';
+        }
+
+        function hidePayModal() {
+            document.getElementById('payModal').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
