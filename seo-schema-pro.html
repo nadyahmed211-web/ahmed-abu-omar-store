@@ -3,9 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SEO Meta & Schema Generator Pro - Live Demo</title>
+    <title>SEO Meta & Schema Generator Pro - Demo</title>
+    <meta name="description" content="The ultimate all-in-one SEO meta tags generator, Schema.org builder, and AI SEO prompts vault.">
+    
+    <!-- Font Awesome & Google Fonts -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+
     <style>
         :root {
             --bg-main: #0b0f19;
@@ -13,33 +19,493 @@
             --border-card: rgba(255, 255, 255, 0.08);
             --accent-primary: #6366f1;
             --accent-secondary: #a855f7;
+            --accent-glow: rgba(99, 102, 241, 0.35);
             --text-main: #f3f4f6;
             --text-muted: #9ca3af;
             --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --radius-lg: 18px;
+            --radius-md: 12px;
         }
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Tajawal', sans-serif; }
-        body { background-color: var(--bg-main); color: var(--text-main); min-height: 100vh; padding: 20px; display: flex; justify-content: center; align-items: center; }
-        .app-container { width: 100%; max-width: 1000px; display: flex; flex-direction: column; gap: 20px; }
-        
-        .demo-banner { background: linear-gradient(135deg, #f59e0b, #ef4444); color: #fff; padding: 14px; border-radius: 12px; text-align: center; font-weight: 700; font-size: 0.95rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
-        .demo-banner .prices { background: rgba(0,0,0,0.2); padding: 4px 10px; border-radius: 6px; font-size: 0.85rem; }
-        .demo-banner .buy-link { background: #fff; color: #0b0f19; padding: 6px 14px; border-radius: 6px; text-decoration: none; font-weight: 800; font-size: 0.85rem; }
 
-        .card { background: var(--bg-card); border: 1px solid var(--border-card); border-radius: 14px; padding: 20px; display: flex; flex-direction: column; gap: 12px; }
-        label { font-size: 0.9rem; font-weight: 700; display: flex; justify-content: space-between; }
-        input, textarea { width: 100%; background: rgba(15, 23, 42, 0.8); border: 1px solid var(--border-card); border-radius: 8px; padding: 10px; color: #fff; font-size: 0.95rem; outline: none; }
-        
-        .google-card { background: #fff; color: #202124; padding: 16px; border-radius: 10px; text-align: right; }
-        .serp-url { font-size: 12px; color: #202124; margin-bottom: 3px; }
-        .serp-title { font-size: 16px; color: #1a0dab; text-decoration: none; display: block; margin-bottom: 3px; }
-        .serp-desc { font-size: 12px; color: #4d5156; line-height: 1.4; }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Tajawal', 'Plus Jakarta Sans', sans-serif;
+            transition: direction 0.3s ease;
+        }
 
-        .btn-action { background: var(--accent-primary); color: #fff; border: none; padding: 12px 20px; border-radius: 8px; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: 8px; font-size: 1rem; width: 100%; }
-        .btn-action:hover { background: #4f46e5; }
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            overflow-x: hidden;
+            position: relative;
+            user-select: none; /* منع تحديد النصوص وحمايتها */
+        }
+
+        .bg-glow-1 {
+            position: fixed;
+            top: -10%;
+            right: -5%;
+            width: 450px;
+            height: 450px;
+            background: radial-gradient(circle, var(--accent-primary) 0%, rgba(0,0,0,0) 70%);
+            opacity: 0.25;
+            filter: blur(80px);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .bg-glow-2 {
+            position: fixed;
+            bottom: -10%;
+            left: -5%;
+            width: 450px;
+            height: 450px;
+            background: radial-gradient(circle, var(--accent-secondary) 0%, rgba(0,0,0,0) 70%);
+            opacity: 0.2;
+            filter: blur(80px);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .app-container {
+            width: 100%;
+            max-width: 1150px;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        /* Demo Notice Banner */
+        .demo-banner {
+            background: linear-gradient(135deg, #f59e0b, #ef4444);
+            color: #fff;
+            padding: 14px 20px;
+            border-radius: var(--radius-md);
+            text-align: center;
+            font-weight: 700;
+            font-size: 0.95rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            box-shadow: 0 4px 20px rgba(245, 158, 11, 0.3);
+        }
+
+        .demo-banner .prices {
+            background: rgba(0, 0, 0, 0.25);
+            padding: 4px 12px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+        }
+
+        .demo-banner .buy-link {
+            background: #fff;
+            color: #0b0f19;
+            padding: 6px 16px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 0.85rem;
+            transition: 0.2s;
+        }
+
+        .demo-banner .buy-link:hover {
+            transform: scale(1.05);
+        }
+
+        /* App Header */
+        .app-header {
+            text-align: center;
+            background: var(--bg-card);
+            padding: 28px;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-card);
+            backdrop-filter: blur(16px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+
+        .badge {
+            background: rgba(99, 102, 241, 0.15);
+            color: var(--accent-primary);
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            padding: 6px 14px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .lang-btn {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-card);
+            color: var(--text-main);
+            padding: 6px 16px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .lang-btn:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: var(--accent-primary);
+        }
+
+        .app-header h1 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .app-header h1 span {
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .app-header p {
+            color: var(--text-muted);
+            font-size: 1rem;
+            max-width: 750px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* Navigation Tabs */
+        .main-nav-tabs {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            margin-bottom: -10px;
+        }
+
+        .main-tab {
+            background: var(--bg-card);
+            border: 1px solid var(--border-card);
+            color: var(--text-muted);
+            padding: 10px 24px;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .main-tab.active {
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            color: #fff;
+            border-color: transparent;
+            box-shadow: 0 4px 15px var(--accent-glow);
+        }
+
+        .app-section {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        /* Bento Grid */
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 16px;
+        }
+
+        .bento-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-card);
+            border-radius: var(--radius-md);
+            padding: 18px;
+            backdrop-filter: blur(12px);
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            transition: border-color 0.3s ease;
+        }
+
+        .bento-card:focus-within {
+            border-color: var(--accent-primary);
+            box-shadow: 0 0 15px var(--accent-glow);
+        }
+
+        .col-12 { grid-column: span 12; }
+        .col-6 { grid-column: span 6; }
+        .col-4 { grid-column: span 4; }
+        .col-3 { grid-column: span 3; }
+
+        @media (max-width: 768px) {
+            .col-6, .col-4, .col-3 { grid-column: span 12; }
+        }
+
+        label {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 6px;
+        }
+
+        label i { color: var(--accent-primary); }
+
+        .counter-badge {
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 2px 8px;
+            border-radius: 10px;
+            background: rgba(255,255,255,0.08);
+            color: var(--text-muted);
+        }
+
+        input, textarea, select {
+            width: 100%;
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid var(--border-card);
+            border-radius: 8px;
+            padding: 10px 14px;
+            color: #fff;
+            font-size: 0.95rem;
+            outline: none;
+            transition: all 0.2s ease;
+            user-select: text; /* السماح بالكتابة فقط */
+        }
+
+        input:focus, textarea:focus, select:focus {
+            border-color: var(--accent-primary);
+            background: rgba(15, 23, 42, 0.9);
+        }
+
+        select option {
+            background: #111827;
+            color: #fff;
+        }
+
+        .dynamic-fields {
+            grid-column: span 12;
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 16px;
+            background: rgba(99, 102, 241, 0.05);
+            border: 1px dashed rgba(99, 102, 241, 0.25);
+            border-radius: var(--radius-md);
+            padding: 16px;
+        }
+
+        /* Buttons */
+        .btn-generate {
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            color: #fff;
+            border: none;
+            padding: 16px 28px;
+            border-radius: var(--radius-md);
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            box-shadow: 0 4px 20px var(--accent-glow);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .btn-generate:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(99, 102, 241, 0.5);
+        }
+
+        /* Preview Component */
+        .preview-section {
+            background: var(--bg-card);
+            border: 1px solid var(--border-card);
+            border-radius: var(--radius-lg);
+            padding: 20px;
+        }
+
+        .preview-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 16px;
+            border-bottom: 1px solid var(--border-card);
+            padding-bottom: 12px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .preview-tabs {
+            display: flex;
+            gap: 10px;
+        }
+
+        .tab-btn {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid var(--border-card);
+            color: var(--text-muted);
+            padding: 8px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+
+        .tab-btn.active {
+            background: var(--accent-primary);
+            color: #fff;
+            border-color: var(--accent-primary);
+        }
+
+        .google-card {
+            background: #fff;
+            color: #202124;
+            padding: 18px;
+            border-radius: 12px;
+            font-family: arial, sans-serif;
+            text-align: right;
+        }
+        html[dir="ltr"] .google-card { text-align: left; }
+
+        .google-card .serp-url { font-size: 13px; color: #202124; margin-bottom: 4px; }
+        .google-card .serp-title { font-size: 18px; color: #1a0dab; text-decoration: none; font-weight: 400; display: block; margin-bottom: 4px; }
+        .google-card .serp-desc { font-size: 13px; color: #4d5156; line-height: 1.5; }
+
+        .social-card {
+            background: #15202b;
+            border: 1px solid #38444d;
+            border-radius: 14px;
+            overflow: hidden;
+            max-width: 500px;
+            margin: 0 auto;
+            text-align: right;
+        }
+        html[dir="ltr"] .social-card { text-align: left; }
+
+        .social-img { width: 100%; height: 180px; background: #253341; display: flex; align-items: center; justify-content: center; color: var(--text-muted); }
+        .social-content { padding: 12px 16px; }
+        .social-domain { font-size: 0.8rem; color: #8899a6; text-transform: lowercase; }
+        .social-title { font-weight: 700; font-size: 0.95rem; margin: 4px 0; color: #fff; }
+        .social-desc { font-size: 0.85rem; color: #8899a6; line-height: 1.4; }
+
+        /* Output Area */
+        .output-container {
+            background: var(--bg-card);
+            border: 1px solid var(--border-card);
+            border-radius: var(--radius-lg);
+            padding: 20px;
+        }
+
+        .output-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .btn-actions { display: flex; gap: 10px; }
+        .btn-action {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid var(--border-card);
+            color: #fff;
+            padding: 8px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.85rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.2s ease;
+        }
+        .btn-action:hover { background: var(--accent-primary); border-color: var(--accent-primary); }
+
+        pre {
+            background: #080c14;
+            border: 1px solid var(--border-card);
+            border-radius: var(--radius-md);
+            padding: 16px;
+            color: #38bdf8;
+            font-family: 'Courier New', monospace;
+            font-size: 0.88rem;
+            line-height: 1.5;
+            overflow-x: auto;
+            max-height: 200px;
+            direction: ltr;
+            text-align: left;
+            filter: blur(5px); /* تمويه الكود لحمايته */
+            opacity: 0.4;
+        }
+
+        /* SEO Prompt Library Grid */
+        .prompt-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 20px;
+            text-align: right;
+        }
+        html[dir="ltr"] .prompt-grid { text-align: left; }
+
+        .prompt-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-card);
+            border-radius: var(--radius-md);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 14px;
+            transition: transform 0.2s ease;
+        }
+
+        .prompt-card:hover { transform: translateY(-3px); border-color: var(--accent-primary); }
+        .prompt-title { font-weight: 700; font-size: 1.05rem; display: flex; align-items: center; gap: 8px; color: #fff; }
+        .prompt-title i { color: var(--accent-secondary); }
+        .prompt-desc { font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; }
+        .prompt-box {
+            background: #080c14;
+            border: 1px solid var(--border-card);
+            border-radius: 8px;
+            padding: 10px;
+            font-family: monospace;
+            font-size: 0.8rem;
+            color: #a5b4fc;
+            max-height: 90px;
+            overflow-y: auto;
+            direction: ltr;
+            text-align: left;
+            user-select: text; /* السماح بقراءة الأوامر */
+        }
 
         /* Modal Overlay for Lock */
-        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(11, 15, 25, 0.9); display: none; justify-content: center; align-items: center; z-index: 999; padding: 20px; }
-        .modal-card { background: #161e31; border: 1px solid var(--border-card); padding: 30px; border-radius: 16px; max-width: 450px; width: 100%; text-align: center; display: flex; flex-direction: column; gap: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(11, 15, 25, 0.9); display: none; justify-content: center; align-items: center; z-index: 999; padding: 20px; backdrop-filter: blur(6px); }
+        .modal-card { background: #161e31; border: 1px solid var(--border-card); padding: 30px; border-radius: 16px; max-width: 450px; width: 100%; text-align: center; display: flex; flex-direction: column; gap: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); animation: scaleUp 0.3s ease; }
+        @keyframes scaleUp { from { transform: scale(0.9); opacity: 0; } to { transform: scale(1); opacity: 1; } }
         .modal-card h3 { color: #f59e0b; font-size: 1.3rem; }
         .modal-card p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.5; }
         
@@ -51,42 +517,184 @@
 </head>
 <body>
 
-    <div class="app-container">
-        <!-- Banner with pricing -->
+    <div class="bg-glow-1"></div>
+    <div class="bg-glow-2"></div>
+
+    <main class="app-container">
+        
+        <!-- Banner Notification -->
         <div class="demo-banner">
-            <span>⚡ نسخة معاينة تفاعلية (الأداة ومكتبة الأوامر تعمل للتجربة فقط)</span>
+            <span>⚡ نسخة معاينة تفاعلية (التجربة والاطلاع على الأوامر متاحة)</span>
             <div class="prices">السعر: $16 أو 800 جنيه مصري</div>
             <a href="https://payhip.com/b/1tfs7" target="_blank" class="buy-link">اطلب النسخة الكاملة 🛒</a>
         </div>
 
-        <!-- Inputs Card -->
-        <div class="card">
-            <label><span>عنوان الصفحة (Meta Title)</span> <span id="titleCount" style="color:var(--text-muted); font-size:0.8rem;">0 / 60</span></label>
-            <input type="text" id="titleInput" oninput="updateDemo()" placeholder="اكتب عنوان صفحتك هنا للتجربة الفورية...">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="top-bar">
+                <div class="badge"><i class="fa-solid fa-crown"></i> <span id="badgeText">SEO Suite Pro v3.5 (Demo)</span></div>
+                <button class="lang-btn" id="langBtn" onclick="toggleLanguage()">English 🌐</button>
+            </div>
+            <h1>SEO Meta & Schema <span>Generator Pro</span></h1>
+            <p id="subTitle">الأداة الشاملة لتوليد أكواد الـ SEO و Schema.org ومكتبة أوامر الذكاء الاصطناعي الحصرية لتعزيز أرشفة موقعك.</p>
+        </header>
+
+        <!-- Navigation Switcher -->
+        <div class="main-nav-tabs">
+            <button class="main-tab active" id="navGenBtn" onclick="switchMainTab('generator')"><i class="fa-solid fa-wand-magic-sparkles"></i> <span id="tabGenText">مولد الأوسمة (Generator)</span></button>
+            <button class="main-tab" id="navPromptBtn" onclick="switchMainTab('prompts')"><i class="fa-solid fa-terminal"></i> <span id="tabPromptText">مكتبة أوامر SEO (AI Prompts)</span></button>
         </div>
 
-        <div class="card">
-            <label><span>وصف الصفحة (Meta Description)</span> <span id="descCount" style="color:var(--text-muted); font-size:0.8rem;">0 / 160</span></label>
-            <textarea id="descInput" rows="2" oninput="updateDemo()" placeholder="اكتب وصف المقال أو المنتج هنا..."></textarea>
-        </div>
+        <!-- SECTION 1: Generator -->
+        <div id="generatorSection" class="app-section">
+            <div class="bento-grid">
+                <div class="bento-card col-12">
+                    <label for="pageTitleInput">
+                        <span><i class="fa-solid fa-heading"></i> <span id="lblTitle">عنوان الصفحة / المقال (Meta Title)</span></span>
+                        <span class="counter-badge" id="titleCounter">0 / 60 حرف</span>
+                    </label>
+                    <input type="text" id="pageTitleInput" oninput="updateLivePreview()" placeholder="مثال: أفضل قوالب مواقع الشركات والأدوات الرقمية لعام 2026">
+                </div>
 
-        <!-- Live Preview -->
-        <div class="card">
-            <h3 style="font-size: 1rem; margin-bottom: 4px;"><i class="fa-solid fa-eye" style="color:var(--accent-primary);"></i> المعاينة الحية لجوجل (Live SERP Preview)</h3>
-            <div class="google-card">
-                <div class="serp-url" id="prevUrl">https://yourwebsite.com/page</div>
-                <a class="serp-title" id="prevTitle">عنوان الصفحة يظهر هنا مباشرة أثناء الكتابة...</a>
-                <div class="serp-desc" id="prevDesc">وصف الصفحة المختصر سيظهر هنا بنفس الشكل لتجربة الأداء الفوري.</div>
+                <div class="bento-card col-12">
+                    <label for="descInput">
+                        <span><i class="fa-solid fa-align-left"></i> <span id="lblDesc">وصف المحتوى (Meta Description)</span></span>
+                        <span class="counter-badge" id="descCounter">0 / 160 حرف</span>
+                    </label>
+                    <textarea id="descInput" rows="2" oninput="updateLivePreview()" placeholder="مثال: استكشف أفضل قوالب المواقع الجاهزة وأدوات الـ Micro-SaaS المصممة لزيادة التحويلات والمبيعات بنقرة واحدة..."></textarea>
+                </div>
+
+                <div class="bento-card col-6">
+                    <label for="keywordsInput"><i class="fa-solid fa-key"></i> <span id="lblKeywords">الكلمات المفتاحية (Keywords)</span></label>
+                    <input type="text" id="keywordsInput" placeholder="قوالب مواقع, SEO, أدوات رقمية, سيو">
+                </div>
+
+                <div class="bento-card col-6">
+                    <label for="urlInput"><i class="fa-solid fa-link"></i> <span id="lblUrl">رابط الصفحة (Canonical URL)</span></label>
+                    <input type="text" id="urlInput" oninput="updateLivePreview()" placeholder="https://example.com/my-product">
+                </div>
+
+                <div class="bento-card col-6">
+                    <label for="imageInput"><i class="fa-solid fa-image"></i> <span id="lblImage">رابط صورة المعاينة (OG Image)</span></label>
+                    <input type="text" id="imageInput" oninput="updateLivePreview()" placeholder="https://example.com/assets/banner.jpg">
+                </div>
+
+                <div class="bento-card col-3">
+                    <label for="schemaSelect"><i class="fa-solid fa-code"></i> <span id="lblSchema">نوع الـ Schema</span></label>
+                    <select id="schemaSelect" onchange="renderDynamicFields()">
+                        <option value="WebSite" id="optWebSite">🌐 موقع إلكتروني (WebSite)</option>
+                        <option value="Product" id="optProduct">🛒 منتج / أداة (Product)</option>
+                        <option value="Article" id="optArticle">📰 مقال / خبر (Article)</option>
+                        <option value="LocalBusiness" id="optLocal">🏪 نشاط محلي (LocalBusiness)</option>
+                        <option value="SoftwareApplication" id="optSaaS">💻 أداة SaaS / تطبيق</option>
+                    </select>
+                </div>
+
+                <div class="bento-card col-3">
+                    <label for="langSelect"><i class="fa-solid fa-language"></i> <span id="lblLang">لغة المخرجات</span></label>
+                    <select id="langSelect">
+                        <option value="ar">العربية (Arabic)</option>
+                        <option value="en">الإنجليزية (English)</option>
+                    </select>
+                </div>
+
+                <div id="dynamicFieldsContainer" class="dynamic-fields"></div>
+            </div>
+
+            <button class="btn-generate" onclick="showPayModal()">
+                <span id="btnText">توليد أوسمة الـ SEO والـ Schema الآن (نسخة مدفوعة)</span>
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+            </button>
+
+            <!-- Live Preview -->
+            <div class="preview-section">
+                <div class="preview-header">
+                    <span style="font-weight:700;"><i class="fa-solid fa-eye"></i> <span id="lblPreviewTitle">المعاينة الحية (Live SERP & Social Preview)</span></span>
+                    <div class="preview-tabs">
+                        <button class="tab-btn active" onclick="switchPreview('google')">Google SERP</button>
+                        <button class="tab-btn" onclick="switchPreview('social')">Social Card</button>
+                    </div>
+                </div>
+
+                <div id="googlePreview" class="google-card">
+                    <div class="serp-url" id="pvGoogleUrl">https://example.com/page</div>
+                    <a class="serp-title" id="pvGoogleTitle">عنوان الصفحة يظهر هنا شكل محرك البحث</a>
+                    <div class="serp-desc" id="pvGoogleDesc">وصف الصفحة المختصر سيظهر بنفس الشكل الذي يراه الزائر في نتائج بحث جوجل.</div>
+                </div>
+
+                <div id="socialPreview" class="social-card" style="display: none;">
+                    <div class="social-img" id="pvSocialImg"><i class="fa-solid fa-image fa-2x"></i></div>
+                    <div class="social-content">
+                        <div class="social-domain" id="pvSocialDomain">example.com</div>
+                        <div class="social-title" id="pvSocialTitle">عنوان المشاركة على التواصل الاجتماعي</div>
+                        <div class="social-desc" id="pvSocialDesc">معاينة نص الوصف للروابط عند مشاركتها على المنصات.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Code Output (Locked) -->
+            <div class="output-container">
+                <div class="output-header">
+                    <span class="output-title" style="font-weight:700;"><i class="fa-solid fa-file-code"></i> <span id="lblOutput">الكود البرمجي المولد (متاح في النسخة الكاملة):</span></span>
+                    <div class="btn-actions">
+                        <button class="btn-action" onclick="showPayModal()"><i class="fa-regular fa-copy"></i> <span id="btnCopyText">نسخ الكود</span></button>
+                        <button class="btn-action" onclick="showPayModal()"><i class="fa-solid fa-download"></i> <span id="btnDownloadText">تنزيل الملف</span></button>
+                    </div>
+                </div>
+                <pre id="outputBox">&lt;!-- هذه النسخة تجريبية، للحصول على الكود بالكامل يرجى شراء النسخة الكاملة --&gt;
+&lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;title&gt;Protected Demo Version&lt;/title&gt;
+&lt;script type=&quot;application/ld+json&quot;&gt;{&quot;@context&quot;:&quot;https://schema.org&quot;}&lt;/script&gt;</pre>
             </div>
         </div>
 
-        <!-- Locked Action Buttons -->
-        <div class="card">
-            <h3 style="font-size: 1rem; margin-bottom: 4px;"><i class="fa-solid fa-code" style="color:var(--accent-primary);"></i> تصدير الأكواد والنسخ</h3>
-            <p style="font-size: 0.85rem; color: var(--text-muted);">قم بتجربة الأداة بالأعلى، وعند النقر على النسخ أو التنزيل سيتم طلب تفعيل النسخة الكاملة.</p>
-            <button class="btn-action" onclick="showPayModal()"><i class="fa-solid fa-wand-magic-sparkles"></i> توليد ونسخ الأكواد النهائية (نسخة مدفوعة)</button>
+        <!-- SECTION 2: SEO Prompt Library -->
+        <div id="promptSection" class="app-section" style="display: none;">
+            <div class="app-header" style="padding: 20px; text-align: inherit;">
+                <h3 id="vaultTitle" style="font-size: 1.3rem; margin-bottom: 6px;"><i class="fa-solid fa-terminal" style="color: var(--accent-primary);"></i> مكتبة أوامر الذكاء الاصطناعي للـ SEO (SEO Prompts Vault)</h3>
+                <p id="vaultDesc" style="font-size: 0.9rem; margin: 0;">استعرض الأوامر أدناه للاطلاع على قوة الأداة، وانسخها مباشرة لاستخدامها في تحسين محتوى موقعك.</p>
+            </div>
+
+            <div class="prompt-grid">
+                <div class="prompt-card">
+                    <div>
+                        <div class="prompt-title"><i class="fa-solid fa-brain"></i> <span id="pTitle1">توليد استراتيجية الكلمات المفتاحية</span></div>
+                        <div class="prompt-desc" id="pDesc1">أمر مخصص لتقسيم الكلمات الدلالية حسب نية البحث (Search Intent).</div>
+                    </div>
+                    <div class="prompt-box" id="p1">أريدك خبير سيو محترف. قم بتحليل موضوع [اكتب موضوعك هنا] واقترح لي 10 كلمات مفتاحية رئيسية و20 كلمة ذات دلالة طويلة (Long-tail) مع تحديد نية البحث لكل كلمة (بحث معلوماتي، شرائي، تجاري).</div>
+                    <button class="btn-action btn-copy-prompt" onclick="copyPrompt('p1', this)"><i class="fa-regular fa-copy"></i> <span class="cpText">نسخ الأمر</span></button>
+                </div>
+
+                <div class="prompt-card">
+                    <div>
+                        <div class="prompt-title"><i class="fa-solid fa-pen-nib"></i> <span id="pTitle2">كتابة هيكل مقال متوافق مع السيو</span></div>
+                        <div class="prompt-desc" id="pDesc2">إنشاء عناوين رئيسية وفرعية (H1, H2, H3) تضمن تصدر نتائج البحث.</div>
+                    </div>
+                    <div class="prompt-box" id="p2">بصفتك مختص تحسين محركات بحث، اكتب لي هيكل مقال احترافي (عناوين H1, H2, H3) لمقال يدور حول [الموضوع], متضمنًا الكلمة المفتاحية المستهدفة بطريقة طبيعية وبما يلبي خوارزميات جوجل Helpful Content.</div>
+                    <button class="btn-action btn-copy-prompt" onclick="copyPrompt('p2', this)"><i class="fa-regular fa-copy"></i> <span class="cpText">نسخ الأمر</span></button>
+                </div>
+
+                <div class="prompt-card">
+                    <div>
+                        <div class="prompt-title"><i class="fa-solid fa-circle-question"></i> <span id="pTitle3">توليد قسم الأسئلة الشائعة (FAQ Schema)</span></div>
+                        <div class="prompt-desc" id="pDesc3">استخراج أسئلة شائعة جاهزة لإضافتها للـ Schema وزيادة المساحة في جوجل.</div>
+                    </div>
+                    <div class="prompt-box" id="p3">اقترح عليّ أهم 5 أسئلة شائعة يطرحها المستخدمون على محرك بحث جوجل حول [المنتج أو الخدمة] مع إجابات مختصرة ودقيقة لا تتجاوز 40 كلمة لكل إجابة، لتضمينها في Schema الأسئلة الشائعة.</div>
+                    <button class="btn-action btn-copy-prompt" onclick="copyPrompt('p3', this)"><i class="fa-regular fa-copy"></i> <span class="cpText">نسخ الأمر</span></button>
+                </div>
+
+                <div class="prompt-card">
+                    <div>
+                        <div class="prompt-title"><i class="fa-solid fa-wand-magic-sparkles"></i> <span id="pTitle4">إعادة صياغة عناوين جذابة للنقرات (CTR)</span></div>
+                        <div class="prompt-desc" id="pDesc4">الحصول على عناوين تزيد نسبة النقر إلى الظهور في نتائج البحث.</div>
+                    </div>
+                    <div class="prompt-box" id="p4">اقترح عليّ 5 صيغ مختلفة لعنوان Meta Title لا تتجاوز 60 حرفًا لمقال بعنوان [العنوان الحالي], بحيث تكون جذابة وتحتوي على أرقام أو كلمات تحفيزية تزيد من نسبة النقر (CTR).</div>
+                    <button class="btn-action btn-copy-prompt" onclick="copyPrompt('p4', this)"><i class="fa-regular fa-copy"></i> <span class="cpText">نسخ الأمر</span></button>
+                </div>
+            </div>
         </div>
-    </div>
+
+    </main>
 
     <!-- Purchase Modal -->
     <div class="modal-overlay" id="payModal">
@@ -110,15 +718,259 @@
     </div>
 
     <script>
-        function updateDemo() {
-            const title = document.getElementById('titleInput').value || 'عنوان الصفحة يظهر هنا مباشرة أثناء الكتابة...';
-            const desc = document.getElementById('descInput').value || 'وصف الصفحة المختصر سيظهر هنا بنفس الشكل لتجربة الأداء الفوري.';
-            
-            document.getElementById('prevTitle').innerText = title;
-            document.getElementById('prevDesc').innerText = desc;
+        let currentLang = 'ar';
+        const dict = {
+            ar: {
+                badge: 'SEO Suite Pro v3.5 (Demo)',
+                subtitle: 'الأداة الشاملة لتوليد أكواد الـ SEO و Schema.org ومكتبة أوامر الذكاء الاصطناعي الحصرية لتعزيز أرشفة موقعك.',
+                tabGen: 'مولد الأوسمة (Generator)',
+                tabPrompt: 'مكتبة أوامر SEO (AI Prompts)',
+                lblTitle: 'عنوان الصفحة / المقال (Meta Title)',
+                lblDesc: 'وصف المحتوى (Meta Description)',
+                lblKeywords: 'الكلمات المفتاحية (Keywords)',
+                lblUrl: 'رابط الصفحة (Canonical URL)',
+                lblImage: 'رابط صورة المعاينة (OG Image)',
+                lblSchema: 'نوع الـ Schema',
+                lblLang: 'لغة المخرجات',
+                phTitle: 'مثال: أفضل قوالب مواقع الشركات والأدوات الرقمية لعام 2026',
+                phDesc: 'مثال: استكشف أفضل قوالب المواقع الجاهزة وأدوات الـ Micro-SaaS المصممة لزيادة التحويلات والمبيعات بنقرة واحدة...',
+                phKeywords: 'قوالب مواقع, SEO, أدوات رقمية, سيو',
+                phUrl: 'https://example.com/my-product',
+                phImg: 'https://example.com/assets/banner.jpg',
+                optWeb: '🌐 موقع إلكتروني (WebSite)',
+                optProd: '🛒 منتج / أداة (Product)',
+                optArt: '📰 مقال / خبر (Article)',
+                optLoc: '🏪 نشاط محلي (LocalBusiness)',
+                optSaaS: '💻 أداة SaaS / تطبيق',
+                btnGenerate: 'توليد أوسمة الـ SEO والـ Schema الآن (نسخة مدفوعة)',
+                previewTitle: 'المعاينة الحية (Live SERP & Social Preview)',
+                outTitle: 'الكود البرمجي المولد (متاح في النسخة الكاملة):',
+                btnCopy: 'نسخ الكود',
+                btnDownload: 'تنزيل الملف',
+                vaultTitle: 'مكتبة أوامر الذكاء الاصطناعي للـ SEO (SEO Prompts Vault)',
+                vaultDesc: 'استعرض الأوامر أدناه للاطلاع على قوة الأداة، وانسخها مباشرة لاستخدامها في تحسين محتوى موقعك.',
+                pTitle1: 'توليد استراتيجية الكلمات المفتاحية',
+                pDesc1: 'أمر مخصص لتقسيم الكلمات الدلالية حسب نية البحث (Search Intent).',
+                pText1: 'أريدك خبير سيو محترف. قم بتحليل موضوع [اكتب موضوعك هنا] واقترح لي 10 كلمات مفتاحية رئيسية و20 كلمة ذات دلالة طويلة (Long-tail) مع تحديد نية البحث لكل كلمة (بحث معلوماتي، شرائي، تجاري).',
+                pTitle2: 'كتابة هيكل مقال متوافق مع السيو',
+                pDesc2: 'إنشاء عناوين رئيسية وفرعية (H1, H2, H3) تضمن تصدر نتائج البحث.',
+                pText2: 'بصفتك مختص تحسين محركات بحث، اكتب لي هيكل مقال احترافي (عناوين H1, H2, H3) لمقال يدور حول [الموضوع], متضمنًا الكلمة المفتاحية المستهدفة بطريقة طبيعية وبما يلبي خوارزميات جوجل Helpful Content.',
+                pTitle3: 'توليد قسم الأسئلة الشائعة (FAQ Schema)',
+                pDesc3: 'استخراج أسئلة شائعة جاهزة لإضافتها للـ Schema وزيادة المساحة في جوجل.',
+                pText3: 'اقترح عليّ أهم 5 أسئلة شائعة يطرحها المستخدمون على محرك بحث جوجل حول [المنتج أو الخدمة] مع إجابات مختصرة ودقيقة لا تتجاوز 40 كلمة لكل إجابة، لتضمينها في Schema الأسئلة الشائعة.',
+                pTitle4: 'إعادة صياغة عناوين جذابة للنقرات (CTR)',
+                pDesc4: 'الحصول على عناوين تزيد نسبة النقر إلى الظهور في نتائج البحث.',
+                pText4: 'اقترح عليّ 5 صيغ مختلفة لعنوان Meta Title لا تتجاوز 60 حرفًا لمقال بعنوان [العنوان الحالي], بحيث تكون جذابة وتحتوي على أرقام أو كلمات تحفيزية تزيد من نسبة النقر (CTR).',
+                cpBtn: 'نسخ الأمر',
+                cpSuccess: 'تم النسخ!'
+            },
+            en: {
+                badge: 'SEO Suite Pro v3.5 (Demo)',
+                subtitle: 'The all-in-one suite to generate SEO meta tags, Schema.org, and exclusive AI prompts vault to boost rankings.',
+                tabGen: 'SEO Generator',
+                tabPrompt: 'AI Prompts Vault',
+                lblTitle: 'Page Title (Meta Title)',
+                lblDesc: 'Meta Description',
+                lblKeywords: 'Keywords (Comma separated)',
+                lblUrl: 'Canonical URL',
+                lblImage: 'Social Image URL (OG Image)',
+                lblSchema: 'Schema Type',
+                lblLang: 'Output Language',
+                phTitle: 'e.g., Best SaaS Website Templates & Digital Tools 2026',
+                phDesc: 'e.g., Explore top-tier responsive website templates and high-converting Micro-SaaS tools designed to boost sales...',
+                phKeywords: 'website templates, SEO tools, digital products',
+                phUrl: 'https://example.com/my-product',
+                phImg: 'https://example.com/assets/banner.jpg',
+                optWeb: '🌐 WebSite Schema',
+                optProd: '🛒 Product Schema',
+                optArt: '📰 Article Schema',
+                optLoc: '🏪 Local Business',
+                optSaaS: '💻 Software Application',
+                btnGenerate: 'Generate SEO & Schema Code Now (Paid)',
+                previewTitle: 'Live Search & Social Preview',
+                outTitle: 'Generated SEO Code (Available in Full Version):',
+                btnCopy: 'Copy Code',
+                btnDownload: 'Download File',
+                vaultTitle: 'SEO AI Prompts Vault',
+                vaultDesc: 'Browse prompts below to test the tool capability, and copy them to optimize your content.',
+                pTitle1: 'Generate Keyword Clustering Strategy',
+                pDesc1: 'Expert prompt to segment target keywords by user search intent.',
+                pText1: 'Act as an expert SEO specialist. Analyze the topic [Insert Topic Here] and suggest 10 primary keywords and 20 long-tail keywords, categorizing them by search intent (Informational, Transactional, Commercial).',
+                pTitle2: 'SEO-Optimized Article Outline',
+                pDesc2: 'Generate structured H1, H2, and H3 headings to rank #1 on Google.',
+                pText2: 'Act as an SEO professional. Write a comprehensive article outline with H1, H2, and H3 headings for the topic [Insert Topic Here], naturally incorporating target keywords following Google Helpful Content guidelines.',
+                pTitle3: 'FAQ Schema Questions Generator',
+                pDesc3: 'Extract high-value FAQ questions to dominate Google SERP real estate.',
+                pText3: 'Suggest the top 5 frequently asked questions users search on Google regarding [Insert Product/Service], along with concise, accurate answers under 40 words each, optimized for FAQ schema.',
+                pTitle4: 'CTR Magnet Title Rewriter',
+                pDesc4: 'Rewrite titles to drastically increase click-through rates.',
+                pText4: 'Provide 5 alternative Meta Title variations under 60 characters for an article titled [Insert Current Title]. Make them catchy, highly engaging, and optimized for maximum CTR.',
+                cpBtn: 'Copy Prompt',
+                cpSuccess: 'Copied!'
+            }
+        };
 
-            document.getElementById('titleCount').innerText = `${title.length} / 60`;
-            document.getElementById('descCount').innerText = `${desc.length} / 160`;
+        function toggleLanguage() {
+            currentLang = currentLang === 'ar' ? 'en' : 'ar';
+            document.documentElement.lang = currentLang;
+            document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+            document.getElementById('langBtn').innerText = currentLang === 'ar' ? 'English 🌐' : 'العربية 🌐';
+            
+            const t = dict[currentLang];
+            
+            document.getElementById('badgeText').innerText = t.badge;
+            document.getElementById('subTitle').innerText = t.subtitle;
+            document.getElementById('tabGenText').innerText = t.tabGen;
+            document.getElementById('tabPromptText').innerText = t.tabPrompt;
+
+            document.getElementById('lblTitle').innerText = t.lblTitle;
+            document.getElementById('pageTitleInput').placeholder = t.phTitle;
+            
+            document.getElementById('lblDesc').innerText = t.lblDesc;
+            document.getElementById('descInput').placeholder = t.phDesc;
+
+            document.getElementById('lblKeywords').innerText = t.lblKeywords;
+            document.getElementById('keywordsInput').placeholder = t.phKeywords;
+
+            document.getElementById('lblUrl').innerText = t.lblUrl;
+            document.getElementById('urlInput').placeholder = t.phUrl;
+
+            document.getElementById('lblImage').innerText = t.lblImage;
+            document.getElementById('imageInput').placeholder = t.phImg;
+
+            document.getElementById('lblSchema').innerText = t.lblSchema;
+            document.getElementById('optWebSite').innerText = t.optWeb;
+            document.getElementById('optProduct').innerText = t.optProd;
+            document.getElementById('optArticle').innerText = t.optArt;
+            document.getElementById('optLocal').innerText = t.optLoc;
+            document.getElementById('optSaaS').innerText = t.optSaaS;
+
+            document.getElementById('lblLang').innerText = t.lblLang;
+            document.getElementById('btnText').innerText = t.btnGenerate;
+            
+            document.getElementById('lblPreviewTitle').innerText = t.previewTitle;
+            document.getElementById('lblOutput').innerText = t.outTitle;
+            document.getElementById('btnCopyText').innerText = t.btnCopy;
+            document.getElementById('btnDownloadText').innerText = t.btnDownload;
+
+            document.getElementById('vaultTitle').innerHTML = `<i class="fa-solid fa-terminal" style="color: var(--accent-primary);"></i> ${t.vaultTitle}`;
+            document.getElementById('vaultDesc').innerText = t.vaultDesc;
+
+            document.getElementById('pTitle1').innerText = t.pTitle1;
+            document.getElementById('pDesc1').innerText = t.pDesc1;
+            document.getElementById('p1').innerText = t.pText1;
+
+            document.getElementById('pTitle2').innerText = t.pTitle2;
+            document.getElementById('pDesc2').innerText = t.pDesc2;
+            document.getElementById('p2').innerText = t.pText2;
+
+            document.getElementById('pTitle3').innerText = t.pTitle3;
+            document.getElementById('pDesc3').innerText = t.pDesc3;
+            document.getElementById('p3').innerText = t.pText3;
+
+            document.getElementById('pTitle4').innerText = t.pTitle4;
+            document.getElementById('pDesc4').innerText = t.pDesc4;
+            document.getElementById('p4').innerText = t.pText4;
+
+            document.querySelectorAll('.cpText').forEach(el => el.innerText = t.cpBtn);
+            renderDynamicFields();
+        }
+
+        function switchMainTab(tab) {
+            if (tab === 'generator') {
+                document.getElementById('generatorSection').style.display = 'flex';
+                document.getElementById('promptSection').style.display = 'none';
+                document.getElementById('navGenBtn').classList.add('active');
+                document.getElementById('navPromptBtn').classList.remove('active');
+            } else {
+                document.getElementById('generatorSection').style.display = 'none';
+                document.getElementById('promptSection').style.display = 'flex';
+                document.getElementById('navGenBtn').classList.remove('active');
+                document.getElementById('navPromptBtn').classList.add('active');
+            }
+        }
+
+        function renderDynamicFields() {
+            const schema = document.getElementById('schemaSelect').value;
+            const container = document.getElementById('dynamicFieldsContainer');
+            container.innerHTML = '';
+
+            const isAr = currentLang === 'ar';
+            if (schema === 'Product' || schema === 'SoftwareApplication') {
+                container.innerHTML = `
+                    <div class="bento-card col-4"><label>${isAr ? 'السعر (Price)' : 'Price'}</label><input type="number" id="schemaPrice" placeholder="29.99"></div>
+                    <div class="bento-card col-4"><label>${isAr ? 'العملة (Currency)' : 'Currency'}</label><input type="text" id="schemaCurrency" placeholder="USD"></div>
+                    <div class="bento-card col-4"><label>${isAr ? 'التقييم (Rating 1-5)' : 'Rating (1-5)'}</label><input type="number" step="0.1" id="schemaRating" placeholder="4.9"></div>
+                `;
+            } else if (schema === 'Article') {
+                container.innerHTML = `
+                    <div class="bento-card col-6"><label>${isAr ? 'اسم الكاتب (Author Name)' : 'Author Name'}</label><input type="text" id="schemaAuthor" placeholder="Ahmed Abu Omar"></div>
+                    <div class="bento-card col-6"><label>${isAr ? 'تاريخ النشر (Publish Date)' : 'Publish Date'}</label><input type="date" id="schemaDate"></div>
+                `;
+            } else if (schema === 'LocalBusiness') {
+                container.innerHTML = `
+                    <div class="bento-card col-6"><label>${isAr ? 'رقم الهاتف (Phone)' : 'Phone Number'}</label><input type="text" id="schemaPhone" placeholder="+201000000000"></div>
+                    <div class="bento-card col-6"><label>${isAr ? 'العنوان / المدينة (City / Address)' : 'Address / City'}</label><input type="text" id="schemaAddress" placeholder="Cairo, Egypt"></div>
+                `;
+            }
+        }
+
+        function updateLivePreview() {
+            const isAr = currentLang === 'ar';
+            const title = document.getElementById('pageTitleInput').value || (isAr ? 'عنوان الصفحة يظهر هنا في البحث' : 'Page title preview appears here');
+            const desc = document.getElementById('descInput').value || (isAr ? 'وصف الصفحة التوضيحي يظهر هنا بوضوح لجلب الزوار.' : 'Meta description preview appears here to drive clicks.');
+            const url = document.getElementById('urlInput').value || 'https://example.com/page';
+            const img = document.getElementById('imageInput').value;
+
+            document.getElementById('titleCounter').innerText = `${title.length} / 60`;
+            document.getElementById('descCounter').innerText = `${desc.length} / 160`;
+
+            document.getElementById('pvGoogleTitle').innerText = title;
+            document.getElementById('pvGoogleDesc').innerText = desc;
+            document.getElementById('pvGoogleUrl').innerText = url;
+
+            document.getElementById('pvSocialTitle').innerText = title;
+            document.getElementById('pvSocialDesc').innerText = desc;
+            try {
+                document.getElementById('pvSocialDomain').innerText = new URL(url).hostname;
+            } catch (e) {
+                document.getElementById('pvSocialDomain').innerText = 'example.com';
+            }
+
+            const imgBox = document.getElementById('pvSocialImg');
+            if (img) {
+                imgBox.innerHTML = `<img src="${img}" style="width:100%;height:100%;object-fit:cover;" onerror="this.onerror=null;this.parentElement.innerHTML='Invalid Image';">`;
+            } else {
+                imgBox.innerHTML = `<i class="fa-solid fa-image fa-2x"></i>`;
+            }
+        }
+
+        function switchPreview(tab) {
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            if (tab === 'google') {
+                document.querySelectorAll('.tab-btn')[0].classList.add('active');
+                document.getElementById('googlePreview').style.display = 'block';
+                document.getElementById('socialPreview').style.display = 'none';
+            } else {
+                document.querySelectorAll('.tab-btn')[1].classList.add('active');
+                document.getElementById('googlePreview').style.display = 'none';
+                document.getElementById('socialPreview').style.display = 'block';
+            }
+        }
+
+        function copyPrompt(id, btn) {
+            const text = document.getElementById(id).textContent;
+            navigator.clipboard.writeText(text).then(() => {
+                const t = dict[currentLang];
+                const span = btn.querySelector('.cpText');
+                const oldText = span.innerText;
+                span.innerText = t.cpSuccess;
+                btn.style.background = 'var(--success)';
+                setTimeout(() => { 
+                    span.innerText = oldText; 
+                    btn.style.background = '';
+                }, 2000);
+            });
         }
 
         function showPayModal() {
@@ -128,6 +980,8 @@
         function hidePayModal() {
             document.getElementById('payModal').style.display = 'none';
         }
+
+        renderDynamicFields();
     </script>
 </body>
 </html>
